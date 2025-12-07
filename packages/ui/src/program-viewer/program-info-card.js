@@ -1,0 +1,18 @@
+'use client';
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from 'react';
+import { cn } from '@OneCoach/lib-design-system';
+export function ProgramInfoCard({ name, description, metadata = [], icon: Icon, variant = 'workout', className = '', }) {
+    const isWorkout = variant === 'workout';
+    const gradientFrom = isWorkout ? 'from-green-50/50' : 'from-emerald-50/50';
+    const iconGradient = isWorkout
+        ? 'from-green-500 to-green-600 dark:from-green-600 dark:to-green-700'
+        : 'from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-emerald-700';
+    const iconColor = isWorkout
+        ? 'text-green-600 dark:text-green-400'
+        : 'text-emerald-600 dark:text-emerald-400';
+    return (_jsx("div", { className: cn('mb-8 overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br p-6 shadow-lg transition-all duration-200 hover:shadow-xl dark:border-neutral-700 dark:shadow-2xl dark:shadow-neutral-950/50 dark:hover:shadow-neutral-950/70', gradientFrom, 'via-white to-white dark:from-neutral-800 dark:via-neutral-800 dark:to-neutral-800/90', className), children: _jsxs("div", { className: "flex items-start gap-4", children: [Icon && (_jsx("div", { className: cn('rounded-xl bg-gradient-to-br p-4 shadow-lg dark:shadow-green-900/20', iconGradient), children: _jsx(Icon, { className: "h-8 w-8 text-white" }) })), _jsxs("div", { className: "flex-1", children: [_jsx("h1", { className: "text-3xl font-bold text-neutral-900 dark:text-neutral-100", children: name }), description && (_jsx("p", { className: "mt-2 text-base text-neutral-600 dark:text-neutral-300", children: description })), metadata.length > 0 && (_jsx("div", { className: "mt-4 flex flex-wrap gap-4", children: metadata.map((meta, idx) => {
+                                const MetaIcon = meta.icon;
+                                return (_jsxs("div", { className: "flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 shadow-sm backdrop-blur-sm dark:border-neutral-600 dark:bg-neutral-700/80", children: [MetaIcon && _jsx(MetaIcon, { className: cn('h-5 w-5', iconColor) }), _jsx("span", { className: "text-sm font-medium text-neutral-700 dark:text-neutral-200", children: meta.value })] }, idx));
+                            }) }))] })] }) }));
+}

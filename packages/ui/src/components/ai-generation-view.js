@@ -1,0 +1,29 @@
+'use client';
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { cn } from '@OneCoach/lib-design-system';
+import { Sparkles, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
+import { GradientButton } from '../gradient-button';
+// ----------------------------------------------------------------------------
+// Component
+// ----------------------------------------------------------------------------
+export function AIGenerationView({ title = 'AI Architect', subtitle = 'Generazione in corso...', progress, logs, isGenerating, isSuccess, error, successTitle = 'Fatto!', successMessage = 'Generazione completata con successo.', successActionLabel = 'Continua', onSuccessAction, onRetry, className, children, }) {
+    const logContainerRef = useRef(null);
+    // Auto-scroll logs
+    useEffect(() => {
+        if (logContainerRef.current) {
+            logContainerRef.current.scrollTop = logContainerRef.current.scrollHeight;
+        }
+    }, [logs]);
+    return (_jsxs("div", { className: cn('relative mx-auto max-w-4xl overflow-hidden rounded-3xl bg-neutral-950 shadow-2xl ring-1 ring-white/10', className), children: [_jsxs("div", { className: "absolute top-0 right-0 left-0 z-20 flex items-center justify-between border-b border-white/5 bg-neutral-950/80 px-6 py-4 backdrop-blur-md", children: [_jsxs("div", { className: "flex items-center gap-3", children: [_jsx("div", { className: "flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/10", children: isSuccess ? (_jsx(CheckCircle2, { className: "h-5 w-5 text-green-500" })) : error ? (_jsx(AlertCircle, { className: "h-5 w-5 text-red-500" })) : (_jsx(Sparkles, { className: "h-5 w-5 animate-pulse text-blue-500" })) }), _jsxs("div", { children: [_jsx("h3", { className: "font-semibold text-white", children: isSuccess ? 'Completato' : error ? 'Errore' : title }), _jsx("p", { className: "text-xs text-neutral-400", children: isSuccess ? 'Processo terminato' : error ? 'Si è verificato un problema' : subtitle })] })] }), _jsx("div", { className: "text-right", children: _jsxs("div", { className: "text-2xl font-bold text-white", children: [Math.round(progress), "%"] }) })] }), _jsxs("div", { className: "relative h-[500px] w-full pt-16", children: [children || (_jsx("div", { className: "flex h-full w-full items-center justify-center text-neutral-700", children: _jsx("div", { className: "h-64 w-64 rounded-full border border-dashed border-neutral-800" }) })), _jsx(AnimatePresence, { children: isSuccess && (_jsx(motion.div, { initial: { opacity: 0, scale: 0.9 }, animate: { opacity: 1, scale: 1 }, className: "absolute inset-0 z-30 flex items-center justify-center bg-neutral-950/60 backdrop-blur-sm", children: _jsxs("div", { className: "text-center", children: [_jsx(motion.div, { initial: { scale: 0 }, animate: { scale: 1 }, transition: { type: 'spring', delay: 0.2 }, className: "mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-500/20 ring-1 ring-green-500/50", children: _jsx(CheckCircle2, { className: "h-10 w-10 text-green-500" }) }), _jsx("h2", { className: "mb-2 text-3xl font-bold text-white", children: successTitle }), _jsx("p", { className: "mb-8 text-neutral-400", children: successMessage }), onSuccessAction && (_jsx(GradientButton, { onClick: onSuccessAction, className: "min-w-[200px]", children: _jsxs("div", { className: "flex items-center gap-2", children: [_jsx("span", { children: successActionLabel }), _jsx(ArrowRight, { className: "h-4 w-4" })] }) }))] }) })) }), _jsx(AnimatePresence, { children: error && (_jsx(motion.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, className: "absolute inset-0 z-30 flex items-center justify-center bg-neutral-950/80 backdrop-blur-sm", children: _jsxs("div", { className: "max-w-md p-6 text-center", children: [_jsx("div", { className: "mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-red-500/20 ring-1 ring-red-500/50", children: _jsx(AlertCircle, { className: "h-8 w-8 text-red-500" }) }), _jsx("h3", { className: "mb-2 text-xl font-bold text-white", children: "Qualcosa \u00E8 andato storto" }), _jsx("p", { className: "mb-6 text-sm text-neutral-400", children: error }), onRetry && (_jsx("button", { onClick: onRetry, className: "rounded-lg bg-white px-6 py-2 font-medium text-neutral-900 hover:bg-neutral-100", children: "Riprova" }))] }) })) })] }), _jsx("div", { className: "border-t border-white/5 bg-neutral-900/50 p-4 backdrop-blur-md", children: _jsxs("div", { ref: logContainerRef, className: "h-32 space-y-2 overflow-y-auto scroll-smooth pr-2 font-mono text-xs", children: [logs.map((log, i) => (_jsxs(motion.div, { initial: { opacity: 0, x: -10 }, animate: { opacity: 1, x: 0 }, className: cn('flex items-start gap-2 rounded px-2 py-1', log.type === 'error'
+                                ? 'bg-red-500/10 text-red-400'
+                                : log.type === 'success'
+                                    ? 'bg-green-500/10 text-green-400'
+                                    : 'text-neutral-400'), children: [_jsx("span", { className: "shrink-0 opacity-50", children: log.timestamp.toLocaleTimeString([], {
+                                        hour12: false,
+                                        hour: '2-digit',
+                                        minute: '2-digit',
+                                        second: '2-digit',
+                                    }) }), _jsx("span", { children: log.message })] }, i))), isGenerating && !isSuccess && !error && (_jsxs("div", { className: "flex items-center gap-2 px-2 py-1 text-blue-400", children: [_jsx("span", { className: "h-1.5 w-1.5 animate-pulse rounded-full bg-blue-400" }), _jsx("span", { className: "animate-pulse", children: "Thinking..." })] }))] }) })] }));
+}

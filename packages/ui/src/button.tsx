@@ -47,29 +47,30 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     // Variant styles using design tokens - WCAG AA compliant
     const variantStyles: Record<ButtonVariant, string> = {
       primary:
-        'bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 active:from-primary-700 active:to-primary-600 text-white shadow-lg shadow-primary-500/30 hover:shadow-glow hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
+        'relative overflow-hidden border border-white/10 bg-gradient-to-r from-[#1f2a44] via-[#243b6b] to-[#2a4d9f] text-white shadow-[0_18px_40px_-16px_rgba(36,59,107,0.9)] hover:shadow-[0_22px_52px_-16px_rgba(36,59,107,1)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur',
       secondary:
-        'bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-700 active:bg-neutral-100 dark:active:bg-neutral-600 border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md transition-all duration-200',
+        'border border-neutral-200/80 bg-white/90 text-neutral-800 shadow-[0_12px_30px_-18px_rgba(15,23,42,0.55)] hover:shadow-[0_14px_38px_-16px_rgba(15,23,42,0.65)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:border-white/10 dark:bg-neutral-900/60 dark:text-neutral-100',
       danger:
-        'bg-gradient-to-r from-error-600 to-error-500 hover:from-error-500 hover:to-error-400 active:from-error-700 active:to-error-600 text-white shadow-lg shadow-error-500/30 hover:shadow-error-500/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
+        'bg-gradient-to-r from-error-600 to-error-500 text-white shadow-[0_16px_40px_-18px_rgba(239,68,68,0.6)] hover:shadow-[0_18px_48px_-18px_rgba(239,68,68,0.7)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
       ghost:
-        'bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 active:bg-neutral-200 dark:active:bg-neutral-700 text-neutral-700 dark:text-neutral-200',
+        'bg-transparent text-primary-700 hover:bg-primary-50/70 active:bg-primary-100/70 transition-all duration-200 dark:text-primary-200 dark:hover:bg-primary-500/10 dark:active:bg-primary-500/20',
       default:
-        'bg-gradient-to-r from-secondary-600 to-secondary-500 hover:from-secondary-500 hover:to-secondary-400 active:from-secondary-700 active:to-secondary-600 text-white shadow-lg shadow-secondary-500/30 hover:shadow-secondary-500/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
+        'relative overflow-hidden border border-white/10 bg-gradient-to-r from-[#0f172a] via-[#1f2a44] to-[#2a4d9f] text-white shadow-[0_18px_42px_-16px_rgba(31,42,68,0.85)] hover:shadow-[0_22px_52px_-16px_rgba(31,42,68,0.95)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur',
       outline:
-        'bg-transparent text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 active:bg-neutral-100 dark:active:bg-neutral-700 border-2 border-neutral-300 dark:border-neutral-600 hover:border-primary-500 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-200',
+        'border border-primary-300/80 bg-white/60 text-primary-700 shadow-[0_10px_30px_-20px_rgba(99,102,241,0.65)] hover:bg-primary-50/80 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:border-primary-500/50 dark:bg-white/5 dark:text-primary-200 dark:hover:bg-primary-500/10',
       success:
-        'bg-gradient-to-r from-success-600 to-success-500 hover:from-success-500 hover:to-success-400 active:from-success-700 active:to-success-600 text-white shadow-lg shadow-success-500/30 hover:shadow-success-500/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
-      info: 'bg-gradient-to-r from-info-600 to-info-500 hover:from-info-500 hover:to-info-400 active:from-info-700 active:to-info-600 text-white shadow-lg shadow-info-500/30 hover:shadow-info-500/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
+        'bg-gradient-to-r from-success-600 to-success-500 text-white shadow-[0_16px_40px_-18px_rgba(34,197,94,0.55)] hover:shadow-[0_18px_48px_-18px_rgba(34,197,94,0.65)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
+      info:
+        'bg-gradient-to-r from-info-600 to-info-500 text-white shadow-[0_16px_40px_-18px_rgba(14,165,233,0.6)] hover:shadow-[0_18px_48px_-18px_rgba(14,165,233,0.7)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
       glass:
-        'glass hover:bg-white/80 dark:hover:bg-neutral-800/80 text-primary-700 dark:text-primary-300 shadow-lg shadow-primary-500/10 hover:shadow-glow backdrop-blur-md border border-white/20 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
+        'border border-white/12 bg-white/10 text-white shadow-[0_14px_36px_-18px_rgba(15,23,42,0.6)] hover:shadow-[0_18px_44px_-16px_rgba(15,23,42,0.7)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur-lg dark:border-white/15 dark:bg-white/5',
     };
 
     // Size styles - Touch-friendly (minimum 44x44px)
     const sizeStyles: Record<ButtonSize, string> = {
-      sm: 'min-h-[2.75rem] min-w-[2.75rem] px-3 py-2 text-sm rounded-lg', // 44px min
-      md: 'min-h-[3rem] min-w-[3rem] px-5 py-2.5 text-base rounded-xl', // 48px min
-      lg: 'min-h-[3.5rem] min-w-[3.5rem] px-8 py-3.5 text-lg rounded-2xl', // 56px min
+      sm: 'min-h-[2.75rem] min-w-[2.75rem] px-3 py-2 text-sm rounded-full', // 44px min
+      md: 'min-h-[3rem] min-w-[3rem] px-5 py-2.5 text-base rounded-full', // 48px min
+      lg: 'min-h-[3.5rem] min-w-[3.5rem] px-8 py-3.5 text-lg rounded-full', // 56px min
       icon: 'min-h-[2.5rem] min-w-[2.5rem] px-0 rounded-full',
       'icon-sm': 'min-h-[2.25rem] min-w-[2.25rem] px-0 text-sm rounded-full',
     };

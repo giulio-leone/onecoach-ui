@@ -7,8 +7,23 @@
 'use client';
 
 import { Elements } from '@stripe/react-stripe-js';
-import { getStripeClient } from '@OneCoach/lib-core/stripe/client';
+import { loadStripe, type Stripe } from '@stripe/stripe-js';
 import { useMemo } from 'react';
+
+// Inlined from lib-core/stripe/client to avoid server-side dependencies
+let stripePromise: Promise<Stripe | null> | null = null;
+
+function getStripeClient(): Promise<Stripe | null> {
+  if (!stripePromise) {
+    const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+    if (!publishableKey) {
+      console.error('NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY non configurata');
+      return Promise.resolve(null);
+    }
+    stripePromise = loadStripe(publishableKey);
+  }
+  return stripePromise;
+}
 
 interface CheckoutProviderProps {
   clientSecret: string;
