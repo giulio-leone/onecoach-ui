@@ -10,13 +10,13 @@ import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?:
-    | 'default'
-    | 'elevated'
-    | 'bordered'
-    | 'interactive'
-    | 'glass'
-    | 'glass-strong'
-    | 'hover';
+  | 'default'
+  | 'elevated'
+  | 'bordered'
+  | 'interactive'
+  | 'glass'
+  | 'glass-strong'
+  | 'hover';
   padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
   children: React.ReactNode;
 }
@@ -53,11 +53,17 @@ export const Card = ({
       darkModeClasses.card.interactive,
       'rounded-2xl border border-transparent hover:border-primary-500/20 dark:hover:border-primary-400/20 transition-all duration-300 cursor-pointer'
     ),
-    glass: cn('glass', 'rounded-2xl shadow-lg shadow-neutral-900/5'),
-    'glass-strong': cn('glass-strong', 'rounded-2xl shadow-xl shadow-neutral-900/10'),
+    glass: cn(
+      'backdrop-blur-md bg-white/5 border border-white/10 text-white',
+      'rounded-2xl shadow-lg shadow-black/10 transition-all duration-300'
+    ),
+    'glass-strong': cn(
+      'backdrop-blur-xl bg-[#0A0F1F]/90 border border-white/10 text-white',
+      'rounded-2xl shadow-xl shadow-black/20 transition-all duration-300'
+    ),
     hover: cn(
       darkModeClasses.card.interactive,
-      'rounded-2xl hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10 transition-all duration-300'
+      'rounded-2xl hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10 hover:border-blue-500/20 transition-all duration-300'
     ),
   };
 
