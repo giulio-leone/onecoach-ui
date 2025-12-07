@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
+    "paths": {
+      "hooks/*": ["./src/*"],
+      "lib/*": ["../lib/src/*"],
+      "@OneCoach/constants": ["../constants/src/index.ts"],
+      "@OneCoach/constants/*": ["../constants/src/*"],
+      "types": ["../types/src/index.ts"],
+      "types/*": ["../types/src/*"],
+      "@/*": ["../../apps/next/*"],
+      "ui/*": ["../ui/src/*"]
+    },
+    "strict": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "src/**/*.native.tsx", "src/**/*.native.ts"]
+}
