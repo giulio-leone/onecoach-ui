@@ -6,7 +6,7 @@
  * Fully optimized for dark mode
  */
 
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 
 export interface Version {
   id: string;

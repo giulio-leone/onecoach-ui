@@ -4,7 +4,7 @@
  * Displays AI-generated insights and patterns.
  * KISS: Simple card component
  */
-import type { MemoryPattern, MemoryInsight } from '@OneCoach/lib-core/user-memory/types';
+import type { MemoryPattern, MemoryInsight } from '@onecoach/lib-core/user-memory/types';
 export interface MemoryInsightsCardProps {
     patterns?: MemoryPattern[];
     insights?: MemoryInsight[];

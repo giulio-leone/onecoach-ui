@@ -11,9 +11,9 @@ import { useEffect, startTransition } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { LayoutDashboard, MessageSquare, Dumbbell, Apple, CreditCard, Shield, ShoppingCart, Receipt, User, BarChart3, Users, GraduationCap, TrendingUp, ShoppingBag, Calendar, FileText, Sparkles, UserCircle, CheckCircle2, Bot, Settings, Wand2, Activity, } from 'lucide-react';
 import { ModernSidebar } from '../modern-sidebar';
-import { useUIStore, useAuthStore, useSidebarStore } from '@OneCoach/lib-stores';
-import { isAdminRole, isCoachRole } from '@OneCoach/lib-core/auth/roles';
-import { useSignOut } from '@OneCoach/lib-api/hooks';
+import { useUIStore, useAuthStore, useSidebarStore } from '@onecoach/lib-stores';
+import { isAdminRole, isCoachRole } from '@onecoach/lib-core/auth/roles';
+import { useSignOut } from '@onecoach/lib-api/hooks';
 // Deduplica voci di navigazione con lo stesso href per evitare chiavi duplicate
 function dedupeNavigation(items) {
     const seen = new Set();

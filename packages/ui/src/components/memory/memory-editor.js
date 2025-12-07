@@ -12,7 +12,7 @@ import { Card } from '../../card';
 import { Button } from '../../button';
 import { Input } from '../../input';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../tabs';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Save, Plus, Trash2 } from 'lucide-react';
 export function MemoryEditor({ userId, domain, onSave, className }) {
     const [preferences, setPreferences] = useState({});

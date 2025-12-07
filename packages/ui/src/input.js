@@ -6,7 +6,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Minimum 44px height, WCAG AA compliant
  */
 import React from 'react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 export const Input = React.forwardRef(({ label, error, helperText, className = '', fullWidth = true, ...props }, ref) => {
     return (_jsxs("div", { className: cn('flex flex-col gap-2', fullWidth && 'w-full'), children: [label && (_jsx("label", { htmlFor: props.id, className: cn('block text-sm font-semibold', darkModeClasses.text.secondary), children: label })), _jsx("input", { ref: ref, className: cn(
                 // Base styles - Touch-friendly (min 44px height)

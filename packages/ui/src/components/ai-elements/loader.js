@@ -6,7 +6,7 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { forwardRef } from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export const StreamingDots = forwardRef(({ size = 'md', className, ...props }, ref) => {
     const sizeClasses = {
         sm: 'h-1 w-1',

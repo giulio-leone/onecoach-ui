@@ -1,7 +1,7 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function ProgramInfoCard({ name, description, metadata = [], icon: Icon, variant = 'workout', className = '', }) {
     const isWorkout = variant === 'workout';
     const gradientFrom = isWorkout ? 'from-green-50/50' : 'from-emerald-50/50';

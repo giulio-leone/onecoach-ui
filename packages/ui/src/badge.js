@@ -6,7 +6,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
  * Componente per etichette e tag
  */
 import React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export const Badge = ({ variant = 'default', size = 'md', children, className = '', ...props }) => {
     const variantStyles = {
         default: cn('bg-violet-100 dark:bg-violet-900/30', 'text-violet-700 dark:text-violet-300', 'border border-violet-200 dark:border-violet-800'),

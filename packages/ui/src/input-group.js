@@ -2,7 +2,7 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import * as React from 'react';
 import { cva } from 'class-variance-authority';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Button } from './button';
 import { Input } from './input';
 import { Textarea } from './textarea';

@@ -8,7 +8,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Principi: KISS, SOLID, DRY
  */
 import { useEffect, useState } from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function AdminTabs({ tabs, defaultTab, onTabChange, className }) {
     const [activeTab, setActiveTab] = useState(() => {
         // Preferisci hash dall'URL, poi default

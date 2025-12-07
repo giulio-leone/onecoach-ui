@@ -3,12 +3,12 @@
  *
  * Esporta solo utility hooks cross-feature.
  * Feature-specific hooks sono disponibili nei feature modules:
- * - @OneCoach/features/workout/hooks
- * - @OneCoach/features/nutrition/hooks
- * - @OneCoach/features/exercise/hooks
- * - @OneCoach/features/food/hooks
- * - @OneCoach/features/analytics/hooks
- * - @OneCoach/features/coach/hooks
+ * - @onecoach/features/workout/hooks
+ * - @onecoach/features/nutrition/hooks
+ * - @onecoach/features/exercise/hooks
+ * - @onecoach/features/food/hooks
+ * - @onecoach/features/analytics/hooks
+ * - @onecoach/features/coach/hooks
  */
 
 // Generation hooks (cross-feature utility)

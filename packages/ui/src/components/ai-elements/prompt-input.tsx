@@ -23,7 +23,7 @@ import {
   useState,
 } from 'react';
 import { Send, Square, Paperclip, Mic, Sparkles, X } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import {
   DropdownMenu,
   DropdownMenuContent,

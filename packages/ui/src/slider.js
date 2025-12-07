@@ -1,7 +1,7 @@
 'use client';
 import { jsx as _jsx } from "react/jsx-runtime";
 import * as React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function Slider({ value, min, max, step, onValueChange, disabled, className }) {
     const handleChange = (e) => {
         onValueChange([parseFloat(e.target.value)]);

@@ -4,7 +4,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { Link } from 'solito/link';
 import { GlassCard } from './glass-card';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { ChevronRight } from 'lucide-react-native';
 
 export interface QuickAction {

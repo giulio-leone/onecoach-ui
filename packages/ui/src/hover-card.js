@@ -2,7 +2,7 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import * as React from 'react';
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 function HoverCard({ ...props }) {
     return _jsx(HoverCardPrimitive.Root, { "data-slot": "hover-card", ...props });
 }

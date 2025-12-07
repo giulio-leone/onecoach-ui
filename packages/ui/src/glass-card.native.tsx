@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
 import type { ViewProps } from 'react-native';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 export interface GlassCardProps extends ViewProps {
   className?: string;

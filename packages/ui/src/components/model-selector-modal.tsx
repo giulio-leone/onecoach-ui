@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { Search, Check, ChevronsUpDown, Box } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Modal } from '../modal';
 import { Input } from '../input';
 

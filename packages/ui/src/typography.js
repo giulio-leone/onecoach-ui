@@ -6,7 +6,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Mobile-first, responsive, and optimized for dark mode.
  */
 import React from 'react';
-import { cn, darkModeClasses } from '@OneCoach/lib-design-system';
+import { cn, darkModeClasses } from '@onecoach/lib-design-system';
 const headingSizeStyles = {
     xs: 'text-xs leading-4',
     sm: 'text-sm leading-5',

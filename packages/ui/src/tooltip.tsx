@@ -9,7 +9,7 @@
 
 import * as React from 'react';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 const TooltipProvider = TooltipPrimitive.Provider;
 

@@ -1,5 +1,5 @@
 {
-  "name": "@OneCoach/lib-design-system",
+  "name": "@onecoach/lib-design-system",
   "version": "0.0.0",
   "description": "Design system (tokens, theme, animations)",
   "main": "src/index.ts",

@@ -6,7 +6,7 @@
  */
 'use client';
 import { jsx as _jsx } from "react/jsx-runtime";
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 const sizeClasses = {
     sm: 'p-1.5',
     md: 'p-2',

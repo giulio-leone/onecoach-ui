@@ -4,7 +4,7 @@
  * Displays timeline of significant events (progress, injuries, goals).
  * KISS: Simple timeline list
  */
-import type { TimelineEventType, MemoryDomain } from '@OneCoach/lib-core/user-memory/types';
+import type { TimelineEventType, MemoryDomain } from '@onecoach/lib-core/user-memory/types';
 export interface MemoryTimelineProps {
     userId: string;
     eventType?: TimelineEventType;

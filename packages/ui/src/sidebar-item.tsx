@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { motion } from 'framer-motion';
 import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';

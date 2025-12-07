@@ -7,7 +7,7 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { GlassCard } from './glass-card';
 
 export interface SelectionCardProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

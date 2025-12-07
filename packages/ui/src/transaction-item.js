@@ -6,7 +6,7 @@
  */
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { IconBadge } from './icon-badge';
 import { AmountDisplay } from './amount-display';
 export function TransactionItem({ icon, iconVariant, title, subtitle, amount, balance, showAmount = true, showBalance = true, className, onClick, }) {

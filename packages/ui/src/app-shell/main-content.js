@@ -6,8 +6,8 @@ import { jsx as _jsx } from "react/jsx-runtime";
  * Wrapper responsivo che applica margini dinamici per sidebar e copilot.
  */
 import { useEffect, useState } from 'react';
-import { useSidebar, useUIStore, useCopilotStore } from '@OneCoach/lib-stores';
-import { cn } from '@OneCoach/lib-design-system';
+import { useSidebar, useUIStore, useCopilotStore } from '@onecoach/lib-stores';
+import { cn } from '@onecoach/lib-design-system';
 import { SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '../modern-sidebar';
 export function AppShellMainContent({ children, className }) {
     const { isOpen } = useSidebar();

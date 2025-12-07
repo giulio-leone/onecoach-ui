@@ -1,6 +1,6 @@
 import { View, Text, TextInput } from 'react-native';
 import type { TextInputProps } from 'react-native';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 export interface FormInputProps extends TextInputProps {
   label?: string;

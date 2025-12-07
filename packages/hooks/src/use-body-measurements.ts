@@ -7,7 +7,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import type { BodyMeasurement } from '@OneCoach/types';
+import type { BodyMeasurement } from '@onecoach/types';
 
 /**
  * Get all body measurements

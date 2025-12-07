@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 import { Button } from '../../button';
 import { Textarea } from '../../textarea';
 import { Sparkles } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 export interface MemoryEnhancedTextProps {
   value: string;

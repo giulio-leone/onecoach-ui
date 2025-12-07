@@ -2,7 +2,7 @@ import { Text, TouchableOpacity, ActivityIndicator, View } from 'react-native';
 import type { TouchableOpacityProps } from 'react-native';
 // @ts-ignore
 import { LinearGradient } from 'expo-linear-gradient';
-import { cn } from '@OneCoach/lib-design-system/dark-mode-classes';
+import { cn } from '@onecoach/lib-design-system/dark-mode-classes';
 
 export interface GradientButtonProps extends TouchableOpacityProps {
   label?: string;

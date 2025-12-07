@@ -3,7 +3,7 @@
 import React from 'react';
 import { Search, LayoutGrid, List as ListIcon, Plus } from 'lucide-react';
 import { GradientButton } from '../../gradient-button';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 export interface CatalogHeaderProps {
   title: string;

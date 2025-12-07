@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { GlassCard } from '../glass-card';
 import { ProgressBar } from './progress-bar';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Calendar, MoreVertical, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 export function ProjectCard({ id, title, description, status, progress, dueDate, taskCount, completedTaskCount, color = '#3B82F6', className, }) {

@@ -6,7 +6,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
  * Deep dark mode optimized
  */
 import React from 'react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 const paddingStyles = {
     none: 'p-0',
     sm: 'p-4',

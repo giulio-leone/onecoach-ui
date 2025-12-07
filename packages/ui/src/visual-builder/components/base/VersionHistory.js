@@ -6,7 +6,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Displays list of versions with restore functionality
  * Fully optimized for dark mode
  */
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 export function VersionHistory({ versions, onRestore, className = '', variant = 'blue', }) {
     const gradientClass = variant === 'green'
         ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800'

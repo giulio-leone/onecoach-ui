@@ -9,7 +9,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useRef, useEffect, forwardRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, MessageSquare } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export const Conversation = forwardRef(({ className, children, ...props }, ref) => (_jsx("div", { ref: ref, className: cn('relative flex h-full flex-col overflow-hidden', className), ...props, children: children })));
 Conversation.displayName = 'Conversation';
 export const ConversationContent = forwardRef(({ className, children, ...props }, ref) => {

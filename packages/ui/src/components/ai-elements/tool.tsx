@@ -10,7 +10,7 @@
 
 import { useState, forwardRef, type ComponentProps, type ReactNode } from 'react';
 import { Wrench, ChevronDown, CheckCircle, XCircle, Clock, Circle } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 // ============================================================================
 // Types (aligned with AI SDK v6 ToolUIPart)

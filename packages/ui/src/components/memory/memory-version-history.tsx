@@ -11,8 +11,8 @@ import { useEffect, useState } from 'react';
 import { Card } from '../../card';
 import { Button } from '../../button';
 import { History, RotateCcw } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
-import type { MemoryVersion } from '@OneCoach/lib-core/user-memory/types';
+import { cn } from '@onecoach/lib-design-system';
+import type { MemoryVersion } from '@onecoach/lib-core/user-memory/types';
 
 export interface MemoryVersionHistoryProps {
   userId: string;

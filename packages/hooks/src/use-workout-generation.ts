@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import type { WorkoutGenerationInput, WorkoutGenerationOutput } from '@OneCoach/types';
+import type { WorkoutGenerationInput, WorkoutGenerationOutput } from '@onecoach/types';
 import {
   type GenerationCallbacks,
   type GenerationStreamEvent,

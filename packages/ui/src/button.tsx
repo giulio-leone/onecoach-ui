@@ -9,7 +9,7 @@
 
 import React from 'react';
 import type { LucideIcon } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import {
   type ButtonVariant,
   type ButtonSize,

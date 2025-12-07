@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 
 export interface MetadataField {
   key: string;

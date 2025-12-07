@@ -8,7 +8,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  */
 import React from 'react';
 import { GripVertical } from 'lucide-react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 export function ItemCard({ children, isDragging = false, dragHandleProps, className = '', variant = 'default', showDragHandle = false, }) {
     const cardClass = variant === 'elevated'
         ? darkModeClasses.card.elevated

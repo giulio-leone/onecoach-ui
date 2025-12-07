@@ -9,11 +9,11 @@
 
 import { useState, useEffect, useRef, useCallback, startTransition } from 'react';
 import { useCompletion } from '@ai-sdk/react';
-import type { ExtendedMessage } from '@OneCoach/types';
+import type { ExtendedMessage } from '@onecoach/types';
 import type { ModelTier } from '@onecoach/lib-ai-agents/core/providers';
-import type { NutritionPlan } from '@OneCoach/types';
-import type { WorkoutProgram } from '@OneCoach/types';
-import { AI_REASONING_CONFIG } from '@OneCoach/constants/models';
+import type { NutritionPlan } from '@onecoach/types';
+import type { WorkoutProgram } from '@onecoach/types';
+import { AI_REASONING_CONFIG } from '@onecoach/constants/models';
 
 export interface ChatOptions {
   tier?: ModelTier;

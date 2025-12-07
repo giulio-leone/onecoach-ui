@@ -6,7 +6,7 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
-import { semanticColors } from '@OneCoach/constants/colors';
+import { semanticColors } from '@onecoach/constants/colors';
 
 export type DialogType = 'alert' | 'confirm' | 'prompt' | 'info' | 'success' | 'warning' | 'error';
 

@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Sparkles, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
 import { GradientButton } from '../gradient-button';
 // ----------------------------------------------------------------------------

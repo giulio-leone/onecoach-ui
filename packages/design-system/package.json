@@ -7,7 +7,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@OneCoach/lib-theme": "workspace:*",
+    "@onecoach/lib-theme": "workspace:*",
     "tailwindcss": "^4.1.17",
     "uniwind": "^1.0.0"
   },

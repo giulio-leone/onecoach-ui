@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { useNavigationStateStore } from '@OneCoach/lib-stores';
+import { useNavigationStateStore } from '@onecoach/lib-stores';
 import { useShallow } from 'zustand/react/shallow';
 
 /**

@@ -5,7 +5,7 @@
  * KISS: Simple tabbed interface
  * SOLID: Single responsibility - only display
  */
-import type { MemoryDomain } from '@OneCoach/lib-core/user-memory/types';
+import type { MemoryDomain } from '@onecoach/lib-core/user-memory/types';
 export interface MemoryViewerProps {
     userId: string;
     initialDomain?: MemoryDomain;

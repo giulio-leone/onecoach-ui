@@ -58,7 +58,7 @@ const persistThemePreference = (value: Theme, storageKey: string) => {
 export function ThemeProvider({
   children,
   defaultTheme = 'system',
-  storageKey = 'OneCoach-theme',
+  storageKey = 'onecoach-theme',
   initialTheme,
   initialActualTheme,
 }: ThemeProviderProps) {

@@ -1,5 +1,5 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { GlassCard } from '../glass-card';
 const colors = {
     blue: 'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300',

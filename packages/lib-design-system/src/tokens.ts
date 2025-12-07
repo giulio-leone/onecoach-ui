@@ -1,7 +1,7 @@
 /**
  * Design System Tokens
  *
- * Centralized design tokens for the OneCoach application.
+ * Centralized design tokens for the onecoach application.
  * These tokens define the core visual language and should be used
  * consistently across all components.
  */

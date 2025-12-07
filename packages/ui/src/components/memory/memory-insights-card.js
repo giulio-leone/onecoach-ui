@@ -7,7 +7,7 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Card } from '../../card';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function MemoryInsightsCard({ patterns = [], insights = [], className, }) {
     if (patterns.length === 0 && insights.length === 0) {
         return null;

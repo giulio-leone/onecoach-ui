@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import type { TouchableOpacityProps, ImageSourcePropType } from 'react-native';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { GlassCard } from './glass-card';
 
 export interface SelectionCardProps extends TouchableOpacityProps {

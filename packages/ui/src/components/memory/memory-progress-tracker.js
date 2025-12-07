@@ -13,7 +13,7 @@ import { Input } from '../../input';
 import { Textarea } from '../../textarea';
 import { MemoryTimeline } from './memory-timeline';
 import { Plus } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function MemoryProgressTracker({ userId, className }) {
     const [showAddForm, setShowAddForm] = useState(false);
     const [eventType, setEventType] = useState('progress');

@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 import { Button } from '../../button';
 import { Textarea } from '../../textarea';
 import { Sparkles } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function MemoryEnhancedText({ value, onChange, onEnhanced, placeholder, context, domain, className, disabled, }) {
     const [isEnhancing, setIsEnhancing] = useState(false);
     const [error, setError] = useState(null);

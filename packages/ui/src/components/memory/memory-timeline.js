@@ -8,7 +8,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useState } from 'react';
 import { Card } from '../../card';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { TrendingUp, AlertTriangle, Target, Award, FileText } from 'lucide-react';
 const eventIcons = {
     progress: TrendingUp,

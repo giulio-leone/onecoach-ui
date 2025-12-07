@@ -1,7 +1,7 @@
 /**
- * AI Elements - OneCoach
+ * AI Elements - onecoach
  *
- * Componenti chat ispirate ad AI Elements di Vercel ma con styling custom OneCoach.
+ * Componenti chat ispirate ad AI Elements di Vercel ma con styling custom onecoach.
  * Integrazione nativa con AI SDK v6 useChat hook.
  *
  * PRINCIPI:

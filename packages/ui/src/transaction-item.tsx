@@ -7,7 +7,7 @@
 
 'use client';
 
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { IconBadge } from './icon-badge';
 import { AmountDisplay } from './amount-display';
 import type { LucideIcon } from 'lucide-react';

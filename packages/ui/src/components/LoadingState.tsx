@@ -8,7 +8,7 @@
 
 'use client';
 
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 interface LoadingStateProps {
   message?: string;

@@ -1,5 +1,5 @@
 import { View, TouchableOpacity } from 'react-native';
-import { cn } from '@OneCoach/lib-design-system/dark-mode-classes';
+import { cn } from '@onecoach/lib-design-system/dark-mode-classes';
 import { Text } from '../typography';
 import { Badge } from '../badge';
 import { CheckCircle2, Clock, Repeat } from 'lucide-react-native';

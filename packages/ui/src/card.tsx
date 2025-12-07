@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?:

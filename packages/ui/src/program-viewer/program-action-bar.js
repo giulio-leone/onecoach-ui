@@ -1,7 +1,7 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { ArrowLeft, Play, Trash2 } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function ProgramActionBar({ onBack, onTrack, onDelete, trackLabel = 'Track Today', deleteLabel = 'Elimina Programma', variant = 'workout', className = '', }) {
     const isWorkout = variant === 'workout';
     const trackColor = isWorkout

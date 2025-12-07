@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import type { MeshEvent } from '@OneCoach/one-agent';
+import type { MeshEvent } from '@onecoach/one-agent';
 import { apiClient } from '@onecoach/lib-api-client';
 
 export interface GenerationStreamEvent<TOutput = unknown> {

@@ -1,7 +1,7 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function GlassTable({ data, columns, onRowClick, keyExtractor, isLoading, emptyState, className, selectedIds, onSelectRow, onSelectAll, isAllSelected, }) {
     if (isLoading) {
         return (_jsx("div", { className: "w-full space-y-4 p-4", children: [...Array(5)].map((_, i) => (_jsx("div", { className: "h-16 w-full animate-pulse rounded-xl bg-white/20 dark:bg-white/5" }, i))) }));

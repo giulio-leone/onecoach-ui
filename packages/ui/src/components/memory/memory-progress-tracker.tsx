@@ -14,8 +14,8 @@ import { Input } from '../../input';
 import { Textarea } from '../../textarea';
 import { MemoryTimeline } from './memory-timeline';
 import { Plus } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
-import type { TimelineEventType } from '@OneCoach/lib-core/user-memory/types';
+import { cn } from '@onecoach/lib-design-system';
+import type { TimelineEventType } from '@onecoach/lib-core/user-memory/types';
 
 export interface MemoryProgressTrackerProps {
   userId: string;

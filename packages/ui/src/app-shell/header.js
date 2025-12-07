@@ -10,8 +10,8 @@ import { Menu, Sparkles, Bot, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import { usePathname } from 'next/navigation';
-import { cn } from '@OneCoach/lib-design-system';
-import { useUIStore, useHeaderActions, useAuthStore } from '@OneCoach/lib-stores';
+import { cn } from '@onecoach/lib-design-system';
+import { useUIStore, useHeaderActions, useAuthStore } from '@onecoach/lib-stores';
 import { ThemeToggle } from '../theme-toggle';
 export function AppShellHeader({ titleOverride, brandHref, brandLabel }) {
     const { toggleMobileMenu } = useUIStore();
@@ -34,7 +34,7 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }) {
             return 'Profilo';
         if (pathname?.startsWith('/admin'))
             return 'Admin';
-        return 'OneCoach';
+        return 'onecoach';
     };
     const toggleCopilotEnabled = async () => {
         if (!user)
@@ -64,7 +64,7 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }) {
     };
     const isOneAgenda = pathname?.startsWith('/oneagenda');
     const safeBrandHref = brandHref ?? (isOneAgenda ? '/oneagenda' : '/dashboard');
-    const safeBrandLabel = brandLabel ?? (isOneAgenda ? 'OneAgenda' : 'OneCoach');
+    const safeBrandLabel = brandLabel ?? (isOneAgenda ? 'OneAgenda' : 'onecoach');
     return (_jsx("header", { className: cn('sticky top-0 z-40 w-full border-b border-neutral-200 dark:border-neutral-800', 'bg-white/50 backdrop-blur-xl backdrop-saturate-150 dark:bg-[#020408]/50', 'supports-[backdrop-filter]:bg-white/50 dark:supports-[backdrop-filter]:bg-[#020408]/50', 'transition-all duration-200'), children: _jsxs("div", { className: "flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8", children: [_jsxs("div", { className: "flex items-center gap-4", children: [_jsx("button", { onClick: toggleMobileMenu, className: "rounded-lg p-2 text-neutral-500 hover:bg-neutral-100 lg:hidden dark:text-neutral-400 dark:hover:bg-neutral-800", "aria-label": "Apri menu", children: _jsx(Menu, { className: "h-6 w-6" }) }), _jsxs("div", { className: "flex items-center gap-3", children: [_jsxs(Link, { href: safeBrandHref, className: "group flex items-center gap-2 lg:hidden", children: [_jsx("div", { className: "flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20", children: isOneAgenda ? _jsx(Calendar, { className: "h-4 w-4" }) : _jsx(Sparkles, { className: "h-4 w-4" }) }), _jsx("span", { className: "font-bold text-neutral-900 dark:text-white", children: safeBrandLabel })] }), _jsx("div", { className: "hidden items-center gap-2 lg:flex", children: _jsx("h1", { className: "text-lg font-semibold text-neutral-900 dark:text-white", children: getPageTitle() }) })] })] }), _jsxs("div", { className: "flex items-center gap-2 sm:gap-4", children: [headerActions && (_jsx("div", { className: "flex items-center gap-2 border-r border-neutral-200 pr-2 sm:pr-4 dark:border-neutral-800", children: headerActions })), _jsx("button", { onClick: toggleCopilotEnabled, className: cn('rounded-md p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800', user?.copilotEnabled
                                 ? 'text-blue-600 dark:text-blue-400'
                                 : 'text-neutral-500 dark:text-neutral-400'), title: user?.copilotEnabled ? 'Disattiva Copilot' : 'Attiva Copilot', children: _jsx(Bot, { className: "h-5 w-5" }) }), _jsx(ThemeToggle, {})] })] }) }));

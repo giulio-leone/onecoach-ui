@@ -13,8 +13,8 @@ import type { ComponentType } from 'react';
 import { Card } from '../../card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../tabs';
 import { MemoryInsightsCard } from './memory-insights-card';
-import type { UserMemory, MemoryDomain } from '@OneCoach/lib-core/user-memory/types';
-import { cn } from '@OneCoach/lib-design-system';
+import type { UserMemory, MemoryDomain } from '@onecoach/lib-core/user-memory/types';
+import { cn } from '@onecoach/lib-design-system';
 import {
   Dumbbell,
   UtensilsCrossed,

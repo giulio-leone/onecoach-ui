@@ -1,6 +1,6 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 export function SidebarItem({ name, href, icon: Icon, isActive, isCollapsed, badge, onClick, depth = 0, }) {

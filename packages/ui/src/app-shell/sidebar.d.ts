@@ -1,4 +1,4 @@
-import type { AuthenticatedUser } from '@OneCoach/lib-core/auth/session';
+import type { AuthenticatedUser } from '@onecoach/lib-core/auth/session';
 export interface AppShellSidebarProps {
     user: AuthenticatedUser;
 }

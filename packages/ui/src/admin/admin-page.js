@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Container, Stack } from '../layout';
 /**
  * AdminPage - wrapper con background e contenitore coerente tra pagine admin.

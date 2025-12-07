@@ -29,7 +29,7 @@ interface ThemeProviderProps {
 export function ThemeProvider({
   children,
   defaultTheme = 'system',
-  storageKey = 'OneCoach-theme',
+  storageKey = 'onecoach-theme',
 }: ThemeProviderProps) {
   const systemColorScheme = useColorScheme();
   const [theme, setThemeState] = useState<Theme>(defaultTheme);

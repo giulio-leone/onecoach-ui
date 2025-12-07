@@ -9,7 +9,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 export const Modal = ({ isOpen, onClose, title, children, size = 'md', closeOnBackdropClick = true, showCloseButton = true, mobileFullScreen = true, }) => {
     const [mounted, setMounted] = React.useState(false);
     const modalRef = useRef(null);

@@ -6,8 +6,8 @@
     "paths": {
       "hooks/*": ["./src/*"],
       "lib/*": ["../lib/src/*"],
-      "@OneCoach/constants": ["../constants/src/index.ts"],
-      "@OneCoach/constants/*": ["../constants/src/*"],
+      "@onecoach/constants": ["../constants/src/index.ts"],
+      "@onecoach/constants/*": ["../constants/src/*"],
       "types": ["../types/src/index.ts"],
       "types/*": ["../types/src/*"],
       "@/*": ["../../apps/next/*"],

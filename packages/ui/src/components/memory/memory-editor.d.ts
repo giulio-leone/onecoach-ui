@@ -5,7 +5,7 @@
  * KISS: Simple form-based editor
  * SOLID: Single responsibility - only editing
  */
-import type { MemoryDomain } from '@OneCoach/lib-core/user-memory/types';
+import type { MemoryDomain } from '@onecoach/lib-core/user-memory/types';
 export interface MemoryEditorProps {
     userId: string;
     domain: MemoryDomain;

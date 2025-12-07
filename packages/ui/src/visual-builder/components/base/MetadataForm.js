@@ -7,7 +7,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Fully optimized for dark mode
  */
 import React from 'react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 export function MetadataForm({ fields, className = '', columns = 3, renderCustomField, }) {
     const gridCols = {
         1: 'grid-cols-1',

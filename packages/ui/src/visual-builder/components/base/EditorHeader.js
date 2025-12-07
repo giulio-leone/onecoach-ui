@@ -7,7 +7,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Fully optimized for dark mode
  */
 import { Save, History } from 'lucide-react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 export function EditorHeader({ name, description, onNameChange, onDescriptionChange, onSave, isSaving, isEditMode, showVersions: _showVersions, onToggleVersions, saveButtonText, saveButtonVariant = 'blue', className = '', }) {
     const buttonClass = saveButtonVariant === 'green'
         ? 'bg-green-600 hover:bg-green-700 active:bg-green-800 dark:bg-green-500 dark:hover:bg-green-600 dark:active:bg-green-700 text-white'

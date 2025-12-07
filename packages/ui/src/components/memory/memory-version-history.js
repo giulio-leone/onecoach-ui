@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { Card } from '../../card';
 import { Button } from '../../button';
 import { History, RotateCcw } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function MemoryVersionHistory({ userId, limit = 20, onRestore, className, }) {
     const [versions, setVersions] = useState([]);
     const [isLoading, setIsLoading] = useState(true);

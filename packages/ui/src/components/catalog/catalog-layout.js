@@ -3,7 +3,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import { Search, LayoutGrid, List as ListIcon, Plus } from 'lucide-react';
 import { GradientButton } from '../../gradient-button';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export const CatalogHeader = ({ title, description, stats = [], onAdd, addLabel = 'Aggiungi Nuovo', }) => {
     return (_jsxs("div", { className: "mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between", children: [_jsxs("div", { className: "space-y-2", children: [_jsx("h1", { className: "text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl dark:text-white", children: title }), description && (_jsx("p", { className: "text-lg text-neutral-500 dark:text-neutral-400", children: description })), stats.length > 0 && (_jsx("div", { className: "flex gap-6 pt-2", children: stats.map((stat) => (_jsxs("div", { className: "flex items-baseline gap-2", children: [_jsx("span", { className: "text-2xl font-bold text-neutral-900 dark:text-white", children: stat.value }), _jsx("span", { className: "text-sm font-medium text-neutral-500 dark:text-neutral-400", children: stat.label })] }, stat.label))) }))] }), onAdd && (_jsx(GradientButton, { onClick: onAdd, className: "shrink-0", children: _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Plus, { size: 20 }), _jsx("span", { children: addLabel })] }) }))] }));
 };

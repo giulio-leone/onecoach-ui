@@ -1,6 +1,6 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function ProgressBar({ value, max = 100, className, color = 'bg-blue-500', showLabel = false, size = 'md', }) {
     const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
     const heights = {

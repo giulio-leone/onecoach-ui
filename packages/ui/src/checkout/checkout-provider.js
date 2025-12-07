@@ -6,7 +6,7 @@
 'use client';
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Elements } from '@stripe/react-stripe-js';
-import { getStripeClient } from '@OneCoach/lib-core/stripe/client';
+import { getStripeClient } from '@onecoach/lib-core/stripe/client';
 import { useMemo } from 'react';
 export function CheckoutProvider({ clientSecret, children }) {
     const stripePromise = useMemo(() => getStripeClient(), []);

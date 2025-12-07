@@ -7,7 +7,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Provides: Container, Grid, Stack, Flex, Box, Divider, Spacer
  */
 import React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 const containerMaxWidthStyles = {
     sm: 'max-w-screen-sm',
     md: 'max-w-screen-md',

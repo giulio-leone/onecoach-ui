@@ -1,6 +1,6 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Check, Flame } from 'lucide-react';
 export function HabitCard({ id, title, description, streak, completedToday, frequency, onToggle, className, }) {
     return (_jsx("div", { className: cn('group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900', completedToday &&

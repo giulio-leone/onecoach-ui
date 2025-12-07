@@ -6,7 +6,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Works on both web (Tailwind CSS) and native (Uniwind/Metro)
  */
 import { Pressable, Text, View, Platform } from 'react-native';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export const UnifiedTabButton = ({ active, onClick, icon: Icon, label, count, }) => {
     return (_jsxs(Pressable, { onPress: onClick, className: cn('flex-row items-center gap-2 rounded-2xl px-4 py-3', active
             ? 'bg-emerald-500 shadow-lg dark:bg-emerald-600'

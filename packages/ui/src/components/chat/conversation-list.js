@@ -1,7 +1,7 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Plus, MessageSquare, Search, Trash2, X, Check } from 'lucide-react';
 import { Button } from '../../button';
 import { Input } from '../../input';

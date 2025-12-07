@@ -6,7 +6,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Minimum 44px height, WCAG AA compliant
  */
 import React from 'react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 export const Select = React.forwardRef(({ label, error, helperText, className = '', fullWidth = true, children, onValueChange, options, onChange, ...props }, ref) => {
     const handleChange = (event) => {
         onChange?.(event);

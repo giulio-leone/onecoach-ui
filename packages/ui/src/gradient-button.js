@@ -6,7 +6,7 @@
 'use client';
 import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Loader2 } from 'lucide-react';
 export function GradientButton({ label, loading, variant = 'primary', className, textClassName, icon, disabled, children, onClick, onPress, ...props }) {
     const isDisabled = disabled || loading;

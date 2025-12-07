@@ -8,7 +8,7 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { createContext, useContext, useId } from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Check } from 'lucide-react';
 const checkboxSizeStyles = {
     sm: 'h-4 w-4',

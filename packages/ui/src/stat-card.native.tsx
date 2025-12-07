@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { GlassCard } from './glass-card';
 // @ts-ignore
 import { LinearGradient } from 'expo-linear-gradient';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import type { LucideIcon } from 'lucide-react-native';
 
 interface StatCardProps {

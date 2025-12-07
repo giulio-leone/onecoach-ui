@@ -3,7 +3,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import * as React from 'react';
 import useEmblaCarousel, {} from 'embla-carousel-react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Button } from './button';
 const CarouselContext = React.createContext(null);
 function useCarousel() {

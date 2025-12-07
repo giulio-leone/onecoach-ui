@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Avatar } from './avatar';
 import { GlassCard } from './glass-card';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function WelcomeHeader({ userName, className, title, subtitle }) {
     const getGreeting = () => {
         const hour = new Date().getHours();

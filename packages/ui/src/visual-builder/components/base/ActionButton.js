@@ -7,7 +7,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Fully optimized for dark mode
  */
 import React from 'react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 const variantClasses = {
     primary: 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800 dark:bg-blue-500 dark:hover:bg-blue-600 dark:active:bg-blue-700 text-white',
     secondary: cn('border', darkModeClasses.border.base, darkModeClasses.bg.base, darkModeClasses.text.secondary, darkModeClasses.interactive.hover),

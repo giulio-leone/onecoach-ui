@@ -7,7 +7,7 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { Settings, Sparkles, Zap } from 'lucide-react';
-import { AI_MODELS } from '@OneCoach/constants';
+import { AI_MODELS } from '@onecoach/constants';
 export const ModelSelector = ({ model, onChange, extendedThinking, onThinkingChange, }) => {
     const isSonnet = model === AI_MODELS.SONNET_4_5;
     const isHaiku = model === AI_MODELS.HAIKU_4_5;

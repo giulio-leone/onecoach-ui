@@ -9,7 +9,7 @@
 
 import { useState, useCallback } from 'react';
 import type { CalendarPlanType } from '@prisma/client';
-import type { CalendarAssignment, RecurrenceRule } from '@OneCoach/lib-core';
+import type { CalendarAssignment, RecurrenceRule } from '@onecoach/lib-core';
 
 interface UseCalendarAssignmentsOptions {
   startDate: string;

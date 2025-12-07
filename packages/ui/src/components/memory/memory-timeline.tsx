@@ -13,8 +13,8 @@ import type {
   TimelineEvent,
   TimelineEventType,
   MemoryDomain,
-} from '@OneCoach/lib-core/user-memory/types';
-import { cn } from '@OneCoach/lib-design-system';
+} from '@onecoach/lib-core/user-memory/types';
+import { cn } from '@onecoach/lib-design-system';
 import { TrendingUp, AlertTriangle, Target, Award, FileText } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 

@@ -9,7 +9,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import * as React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { AlertCircle, CheckCircle, Info, AlertTriangle, X } from 'lucide-react';
-import { cn, darkModeClasses } from '@OneCoach/lib-design-system';
+import { cn, darkModeClasses } from '@onecoach/lib-design-system';
 import { Button } from './button';
 import { getDialogTypeConfig, getDialogLabels, useDialogInput, useDialogHandlers, } from './dialog.shared';
 // -----------------------------------------------------------------------------

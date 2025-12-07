@@ -7,7 +7,7 @@
 
 import { Pressable, Text, View, Platform } from 'react-native';
 import type { ComponentType } from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import type { TabButtonSharedProps } from './tab-button.shared';
 
 export interface UnifiedTabButtonProps extends TabButtonSharedProps {

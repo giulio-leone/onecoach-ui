@@ -1,5 +1,5 @@
 import { View, Text, ScrollView } from 'react-native';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { GlassCard } from './glass-card';
 import { ActivityIndicator } from 'react-native';
 

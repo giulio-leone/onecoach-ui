@@ -7,7 +7,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  * Principi: KISS, SOLID, DRY
  */
 import {} from 'react';
-import { cn, darkModeClasses } from '@OneCoach/lib-design-system';
+import { cn, darkModeClasses } from '@onecoach/lib-design-system';
 const paddingClasses = {
     sm: 'p-3',
     md: 'p-4 sm:p-6',

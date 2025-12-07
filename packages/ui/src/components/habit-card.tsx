@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Check, Flame } from 'lucide-react';
 
 export interface HabitProps {

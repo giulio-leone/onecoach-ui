@@ -7,7 +7,7 @@ import { GlassCard } from '../../glass-card';
 import { Badge } from '../../badge';
 import { Button } from '../../button';
 import { MoreHorizontal } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Image } from '../../image';
 export const ResourceCard = ({ title, subtitle, imageSrc, status, badges = [], stats = [], actions = [], onClick, href, className, children, isSelected, onSelect, }) => {
     const handleClick = (e) => {

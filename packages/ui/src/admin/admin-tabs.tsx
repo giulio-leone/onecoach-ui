@@ -9,7 +9,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 export interface AdminTab {
   id: string;

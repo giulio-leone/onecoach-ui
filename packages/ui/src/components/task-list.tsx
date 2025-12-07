@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { CheckCircle2, Circle, Calendar, Flag } from 'lucide-react';
 
 export interface TaskItemProps {

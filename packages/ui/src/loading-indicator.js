@@ -6,7 +6,7 @@
  */
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Sparkles, Brain, Zap, CheckCircle2 } from 'lucide-react';
 const stages = [
     { icon: Sparkles, color: 'text-amber-400', glow: 'shadow-amber-500/20' },

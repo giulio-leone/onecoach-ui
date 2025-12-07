@@ -36,10 +36,10 @@ import {
   Activity,
 } from 'lucide-react';
 import { ModernSidebar, type SidebarNavigationItem } from '../modern-sidebar';
-import { useUIStore, useAuthStore, useSidebarStore } from '@OneCoach/lib-stores';
-import { isAdminRole, isCoachRole } from '@OneCoach/types';
-import type { AuthenticatedUser } from '@OneCoach/types';
-import { useSignOut } from '@OneCoach/lib-api/hooks';
+import { useUIStore, useAuthStore, useSidebarStore } from '@onecoach/lib-stores';
+import { isAdminRole, isCoachRole } from '@onecoach/types';
+import type { AuthenticatedUser } from '@onecoach/types';
+import { useSignOut } from '@onecoach/lib-api/hooks';
 
 export interface AppShellSidebarProps {
   user: AuthenticatedUser;

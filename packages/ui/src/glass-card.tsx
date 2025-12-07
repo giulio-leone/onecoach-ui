@@ -8,7 +8,7 @@
 'use client';
 
 import React, { forwardRef } from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 export interface GlassCardProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;

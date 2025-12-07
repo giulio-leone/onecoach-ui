@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import { Play } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function ProgramDayCard({ dayNumber, name, notes, children, onTrack, trackLabel = 'Inizia Allenamento', variant = 'workout', className = '', }) {
     const isWorkout = variant === 'workout';
     const trackColor = isWorkout

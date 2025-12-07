@@ -7,7 +7,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState, forwardRef } from 'react';
 import { Brain, ChevronDown } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export const Reasoning = forwardRef(({ isStreaming = false, duration, className, children, ...props }, ref) => (_jsx("div", { ref: ref, className: cn('w-full rounded-lg border border-neutral-200 bg-neutral-50', 'dark:border-neutral-700 dark:bg-neutral-800/30', className), "data-streaming": isStreaming, ...props, children: children })));
 Reasoning.displayName = 'Reasoning';
 export const ReasoningTrigger = forwardRef(({ duration, className, ...props }, ref) => {

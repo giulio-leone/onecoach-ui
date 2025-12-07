@@ -2,7 +2,7 @@
 
 import { GlassCard } from '../glass-card';
 import { ProgressBar } from './progress-bar';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Calendar, MoreVertical, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { TaskList } from './task-list';

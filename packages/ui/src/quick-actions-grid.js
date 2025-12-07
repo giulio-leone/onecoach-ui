@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import Link from 'next/link';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { ArrowUpRight } from 'lucide-react';
 export function QuickActionsGrid({ actions, className }) {
     return (_jsx("div", { className: cn('grid gap-4 sm:grid-cols-2 lg:grid-cols-3', className), children: actions.map((action) => {

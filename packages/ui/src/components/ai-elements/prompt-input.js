@@ -10,7 +10,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { forwardRef, createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, } from 'react';
 import { Send, Square, Paperclip, Mic, Sparkles, X } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, } from '../../dropdown-menu';
 import { Button } from '../../button';
 export const PromptInput = forwardRef(({ className, isLoading, children, ...props }, ref) => (_jsxs("div", { ref: ref, "data-loading": isLoading, className: cn(

@@ -5,7 +5,7 @@
  * Following DRY principle to eliminate duplication
  */
 import { useState, useEffect, useCallback } from 'react';
-import { semanticColors } from '@OneCoach/constants/colors';
+import { semanticColors } from '@onecoach/constants/colors';
 /**
  * Get icon colors based on dialog type
  * Returns color values compatible with both web and native

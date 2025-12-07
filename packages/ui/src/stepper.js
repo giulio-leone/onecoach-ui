@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { View, Text } from 'react-native';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function Stepper({ steps, currentStep, className }) {
     return (_jsx(View, { className: cn('w-full', className), children: _jsx(View, { className: "flex-row items-center justify-between", children: steps.map((step, index) => {
                 const isCompleted = index < currentStep;

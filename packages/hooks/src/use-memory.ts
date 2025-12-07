@@ -18,7 +18,7 @@ import {
   saveVersion,
   getTimeline,
   createTimelineEvent,
-} from '@OneCoach/lib-api-client/memory';
+} from '@onecoach/lib-api-client/memory';
 import type {
   UserMemory,
   MemoryDomain,
@@ -26,7 +26,7 @@ import type {
   TimelineEvent,
   TimelineEventType,
   MemoryVersion,
-} from '@OneCoach/lib-core/user-memory/types';
+} from '@onecoach/lib-core/user-memory/types';
 
 /**
  * Hook for fetching and managing memory

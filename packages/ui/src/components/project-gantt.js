@@ -2,7 +2,7 @@
 import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
 import { format, differenceInDays, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
 import { it } from 'date-fns/locale';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export function ProjectGantt({ project, className }) {
     const startDate = startOfWeek(project.startDate, { weekStartsOn: 1 });
     const endDate = endOfWeek(project.endDate, { weekStartsOn: 1 });

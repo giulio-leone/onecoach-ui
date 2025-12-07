@@ -11,8 +11,8 @@ import { Menu, Sparkles, Bot, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import { usePathname } from 'next/navigation';
-import { cn } from '@OneCoach/lib-design-system';
-import { useUIStore, useHeaderActions, useAuthStore } from '@OneCoach/lib-stores';
+import { cn } from '@onecoach/lib-design-system';
+import { useUIStore, useHeaderActions, useAuthStore } from '@onecoach/lib-stores';
 import { ThemeToggle } from '../theme-toggle';
 
 export interface AppShellHeaderProps {
@@ -36,7 +36,7 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
     if (pathname?.startsWith('/nutrition')) return 'Nutrizione';
     if (pathname?.startsWith('/profile')) return 'Profilo';
     if (pathname?.startsWith('/admin')) return 'Admin';
-    return 'OneCoach';
+    return 'onecoach';
   };
 
   const toggleCopilotEnabled = async () => {
@@ -72,7 +72,7 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
 
   const isOneAgenda = pathname?.startsWith('/oneagenda');
   const safeBrandHref = brandHref ?? (isOneAgenda ? '/oneagenda' : '/dashboard');
-  const safeBrandLabel = brandLabel ?? (isOneAgenda ? 'OneAgenda' : 'OneCoach');
+  const safeBrandLabel = brandLabel ?? (isOneAgenda ? 'OneAgenda' : 'onecoach');
 
   return (
     <header

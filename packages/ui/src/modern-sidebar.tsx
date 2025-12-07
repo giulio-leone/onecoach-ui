@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { SidebarItem } from './sidebar-item';
 import { ThemeToggle } from './theme-toggle';
 import { Button } from './button';
@@ -248,7 +248,7 @@ export function ModernSidebar({
               className="flex flex-col justify-center"
             >
               <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                OneCoach
+                onecoach
               </span>
               {!isMobile && (
                 <span className="text-xs font-semibold tracking-wider text-blue-600 uppercase dark:text-blue-400">

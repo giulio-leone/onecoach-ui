@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Search, LayoutGrid, List as ListIcon } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 export interface GlassToolbarProps {
   searchQuery?: string;

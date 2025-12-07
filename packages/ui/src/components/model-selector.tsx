@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Input } from '../input';
 import { Select } from '../select';
 import { Search, Check, ChevronsUpDown } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 export interface ModelOption {
   id: string;

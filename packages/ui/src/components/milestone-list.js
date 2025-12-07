@@ -1,6 +1,6 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { TaskList } from './task-list';

@@ -8,7 +8,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
  */
 import React from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 export function CollapsibleSection({ title, isExpanded, onToggle, children, headerActions, className = '', headerClassName = '', contentClassName = '', variant = 'default', }) {
     const containerClass = variant === 'card'
         ? cn('rounded-2xl border shadow-sm', darkModeClasses.card.base)

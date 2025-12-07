@@ -1,6 +1,6 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { CheckCircle2, Circle, Calendar, Flag } from 'lucide-react';
 export function TaskItem({ id, title, status, priority, dueDate, onToggle, className, }) {
     const priorityColors = {

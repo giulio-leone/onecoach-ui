@@ -8,7 +8,7 @@
 
 import { useState, forwardRef, type ComponentProps, type ReactNode } from 'react';
 import { Brain, ChevronDown } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 // ============================================================================
 // Reasoning Container

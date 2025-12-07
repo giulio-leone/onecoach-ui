@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Play } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 
 export interface ProgramDayCardProps {
   dayNumber: number;

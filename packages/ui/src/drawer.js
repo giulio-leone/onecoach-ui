@@ -8,7 +8,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
-import { darkModeClasses, cn } from '@OneCoach/lib-design-system';
+import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 import { getDrawerSizeStyles } from './drawer.shared';
 export const Drawer = ({ isOpen, onClose, title, children, position = 'right', size = 'md', closeOnBackdropClick = true, showCloseButton = true, mobileFullScreen = false, }) => {
     const drawerRef = useRef(null);

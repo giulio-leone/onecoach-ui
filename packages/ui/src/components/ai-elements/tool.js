@@ -9,7 +9,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState, forwardRef } from 'react';
 import { Wrench, ChevronDown, CheckCircle, XCircle, Clock, Circle } from 'lucide-react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 export const Tool = forwardRef(({ defaultOpen = false, className, children, ...props }, ref) => {
     return (_jsx("div", { ref: ref, className: cn('rounded-lg border border-neutral-200 bg-neutral-50', 'dark:border-neutral-700 dark:bg-neutral-800/50', 'overflow-hidden', className), "data-state": defaultOpen ? 'open' : 'closed', ...props, children: children }));
 });

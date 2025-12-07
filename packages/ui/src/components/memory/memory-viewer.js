@@ -11,7 +11,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Card } from '../../card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../tabs';
 import { MemoryInsightsCard } from './memory-insights-card';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Dumbbell, UtensilsCrossed, Calendar, FolderKanban, CheckSquare, Target, User, } from 'lucide-react';
 const isUuid = (value) => {
     if (!value)

@@ -1,7 +1,7 @@
 import type {
   PatternNutritionGenerationInput,
   PatternNutritionGenerationOutput,
-} from '@OneCoach/one-agent';
+} from '@onecoach/one-agent';
 import {
   createGenerationHook,
   type GenerationCallbacks,

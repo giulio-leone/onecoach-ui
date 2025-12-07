@@ -7,7 +7,7 @@
 'use client';
 import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { forwardRef } from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 const GlassCardComponent = forwardRef(({ className, intensity = 'medium', variant = 'default', gradient = false, children, ...props }, ref) => {
     const intensityClasses = {
         light: 'bg-gradient-to-br from-white/40 to-white/10 dark:from-neutral-900/40 dark:to-neutral-900/10 backdrop-blur-md ring-1 ring-white/20 dark:ring-white/10',

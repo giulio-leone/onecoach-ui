@@ -6,7 +6,7 @@
 'use client';
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
-import { cn } from '@OneCoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { GlassCard } from './glass-card';
 export function SelectionCard({ title, description, selected, icon, image, className, badge, onClick, onPress, ...props }) {
     // Support both onClick (web) and onPress (for compatibility)
