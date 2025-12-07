@@ -25,6 +25,8 @@ export * from './progress';
 export * from './scroll-area';
 export * from './collapsible';
 export * from './carousel';
+export * from './separator';
+export { Separator } from './separator';
 
 // Navigation Components
 export * from './tab-button';

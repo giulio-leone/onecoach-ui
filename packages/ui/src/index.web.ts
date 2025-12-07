@@ -22,6 +22,17 @@ export * from './spinner';
 export * from './loading-indicator';
 export * from './error-state';
 export * from './empty-state';
+export * from './button-group';
+export * from './carousel';
+export * from './collapsible';
+export * from './scroll-area';
+export * from './progress';
+export * from './separator';
+export { Separator } from './separator';
+export * from './dropdown-menu';
+export * from './hover-card';
+export * from './command';
+export * from './input-group';
 
 // Navigation Components
 export * from './tab-button';
