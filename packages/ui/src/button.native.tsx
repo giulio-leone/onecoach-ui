@@ -5,7 +5,8 @@
  * Mobile-optimized, accessible, touch-friendly
  */
 
-import React from 'react';
+// @ts-ignore
+import { LinearGradient } from 'expo-linear-gradient';
 import {
   Pressable,
   Text,
@@ -71,6 +72,36 @@ export const Button = React.forwardRef<View, ButtonProps>(
     const sizeStyles = getSizeStyles(size);
 
     const isDisabled = disabled || loading;
+    const isGradient = variant.startsWith('gradient-');
+
+    const gradientColors = React.useMemo(() => {
+      if (isDisabled) return ['#9CA3AF', '#6B7280'] as const;
+      if (variant === 'gradient-primary') return ['#7c3aed', '#4f46e5'] as const;
+      if (variant === 'gradient-secondary') return ['#d946ef', '#db2777'] as const;
+      return undefined;
+    }, [variant, isDisabled]);
+
+    const renderContent = (textColor: string) => (
+      <View style={styles.contentContainer}>
+        {loading ? (
+          <ActivityIndicator size="small" color={textColor} />
+        ) : (
+          <>
+            {Icon && iconPosition === 'left' && (
+              <Icon size={iconSize} color={textColor} style={styles.icon} />
+            )}
+            {children && (
+              <Text style={[styles.text, sizeStyles.text, { color: textColor }, textStyle]}>
+                {children}
+              </Text>
+            )}
+            {Icon && iconPosition === 'right' && (
+              <Icon size={iconSize} color={textColor} style={styles.icon} />
+            )}
+          </>
+        )}
+      </View>
+    );
 
     return (
       <Pressable
@@ -81,13 +112,25 @@ export const Button = React.forwardRef<View, ButtonProps>(
         disabled={isDisabled}
         style={({ pressed }) => [
           styles.base,
-          variantStyles.container,
-          sizeStyles.container,
+          !isGradient && variantStyles.container, // Only apply container style if not gradient (gradient handles bg)
+          // For gradient buttons, Apply shadow/radius to the pressable container, but BG is transparent?
+          isGradient && {
+            borderRadius: sizeStyles.container.borderRadius,
+            backgroundColor: 'transparent',
+            // Add shadow for gradient manually if needed or via style prop
+            shadowColor: variant === 'gradient-primary' ? '#3b82f6' : '#d946ef',
+            shadowOffset: { width: 0, height: 4 },
+            shadowOpacity: 0.3,
+            shadowRadius: 4.65,
+            elevation: 8,
+          },
+          !isGradient && sizeStyles.container, // Padding is handled inside for gradient? logic check below.
           {
             minHeight,
-            opacity: isDisabled ? 0.5 : pressed ? 0.8 : 1,
+            opacity: isDisabled && !isGradient ? 0.5 : pressed ? 0.8 : 1, // Gradient handles opacity via colors or view?
             width: fullWidth ? '100%' : 'auto',
             aspectRatio: iconOnly ? 1 : undefined,
+            overflow: 'hidden', // Ensure gradient clips
           },
           style,
         ]}
@@ -98,22 +141,20 @@ export const Button = React.forwardRef<View, ButtonProps>(
         accessibilityHint={accessibilityHint}
         {...props}
       >
-        {loading ? (
-          <ActivityIndicator size="small" color={variantStyles.textColor} />
+        {isGradient && gradientColors ? (
+          <LinearGradient
+            colors={gradientColors}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={[
+              sizeStyles.container, // Apply padding here for gradient
+              { flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center' }
+            ]}
+          >
+            {renderContent('#ffffff')}
+          </LinearGradient>
         ) : (
-          <>
-            {Icon && iconPosition === 'left' && (
-              <Icon size={iconSize} color={variantStyles.textColor} style={styles.icon} />
-            )}
-            {children && (
-              <Text style={[styles.text, variantStyles.text, sizeStyles.text, textStyle]}>
-                {children}
-              </Text>
-            )}
-            {Icon && iconPosition === 'right' && (
-              <Icon size={iconSize} color={variantStyles.textColor} style={styles.icon} />
-            )}
-          </>
+          renderContent(variantStyles.textColor)
         )}
       </Pressable>
     );
@@ -227,9 +268,11 @@ function getVariantStyles(variant: ButtonVariant) {
       text: { color: '#ffffff' },
       textColor: '#ffffff',
     },
+    'gradient-primary': { container: {}, text: {}, textColor: '#fff' }, // Handled specially
+    'gradient-secondary': { container: {}, text: {}, textColor: '#fff' }, // Handled specially
   };
 
-  return styles[variant];
+  return styles[variant] || styles.primary;
 }
 
 // Size styles
@@ -292,6 +335,13 @@ function getSizeStyles(size: ButtonSize) {
 
 const styles = StyleSheet.create({
   base: {
+    // Flex direction row is handled in ContentContainer for gradient, but we need it for Pressable layout
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    // Gap doesn't work well on old RN in Pressable if children are wrapped
+  },
+  contentContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

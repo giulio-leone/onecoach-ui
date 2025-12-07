@@ -10,14 +10,12 @@ import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?:
-  | 'default'
-  | 'elevated'
-  | 'bordered'
-  | 'interactive'
   | 'glass'
   | 'glass-strong'
   | 'hover';
   padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
+  glassIntensity?: 'light' | 'medium' | 'heavy';
+  gradient?: boolean;
   children: React.ReactNode;
 }
 
@@ -32,10 +30,21 @@ const paddingStyles = {
 export const Card = ({
   variant = 'default',
   padding = 'md',
+  glassIntensity = 'medium',
+  gradient = false,
   children,
   className = '',
   ...props
 }: CardProps) => {
+  const glassIntensityClasses = {
+    light:
+      'bg-gradient-to-br from-white/40 to-white/10 dark:from-neutral-900/40 dark:to-neutral-900/10 backdrop-blur-md ring-1 ring-white/20 dark:ring-white/10',
+    medium:
+      'bg-gradient-to-br from-white/50 to-white/20 dark:from-neutral-900/50 dark:to-neutral-900/20 backdrop-blur-xl ring-1 ring-white/20 dark:ring-white/10',
+    heavy:
+      'bg-gradient-to-br from-white/70 to-white/40 dark:from-neutral-900/70 dark:to-neutral-900/40 backdrop-blur-2xl ring-1 ring-white/20 dark:ring-white/10',
+  };
+
   const variantStyles = {
     default: cn(
       darkModeClasses.card.base,
@@ -54,12 +63,13 @@ export const Card = ({
       'rounded-2xl border border-transparent hover:border-primary-500/20 dark:hover:border-primary-400/20 transition-all duration-300 cursor-pointer'
     ),
     glass: cn(
-      'backdrop-blur-md bg-white/5 border border-white/10 text-white',
-      'rounded-2xl shadow-lg shadow-black/10 transition-all duration-300'
+      glassIntensityClasses[glassIntensity],
+      'rounded-2xl shadow-lg shadow-black/10 transition-all duration-300 text-neutral-900 dark:text-white',
+      gradient && 'border-transparent'
     ),
     'glass-strong': cn(
-      'backdrop-blur-xl bg-[#0A0F1F]/90 border border-white/10 text-white',
-      'rounded-2xl shadow-xl shadow-black/20 transition-all duration-300'
+      glassIntensityClasses.heavy,
+      'rounded-2xl shadow-xl shadow-black/20 transition-all duration-300 text-neutral-900 dark:text-white'
     ),
     hover: cn(
       darkModeClasses.card.interactive,
@@ -69,6 +79,16 @@ export const Card = ({
 
   return (
     <div className={cn(variantStyles[variant], paddingStyles[padding], className)} {...props}>
+      {/* Gradient Background/Border Effect for Glass variants */}
+      {(variant === 'glass' || variant === 'glass-strong') && gradient && (
+        <>
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-10 rounded-2xl" />
+          <div
+            className="absolute inset-0 -z-20 bg-gradient-to-br from-violet-500/20 via-fuchsia-500/20 to-indigo-500/20 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100 rounded-2xl"
+            aria-hidden="true"
+          />
+        </>
+      )}
       {children}
     </div>
   );

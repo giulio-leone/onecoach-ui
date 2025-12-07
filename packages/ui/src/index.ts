@@ -97,12 +97,12 @@ export * from './sidebar-item';
 export * from './visual-builder';
 
 // New Generation Components
-export * from './glass-card';
+
 export * from './stat-card';
-export * from './gradient-button';
+
 export * from './selection-card';
 export * from './stepper';
-export * from './form-input';
+
 export * from './wizard-layout';
 export * from './welcome-header';
 export * from './quick-actions-grid';

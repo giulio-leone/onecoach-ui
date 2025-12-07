@@ -14,7 +14,9 @@ export type ButtonVariant =
   | 'outline'
   | 'success'
   | 'info'
-  | 'glass';
+  | 'glass'
+  | 'gradient-primary'
+  | 'gradient-secondary';
 
 export type ButtonSize = 'sm' | 'md' | 'lg' | 'icon' | 'icon-sm';
 
@@ -26,6 +28,7 @@ export interface ButtonSharedProps {
   children?: React.ReactNode;
   fullWidth?: boolean;
   disabled?: boolean;
+  loading?: boolean;
 }
 
 /**

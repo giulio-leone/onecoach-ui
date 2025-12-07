@@ -38,14 +38,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       className = '',
       disabled,
+      loading = false,
       fullWidth = false,
       ...props
     },
     ref
   ) => {
     const isIconButton = size === 'icon' || size === 'icon-sm' || iconOnly;
+    const isDisabled = disabled || loading;
+
     // Variant styles using design tokens - WCAG AA compliant
-    const variantStyles: Record<ButtonVariant, string> = {
+    const variantStyles: Record<ButtonVariant | 'gradient-primary' | 'gradient-secondary', string> = {
       primary:
         'relative overflow-hidden border border-white/20 bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] text-white shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur-sm',
       secondary:
@@ -64,6 +67,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         'bg-gradient-to-r from-sky-500 to-sky-600 text-white shadow-lg hover:shadow-sky-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
       glass:
         'border border-white/10 bg-white/5 text-white shadow-lg backdrop-blur-md hover:bg-white/10 hover:border-white/20 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
+      'gradient-primary':
+        'relative overflow-hidden shadow-md shadow-violet-500/20 bg-gradient-to-br from-violet-600 to-indigo-600 text-white hover:from-violet-500 hover:to-indigo-500 hover:shadow-lg hover:shadow-violet-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
+      'gradient-secondary':
+        'relative overflow-hidden shadow-md shadow-fuchsia-500/20 bg-gradient-to-br from-fuchsia-500 to-pink-600 text-white hover:from-fuchsia-400 hover:to-pink-500 hover:shadow-lg hover:shadow-fuchsia-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
     };
 
     // Size styles - Touch-friendly (minimum 44x44px)
@@ -93,11 +100,29 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        disabled={disabled}
+        disabled={isDisabled}
         className={cn(baseStyles, variantStyles[variant], sizeStyles[size], className)}
         {...props}
       >
-        {Icon && iconPosition === 'left' && (
+        {loading && (
+          <span className="animate-spin mr-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-loader-2"
+            >
+              <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+            </svg>
+          </span>
+        )}
+        {!loading && Icon && iconPosition === 'left' && (
           <Icon
             size={iconSize}
             className={cn('flex-shrink-0', Icon.name === 'Loader2' && 'animate-spin')}
@@ -105,7 +130,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           />
         )}
         {children}
-        {Icon && iconPosition === 'right' && (
+        {!loading && Icon && iconPosition === 'right' && (
           <Icon
             size={iconSize}
             className={cn('flex-shrink-0', Icon.name === 'Loader2' && 'animate-spin')}
