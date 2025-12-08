@@ -19,13 +19,21 @@ import {
 
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'>, ButtonSharedProps {
-  icon?: LucideIcon;
+  /** Icon can be a LucideIcon component OR a React element */
+  icon?: LucideIcon | React.ReactElement;
   className?: string;
   children?: React.ReactNode;
 }
 
 // Re-export types for convenience
 export type { ButtonVariant, ButtonSize } from './button.shared';
+
+/**
+ * Helper to check if icon is a LucideIcon (function) vs React element
+ */
+function isLucideIcon(icon: LucideIcon | React.ReactElement): icon is LucideIcon {
+  return typeof icon === 'function';
+}
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -97,6 +105,28 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       isIconButton && 'aspect-square p-0'
     );
 
+    // Render icon - handles both LucideIcon and React.ReactElement
+    const renderIcon = (position: 'left' | 'right') => {
+      if (loading || !Icon || iconPosition !== position) return null;
+
+      // If Icon is a LucideIcon (function/component), render it with props
+      if (isLucideIcon(Icon)) {
+        return (
+          <Icon
+            size={iconSize}
+            className={cn('flex-shrink-0', Icon.name === 'Loader2' && 'animate-spin')}
+            aria-hidden="true"
+          />
+        );
+      }
+
+      // If Icon is already a React element (JSX), clone it with additional props
+      return React.cloneElement(Icon, {
+        className: cn('flex-shrink-0', Icon.props?.className),
+        'aria-hidden': true,
+      });
+    };
+
     return (
       <button
         ref={ref}
@@ -122,24 +152,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             </svg>
           </span>
         )}
-        {!loading && Icon && iconPosition === 'left' && (
-          <Icon
-            size={iconSize}
-            className={cn('flex-shrink-0', Icon.name === 'Loader2' && 'animate-spin')}
-            aria-hidden="true"
-          />
-        )}
+        {renderIcon('left')}
         {children}
-        {!loading && Icon && iconPosition === 'right' && (
-          <Icon
-            size={iconSize}
-            className={cn('flex-shrink-0', Icon.name === 'Loader2' && 'animate-spin')}
-            aria-hidden="true"
-          />
-        )}
+        {renderIcon('right')}
       </button>
     );
   }
 );
 
 Button.displayName = 'Button';
+
