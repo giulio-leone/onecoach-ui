@@ -1,6 +1,14 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigationStateStore } from '@onecoach/lib-stores';
-import { useShallow } from 'zustand/react/shallow';
+// Note: Removed 'zustand/react/shallow' - direct selector is sufficient for primitive/stable values.
+// useShallow was causing "Cannot read properties of undefined (reading 'apply')" in Turbopack.
+
+// Inline type to avoid exporting from lib-stores just for this hook
+interface NavigationStoreState {
+  states: Record<string, unknown>;
+  saveState: <T>(key: string, state: T) => void;
+  clearState: (key: string) => void;
+}
 
 /**
  * Hook per persistere lo stato di un componente attraverso la navigazione e refresh (sessionStorage).
@@ -20,10 +28,10 @@ export function useNavigationPersistence<T>(
   debounceTimeMs: number = 0
 ): [T, (value: T | ((prev: T) => T)) => void, () => void] {
   // 1. Accesso diretto allo store (Reattività Zustand-native)
-  // Usiamo useShallow per evitare re-render se l'oggetto states cambia ma la nostra chiave no.
-  const storedState = useNavigationStateStore(useShallow((s) => s.states[key] as T | undefined));
-  const saveStateToStore = useNavigationStateStore((s) => s.saveState);
-  const clearStoredState = useNavigationStateStore((s) => s.clearState);
+  // Using direct selector instead of useShallow for Turbopack compatibility.
+  const storedState = useNavigationStateStore((s: NavigationStoreState) => s.states[key] as T | undefined);
+  const saveStateToStore = useNavigationStateStore((s: NavigationStoreState) => s.saveState);
+  const clearStoredState = useNavigationStateStore((s: NavigationStoreState) => s.clearState);
 
   // Se stiamo usando il debounce, abbiamo bisogno di uno stato locale (buffer)
   // Se NO debounce, lo stato locale è inutile duplicazione, ma dobbiamo mantenere l'API coerente.

@@ -8,6 +8,8 @@
       "lib/*": ["../lib/src/*"],
       "@onecoach/constants": ["../constants/src/index.ts"],
       "@onecoach/constants/*": ["../constants/src/*"],
+      "@onecoach/lib-stores": ["../../../onecoach-backend/packages/lib-stores/src/index.ts"],
+      "@onecoach/lib-stores/*": ["../../../onecoach-backend/packages/lib-stores/src/*"],
       "types": ["../types/src/index.ts"],
       "types/*": ["../types/src/*"],
       "@/*": ["../../apps/next/*"],

@@ -5,12 +5,7 @@ import { Input } from '../input';
 import { Select } from '../select';
 import { Search, Check, ChevronsUpDown } from 'lucide-react';
 import { cn } from '@onecoach/lib-design-system';
-
-export interface ModelOption {
-  id: string;
-  name: string;
-  provider: string;
-}
+import type { ModelOption } from './model-selector-modal';
 
 interface ModelSelectorProps {
   value: string | null | undefined;

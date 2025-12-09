@@ -7,10 +7,16 @@
 
 // Core Components
 export * from './components/model-selector';
-export * from './button';
+export { Button } from './button';
+export { Checkbox } from './checkbox';
+export * from './checkbox-group';
+export { Input } from './input';
+export * from './input-group';
 export * from './card';
 export * from './avatar';
 export * from './streaming-result';
+
+
 
 // Feedback Components
 export * from './badge';
@@ -35,7 +41,24 @@ export * from './tabs';
 export * from './tabs/hash-tabs';
 
 // Overlay Components
-export * from './dialog';
+// Overlay Components
+export {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+  DialogOverlay,
+  DialogPortal,
+  SimpleDialog,
+  LegacyDialog,
+  Modal,
+  ModalFooter,
+  getDialogInputValue,
+} from './dialog';
 export * from './drawer';
 export * from './dropdown-menu';
 export * from './hover-card';
@@ -54,13 +77,16 @@ export * from './layout';
 
 // Design System - Form Controls
 // Design System - Form Controls
-export * from './checkbox';
+// export * from './checkbox'; // Duplicate removal
 export * from './checkbox-group';
 export * from './radio';
 export * from './radio-group';
 export * from './switch';
 export * from './select';
-export * from './input';
+export { Input as InputControl } from './input'; // Alias for Form Control section if needed, or just remove duplicate export *
+// Note: Line 69 was "export * from './input';" which is duplicate of line 13.
+// I will just comment it out to avoid conflict.
+// export * from './input';
 export * from './input-group';
 export * from './command';
 export * from './textarea';
@@ -140,7 +166,7 @@ export * from './components/catalog/catalog-layout';
 export * from './slider';
 
 // Premium Glass Components
-export * from './combobox';
+export { Combobox } from './combobox';
 export * from './glass-table';
 export * from './glass-toolbar';
 
