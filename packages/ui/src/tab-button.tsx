@@ -8,19 +8,27 @@
 'use client';
 
 import type { LucideIcon } from 'lucide-react';
+import React from 'react';
 import { Button } from './button';
 import type { TabButtonSharedProps } from './tab-button.shared';
 
 export interface TabButtonProps extends TabButtonSharedProps {
-  icon: LucideIcon;
+  icon: LucideIcon | React.ReactElement;
 }
 
 export const TabButton = ({ active, onClick, icon: Icon, label, count }: TabButtonProps) => {
+  const safeIcon =
+    typeof Icon === 'function'
+      ? Icon
+      : React.isValidElement(Icon)
+        ? Icon
+        : undefined;
+
   return (
     <Button
       variant={active ? 'primary' : 'ghost'}
       size="md"
-      icon={Icon}
+      icon={safeIcon as LucideIcon | React.ReactElement | undefined}
       onClick={onClick}
       className={active ? 'scale-105 shadow-lg' : ''}
     >

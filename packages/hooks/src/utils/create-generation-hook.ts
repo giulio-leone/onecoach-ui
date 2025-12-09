@@ -316,7 +316,7 @@ export function createGenerationHook<TInput, TOutput>(
               error: message,
             }));
             callbacks?.onError?.(message);
-            throw error;
+            return null;
           }
         }
 
@@ -497,7 +497,7 @@ export function createGenerationHook<TInput, TOutput>(
           }));
 
           callbacks?.onError?.(message);
-          throw error;
+          return null;
         }
       },
       [callbacks]

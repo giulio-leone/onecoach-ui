@@ -129,10 +129,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       }
 
       // If Icon is already a React element (JSX), clone it with additional props
-      return React.cloneElement(Icon as React.ReactElement<{ className?: string; 'aria-hidden'?: boolean }>, {
-        className: cn('flex-shrink-0', (Icon.props as { className?: string })?.className),
-        'aria-hidden': true,
-      });
+      if (React.isValidElement(Icon)) {
+        return React.cloneElement(
+          Icon as React.ReactElement<{ className?: string; 'aria-hidden'?: boolean }>,
+          {
+            className: cn('flex-shrink-0', (Icon.props as { className?: string })?.className),
+            'aria-hidden': true,
+          }
+        );
+      }
+
+      return null;
     };
 
     return (
