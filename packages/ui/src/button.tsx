@@ -23,6 +23,8 @@ export interface ButtonProps
   icon?: LucideIcon | React.ReactElement;
   className?: string;
   children?: React.ReactNode;
+  /** React Native/Tamagui-style onPress (translated to onClick on web) */
+  onPress?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 // Re-export types for convenience
@@ -48,12 +50,18 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       loading = false,
       fullWidth = false,
+      onPress,
+      onClick,
       ...props
     },
     ref
   ) => {
     const isIconButton = size === 'icon' || size === 'icon-sm' || iconOnly;
     const isDisabled = disabled || loading;
+    
+    // Translate onPress (React Native/Tamagui) to onClick (web)
+    // onClick takes precedence if both are provided
+    const handleClick = onClick ?? onPress;
 
     // Variant styles using design tokens - WCAG AA compliant
     const variantStyles: Record<ButtonVariant | 'gradient-primary' | 'gradient-secondary', string> = {
@@ -121,8 +129,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       }
 
       // If Icon is already a React element (JSX), clone it with additional props
-      return React.cloneElement(Icon, {
-        className: cn('flex-shrink-0', Icon.props?.className),
+      return React.cloneElement(Icon as React.ReactElement<{ className?: string; 'aria-hidden'?: boolean }>, {
+        className: cn('flex-shrink-0', (Icon.props as { className?: string })?.className),
         'aria-hidden': true,
       });
     };
@@ -132,6 +140,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={isDisabled}
         className={cn(baseStyles, variantStyles[variant], sizeStyles[size], className)}
+        onClick={handleClick}
         {...props}
       >
         {loading && (
