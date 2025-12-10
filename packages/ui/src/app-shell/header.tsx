@@ -78,9 +78,10 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
   return (
     <header
       className={cn(
-        'sticky top-0 z-40 w-full border-b border-neutral-200 dark:border-neutral-800',
-        'bg-white/50 backdrop-blur-xl backdrop-saturate-150 dark:bg-[#020408]/50',
-        'supports-[backdrop-filter]:bg-white/50 dark:supports-[backdrop-filter]:bg-[#020408]/50',
+        'sticky top-0 z-40 w-full border-b border-neutral-200/60 dark:border-neutral-800/60',
+        'bg-white/30 backdrop-blur-[32px] backdrop-saturate-200 dark:bg-[#020408]/30',
+        'supports-[backdrop-filter]:bg-white/30 dark:supports-[backdrop-filter]:bg-[#020408]/30',
+        'shadow-sm shadow-neutral-900/5 dark:shadow-neutral-900/20',
         'transition-all duration-200'
       )}
     >
