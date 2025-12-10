@@ -295,7 +295,8 @@ export function ModernSidebar({
                   fullWidth
                   onClick={() => {
                     setIsChatModalOpen(true);
-                    onCloseMobile?.();
+                    // Do NOT close mobile sidebar here, otherwise the local state is lost and modal never opens
+                    // onCloseMobile?.(); 
                   }}
                   className="border-transparent bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700"
                 >

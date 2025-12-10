@@ -24,7 +24,7 @@ export const Conversation = forwardRef<HTMLDivElement, ConversationProps>(
   ({ className, children, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn('relative flex h-full flex-col overflow-hidden', className)}
+      className={cn('relative flex min-h-0 flex-1 flex-col overflow-hidden', className)}
       {...props}
     >
       {children}
@@ -57,12 +57,12 @@ export const ConversationContent = forwardRef<HTMLDivElement, ConversationConten
         className={cn(
           'scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-200',
           'dark:scrollbar-thumb-white/10',
-          'flex-1 overflow-y-auto px-4 py-6 lg:px-8',
+          'flex-1 overflow-y-auto px-4 pb-2 pt-6 lg:px-8',
           className
         )}
         {...props}
       >
-        <div className="mx-auto flex max-w-3xl flex-col gap-6">
+        <div className="mx-auto flex max-w-3xl flex-col gap-4">
           <AnimatePresence mode="popLayout">{children}</AnimatePresence>
           <div ref={endRef} className="h-4" aria-hidden />
         </div>

@@ -174,3 +174,9 @@ export * from './components/memory';
 
 // Cross-platform (Expo/Web)
 export * from './xplat';
+
+// New Chat UI (Nano Banana Pro)
+export * from './chat/chat-layout-wrapper';
+export * from './chat/chat-header';
+export * from './chat/chat-messages-list';
+export * from './chat/chat-input-area';

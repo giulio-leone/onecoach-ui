@@ -36,7 +36,7 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
     if (pathname?.startsWith('/nutrition')) return 'Nutrizione';
     if (pathname?.startsWith('/profile')) return 'Profilo';
     if (pathname?.startsWith('/admin')) return 'Admin';
-    return 'onecoach';
+    return '';
   };
 
   const toggleCopilotEnabled = async () => {
@@ -70,9 +70,10 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
     }
   };
 
+  const pageTitle = getPageTitle();
   const isOneAgenda = pathname?.startsWith('/oneagenda');
   const safeBrandHref = brandHref ?? (isOneAgenda ? '/oneagenda' : '/dashboard');
-  const safeBrandLabel = brandLabel ?? (isOneAgenda ? 'OneAgenda' : 'onecoach');
+  const safeBrandLabel = brandLabel ?? (isOneAgenda ? 'OneAgenda' : pageTitle);
 
   return (
     <header
@@ -83,10 +84,9 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
         'transition-all duration-200'
       )}
     >
-      <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Left Section: Mobile Menu & Brand/Title */}
-        <div className="flex items-center gap-4">
-          {/* Mobile Menu Button */}
+      <div className="flex flex-wrap items-center gap-3 px-3 py-2 sm:px-6 sm:py-3 lg:h-16 lg:flex-nowrap lg:gap-4 lg:px-8 lg:py-0">
+        {/* Sezione sinistra: menu mobile e brand */}
+        <div className="flex min-w-0 flex-1 items-center gap-3 lg:gap-4">
           <button
             onClick={toggleMobileMenu}
             className="rounded-lg p-2 text-neutral-500 hover:bg-neutral-100 lg:hidden dark:text-neutral-400 dark:hover:bg-neutral-800"
@@ -95,34 +95,36 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
             <Menu className="h-6 w-6" />
           </button>
 
-          {/* Brand (Mobile) / Title (Desktop) */}
-          <div className="flex items-center gap-3">
-            <Link href={safeBrandHref} className="group flex items-center gap-2 lg:hidden">
+          <div className="flex min-w-0 items-center gap-3">
+            <Link href={safeBrandHref} className="group flex min-w-0 items-center gap-2 lg:hidden">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20">
                 {isOneAgenda ? <Calendar className="h-4 w-4" /> : <Sparkles className="h-4 w-4" />}
               </div>
-              <span className="font-bold text-neutral-900 dark:text-white">{safeBrandLabel}</span>
+              {safeBrandLabel ? (
+                <span className="truncate text-sm font-semibold text-neutral-900 dark:text-white">
+                  {safeBrandLabel}
+                </span>
+              ) : null}
             </Link>
 
-            {/* Desktop Page Title */}
-            <div className="hidden items-center gap-2 lg:flex">
-              <h1 className="text-lg font-semibold text-neutral-900 dark:text-white">
-                {getPageTitle()}
-              </h1>
+            <div className="hidden min-w-0 items-center gap-2 lg:flex">
+              {pageTitle ? (
+                <h1 className="truncate text-lg font-semibold text-neutral-900 dark:text-white">
+                  {pageTitle}
+                </h1>
+              ) : null}
             </div>
           </div>
         </div>
 
-        {/* Right Section: Actions & Theme */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          {/* Injected Actions */}
+        {/* Sezione destra: azioni e tema */}
+        <div className="ml-auto flex flex-shrink-0 items-center gap-2 sm:gap-4">
           {headerActions && (
             <div className="flex items-center gap-2 border-r border-neutral-200 pr-2 sm:pr-4 dark:border-neutral-800">
               {headerActions}
             </div>
           )}
 
-          {/* Copilot Toggle */}
           <button
             onClick={toggleCopilotEnabled}
             className={cn(
@@ -138,6 +140,14 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
 
           <ThemeToggle />
         </div>
+
+        {pageTitle ? (
+          <div className="flex w-full min-w-0 items-center lg:hidden">
+            <h1 className="break-words text-base font-semibold leading-tight text-neutral-900 dark:text-white">
+              {pageTitle}
+            </h1>
+          </div>
+        ) : null}
       </div>
     </header>
   );
