@@ -31,7 +31,7 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
   const getPageTitle = () => {
     if (titleOverride) return titleOverride;
     if (pathname === '/dashboard') return 'Dashboard';
-    if (pathname?.startsWith('/oneagenda')) return 'Agenda';
+    if (pathname?.startsWith('/oneagenda')) return '';
     if (pathname?.startsWith('/workouts')) return 'Programmi';
     if (pathname?.startsWith('/nutrition')) return 'Nutrizione';
     if (pathname?.startsWith('/profile')) return 'Profilo';
@@ -78,9 +78,8 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
   return (
     <header
       className={cn(
-        'sticky top-0 z-40 w-full border-b border-neutral-200/60 dark:border-neutral-800/60',
-        'bg-white/30 backdrop-blur-[32px] backdrop-saturate-200 dark:bg-[#020408]/30',
-        'supports-[backdrop-filter]:bg-white/30 dark:supports-[backdrop-filter]:bg-[#020408]/30',
+        'sticky top-0 z-40 w-full border-b',
+        'border-slate-200 bg-white/90 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90',
         'shadow-sm shadow-neutral-900/5 dark:shadow-neutral-900/20',
         'transition-all duration-200'
       )}
