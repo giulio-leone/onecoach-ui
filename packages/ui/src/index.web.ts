@@ -123,6 +123,7 @@ export * from './components/unified-list-item';
 
 // Chat Components
 export * from './components/chat/conversation-list';
+export * from './components/chat/chat-history-modal'; // Added
 
 // AI Elements Components (AI SDK v6 native)
 export * from './components/ai-elements';
