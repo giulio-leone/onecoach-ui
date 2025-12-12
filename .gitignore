@@ -8,3 +8,4 @@ build
 expo/.expo
 .expo
 coverage
+*.tsbuildinfo

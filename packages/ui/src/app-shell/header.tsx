@@ -16,28 +16,15 @@ import { useUIStore, useHeaderActions, useAuthStore } from '@onecoach/lib-stores
 import { ThemeToggle } from '../theme-toggle';
 
 export interface AppShellHeaderProps {
-  titleOverride?: string;
   brandHref?: string;
   brandLabel?: string;
 }
 
-export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShellHeaderProps) {
+export function AppShellHeader({ brandHref, brandLabel }: AppShellHeaderProps) {
   const { toggleMobileMenu } = useUIStore();
   const { user, updateUser } = useAuthStore();
   const { actions: headerActions } = useHeaderActions();
   const pathname = usePathname();
-
-  // Simple breadcrumb/title logic
-  const getPageTitle = () => {
-    if (titleOverride) return titleOverride;
-    if (pathname === '/dashboard') return 'Dashboard';
-    if (pathname?.startsWith('/oneagenda')) return '';
-    if (pathname?.startsWith('/workouts')) return 'Programmi';
-    if (pathname?.startsWith('/nutrition')) return 'Nutrizione';
-    if (pathname?.startsWith('/profile')) return 'Profilo';
-    if (pathname?.startsWith('/admin')) return 'Admin';
-    return '';
-  };
 
   const toggleCopilotEnabled = async () => {
     if (!user) return;
@@ -70,10 +57,9 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
     }
   };
 
-  const pageTitle = getPageTitle();
   const isOneAgenda = pathname?.startsWith('/oneagenda');
   const safeBrandHref = brandHref ?? (isOneAgenda ? '/oneagenda' : '/dashboard');
-  const safeBrandLabel = brandLabel ?? (isOneAgenda ? 'OneAgenda' : pageTitle);
+  const safeBrandLabel = brandLabel ?? (isOneAgenda ? 'OneAgenda' : 'OneCoach');
 
   return (
     <header
@@ -100,20 +86,10 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20">
                 {isOneAgenda ? <Calendar className="h-4 w-4" /> : <Sparkles className="h-4 w-4" />}
               </div>
-              {safeBrandLabel ? (
-                <span className="truncate text-sm font-semibold text-neutral-900 dark:text-white">
-                  {safeBrandLabel}
-                </span>
-              ) : null}
+              <span className="truncate text-sm font-semibold text-neutral-900 dark:text-white">
+                {safeBrandLabel}
+              </span>
             </Link>
-
-            <div className="hidden min-w-0 items-center gap-2 lg:flex">
-              {pageTitle ? (
-                <h1 className="truncate text-lg font-semibold text-neutral-900 dark:text-white">
-                  {pageTitle}
-                </h1>
-              ) : null}
-            </div>
           </div>
         </div>
 
@@ -140,14 +116,6 @@ export function AppShellHeader({ titleOverride, brandHref, brandLabel }: AppShel
 
           <ThemeToggle />
         </div>
-
-        {pageTitle ? (
-          <div className="flex w-full min-w-0 items-center lg:hidden">
-            <h1 className="break-words text-base font-semibold leading-tight text-neutral-900 dark:text-white">
-              {pageTitle}
-            </h1>
-          </div>
-        ) : null}
       </div>
     </header>
   );
