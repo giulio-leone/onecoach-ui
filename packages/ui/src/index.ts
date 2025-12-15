@@ -8,6 +8,7 @@
 // Core Components
 export * from './components/model-selector';
 export { Button } from './button';
+export type { ButtonProps, ButtonVariant, ButtonSize } from './button';
 export { Checkbox } from './checkbox';
 export * from './checkbox-group';
 export { Input, type InputProps } from './input';
