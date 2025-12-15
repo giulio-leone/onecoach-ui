@@ -14,9 +14,12 @@ import type { TabButtonSharedProps } from './tab-button.shared';
 
 export interface TabButtonProps extends TabButtonSharedProps {
   icon: LucideIcon | React.ReactElement;
+  className?: string;
 }
 
-export const TabButton = ({ active, onClick, icon: Icon, label, count }: TabButtonProps) => {
+import { cn } from '@onecoach/lib-design-system';
+
+export const TabButton = ({ active, onClick, icon: Icon, label, count, className }: TabButtonProps) => {
   const safeIcon =
     typeof Icon === 'function'
       ? Icon
@@ -26,12 +29,11 @@ export const TabButton = ({ active, onClick, icon: Icon, label, count }: TabButt
 
   return (
     <Button
-      variant={active ? 'primary' : 'ghost'}
-      size="md"
-      icon={safeIcon as LucideIcon | React.ReactElement | undefined}
-      onClick={onClick}
-      className={active ? 'scale-105 shadow-lg' : ''}
-    >
+       variant={active ? 'primary' : 'ghost'}
+       size="md"
+        icon={safeIcon as LucideIcon | React.ReactElement | undefined}
+        onClick={onClick}
+        className={cn(active ? 'scale-105 shadow-lg' : '', className)}   >
       <span className="hidden sm:inline">{label}</span>
       {count !== undefined && (
         <span

@@ -10,7 +10,7 @@ export * from './components/model-selector';
 export { Button } from './button';
 export { Checkbox } from './checkbox';
 export * from './checkbox-group';
-export { Input } from './input';
+export { Input, type InputProps } from './input';
 export * from './input-group';
 export * from './card';
 export * from './avatar';
