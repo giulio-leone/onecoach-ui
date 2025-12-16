@@ -212,7 +212,7 @@ export function AppShellSidebar({ user }: AppShellSidebarProps) {
         id: user.id,
         email: user.email,
         name: user.name || '',
-        role: user.role,
+        role: user.role as 'USER' | 'ATHLETE' | 'COACH' | 'ADMIN' | 'SUPER_ADMIN',
         profileImage: user.image || undefined,
         copilotEnabled: user.copilotEnabled,
         credits: user.credits,
@@ -248,8 +248,12 @@ export function AppShellSidebar({ user }: AppShellSidebarProps) {
     await signOut({ callbackUrl: '/login' });
   };
 
-  // Usa l'utente proveniente dallo store (aggiornato in realtime) se disponibile
-  const effectiveUser = clientUser ?? user;
+  // Usa l'utente proveniente dallo store (aggiornato in realtime) se disponibile,
+  // ma SEMPRE prendi il ruolo dal server user per garantire che admin/coach siano visibili
+  // Il clientUser potrebbe avere dati stale dalla persistenza localStorage
+  const effectiveUser = clientUser
+    ? { ...clientUser, role: user.role } // Merge con il ruolo dal server (sempre aggiornato)
+    : user;
   const navigation = getNavigationItems(effectiveUser?.role, pathname);
 
   return (
