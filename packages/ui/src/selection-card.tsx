@@ -66,10 +66,10 @@ export function SelectionCard({
           compact && 'rounded-xl',
           selected 
             ? cn(
-                'ring-2 ring-blue-500/60 dark:ring-blue-400/50',
+                'ring-2 ring-blue-500/60 dark:ring-blue-500/80',
                 compact ? 'shadow-[0_0_20px_rgba(59,130,246,0.2)]' : 'shadow-[0_0_30px_rgba(59,130,246,0.25)] scale-[1.01]'
               )
-            : 'hover:bg-white/50 dark:hover:bg-neutral-800/50 ring-1 ring-white/15 dark:ring-white/5'
+            : 'hover:bg-white/50 dark:hover:bg-white/5 ring-1 ring-white/15 dark:ring-white/10 dark:bg-neutral-900/40'
         )}
       >
         {/* Selection Glow Effect - More subtle */}

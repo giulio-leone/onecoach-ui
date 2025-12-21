@@ -80,13 +80,14 @@ export function WizardSlider({
       <div className="relative">
         {/* Track background */}
         <div className="absolute inset-y-0 left-0 right-0 flex items-center pointer-events-none">
-          <div className="w-full h-1.5 rounded-full bg-neutral-200 dark:bg-neutral-700/60 overflow-hidden">
-            {/* Filled portion */}
-            <div 
-              className={cn('h-full rounded-full bg-gradient-to-r transition-all duration-150', colors.track)}
-              style={{ width: `${percentage}%` }}
-            />
-          </div>
+          {/* Track Background */}
+          <div className="absolute top-1/2 h-1.5 w-full -translate-y-1/2 rounded-full bg-neutral-200 dark:bg-neutral-800/80" />
+
+          {/* Filled Track - Gradient */}
+          <div
+            className={cn('absolute top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all duration-150', colors.track)}
+            style={{ width: `${percentage}%` }}
+          />
         </div>
         
         {/* Native range input */}
