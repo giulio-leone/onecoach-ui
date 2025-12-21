@@ -624,10 +624,7 @@ export const LayoutSeparator: React.FC<LayoutSeparatorProps> = ({
   );
 };
 
-LayoutSeparator.displayName = 'LayoutSeparator';
-
-// Alias for backward compatibility
-export const Separator = LayoutSeparator;
+// LayoutSeparator.displayName = 'LayoutSeparator';
 
 // ============================================================================
 // SPACER COMPONENT

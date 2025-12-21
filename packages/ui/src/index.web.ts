@@ -107,6 +107,8 @@ export * from './stepper';
 export * from './wizard-layout';
 export * from './welcome-header';
 export * from './quick-actions-grid';
+export * from './wizard';
+export * from './wizard-slider';
 
 // Program Viewer Components
 export * from './program-viewer';

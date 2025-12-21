@@ -1,184 +1,56 @@
-/// <reference path="./types.d.ts" />
-/**
- * UI Components - Barrel Export
- *
- * Esporta tutti i componenti atomici UI del Design System
- */
-
-// Core Components
-export * from './components/model-selector';
-export { Button } from './button';
-export type { ButtonProps, ButtonVariant, ButtonSize } from './button';
-export { Checkbox } from './checkbox';
-export * from './checkbox-group';
-export { Input, type InputProps } from './input';
-export * from './input-group';
-export * from './card';
+export * from './amount-display';
+export * from './animated-number';
 export * from './avatar';
-export * from './streaming-result';
-
-
-
-// Feedback Components
 export * from './badge';
-export * from './alert';
-export * from './tooltip';
-export * from './spinner';
-export * from './loading-indicator';
-export * from './error-state';
-export * from './button-group';
-export * from './empty-state';
-export * from './progress';
-export * from './scroll-area';
-export * from './collapsible';
+export * from './button';
+export * from './card';
 export * from './carousel';
-export * from './separator';
-export { Separator } from './separator';
-
-// Navigation Components
-export * from './tab-button';
-export * from './tabs';
-export * from './tabs/hash-tabs';
-
-// Overlay Components
-// Overlay Components
-export {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
-  DialogDescription,
-  DialogClose,
-  DialogOverlay,
-  DialogPortal,
-  SimpleDialog,
-  LegacyDialog,
-  Modal,
-  ModalFooter,
-  getDialogInputValue,
-} from './dialog';
+export * from './checkbox';
+export * from './checkbox-group';
+export * from './collapsible';
+export * from './combobox';
+export * from './command';
+export * from './date-picker-with-presets';
+export * from './dialog';
 export * from './drawer';
 export * from './dropdown-menu';
-export * from './hover-card';
-
-// Feature Components
-
-export { ModelSelector as LegacyModelSelector } from './legacy-model-selector';
-export * from './theme-toggle';
-export * from './date-picker-with-presets';
-
-// Design System - Typography
-export * from './typography';
-
-// Design System - Layout
-export * from './layout';
-
-// Design System - Form Controls
-// Design System - Form Controls
-// export * from './checkbox'; // Duplicate removal
-export * from './checkbox-group';
-export * from './radio';
-export * from './radio-group';
-export * from './switch';
-export * from './select';
-export { Input as InputControl } from './input'; // Alias for Form Control section if needed, or just remove duplicate export *
-// Note: Line 69 was "export * from './input';" which is duplicate of line 13.
-// I will just comment it out to avoid conflict.
-// export * from './input';
-export * from './input-group';
-export * from './command';
-export * from './textarea';
-
-// Design System - Dark Mode Optimized Components
-export * from './icon-badge';
-export * from './amount-display';
-export * from './transaction-item';
-
-// Cross-platform Image
-export * from './image';
-
-// Animation Components
-export * from './components/Animated';
-
-// Skeleton Loaders
-export * from './components/SkeletonLoader';
-export * from './skeleton';
-
-// Animation Hooks
-export * from './hooks/useAnimations';
-
-// App Shell
-export * from './app-shell';
-
-// Admin primitives
-export * from './admin';
-
-// Dashboard primitives
-export * from './dashboard';
-
-// Checkout kit
-export * from './checkout';
-
-// Visual Builder Components
-export * from './modern-sidebar';
-export * from './sidebar-item';
-export * from './visual-builder';
-
-// New Generation Components
-
-export * from './stat-card';
-
-export * from './selection-card';
-export * from './stepper';
-
-export * from './wizard-layout';
-export * from './welcome-header';
-export * from './quick-actions-grid';
-
-// Program Viewer Components
-export * from './program-viewer';
-
-// Project Management Components
-export * from './components/progress-bar';
-export * from './components/project-card';
-export * from './components/project-gantt';
-export * from './components/task-list';
-export * from './components/milestone-list';
-export * from './components/habit-card';
-export * from './components/habit-list';
-export * from './components/unified-list-item';
-
-// Chat Components
-export * from './components/chat/conversation-list';
-export * from './components/chat/chat-history-modal'; // Added
-
-// AI Elements Components (AI SDK v6 native)
-export * from './components/ai-elements';
-
-// AI Generation Components
-export * from './components/ai-generation-view';
-
-// Catalog Components
-export * from './components/catalog/resource-card';
-export * from './components/catalog/catalog-grid';
-export * from './components/catalog/catalog-layout';
-export * from './slider';
-
-// Premium Glass Components
-export { Combobox } from './combobox';
+export * from './empty-state';
+export * from './error-state';
 export * from './glass-table';
 export * from './glass-toolbar';
-
-// Memory Components
-export * from './components/memory';
-
-// Cross-platform (Expo/Web)
-export * from './xplat';
-
-// New Chat UI (Nano Banana Pro)
-export * from './chat/chat-layout-wrapper';
-export * from './chat/chat-header';
-export * from './chat/chat-messages-list';
-export * from './chat/chat-input-area';
+export * from './hover-card';
+export * from './icon-badge';
+export * from './image';
+export * from './input';
+export * from './input-group';
+export * from './label';
+export * from './layout';
+export * from './loading-indicator';
+export * from './modern-sidebar';
+export * from './progress';
+export * from './quick-actions-grid';
+export * from './radio';
+export * from './radio-group';
+export * from './scroll-area';
+export * from './select';
+export * from './selection-card';
+export * from './separator';
+export * from './sidebar-item';
+export * from './skeleton';
+export * from './slider';
+export * from './spinner';
+export * from './stat-card';
+export * from './stepper';
+export * from './streaming-result';
+export * from './switch';
+export * from './tab-button';
+export * from './tabs';
+export * from './textarea';
+export * from './theme-toggle';
+export * from './tooltip';
+export * from './transaction-item';
+export * from './typography';
+export * from './welcome-header';
+export * from './wizard';
+export * from './wizard-layout';
+export * from './wizard-slider';

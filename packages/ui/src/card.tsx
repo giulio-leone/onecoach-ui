@@ -16,6 +16,8 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   | 'interactive'
   | 'glass'
   | 'glass-strong'
+  | 'glass-premium'
+  | 'glass-vibrant'
   | 'hover';
   padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
   glassIntensity?: 'light' | 'medium' | 'heavy';
@@ -42,11 +44,11 @@ export const Card = ({
 }: CardProps) => {
   const glassIntensityClasses = {
     light:
-      'bg-gradient-to-br from-white/40 to-white/10 dark:from-neutral-900/40 dark:to-neutral-900/10 backdrop-blur-md ring-1 ring-white/20 dark:ring-white/10',
+      'bg-white/40 dark:bg-neutral-900/40 backdrop-blur-md ring-1 ring-white/30 dark:ring-white/10',
     medium:
-      'bg-gradient-to-br from-white/50 to-white/20 dark:from-neutral-900/50 dark:to-neutral-900/20 backdrop-blur-xl ring-1 ring-white/20 dark:ring-white/10',
+      'bg-white/50 dark:bg-neutral-900/50 backdrop-blur-xl ring-1 ring-white/40 dark:ring-white/15',
     heavy:
-      'bg-gradient-to-br from-white/70 to-white/40 dark:from-neutral-900/70 dark:to-neutral-900/40 backdrop-blur-2xl ring-1 ring-white/20 dark:ring-white/10',
+      'bg-white/70 dark:bg-neutral-900/70 backdrop-blur-2xl ring-1 ring-white/50 dark:ring-white/20',
   };
 
   const variantStyles = {
@@ -68,12 +70,23 @@ export const Card = ({
     ),
     glass: cn(
       glassIntensityClasses[glassIntensity],
-      'rounded-2xl shadow-lg shadow-black/10 transition-all duration-300 text-neutral-900 dark:text-white',
-      gradient && 'border-transparent'
+      'rounded-2xl shadow-lg border border-white/20 dark:border-white/5 transition-all duration-300 text-neutral-900 dark:text-white'
     ),
     'glass-strong': cn(
       glassIntensityClasses.heavy,
-      'rounded-2xl shadow-xl shadow-black/20 transition-all duration-300 text-neutral-900 dark:text-white'
+      'rounded-3xl shadow-2xl border border-white/40 dark:border-white/10 transition-all duration-300 text-neutral-900 dark:text-white'
+    ),
+    'glass-premium': cn(
+      glassIntensityClasses.heavy,
+      'rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-white/50 dark:border-white/10 transition-all duration-700 text-neutral-900 dark:text-white',
+      'relative overflow-hidden group/premium',
+      'ring-1 ring-inset ring-white/20 dark:ring-white/5',
+      'bg-gradient-to-br from-white/10 to-transparent dark:from-white/5'
+    ),
+    'glass-vibrant': cn(
+      glassIntensityClasses.heavy,
+      'rounded-[2.5rem] shadow-[0_20px_40px_rgba(59,130,246,0.25)] border border-blue-500/30 dark:border-blue-400/20 transition-all duration-500 text-neutral-900 dark:text-white',
+      'bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10'
     ),
     hover: cn(
       darkModeClasses.card.interactive,

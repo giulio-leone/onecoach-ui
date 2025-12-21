@@ -43,7 +43,6 @@ export function useWorkoutGeneration(
 
   const generateStream = useCallback(
     async (input: WorkoutInput): Promise<WorkoutGenerationOutput | null> => {
-      // Usa sempre l'endpoint ottimizzato
       const endpoint = '/api/workout/generate-optimized';
 
       setState((prev) => ({
@@ -92,13 +91,21 @@ export function useWorkoutGeneration(
             try {
               const rawEvent = JSON.parse(line.slice(6));
 
-              // Crea GenerationStreamEvent con timestamp e message
+              // Standardize event for internal state
+              const eventType = rawEvent.type;
+              const eventData = rawEvent.data;
+              
+              // Map to GenerationStreamEvent
               const event = {
-                type: rawEvent.type,
-                timestamp: new Date(), // Sempre presente
-                data: rawEvent.data,
-                message:
-                  rawEvent.data?.message || rawEvent.data?.description || rawEvent.type || 'Event',
+                type: eventType,
+                timestamp: rawEvent.timestamp ? new Date(rawEvent.timestamp) : new Date(),
+                data: eventData,
+                message: 
+                  eventData?.message || 
+                  eventData?.label || 
+                  eventData?.description || 
+                  rawEvent.message || 
+                  eventType,
               } as GenerationStreamEvent<WorkoutGenerationOutput> & { type: string };
 
               setState((prev) => ({
@@ -106,37 +113,31 @@ export function useWorkoutGeneration(
                 streamEvents: [...prev.streamEvents, event],
               }));
 
-              // Handle different event types
-              const eventType = event.type as string;
+              // Handle standard events
               switch (eventType) {
+                case 'progress':
                 case 'agent_progress':
+                  const progressVal = eventData?.percentage ?? eventData?.progress ?? 0;
+                  const messageVal = eventData?.message ?? '';
+                  
                   setState((prev) => ({
                     ...prev,
-                    progress: (event.data as any)?.progress ?? prev.progress,
-                    currentMessage: (event.data as any)?.message ?? prev.currentMessage,
+                    progress: progressVal,
+                    currentMessage: messageVal || prev.currentMessage,
                   }));
-                  callbacks?.onProgress?.(
-                    (event.data as any)?.progress ?? 0,
-                    (event.data as any)?.message ?? ''
-                  );
+                  callbacks?.onProgress?.(progressVal, messageVal);
                   break;
 
                 case 'agent_start':
                   setState((prev) => ({
                     ...prev,
-                    currentMessage:
-                      (event.data as any)?.description ??
-                      `Starting ${(event.data as any)?.role}...`,
+                    currentMessage: eventData?.label || eventData?.description || `Starting ${eventData?.agent || eventData?.role}...`,
                   }));
                   break;
 
-                case 'agent_complete':
-                  // Agent completed, but not the whole generation
-                  break;
-
                 case 'agent_error':
-                  if (!(event.data as any)?.retrying) {
-                    const errorMsg = (event.data as any)?.error?.message || 'Unknown error';
+                  if (!eventData?.recoverable && !eventData?.retrying) {
+                    const errorMsg = eventData?.error || 'Unknown error';
                     setState((prev) => ({
                       ...prev,
                       error: errorMsg,
@@ -146,7 +147,7 @@ export function useWorkoutGeneration(
                   break;
 
                 case 'complete':
-                  result = (event.data as any)?.output;
+                  result = eventData?.result || eventData?.output;
                   setState((prev) => ({
                     ...prev,
                     result,
@@ -157,10 +158,7 @@ export function useWorkoutGeneration(
                   break;
 
                 case 'error':
-                  const errMsg =
-                    (event.data as any)?.message ||
-                    (event.data as any)?.error ||
-                    'Generation failed';
+                  const errMsg = eventData?.message || 'Generation failed';
                   setState((prev) => ({
                     ...prev,
                     error: errMsg,
@@ -169,7 +167,7 @@ export function useWorkoutGeneration(
                   break;
               }
             } catch {
-              // Ignore parse errors for incomplete JSON
+              // Ignore parse errors
             }
           }
         }
