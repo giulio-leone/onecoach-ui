@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -109,8 +109,6 @@
       "@onecoach/one-agent/*": ["./packages/one-agent/src/*"],
       "@onecoach/types": ["./packages/types/src/index.ts"],
       "@onecoach/types/*": ["./packages/types/src/*"],
-      "@onecoach/lib-stores": ["./packages/lib-stores/src/index.ts"],
-      "@onecoach/lib-stores/*": ["./packages/lib-stores/src/*"],
       "@onecoach/features/analytics": ["./packages/features/analytics/index.ts"],
       "@onecoach/features/analytics/*": ["./packages/features/analytics/*"],
       "@onecoach/features/affiliates": ["./packages/app/src/features/affiliates/index.ts"],

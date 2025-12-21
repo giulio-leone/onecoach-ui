@@ -345,7 +345,7 @@ export function RecursiveTaskItem({
           {isAddingSubTask && (
             <View className={cn('mt-1 ml-10 flex-row items-center', level > 0 && 'ml-16')}>
               <View className="mr-3 h-4 w-4 items-center justify-center">
-                <div className="h-1.5 w-1.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
+                <View className="h-1.5 w-1.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
               </View>
               <TextInput
                 className="flex-1 rounded border border-neutral-200 bg-white px-2 py-1 text-sm dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"

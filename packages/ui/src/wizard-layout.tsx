@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 import { Card } from './card';
 import { Button } from './button';
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react-native';
@@ -95,24 +95,30 @@ export function WizardLayout({
       </View>
 
       {/* Content */}
-      <ScrollView
-        style={styles.content}
-        contentContainerStyle={{ paddingBottom: 100 }}
-        showsVerticalScrollIndicator={false}
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={styles.keyboardView}
       >
-        <View style={styles.contentHeader}>
-          <Text style={styles.currentStepTitle}>
-            {currentStep.title}
-          </Text>
-          {currentStep.description && (
-            <Text style={styles.currentStepDescription}>
-              {currentStep.description}
+        <ScrollView
+          style={styles.content}
+          contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled"
+        >
+          <View style={styles.contentHeader}>
+            <Text style={styles.currentStepTitle}>
+              {currentStep.title}
             </Text>
-          )}
-        </View>
+            {currentStep.description && (
+              <Text style={styles.currentStepDescription}>
+                {currentStep.description}
+              </Text>
+            )}
+          </View>
 
-        <View style={styles.componentContainer}>{currentStep.component}</View>
-      </ScrollView>
+          <View style={styles.componentContainer}>{currentStep.component}</View>
+        </ScrollView>
+      </KeyboardAvoidingView>
 
       {/* Footer Actions */}
       <Card
@@ -202,21 +208,29 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
   },
+  keyboardView: {
+    flex: 1,
+  },
   contentHeader: {
-    marginBottom: 24,
+    marginBottom: 16,
   },
   currentStepTitle: {
     fontSize: 20,
     fontWeight: '700',
     color: '#0f172a', // text-neutral-900
+    marginBottom: 2,
   },
   currentStepDescription: {
-    marginTop: 4,
-    fontSize: 16,
+    fontSize: 14,
     color: '#64748b', // text-neutral-500
+    lineHeight: 20,
   },
   componentContainer: {
-    minHeight: 300,
+    minHeight: 200,
+  },
+  scrollContent: {
+    paddingBottom: 100, // Reduced from 120
+    paddingHorizontal: 4, // Added small horizontal padding for safety
   },
   footer: {
     position: 'absolute',

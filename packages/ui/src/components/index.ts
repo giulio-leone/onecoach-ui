@@ -28,3 +28,7 @@ export * from './ai-elements';
 
 // Chat components
 export * from './chat/chat-history-modal';
+export * from './chat/conversation-list';
+
+// AI Generation
+export * from './ai-generation-view';

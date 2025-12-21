@@ -19,4 +19,8 @@ export * from './unified-list-item';
 export * from './model-selector-modal';
 export * from './model-selector';
 export * from './project-gantt';
+export * from './ai-elements';
+export * from './chat/chat-history-modal';
+export * from './chat/conversation-list';
+export * from './ai-generation-view';
 //# sourceMappingURL=index.d.ts.map

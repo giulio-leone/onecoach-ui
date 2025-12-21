@@ -13,8 +13,8 @@ interface WizardLayoutProps {
     isCompleting?: boolean;
     title?: string;
     subtitle?: string;
-    className?: string;
+    style?: any;
 }
-export declare function WizardLayout({ steps, currentStepIndex, onStepChange, onComplete, isCompleting, title, subtitle, className, }: WizardLayoutProps): import("react/jsx-runtime").JSX.Element | null;
+export declare function WizardLayout({ steps, currentStepIndex, onStepChange, onComplete, isCompleting, title, subtitle, style, }: WizardLayoutProps): import("react/jsx-runtime").JSX.Element | null;
 export {};
 //# sourceMappingURL=wizard-layout.d.ts.map
