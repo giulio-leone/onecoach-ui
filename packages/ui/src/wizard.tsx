@@ -87,7 +87,7 @@ export interface WizardContainerProps {
 export const WizardContainer = ({ children, header, footer, className }: WizardContainerProps) => {
   return (
     <div className={cn(
-      "flex-1 flex flex-col relative overflow-hidden transition-all duration-700",
+      "flex-1 flex flex-col relative transition-all duration-700",
       "rounded-[3rem] border border-white/60 bg-white/40 backdrop-blur-3xl shadow-[0_40px_120px_-20px_rgba(0,0,0,0.15)]",
       "dark:border-white/10 dark:bg-white/5 dark:shadow-[0_60px_150px_rgba(0,0,0,0.4)]",
       "ring-1 ring-inset ring-white/30 dark:ring-white/5",
