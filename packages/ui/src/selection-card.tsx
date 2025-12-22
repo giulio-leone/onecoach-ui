@@ -72,7 +72,7 @@ export function SelectionCard({
       aria-disabled={disabled}
       {...ariaProps}
       className={cn(
-        'w-full text-left transition-all duration-300 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl touch-pan-y',
+        'w-full text-left transition-all duration-300 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-xl touch-pan-y select-none',
         selected ? 'scale-[1.02]' : 'hover:scale-[1.01]',
         disabled && 'opacity-50 cursor-not-allowed pointer-events-none',
         className

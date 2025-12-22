@@ -92,7 +92,7 @@ export const WizardContainer = ({ children, header, footer, className }: WizardC
           {header}
         </div>
       )}
-      <div className="flex-1 overflow-y-auto overscroll-contain px-2 sm:px-4">
+      <div className="flex-1 overflow-y-auto px-2 sm:px-4">
         {children}
       </div>
       {footer && (
