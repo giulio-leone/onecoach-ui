@@ -98,6 +98,38 @@ export function StreamingResult({
 }: StreamingResultProps) {
   if (!isStreaming && events.length === 0) return null;
 
+  // Process events to merge same-agent updates
+  const processedEvents = events.reduce((acc, event) => {
+    // Try to find if this agent/role already exists in accumulator
+    const agentId = event.data?.agent || event.data?.role || (event.type.startsWith('agent_') ? event.data?.step : undefined);
+    
+    if (agentId) {
+      const existingIndex = acc.findIndex(e => {
+        const eId = e.data?.agent || e.data?.role || (e.type.startsWith('agent_') ? e.data?.step : undefined);
+        return eId === agentId;
+      });
+
+      if (existingIndex >= 0) {
+        // Update existing entry
+        const existingEvent = acc[existingIndex];
+        if (existingEvent) {
+            acc[existingIndex] = {
+            ...existingEvent,
+            type: event.type,
+            message: event.message,
+            timestamp: event.timestamp,
+            data: { ...(existingEvent.data || {}), ...event.data }
+            };
+        }
+        return acc;
+      }
+    }
+    
+    // Default: append
+    acc.push(event);
+    return acc;
+  }, [] as StreamEvent[]);
+
   return (
     <div className={cn('space-y-4 px-4 md:px-0', className)}>
       {/* Progress Card */}
@@ -137,7 +169,7 @@ export function StreamingResult({
         <div
           className="p-3 overflow-y-auto space-y-2 custom-scrollbar"
         >
-          {events.length === 0 ? (
+          {processedEvents.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-6">
               <Loader2 className="h-6 w-6 animate-spin text-blue-500" />
               <span className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
@@ -145,7 +177,7 @@ export function StreamingResult({
               </span>
             </div>
           ) : (
-            events.map((event, index) => (
+            processedEvents.map((event, index) => (
               <EventCard key={`${event.type}-${index}`} event={event} />
             ))
           )}

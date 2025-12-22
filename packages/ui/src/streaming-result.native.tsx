@@ -99,6 +99,38 @@ export function StreamingResult({
 }: StreamingResultProps) {
   if (!isStreaming && events.length === 0) return null;
 
+  // Process events to merge same-agent updates
+  const processedEvents = events.reduce((acc, event) => {
+    // Try to find if this agent/role already exists in accumulator
+    const agentId = event.data?.agent || event.data?.role || (event.type.startsWith('agent_') ? event.data?.step : undefined);
+    
+    if (agentId) {
+      const existingIndex = acc.findIndex(e => {
+        const eId = e.data?.agent || e.data?.role || (e.type.startsWith('agent_') ? e.data?.step : undefined);
+        return eId === agentId;
+      });
+
+      if (existingIndex >= 0) {
+        // Update existing entry
+        const existingEvent = acc[existingIndex];
+        if (existingEvent) {
+            acc[existingIndex] = {
+            ...existingEvent,
+            type: event.type,
+            message: event.message,
+            timestamp: event.timestamp,
+            data: { ...(existingEvent.data || {}), ...event.data }
+            };
+        }
+        return acc;
+      }
+    }
+    
+    // Default: append
+    acc.push(event);
+    return acc;
+  }, [] as StreamEvent[]);
+
   return (
     <View style={[styles.container, style]}>
       {/* Progress Card */}
@@ -143,7 +175,7 @@ export function StreamingResult({
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.logContent}
         >
-          {events.length === 0 ? (
+          {processedEvents.length === 0 ? (
             <View style={styles.emptyState}>
               <Loader2 size={24} color="#3b82f6" /> 
               <Text style={styles.emptyText}>
@@ -151,7 +183,7 @@ export function StreamingResult({
               </Text>
             </View>
           ) : (
-            events.map((event, index) => (
+            processedEvents.map((event, index) => (
               <EventCard key={`${event.type}-${index}`} event={event} />
             ))
           )}
