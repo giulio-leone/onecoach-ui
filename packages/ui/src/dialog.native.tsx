@@ -220,10 +220,7 @@ const styles = StyleSheet.create({
     maxWidth: 400,
     overflow: 'hidden',
     elevation: 5,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 8,
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
   },
   // Modal specific styles
   fullScreen: {
@@ -240,10 +237,7 @@ const styles = StyleSheet.create({
     maxWidth: 500,
     overflow: 'hidden',
     elevation: 5,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: -2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 8,
+    boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.25)',
   },
   modalFullScreen: {
     borderRadius: 0,

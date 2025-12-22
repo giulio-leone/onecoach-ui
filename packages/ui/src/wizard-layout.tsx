@@ -247,11 +247,8 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderColor: '#e2e8f0', // border-neutral-200
     padding: 16,
-    // Shadow for iOS
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: -4 },
-    shadowOpacity: 0.05,
-    shadowRadius: 20,
+    // Shadow for iOS and Web
+    boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.05)',
     // Elevation for Android
     elevation: 5,
   },

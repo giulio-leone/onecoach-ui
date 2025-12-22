@@ -33,7 +33,6 @@ export const Drawer = ({
   size = 'md',
   closeOnBackdropClick = true,
   showCloseButton = true,
-  mobileFullScreen = false,
 }: DrawerProps) => {
   // Handle Android back button
   useEffect(() => {
@@ -178,11 +177,8 @@ const styles = StyleSheet.create({
   },
   drawer: {
     backgroundColor: '#ffffff',
-    elevation: 5,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 8,
+
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
   },
   header: {
     flexDirection: 'row',

@@ -120,10 +120,9 @@ export const Button = React.forwardRef<View, ButtonProps>(
             borderRadius: sizeStyles.container.borderRadius,
             backgroundColor: 'transparent',
             // Add shadow for gradient manually if needed or via style prop
-            shadowColor: variant === 'gradient-primary' ? '#3b82f6' : '#d946ef',
-            shadowOffset: { width: 0, height: 4 },
-            shadowOpacity: 0.3,
-            shadowRadius: 4.65,
+            boxShadow: variant === 'gradient-primary' 
+              ? '0 4px 4.65px rgba(59, 130, 246, 0.3)' 
+              : '0 4px 4.65px rgba(217, 70, 239, 0.3)',
             elevation: 8,
           },
           !isGradient && sizeStyles.container, // Padding is handled inside for gradient? logic check below.
@@ -174,10 +173,7 @@ function getVariantStyles(variant: ButtonVariant) {
     primary: {
       container: {
         backgroundColor: '#10b981',
-        shadowColor: '#10b981',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 4,
+        boxShadow: '0 2px 4px rgba(16, 185, 129, 0.2)',
         elevation: 3,
       },
       text: { color: '#ffffff' },
@@ -188,10 +184,7 @@ function getVariantStyles(variant: ButtonVariant) {
         backgroundColor: '#ffffff',
         borderWidth: 1,
         borderColor: '#e5e7eb',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.1,
-        shadowRadius: 2,
+        boxShadow: '0 1px 2px rgba(0, 0, 0, 0.1)',
         elevation: 2,
       },
       text: { color: '#374151' },
@@ -200,10 +193,7 @@ function getVariantStyles(variant: ButtonVariant) {
     danger: {
       container: {
         backgroundColor: '#ef4444',
-        shadowColor: '#ef4444',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 4,
+        boxShadow: '0 2px 4px rgba(239, 68, 68, 0.2)',
         elevation: 3,
       },
       text: { color: '#ffffff' },
@@ -219,10 +209,7 @@ function getVariantStyles(variant: ButtonVariant) {
     default: {
       container: {
         backgroundColor: '#3b82f6',
-        shadowColor: '#3b82f6',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.15,
-        shadowRadius: 3,
+        boxShadow: '0 2px 3px rgba(59, 130, 246, 0.15)',
         elevation: 2,
       },
       text: { color: '#ffffff' },
@@ -240,10 +227,7 @@ function getVariantStyles(variant: ButtonVariant) {
     success: {
       container: {
         backgroundColor: '#10b981',
-        shadowColor: '#10b981',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 4,
+        boxShadow: '0 2px 4px rgba(16, 185, 129, 0.2)',
         elevation: 3,
       },
       text: { color: '#ffffff' },
@@ -252,10 +236,7 @@ function getVariantStyles(variant: ButtonVariant) {
     info: {
       container: {
         backgroundColor: '#3b82f6',
-        shadowColor: '#3b82f6',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 4,
+        boxShadow: '0 2px 4px rgba(59, 130, 246, 0.2)',
         elevation: 3,
       },
       text: { color: '#ffffff' },

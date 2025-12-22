@@ -15,7 +15,7 @@ type XCardProps =
 
 const resolveChildren = (value: PressableProps['children']): React.ReactNode => {
   if (typeof value === 'function') {
-    return value({ pressed: false, hovered: false, focused: false });
+    return value({ pressed: false });
   }
   return value ?? null;
 };
@@ -79,10 +79,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 16,
     backgroundColor: '#FFFFFF',
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 12,
-    shadowOffset: { width: 0, height: 4 },
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
     elevation: 2,
   },
   pressed: {
