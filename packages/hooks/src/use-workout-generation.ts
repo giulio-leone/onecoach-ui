@@ -8,6 +8,7 @@ import {
 
 type WorkoutInput = WorkoutGenerationInput & {
   model?: string;
+  resumeFromStateId?: string;
 };
 
 export function useWorkoutGeneration(

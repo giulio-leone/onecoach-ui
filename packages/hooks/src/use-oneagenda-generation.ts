@@ -11,6 +11,7 @@ export interface GenerationLogEvent {
 export interface OneAgendaGenerationInput {
   description: string;
   userPreferences?: Record<string, any>;
+  resumeFromStateId?: string;
 }
 
 export interface OneAgendaGenerationResult {

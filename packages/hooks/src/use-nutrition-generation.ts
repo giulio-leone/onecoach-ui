@@ -9,6 +9,7 @@ import {
 
 export type NutritionGenerationInput = PatternNutritionGenerationInput & {
   model?: string;
+  resumeFromStateId?: string;
 };
 
 export type NutritionGenerationResult = PatternBasedNutritionPlan;
