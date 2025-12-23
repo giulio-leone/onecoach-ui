@@ -3,15 +3,22 @@
  *
  * Combines debounce + API call + optimistic updates for auto-saving data.
  * Provides smooth UX with automatic save indicator.
+ * 
+ * Enhanced Features:
+ * - `enabled` flag for conditional autosave (e.g., only for existing programs)
+ * - `hasPendingChanges` state for unsaved changes indicator
  */
 
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useDebouncedCallback } from './use-debounce';
 
 export interface AutoSaveOptions<T> {
-  delay?: number; // Debounce delay in ms (default: 500)
+  /** Debounce delay in ms (default: 2000 for autosave) */
+  delay?: number;
+  /** Enable/disable autosave (default: true). Set to false for new items. */
+  enabled?: boolean;
   onSaveStart?: () => void;
   onSaveSuccess?: (data: T) => void;
   onSaveError?: (error: Error) => void;
@@ -21,33 +28,45 @@ export interface AutoSaveState {
   isSaving: boolean;
   lastSaved: Date | null;
   error: Error | null;
+  /** True when there are unsaved changes pending */
+  hasPendingChanges: boolean;
 }
 
 export function useAutoSave<T>(
   data: T,
-  saveFunction: (data: T) => Promise<T>,
+  saveFunction: (data: T) => Promise<T | void>,
   options: AutoSaveOptions<T> = {}
 ) {
-  const { delay = 500, onSaveStart, onSaveSuccess, onSaveError } = options;
+  const { 
+    delay = 2000, 
+    enabled = true, 
+    onSaveStart, 
+    onSaveSuccess, 
+    onSaveError 
+  } = options;
 
   const [state, setState] = useState<AutoSaveState>({
     isSaving: false,
     lastSaved: null,
     error: null,
+    hasPendingChanges: false,
   });
 
   const isMountedRef = useRef(false);
   const previousDataRef = useRef<T>(data);
+  const initialDataRef = useRef<T>(data);
 
   // Track if component is mounted
   useEffect(() => {
     isMountedRef.current = true;
+    initialDataRef.current = data;
     return () => {
       isMountedRef.current = false;
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const performSave = async (dataToSave: T) => {
+  const performSave = useCallback(async (dataToSave: T) => {
     if (!isMountedRef.current) return;
 
     setState((prev) => ({ ...prev, isSaving: true, error: null }));
@@ -64,10 +83,11 @@ export function useAutoSave<T>(
           isSaving: false,
           lastSaved: new Date(),
           error: null,
+          hasPendingChanges: false,
         });
 
         if (onSaveSuccess) {
-          onSaveSuccess(result);
+          onSaveSuccess(result as T);
         }
       }
     } catch (error: unknown) {
@@ -78,6 +98,8 @@ export function useAutoSave<T>(
           ...prev,
           isSaving: false,
           error: saveError,
+          // Keep pending changes true on error so user knows data not saved
+          hasPendingChanges: true,
         }));
 
         if (onSaveError) {
@@ -85,13 +107,13 @@ export function useAutoSave<T>(
         }
       }
     }
-  };
+  }, [saveFunction, onSaveStart, onSaveSuccess, onSaveError]);
 
   const debouncedSave = useDebouncedCallback((dataToSave: T) => {
     void performSave(dataToSave);
   }, delay);
 
-  // Auto-save when data changes
+  // Auto-save when data changes (only if enabled)
   useEffect(() => {
     // Skip initial mount
     if (!isMountedRef.current) {
@@ -100,21 +122,38 @@ export function useAutoSave<T>(
     }
 
     // Skip if data hasn't changed
-    if (JSON.stringify(data) === JSON.stringify(previousDataRef.current)) {
+    const currentDataJson = JSON.stringify(data);
+    const previousDataJson = JSON.stringify(previousDataRef.current);
+    
+    if (currentDataJson === previousDataJson) {
       return;
     }
 
     previousDataRef.current = data;
-    debouncedSave(data);
-  }, [data, debouncedSave]);
+    
+    // Mark as having pending changes
+    setState((prev) => ({ ...prev, hasPendingChanges: true }));
+
+    // Only trigger autosave if enabled
+    if (enabled) {
+      debouncedSave(data);
+    }
+  }, [data, debouncedSave, enabled]);
 
   // Manual save function (bypasses debounce)
-  const saveNow = async () => {
+  const saveNow = useCallback(async () => {
     await performSave(data);
-  };
+  }, [data, performSave]);
+
+  // Reset pending changes (useful after manual save or navigation)
+  const resetPendingChanges = useCallback(() => {
+    setState((prev) => ({ ...prev, hasPendingChanges: false }));
+  }, []);
 
   return {
     ...state,
     saveNow,
+    resetPendingChanges,
   };
 }
+

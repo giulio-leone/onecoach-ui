@@ -5,3 +5,4 @@
  */
 
 export * from './components/base';
+export * from './components/autosave-indicator';
