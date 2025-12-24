@@ -139,38 +139,40 @@ export function DayEditorShell({
 
   return (
     <div className={cn('flex flex-col gap-6', className)}>
-      {/* Header */}
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <div className="space-y-1">
-            <h2 className="text-xl font-bold text-white">{title}</h2>
-            <div className="flex items-center gap-3 text-sm text-neutral-400">
-              <span>
-                {itemCount} {itemLabel}
-              </span>
-              {additionalStats && (
-                <>
-                  <span className="h-1 w-1 rounded-full bg-neutral-700" />
-                  <span>{additionalStats}</span>
-                </>
-              )}
+      {/* Header Container - Glassmorphism Premium */}
+      <div className="glass-strong rounded-2xl border border-white/10 p-3 shadow-lg shadow-black/5 sm:p-5">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="space-y-1">
+              <h2 className="text-xl font-bold text-white sm:text-2xl">{title}</h2>
+              <div className="flex items-center gap-2 text-xs font-medium text-neutral-400 sm:text-sm">
+                <span>
+                  {itemCount} {itemLabel}
+                </span>
+                {additionalStats && (
+                  <>
+                    <span className="text-neutral-600">•</span>
+                    <span>{additionalStats}</span>
+                  </>
+                )}
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Button
+                variant={themeColor === 'emerald' ? 'success' : 'gradient-primary'}
+                icon={<Plus size={16} className="text-white" />}
+                onPress={onAdd}
+                className="flex-1 sm:w-auto"
+              >
+                {addButtonLabel}
+              </Button>
+              {headerActions}
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <Button
-              variant="gradient-primary"
-              icon={<Plus size={16} className="text-white" />}
-              onPress={onAdd}
-              className="w-full sm:w-auto"
-            >
-              {addButtonLabel}
-            </Button>
-            {headerActions}
-          </div>
-        </div>
 
-        {/* Optional header slot (e.g., macro summary bar) */}
-        {headerSlot}
+          {/* Optional header slot (e.g., macro summary bar) */}
+          {headerSlot}
+        </div>
       </div>
 
       {/* DnD Context */}
