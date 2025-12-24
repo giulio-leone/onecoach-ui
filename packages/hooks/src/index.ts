@@ -41,3 +41,6 @@ export * from './use-navigation-persistence';
 // Form handling hook
 export * from './useForm';
 export * from './use-oneagenda-generation';
+
+// Visual Builder hooks
+export * from './use-visual-builder-state';
