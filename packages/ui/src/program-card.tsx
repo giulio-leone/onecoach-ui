@@ -264,6 +264,7 @@ export function ProgramCard({
                   data-card-action="true"
                   className={baseClasses}
                   title={action.title}
+                  onClick={(e) => e.stopPropagation()}
                 >
                   {action.icon}
                 </Link>
@@ -273,7 +274,10 @@ export function ProgramCard({
             return (
               <button
                 key={index}
-                onClick={action.onClick}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  action.onClick?.();
+                }}
                 data-card-action="true"
                 className={baseClasses}
                 title={action.title}
