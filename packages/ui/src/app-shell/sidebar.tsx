@@ -10,6 +10,7 @@
 
 import { useEffect, startTransition } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import {
   LayoutDashboard,
   MessageSquare,
@@ -66,122 +67,126 @@ function dedupeNavigation(items: SidebarNavigationItem[]): SidebarNavigationItem
   return items.map(visit).filter((item): item is SidebarNavigationItem => Boolean(item));
 }
 
-// Base navigation sections
-const PERSONAL_NAVIGATION: SidebarNavigationItem = {
-  name: 'Area Personale',
-  icon: LayoutDashboard,
-  defaultOpen: true,
-  children: [
-    { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
-    { name: 'Agenda', href: '/oneagenda', icon: Calendar },
-    { name: 'Voli', href: '/flight', icon: Plane, badge: 'AI' },
-    { name: 'Messaggi', href: '/messages', icon: MessageSquare },
-    { name: 'Chat AI', href: '/chat', icon: MessageSquare, badge: 'AI' },
-    { name: 'Profilo', href: '/profile', icon: User },
-  ],
-};
+function getNavigationItems(
+  userRole: string | undefined | null,
+  pathname: string,
+  t: (key: string) => string
+) {
+  // Base navigation sections
+  const PERSONAL_NAVIGATION: SidebarNavigationItem = {
+    name: t('personalArea'),
+    icon: LayoutDashboard,
+    defaultOpen: true,
+    children: [
+      { name: t('dashboard'), href: '/dashboard', icon: LayoutDashboard },
+      { name: t('agenda'), href: '/oneagenda', icon: Calendar },
+      { name: t('flights'), href: '/flight', icon: Plane, badge: 'AI' },
+      { name: t('messages'), href: '/messages', icon: MessageSquare },
+      { name: t('aiChat'), href: '/chat', icon: MessageSquare, badge: 'AI' },
+      { name: t('profile'), href: '/profile', icon: User },
+    ],
+  };
 
-const FITNESS_NAVIGATION: SidebarNavigationItem = {
-  name: 'Allenamento & Nutrizione',
-  icon: Dumbbell,
-  children: [
-    { name: 'Programmi', href: '/workouts', icon: Dumbbell },
-    { name: 'Nutrizione', href: '/nutrition', icon: Apple },
-  ],
-};
+  const FITNESS_NAVIGATION: SidebarNavigationItem = {
+    name: t('trainingNutrition'),
+    icon: Dumbbell,
+    children: [
+      { name: t('programs'), href: '/workouts', icon: Dumbbell },
+      { name: t('nutrition'), href: '/nutrition', icon: Apple },
+    ],
+  };
 
-const INSIGHTS_NAVIGATION: SidebarNavigationItem = {
-  name: 'Insights',
-  icon: BarChart3,
-  children: [{ name: 'Analytics', href: '/analytics', icon: BarChart3 }],
-};
+  const INSIGHTS_NAVIGATION: SidebarNavigationItem = {
+    name: t('insights'),
+    icon: BarChart3,
+    children: [{ name: t('analytics'), href: '/analytics', icon: BarChart3 }],
+  };
 
-const BUSINESS_NAVIGATION: SidebarNavigationItem = {
-  name: 'Business',
-  icon: ShoppingBag,
-  children: [
-    { name: 'Pricing', href: '/pricing', icon: CreditCard },
-    { name: 'Marketplace', href: '/marketplace', icon: ShoppingBag },
-    { name: 'Affiliazioni', href: '/affiliations', icon: Users },
-  ],
-};
+  const BUSINESS_NAVIGATION: SidebarNavigationItem = {
+    name: t('business'),
+    icon: ShoppingBag,
+    children: [
+      { name: t('pricing'), href: '/pricing', icon: CreditCard },
+      { name: t('marketplace'), href: '/marketplace', icon: ShoppingBag },
+      { name: t('affiliations'), href: '/affiliations', icon: Users },
+    ],
+  };
 
-const BASE_NAVIGATION_SECTIONS: SidebarNavigationItem[] = [
-  PERSONAL_NAVIGATION,
-  FITNESS_NAVIGATION,
-  INSIGHTS_NAVIGATION,
-  BUSINESS_NAVIGATION,
-];
+  const BASE_NAVIGATION_SECTIONS: SidebarNavigationItem[] = [
+    PERSONAL_NAVIGATION,
+    FITNESS_NAVIGATION,
+    INSIGHTS_NAVIGATION,
+    BUSINESS_NAVIGATION,
+  ];
 
-// Coach-specific navigation
-const COACH_NAVIGATION: SidebarNavigationItem = {
-  name: 'Area Coach',
-  icon: GraduationCap,
-  badge: 'Coach',
-  children: [
-    { name: 'Coach Dashboard', href: '/coach/dashboard', icon: GraduationCap },
-    { name: 'I Miei Clienti', href: '/coach/clients', icon: Users },
-    { name: 'Coach Analytics', href: '/coach/analytics', icon: TrendingUp },
-    { name: 'Il Mio Profilo', href: '/coach/profile', icon: UserCircle },
-    { name: 'Verifica Account', href: '/coach/vetting', icon: CheckCircle2 },
-  ],
-};
+  // Coach-specific navigation
+  const COACH_NAVIGATION: SidebarNavigationItem = {
+    name: t('coachArea'),
+    icon: GraduationCap,
+    badge: 'Coach',
+    children: [
+      { name: t('coachDashboard'), href: '/coach/dashboard', icon: GraduationCap },
+      { name: t('myClients'), href: '/coach/clients', icon: Users },
+      { name: t('coachAnalytics'), href: '/coach/analytics', icon: TrendingUp },
+      { name: t('myProfile'), href: '/coach/profile', icon: UserCircle },
+      { name: t('vetting'), href: '/coach/vetting', icon: CheckCircle2 },
+    ],
+  };
 
-// Admin-specific navigation
-const ADMIN_NAVIGATION: SidebarNavigationItem = {
-  name: 'Area Admin',
-  icon: Shield,
-  badge: 'Admin',
-  children: [
-    { name: 'Admin Dashboard', href: '/admin', icon: LayoutDashboard },
-    { name: 'Area Coach', href: '/coach/dashboard', icon: GraduationCap, badge: 'Coach' },
-    { name: 'Utenti', href: '/admin/users', icon: Users },
-    { name: 'Abbonamenti', href: '/admin/subscriptions', icon: CreditCard },
-    { name: 'Catalogo Esercizi', href: '/admin/exercises', icon: Dumbbell },
-    { name: 'Catalogo Alimenti', href: '/admin/foods', icon: Apple },
-    { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
-    { name: 'System Prompts', href: '/admin/prompts', icon: FileText },
-    {
-      name: 'Commerce',
-      href: '/admin/carts',
-      icon: ShoppingBag,
-      children: [
-        { name: 'Carts', href: '/admin/carts', icon: ShoppingCart },
-        { name: 'Orders', href: '/admin/orders', icon: Receipt },
-        { name: 'Checkout Settings', href: '/admin/checkout', icon: CreditCard },
-      ],
-    },
-    {
-      name: 'AI Settings',
-      href: '/admin/ai-settings',
-      icon: Sparkles,
-      defaultOpen: true,
-      children: [
-        { name: 'Provider & API Keys', href: '/admin/ai-settings?section=providers', icon: Shield },
-        { name: 'Modelli & Accessi', href: '/admin/ai-settings?section=models', icon: Bot },
-        { name: 'Feature Toggles', href: '/admin/ai-settings?section=features', icon: Settings },
-        { name: 'System Prompts', href: '/admin/ai-settings?section=prompts', icon: FileText },
-        { name: 'Framework & Agents', href: '/admin/ai-settings?section=framework', icon: Wand2 },
-        { name: 'Billing & Crediti', href: '/admin/ai-settings?section=billing', icon: CreditCard },
-        { name: 'Feature Flags', href: '/admin/ai-settings?section=flags', icon: Activity },
-        { name: 'Edge Config', href: '/admin/ai-settings?section=edge', icon: Settings },
-        { name: 'Analytics', href: '/admin/ai-settings?section=analytics', icon: BarChart3 },
-        {
-          name: 'Conversazioni',
-          href: '/admin/ai-settings?section=conversations',
-          icon: MessageSquare,
-        },
-      ],
-    },
-  ],
-};
+  // Admin-specific navigation
+  const ADMIN_NAVIGATION: SidebarNavigationItem = {
+    name: t('adminArea'),
+    icon: Shield,
+    badge: 'Admin',
+    children: [
+      { name: t('adminDashboard'), href: '/admin', icon: LayoutDashboard },
+      { name: t('coachArea'), href: '/coach/dashboard', icon: GraduationCap, badge: 'Coach' },
+      { name: t('users'), href: '/admin/users', icon: Users },
+      { name: t('subscriptions'), href: '/admin/subscriptions', icon: CreditCard },
+      { name: t('exercisesCatalog'), href: '/admin/exercises', icon: Dumbbell },
+      { name: t('foodsCatalog'), href: '/admin/foods', icon: Apple },
+      { name: t('analytics'), href: '/admin/analytics', icon: BarChart3 },
+      { name: t('systemPrompts'), href: '/admin/prompts', icon: FileText },
+      {
+        name: t('commerce'),
+        href: '/admin/carts',
+        icon: ShoppingBag,
+        children: [
+          { name: t('carts'), href: '/admin/carts', icon: ShoppingCart },
+          { name: t('orders'), href: '/admin/orders', icon: Receipt },
+          { name: t('checkoutSettings'), href: '/admin/checkout', icon: CreditCard },
+        ],
+      },
+      {
+        name: t('aiSettings'),
+        href: '/admin/ai-settings',
+        icon: Sparkles,
+        defaultOpen: true,
+        children: [
+          { name: t('providersKeys'), href: '/admin/ai-settings?section=providers', icon: Shield },
+          { name: t('modelsAccess'), href: '/admin/ai-settings?section=models', icon: Bot },
+          { name: t('featureToggles'), href: '/admin/ai-settings?section=features', icon: Settings },
+          { name: t('systemPrompts'), href: '/admin/ai-settings?section=prompts', icon: FileText },
+          { name: t('frameworkAgents'), href: '/admin/ai-settings?section=framework', icon: Wand2 },
+          { name: t('billingCredits'), href: '/admin/ai-settings?section=billing', icon: CreditCard },
+          { name: t('featureFlags'), href: '/admin/ai-settings?section=flags', icon: Activity },
+          { name: t('edgeConfig'), href: '/admin/ai-settings?section=edge', icon: Settings },
+          { name: t('analytics'), href: '/admin/ai-settings?section=analytics', icon: BarChart3 },
+          {
+            name: t('conversations'),
+            href: '/admin/ai-settings?section=conversations',
+            icon: MessageSquare,
+          },
+        ],
+      },
+    ],
+  };
 
-function getNavigationItems(userRole: string | undefined | null, pathname: string) {
   // Se l'utente è admin e si trova in /admin mostra solo nav admin + link back
   if (isAdminRole(userRole) && pathname.startsWith('/admin')) {
     return dedupeNavigation([
       { ...ADMIN_NAVIGATION, defaultOpen: true },
-      { name: 'Torna alla App', href: '/dashboard', icon: LayoutDashboard, badge: 'App' },
+      { name: t('backToApp'), href: '/dashboard', icon: LayoutDashboard, badge: 'App' },
     ]);
   }
 
@@ -199,6 +204,7 @@ function getNavigationItems(userRole: string | undefined | null, pathname: strin
 }
 
 export function AppShellSidebar({ user }: AppShellSidebarProps) {
+  const t = useTranslations('navigation.sidebar');
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPath = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
@@ -254,9 +260,9 @@ export function AppShellSidebar({ user }: AppShellSidebarProps) {
   // ma SEMPRE prendi il ruolo dal server user per garantire che admin/coach siano visibili
   // Il clientUser potrebbe avere dati stale dalla persistenza localStorage
   const effectiveUser = clientUser
-    ? { ...clientUser, role: user.role } // Merge con il ruolo dal server (sempre aggiornato)
+    ? { ...clientUser, role: user.role } // Merge con l'utente dallo store (aggiornato in realtime)
     : user;
-  const navigation = getNavigationItems(effectiveUser?.role, pathname);
+  const navigation = getNavigationItems(effectiveUser?.role, pathname, t);
 
   return (
     <>
