@@ -3,8 +3,15 @@
 import { Card } from '../card';
 import { ProgressBar } from './progress-bar';
 import { cn } from '@onecoach/lib-design-system';
-import { Calendar, MoreVertical, ArrowRight } from 'lucide-react';
+import { Calendar, MoreVertical, ArrowRight, Edit, Copy, Trash2 } from 'lucide-react';
 import Link from 'next/link';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '../dropdown-menu';
 
 interface ProjectCardProps {
   id: string;
@@ -17,6 +24,9 @@ interface ProjectCardProps {
   completedTaskCount: number;
   color?: string;
   className?: string;
+  onEdit?: (id: string) => void;
+  onDuplicate?: (id: string) => void;
+  onDelete?: (id: string) => void;
 }
 
 export function ProjectCard({
@@ -30,6 +40,9 @@ export function ProjectCard({
   completedTaskCount,
   color = '#3B82F6',
   className,
+  onEdit,
+  onDuplicate,
+  onDelete,
 }: ProjectCardProps) {
   const statusColors = {
     ACTIVE: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300',
@@ -60,9 +73,37 @@ export function ProjectCard({
             </span>
           </div>
         </div>
-        <button className="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200">
-          <MoreVertical className="h-5 w-5" />
-        </button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button className="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200">
+              <MoreVertical className="h-5 w-5" />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {onEdit && (
+              <DropdownMenuItem onClick={() => onEdit(id)}>
+                <Edit className="mr-2 h-4 w-4" />
+                Modifica
+              </DropdownMenuItem>
+            )}
+            {onDuplicate && (
+              <DropdownMenuItem onClick={() => onDuplicate(id)}>
+                <Copy className="mr-2 h-4 w-4" />
+                Duplica
+              </DropdownMenuItem>
+            )}
+            {(onEdit || onDuplicate) && onDelete && <DropdownMenuSeparator />}
+            {onDelete && (
+              <DropdownMenuItem
+                onClick={() => onDelete(id)}
+                className="text-red-600 focus:text-red-600 dark:text-red-400"
+              >
+                <Trash2 className="mr-2 h-4 w-4" />
+                Elimina
+              </DropdownMenuItem>
+            )}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
 
       {description && (
