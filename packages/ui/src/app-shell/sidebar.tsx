@@ -34,6 +34,7 @@ import {
   Settings,
   Wand2,
   Activity,
+  Plane,
 } from 'lucide-react';
 import { ModernSidebar, type SidebarNavigationItem } from '../modern-sidebar';
 import { useUIStore, useAuthStore, useSidebarStore } from '@onecoach/lib-stores';
@@ -73,6 +74,7 @@ const PERSONAL_NAVIGATION: SidebarNavigationItem = {
   children: [
     { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
     { name: 'Agenda', href: '/oneagenda', icon: Calendar },
+    { name: 'Voli', href: '/flight', icon: Plane, badge: 'AI' },
     { name: 'Messaggi', href: '/messages', icon: MessageSquare },
     { name: 'Chat AI', href: '/chat', icon: MessageSquare, badge: 'AI' },
     { name: 'Profilo', href: '/profile', icon: User },

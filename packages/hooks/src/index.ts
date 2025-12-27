@@ -16,6 +16,7 @@ export * from './use-workout-generation';
 export * from './use-nutrition-generation';
 export * from './use-exercise-generation';
 export * from './use-food-generation';
+export * from './use-flight-search';
 
 // Cross-feature utility hooks
 export * from './use-chat';
