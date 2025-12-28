@@ -18,9 +18,11 @@ import { ThemeToggle } from '../theme-toggle';
 export interface AppShellHeaderProps {
   brandHref?: string;
   brandLabel?: string;
+  /** Extra content to render on the right side, before ThemeToggle */
+  rightExtra?: React.ReactNode;
 }
 
-export function AppShellHeader({ brandHref, brandLabel }: AppShellHeaderProps) {
+export function AppShellHeader({ brandHref, brandLabel, rightExtra }: AppShellHeaderProps) {
   const { toggleMobileMenu } = useUIStore();
   const { user, updateUser } = useAuthStore();
   const { actions: headerActions, leftContent } = useHeaderActions();
@@ -120,6 +122,8 @@ export function AppShellHeader({ brandHref, brandLabel }: AppShellHeaderProps) {
           >
             <Bot className="h-5 w-5" />
           </button>
+
+          {rightExtra}
 
           <ThemeToggle />
         </div>
