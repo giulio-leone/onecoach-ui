@@ -10,7 +10,7 @@
 import * as React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { AlertCircle, CheckCircle, Info, AlertTriangle, X } from 'lucide-react';
-import { cn, darkModeClasses } from '@onecoach/lib-design-system';
+import { cn } from '@onecoach/lib-design-system';
 import { Button } from './button';
 import {
   type DialogProps as SimpleDialogProps,
@@ -93,6 +93,7 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
+  description?: string;
   children: React.ReactNode;
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
   closeOnBackdropClick?: boolean; // Radix handles this via onInteractOutside
@@ -105,6 +106,7 @@ export const Modal = ({
   isOpen,
   onClose,
   title,
+  description,
   children,
   size = 'md',
   closeOnBackdropClick = true,
@@ -126,6 +128,7 @@ export const Modal = ({
         {title && (
           <DialogHeader className="mb-4">
             <DialogTitle>{title}</DialogTitle>
+            {description && <DialogDescription>{description}</DialogDescription>}
           </DialogHeader>
         )}
         <div className="flex-1 overflow-y-auto">
@@ -315,7 +318,7 @@ const SimpleDialog = ({
       className={cn(
         'fixed inset-0 z-[1060] flex items-center justify-center',
         'p-4 sm:p-6',
-        'animate-fadeIn'
+        'animate-in fade-in duration-200'
       )}
       onClick={(e: React.MouseEvent<HTMLElement>) => {
         if (e.target === e.currentTarget) {
@@ -324,23 +327,35 @@ const SimpleDialog = ({
       }}
       role="presentation"
     >
+      {/* Premium Glassmorphism Backdrop */}
       <div
-        className={cn('absolute inset-0', darkModeClasses.bg.backdrop, 'backdrop-blur-sm')}
+        className={cn(
+          'absolute inset-0',
+          'bg-black/40 dark:bg-black/60',
+          'backdrop-blur-xl'
+        )}
         aria-hidden="true"
       />
 
+      {/* Premium Glassmorphism Dialog Container */}
       <div
         ref={dialogRef}
         className={cn(
           'relative w-full',
           sizeStyles[size],
-          'rounded-2xl',
+          // Glassmorphism Container
+          'rounded-3xl',
           'overflow-hidden',
-          darkModeClasses.card.elevated,
-          'animate-slide-up',
+          'bg-white/80 dark:bg-neutral-900/80',
+          'backdrop-blur-2xl',
+          'border border-white/20 dark:border-white/10',
+          // Premium Shadow
+          'shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)]',
+          'dark:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]',
+          // Animation
+          'animate-in zoom-in-95 slide-in-from-bottom-4 duration-300',
           'max-h-[calc(100vh-2rem)] sm:max-h-[calc(100vh-3rem)]',
-          'flex flex-col',
-          'shadow-2xl'
+          'flex flex-col'
         )}
         role="dialog"
         aria-modal="true"
@@ -348,18 +363,23 @@ const SimpleDialog = ({
         aria-describedby="dialog-message"
         onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
       >
-        <div className={cn('flex items-start gap-4', 'px-6 py-5 sm:px-6 sm:py-6', 'flex-shrink-0')}>
+        {/* Header Section */}
+        <div className={cn('flex items-start gap-4', 'px-6 py-6', 'flex-shrink-0')}>
+          {/* Premium Glass Icon Container */}
           <div
             className={cn(
               'flex-shrink-0',
-              'h-10 w-10 sm:h-12 sm:w-12',
-              'rounded-full',
-              'flex items-center justify-center'
+              'h-12 w-12 sm:h-14 sm:w-14',
+              'rounded-2xl',
+              'flex items-center justify-center',
+              'bg-gradient-to-br from-white/50 to-white/20',
+              'dark:from-white/10 dark:to-white/5',
+              'border border-white/30 dark:border-white/10',
+              'shadow-lg'
             )}
-            style={{ backgroundColor: typeConfig.iconBg }}
           >
             <IconComponent
-              className="h-5 w-5 sm:h-6 sm:w-6"
+              className="h-6 w-6 sm:h-7 sm:w-7"
               style={{ color: typeConfig.iconColor }}
             />
           </div>
@@ -369,8 +389,8 @@ const SimpleDialog = ({
               <h2
                 id="dialog-title"
                 className={cn(
-                  'mb-2 text-lg font-semibold sm:text-xl',
-                  darkModeClasses.text.primary
+                  'mb-2 text-xl font-bold tracking-tight sm:text-2xl',
+                  'text-neutral-900 dark:text-white'
                 )}
               >
                 {labels.title}
@@ -380,8 +400,8 @@ const SimpleDialog = ({
               id="dialog-message"
               className={cn(
                 'text-sm sm:text-base',
-                darkModeClasses.text.secondary,
-                'whitespace-pre-wrap'
+                'text-neutral-600 dark:text-neutral-400',
+                'whitespace-pre-wrap leading-relaxed'
               )}
             >
               {message}
@@ -389,8 +409,9 @@ const SimpleDialog = ({
           </div>
         </div>
 
+        {/* Premium Glass Input Field */}
         {type === 'prompt' && (
-          <div className="px-6 pb-4">
+          <div className="px-6 pb-5">
             <input
               ref={inputRef}
               type="text"
@@ -406,29 +427,35 @@ const SimpleDialog = ({
               placeholder={placeholder}
               className={cn(
                 'w-full',
-                'px-4 py-3',
-                'rounded-lg',
-                'border',
-                darkModeClasses.border.base,
-                darkModeClasses.bg.base,
-                darkModeClasses.text.primary,
-                'focus:ring-2 focus:outline-none',
-                'focus:ring-emerald-500 dark:focus:ring-emerald-400',
-                'focus:border-transparent',
+                'px-5 py-4',
+                'rounded-xl',
+                'text-base font-medium',
+                // Glass Input Styling
+                'bg-white/60 dark:bg-neutral-800/60',
+                'backdrop-blur-sm',
+                'border border-neutral-200/50 dark:border-neutral-700/50',
+                'text-neutral-900 dark:text-white',
+                'placeholder:text-neutral-400 dark:placeholder:text-neutral-500',
+                // Focus States
+                'focus:outline-none',
+                'focus:ring-2 focus:ring-emerald-500/50 dark:focus:ring-emerald-400/50',
+                'focus:border-emerald-500/50 dark:focus:border-emerald-400/50',
+                'focus:bg-white/80 dark:focus:bg-neutral-800/80',
                 'transition-all duration-200'
               )}
             />
           </div>
         )}
 
+        {/* Premium Glass Footer */}
         <div
           className={cn(
             'flex flex-col-reverse sm:flex-row',
             'items-stretch sm:items-center',
             'justify-end gap-3',
-            'px-6 py-4 sm:py-5',
-            'border-t',
-            darkModeClasses.border.base,
+            'px-6 py-5',
+            'border-t border-neutral-200/30 dark:border-neutral-700/30',
+            'bg-neutral-50/50 dark:bg-neutral-900/50',
             'flex-shrink-0'
           )}
         >
@@ -436,7 +463,7 @@ const SimpleDialog = ({
             <Button
               variant="outline"
               onClick={handleCancel}
-              className="min-h-[2.75rem] sm:min-w-[6rem]"
+              className="min-h-[2.75rem] sm:min-w-[7rem] rounded-xl font-semibold"
             >
               {labels.cancel}
             </Button>
@@ -444,7 +471,7 @@ const SimpleDialog = ({
           <Button
             variant={type === 'error' ? 'danger' : 'primary'}
             onClick={handleConfirm}
-            className="min-h-[2.75rem] sm:min-w-[6rem]"
+            className="min-h-[2.75rem] sm:min-w-[7rem] rounded-xl font-semibold shadow-lg"
           >
             {labels.confirm}
           </Button>

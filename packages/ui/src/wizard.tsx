@@ -124,8 +124,8 @@ export const WizardActions = ({
   canBack, 
   canNext, 
   isLastStep,
-  nextLabel = "Continua",
-  generateLabel = "Genera Piano",
+  nextLabel = "Continue",
+  generateLabel = "Generate Plan",
   className 
 }: WizardActionsProps) => {
   return (

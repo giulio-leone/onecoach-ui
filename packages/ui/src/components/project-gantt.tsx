@@ -23,7 +23,16 @@ export interface Project {
 }
 
 export function ProjectGantt({
-  project, className }: { project: Project; className?: string }) {
+  project, 
+  className,
+  wholeProjectLabel = 'Whole Project',
+  locale = it
+}: { 
+  project: Project; 
+  className?: string;
+  wholeProjectLabel?: string;
+  locale?: any;
+}) {
   const startDate = startOfWeek(new Date(project.startDate), { weekStartsOn: 1 });
   const endDate = endOfWeek(new Date(project.endDate), { weekStartsOn: 1 });
   const days = eachDayOfInterval({ start: startDate, end: endDate });
@@ -59,7 +68,7 @@ export function ProjectGantt({
                   {format(day, 'd')}
                 </span>
                 <span className="text-[8px] font-bold uppercase text-neutral-400">
-                  {format(day, 'EEE', { locale: it })}
+                  {format(day, 'EEE', { locale })}
                 </span>
               </div>
             ))}
@@ -90,7 +99,7 @@ export function ProjectGantt({
                     }}
                   >
                     <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 truncate uppercase tracking-widest">
-                      Intero Progetto
+                      {wholeProjectLabel}
                     </span>
                   </div>
                 </div>
