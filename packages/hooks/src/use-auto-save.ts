@@ -19,6 +19,16 @@ export interface AutoSaveOptions<T> {
   delay?: number;
   /** Enable/disable autosave (default: true). Set to false for new items. */
   enabled?: boolean;
+  /** 
+   * Timestamp of last external update (e.g., from realtime sync).
+   * If provided and within `skipExternalUpdateWindowMs`, autosave is skipped.
+   */
+  lastExternalUpdate?: number;
+  /**
+   * Window in ms to skip autosave after external update (default: 1000).
+   * Prevents double-save when realtime sync updates state.
+   */
+  skipExternalUpdateWindowMs?: number;
   onSaveStart?: () => void;
   onSaveSuccess?: (data: T) => void;
   onSaveError?: (error: Error) => void;
@@ -40,6 +50,8 @@ export function useAutoSave<T>(
   const { 
     delay = 2000, 
     enabled = true, 
+    lastExternalUpdate = 0,
+    skipExternalUpdateWindowMs = 1000,
     onSaveStart, 
     onSaveSuccess, 
     onSaveError 
@@ -134,11 +146,20 @@ export function useAutoSave<T>(
     // Mark as having pending changes
     setState((prev) => ({ ...prev, hasPendingChanges: true }));
 
+    // Skip autosave if this change came from an external update (realtime sync)
+    // This prevents double-save: Copilot saves -> Realtime pushes -> UI updates -> autosave triggers
+    const timeSinceExternalUpdate = Date.now() - lastExternalUpdate;
+    if (lastExternalUpdate > 0 && timeSinceExternalUpdate < skipExternalUpdateWindowMs) {
+      // External update was recent, skip autosave (data already saved by Copilot)
+      setState((prev) => ({ ...prev, hasPendingChanges: false }));
+      return;
+    }
+
     // Only trigger autosave if enabled
     if (enabled) {
       debouncedSave(data);
     }
-  }, [data, debouncedSave, enabled]);
+  }, [data, debouncedSave, enabled, lastExternalUpdate, skipExternalUpdateWindowMs]);
 
   // Manual save function (bypasses debounce)
   const saveNow = useCallback(async () => {
