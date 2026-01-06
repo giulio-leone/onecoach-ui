@@ -102,19 +102,37 @@ export function DayEditorShell({
 }: DayEditorShellProps) {
   const dndContextId = useId();
 
-  // Theme-based color classes
+  // Theme-based color classes - Enhanced with Premium Styling
   const colorClasses = {
     primary: {
-      border: 'hover:border-blue-500/30',
-      icon: 'group-hover:bg-blue-900/20 group-hover:text-blue-400',
-      shadow: 'shadow-blue-500/20',
-      gradient: 'bg-gradient-to-r from-blue-950/40 via-neutral-900/60 to-indigo-950/40',
+      // Container
+      container: 'dark:border-blue-500/20 dark:bg-gradient-to-br dark:from-slate-900/90 dark:via-blue-950/40 dark:to-slate-900/90 dark:shadow-[0_0_40px_-10px_rgba(59,130,246,0.2)]',
+      accentLine: 'bg-gradient-to-r from-transparent via-blue-400/40 to-transparent',
+      
+      // Badge
+      badge: 'bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400',
+      
+      // Empty State
+      emptyBorder: 'hover:border-blue-400/50 hover:bg-blue-50/50 dark:hover:border-blue-500/40 dark:hover:bg-blue-950/20',
+      emptyIcon: 'group-hover:shadow-blue-500/10',
+      
+      // Mobile Shadow
+      shadow: 'shadow-blue-500/30',
     },
     emerald: {
-      border: 'hover:border-emerald-500/30',
-      icon: 'group-hover:bg-emerald-500/20 group-hover:text-emerald-500 dark:group-hover:bg-emerald-900/20 dark:group-hover:text-emerald-400',
-      shadow: 'shadow-emerald-500/20',
-      gradient: 'bg-gradient-to-r from-emerald-950/40 via-neutral-900/60 to-teal-950/40',
+      // Container
+      container: 'dark:border-emerald-500/20 dark:bg-gradient-to-br dark:from-slate-900/90 dark:via-emerald-950/40 dark:to-slate-900/90 dark:shadow-[0_0_40px_-10px_rgba(16,185,129,0.2)]',
+      accentLine: 'bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent',
+      
+      // Badge
+      badge: 'bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400',
+      
+      // Empty State
+      emptyBorder: 'hover:border-emerald-400/50 hover:bg-emerald-50/50 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-950/20',
+      emptyIcon: 'group-hover:shadow-emerald-500/10 group-hover:bg-emerald-500/20 group-hover:text-emerald-500',
+      
+      // Mobile Shadow
+      shadow: 'shadow-emerald-500/30',
     },
   };
 
@@ -139,20 +157,33 @@ export function DayEditorShell({
 
   return (
     <div className={cn('flex flex-col gap-6', className)}>
-      {/* Header Container - Clean Card Style */}
-      <div className="rounded-2xl border border-neutral-200 bg-white/50 p-3 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-neutral-900/50 dark:shadow-black/20 sm:p-5">
-        <div className="flex flex-col gap-4">
+      {/* Header Container - Premium Gradient Card */}
+      <div
+        className={cn(
+          'relative overflow-hidden rounded-2xl border p-4 shadow-lg backdrop-blur-md sm:p-6',
+          // Light mode base
+          'border-slate-200/50 bg-gradient-to-br from-slate-50/90 via-white/80 to-slate-100/90',
+          // Dark mode - dynamic
+          colors.container
+        )}
+      >
+        {/* Subtle top accent line */}
+        <div className={cn('absolute inset-x-0 top-0 h-px', colors.accentLine)} />
+        
+        <div className="relative flex flex-col gap-4">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="space-y-1">
-              <h2 className="text-xl font-bold text-neutral-900 dark:text-white sm:text-2xl">{title}</h2>
-              <div className="flex items-center gap-2 text-xs font-medium text-neutral-500 dark:text-neutral-400 sm:text-sm">
-                <span>
+            <div className="space-y-1.5">
+              <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
+                {title}
+              </h2>
+              <div className="flex items-center gap-2.5 text-xs font-medium text-slate-500 dark:text-slate-400 sm:text-sm">
+                <span className={cn('rounded-full px-2 py-0.5', colors.badge)}>
                   {itemCount} {itemLabel}
                 </span>
                 {additionalStats && (
                   <>
-                    <span className="text-neutral-300 dark:text-neutral-600">•</span>
-                    <span>{additionalStats}</span>
+                    <span className="text-slate-300 dark:text-slate-600">•</span>
+                    <span className="text-slate-500 dark:text-slate-400">{additionalStats}</span>
                   </>
                 )}
               </div>
@@ -162,7 +193,7 @@ export function DayEditorShell({
                 variant={themeColor === 'emerald' ? 'success' : 'primary'}
                 icon={<Plus size={16} className="text-white" />}
                 onPress={onAdd}
-                className="flex-1 sm:w-auto"
+                className={cn('flex-1 shadow-lg sm:w-auto', themeColor === 'emerald' ? 'shadow-emerald-500/20' : 'shadow-blue-500/20')}
               >
                 {addButtonLabel}
               </Button>
@@ -192,24 +223,26 @@ export function DayEditorShell({
             <button
               onClick={onAdd}
               className={cn(
-                'group flex w-full flex-col items-center justify-center rounded-3xl border border-dashed py-16 transition-all',
-                'border-neutral-300 hover:bg-neutral-50 dark:border-white/10 dark:hover:bg-white/[0.02]',
-                colors.border
+                'group flex w-full flex-col items-center justify-center rounded-3xl border-2 border-dashed py-16 transition-all duration-300',
+                'border-slate-300 bg-slate-50/50',
+                'dark:border-slate-700/50 dark:bg-slate-900/20',
+                colors.emptyBorder
               )}
               type="button"
             >
               <div
                 className={cn(
-                  'mb-4 flex h-16 w-16 items-center justify-center rounded-2xl transition-colors',
-                  'bg-neutral-100 text-neutral-400 dark:bg-neutral-900/50 dark:text-neutral-600',
-                  colors.icon,
-                  'group-hover:shadow-sm'
+                  'mb-4 flex h-16 w-16 items-center justify-center rounded-2xl transition-all duration-300',
+                  'bg-slate-100 text-slate-400 group-hover:scale-110',
+                  'dark:bg-slate-800/50 dark:text-slate-500',
+                  colors.emptyIcon,
+                  'group-hover:shadow-lg'
                 )}
               >
                 {emptyIcon}
               </div>
-              <span className="font-semibold text-neutral-700 dark:text-neutral-300">{emptyMessage}</span>
-              <span className="mt-1 text-sm text-neutral-500">{emptySubMessage}</span>
+              <span className="font-semibold text-slate-700 dark:text-slate-300">{emptyMessage}</span>
+              <span className="mt-1 text-sm text-slate-500 dark:text-slate-400">{emptySubMessage}</span>
             </button>
           )}
         </div>
@@ -221,7 +254,7 @@ export function DayEditorShell({
           variant={themeColor === 'emerald' ? 'success' : 'gradient-primary'}
           icon={<Plus size={16} className="text-white" />}
           onPress={onAdd}
-          className={cn('w-full shadow-lg', colors.shadow)}
+          className={cn('w-full shadow-xl', colors.shadow)}
         >
           {addButtonLabel}
         </Button>

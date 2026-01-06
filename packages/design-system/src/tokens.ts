@@ -323,6 +323,57 @@ export const designTokens = {
   },
 } as const;
 
+/**
+ * Workout Element Colors
+ * Semantic colors for different workout element types
+ * Used in Visual Builder, Live Workout, and related components
+ */
+export const workoutElementColors = {
+  warmup: {
+    text: 'text-orange-500',
+    bg: 'bg-orange-500/10',
+    bgHover: 'hover:bg-orange-500/20',
+    border: 'border-orange-500/30',
+    gradient: 'from-orange-500/10 to-amber-500/10',
+    hex: '#f97316',
+  },
+  exercise: {
+    text: 'text-blue-500',
+    bg: 'bg-blue-500/10',
+    bgHover: 'hover:bg-blue-500/20',
+    border: 'border-blue-500/30',
+    gradient: 'from-blue-500/10 to-indigo-500/10',
+    hex: '#3b82f6',
+  },
+  superset: {
+    text: 'text-purple-500',
+    bg: 'bg-purple-500/10',
+    bgHover: 'hover:bg-purple-500/20',
+    border: 'border-purple-500/30',
+    gradient: 'from-purple-500/10 to-pink-500/10',
+    hex: '#a855f7',
+  },
+  circuit: {
+    text: 'text-green-500',
+    bg: 'bg-green-500/10',
+    bgHover: 'hover:bg-green-500/20',
+    border: 'border-green-500/30',
+    gradient: 'from-green-500/10 to-emerald-500/10',
+    hex: '#22c55e',
+  },
+  cardio: {
+    text: 'text-cyan-500',
+    bg: 'bg-cyan-500/10',
+    bgHover: 'hover:bg-cyan-500/20',
+    border: 'border-cyan-500/30',
+    gradient: 'from-cyan-500/10 to-teal-500/10',
+    hex: '#06b6d4',
+  },
+} as const;
+
+export type WorkoutElementType = keyof typeof workoutElementColors;
+
 // Type exports
 export type DesignTokens = typeof designTokens;
 export type ColorMode = 'light' | 'dark';
+
