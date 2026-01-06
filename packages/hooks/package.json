@@ -25,7 +25,10 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@onecoach/lib-shared": "workspace:*"
+    "@onecoach/lib-shared": "workspace:*",
+    "@onecoach/types": "workspace:*",
+    "@onecoach/schemas": "workspace:*",
+    "@onecoach/constants": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=19.1.0 <20",

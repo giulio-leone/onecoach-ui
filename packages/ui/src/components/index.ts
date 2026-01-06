@@ -19,7 +19,7 @@ export * from './SkeletonLoader';
 // export * from './sortable-task-item'; // Native-only
 export * from './task-list';
 export * from './task-types';
-// export * from './unified-list-item';
+export * from './unified-list-item';
 export * from './model-selector-modal';
 export * from './model-selector';
 export * from './project-gantt';

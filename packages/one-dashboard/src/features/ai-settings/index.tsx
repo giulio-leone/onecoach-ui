@@ -57,7 +57,7 @@ import type {
 import type { AgentConfig } from '../shared/ai-agents-config';
 import { useHeaderActions } from '@onecoach/lib-stores/header-actions.store';
 
-import { logger } from '@onecoach/lib-shared/utils/logger';
+import { logger } from '@onecoach/lib-shared';
 const ProviderApiKeysSection = lazy(() =>
   import('../shared/provider-api-keys').then((m) => ({
     default: m.ProviderApiKeysSection,

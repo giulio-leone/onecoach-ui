@@ -158,3 +158,7 @@ export * from './chat/chat-input-area';
 // Program Cards
 export * from './program-card';
 export * from './programs-page-layout';
+
+// Import Modal (generic file upload component)
+export * from './import-modal';
+

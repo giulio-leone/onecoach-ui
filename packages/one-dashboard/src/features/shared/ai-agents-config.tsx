@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, CatalogGrid, ResourceCard, Slider } from '@onecoach/ui';
 import { Power, PowerOff, Save } from 'lucide-react';
 import { toast } from 'sonner';
-import { logger } from '@onecoach/lib-shared/utils/logger';
+import { logger } from '@onecoach/lib-shared';
 import { useTranslations } from 'next-intl';
 
 export type AgentConfig = {

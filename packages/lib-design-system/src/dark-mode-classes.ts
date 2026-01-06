@@ -80,16 +80,16 @@ export const darkModeClasses = {
     button: 'transition-all duration-200 ease-out hover:scale-[1.01] active:scale-[0.98]',
   },
 
-  // Cards and containers - Modern refined design, deeply optimized for dark mode
+  // Cards and containers - Premium dark mode optimized
   card: {
-    base: 'bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700/80 shadow-sm dark:shadow-lg dark:shadow-neutral-950/50 rounded-2xl',
+    base: 'bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 shadow-sm dark:shadow-lg dark:shadow-black/20 rounded-2xl',
     elevated:
-      'bg-white dark:bg-neutral-800 shadow-md dark:shadow-xl dark:shadow-neutral-950/60 border border-neutral-200 dark:border-neutral-700/80 rounded-2xl',
-    hover: 'hover:bg-neutral-50 dark:hover:bg-neutral-700/50 transition-all duration-200 ease-out',
+      'bg-white dark:bg-neutral-900 shadow-lg dark:shadow-xl dark:shadow-black/25 border border-neutral-100 dark:border-neutral-800/50 rounded-2xl',
+    hover: 'hover:bg-neutral-50 dark:hover:bg-neutral-800/80 transition-all duration-200 ease-out',
     interactive:
-      'bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700/80 hover:border-blue-400 dark:hover:border-blue-500/60 hover:shadow-md dark:hover:shadow-lg dark:hover:shadow-neutral-950/50 transition-all duration-200 ease-out rounded-2xl',
+      'bg-white dark:bg-neutral-900 border border-neutral-200/60 dark:border-neutral-800/60 hover:border-blue-400/50 dark:hover:border-blue-500/40 hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-black/30 transition-all duration-200 ease-out rounded-2xl',
     glass:
-      'bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md border border-neutral-200 dark:border-neutral-700/60 shadow-md dark:shadow-lg dark:shadow-neutral-950/50 rounded-2xl',
+      'bg-white/80 dark:bg-neutral-900/95 backdrop-blur-md border border-neutral-200/40 dark:border-neutral-700/40 shadow-lg dark:shadow-xl dark:shadow-black/25 rounded-2xl',
   },
 
   // Input elements - Modern refined design, deeply optimized for both light and dark mode with elegant glow effects

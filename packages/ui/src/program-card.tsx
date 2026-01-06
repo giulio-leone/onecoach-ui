@@ -173,9 +173,10 @@ export function ProgramCard({
   return (
     <div
       className={cn(
-        'group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-[2rem] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl',
+        'group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-3xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl',
         'min-h-[280px] w-full',
-        'bg-gradient-to-br from-neutral-900 to-neutral-800 shadow-lg ring-1 shadow-blue-900/5 ring-white/10',
+        'bg-gradient-to-br from-neutral-900 to-neutral-800 shadow-xl shadow-black/20',
+        'border border-neutral-700/40',
         theme.hoverRing,
         isSelected && `ring-2 ${theme.selectionRing}`,
         className

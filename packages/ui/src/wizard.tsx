@@ -114,6 +114,7 @@ export interface WizardActionsProps {
   canNext: boolean;
   isLastStep: boolean;
   nextLabel?: string;
+  backLabel?: string;
   generateLabel?: string;
   className?: string;
 }
@@ -125,6 +126,7 @@ export const WizardActions = ({
   canNext, 
   isLastStep,
   nextLabel = "Continue",
+  backLabel = "Back",
   generateLabel = "Generate Plan",
   className 
 }: WizardActionsProps) => {
@@ -140,7 +142,7 @@ export const WizardActions = ({
         )}
       >
         <ChevronLeft className="h-5 w-5" />
-        Indietro
+        {backLabel}
       </Button>
 
       <Button 

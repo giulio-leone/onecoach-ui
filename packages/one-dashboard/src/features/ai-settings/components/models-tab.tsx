@@ -48,7 +48,7 @@ import type { UserRole, AIProvider } from '@prisma/client';
 import { toast } from 'sonner';
 import { Checkbox } from '@onecoach/ui';
 
-import { logger } from '@onecoach/lib-shared/utils/logger';
+import { logger } from '@onecoach/lib-shared';
 // Model returned from the sync endpoint
 interface SyncModelData {
   modelId: string;

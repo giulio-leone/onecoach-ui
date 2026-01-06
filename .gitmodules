@@ -4,3 +4,6 @@
 [submodule "packages/oneui-core"]
 	path = packages/oneui-core
 	url = https://github.com/g97iulio1609/oneui-core.git
+[submodule "packages/oneui-nutrition"]
+	path = packages/oneui-nutrition
+	url = https://github.com/g97iulio1609/oneui-nutrition.git

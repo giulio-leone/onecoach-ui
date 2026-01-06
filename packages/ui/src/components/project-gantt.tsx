@@ -3,7 +3,6 @@
 import { format, differenceInDays, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
 import { it } from 'date-fns/locale';
 import { cn } from '@onecoach/lib-design-system';
-import { Card } from '../card';
 
 export interface ProjectTask {
   id: string;
@@ -41,14 +40,17 @@ export function ProjectGantt({
   const dayWidth = 40; // Fixed width for each day in pixels
 
   return (
-    <Card
-      variant="glass"
+    <div
       className={cn(
-        'w-full flex flex-col overflow-hidden p-0',
+        'w-full flex flex-col overflow-hidden rounded-2xl',
+        'bg-white/80 dark:bg-neutral-900/80',
+        'border border-neutral-200/50 dark:border-neutral-800/50',
+        'shadow-sm dark:shadow-lg dark:shadow-black/20',
+        'backdrop-blur-sm',
         className
       )}
     >
-      <div className="border-b border-neutral-200 bg-white/50 px-6 py-4 dark:border-neutral-800 dark:bg-white/5">
+      <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-6 py-4 dark:border-neutral-800/50 dark:bg-neutral-800/30">
         <h3 className="font-bold text-neutral-900 dark:text-white">
           {project.title}
         </h3>
@@ -57,17 +59,17 @@ export function ProjectGantt({
       <div className="relative flex-1 overflow-x-auto p-6 no-scrollbar">
         <div style={{ width: totalDays * dayWidth }}>
           {/* Header Days */}
-          <div className="mb-6 flex border-b border-neutral-100 pb-3 dark:border-neutral-800">
+          <div className="mb-6 flex border-b border-neutral-200/30 pb-3 dark:border-neutral-700/30">
             {days.map((day) => (
               <div
                 key={day.toISOString()}
                 style={{ width: dayWidth }}
                 className="flex shrink-0 flex-col items-center justify-center text-center"
               >
-                <span className="text-[10px] font-black text-neutral-500 dark:text-neutral-400">
+                <span className="text-[10px] font-black text-neutral-600 dark:text-neutral-300">
                   {format(day, 'd')}
                 </span>
-                <span className="text-[8px] font-bold uppercase text-neutral-400">
+                <span className="text-[8px] font-bold uppercase text-neutral-400 dark:text-neutral-500">
                   {format(day, 'EEE', { locale })}
                 </span>
               </div>
@@ -81,7 +83,7 @@ export function ProjectGantt({
                 <div 
                   key={`grid-${day.toISOString()}`} 
                   style={{ width: dayWidth }} 
-                  className="h-full border-r border-neutral-50 dark:border-neutral-800/30" 
+                  className="h-full border-r border-neutral-100/50 dark:border-neutral-800/20" 
                 />
               ))}
             </div>
@@ -92,7 +94,7 @@ export function ProjectGantt({
               {project.tasks.length === 0 ? (
                 <div className="group flex items-center h-8">
                   <div
-                    className="absolute h-6 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center px-3"
+                    className="absolute h-7 rounded-xl bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-500/20 flex items-center px-4 backdrop-blur-sm"
                     style={{
                       left: 0,
                       width: '100%',
@@ -117,7 +119,7 @@ export function ProjectGantt({
                   return (
                     <div key={task.id} className="relative h-8 group">
                       <div
-                        className="absolute top-1 bottom-1 rounded-full bg-blue-500 shadow-lg shadow-blue-500/20 transition-all group-hover:scale-[1.02] flex items-center px-3 overflow-hidden"
+                        className="absolute top-0.5 bottom-0.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 shadow-lg shadow-blue-500/30 transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-blue-500/40 flex items-center px-4 overflow-hidden"
                         style={{
                           left,
                           width,
@@ -125,12 +127,12 @@ export function ProjectGantt({
                       >
                         {task.progress > 0 && (
                           <div 
-                            className="absolute inset-0 bg-white/20"
+                            className="absolute inset-0 bg-white/20 rounded-l-xl"
                             style={{ width: `${task.progress}%` }}
                           />
                         )}
                         <span
-                          className="relative z-10 truncate text-[10px] font-black uppercase text-white whitespace-nowrap"
+                          className="relative z-10 truncate text-[10px] font-black uppercase text-white whitespace-nowrap drop-shadow-sm"
                         >
                           {task.title}
                         </span>
@@ -143,6 +145,6 @@ export function ProjectGantt({
           </div>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }

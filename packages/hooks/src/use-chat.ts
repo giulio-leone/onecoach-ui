@@ -13,7 +13,7 @@ import type { ExtendedMessage } from '@onecoach/types';
 import type { ModelTier } from '@onecoach/lib-ai';
 import type { NutritionPlan } from '@onecoach/types';
 import type { WorkoutProgram } from '@onecoach/types';
-import { AI_REASONING_CONFIG } from '@onecoach/constants/models';
+import { AI_REASONING_CONFIG } from '@onecoach/constants';
 
 export interface ChatOptions {
   tier?: ModelTier;

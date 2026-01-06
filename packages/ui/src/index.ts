@@ -76,3 +76,5 @@ export * from './program-viewer/program-week-card';
 // Visual Builder Base Components
 export * from './visual-builder/components/base/EditorHeader';
 export * from './visual-builder/components/base/VersionHistory';
+
+export * from './import-modal';

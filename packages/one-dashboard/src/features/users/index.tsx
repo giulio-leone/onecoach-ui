@@ -42,7 +42,7 @@ import { isAdminRole } from '@onecoach/types';
 import { cn } from '@onecoach/lib-design-system';
 import { useTranslations } from 'next-intl';
 import { useQueryClient } from '@tanstack/react-query';
-import { logger } from '@onecoach/lib-shared/utils/logger';
+import { logger } from '@onecoach/lib-shared';
 interface Invitation {
   id: string;
   code: string;

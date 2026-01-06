@@ -3,7 +3,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./dist",
-    "types": ["vitest/globals", "@testing-library/jest-dom", "react-native-web"],
     "paths": {
       "ui/*": ["./src/*"],
       "lib/*": ["../lib/src/*"],
@@ -18,7 +17,8 @@
       "types/*": ["../types/src/*"],
       "app/navigation": ["../app/src/navigation/index.ts"]
     },
-    "strict": true
+    "strict": true,
+    "jsx": "react-jsx"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "src/**/*.native.tsx", "src/**/*.native.ts"]
