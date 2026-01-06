@@ -35,7 +35,6 @@ export * from './use-auto-save';
 export * from './use-expansion-state';
 export * from './use-planning-progress';
 export * from './use-memory';
-export * from './use-agent-stream';
 export * from './use-body-measurements';
 export * from './use-navigation-persistence';
 
