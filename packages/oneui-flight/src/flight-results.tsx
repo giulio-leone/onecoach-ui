@@ -19,7 +19,7 @@ export type { FlightSearchResponse };
 
 
 
-interface FlightResultsProps {
+export interface FlightResultsProps {
   results: FlightSearchResponse | null;
   isSearching: boolean;
   onReset: () => void;

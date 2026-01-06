@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 import { FlightCard } from './flight-card';
 import type { Flight, RouteGroup as RouteGroupType, FlightDirection } from '@onecoach/lib-shared';
 
-interface RouteGroupProps {
+export interface RouteGroupProps {
   group: RouteGroupType;
   defaultExpanded?: boolean;
   showDirectionBadge?: boolean;
