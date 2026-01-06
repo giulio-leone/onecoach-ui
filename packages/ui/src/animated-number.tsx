@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
 import { cn } from '@onecoach/lib-design-system';
 
 interface AnimatedNumberProps {
@@ -39,27 +38,24 @@ export function AnimatedNumber({
       }
     };
 
-    // Start animation
-    // In React Native environment requestAnimationFrame might behave differently than web
-    // but standard usage is compatible
     animationFrame = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(animationFrame);
   }, [value, duration]);
 
   return (
-    <View className="items-center">
-      <View className="flex-row items-baseline">
-        <Text className={cn('font-bold tabular-nums', className)}>{format(displayValue)}</Text>
+    <div className="flex flex-col items-center">
+      <div className="flex flex-row items-baseline">
+        <span className={cn('font-bold tabular-nums', className)}>{format(displayValue)}</span>
         {suffix && (
-          <Text className={cn('ml-1 text-sm font-medium opacity-60', className)}>{suffix}</Text>
+          <span className={cn('ml-1 text-sm font-medium opacity-60', className)}>{suffix}</span>
         )}
-      </View>
+      </div>
       {label && (
-        <Text className="mt-1 text-xs font-medium tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
+        <span className="mt-1 text-xs font-medium tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
           {label}
-        </Text>
+        </span>
       )}
-    </View>
+    </div>
   );
 }

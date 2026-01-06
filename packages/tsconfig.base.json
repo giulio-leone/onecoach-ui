@@ -109,6 +109,8 @@
       "@onecoach/one-agent/*": ["./packages/one-agent/src/*"],
       "@onecoach/types": ["./packages/types/src/index.ts"],
       "@onecoach/types/*": ["./packages/types/src/*"],
+      "@onecoach/one-dashboard": ["./packages/one-dashboard/src/index.ts"],
+      "@onecoach/one-dashboard/*": ["./packages/one-dashboard/src/*"],
       "@onecoach/features/analytics": ["./packages/features/analytics/index.ts"],
       "@onecoach/features/analytics/*": ["./packages/features/analytics/*"],
       "@onecoach/features/affiliates": ["./packages/app/src/features/affiliates/index.ts"],

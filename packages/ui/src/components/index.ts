@@ -13,12 +13,13 @@ export * from './habit-list';
 export * from './milestone-list';
 export * from './progress-bar';
 export * from './project-card';
-export * from './recursive-task-item';
+// Native-only components (excluded from web type-check)
+// export * from './recursive-task-item';
 export * from './SkeletonLoader';
-export * from './sortable-task-item';
+// export * from './sortable-task-item'; // Native-only
 export * from './task-list';
 export * from './task-types';
-export * from './unified-list-item';
+// export * from './unified-list-item';
 export * from './model-selector-modal';
 export * from './model-selector';
 export * from './project-gantt';

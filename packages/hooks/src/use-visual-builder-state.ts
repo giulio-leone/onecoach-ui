@@ -123,10 +123,11 @@ export function useVisualBuilderState<
 
     const newWeeks = [...weeks];
     const targetWeek = { ...newWeeks[selectedWeekIndex] };
-    const newDayNumber = targetWeek.days.length + 1;
+    const existingDays = targetWeek.days ?? [];
+    const newDayNumber = existingDays.length + 1;
     const newDay = createEmptyDay(newDayNumber);
 
-    targetWeek.days = [...targetWeek.days, newDay];
+    targetWeek.days = [...existingDays, newDay];
     newWeeks[selectedWeekIndex] = targetWeek as TWeek;
 
     onWeeksChange(newWeeks);
@@ -140,7 +141,7 @@ export function useVisualBuilderState<
 
       const newWeeks = [...weeks];
       const targetWeek = { ...newWeeks[weekIndex] };
-      const newDays = [...targetWeek.days];
+      const newDays = [...(targetWeek.days ?? [])];
       newDays.splice(dayIndex, 1);
 
       // Re-index remaining days
@@ -209,7 +210,7 @@ export function useVisualBuilderState<
 
       const newWeeks = [...weeks];
       const targetWeek = { ...newWeeks[selectedWeekIndex] };
-      const newDays = [...targetWeek.days];
+      const newDays = [...(targetWeek.days ?? [])];
       newDays[selectedDayIndex] = updatedDay;
       targetWeek.days = newDays;
       newWeeks[selectedWeekIndex] = targetWeek as TWeek;

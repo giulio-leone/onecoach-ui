@@ -121,8 +121,9 @@ export * from './components/project-gantt';
 export * from './components/task-list';
 export * from './components/milestone-list';
 export * from './components/habit-card';
-export * from './components/habit-list';
-export * from './components/unified-list-item';
+// Native-only - excluded from web
+// export * from './components/habit-list';
+// export * from './components/unified-list-item';
 
 // Chat Components
 export * from './components/chat/conversation-list';

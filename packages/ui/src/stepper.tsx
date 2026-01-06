@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native';
 import { cn } from '@onecoach/lib-design-system';
 
 export interface StepperProps {
@@ -9,16 +8,16 @@ export interface StepperProps {
 
 export function Stepper({ steps, currentStep, className }: StepperProps) {
   return (
-    <View className={cn('w-full', className)}>
-      <View className="flex-row items-center justify-between">
+    <div className={cn('w-full', className)}>
+      <div className="flex flex-row items-center justify-between">
         {steps.map((step, index) => {
           const isCompleted = index < currentStep;
           const isCurrent = index === currentStep;
 
           return (
-            <View key={step} className="flex-1 flex-row items-center">
-              <View className="flex-1 flex-col items-center gap-2">
-                <View
+            <div key={step} className="flex flex-1 flex-row items-center">
+              <div className="flex flex-1 flex-col items-center gap-2">
+                <div
                   className={cn(
                     'flex h-8 w-8 items-center justify-center rounded-full border-2 transition-all duration-300',
                     isCompleted
@@ -29,9 +28,9 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
                   )}
                 >
                   {isCompleted ? (
-                    <Text className="text-xs font-bold text-white">✓</Text>
+                    <span className="text-xs font-bold text-white">✓</span>
                   ) : (
-                    <Text
+                    <span
                       className={cn(
                         'text-xs font-bold',
                         isCurrent
@@ -40,10 +39,10 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
                       )}
                     >
                       {index + 1}
-                    </Text>
+                    </span>
                   )}
-                </View>
-                <Text
+                </div>
+                <span
                   className={cn(
                     'text-[10px] font-medium tracking-wider uppercase',
                     isCurrent || isCompleted
@@ -52,23 +51,23 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
                   )}
                 >
                   {step}
-                </Text>
-              </View>
+                </span>
+              </div>
 
               {index < steps.length - 1 && (
-                <View className="h-[2px] flex-1 bg-neutral-200 dark:bg-neutral-800">
-                  <View
+                <div className="h-[2px] flex-1 bg-neutral-200 dark:bg-neutral-800">
+                  <div
                     className={cn(
                       'h-full bg-blue-600 transition-all duration-500 dark:bg-blue-500',
                       index < currentStep ? 'w-full' : 'w-0'
                     )}
                   />
-                </View>
+                </div>
               )}
-            </View>
+            </div>
           );
         })}
-      </View>
-    </View>
+      </div>
+    </div>
   );
 }

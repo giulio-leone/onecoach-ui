@@ -3,14 +3,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./dist",
-    "rootDir": "./src",
     "types": ["vitest/globals", "@testing-library/jest-dom", "react-native-web"],
     "paths": {
       "ui/*": ["./src/*"],
       "lib/*": ["../lib/src/*"],
       "design-system/*": ["../design-system/src/*"],
-      "@onecoach/constants": ["../constants/src/index.ts"],
-      "@onecoach/constants/*": ["../constants/src/*"],
+      "@onecoach/constants": ["../../../onecoach-constants/src/index.ts"],
+      "@onecoach/constants/*": ["../../../onecoach-constants/src/*"],
+      "@onecoach/types": ["../../../onecoach-types/src/index.ts"],
+      "@onecoach/types/*": ["../../../onecoach-types/src/*"],
+      "@onecoach/schemas": ["../../../onecoach-schemas/src/index.ts"],
+      "@onecoach/schemas/*": ["../../../onecoach-schemas/src/*"],
       "types": ["../types/src/index.ts"],
       "types/*": ["../types/src/*"],
       "app/navigation": ["../app/src/navigation/index.ts"]

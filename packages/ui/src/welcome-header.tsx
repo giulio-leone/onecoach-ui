@@ -15,7 +15,7 @@ export function WelcomeHeader({ userName, className, title, subtitle }: WelcomeH
 
   return (
     <Card variant="glass"
-      intensity="light"
+      glassIntensity="light"
       className={cn(
         'flex items-center gap-6 p-8',
         'bg-gradient-to-r from-indigo-500/10 to-purple-500/10',
