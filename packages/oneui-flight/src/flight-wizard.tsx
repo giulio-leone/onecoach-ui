@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plane, Calendar, Users, ArrowRight, PlaneTakeoff, PlaneLanding } from 'lucide-react';
+import { Plane, Calendar, Users, ArrowRight, PlaneTakeoff, PlaneLanding, Brain } from 'lucide-react';
 import {
   WizardStepper,
   WizardContainer,
@@ -12,14 +12,18 @@ import {
   Button,
   Combobox,
   DatePicker,
+  Switch,
   type ComboboxOption,
 } from '@onecoach/ui';
 import { useTranslations } from 'next-intl';
+import { cn } from '@onecoach/lib-design-system';
 
 import type { FlightSearchFormData, CabinClass } from './form';
 import { createInitialFlightSearchFormData } from './form';
 import { useFlightSearch } from '@onecoach/hooks';
-import { FlightResults } from './flight-results';
+import { FlightResults, type FlightSearchResponse } from './flight-results';
+import { SmartAnalysisPanel } from './smart-analysis-panel';
+import { useSmartFlightSearch } from './use-smart-flight-search';
 import type { Airport } from './types';
 
 // ----------------------------------------------------------------------------
@@ -199,12 +203,52 @@ const StepOptions = ({
   data,
   update,
   t,
+  useSmartSearch,
+  onSmartSearchChange,
 }: {
   data: FlightSearchFormData;
   update: (val: Partial<FlightSearchFormData>) => void;
   t: ReturnType<typeof useTranslations>;
+  useSmartSearch: boolean;
+  onSmartSearchChange: (value: boolean) => void;
 }) => (
   <div className="space-y-8 py-4">
+    {/* Smart Search Toggle */}
+    <div className={cn(
+      'rounded-2xl border-2 p-4 transition-all',
+      useSmartSearch 
+        ? 'border-blue-500/30 bg-gradient-to-r from-blue-500/5 to-purple-500/5' 
+        : 'border-neutral-200 dark:border-neutral-700'
+    )}>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className={cn(
+            'flex h-10 w-10 items-center justify-center rounded-xl transition-colors',
+            useSmartSearch 
+              ? 'bg-gradient-to-br from-blue-500 to-purple-500 text-white' 
+              : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-500'
+          )}>
+            <Brain className="h-5 w-5" />
+          </div>
+          <div>
+            <p className="font-bold text-neutral-900 dark:text-white">
+              {t('smartSearch.aiAnalysis') || 'AI Smart Search'}
+            </p>
+            <p className="text-xs text-neutral-500">
+              {useSmartSearch 
+                ? (t('smartSearch.poweredByAgent') || 'AI analysis & recommendations enabled')
+                : 'Standard search mode'
+              }
+            </p>
+          </div>
+        </div>
+        <Switch 
+          checked={useSmartSearch} 
+          onCheckedChange={onSmartSearchChange}
+        />
+      </div>
+    </div>
+
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
       <div className="space-y-4">
         <label className="flex items-center gap-2 text-xs font-black tracking-widest text-neutral-500 uppercase">
@@ -288,7 +332,19 @@ export function FlightWizard({ getAirports }: FlightWizardProps) {
     createInitialFlightSearchFormData()
   );
   const [airports, setAirports] = useState<ComboboxOption[]>([]);
-  const { isSearching, results, search, reset, error } = useFlightSearch();
+  const [useSmartSearch, setUseSmartSearch] = useState(true); // Default to smart search
+  
+  // Standard search hook
+  const standardSearch = useFlightSearch();
+  
+  // Smart search hook (AI-powered)
+  const smartSearch = useSmartFlightSearch();
+  
+  // Use the appropriate search based on toggle
+  const isSearching = useSmartSearch ? smartSearch.isSearching : standardSearch.isSearching;
+  const error = useSmartSearch ? smartSearch.error : standardSearch.error;
+  const standardResults = standardSearch.results;
+  const smartResults = smartSearch.results;
 
   useEffect(() => {
     const loadAirports = async () => {
@@ -323,7 +379,21 @@ export function FlightWizard({ getAirports }: FlightWizardProps) {
     if (currentStep < steps.length - 1) {
       setCurrentStep((prev) => prev + 1);
     } else {
-      await search(formData);
+      // Use appropriate search based on toggle
+      if (useSmartSearch) {
+        await smartSearch.search({
+          flyFrom: formData.flyFrom,
+          flyTo: formData.flyTo,
+          departureDate: formData.departureDate,
+          returnDate: formData.tripType === 'round-trip' ? formData.returnDate : undefined,
+          preferences: {
+            priority: formData.sort as 'price' | 'duration' | 'convenience',
+            preferDirectFlights: true,
+          },
+        });
+      } else {
+        await standardSearch.search(formData);
+      }
     }
   };
 
@@ -332,7 +402,11 @@ export function FlightWizard({ getAirports }: FlightWizardProps) {
   };
 
   const handleReset = () => {
-    reset();
+    if (useSmartSearch) {
+      smartSearch.reset();
+    } else {
+      standardSearch.reset();
+    }
     setCurrentStep(0);
   };
 
@@ -348,10 +422,37 @@ export function FlightWizard({ getAirports }: FlightWizardProps) {
   }, [currentStep, formData]);
 
   // View switch: results or wizard
-  if (results || isSearching) {
+  const hasResults = useSmartSearch ? !!smartResults : !!standardResults;
+  
+  if (hasResults || isSearching) {
+    // Map smart results to standard format for FlightResults component
+    const displayResults = useSmartSearch && smartResults 
+      ? {
+          tripType: smartResults.tripType,
+          outbound: smartResults.outbound,
+          return: smartResults.return,
+          flights: smartResults.tripType === 'one-way' ? smartResults.outbound : undefined,
+        }
+      : standardResults;
+    
     return (
       <div className="animate-in fade-in mx-auto w-full max-w-6xl px-4 duration-500">
-        <FlightResults results={results} isSearching={isSearching} onReset={handleReset} />
+        {/* Smart Analysis Panel - shown only for smart search */}
+        {useSmartSearch && smartResults && (
+          <SmartAnalysisPanel
+            analysis={smartResults.analysis}
+            recommendation={smartResults.recommendation}
+            alternatives={smartResults.alternatives}
+            className="mb-6"
+          />
+        )}
+        
+        <FlightResults 
+          results={displayResults as FlightSearchResponse} 
+          isSearching={isSearching} 
+          onReset={handleReset} 
+        />
+        
         {error && (
           <div className="mt-4 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-center text-sm font-bold text-red-600">
             {error}
@@ -417,7 +518,15 @@ export function FlightWizard({ getAirports }: FlightWizardProps) {
               <StepRoute data={formData} update={handleUpdate} airports={airports} t={t} />
             )}
             {currentStep === 2 && <StepDates data={formData} update={handleUpdate} t={t} />}
-            {currentStep === 3 && <StepOptions data={formData} update={handleUpdate} t={t} />}
+            {currentStep === 3 && (
+              <StepOptions 
+                data={formData} 
+                update={handleUpdate} 
+                t={t}
+                useSmartSearch={useSmartSearch}
+                onSmartSearchChange={setUseSmartSearch}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </WizardContainer>
