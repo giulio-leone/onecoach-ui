@@ -53,8 +53,6 @@
       "@onecoach/lib-api/*": ["./packages/lib-api/src/*"],
       "@onecoach/lib-ai": ["./packages/lib-ai/src/index.ts"],
       "@onecoach/lib-ai/*": ["./packages/lib-ai/src/*"],
-      "@onecoach/lib-ai-agents": ["./packages/lib-ai-agents/src/index.ts"],
-      "@onecoach/lib-ai-agents/*": ["./packages/lib-ai-agents/src/*"],
       "@onecoach/lib-marketplace": ["./packages/lib-marketplace/src/index.ts"],
       "@onecoach/lib-marketplace/*": ["./packages/lib-marketplace/src/*"],
       "@onecoach/lib-metadata": ["./packages/lib-metadata/src/index.ts"],

@@ -435,6 +435,7 @@ export const PROVIDERS = [
   'VERTEX',
   'OLLAMA',
   'LM_STUDIO',
+  'GEMINI_CLI',
 ] as const;
 
 export const EXTERNAL_PROVIDERS = [
@@ -471,6 +472,7 @@ export const PROVIDER_LABELS: Record<string, string> = {
   XAI: 'xAI',
   OPENROUTER: 'OpenRouter',
   MINIMAX: 'MiniMax',
+  GEMINI_CLI: 'Gemini CLI',
 };
 
 export const PROVIDER_COLORS: Record<string, string> = {
@@ -480,6 +482,7 @@ export const PROVIDER_COLORS: Record<string, string> = {
   XAI: 'from-purple-500 to-pink-500',
   OPENROUTER: 'from-indigo-500 to-blue-500',
   MINIMAX: 'from-red-500 to-rose-500',
+  GEMINI_CLI: 'from-cyan-500 to-sky-500',
 };
 
 /**

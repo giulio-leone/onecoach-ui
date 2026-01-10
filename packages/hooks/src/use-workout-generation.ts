@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react';
-import type { WorkoutGenerationInput, WorkoutGenerationOutput } from '@onecoach/types';
 import {
   type GenerationCallbacks,
   type GenerationStreamEvent,
   type GenerationState,
 } from './utils/create-generation-hook';
+import type { WorkoutGenerationInput, WorkoutGenerationOutput } from "@onecoach/types-ai";
 
 type WorkoutInput = WorkoutGenerationInput & {
   model?: string;

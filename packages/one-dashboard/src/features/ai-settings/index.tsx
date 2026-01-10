@@ -37,8 +37,6 @@ import { cn } from '@onecoach/lib-design-system';
 import { toast } from 'sonner';
 import { STRIPE_PLANS } from '@onecoach/lib-core/stripe/config';
 import type { ProviderName } from '@onecoach/lib-ai';
-import type { CreditPackPricing } from '@onecoach/types';
-
 import {
   ModelsTab,
   FeaturesTab,
@@ -58,6 +56,8 @@ import type { AgentConfig } from '../shared/ai-agents-config';
 import { useHeaderActions } from '@onecoach/lib-stores/header-actions.store';
 
 import { logger } from '@onecoach/lib-shared';
+import type { CreditPackPricing } from "@onecoach/types-domain";
+
 const ProviderApiKeysSection = lazy(() =>
   import('../shared/provider-api-keys').then((m) => ({
     default: m.ProviderApiKeysSection,

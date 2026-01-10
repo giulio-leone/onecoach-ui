@@ -125,9 +125,9 @@ export function FlightResults({ results, isSearching, onReset }: FlightResultsPr
     );
   }
 
-  // One-way results with route grouping
+  // One-way results with route grouping - add defensive check
   if (results.tripType === 'one-way') {
-    const flights = results.flights as Flight[];
+    const flights = (results.flights ?? []) as Flight[];
     const routeGroups = groupFlightsByRoute(flights);
     const hasMultipleRoutes = routeGroups.length > 1;
 
@@ -207,9 +207,9 @@ export function FlightResults({ results, isSearching, onReset }: FlightResultsPr
     );
   }
 
-  // Round-trip results
-  const outbound = results.outbound as Flight[];
-  const returnFlights = results.return as Flight[];
+  // Round-trip results - add defensive checks for undefined arrays
+  const outbound = (results.outbound ?? []) as Flight[];
+  const returnFlights = (results.return ?? []) as Flight[];
   const outboundGroups = groupFlightsByRoute(outbound);
   const returnGroups = groupFlightsByRoute(returnFlights);
   const hasMultipleOutboundRoutes = outboundGroups.length > 1;

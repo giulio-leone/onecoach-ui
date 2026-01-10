@@ -15,7 +15,8 @@ export type NutritionGenerationInput = PatternNutritionGenerationInput & {
 export type NutritionGenerationResult = PatternBasedNutritionPlan;
 
 export function useNutritionGeneration(
-  callbacks?: GenerationCallbacks<NutritionGenerationResult>
+  callbacks?: GenerationCallbacks<NutritionGenerationResult>,
+  options?: { useOptimized?: boolean }
 ): GenerationState<NutritionGenerationResult> & {
   generate: (input: NutritionGenerationInput) => Promise<NutritionGenerationResult>;
   generateStream: (input: NutritionGenerationInput) => Promise<NutritionGenerationResult | null>;
@@ -47,7 +48,11 @@ export function useNutritionGeneration(
 
   const generateStream = useCallback(
     async (input: NutritionGenerationInput): Promise<NutritionGenerationResult | null> => {
-      const endpoint = '/api/nutrition/generate-stream';
+      // Use optimized SDK v3.1 endpoint if option is set
+      const endpoint = options?.useOptimized
+        ? '/api/nutrition/generate-optimized'
+        : '/api/nutrition/generate-stream';
+
 
       setState((prev) => ({
         ...prev,
@@ -194,7 +199,7 @@ export function useNutritionGeneration(
         return null;
       }
     },
-    [callbacks]
+    [callbacks, options?.useOptimized]
   );
 
   const generate = useCallback(

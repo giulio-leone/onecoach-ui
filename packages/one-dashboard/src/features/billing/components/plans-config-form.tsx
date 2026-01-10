@@ -10,7 +10,7 @@ import { AdminCard, Button } from '@onecoach/ui';
 import { Save, Info } from 'lucide-react';
 import { darkModeClasses, cn } from '@onecoach/lib-design-system';
 import { useTranslations } from 'next-intl';
-import type { PlanPricing, CreditPackPricing } from '@onecoach/types';
+import type { PlanPricing, CreditPackPricing } from "@onecoach/types-domain";
 
 type PlanPricingWithMeta = PlanPricing & { description?: string | null };
 

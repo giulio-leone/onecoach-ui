@@ -105,6 +105,13 @@ const PROVIDER_INFO: Record<
     gradient: 'from-violet-500/5 via-violet-500/0 to-transparent',
     accent: 'bg-violet-500',
   },
+  'gemini-cli': {
+    description: 'Gemini CLI Integration (Local)',
+    icon: Sparkles,
+    color: 'text-cyan-400',
+    gradient: 'from-cyan-500/5 via-cyan-500/0 to-transparent',
+    accent: 'bg-cyan-500',
+  },
 };
 const providerOrder: ProviderName[] = [
   'anthropic',
@@ -112,7 +119,9 @@ const providerOrder: ProviderName[] = [
   'google',
   'minimax',
   'xai',
+  'xai',
   'openrouter',
+  'gemini-cli',
 ];
 export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
   const t = useTranslations('admin');

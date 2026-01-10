@@ -5,7 +5,7 @@
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-import type { PlanningProgress, PlanningTask } from '@onecoach/types';
+import type { PlanningProgress, PlanningTask } from "@onecoach/types-domain";
 
 interface UsePlanningProgressOptions {
   planId: string | null;

@@ -15,7 +15,8 @@
       "@onecoach/schemas/*": ["../../../onecoach-schemas/src/*"],
       "types": ["../types/src/index.ts"],
       "types/*": ["../types/src/*"],
-      "app/navigation": ["../app/src/navigation/index.ts"]
+      "app/navigation": ["../app/src/navigation/index.ts"],
+      "app/navigation/server": ["../app/src/navigation/server.ts"]
     },
     "strict": true,
     "jsx": "react-jsx"

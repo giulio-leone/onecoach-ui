@@ -8,7 +8,7 @@ import {
   type AppShellHeaderLabels,
   type SidebarNavigationItem,
 } from '@onecoach/ui';
-import type { AuthenticatedUser } from '@onecoach/types';
+import type { AuthenticatedUser } from "@onecoach/types-core";
 
 export interface OneDashboardLabels {
   header: AppShellHeaderLabels;

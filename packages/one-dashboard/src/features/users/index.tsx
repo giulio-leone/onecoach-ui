@@ -38,11 +38,12 @@ import {
 } from 'lucide-react';
 import { useDebounce } from 'use-debounce';
 import type { UserWithCounts } from '@onecoach/types/prisma-helpers';
-import { isAdminRole } from '@onecoach/types';
 import { cn } from '@onecoach/lib-design-system';
 import { useTranslations } from 'next-intl';
 import { useQueryClient } from '@tanstack/react-query';
 import { logger } from '@onecoach/lib-shared';
+import { isAdminRole } from "@onecoach/types-core";
+
 interface Invitation {
   id: string;
   code: string;
