@@ -232,7 +232,6 @@ export function FrameworkConfigPanel() {
                   </pre>
                   <button
                     onClick={() => {
-                      const t = useTranslations('admin');
                       const newConfig = prompt(
                         'Enter new configuration (JSON):',
                         JSON.stringify(config.config, null, 2)

@@ -31,6 +31,10 @@
     "./components/ErrorState": {
       "types": "./src/components/ErrorState.tsx",
       "default": "./src/components/ErrorState.tsx"
+    },
+    "./visual-builder": {
+      "types": "./src/visual-builder/index.ts",
+      "default": "./src/visual-builder/index.ts"
     }
   },
   "scripts": {

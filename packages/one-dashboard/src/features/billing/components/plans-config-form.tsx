@@ -29,21 +29,21 @@ interface PlansConfigFormProps {
 
 export function PlansConfigForm({ plans, creditPacks }: PlansConfigFormProps) {
   const t = useTranslations('admin.aiSettings.billing');
+  const tAdmin = useTranslations('admin');
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
   const handleSave = async () => {
-    const t = useTranslations('admin');
     setIsSaving(true);
     setError(null);
     setSuccess(null);
     try {
       // Note: Plans are configured via Stripe Dashboard
       // This is a read-only view for now
-      setSuccess(t('actions.successStripe'));
+      setSuccess(tAdmin('actions.successStripe'));
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : t('errors.save'));
+      setError(err instanceof Error ? err.message : tAdmin('errors.save'));
     } finally {
       setIsSaving(false);
     }

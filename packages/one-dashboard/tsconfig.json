@@ -6,7 +6,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@onecoach/lib-stores": ["../../../onecoach-backend/packages/lib-stores/src/index.ts"],
-      "@onecoach/lib-stores/*": ["../../../onecoach-backend/packages/lib-stores/src/*"]
+      "@onecoach/lib-stores/*": ["../../../onecoach-backend/packages/lib-stores/src/*"],
+      "@onecoach/types": ["../../../onecoach-types/src/index.ts"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],

@@ -178,6 +178,100 @@ export const designTokens = {
   },
 
   /**
+   * Live Domain Tokens
+   * Consistent styling for live workout and nutrition features
+   */
+  live: {
+    // Card styling
+    card: {
+      bg: 'rgba(23, 23, 23, 0.8)',          // neutral-900/80
+      bgSubtle: 'rgba(23, 23, 23, 0.5)',    // neutral-900/50
+      border: 'rgba(255, 255, 255, 0.05)',   // white/5
+      borderHover: 'rgba(255, 255, 255, 0.1)', // white/10
+      borderActive: 'rgba(255, 255, 255, 0.15)',
+    },
+
+    // Domain-specific accent colors
+    accent: {
+      workout: {
+        primary: '#6366f1',    // indigo-500
+        secondary: '#8b5cf6',  // violet-500
+        bg: 'rgba(99, 102, 241, 0.1)',
+        border: 'rgba(99, 102, 241, 0.2)',
+      },
+      nutrition: {
+        primary: '#10b981',    // emerald-500
+        secondary: '#14b8a6',  // teal-500
+        bg: 'rgba(16, 185, 129, 0.1)',
+        border: 'rgba(16, 185, 129, 0.2)',
+      },
+      cardio: {
+        primary: '#06b6d4',    // cyan-500
+        secondary: '#3b82f6',  // blue-500
+        bg: 'rgba(6, 182, 212, 0.1)',
+        border: 'rgba(6, 182, 212, 0.2)',
+      },
+      circuit: {
+        primary: '#f97316',    // orange-500
+        secondary: '#f43f5e',  // rose-500
+        bg: 'rgba(249, 115, 22, 0.1)',
+        border: 'rgba(249, 115, 22, 0.2)',
+      },
+      superset: {
+        primary: '#8b5cf6',    // violet-500
+        secondary: '#d946ef',  // fuchsia-500
+        bg: 'rgba(139, 92, 246, 0.1)',
+        border: 'rgba(139, 92, 246, 0.2)',
+      },
+      warmup: {
+        primary: '#f59e0b',    // amber-500
+        secondary: '#f97316',  // orange-500
+        bg: 'rgba(245, 158, 11, 0.1)',
+        border: 'rgba(245, 158, 11, 0.2)',
+      },
+    },
+
+    // State-based styling
+    states: {
+      active: {
+        bg: 'rgba(99, 102, 241, 0.1)',
+        border: 'rgba(99, 102, 241, 0.2)',
+      },
+      complete: {
+        bg: 'rgba(16, 185, 129, 0.05)',
+        border: 'rgba(16, 185, 129, 0.2)',
+      },
+      rest: {
+        bg: 'rgba(245, 158, 11, 0.1)',
+        border: 'rgba(245, 158, 11, 0.2)',
+      },
+      error: {
+        bg: 'rgba(239, 68, 68, 0.1)',
+        border: 'rgba(239, 68, 68, 0.2)',
+      },
+    },
+
+    // Input styling
+    input: {
+      bg: 'rgba(38, 38, 38, 0.5)',           // neutral-800/50
+      border: 'rgba(255, 255, 255, 0.05)',
+      focusBorder: 'rgba(99, 102, 241, 0.5)',
+      placeholder: 'rgba(115, 115, 115, 1)', // neutral-500
+    },
+
+    // Button gradients
+    gradients: {
+      primary: 'linear-gradient(to right, #6366f1, #8b5cf6)',
+      success: 'linear-gradient(to right, #10b981, #14b8a6)',
+      cardio: 'linear-gradient(to right, #06b6d4, #3b82f6)',
+      circuit: 'linear-gradient(to right, #f97316, #f43f5e)',
+      superset: 'linear-gradient(to right, #8b5cf6, #d946ef)',
+      warmup: 'linear-gradient(to right, #f59e0b, #f97316)',
+    },
+  },
+
+
+  /**
    * Typography System
    */
   typography: {

@@ -28,6 +28,7 @@ export function UserStatusModal({
 }: UserStatusModalProps) {
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations('admin.users');
+  const tAdmin = useTranslations('admin');
 
   const actionConfig: Record<
     ActionType,
@@ -74,7 +75,6 @@ export function UserStatusModal({
   const canDelete = currentUserRole === 'SUPER_ADMIN' && action === 'delete';
 
   const handleConfirm = async () => {
-    const t = useTranslations('admin');
     if (!user) return;
     setIsLoading(true);
 
@@ -87,7 +87,7 @@ export function UserStatusModal({
 
         if (!response.ok) {
           const data = await response.json();
-          throw new Error(data.error || t('edit.error')); // Reusing generic error
+          throw new Error(data.error || tAdmin('edit.error')); // Reusing generic error
         }
       } else {
         // Status update (suspend/activate)
@@ -99,7 +99,7 @@ export function UserStatusModal({
 
         if (!response.ok) {
           const data = await response.json();
-          throw new Error(data.error || t('edit.error'));
+          throw new Error(data.error || tAdmin('edit.error'));
         }
       }
 
@@ -107,7 +107,7 @@ export function UserStatusModal({
       onClose();
       onSuccess();
     } catch (error: unknown) {
-      toast.error(error instanceof Error ? error.message : t('manageCredits.errorOperation'));
+      toast.error(error instanceof Error ? error.message : tAdmin('manageCredits.errorOperation'));
     } finally {
       setIsLoading(false);
     }

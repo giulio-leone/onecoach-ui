@@ -47,7 +47,6 @@ export function OperationCostsForm({ configs, onUpdateCost }: OperationCostsForm
   };
 
   const handleSave = async (opType: OperationType) => {
-    const t = useTranslations('admin');
     const config = localConfigs.find((c) => c.operationType === opType);
     if (!config) return;
 

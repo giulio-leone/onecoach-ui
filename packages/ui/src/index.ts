@@ -1,3 +1,5 @@
+import './types/nativewind';
+
 export * from './amount-display';
 export * from './animated-number';
 export * from './avatar';
@@ -78,3 +80,7 @@ export * from './visual-builder/components/base/EditorHeader';
 export * from './visual-builder/components/base/VersionHistory';
 
 export * from './import-modal';
+
+// Re-export common UI Core components that are not wrapped
+export { GlassContainer } from '@onecoach/ui-core';
+export { ScaleTouch, PulseIndicator, AnimatedNumber } from '@onecoach/ui-core';

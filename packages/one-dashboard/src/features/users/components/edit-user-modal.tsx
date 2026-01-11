@@ -28,6 +28,7 @@ export function EditUserModal({
   const [role, setRole] = useState('');
   const [credits, setCredits] = useState('0');
   const t = useTranslations('admin.users');
+  const tAdmin = useTranslations('admin');
 
   const canEditRole = currentUserRole === 'SUPER_ADMIN';
   const isEditingSuperAdmin = user?.role === 'SUPER_ADMIN';
@@ -43,7 +44,6 @@ export function EditUserModal({
   }, [user]);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const t = useTranslations('admin');
     e.preventDefault();
     if (!user) return;
     setIsLoading(true);
@@ -62,14 +62,14 @@ export function EditUserModal({
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.error || t('edit.error'));
+        throw new Error(data.error || tAdmin('edit.error'));
       }
 
-      toast.success(t('edit.success'));
+      toast.success(tAdmin('edit.success'));
       onClose();
       onSuccess();
     } catch (error: unknown) {
-      toast.error(error instanceof Error ? error.message : t('edit.error'));
+      toast.error(error instanceof Error ? error.message : tAdmin('edit.error'));
     } finally {
       setIsLoading(false);
     }

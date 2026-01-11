@@ -71,6 +71,7 @@ interface CopilotTabProps {
 
 export function CopilotTab({ userStats }: CopilotTabProps) {
   const t = useTranslations('admin.aiSettings.copilot');
+  const tAdmin = useTranslations('admin');
 
   // Available context builders
   const contextBuilders = useMemo(
@@ -177,9 +178,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
     }));
   }, []);
 
-  // Save config
   const saveConfig = async () => {
-    const t = useTranslations('admin');
     setIsSaving(true);
     try {
       const res = await fetch('/api/admin/copilot-config', {
@@ -192,9 +191,9 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
 
       setOriginalConfig(config);
       setHasChanges(false);
-      toast.success(t('saveSuccess'));
+      toast.success(tAdmin('saveSuccess'));
     } catch {
-      toast.error(t('saveError'));
+      toast.error(tAdmin('saveError'));
     } finally {
       setIsSaving(false);
     }

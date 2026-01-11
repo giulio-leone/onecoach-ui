@@ -17,6 +17,7 @@ export const AI_PROVIDERS = [
   'XAI',
   'OPENROUTER',
   'MINIMAX',
+  'GEMINI_CLI',
 ] as const;
 export type AIProvider = (typeof AI_PROVIDERS)[number];
 

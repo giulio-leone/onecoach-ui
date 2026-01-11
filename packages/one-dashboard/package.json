@@ -15,6 +15,7 @@
   "dependencies": {
     "@onecoach/ui": "workspace:*",
     "clsx": "^2.1.1",
+    "@onecoach/types": "workspace:*",
     "tailwind-merge": "^3.4.0",
     "@onecoach/types-core": "workspace:*",
     "@onecoach/types-workout": "workspace:*",

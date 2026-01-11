@@ -25,12 +25,12 @@ interface InvitationCardProps {
 
 export function InvitationCard({ invitation, onRevoke }: InvitationCardProps) {
   const t = useTranslations('admin.users.invitations');
+  const tAdmin = useTranslations('admin');
   const format = useFormatter();
 
   const copyToClipboard = (text: string) => {
-    const t = useTranslations('admin');
     navigator.clipboard.writeText(text);
-    toast.success(t('copySuccess'));
+    toast.success(tAdmin('copySuccess'));
   };
 
   const getStatusColor = (

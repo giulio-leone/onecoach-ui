@@ -361,7 +361,7 @@ export function AISettingsPageClient({
       </div>
     );
     return () => setHeaderActions(null);
-  }, [setHeaderActions, t]);
+  }, [setHeaderActions, tAdmin]);
 
   useEffect(() => {
     const sectionFromQuery = searchParams?.get('section') || undefined;

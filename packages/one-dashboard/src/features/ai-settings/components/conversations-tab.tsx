@@ -55,6 +55,7 @@ interface ConversationsTabProps {
 
 export function ConversationsTab({ initialConversations = [] }: ConversationsTabProps) {
   const t = useTranslations('admin.aiSettings.conversations');
+  const tAdmin = useTranslations('admin');
   const locale = useLocale();
   const dateLocale = locale === 'it' ? it : enUS;
 
@@ -230,7 +231,6 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
 
   // Handle actions
   const handleAction = async (action: 'archive' | 'flag' | 'delete', conversationId: string) => {
-    const t = useTranslations('admin');
     try {
       const res = await fetch(`/api/admin/conversations/${conversationId}/${action}`, {
         method: 'POST',
@@ -249,21 +249,21 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
             next.delete(conversationId);
             return next;
           });
-          toast.success(t('toasts.deleted'));
+          toast.success(tAdmin('toasts.deleted'));
         } else if (action === 'archive') {
           setConversations((prev) =>
             prev.map((c) => (c.id === conversationId ? { ...c, status: 'archived' as const } : c))
           );
-          toast.success(t('toasts.archived'));
+          toast.success(tAdmin('toasts.archived'));
         } else {
           setConversations((prev) =>
             prev.map((c) => (c.id === conversationId ? { ...c, status: 'flagged' as const } : c))
           );
-          toast.success(t('toasts.flagged'));
+          toast.success(tAdmin('toasts.flagged'));
         }
       }
     } catch {
-      toast.error(t('toasts.error'));
+      toast.error(tAdmin('toasts.error'));
     }
     setActionMenuId(null);
   };
@@ -287,7 +287,6 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
   };
 
   const handleBatchAction = async (action: 'archive' | 'flag' | 'delete') => {
-    const t = useTranslations('admin');
     if (!selectedIds.size) return;
     setIsBatchLoading(true);
     try {
@@ -307,19 +306,19 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
           setSelectedConversation(null);
           setMessages([]);
         }
-        toast.success(t('toasts.batchDeleted'));
+        toast.success(tAdmin('toasts.batchDeleted'));
       } else {
         const targetStatus = action === 'archive' ? ('archived' as const) : ('flagged' as const);
         setConversations((prev) =>
           prev.map((c) => (selectedIds.has(c.id) ? { ...c, status: targetStatus } : c))
         );
         toast.success(
-          targetStatus === 'archived' ? t('toasts.batchArchived') : t('toasts.batchFlagged')
+          targetStatus === 'archived' ? tAdmin('toasts.batchArchived') : tAdmin('toasts.batchFlagged')
         );
       }
       clearSelection();
     } catch {
-      toast.error(t('toasts.batchError'));
+      toast.error(tAdmin('toasts.batchError'));
     } finally {
       setIsBatchLoading(false);
       setActionMenuId(null);

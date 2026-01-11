@@ -24,6 +24,7 @@ interface AIAgentsConfigProps {
 
 export function AIAgentsConfig({ configs, onToggleAgent, onUpdateRetry }: AIAgentsConfigProps) {
   const t = useTranslations('admin.aiSettings.framework.agents');
+  const tAdmin = useTranslations('admin');
   const [optimisticConfigs, setOptimisticConfigs] = useState(configs);
   const [retryCount, setRetryCount] = useState<number>(() => {
     const retryConfig = configs.find((c) => c.feature === 'workout_generation_retry');
@@ -34,7 +35,6 @@ export function AIAgentsConfig({ configs, onToggleAgent, onUpdateRetry }: AIAgen
   });
 
   const handleToggle = async (agentId: string, currentStatus: boolean) => {
-    const t = useTranslations('admin');
     const newStatus = !currentStatus;
     // Optimistic update
     setOptimisticConfigs((prev) =>
@@ -47,11 +47,11 @@ export function AIAgentsConfig({ configs, onToggleAgent, onUpdateRetry }: AIAgen
         throw new Error(result.error);
       }
 
-      const statusStr = newStatus ? t('status.enabled') : t('status.disabled');
-      toast.success(t('toggle', { label: agentId, status: statusStr }));
+      const statusStr = newStatus ? tAdmin('status.enabled') : tAdmin('status.disabled');
+      toast.success(tAdmin('toggle', { label: agentId, status: statusStr }));
     } catch (error) {
       logger.error('Failed to toggle agent:', error);
-      toast.error(t('updateError'));
+      toast.error(tAdmin('updateError'));
       // Revert optimistic update
       setOptimisticConfigs((prev) =>
         prev.map((c) => (c.feature === agentId ? { ...c, isEnabled: currentStatus } : c))
@@ -60,16 +60,15 @@ export function AIAgentsConfig({ configs, onToggleAgent, onUpdateRetry }: AIAgen
   };
 
   const handleRetryUpdate = async () => {
-    const t = useTranslations('admin');
     try {
       const result = await onUpdateRetry(retryCount);
       if (!result.success) {
         throw new Error(result.error);
       }
-      toast.success(t('retryUpdateSuccess'));
+      toast.success(tAdmin('retryUpdateSuccess'));
     } catch (error) {
       logger.error('Failed to update retry count:', error);
-      toast.error(t('retryUpdateError'));
+      toast.error(tAdmin('retryUpdateError'));
     }
   };
 
@@ -77,19 +76,18 @@ export function AIAgentsConfig({ configs, onToggleAgent, onUpdateRetry }: AIAgen
     <div className="space-y-6">
       <CatalogGrid emptyState={<p className="text-center text-neutral-500">{t('empty')}</p>}>
         {optimisticConfigs.map((config) => {
-          const t = useTranslations('admin');
           if (config.feature === 'workout_generation_retry') {
             return (
               <ResourceCard
                 key={config.id}
-                title={t('admin.ai_agents_config.workout_generation_retry')}
+                title={tAdmin('admin.ai_agents_config.workout_generation_retry')}
                 subtitle="Configure retry attempts for failed generation steps"
                 imageSrc={null}
                 status={config.isEnabled ? 'active' : 'disabled'}
-                stats={[{ label: t('retryLabel'), value: retryCount }]}
+                stats={[{ label: tAdmin('retryLabel'), value: retryCount }]}
                 actions={[
                   {
-                    label: config.isEnabled ? t('status.disabled') : t('status.enabled'),
+                    label: config.isEnabled ? tAdmin('status.disabled') : tAdmin('status.enabled'),
                     icon: config.isEnabled ? <PowerOff size={16} /> : <Power size={16} />,
                     onClick: () => handleToggle(config.feature, config.isEnabled),
                     variant: config.isEnabled ? 'destructive' : 'default',
@@ -99,11 +97,11 @@ export function AIAgentsConfig({ configs, onToggleAgent, onUpdateRetry }: AIAgen
                 <div className="mt-4 space-y-4 border-t border-neutral-200 pt-4 dark:border-neutral-800">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">
-                      {t('retryAttempts', { count: retryCount })}
+                      {tAdmin('retryAttempts', { count: retryCount })}
                     </span>
                     <Button size="sm" onClick={handleRetryUpdate} disabled={!config.isEnabled}>
                       <Save size={14} className="mr-2" />
-                      {t('save')}
+                      {tAdmin('save')}
                     </Button>
                   </div>
                   <Slider
@@ -127,13 +125,13 @@ export function AIAgentsConfig({ configs, onToggleAgent, onUpdateRetry }: AIAgen
               status={config.isEnabled ? 'active' : 'disabled'}
               stats={[
                 {
-                  label: t('lastUpdated'),
+                  label: tAdmin('lastUpdated'),
                   value: new Date(config.updatedAt).toLocaleDateString(),
                 },
               ]}
               actions={[
                 {
-                  label: config.isEnabled ? t('status.disabled') : t('status.enabled'),
+                  label: config.isEnabled ? tAdmin('status.disabled') : tAdmin('status.enabled'),
                   icon: config.isEnabled ? <PowerOff size={16} /> : <Power size={16} />,
                   onClick: () => handleToggle(config.feature, config.isEnabled),
                   variant: config.isEnabled ? 'destructive' : 'default',

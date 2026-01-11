@@ -18,9 +18,9 @@ export function CreateInvitationModal({ onSuccess }: CreateInvitationModalProps)
   const [code, setCode] = useState('');
   const [expiresAt, setExpiresAt] = useState('');
   const t = useTranslations('admin.users.invitations');
+  const tAdmin = useTranslations('admin');
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const t = useTranslations('admin');
     e.preventDefault();
     setIsLoading(true);
 
@@ -38,15 +38,15 @@ export function CreateInvitationModal({ onSuccess }: CreateInvitationModalProps)
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.error || t('create.createError'));
+        throw new Error(data.error || tAdmin('create.createError'));
       }
 
-      toast.success(t('create.success'));
+      toast.success(tAdmin('create.success'));
       setIsOpen(false);
       resetForm();
       onSuccess();
     } catch (error: unknown) {
-      toast.error(error instanceof Error ? error.message : t('create.error'));
+      toast.error(error instanceof Error ? error.message : tAdmin('create.error'));
     } finally {
       setIsLoading(false);
     }

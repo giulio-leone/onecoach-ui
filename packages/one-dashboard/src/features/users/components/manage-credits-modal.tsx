@@ -20,19 +20,19 @@ export function ManageCreditsModal({ user, isOpen, onClose, onSuccess }: ManageC
   const [operation, setOperation] = useState<'add' | 'remove'>('add');
   const [reason, setReason] = useState('');
   const t = useTranslations('admin.users');
+  const tAdmin = useTranslations('admin');
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const t = useTranslations('admin');
     e.preventDefault();
     if (!user) return;
     const numAmount = parseInt(amount);
     if (isNaN(numAmount) || numAmount <= 0) {
-      toast.error(t('manageCredits.invalidAmount'));
+      toast.error(tAdmin('manageCredits.invalidAmount'));
       return;
     }
 
     if (!reason.trim()) {
-      toast.error(t('manageCredits.invalidReason'));
+      toast.error(tAdmin('manageCredits.invalidReason'));
       return;
     }
 
@@ -51,19 +51,19 @@ export function ManageCreditsModal({ user, isOpen, onClose, onSuccess }: ManageC
 
       if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.error || t('manageCredits.errorUpdate'));
+        throw new Error(data.error || tAdmin('manageCredits.errorUpdate'));
       }
 
       toast.success(
         operation === 'add'
-          ? t('manageCredits.successAdd', { amount: numAmount })
-          : t('manageCredits.successRemove', { amount: numAmount })
+          ? tAdmin('manageCredits.successAdd', { amount: numAmount })
+          : tAdmin('manageCredits.successRemove', { amount: numAmount })
       );
 
       handleClose();
       onSuccess();
     } catch (error: unknown) {
-      toast.error(error instanceof Error ? error.message : t('manageCredits.errorOperation'));
+      toast.error(error instanceof Error ? error.message : tAdmin('manageCredits.errorOperation'));
     } finally {
       setIsLoading(false);
     }

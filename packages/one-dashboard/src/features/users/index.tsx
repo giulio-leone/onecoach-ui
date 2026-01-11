@@ -106,12 +106,12 @@ export function UsersPageClient({
   const [totalItems, setTotalItems] = useState(0);
   const [isRegistrationEnabled, setIsRegistrationEnabled] = useState(false);
   const t = useTranslations('admin.users');
+  const tAdmin = useTranslations('admin');
   const [isLoadingSettings, setIsLoadingSettings] = useState(true);
   const [isToggling, setIsToggling] = useState(false);
   // Refresh users from server (paginato)
   const refreshUsers = useCallback(
     async (nextPage?: number, nextPageSize?: number) => {
-      const t = useTranslations('admin');
       setIsLoadingUsers(true);
       try {
         const params = new URLSearchParams({
@@ -132,12 +132,12 @@ export function UsersPageClient({
         queryClient.invalidateQueries({ queryKey: ['admin-users'] });
       } catch (error) {
         logger.error('Error refreshing users:', error);
-        toast.error(t('loadError'));
+        toast.error(tAdmin('loadError'));
       } finally {
         setIsLoadingUsers(false);
       }
     },
-    [debouncedUserSearch, queryClient, roleFilter, statusFilter, userPage, userPageSize, t]
+    [debouncedUserSearch, queryClient, roleFilter, statusFilter, userPage, userPageSize, tAdmin]
   );
   // Calculate stats
   const activeUsers = useMemo(() => users.filter((u) => u.status === 'ACTIVE').length, [users]);
@@ -174,7 +174,6 @@ export function UsersPageClient({
   }, [users, debouncedUserSearch, roleFilter, statusFilter]);
   // Invitations handlers
   const fetchInvitations = useCallback(async () => {
-    const t = useTranslations('admin');
     setIsLoadingInvitations(true);
     try {
       const params = new URLSearchParams({
@@ -191,14 +190,13 @@ export function UsersPageClient({
       setTotalPages(data.totalPages);
       setTotalItems(data.total);
     } catch (error: unknown) {
-      toast.error(t('invitations.loadError'));
+      toast.error(tAdmin('invitations.loadError'));
       logger.error(error instanceof Error ? error.message : String(error));
     } finally {
       setIsLoadingInvitations(false);
     }
-  }, [page, debouncedSearch, invStatusFilter, typeFilter, t]);
+  }, [page, debouncedSearch, invStatusFilter, typeFilter, tAdmin]);
   const fetchSettings = useCallback(async () => {
-    const t = useTranslations('admin');
     setIsLoadingSettings(true);
     try {
       const response = await fetch('/api/admin/invitations/settings');
@@ -206,14 +204,13 @@ export function UsersPageClient({
       const data = await response.json();
       setIsRegistrationEnabled(data.enabled ?? false);
     } catch (error: unknown) {
-      toast.error(t('settingsError'));
+      toast.error(tAdmin('settingsError'));
       logger.error(error instanceof Error ? error.message : String(error));
     } finally {
       setIsLoadingSettings(false);
     }
-  }, [t]);
+  }, [tAdmin]);
   const handleToggleRegistration = async (enabled: boolean) => {
-    const t = useTranslations('admin');
     setIsToggling(true);
     try {
       const response = await fetch('/api/admin/invitations/settings', {
@@ -225,26 +222,25 @@ export function UsersPageClient({
       const data = await response.json();
       setIsRegistrationEnabled(data.enabled);
       toast.success(
-        enabled ? t('invitations.settings.successEnable') : t('invitations.settings.successDisable')
+        enabled ? tAdmin('invitations.settings.successEnable') : tAdmin('invitations.settings.successDisable')
       );
     } catch (error: unknown) {
-      toast.error(t('settingsUpdateError'));
+      toast.error(tAdmin('settingsUpdateError'));
       logger.error(error instanceof Error ? error.message : String(error));
     } finally {
       setIsToggling(false);
     }
   };
   const handleRevoke = async (id: string) => {
-    const t = useTranslations('admin');
     try {
       const response = await fetch(`/api/admin/invitations/${id}/revoke`, {
         method: 'POST',
       });
       if (!response.ok) throw new Error('Failed to revoke invitation');
-      toast.success(t('invitations.revokeSuccess'));
+      toast.success(tAdmin('invitations.revokeSuccess'));
       fetchInvitations();
     } catch (error: unknown) {
-      toast.error(t('invitationRevokeError'));
+      toast.error(tAdmin('invitationRevokeError'));
       logger.error(error instanceof Error ? error.message : String(error));
     }
   };
