@@ -21,19 +21,6 @@ export { FlightCard, type Flight, type FlightDirection } from './flight-card';
 export { RouteGroup, type RouteGroupProps } from './route-group';
 
 // =============================================================================
-// Smart Analysis (AI-Powered)
-// =============================================================================
-export { 
-  SmartAnalysisPanel, 
-  type SmartAnalysisPanelProps,
-  type FlightAnalysis,
-  type FlightRecommendation,
-} from './smart-analysis-panel';
-
-// Smart Search Hook
-export { useSmartFlightSearch, type SmartSearchInput, type SmartSearchResult } from './use-smart-flight-search';
-
-// =============================================================================
 // Form Utilities & Types
 // =============================================================================
 export {
@@ -42,4 +29,3 @@ export {
   type CabinClass,
 } from './form';
 export type { Airport } from './types';
-
