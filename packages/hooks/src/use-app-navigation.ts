@@ -159,6 +159,7 @@ export function useAppNavigation(userRole?: string | null) {
         icon: Sparkles,
         defaultOpen: true,
         children: [
+          { name: t('generationMonitor'), href: '/admin/generation', icon: Activity },
           { name: t('providersKeys'), href: '/admin/ai-settings?section=providers', icon: Shield },
           { name: t('modelsAccess'), href: '/admin/ai-settings?section=models', icon: Bot },
           {

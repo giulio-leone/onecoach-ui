@@ -9,11 +9,11 @@ import { useTranslations } from 'next-intl';
 
 import { useMemo, useState } from 'react';
 import { useAuth } from '@onecoach/lib-api/hooks';
-import { useRouter } from 'app/navigation';
+import { useRouter } from 'next/navigation';
 import { Coins } from 'lucide-react';
 import { Button } from '@onecoach/ui';
-import { CreditCheckoutModal } from '@/components/pricing/credit-checkout-modal';
-import { PromoCodeInput } from '@/components/pricing/promo-code-input';
+import { CreditCheckoutModal } from './credit-checkout-modal';
+import { PromoCodeInput } from './promo-code-input';
 import { CREDIT_PACK_OPTIONS } from '@onecoach/constants';
 import type { CreditPackOption } from "@onecoach/types-domain";
 

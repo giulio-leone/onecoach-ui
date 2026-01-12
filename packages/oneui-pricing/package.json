@@ -11,6 +11,8 @@
     }
   },
   "dependencies": {
+    "@onecoach/constants": "workspace:*",
+    "@onecoach/lib-api": "workspace:*",
     "@onecoach/ui-core": "workspace:*",
     "@onecoach/lib-design-system": "workspace:*",
     "@onecoach/types-domain": "workspace:*",

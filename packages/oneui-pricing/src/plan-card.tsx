@@ -10,10 +10,11 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { Check, Sparkles } from 'lucide-react';
 import { Button } from '@onecoach/ui';
-import { PromoCodeInput } from '@/components/pricing/promo-code-input';
-import { useRouter } from 'app/navigation';
-import { useReferralTracking } from 'hooks/use-referral-tracking';
+import { PromoCodeInput } from './promo-code-input';
+import { useRouter } from 'next/navigation';
 import { useAuth } from '@onecoach/lib-api/hooks';
+// TODO: Move useReferralTracking to a shared package
+// import { useReferralTracking } from 'hooks/use-referral-tracking';
 
 interface PlanCardProps {
   plan: {
@@ -25,16 +26,17 @@ interface PlanCardProps {
     popular?: boolean;
     stripePlan: 'PLUS' | 'PRO';
   };
+  /** Optional referral code to apply */
+  referralCode?: string;
 }
 
-export function PlanCard({ plan }: PlanCardProps) {
+export function PlanCard({ plan, referralCode }: PlanCardProps) {
   const t = useTranslations('common');
 
   const router = useRouter();
   const { userId } = useAuth();
   const [promoCode, setPromoCode] = useState('');
   const [validPromotion, setValidPromotion] = useState<unknown>(null);
-  const { referralCode } = useReferralTracking();
 
   const handleSubscribe = () => {
     const params = new URLSearchParams({
