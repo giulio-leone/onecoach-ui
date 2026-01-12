@@ -14,6 +14,7 @@ import { cn } from '@onecoach/lib-design-system';
 import { Button, Card, EmptyState } from '@onecoach/ui';
 import { FlightCard } from './flight-card';
 import { RouteGroup } from './route-group';
+import { SmartAnalysisPanel, type FlightAnalysis, type FlightRecommendation } from './smart-analysis-panel';
 
 export type { FlightSearchResponse };
 
@@ -23,6 +24,12 @@ export interface FlightResultsProps {
   results: FlightSearchResponse | null;
   isSearching: boolean;
   onReset: () => void;
+  /** AI-powered flight analysis (from SmartSearchService) */
+  analysis?: FlightAnalysis;
+  /** AI recommendation for best flight option */
+  recommendation?: FlightRecommendation;
+  /** Alternative recommendations */
+  alternatives?: FlightRecommendation[];
 }
 
 // Hook per gestire i preferiti
@@ -86,7 +93,14 @@ function useFavorites() {
   return { favoriteIds, toggleFavorite };
 }
 
-export function FlightResults({ results, isSearching, onReset }: FlightResultsProps) {
+export function FlightResults({ 
+  results, 
+  isSearching, 
+  onReset,
+  analysis,
+  recommendation,
+  alternatives,
+}: FlightResultsProps) {
   const t = useTranslations('flight');
   const [activeTab, setActiveTab] = useState<FlightDirection>('outbound');
   const [selectedOutbound, setSelectedOutbound] = useState<Flight | null>(null);
@@ -161,6 +175,15 @@ export function FlightResults({ results, isSearching, onReset }: FlightResultsPr
             {t('results.modifySearch')}
           </Button>
         </div>
+
+        {/* AI Analysis Panel - shown when SmartSearch data is available */}
+        {analysis && recommendation && (
+          <SmartAnalysisPanel
+            analysis={analysis}
+            recommendation={recommendation}
+            alternatives={alternatives}
+          />
+        )}
 
         {hasMultipleRoutes ? (
           // Grouped by route
@@ -267,6 +290,15 @@ export function FlightResults({ results, isSearching, onReset }: FlightResultsPr
           {t('results.modifySearch')}
         </Button>
       </div>
+
+      {/* AI Analysis Panel - shown when SmartSearch data is available */}
+      {analysis && recommendation && (
+        <SmartAnalysisPanel
+          analysis={analysis}
+          recommendation={recommendation}
+          alternatives={alternatives}
+        />
+      )}
 
       {/* Tabs */}
       <div className="flex gap-2 rounded-2xl bg-neutral-100 p-1.5 dark:bg-neutral-800/50">

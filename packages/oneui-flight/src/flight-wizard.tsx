@@ -18,7 +18,7 @@ import { useTranslations } from 'next-intl';
 
 import type { FlightSearchFormData, CabinClass } from './form';
 import { createInitialFlightSearchFormData } from './form';
-import { useFlightSearch } from '@onecoach/hooks';
+import { useSmartFlightSearch } from './use-smart-flight-search';
 import { FlightResults } from './flight-results';
 import type { Airport } from './types';
 
@@ -288,7 +288,7 @@ export function FlightWizard({ getAirports }: FlightWizardProps) {
     createInitialFlightSearchFormData()
   );
   const [airports, setAirports] = useState<ComboboxOption[]>([]);
-  const { isSearching, results, search, reset, error } = useFlightSearch();
+  const { isSearching, results, search, reset, error } = useSmartFlightSearch();
 
   useEffect(() => {
     const loadAirports = async () => {
@@ -349,9 +349,23 @@ export function FlightWizard({ getAirports }: FlightWizardProps) {
 
   // View switch: results or wizard
   if (results || isSearching) {
+    // Convert SmartSearchResult to FlightSearchResponse format (discriminated union)
+    const flightResults = results 
+      ? results.tripType === 'one-way'
+        ? { tripType: 'one-way' as const, flights: results.outbound }
+        : { tripType: 'round-trip' as const, outbound: results.outbound, return: results.return ?? [] }
+      : null;
+
     return (
       <div className="animate-in fade-in mx-auto w-full max-w-6xl px-4 duration-500">
-        <FlightResults results={results} isSearching={isSearching} onReset={handleReset} />
+        <FlightResults 
+          results={flightResults} 
+          isSearching={isSearching} 
+          onReset={handleReset}
+          analysis={results?.analysis}
+          recommendation={results?.recommendation}
+          alternatives={results?.alternatives}
+        />
         {error && (
           <div className="mt-4 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-center text-sm font-bold text-red-600">
             {error}
