@@ -115,7 +115,6 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
   }, [loadTemplates]);
 
   const handleDelete = async (template: NutritionTemplate) => {
-    const t = useTranslations('nutrition');
     const { dialog } = await import('@onecoach/lib-stores');
     const confirmed = await dialog.confirm(t('confirmDelete', { name: template.name }));
     if (!confirmed) return;
@@ -306,7 +305,6 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
           </div>
         ) : (
           templates.map((template) => {
-            const t = useTranslations('nutrition');
             const TypeIcon = TYPE_ICONS[template.type];
 
             return (

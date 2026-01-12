@@ -42,7 +42,6 @@ export function MealTemplateSelector({
   // Carica template
   const loadTemplates = useCallback(
     async (query?: string) => {
-      const t = useTranslations('nutrition');
       setIsLoading(true);
       setError(null);
 
@@ -55,7 +54,7 @@ export function MealTemplateSelector({
 
         const response = await fetch(url.toString());
         if (!response.ok) {
-          throw new Error(t('common.errors.loadingTemplates'));
+          throw new Error(tCommon('errors.loadingTemplates'));
         }
 
         const data = await response.json();
@@ -71,7 +70,7 @@ export function MealTemplateSelector({
         setIsLoading(false);
       }
     },
-    [t]
+    [tCommon]
   );
 
   // Carica template iniziali

@@ -82,7 +82,6 @@ export function FoodDetailDrawer({
   // Verifica ruolo admin
   useEffect(() => {
     const checkAdmin = async () => {
-      const t = useTranslations('common');
       try {
         const response = await fetch('/api/profile');
         if (response.ok) {
@@ -107,7 +106,6 @@ export function FoodDetailDrawer({
       return;
     }
     const loadFoodItem = async () => {
-      const t = useTranslations('common');
       setIsLoadingFood(true);
       setError(null);
       try {
@@ -157,7 +155,6 @@ export function FoodDetailDrawer({
     setEditForm(null);
   };
   const handleSaveEdit = async () => {
-    const t = useTranslations('common');
     if (!editForm) return;
     setIsSaving(true);
     setError(null);
@@ -220,7 +217,6 @@ export function FoodDetailDrawer({
     }
   };
   const handleDelete = async () => {
-    const t = useTranslations('common');
     const confirmed = await dialog.confirm(t('confirmDeleteFood'));
     if (!confirmed) return;
     if (onDelete) {

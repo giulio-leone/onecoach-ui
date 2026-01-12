@@ -30,7 +30,6 @@ export function FoodCameraInline({
   const [mode, setMode] = useState<FoodCameraMode | null>(null);
 
   const handleCapture = async (imageBase64: string) => {
-    const t = useTranslations('common');
     try {
       const isLabel = mode === 'label';
       const endpoint = isLabel ? '/api/food/analyze-label' : '/api/food/segment-dish';

@@ -37,7 +37,6 @@ export function FoodSelector({
 
   const searchFoods = useCallback(
     async (searchQuery: string) => {
-      const t = useTranslations('common');
       if (!searchQuery.trim()) {
         setResults([]);
         setIsOpen(false);
@@ -64,7 +63,7 @@ export function FoodSelector({
         setIsLoading(false);
       }
     },
-    [limit, t]
+    [limit]
   );
 
   // Debounce search

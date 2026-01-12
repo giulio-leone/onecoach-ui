@@ -36,7 +36,6 @@ export function FoodCamera({ mode, onCapture, onClose, className = '' }: FoodCam
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const startCamera = useCallback(async () => {
-    const t = useTranslations('common');
     try {
       setError(null);
       const mediaStream = await navigator.mediaDevices.getUserMedia({
@@ -61,7 +60,7 @@ export function FoodCamera({ mode, onCapture, onClose, className = '' }: FoodCam
           : "Errore nell'accesso alla fotocamera"
       );
     }
-  }, [mode, t]);
+  }, [mode]);
 
   const stopCamera = useCallback(() => {
     if (stream) {
@@ -110,7 +109,6 @@ export function FoodCamera({ mode, onCapture, onClose, className = '' }: FoodCam
   }, []);
 
   const handleConfirm = useCallback(async () => {
-    const t = useTranslations('common');
     if (!capturedImage) return;
 
     setIsProcessing(true);
@@ -133,7 +131,7 @@ export function FoodCamera({ mode, onCapture, onClose, className = '' }: FoodCam
     } finally {
       setIsProcessing(false);
     }
-  }, [capturedImage, onCapture, onClose, t]);
+  }, [capturedImage, onCapture, onClose]);
 
   const handleRetake = useCallback(() => {
     setCapturedImage(null);
