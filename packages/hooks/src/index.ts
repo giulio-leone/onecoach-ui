@@ -18,6 +18,7 @@ export * from './use-exercise-generation';
 export * from './use-food-generation';
 export * from './use-flight-search';
 export * from './use-app-navigation';
+export * from './use-durable-generation'; // SDK v4.0 - Durable AI generation
 
 // Cross-feature utility hooks
 export * from './use-chat';
