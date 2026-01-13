@@ -24,46 +24,9 @@ import {
 } from '@phosphor-icons/react';
 import { cn } from '@onecoach/lib-design-system';
 import { Button, Badge } from '@onecoach/ui';
+import type { FlightAnalysis, FlightRecommendation } from '@onecoach/types-flight';
 
 // ==================== TYPES ====================
-
-export interface FlightAnalysis {
-  marketSummary: string;
-  priceAnalysis: {
-    avgOutboundPrice: number;
-    avgReturnPrice?: number;
-    isPriceGood: boolean;
-    priceTrend: string;
-  };
-  routeAnalysis: {
-    bestOrigin?: string;
-    originReason?: string;
-    bestDestination?: string;
-    destinationReason?: string;
-  };
-  scheduleAnalysis: {
-    hasGoodDirectOptions: boolean;
-    avgLayoverMinutes?: number;
-    bestTimeToFly: string;
-  };
-  keyInsights: string[];
-  savingsTips?: string[];
-}
-
-export interface FlightRecommendation {
-  outboundFlightId: string;
-  returnFlightId?: string;
-  totalPrice: number;
-  strategy: 'best_value' | 'cheapest' | 'fastest' | 'most_convenient' | 'flexible_combo';
-  confidence: number;
-  reasoning: string;
-  /** Primary deep link (for one-way or combined booking) */
-  deepLink?: string;
-  /** Deep link specifically for outbound flight */
-  outboundDeepLink?: string;
-  /** Deep link specifically for return flight */
-  returnDeepLink?: string;
-}
 
 export interface SmartAnalysisPanelProps {
   analysis: FlightAnalysis;
@@ -331,7 +294,12 @@ export function SmartAnalysisPanel({
                           <ArrowSquareOut className="h-4 w-4" weight="bold" />
                           {t('smartSearch.bookNow') || 'Book Now'}
                         </a>
-                      ) : null}
+                      ) : (
+                        /* Fallback: No deep links available */
+                        <Button disabled variant="secondary" className="rounded-xl opacity-50">
+                          {t('smartSearch.bookingUnavailable') || 'Booking Unavailable'}
+                        </Button>
+                      )}
                       {onSelectRecommendation && (
                         <Button
                           variant="outline"
@@ -353,7 +321,10 @@ export function SmartAnalysisPanel({
                           )}
                           onClick={() => onSave(recommendation)}
                         >
-                          <Heart className={cn('mr-1.5 h-4 w-4', isSaved && 'fill-current')} weight={isSaved ? "fill" : "regular"} />
+                          <Heart
+                            className={cn('mr-1.5 h-4 w-4', isSaved && 'fill-current')}
+                            weight={isSaved ? 'fill' : 'regular'}
+                          />
                           {isSaved ? 'Saved' : 'Save'}
                         </Button>
                       )}
@@ -504,7 +475,10 @@ export function SmartAnalysisPanel({
                       key={idx}
                       className="flex items-start gap-2 rounded-xl bg-white/60 p-3 dark:bg-neutral-800"
                     >
-                      <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-500" weight="fill" />
+                      <CheckCircle
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-500"
+                        weight="fill"
+                      />
                       <span className="text-sm text-neutral-600 dark:text-neutral-300">
                         {insight}
                       </span>

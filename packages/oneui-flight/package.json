@@ -28,6 +28,7 @@
     "@onecoach/types-ai": "workspace:*",
     "@onecoach/types-ui": "workspace:*",
     "@onecoach/types-domain": "workspace:*",
+    "@onecoach/types-flight": "workspace:*",
     "@onecoach/types-database": "workspace:*",
     "@tanstack/react-virtual": "^3.13.6",
     "@phosphor-icons/react": "^2.1.7"
