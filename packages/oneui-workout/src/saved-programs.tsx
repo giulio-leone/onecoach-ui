@@ -3,6 +3,7 @@
  *
  * Displays a list of user's saved workout programs
  * Con supporto per TRUE realtime sync via Supabase
+ * Con GeneratingCard per mostrare generazioni AI in corso
  */
 
 'use client';
@@ -10,11 +11,14 @@
 import { forwardRef, useImperativeHandle, useState } from 'react';
 import Link from 'next/link';
 import { Plus } from 'lucide-react';
+import { useSession } from 'next-auth/react';
 import { useWorkouts, useDeleteWorkout, useDuplicateWorkout } from '@onecoach/features-workout';
 import { ErrorState } from '@onecoach/ui/components';
-import { SelectionToolbar } from '@onecoach/ui-core';
+import { SelectionToolbar, useSupabaseContext } from '@onecoach/ui-core';
+import { useUserActiveGenerations } from '@onecoach/hooks';
 import { DeployToClientsModal } from '@onecoach/ui-coach';
 import { WorkoutCard } from './workout-card';
+import { WorkoutGeneratingCard } from './workout-generating-card';
 import { useTranslations } from 'next-intl';
 import type { WorkoutProgram } from '@onecoach/types-workout';
 
@@ -25,9 +29,19 @@ export interface SavedWorkoutProgramsRef {
 export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props, ref) => {
   const t = useTranslations('workouts.saved');
   const tCommon = useTranslations('common');
+  const { data: session } = useSession();
+  const { supabase } = useSupabaseContext();
   const { data, isLoading, error, refetch } = useWorkouts();
   const deleteWorkout = useDeleteWorkout();
   const duplicateWorkout = useDuplicateWorkout();
+
+  // Active AI generations tracking (SDK 4.0 durable mode)
+  const { activeGenerations, isGenerating } = useUserActiveGenerations({
+    supabase: supabase!,
+    userId: session?.user?.id,
+    workflowTypes: 'workout-generation',
+    enableRealtime: !!supabase && !!session?.user?.id,
+  });
 
   // State
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
@@ -125,16 +139,11 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
     return (
       <div className="rounded-xl border border-neutral-800 bg-neutral-900/80 p-4 shadow-lg backdrop-blur-sm sm:p-6">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-lg font-semibold text-white sm:text-xl">
-            {t('title')}
-          </h2>
+          <h2 className="text-lg font-semibold text-white sm:text-xl">{t('title')}</h2>
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="h-64 animate-pulse rounded-2xl bg-neutral-800"
-            />
+            <div key={i} className="h-64 animate-pulse rounded-2xl bg-neutral-800" />
           ))}
         </div>
       </div>
@@ -144,9 +153,7 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
   if (error) {
     return (
       <div className="rounded-xl border border-neutral-800 bg-neutral-900/80 p-4 shadow-lg backdrop-blur-sm sm:p-6">
-        <h2 className="mb-4 text-lg font-semibold text-white sm:text-xl">
-          {t('title')}
-        </h2>
+        <h2 className="mb-4 text-lg font-semibold text-white sm:text-xl">{t('title')}</h2>
         <ErrorState
           error={error instanceof Error ? error : new Error(t('loadError'))}
           title={tCommon('ui.errorTitle')}
@@ -158,24 +165,31 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
 
   if (programs.length === 0) {
     return (
-      <div className="rounded-xl border border-neutral-800 bg-neutral-900/80 p-8 text-center shadow-lg backdrop-blur-sm">
-        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800">
-          <Plus className="h-6 w-6 text-neutral-400" />
-        </div>
-        <h3 className="text-lg font-semibold text-white">
-          {t('empty.title')}
-        </h3>
-        <p className="mx-auto mt-1 max-w-sm text-sm text-neutral-400">
-          {t('empty.description')}
-        </p>
-        <div className="mt-6 flex justify-center gap-3">
-          <Link
-            href="/workouts/create"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-500"
-          >
-            <Plus className="h-4 w-4" />
-            {t('createManually')}
-          </Link>
+      <div className="space-y-6">
+        {/* Active AI Generations even with empty programs */}
+        {isGenerating && (
+          <div className="space-y-3">
+            {activeGenerations.map((gen) => (
+              <WorkoutGeneratingCard key={gen.run_id} generation={gen} />
+            ))}
+          </div>
+        )}
+
+        <div className="rounded-xl border border-neutral-800 bg-neutral-900/80 p-8 text-center shadow-lg backdrop-blur-sm">
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800">
+            <Plus className="h-6 w-6 text-neutral-400" />
+          </div>
+          <h3 className="text-lg font-semibold text-white">{t('empty.title')}</h3>
+          <p className="mx-auto mt-1 max-w-sm text-sm text-neutral-400">{t('empty.description')}</p>
+          <div className="mt-6 flex justify-center gap-3">
+            <Link
+              href="/workouts/create"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-500"
+            >
+              <Plus className="h-4 w-4" />
+              {t('createManually')}
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -183,6 +197,15 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
 
   return (
     <div className="space-y-6">
+      {/* Active AI Generations (SDK 4.0 Durable Mode) */}
+      {isGenerating && (
+        <div className="space-y-3">
+          {activeGenerations.map((gen) => (
+            <WorkoutGeneratingCard key={gen.run_id} generation={gen} />
+          ))}
+        </div>
+      )}
+
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {programs.map((program: WorkoutProgram) => {
           const isSelected = selectedIds.has(program.id);

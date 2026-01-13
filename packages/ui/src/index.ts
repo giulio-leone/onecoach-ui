@@ -20,6 +20,7 @@ export * from './drawer';
 export * from './dropdown-menu';
 export * from './empty-state';
 export * from './error-state';
+export * from './generating-card';
 export * from './glass-table';
 export * from './glass-toolbar';
 export * from './hover-card';

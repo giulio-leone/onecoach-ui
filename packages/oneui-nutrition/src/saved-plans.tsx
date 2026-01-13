@@ -3,6 +3,7 @@
  *
  * Displays a list of user's saved nutrition plans
  * Refactored to match SavedWorkoutPrograms structure (DRY)
+ * Con GeneratingCard per mostrare generazioni AI in corso
  */
 
 'use client';
@@ -15,12 +16,14 @@ import {
   useDeleteNutritionPlan,
   useDuplicateNutritionPlan,
 } from '@onecoach/features-nutrition';
-import { SelectionToolbar } from '@onecoach/ui-core';
+import { SelectionToolbar, useSupabaseContext } from '@onecoach/ui-core';
 import { DeployToClientsModal } from '@onecoach/ui-coach';
 import { useSession } from 'next-auth/react';
 import { ErrorState } from '@onecoach/ui/components';
+import { useUserActiveGenerations } from '@onecoach/hooks';
 import { useTranslations } from 'next-intl';
 import { NutritionPlanCard } from '@onecoach/ui-nutrition';
+import { NutritionGeneratingCard } from './nutrition-generating-card';
 import type { NutritionPlan } from '@onecoach/types-nutrition';
 
 export interface SavedNutritionPlansRef {
@@ -30,6 +33,8 @@ export interface SavedNutritionPlansRef {
 export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, ref) => {
   const t = useTranslations('nutrition.saved');
   const tCommon = useTranslations('common');
+  const { data: session } = useSession();
+  const { supabase } = useSupabaseContext();
   const { data, isLoading, error, refetch } = useNutritionPlans();
   const deletePlan = useDeleteNutritionPlan();
   const duplicatePlan = useDuplicateNutritionPlan();
@@ -37,8 +42,15 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const selectionMode = selectedIds.size > 0;
 
+  // Active AI generations tracking (SDK 4.0 durable mode)
+  const { activeGenerations, isGenerating } = useUserActiveGenerations({
+    supabase: supabase!,
+    userId: session?.user?.id,
+    workflowTypes: 'nutrition-generation',
+    enableRealtime: !!supabase && !!session?.user?.id,
+  });
+
   // Session and role check for deploy capability
-  const { data: session } = useSession();
   const userRole = (session?.user as { role?: string } | undefined)?.role;
   const canDeploy = ['COACH', 'ADMIN', 'SUPER_ADMIN'].includes(userRole || '');
 
@@ -137,10 +149,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
     return (
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className="h-64 animate-pulse rounded-2xl bg-neutral-800"
-          />
+          <div key={i} className="h-64 animate-pulse rounded-2xl bg-neutral-800" />
         ))}
       </div>
     );
@@ -160,24 +169,44 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
   // Empty state - matches SavedWorkoutPrograms style
   if (plans.length === 0) {
     return (
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <Link
-          href="/nutrition/create"
-          className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-emerald-500/50 hover:bg-emerald-900/10"
-        >
-          <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-neutral-400 transition-colors group-hover:bg-emerald-900/30 group-hover:text-emerald-400">
-            <Plus className="h-6 w-6" />
+      <div className="space-y-6">
+        {/* Active AI Generations even with empty plans */}
+        {isGenerating && (
+          <div className="space-y-3">
+            {activeGenerations.map((gen) => (
+              <NutritionGeneratingCard key={gen.run_id} generation={gen} />
+            ))}
           </div>
-          <span className="font-semibold text-neutral-400 transition-colors group-hover:text-emerald-300">
-            {t('createNew')}
-          </span>
-        </Link>
+        )}
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Link
+            href="/nutrition/create"
+            className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-emerald-500/50 hover:bg-emerald-900/10"
+          >
+            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-neutral-400 transition-colors group-hover:bg-emerald-900/30 group-hover:text-emerald-400">
+              <Plus className="h-6 w-6" />
+            </div>
+            <span className="font-semibold text-neutral-400 transition-colors group-hover:text-emerald-300">
+              {t('createNew')}
+            </span>
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
+      {/* Active AI Generations (SDK 4.0 Durable Mode) */}
+      {isGenerating && (
+        <div className="space-y-3">
+          {activeGenerations.map((gen) => (
+            <NutritionGeneratingCard key={gen.run_id} generation={gen} />
+          ))}
+        </div>
+      )}
+
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {plans.map((plan: NutritionPlan) => {
           const isSelected = selectedIds.has(plan.id);

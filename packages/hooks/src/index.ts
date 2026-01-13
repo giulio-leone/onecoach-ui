@@ -19,6 +19,7 @@ export * from './use-food-generation';
 export * from './use-app-navigation';
 export * from './use-durable-generation'; // SDK v4.0 - Durable AI generation
 export * from './use-workflow-runs'; // SDK v4.0 - Admin Realtime monitoring
+export * from './use-user-active-generations'; // SDK v4.0 - User generation progress
 
 // Cross-feature utility hooks
 export * from './use-chat';
@@ -53,4 +54,3 @@ export * from './use-import-measurements';
 export * from './use-maxes-list-realtime';
 export * from './use-all-admin-foods-realtime';
 export * from './user-preferences';
-
