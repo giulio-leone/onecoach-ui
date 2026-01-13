@@ -9,9 +9,12 @@ import type { SupabaseClient, RealtimeChannel } from '@supabase/supabase-js';
 export type WorkflowRunStatus = 'pending' | 'running' | 'completed' | 'failed' | 'cancelled';
 
 /**
- * Workflow run record from database
+ * Workflow run record from database (WDK workflow_runs table)
  */
 export interface WorkflowRun {
+  /** Primary ID from WDK - use this as unique identifier */
+  id: string;
+  /** Alias for id - for backward compatibility */
   run_id: string;
   workflow_name: string | null;
   status: WorkflowRunStatus;
@@ -20,6 +23,9 @@ export interface WorkflowRun {
   completed_at: string | null;
   deployment_id: string | null;
   output: unknown;
+  input: unknown;
+  error: unknown;
+  metadata: Record<string, unknown> | null;
 }
 
 /**
@@ -84,7 +90,7 @@ export function useWorkflowRuns(options: UseWorkflowRunsOptions) {
       setError(null);
 
       let query = supabase
-        .from('workflow_runs_view')
+        .from('workflow_runs')
         .select('*')
         .order('created_at', { ascending: false })
         .limit(limit);
@@ -99,7 +105,13 @@ export function useWorkflowRuns(options: UseWorkflowRunsOptions) {
 
       if (fetchError) throw fetchError;
 
-      setRuns(data || []);
+      // Map id to run_id for backward compatibility
+      const mappedData = (data || []).map((run: Record<string, unknown>) => ({
+        ...run,
+        run_id: run.id as string, // Alias for backward compat
+      })) as WorkflowRun[];
+
+      setRuns(mappedData);
     } catch (err) {
       console.error('[WorkflowRuns] Fetch error:', err);
       setError(err instanceof Error ? err.message : 'Failed to fetch runs');
@@ -111,31 +123,41 @@ export function useWorkflowRuns(options: UseWorkflowRunsOptions) {
   /**
    * Handle realtime updates
    */
-  const handleRealtimeUpdate = useCallback((payload: RealtimePayload) => {
-    console.log('[WorkflowRuns] Realtime event:', payload.eventType);
+  const handleRealtimeUpdate = useCallback(
+    (payload: RealtimePayload) => {
+      console.log('[WorkflowRuns] Realtime event:', payload.eventType);
 
-    switch (payload.eventType) {
-      case 'INSERT':
-        if (payload.new) {
-          setRuns((prev) => [payload.new!, ...prev].slice(0, limit));
-        }
-        break;
+      // Map id to run_id for new records
+      const mapRecord = (rec: WorkflowRun | null): WorkflowRun | null => {
+        if (!rec) return null;
+        return { ...rec, run_id: rec.id };
+      };
 
-      case 'UPDATE':
-        if (payload.new) {
-          setRuns((prev) =>
-            prev.map((run) => (run.run_id === payload.new!.run_id ? payload.new! : run))
-          );
-        }
-        break;
+      const newRecord = mapRecord(payload.new);
+      const oldRecord = mapRecord(payload.old);
 
-      case 'DELETE':
-        if (payload.old) {
-          setRuns((prev) => prev.filter((run) => run.run_id !== payload.old!.run_id));
-        }
-        break;
-    }
-  }, [limit]);
+      switch (payload.eventType) {
+        case 'INSERT':
+          if (newRecord) {
+            setRuns((prev) => [newRecord, ...prev].slice(0, limit));
+          }
+          break;
+
+        case 'UPDATE':
+          if (newRecord) {
+            setRuns((prev) => prev.map((run) => (run.id === newRecord.id ? newRecord : run)));
+          }
+          break;
+
+        case 'DELETE':
+          if (oldRecord) {
+            setRuns((prev) => prev.filter((run) => run.id !== oldRecord.id));
+          }
+          break;
+      }
+    },
+    [limit]
+  );
 
   /**
    * Subscribe to realtime updates
@@ -158,7 +180,11 @@ export function useWorkflowRuns(options: UseWorkflowRunsOptions) {
           schema: 'workflow',
           table: 'workflow_runs',
         },
-        (payload: { eventType: string; new: Record<string, unknown>; old: Record<string, unknown> }) => {
+        (payload: {
+          eventType: string;
+          new: Record<string, unknown>;
+          old: Record<string, unknown>;
+        }) => {
           handleRealtimeUpdate({
             eventType: payload.eventType as 'INSERT' | 'UPDATE' | 'DELETE',
             new: payload.new as unknown as WorkflowRun | null,

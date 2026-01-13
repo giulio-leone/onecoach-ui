@@ -13,6 +13,7 @@ export type WorkflowType =
   | 'exercise-generation'
   | 'food-generation'
   | 'shopping-generation'
+  | 'flight-search-generation'
   | 'copilot-chat';
 
 /**
@@ -335,6 +336,7 @@ export function useUserActiveGenerations(options: UseUserActiveGenerationsOption
       'exercise-generation': { active: 0, completed: 0, failed: 0 },
       'food-generation': { active: 0, completed: 0, failed: 0 },
       'shopping-generation': { active: 0, completed: 0, failed: 0 },
+      'flight-search-generation': { active: 0, completed: 0, failed: 0 },
       'copilot-chat': { active: 0, completed: 0, failed: 0 },
     };
 

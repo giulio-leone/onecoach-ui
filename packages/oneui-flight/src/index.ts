@@ -49,3 +49,8 @@ export type { Airport } from './types';
 // Saved Trips
 // =============================================================================
 export { SavedTripsDashboard } from './saved-trips-dashboard';
+
+// =============================================================================
+// Generation Progress
+// =============================================================================
+export { FlightGeneratingCard, type FlightGeneratingCardProps } from './flight-generating-card';
