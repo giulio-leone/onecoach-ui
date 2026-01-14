@@ -20,6 +20,7 @@
     "@onecoach/lib-design-system": "workspace:*",
     "@onecoach/lib-shared": "workspace:*",
     "@onecoach/hooks": "workspace:*",
+    "@onecoach/one-agent-hooks": "workspace:*",
     "@onecoach/types-core": "workspace:*",
     "@onecoach/types-workout": "workspace:*",
     "@onecoach/types-nutrition": "workspace:*",

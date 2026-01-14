@@ -171,7 +171,7 @@ function TripTypeCard({ selected, onSelect, icon, title, description }: TripType
             exit={{ scale: 0, rotate: 180 }}
             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
             className={cn(
-              'absolute bottom-5 right-5 flex h-7 w-7 items-center justify-center rounded-full',
+              'absolute right-5 bottom-5 flex h-7 w-7 items-center justify-center rounded-full',
               'bg-gradient-to-br from-blue-500 to-indigo-600 text-white',
               'shadow-lg shadow-blue-500/40'
             )}
@@ -655,7 +655,8 @@ export function FlightWizard({
     ...initialValues,
   }));
   const [airports, setAirports] = useState<Airport[]>([]);
-  const { isSearching, results, search, reset, error } = useSmartFlightSearch();
+  const { isSearching, results, search, reset, error, progress, userMessage, events } =
+    useSmartFlightSearch();
 
   // Load initial popular airports
   useEffect(() => {
@@ -754,6 +755,9 @@ export function FlightWizard({
           analysis={results?.analysis}
           recommendation={results?.recommendation}
           alternatives={results?.alternatives}
+          progress={progress}
+          userMessage={userMessage}
+          events={events}
         />
         {error && (
           <div

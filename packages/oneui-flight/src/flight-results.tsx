@@ -19,6 +19,7 @@ import {
   type FlightAnalysis,
   type FlightRecommendation,
 } from './smart-analysis-panel';
+import { AgentEventList, useAdminMode, type ProgressField } from '@onecoach/one-agent-hooks';
 
 export type { FlightSearchResponse };
 
@@ -32,6 +33,12 @@ export interface FlightResultsProps {
   recommendation?: FlightRecommendation;
   /** Alternative recommendations */
   alternatives?: FlightRecommendation[];
+  /** v4.1: Streaming progress (0-100) */
+  progress?: number;
+  /** v4.1: Streaming user message */
+  userMessage?: string;
+  /** v4.1: Streaming events */
+  events?: ProgressField[];
 }
 
 // Hook to manage saved trips
@@ -87,6 +94,9 @@ export function FlightResults({
   analysis,
   recommendation,
   alternatives,
+  progress = 0,
+  userMessage,
+  events = [],
 }: FlightResultsProps) {
   const t = useTranslations('flight');
   const [activeTab, setActiveTab] = useState<FlightDirection>('outbound');
@@ -94,6 +104,7 @@ export function FlightResults({
   const [selectedReturn, setSelectedReturn] = useState<Flight | null>(null);
   const { saveTrip } = useSavedTrips();
   const [isSaving, setIsSaving] = useState(false);
+  const { isAdmin, toggle: toggleAdminMode } = useAdminMode();
 
   const handleSaveSelectedTrip = async () => {
     if (!selectedOutbound) return;
@@ -167,17 +178,64 @@ export function FlightResults({
 
   if (isSearching) {
     return (
-      <div className="flex flex-col items-center justify-center gap-6 py-20">
+      <div className="flex flex-col items-center justify-center gap-6 py-12">
+        {/* Animated plane icon with progress ring */}
         <div className="relative">
-          <div className="h-20 w-20 animate-spin rounded-full border-4 border-blue-500/20 border-t-blue-500" />
-          <Plane className="absolute top-1/2 left-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 animate-pulse text-blue-500" />
+          <svg className="h-24 w-24 -rotate-90" viewBox="0 0 100 100">
+            {/* Background circle */}
+            <circle
+              cx="50"
+              cy="50"
+              r="42"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="6"
+              className="text-blue-500/20 dark:text-blue-400/20"
+            />
+            {/* Progress circle */}
+            <circle
+              cx="50"
+              cy="50"
+              r="42"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="6"
+              strokeLinecap="round"
+              strokeDasharray={264}
+              strokeDashoffset={264 - (264 * progress) / 100}
+              className="text-blue-500 transition-all duration-300 ease-out dark:text-blue-400"
+            />
+          </svg>
+          <Plane className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 animate-pulse text-blue-500 dark:text-blue-400" />
         </div>
+
+        {/* Progress percentage */}
+        <div className="text-center">
+          <span className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+            {Math.round(progress)}%
+          </span>
+        </div>
+
+        {/* User message */}
         <div className="text-center">
           <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
-            {t('wizard.steps.tripType.title')}...
+            {userMessage || t('wizard.steps.tripType.title')}...
           </h3>
-          <p className="mt-1 text-sm text-neutral-500">{t('cta.description').split('.')[0]}</p>
+          <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+            {t('cta.description').split('.')[0]}
+          </p>
         </div>
+
+        {/* Streaming events timeline */}
+        {events.length > 0 && (
+          <AgentEventList
+            events={events}
+            isAdmin={isAdmin}
+            onToggleAdmin={toggleAdminMode}
+            maxVisible={5}
+            compact
+          />
+        )}
       </div>
     );
   }

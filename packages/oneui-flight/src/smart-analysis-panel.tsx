@@ -26,6 +26,9 @@ import { cn } from '@onecoach/lib-design-system';
 import { Button, Badge } from '@onecoach/ui';
 import type { FlightAnalysis, FlightRecommendation } from '@onecoach/types-flight';
 
+// Re-export types for consumers
+export type { FlightAnalysis, FlightRecommendation };
+
 // ==================== TYPES ====================
 
 export interface SmartAnalysisPanelProps {

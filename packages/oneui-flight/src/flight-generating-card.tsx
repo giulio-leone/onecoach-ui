@@ -6,6 +6,7 @@ import { Plane, Loader2, CheckCircle2, XCircle, Clock, Search } from 'lucide-rea
 import { Card, CardContent, CardHeader, CardTitle, Progress } from '@onecoach/ui';
 import { cn } from '@onecoach/lib-design-system';
 import type { GenerationWithStatus } from '@onecoach/hooks';
+import { AgentEventList, useAdminMode, type ProgressField } from '@onecoach/one-agent-hooks';
 
 /**
  * Props for FlightGeneratingCard component
@@ -19,6 +20,10 @@ export interface FlightGeneratingCardProps {
   className?: string;
   /** Compact mode (smaller card) */
   compact?: boolean;
+  /** v4.1: Streaming events from AI agent */
+  events?: ProgressField[];
+  /** v4.1: Override user message from streaming */
+  streamingMessage?: string;
 }
 
 /**
@@ -53,8 +58,11 @@ export function FlightGeneratingCard({
   onClick,
   className,
   compact = false,
+  events = [],
+  streamingMessage,
 }: FlightGeneratingCardProps) {
   const { progress, current_step, status, elapsedMs, estimatedRemainingMs } = generation;
+  const { isAdmin, toggle: toggleAdmin } = useAdminMode();
 
   // Status icon
   const StatusIcon = React.useMemo(() => {
@@ -68,15 +76,16 @@ export function FlightGeneratingCard({
     }
   }, [status]);
 
-  // Get display text for current step
+  // Display text: prefer streaming message, fallback to generation step
   const stepText = React.useMemo(() => {
+    if (streamingMessage) return streamingMessage;
     if (!current_step) {
       if (status === 'completed') return 'Search complete!';
       if (status === 'failed') return 'Search failed';
       return 'Initializing search...';
     }
     return current_step;
-  }, [current_step, status]);
+  }, [streamingMessage, current_step, status]);
 
   // Status colors
   const statusColors = React.useMemo(() => {
@@ -182,8 +191,19 @@ export function FlightGeneratingCard({
             )}
           </div>
 
+          {/* v4.1: Streaming events (DRY - reuse AgentEventList) */}
+          {events.length > 0 && (
+            <AgentEventList
+              events={events}
+              isAdmin={isAdmin}
+              onToggleAdmin={toggleAdmin}
+              maxVisible={3}
+              compact
+            />
+          )}
+
           {/* Animated searching indicator */}
-          {status === 'running' && (
+          {status === 'running' && events.length === 0 && (
             <div className="flex items-center justify-center gap-2 py-2">
               <motion.div
                 className="h-2 w-2 rounded-full bg-blue-500"
