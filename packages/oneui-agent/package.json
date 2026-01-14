@@ -10,9 +10,11 @@
   "dependencies": {
     "@onecoach/ui": "workspace:*",
     "@onecoach/ui-core": "workspace:*",
+    "@onecoach/ui-ai": "workspace:*",
     "@onecoach/lib-design-system": "workspace:*",
     "@onecoach/lib-api": "workspace:*",
     "@onecoach/lib-shared": "workspace:*",
+    "@onecoach/one-agent-hooks": "workspace:*",
     "@onecoach/one-nutrition": "workspace:*",
     "@onecoach/types-nutrition": "workspace:*",
     "@onecoach/types-core": "workspace:*",

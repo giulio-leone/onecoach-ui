@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WizardStepper, WizardContainer, WizardActions } from '@onecoach/ui';
 import type { GenerationLogEvent } from '@onecoach/ui-ai';
+import type { ProgressField } from '@onecoach/one-agent-hooks';
 import { MeshGenerationView } from './mesh-generation-view';
 import { cn } from '@onecoach/lib-design-system';
-
 
 // ----------------------------------------------------------------------------
 // Types
@@ -32,7 +32,10 @@ export interface MeshWizardProps<T> {
   status: 'idle' | 'generating' | 'success' | 'error';
   progress: number;
   currentMessage: string;
+  /** Legacy logs format (GenerationLogEvent[]) */
   logs: GenerationLogEvent[];
+  /** SDK 4.1 streaming events (ProgressField[]) - preferred */
+  events?: ProgressField[];
   result?: unknown;
   error?: string | Error | null;
   onReset: () => void;
@@ -49,6 +52,8 @@ export interface MeshWizardProps<T> {
   nextLabel?: string;
   backLabel?: string;
   generateLabel?: string;
+  /** Icon to show in the progress ring */
+  progressIcon?: React.ReactNode;
 }
 
 // ----------------------------------------------------------------------------
@@ -64,6 +69,7 @@ export function MeshWizard<T>({
   progress,
   currentMessage,
   logs,
+  events = [],
   result,
   error,
   onReset,
@@ -73,6 +79,7 @@ export function MeshWizard<T>({
   nextLabel,
   backLabel,
   generateLabel,
+  progressIcon,
 }: MeshWizardProps<T>) {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<T>(initialData);
@@ -116,6 +123,7 @@ export function MeshWizard<T>({
           progress={progress}
           currentMessage={currentMessage}
           logs={logs}
+          events={events}
           result={result}
           error={error instanceof Error ? error.message : error || undefined}
           successTitle={successConfig.title}
@@ -129,6 +137,7 @@ export function MeshWizard<T>({
           onSuccessAction={() => successConfig.onAction(result)}
           onReset={handleReset}
           title={`${title} Orchestrator`}
+          progressIcon={progressIcon}
         />
       </div>
     );

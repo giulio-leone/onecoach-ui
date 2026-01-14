@@ -3,10 +3,11 @@
 import { useTranslations } from 'next-intl';
 
 import { motion } from 'framer-motion';
-import { AlertCircle, Loader2 } from 'lucide-react';
+import { AlertCircle, Sparkles } from 'lucide-react';
 import { Button, Card } from '@onecoach/ui';
 import { GenerationLog, type GenerationLogEvent } from '@onecoach/ui-ai';
 import { GenerationSuccess } from '@onecoach/ui-ai';
+import { AgentEventList, useAdminMode, type ProgressField } from '@onecoach/one-agent-hooks';
 
 // ----------------------------------------------------------------------------
 // Types
@@ -16,7 +17,10 @@ export interface MeshGenerationViewProps {
   status: 'idle' | 'generating' | 'success' | 'error';
   progress: number;
   currentMessage: string;
+  /** Legacy logs format (GenerationLogEvent[]) */
   logs: GenerationLogEvent[];
+  /** SDK 4.1 streaming events (ProgressField[]) - preferred */
+  events?: ProgressField[];
   error?: string | null;
   result?: unknown;
 
@@ -34,6 +38,8 @@ export interface MeshGenerationViewProps {
   title?: string;
   description?: string;
   className?: string;
+  /** Icon to show in the progress ring (default: Sparkles) */
+  progressIcon?: React.ReactNode;
 }
 
 // ----------------------------------------------------------------------------
@@ -45,6 +51,7 @@ export function MeshGenerationView({
   progress,
   currentMessage,
   logs,
+  events = [],
   error,
   successTitle = 'Generazione Completata',
   successMessage = 'Il processo è stato completato con successo.',
@@ -55,8 +62,13 @@ export function MeshGenerationView({
   title = 'AI Mesh Orchestrator',
   description = 'Coordinamento agenti specializzati...',
   className,
+  progressIcon,
 }: MeshGenerationViewProps) {
   const t = useTranslations('common');
+  const { isAdmin, toggle: toggleAdminMode } = useAdminMode();
+
+  // Use SDK 4.1 events if available, fallback to legacy logs
+  const hasV41Events = events.length > 0;
 
   // SUCCESS STATE
   if (status === 'success') {
@@ -100,7 +112,95 @@ export function MeshGenerationView({
     );
   }
 
-  // GENERATING / IDLE STATE
+  // GENERATING STATE - SDK 4.1 Modern View (like OneFlight)
+  if (hasV41Events || status === 'generating') {
+    return (
+      <div className={className}>
+        <div className="flex flex-col items-center justify-center gap-6 py-8">
+          {/* Animated progress ring with icon */}
+          <div className="relative">
+            <svg className="h-24 w-24 -rotate-90" viewBox="0 0 100 100">
+              {/* Background circle */}
+              <circle
+                cx="50"
+                cy="50"
+                r="42"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="6"
+                className="text-blue-500/20 dark:text-blue-400/20"
+              />
+              {/* Progress circle */}
+              <circle
+                cx="50"
+                cy="50"
+                r="42"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeDasharray={264}
+                strokeDashoffset={264 - (264 * progress) / 100}
+                className="text-blue-500 transition-all duration-300 ease-out dark:text-blue-400"
+              />
+            </svg>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              {progressIcon || (
+                <Sparkles className="h-10 w-10 animate-pulse text-blue-500 dark:text-blue-400" />
+              )}
+            </div>
+          </div>
+
+          {/* Progress percentage */}
+          <div className="text-center">
+            <span className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+              {Math.round(progress)}%
+            </span>
+          </div>
+
+          {/* User message */}
+          <div className="text-center">
+            <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
+              {currentMessage || 'Elaborazione in corso...'}
+            </h3>
+            <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">{description}</p>
+          </div>
+
+          {/* Streaming events timeline (SDK 4.1) */}
+          {hasV41Events && (
+            <div className="w-full max-w-md">
+              <AgentEventList
+                events={events}
+                isAdmin={isAdmin}
+                onToggleAdmin={toggleAdminMode}
+                maxVisible={5}
+                compact
+              />
+            </div>
+          )}
+
+          {/* Fallback: Legacy logs (if no v4.1 events) */}
+          {!hasV41Events && logs.length > 0 && (
+            <Card
+              variant="glass"
+              glassIntensity="heavy"
+              className="w-full max-w-2xl overflow-hidden border-white/20 p-4 dark:border-white/10"
+            >
+              <GenerationLog
+                title={title}
+                description={description}
+                events={logs}
+                isGenerating={status === 'generating'}
+                className="border-0 bg-transparent shadow-none"
+              />
+            </Card>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // IDLE STATE (fallback)
   return (
     <div className={className}>
       <Card
@@ -112,11 +212,8 @@ export function MeshGenerationView({
         <div className="mb-8 space-y-3">
           <div className="flex items-end justify-between">
             <div className="flex items-center gap-2">
-              {status === 'generating' && (
-                <Loader2 className="h-4 w-4 animate-spin text-blue-500" />
-              )}
               <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">
-                {currentMessage || (status === 'idle' ? 'Pronto' : 'Elaborazione...')}
+                {currentMessage || 'Pronto'}
               </span>
             </div>
             <span className="font-mono text-xs font-bold text-blue-600 dark:text-blue-400">
@@ -139,7 +236,7 @@ export function MeshGenerationView({
           title={title}
           description={description}
           events={logs}
-          isGenerating={status === 'generating'}
+          isGenerating={false}
           className="border-0 bg-transparent shadow-none"
         />
       </Card>

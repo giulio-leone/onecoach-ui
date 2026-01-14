@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@onecoach/lib-shared": "workspace:*",
+    "@onecoach/one-agent-hooks": "workspace:*",
     "@onecoach/schemas": "workspace:*",
     "@onecoach/constants": "workspace:*",
     "@onecoach/types-core": "workspace:*",
