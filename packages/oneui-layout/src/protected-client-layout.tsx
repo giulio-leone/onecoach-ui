@@ -4,7 +4,7 @@
  * Protected Client Layout
  *
  * Client component che wrappa il layout protetto per abilitare
- * funzionalità client-side come Realtime sync e Copilot context.
+ * funzionalità client-side come Realtime sync, Supabase context e Copilot context.
  *
  * Nota: in ambienti dove il QueryClientProvider non è già presente
  * (es. mount isolati o SSR), facciamo fallback a QueryProvider per
@@ -14,7 +14,7 @@
 import { useContext } from 'react';
 import { QueryClientContext } from '@tanstack/react-query';
 import { QueryProvider } from '@onecoach/lib-api/react-query';
-import { RealtimeProvider } from '@onecoach/ui-core';
+import { RealtimeProvider, SupabaseProvider } from '@onecoach/ui-core';
 
 import { useGlobalCopilotContext } from '@onecoach/lib-copilot';
 
@@ -29,7 +29,11 @@ export function ProtectedClientLayout({ children }: ProtectedClientLayoutProps) 
   useGlobalCopilotContext({ debug: true });
 
   const queryClient = useContext(QueryClientContext);
-  const content = <RealtimeProvider mode="full">{children}</RealtimeProvider>;
+  const content = (
+    <SupabaseProvider>
+      <RealtimeProvider mode="full">{children}</RealtimeProvider>
+    </SupabaseProvider>
+  );
 
   // Se il contesto esiste, usiamo il provider già montato (root layout)
   if (queryClient) {
