@@ -158,8 +158,8 @@ export function useSmartFlightSearch(options: UseSmartFlightSearchOptions = {}) 
           throw new Error(errorData.error || `Search failed: ${response.status}`);
         }
 
-        // Extract run ID from headers
-        const runId = response.headers.get('X-Workflow-Run-Id');
+        // Extract run ID from headers (lowercase for HTTP/2 compatibility)
+        const runId = response.headers.get('x-workflow-run-id');
         if (runId) {
           setState((prev) => ({ ...prev, runId }));
         }

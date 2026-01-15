@@ -18,12 +18,18 @@ type WorkoutInput = WorkoutGenerationInput & {
 };
 
 export interface UseWorkoutGenerationOptions {
-  /** Use SDK 4.1 streaming API (default: true) */
+  /** Use SDK 5.0 streaming API with background persistence (default: true) */
   streaming?: boolean;
   /** Show admin details in progress events */
   adminMode?: boolean;
   /** Max events to keep in state */
   maxEvents?: number;
+  /** Polling interval for reconnect (ms, default: 3000) */
+  pollInterval?: number;
+  /** Max polling duration before timeout (ms, default: 15 min) */
+  maxPollDurationMs?: number;
+  /** Enable debug logging */
+  debug?: boolean;
 }
 
 export interface WorkoutGenerationStateV41 extends GenerationState<WorkoutGenerationOutput> {
@@ -31,42 +37,80 @@ export interface WorkoutGenerationStateV41 extends GenerationState<WorkoutGenera
   events: ProgressField[];
   /** v4.1: Workflow run ID for resume capability */
   runId: string | null;
+  /** v5.0: Saved program ID (available after completion) */
+  programId: string | null;
+}
+
+/** Extended callbacks for v5.0 with programId */
+export interface WorkoutGenerationCallbacks extends GenerationCallbacks<WorkoutGenerationOutput> {
+  /** Called when program is saved with its ID */
+  onProgramSaved?: (programId: string) => void;
 }
 
 /**
- * Hook for AI-powered workout generation
+ * Normalize progress data from various SSE event formats.
+ * Handles both direct and wrapped formats from WDK/AI SDK stream.
+ */
+function normalizeProgressData(event: Record<string, unknown>): ProgressField | null {
+  // Format 1: Direct progress event
+  // { type: 'data-progress', data: { step, userMessage, ... } }
+  if (event.type === 'data-progress' && event.data && typeof event.data === 'object') {
+    const data = event.data as Record<string, unknown>;
+    if (data.step && data.userMessage) {
+      return data as unknown as ProgressField;
+    }
+  }
+
+  // Format 2: Wrapped in data array (some WDK versions)
+  // { type: 'data', data: [{ type: 'data-progress', data: {...} }] }
+  if (event.type === 'data' && Array.isArray(event.data)) {
+    const inner = event.data[0] as Record<string, unknown> | undefined;
+    if (inner?.type === 'data-progress' && inner?.data) {
+      const innerData = inner.data as Record<string, unknown>;
+      if (innerData.step && innerData.userMessage) {
+        return innerData as unknown as ProgressField;
+      }
+    }
+  }
+
+  // Format 3: Nested data structure
+  // { type: 'data', data: { step, userMessage, ... } }
+  if (
+    event.type === 'data' &&
+    event.data &&
+    typeof event.data === 'object' &&
+    !Array.isArray(event.data)
+  ) {
+    const data = event.data as Record<string, unknown>;
+    if (data.step && data.userMessage) {
+      return data as unknown as ProgressField;
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Hook for AI-powered workout generation using WDK patterns.
  *
- * v4.1: Now supports real-time streaming with progress updates from each worker agent.
+ * v5.1: Updated to use WDK native patterns (x-workflow-run-id, native stream)
  *
- * @param callbacks - Optional callbacks for progress, complete, and error events
- * @param options - Configuration options
- *
- * @example
- * ```tsx
- * const { generate, progress, currentMessage, result } = useWorkoutGeneration();
- *
- * // Generate with real-time progress
- * await generate({
- *   goals: { primary: 'hypertrophy', daysPerWeek: 4, duration: 8 },
- *   constraints: { equipment: ['barbell', 'dumbbell'], location: 'gym' },
- * });
- *
- * // UI shows progress in real-time
- * <Progress value={progress} />
- * <p>{currentMessage}</p>
- * ```
+ * @since v5.1
  */
 export function useWorkoutGeneration(
-  callbacks?: GenerationCallbacks<WorkoutGenerationOutput>,
+  callbacks?: WorkoutGenerationCallbacks,
   options: UseWorkoutGenerationOptions = {}
-): WorkoutGenerationStateV41 & {
-  generate: (input: WorkoutInput) => Promise<WorkoutGenerationOutput>;
-  generateStream: (input: WorkoutInput) => Promise<WorkoutGenerationOutput | null>;
-  abort: () => void;
-  reset: () => void;
-  latestEvent: ProgressField | null;
-} {
-  const { streaming = true, maxEvents = 50 } = options;
+) {
+  const {
+    maxEvents = 50,
+    pollInterval = 3000,
+    maxPollDurationMs = 15 * 60 * 1000,
+    debug = false,
+  } = options;
+
+  const log = debug
+    ? (msg: string, data?: unknown) => console.log(`[useWorkoutGeneration] ${msg}`, data ?? '')
+    : () => {};
 
   const [state, setState] = useState<WorkoutGenerationStateV41>({
     isGenerating: false,
@@ -79,14 +123,85 @@ export function useWorkoutGeneration(
     logs: [],
     events: [],
     runId: null,
+    programId: null,
   });
 
   const abortControllerRef = useRef<AbortController | null>(null);
 
   /**
-   * Generate with SDK 4.1 streaming
+   * Poll for workflow status (used for reconnect after disconnect)
+   * Uses WDK native status check via API
    */
-  const generateStreamV41 = useCallback(
+  const pollForCompletion = useCallback(
+    async (runId: string): Promise<WorkoutGenerationOutput | null> => {
+      const maxAttempts = Math.max(1, Math.ceil(maxPollDurationMs / pollInterval));
+      let attempts = 0;
+
+      while (attempts < maxAttempts) {
+        try {
+          const response = await fetch(`/api/workout/generate?runId=${runId}`);
+          if (!response.ok) {
+            // If 404, maybe workflow hasn't started yet or is lost
+            if (response.status === 404) {
+              console.warn('[useWorkoutGeneration] Workflow not found yet, retrying...');
+            } else {
+              throw new Error(`Status check failed: ${response.status}`);
+            }
+          } else {
+            const status = await response.json();
+
+            // Check for completion
+            if (status.status === 'completed') {
+              const programId = status.programId;
+
+              // Return result
+              const result: WorkoutGenerationOutput = {
+                program: null as unknown as WorkoutGenerationOutput['program'],
+                tokensUsed: 0,
+                costUSD: 0,
+                generatedAt: new Date(),
+                metadata: { programId },
+              };
+
+              setState((prev) => ({
+                ...prev,
+                isGenerating: false,
+                isStreaming: false,
+                progress: 100,
+                currentMessage: 'Complete!',
+                programId,
+                result,
+              }));
+
+              if (programId) {
+                callbacks?.onProgramSaved?.(programId);
+              }
+
+              callbacks?.onComplete?.(result);
+              return result;
+            }
+
+            if (status.status === 'failed') {
+              throw new Error(status.error || 'Generation failed');
+            }
+          }
+        } catch (error) {
+          console.warn('[useWorkoutGeneration] Poll error:', error);
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, pollInterval));
+        attempts++;
+      }
+
+      throw new Error('Generation timed out');
+    },
+    [callbacks, maxPollDurationMs, pollInterval]
+  );
+
+  /**
+   * Generate using WDK native stream
+   */
+  const generateStream = useCallback(
     async (input: WorkoutInput): Promise<WorkoutGenerationOutput | null> => {
       abortControllerRef.current?.abort();
       abortControllerRef.current = new AbortController();
@@ -102,10 +217,13 @@ export function useWorkoutGeneration(
         logs: [],
         events: [],
         runId: null,
+        programId: null,
       });
 
+      let currentRunId: string | null = null;
+
       try {
-        const response = await fetch('/api/workout/generate-optimized/stream', {
+        const response = await fetch('/api/workout/generate', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(input),
@@ -117,30 +235,24 @@ export function useWorkoutGeneration(
           throw new Error(errorData.error || `Generation failed: ${response.status}`);
         }
 
-        // Extract run ID from headers
-        const runId = response.headers.get('X-Workflow-Run-Id');
-        if (runId) {
-          setState((prev) => ({ ...prev, runId }));
+        // Get WDK run ID (lowercase header)
+        currentRunId = response.headers.get('x-workflow-run-id');
+        if (currentRunId) {
+          setState((prev) => ({ ...prev, runId: currentRunId }));
         }
 
         const reader = response.body?.getReader();
         const decoder = new TextDecoder();
 
-        if (!reader) {
-          throw new Error('No response body');
-        }
+        if (!reader) throw new Error('No response body');
 
         let buffer = '';
-        let finalResult: WorkoutGenerationOutput | null = null;
+        let streamFinishedWithResult = false;
 
-        console.log('[useWorkoutGeneration] Starting stream processing...');
-
+        // Process WDK stream (SSE format via createUIMessageStreamResponse)
         while (true) {
           const { done, value } = await reader.read();
-          if (done) {
-            console.log('[useWorkoutGeneration] Stream done, finalResult:', finalResult);
-            break;
-          }
+          if (done) break;
 
           buffer += decoder.decode(value, { stream: true });
           const lines = buffer.split('\n');
@@ -152,83 +264,72 @@ export function useWorkoutGeneration(
             try {
               const jsonStr = line.slice(6);
               if (jsonStr === '[DONE]') {
-                console.log('[useWorkoutGeneration] Received [DONE] signal');
+                log('Received [DONE] signal');
                 continue;
               }
 
-              const event = JSON.parse(jsonStr);
-              console.log('[useWorkoutGeneration] Parsed event type:', event.type);
+              const event = JSON.parse(jsonStr) as Record<string, unknown>;
+              log('SSE event received', { type: event.type });
 
-              // Handle progress events (SDK 4.1 format)
-              if (event.type === 'data-progress' || event.type === 'data') {
-                const progressData = (event.data?.[0]?.data || event.data) as ProgressField;
-                if (progressData?.step && progressData?.userMessage) {
+              // Handle finish events (workflow completed with output)
+              if (event.type === 'data-finish' || event.type === 'finish') {
+                log('Finish event received', event);
+                const finishData = event.data as
+                  | { success?: boolean; output?: unknown }
+                  | undefined;
+
+                if (finishData?.success !== false) {
+                  streamFinishedWithResult = true;
                   setState((prev) => ({
                     ...prev,
-                    progress: progressData.estimatedProgress ?? prev.progress,
-                    currentMessage: progressData.userMessage,
-                    events: [...prev.events.slice(-(maxEvents - 1)), progressData],
+                    progress: 100,
+                    currentMessage: 'Complete!',
                   }));
-                  callbacks?.onProgress?.(
-                    progressData.estimatedProgress ?? 0,
-                    progressData.userMessage
-                  );
                 }
+                continue;
               }
 
-              // Handle finish event with result
-              if (
-                event.type === 'finish' ||
-                event.type === 'complete' ||
-                event.type === 'data-finish'
-              ) {
-                console.log('[useWorkoutGeneration] Finish event received:', event);
-                const output = event.output || event.data?.output || event.data;
-                console.log('[useWorkoutGeneration] Parsed output:', output);
-                if (output?.program) {
-                  finalResult = {
-                    program: output.program,
-                    tokensUsed: output.tokensUsed ?? 0,
-                    costUSD: output.costUSD ?? 0,
-                    generatedAt: output.generatedAt ?? new Date().toISOString(),
-                    metadata: output.metadata,
-                  };
-                  console.log('[useWorkoutGeneration] Final result set:', finalResult);
-                  callbacks?.onComplete?.(finalResult);
-                } else {
-                  console.warn('[useWorkoutGeneration] No program in output, skipping');
-                }
-              }
-
-              // Handle error events
-              if (event.type === 'error') {
-                const errorMsg = event.data?.message || event.error || 'Generation failed';
+              // Handle progress events (normalized for various formats)
+              const progressData = normalizeProgressData(event);
+              if (progressData) {
+                log('Progress event', progressData);
                 setState((prev) => ({
                   ...prev,
-                  error: errorMsg,
+                  progress: progressData.estimatedProgress ?? prev.progress,
+                  currentMessage: progressData.userMessage,
+                  events: [...prev.events.slice(-(maxEvents - 1)), progressData],
                 }));
-                callbacks?.onError?.(errorMsg);
+                callbacks?.onProgress?.(
+                  progressData.estimatedProgress ?? 0,
+                  progressData.userMessage
+                );
               }
-            } catch {
-              // Ignore parse errors for incomplete chunks
+            } catch (parseError) {
+              // Log parse errors in debug mode
+              log('Parse error', { line, error: parseError });
             }
           }
         }
 
-        // Update final state
-        console.log('[useWorkoutGeneration] Setting final state, isGenerating: false');
-        setState((prev) => ({
-          ...prev,
-          isGenerating: false,
-          isStreaming: false,
-          result: finalResult,
-          progress: 100,
-          currentMessage: finalResult ? 'Complete!' : 'No results',
-        }));
+        // Stream ended - check if we got a finish signal or need to poll
+        if (currentRunId) {
+          if (streamFinishedWithResult) {
+            log('Stream finished with result, polling for programId');
+          } else {
+            log('Stream ended without finish signal, polling for status');
+          }
+          return pollForCompletion(currentRunId);
+        }
 
-        return finalResult;
+        return null;
       } catch (error) {
         if ((error as Error).name === 'AbortError') return null;
+
+        // If error but we have runId, try to poll for status (maybe just stream error)
+        if (currentRunId) {
+          log('Stream error, attempting poll recovery', { error });
+          return pollForCompletion(currentRunId);
+        }
 
         const message = error instanceof Error ? error.message : 'Generation failed';
         setState((prev) => ({
@@ -236,145 +337,26 @@ export function useWorkoutGeneration(
           isGenerating: false,
           isStreaming: false,
           error: message,
-          currentMessage: 'Error occurred',
         }));
         callbacks?.onError?.(message);
         return null;
       }
     },
-    [callbacks, maxEvents]
+    [callbacks, maxEvents, pollForCompletion, log]
   );
 
   /**
-   * Generate with legacy polling API (non-streaming)
+   * Resume streaming from a previous runId
    */
-  const generateLegacy = useCallback(
-    async (input: WorkoutInput): Promise<WorkoutGenerationOutput | null> => {
-      setState({
-        isGenerating: true,
-        isStreaming: false,
-        progress: 0,
-        currentMessage: 'Initializing...',
-        error: null,
-        result: null,
-        streamEvents: [],
-        logs: [],
-        events: [],
-        runId: null,
-      });
-
-      try {
-        const response = await fetch('/api/workout/generate-optimized', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(input),
-        });
-
-        if (!response.ok) {
-          const errorText = await response.text();
-          throw new Error(`HTTP ${response.status}: ${errorText}`);
-        }
-
-        const data = await response.json();
-
-        if (!data.success) {
-          throw new Error(data.error?.message || 'Generation failed');
-        }
-
-        // For background mode, we need to poll for results
-        if (data.runId && data.status === 'running') {
-          setState((prev) => ({
-            ...prev,
-            runId: data.runId,
-            currentMessage: 'Generation started in background...',
-          }));
-
-          // Poll for completion (simplified - in production use Supabase Realtime)
-          let attempts = 0;
-          const maxAttempts = 120; // 4 minutes with 2s intervals
-          while (attempts < maxAttempts) {
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-            attempts++;
-
-            const statusResponse = await fetch(`/api/workflow/${data.runId}/status`);
-            if (statusResponse.ok) {
-              const statusData = await statusResponse.json();
-              setState((prev) => ({
-                ...prev,
-                progress: statusData.progress ?? prev.progress,
-                currentMessage: statusData.currentStep ?? prev.currentMessage,
-              }));
-
-              if (statusData.status === 'completed') {
-                const result: WorkoutGenerationOutput = {
-                  program: statusData.outputData?.program,
-                  tokensUsed: 0,
-                  costUSD: 0,
-                  generatedAt: new Date().toISOString(),
-                };
-                setState((prev) => ({
-                  ...prev,
-                  isGenerating: false,
-                  result,
-                  progress: 100,
-                  currentMessage: 'Complete!',
-                }));
-                callbacks?.onComplete?.(result);
-                return result;
-              }
-
-              if (statusData.status === 'failed') {
-                throw new Error(statusData.errorMessage || 'Generation failed');
-              }
-            }
-          }
-
-          throw new Error('Generation timed out');
-        }
-
-        return null;
-      } catch (error) {
-        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-        setState((prev) => ({
-          ...prev,
-          isGenerating: false,
-          isStreaming: false,
-          error: errorMessage,
-        }));
-        callbacks?.onError?.(errorMessage);
-        return null;
-      }
+  const resume = useCallback(
+    async (runId: string): Promise<WorkoutGenerationOutput | null> => {
+      // Logic for resume would use GET ?stream=true&startIndex=N
+      // For now fallback to polling as it's safer
+      return pollForCompletion(runId);
     },
-    [callbacks]
+    [pollForCompletion]
   );
 
-  /**
-   * Main generate function - uses streaming by default
-   */
-  const generateStream = useCallback(
-    async (input: WorkoutInput): Promise<WorkoutGenerationOutput | null> => {
-      if (streaming) {
-        return generateStreamV41(input);
-      }
-      return generateLegacy(input);
-    },
-    [streaming, generateStreamV41, generateLegacy]
-  );
-
-  const generate = useCallback(
-    async (input: WorkoutInput): Promise<WorkoutGenerationOutput> => {
-      const result = await generateStream(input);
-      if (!result) {
-        throw new Error(state.error || 'Generation failed');
-      }
-      return result;
-    },
-    [generateStream, state.error]
-  );
-
-  /**
-   * Abort current generation
-   */
   const abort = useCallback(() => {
     abortControllerRef.current?.abort();
     setState((prev) => ({
@@ -385,9 +367,6 @@ export function useWorkoutGeneration(
     }));
   }, []);
 
-  /**
-   * Reset state
-   */
   const reset = useCallback(() => {
     abortControllerRef.current?.abort();
     setState({
@@ -401,16 +380,17 @@ export function useWorkoutGeneration(
       logs: [],
       events: [],
       runId: null,
+      programId: null,
     });
   }, []);
 
   return {
     ...state,
-    generate,
+    generate: generateStream as any,
     generateStream,
     abort,
     reset,
-    /** Latest event */
+    resume,
     latestEvent: state.events.length > 0 ? (state.events[state.events.length - 1] ?? null) : null,
   };
 }
