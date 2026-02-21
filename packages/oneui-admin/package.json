@@ -21,6 +21,7 @@
     "@onecoach/hooks": "workspace:*",
     "@onecoach/schemas": "workspace:*",
     "@onecoach/types-domain": "workspace:*",
+    "@onecoach/types-nutrition": "workspace:*",
     "@onecoach/ui": "workspace:*",
     "@onecoach/types-database": "workspace:*",
     "lucide-react": "^0.562.0"

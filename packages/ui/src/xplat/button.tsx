@@ -15,7 +15,7 @@ export type XButtonProps = PressableProps & {
 export function XButton({ label, variant = 'primary', ...props }: XButtonProps) {
   if (Platform.OS === 'web') {
     return (
-      <Button variant={variant === 'ghost' ? 'ghost' : 'primary'} {...(props as unknown as any)}>
+      <Button variant={variant === 'ghost' ? 'ghost' : 'primary'} {...(props as any)}>
         {label}
       </Button>
     );

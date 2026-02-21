@@ -123,7 +123,7 @@ export function ExerciseFormModal({
 
   useEffect(() => {
     if (mode === 'edit' && exercise) {
-      const e = exercise as unknown as AdminExercise;
+      const e = exercise as AdminExercise;
 
       if (hasPrefilledRef.current === e.id) return;
       hasPrefilledRef.current = e.id;

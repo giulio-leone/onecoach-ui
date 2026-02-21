@@ -18,7 +18,9 @@
   "dependencies": {
     "@onecoach/ui-core": "workspace:*",
     "@onecoach/lib-design-system": "workspace:*",
+    "@onecoach/types-chat": "workspace:*",
     "@onecoach/types-domain": "workspace:*",
+    "@onecoach/types-workout": "workspace:*",
     "@onecoach/ui": "workspace:*",
     "lucide-react": "^0.562.0"
   },
@@ -28,6 +30,6 @@
     "next-intl": "^4.7.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.9.3"
   }
 }

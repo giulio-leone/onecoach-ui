@@ -342,7 +342,7 @@ const MessagePartRenderer = memo(({ part, index }: { part: MessagePart; index: n
       <Reasoning key={index} isStreaming={false}>
         <ReasoningTrigger />
         <ReasoningContent>
-          {(part.reasoning || '') as unknown as ReactNode & string}
+          {(part.reasoning || '') as string}
         </ReasoningContent>
       </Reasoning>
     );

@@ -10,12 +10,24 @@ import { useTranslations } from 'next-intl';
 import { Tag, CheckCircle2, XCircle } from 'lucide-react';
 import { Input } from '@onecoach/ui';
 import { usePromoCodeValidation } from '@onecoach/lib-api/hooks';
-import type { PromotionValidationResult } from '@onecoach/lib-marketplace/promotion.service';
+
+/** Local promotion type aligned with the usePromoCodeValidation hook */
+interface PromotionInfo {
+  id?: string;
+  code?: string;
+  type?: string;
+  discountType?: string;
+  discountValue?: number;
+  bonusCredits?: number;
+  description?: string;
+  expiresAt?: string | null;
+  [key: string]: unknown;
+}
 
 interface PromoCodeInputProps {
   value: string;
   onChange: (code: string) => void;
-  onValidationChange?: (valid: boolean, promotion?: PromotionValidationResult['promotion']) => void;
+  onValidationChange?: (valid: boolean, promotion?: PromotionInfo) => void;
   userId?: string;
   disabled?: boolean;
 }
@@ -49,7 +61,7 @@ export function PromoCodeInput({
   const formatPromoInfo = () => {
     if (!validationResult?.valid || !validationResult.promotion) return null;
 
-    const promo = validationResult.promotion;
+    const promo = validationResult.promotion as PromotionInfo;
 
     if (promo.type === 'STRIPE_COUPON') {
       if (promo.discountType === 'PERCENTAGE') {
@@ -101,8 +113,8 @@ export function PromoCodeInput({
         <div className="rounded-lg bg-green-50 p-2 text-sm text-green-800 dark:bg-green-900/30 dark:text-green-400">
           <p className="font-medium">{t('promo_code_input.codice_valido')}</p>
           <p>{formatPromoInfo()}</p>
-          {validationResult.promotion.description && (
-            <p className="text-xs opacity-80">{validationResult.promotion.description}</p>
+          {(validationResult.promotion as PromotionInfo).description && (
+            <p className="text-xs opacity-80">{(validationResult.promotion as PromotionInfo).description}</p>
           )}
         </div>
       )}

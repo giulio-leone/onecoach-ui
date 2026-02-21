@@ -29,7 +29,7 @@ export function WorkoutCompleteModal({
   // Calculate stats (SSOT: usa getExerciseSets)
   // Memoize exercises array to prevent recalculation on every render
   const exercises = useMemo(
-    () => (session.exercises as unknown as Exercise[]) || [],
+    () => (session.exercises as Exercise[]) || [],
     [session.exercises]
   );
   const totalExercises = exercises.length;

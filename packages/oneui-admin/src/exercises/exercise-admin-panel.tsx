@@ -94,7 +94,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
 
   // Data Query
   const { data, isLoading, refetch } = useExercises(queryParams);
-  const exercises = (data?.data ?? initialData.data) as unknown as AdminExercise[];
+  const exercises = (data?.data ?? initialData.data) as AdminExercise[];
   const total = data?.total ?? initialData.total ?? 0;
 
   // Selection Logic
@@ -452,7 +452,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
         <ExerciseDetailDrawer
           isOpen={!!detailExerciseId}
           exercise={
-            exercises.find((e) => e.id === detailExerciseId) as unknown as LocalizedExercise
+            exercises.find((e) => e.id === detailExerciseId) as LocalizedExercise
           }
           onClose={() => setDetailExerciseId(null)}
           onEdit={() => {

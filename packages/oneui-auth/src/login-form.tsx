@@ -83,7 +83,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
     } catch (_error: unknown) {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Eseguito solo al mount per precompilare l'email
-  const formError = (form.errors as unknown as Record<string, string | undefined>)._form;
+  const formError = (form.errors as Record<string, string | undefined>)._form;
   return (
     <form onSubmit={form.handleSubmit} className="space-y-5 sm:space-y-6" noValidate>
       {/* Error message */}

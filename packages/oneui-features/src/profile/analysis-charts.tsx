@@ -54,7 +54,7 @@ export function BodyAnalysisCharts() {
               tickLine={false}
             />
             <Tooltip
-              labelFormatter={formatDate}
+              labelFormatter={(label) => formatDate(String(label))}
               contentStyle={{
                 borderRadius: '12px',
                 border: 'none',
@@ -95,7 +95,7 @@ export function BodyAnalysisCharts() {
               tickLine={false}
             />
             <Tooltip
-              labelFormatter={formatDate}
+              labelFormatter={(label) => formatDate(String(label))}
               contentStyle={{
                 borderRadius: '12px',
                 border: 'none',

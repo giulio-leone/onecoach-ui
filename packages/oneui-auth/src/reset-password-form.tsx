@@ -79,7 +79,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
       </div>
     );
   }
-  const formError = (form.errors as unknown as Record<string, string | undefined>)._form;
+  const formError = (form.errors as Record<string, string | undefined>)._form;
   return (
     <form onSubmit={form.handleSubmit} className="space-y-6" noValidate>
       {/* Error message */}

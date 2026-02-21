@@ -126,7 +126,7 @@ export function LiveFocusView({
   const [showCompleteModal, setShowCompleteModal] = useState(false);
 
   const exercises = useMemo(
-    () => (session.exercises as unknown as Exercise[]) || [],
+    () => (session.exercises as Exercise[]) || [],
     [session.exercises]
   );
 

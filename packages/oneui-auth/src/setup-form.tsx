@@ -61,17 +61,17 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
           : value.length < 8
             ? 'La password deve avere almeno 8 caratteri'
             : null,
-      confirmPassword: (value: string, values: SetupFormValues) =>
+      confirmPassword: (value: string, values?: SetupFormValues) =>
         !value
           ? 'Conferma password obbligatoria'
-          : value !== values.password
+          : values && value !== values.password
             ? 'Le password non corrispondono'
             : null,
       name: (value) => (!value ? 'Nome obbligatorio' : null),
     },
     validateOnBlur: true,
   });
-  const formError = (form.errors as unknown as Record<string, string | undefined>)._form;
+  const formError = (form.errors as Record<string, string | undefined>)._form;
   return (
     <form onSubmit={form.handleSubmit} className="mt-8 space-y-6" noValidate>
       {disabled && (

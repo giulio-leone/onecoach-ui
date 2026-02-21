@@ -3,7 +3,7 @@
  * Coach-specific UI components.
  */
 
-export { CoachAnalyticsCharts } from './coach-analytics-charts';
+export { CoachAnalyticsCharts, type Period } from './coach-analytics-charts';
 export { CoachClientCard } from './coach-client-card';
 export { CoachClientsList } from './coach-clients-list';
 export { CoachDashboardStats } from './coach-dashboard-stats';
@@ -14,4 +14,4 @@ export { CoachRepository } from './coach-repository';
 export { CoachVettingForm } from './coach-vetting-form';
 export { CoachVettingStatus } from './coach-vetting-status';
 export { DeployToClientsModal } from './deploy-to-clients-modal';
-export { PublicCoachProfile } from './public-coach-profile';
+export { PublicCoachProfile, type PublicCoachProfileData } from './public-coach-profile';

@@ -127,7 +127,7 @@ export function FoodFormModal({ isOpen, mode, foodId, onClose, onSuccess }: Food
   const hasPrefilledRef = useRef<string | null>(null);
   useEffect(() => {
     if (foodData?.foodItem) {
-      const f = foodData.foodItem as unknown as FoodItem;
+      const f = foodData.foodItem as FoodItem;
       // Evita di ri-prefillare se i dati sono già stati caricati per questo food
       if (hasPrefilledRef.current === f.id) {
         return;

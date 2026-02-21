@@ -103,7 +103,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
       password: (value) => {
         if (!value) return 'Password obbligatoria';
         const validation = validatePassword(value, { minLength: 8 });
-        return validation.valid ? null : validation.errors[0];
+        return validation.valid ? null : (validation.errors[0] ?? null);
       },
       confirmPassword: (value, allValues) => {
         if (!value) return 'Conferma password obbligatoria';
