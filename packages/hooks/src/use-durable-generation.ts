@@ -179,7 +179,7 @@ export function useDurableGeneration<TInput, TOutput>(
         if (data.status === 'completed') {
           const finalOutput = transformOutput
             ? transformOutput(data.output)
-            : (data.output as TOutput);
+            : (data.output as unknown as TOutput);
 
           setOutput(finalOutput);
           setIsPolling(false);
@@ -272,7 +272,7 @@ export function useDurableGeneration<TInput, TOutput>(
 
         // Check if we got immediate result (non-durable mode)
         if (data.success && !data.runId) {
-          const finalOutput = transformOutput ? transformOutput(data) : (data as TOutput);
+          const finalOutput = transformOutput ? transformOutput(data) : (data as unknown as TOutput);
           setOutput(finalOutput);
           setIsGenerating(false);
           onSuccess?.(finalOutput);
@@ -295,7 +295,7 @@ export function useDurableGeneration<TInput, TOutput>(
           pollStatus(newRunId);
         } else {
           // No runId but success - treat as immediate result
-          const finalOutput = transformOutput ? transformOutput(data) : (data as TOutput);
+          const finalOutput = transformOutput ? transformOutput(data) : (data as unknown as TOutput);
           setOutput(finalOutput);
           setIsGenerating(false);
           onSuccess?.(finalOutput);

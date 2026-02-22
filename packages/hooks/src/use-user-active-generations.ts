@@ -294,8 +294,8 @@ export function useUserActiveGenerations(options: UseUserActiveGenerationsOption
         }) => {
           handleRealtimeUpdate({
             eventType: payload.eventType as 'INSERT' | 'UPDATE' | 'DELETE',
-            new: payload.new as UserGeneration | null,
-            old: payload.old as UserGeneration | null,
+            new: payload.new as unknown as UserGeneration | null,
+            old: payload.old as unknown as UserGeneration | null,
           });
         }
       )

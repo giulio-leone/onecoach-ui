@@ -38,7 +38,7 @@ export function useFoodGeneration(
   const hook = useFoodGenerationBase(callbacks);
   return {
     ...hook,
-    generateStream: (input: unknown) => hook.generateStream(input as FoodGenerationInput),
+    generateStream: (input: unknown) => hook.generateStream(input as unknown as FoodGenerationInput),
   };
 }
 

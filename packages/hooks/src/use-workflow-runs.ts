@@ -185,8 +185,8 @@ export function useWorkflowRuns(options: UseWorkflowRunsOptions) {
         }) => {
           handleRealtimeUpdate({
             eventType: payload.eventType as 'INSERT' | 'UPDATE' | 'DELETE',
-            new: payload.new as WorkflowRun | null,
-            old: payload.old as WorkflowRun | null,
+            new: payload.new as unknown as unknown as WorkflowRun | null,
+            old: payload.old as unknown as unknown as WorkflowRun | null,
           });
         }
       )

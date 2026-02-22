@@ -123,7 +123,7 @@ export function usePlanningProgress({
     eventSource.addEventListener('progress', (event) => {
       try {
         const raw =
-          typeof (event as MessageEvent).data === 'string' ? (event as MessageEvent).data : '';
+          typeof (event as unknown as MessageEvent).data === 'string' ? (event as unknown as MessageEvent).data : '';
         if (!raw) return; // skip eventi senza data
         const data: ProgressEvent = JSON.parse(raw);
         setProgress({
