@@ -57,7 +57,7 @@ function normalizeProgressData(event: Record<string, unknown>): ProgressField | 
   if (event.type === 'data-progress' && event.data && typeof event.data === 'object') {
     const data = event.data as Record<string, unknown>;
     if (data.step && data.userMessage) {
-      return data as ProgressField;
+      return data as unknown as ProgressField;
     }
   }
 

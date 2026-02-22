@@ -70,7 +70,7 @@ export function CreditHistory({ limit = 10 }: CreditHistoryProps) {
       </div>
 
       <div className={cn(darkModeClasses.list.container)}>
-        {transactions.map((transaction) => (
+        {transactions.map((transaction: any) => (
           <TransactionItem
             key={transaction.id}
             icon={transaction.amount > 0 ? ArrowUpRight : ArrowDownRight}

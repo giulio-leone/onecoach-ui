@@ -32,5 +32,5 @@ export function AdminClientLayout({
   }
 
   // Fallback per mount isolati senza QueryClientProvider
-  return <QueryProvider>{content}</QueryProvider>;
+  return <QueryProvider client={undefined}>{content}</QueryProvider>;
 }

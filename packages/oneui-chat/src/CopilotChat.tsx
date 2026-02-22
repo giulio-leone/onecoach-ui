@@ -15,7 +15,7 @@ import { useTranslations } from 'next-intl';
  * - Dark mode
  */
 
-import { useRef, useEffect, useCallback, useState, memo, useMemo, type ReactNode } from 'react';
+import { useRef, useEffect, useCallback, useState, memo, useMemo } from 'react';
 import { CheckIcon, RefreshCw, Sparkles, StopCircle, X } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 import { useCoachChat } from '@/lib/chat';
