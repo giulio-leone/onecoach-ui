@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Button } from '@giulio-leone/ui';
 import { Play, RefreshCw, Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
-import { cn } from 'design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 import { logger } from '@giulio-leone/lib-shared';
 interface PromptPreviewProps {

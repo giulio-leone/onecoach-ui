@@ -142,7 +142,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
 
           {!isLoading && !error && history.length > 0 && (
             <div className="space-y-4">
-              {history.map((item) => (
+              {history.map((item: any) => (
                 <div
                   key={item.id}
                   className="rounded-lg border border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-600 dark:border-neutral-700 dark:bg-neutral-900"

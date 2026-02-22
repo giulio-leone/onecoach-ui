@@ -153,8 +153,8 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
   const stats = useMemo(
     () => [
       { label: 'Totale', value: total },
-      { label: 'Con Brand', value: items.filter((i) => i.brand || i.metadata?.brand).length },
-      { label: 'Con Immagine', value: items.filter((i) => i.imageUrl).length },
+      { label: 'Con Brand', value: items.filter((i: any) => i.brand || i.metadata?.brand).length },
+      { label: 'Con Immagine', value: items.filter((i: any) => i.imageUrl).length },
     ],
     [total, items]
   );
@@ -175,7 +175,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
   const columns: GlassTableColumn<Food>[] = [
     {
       header: 'Alimento',
-      cell: (item) => {
+      cell: (item: any) => {
         const brandName = item.brand?.name || item.metadata?.brand;
         const sanitizedUrl = item.imageUrl ? sanitizeImageUrl(item.imageUrl) : null;
         return (
@@ -201,7 +201,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
     },
     {
       header: 'Calorie (100g)',
-      cell: (item) => (
+      cell: (item: any) => (
         <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
           {item.macrosPer100g?.calories} kcal
         </span>
@@ -209,7 +209,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
     },
     {
       header: 'Macros',
-      cell: (item) => (
+      cell: (item: any) => (
         <div className="flex gap-2 text-xs text-neutral-500">
           <span className="text-blue-600 dark:text-blue-400">
             {t('admin.foods_admin_panel.p')}
@@ -228,7 +228,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
     },
     {
       header: 'Categoria',
-      cell: (item) => (
+      cell: (item: any) => (
         <div className="flex flex-wrap gap-1">
           {item.categories?.map((c: { id: string; name: string }) => (
             <span
@@ -244,7 +244,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
     {
       header: 'Azioni',
       className: 'text-right',
-      cell: (item) => (
+      cell: (item: any) => (
         <div className="flex justify-end gap-2">
           <button
             onClick={(e: React.MouseEvent<HTMLElement>) => {
@@ -346,8 +346,8 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
           data={items}
           columns={columns}
           isLoading={isLoading}
-          keyExtractor={(item) => item.id}
-          onRowClick={(item) => setDetailFoodId(item.id)}
+          keyExtractor={(item: any) => item.id}
+          onRowClick={(item: any) => setDetailFoodId(item.id)}
           className="mb-8"
           selectedIds={selection.selectedIds}
           onSelectRow={selection.toggleSelect}
@@ -363,13 +363,13 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
             </div>
           }
         >
-          {items.map((item) => {
+          {items.map((item: any) => {
             const brandName = item.brand?.name || item.metadata?.brand;
             const sanitizedUrl = item.imageUrl ? sanitizeImageUrl(item.imageUrl) : null;
             const badges: string[] = [];
             if (item.metadata?.category) badges.push(item.metadata.category);
             if (item.categories && item.categories.length > 0) {
-              badges.push(...item.categories.map((c) => c.name));
+              badges.push(...item.categories.map((c: any) => c.name));
             }
 
             const itemStats: { label: string; value: string }[] = [];
@@ -493,7 +493,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
         <FoodAiEditModal
           isOpen={showAiEditModal}
           foodId={aiEditFoodId}
-          currentFoodName={items.find((f) => f.id === aiEditFoodId)?.name}
+          currentFoodName={items.find((f: any) => f.id === aiEditFoodId)?.name}
           onClose={() => {
             setShowAiEditModal(false);
             setAiEditFoodId(null);

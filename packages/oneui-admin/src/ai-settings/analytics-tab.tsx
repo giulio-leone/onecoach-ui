@@ -171,11 +171,11 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
 
   // Max values for bar charts
   const maxMessages = useMemo(
-    () => Math.max(...dailyStats.map((d) => d.messages), 1),
+    () => Math.max(...dailyStats.map((d: any) => d.messages), 1),
     [dailyStats]
   );
   const maxProviderMessages = useMemo(
-    () => Math.max(...providerStats.map((p) => p.messages), 1),
+    () => Math.max(...providerStats.map((p: any) => p.messages), 1),
     [providerStats]
   );
 
@@ -209,7 +209,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
               )}
             >
               <Calendar className="h-4 w-4" />
-              {PERIOD_OPTIONS.find((p) => p.value === period)?.label}
+              {PERIOD_OPTIONS.find((p: any) => p.value === period)?.label}
               <ChevronDown className="h-4 w-4" />
             </button>
             <AnimatePresence>

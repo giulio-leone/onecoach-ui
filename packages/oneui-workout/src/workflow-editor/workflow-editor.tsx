@@ -72,7 +72,7 @@ export function WorkflowEditor({ workflowId, onSave }: WorkflowEditorProps) {
       setWorkflow(wf);
 
       // Convert database nodes to ReactFlow nodes
-      const flowNodes: Node<CustomNodeData>[] = wf.nodes.map((node) => ({
+      const flowNodes: Node<CustomNodeData>[] = wf.nodes.map((node: any) => ({
         id: node.id,
         type: 'workflowNode',
         position: node.position as { x: number; y: number },
@@ -84,7 +84,7 @@ export function WorkflowEditor({ workflowId, onSave }: WorkflowEditorProps) {
       }));
 
       // Convert database edges to ReactFlow edges
-      const flowEdges: Edge[] = wf.edges.map((edge) => ({
+      const flowEdges: Edge[] = wf.edges.map((edge: any) => ({
         id: edge.id,
         source: edge.sourceId,
         target: edge.targetId,
@@ -185,8 +185,8 @@ export function WorkflowEditor({ workflowId, onSave }: WorkflowEditorProps) {
   const handleDeleteSelected = async () => {
     if (!workflowId) return;
 
-    const selectedNodes = nodes.filter((node) => node.selected);
-    const selectedEdges = edges.filter((edge) => edge.selected);
+    const selectedNodes = nodes.filter((node: any) => node.selected);
+    const selectedEdges = edges.filter((edge: any) => edge.selected);
 
     if (selectedNodes.length === 0 && selectedEdges.length === 0) {
       alert(t('common.workflow_editor.no_nodes_or_edges_selected'));

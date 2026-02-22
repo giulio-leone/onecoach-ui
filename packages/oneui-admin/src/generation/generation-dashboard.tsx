@@ -142,7 +142,7 @@ function RunRow({
       </div>
 
       {/* Actions */}
-      <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+      <div className="flex items-center gap-2" onClick={(e: any) => e.stopPropagation()}>
         {canCancel && (
           <button
             onClick={() => onCancel(run.run_id)}
@@ -171,7 +171,7 @@ function RunDetailsModal({ run, onClose }: { run: WorkflowRun; onClose: () => vo
       <div className="w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-xl border border-neutral-700 bg-neutral-900 shadow-2xl">
         <div className="flex items-center justify-between border-b border-neutral-800 p-4">
           <div className="flex items-center gap-3">
-            <div className={`p-2 rounded-lg border ${statusColors[run.status].split(' ')[0]} ${statusColors[run.status].split(' ')[2]}`}>
+            <div className={`p-2 rounded-lg border ${statusColors[run.status]?.split(' ')[0] || ''} ${statusColors[run.status]?.split(' ')[2] || ''}`}>
               <StatusIcon status={run.status} />
             </div>
             <div>
@@ -368,7 +368,7 @@ export function GenerationDashboard({ supabase }: GenerationDashboardProps) {
         <Filter className="h-4 w-4 text-neutral-400" />
         <select
           value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value as WorkflowRunStatus | 'all')}
+          onChange={(e: any) => setStatusFilter(e.target.value as WorkflowRunStatus | 'all')}
           className="rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-1.5 text-sm text-neutral-100 focus:border-blue-500 focus:outline-none"
         >
           <option value="all">All statuses</option>
@@ -403,7 +403,7 @@ export function GenerationDashboard({ supabase }: GenerationDashboardProps) {
             </p>
           </div>
         ) : (
-          runs.map((run) => (
+          runs.map((run: any) => (
             <RunRow
               key={run.run_id}
               run={run}

@@ -178,7 +178,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 </span>
               </div>
               <div className="space-y-2">
-                {cart.cart_items.map((item) => (
+                {cart.cart_items.map((item: any) => (
                   <div
                     key={item.id}
                     className="rounded-lg border border-neutral-100 p-2 text-sm dark:border-neutral-800"

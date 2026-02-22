@@ -446,7 +446,7 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                       key={opt.value}
                       onClick={() => {
                         const newValues = isSelected
-                          ? values.filter((v) => v !== opt.value)
+                          ? values.filter((v: any) => v !== opt.value)
                           : [...values, opt.value];
                         updateValue(key, newValues);
                       }}

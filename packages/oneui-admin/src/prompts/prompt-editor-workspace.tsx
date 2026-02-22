@@ -64,7 +64,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
           endColumn: word.endColumn,
         };
 
-        const suggestions = Object.keys(prompt.variables || {}).map((v) => ({
+        const suggestions = Object.keys(prompt.variables || {}).map((v: any) => ({
           label: `{${v}}`,
           kind: monaco.languages.CompletionItemKind.Variable,
           insertText: `{${v}}`,
@@ -228,7 +228,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
           {/* Variables Helper */}
           <div className="border-t border-slate-200 bg-slate-50 p-2 text-xs dark:border-slate-800 dark:bg-slate-900">
             <span className="mr-2 font-semibold">{t('variables')}</span>
-            {Object.keys(prompt.variables || {}).map((v) => (
+            {Object.keys(prompt.variables || {}).map((v: any) => (
               <button
                 key={v}
                 onClick={() => insertVariable(v)}

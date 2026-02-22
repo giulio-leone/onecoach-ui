@@ -59,7 +59,7 @@ export function FoodFilters({ values, onChange, onReset }: FoodFiltersProps) {
           <BrandCombobox
             valueId={local.brandId}
             onChange={(val: { id?: string; name?: string } | null) =>
-              setLocal((v) => ({ ...v, brandId: val?.id || undefined }))
+              setLocal((v: any) => ({ ...v, brandId: val?.id || undefined }))
             }
           />
         </div>
@@ -68,7 +68,7 @@ export function FoodFilters({ values, onChange, onReset }: FoodFiltersProps) {
           <label className="text-xs font-medium text-neutral-500">Categorie</label>
           <CategoriesMultiselect
             values={local.categoryIds || []}
-            onChange={(ids: string[]) => setLocal((v) => ({ ...v, categoryIds: ids }))}
+            onChange={(ids: string[]) => setLocal((v: any) => ({ ...v, categoryIds: ids }))}
           />
         </div>
         {/* Barcode */}
@@ -77,7 +77,7 @@ export function FoodFilters({ values, onChange, onReset }: FoodFiltersProps) {
           <Input
             value={local.barcode || ''}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setLocal((v) => ({ ...v, barcode: e.target.value || undefined }))
+              setLocal((v: any) => ({ ...v, barcode: e.target.value || undefined }))
             }
             placeholder={t('food_filters.e_g_12345678')}
           />
@@ -92,7 +92,7 @@ export function FoodFilters({ values, onChange, onReset }: FoodFiltersProps) {
               type="number"
               value={local.kcalMin ?? ''}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setLocal((v) => ({
+                setLocal((v: any) => ({
                   ...v,
                   kcalMin: e.target.value ? Number(e.target.value) : undefined,
                 }))
@@ -103,7 +103,7 @@ export function FoodFilters({ values, onChange, onReset }: FoodFiltersProps) {
               type="number"
               value={local.kcalMax ?? ''}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setLocal((v) => ({
+                setLocal((v: any) => ({
                   ...v,
                   kcalMax: e.target.value ? Number(e.target.value) : undefined,
                 }))
@@ -119,7 +119,7 @@ export function FoodFilters({ values, onChange, onReset }: FoodFiltersProps) {
             <Select
               value={local.macroDominant || ''}
               onChange={(e: ChangeEvent<HTMLSelectElement>) =>
-                setLocal((v) => ({
+                setLocal((v: any) => ({
                   ...v,
                   macroDominant: (e.target.value ||
                     undefined) as FoodFiltersValues['macroDominant'],
@@ -136,7 +136,7 @@ export function FoodFilters({ values, onChange, onReset }: FoodFiltersProps) {
               placeholder={t('food_filters.min_p')}
               value={local.minProteinPct ?? ''}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setLocal((v) => ({
+                setLocal((v: any) => ({
                   ...v,
                   minProteinPct: e.target.value ? Number(e.target.value) : undefined,
                 }))
@@ -147,7 +147,7 @@ export function FoodFilters({ values, onChange, onReset }: FoodFiltersProps) {
               placeholder={t('food_filters.min_c')}
               value={local.minCarbPct ?? ''}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setLocal((v) => ({
+                setLocal((v: any) => ({
                   ...v,
                   minCarbPct: e.target.value ? Number(e.target.value) : undefined,
                 }))
@@ -158,7 +158,7 @@ export function FoodFilters({ values, onChange, onReset }: FoodFiltersProps) {
               placeholder={t('food_filters.min_f')}
               value={local.minFatPct ?? ''}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setLocal((v) => ({
+                setLocal((v: any) => ({
                   ...v,
                   minFatPct: e.target.value ? Number(e.target.value) : undefined,
                 }))

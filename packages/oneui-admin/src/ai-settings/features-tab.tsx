@@ -75,7 +75,7 @@ export function FeaturesTab({ featureConfigs, onUpdateFeature }: FeaturesTabProp
       if (config) {
         const hasRole = config.enabledForRoles.includes(role);
         const newRoles = hasRole
-          ? config.enabledForRoles.filter((r) => r !== role)
+          ? config.enabledForRoles.filter((r: any) => r !== role)
           : [...config.enabledForRoles, role];
         onUpdateFeature(config.id, { enabledForRoles: newRoles });
       }

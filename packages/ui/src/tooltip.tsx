@@ -11,15 +11,15 @@ import * as React from 'react';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import { cn } from '@giulio-leone/lib-design-system';
 
-const TooltipProvider = TooltipPrimitive.Provider;
+const TooltipProvider: React.FC<any> = TooltipPrimitive.Provider;
 
-const TooltipTrigger = TooltipPrimitive.Trigger;
+const TooltipTrigger: React.FC<any> = TooltipPrimitive.Trigger;
 
 type TooltipContentProps = React.ComponentProps<typeof TooltipPrimitive.Content> & {
   showArrow?: boolean;
 };
 
-const TooltipContent = React.forwardRef<
+const TooltipContent: React.ForwardRefExoticComponent<any> = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   TooltipContentProps
 >(({ className, sideOffset = 6, showArrow = false, ...props }, ref) => (

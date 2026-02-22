@@ -137,7 +137,7 @@ export const MessageResponse = forwardRef<HTMLDivElement, MessageResponseProps>(
         >
           <ReactMarkdown
             components={{
-              code({ className, children, ...codeProps }) {
+              code({ className, children, ref: _ref, node: _node, ...codeProps }) {
                 const match = /language-(\w+)/.exec(className || '');
                 const isInline = !match;
 
@@ -178,7 +178,7 @@ export const MessageResponse = forwardRef<HTMLDivElement, MessageResponseProps>(
                   </div>
                 );
               },
-              a: ({ ...linkProps }) => (
+              a: ({ ref: _ref, node: _node, ...linkProps }) => (
                 <a
                   {...linkProps}
                   target="_blank"
@@ -191,8 +191,8 @@ export const MessageResponse = forwardRef<HTMLDivElement, MessageResponseProps>(
                   )}
                 />
               ),
-              ul: ({ ...ulProps }) => <ul className="my-2 list-disc space-y-1 pl-4" {...ulProps} />,
-              ol: ({ ...olProps }) => (
+              ul: ({ ref: _ref, node: _node, ...ulProps }) => <ul className="my-2 list-disc space-y-1 pl-4" {...ulProps} />,
+              ol: ({ ref: _ref, node: _node, ...olProps }) => (
                 <ol className="my-2 list-decimal space-y-1 pl-4" {...olProps} />
               ),
             }}

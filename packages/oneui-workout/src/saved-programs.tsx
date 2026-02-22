@@ -169,7 +169,7 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
         {/* Active AI Generations even with empty programs */}
         {isGenerating && (
           <div className="space-y-3">
-            {activeGenerations.map((gen) => (
+            {activeGenerations.map((gen: any) => (
               <WorkoutGeneratingCard key={gen.run_id} generation={gen} />
             ))}
           </div>
@@ -200,7 +200,7 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
       {/* Active AI Generations (SDK 4.0 Durable Mode) */}
       {isGenerating && (
         <div className="space-y-3">
-          {activeGenerations.map((gen) => (
+          {activeGenerations.map((gen: any) => (
             <WorkoutGeneratingCard key={gen.run_id} generation={gen} />
           ))}
         </div>

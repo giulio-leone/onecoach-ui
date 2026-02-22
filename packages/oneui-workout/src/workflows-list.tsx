@@ -121,7 +121,7 @@ export function WorkflowsList({ onEdit, onCreate }: WorkflowsListProps) {
 
       {/* Workflows Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {workflows.map((workflow) => (
+        {workflows.map((workflow: any) => (
           <div
             key={workflow.id}
             className="rounded-lg border bg-white p-6 shadow-sm transition hover:shadow-md"

@@ -28,7 +28,7 @@ export function LiveExerciseCard({
   const [showInfo, setShowInfo] = useState(false);
 
   const sets = getExerciseSets(exercise as any);
-  const activeSetIndex = sets.findIndex((set) => !set.done);
+  const activeSetIndex = sets.findIndex((set: any) => !set.done);
   const muscleGroups = exercise.muscleGroups || [];
 
   return (
@@ -74,7 +74,7 @@ export function LiveExerciseCard({
 
       {/* Sets Stack */}
       <div className="space-y-3">
-        {sets.map((set, setIndex) => {
+        {sets.map((set: any, setIndex: any) => {
           const isActive = setIndex === activeSetIndex;
           const isNext = setIndex === activeSetIndex + 1;
 

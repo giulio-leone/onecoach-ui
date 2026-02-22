@@ -66,7 +66,7 @@ export function PolicyList({ policies: initialPolicies, stats }: PolicyListProps
       }
 
       // Rimuovi la policy dalla lista
-      setPolicies(policies.filter((p) => p.id !== id));
+      setPolicies(policies.filter((p: any) => p.id !== id));
     } catch (error: unknown) {
       alert(error instanceof Error ? error.message : "Errore durante l'eliminazione della policy");
     }
@@ -89,7 +89,7 @@ export function PolicyList({ policies: initialPolicies, stats }: PolicyListProps
     if (updatedPolicy) {
       // Aggiorna la lista
       setPolicies((prev) => {
-        const index = prev.findIndex((p) => p.id === updatedPolicy.id);
+        const index = prev.findIndex((p: any) => p.id === updatedPolicy.id);
         if (index >= 0) {
           // Update esistente
           const newPolicies = [...prev];

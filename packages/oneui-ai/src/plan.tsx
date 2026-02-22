@@ -121,7 +121,7 @@ export const PlanContent = ({ className, ...props }: PlanContentProps) => (
 import { useTranslations } from 'next-intl';
 
 export type PlanTriggerProps = ComponentProps<typeof CollapsibleTrigger>;
-export const PlanTrigger = ({ className, ...props }: PlanTriggerProps) => {
+export const PlanTrigger = ({ className, ref, ...props }: PlanTriggerProps) => {
   const t = useTranslations();
   return (
     <CollapsibleTrigger asChild>

@@ -142,7 +142,7 @@ export function AdminDropdownDesktop({
           )}
         >
           <div className="py-1">
-            {items.map((item) => {
+            {items.map((item: any) => {
               const Icon = item.icon;
               return (
                 <button

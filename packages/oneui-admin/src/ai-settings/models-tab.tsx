@@ -309,7 +309,7 @@ export function ModelsTab({
   // Toggle role access for model
   const toggleModelAccess = useCallback(
     (modelId: string, role: UserRole) => {
-      const existing = modelAccess.find((a) => a.modelId === modelId && a.role === role);
+      const existing = modelAccess.find((a: any) => a.modelId === modelId && a.role === role);
       const canSelect = existing ? !existing.canSelect : true; // Default true if establishing new rule
 
       onUpdateModelAccess(modelId, role, canSelect);
@@ -339,7 +339,7 @@ export function ModelsTab({
 
   // Get access for model/role
   const getAccess = (modelId: string, role: UserRole): boolean => {
-    const access = modelAccess.find((a) => a.modelId === modelId && a.role === role);
+    const access = modelAccess.find((a: any) => a.modelId === modelId && a.role === role);
     return access?.canSelect ?? true; // Default true if no record
   };
 
@@ -659,7 +659,7 @@ export function ModelsTab({
                       <div className="flex-1">
                         <select
                           value={selectedSyncProvider}
-                          onChange={(e) => setSelectedSyncProvider(e.target.value)}
+                          onChange={(e: any) => setSelectedSyncProvider(e.target.value)}
                           className={cn(
                             'w-full rounded-xl border px-3 py-2',
                             'border-neutral-200 dark:border-neutral-700',
@@ -668,7 +668,7 @@ export function ModelsTab({
                             'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
                           )}
                         >
-                          {EXTERNAL_PROVIDERS.map((p) => (
+                          {EXTERNAL_PROVIDERS.map((p: any) => (
                             <option key={p} value={p}>
                               {EXTERNAL_PROVIDER_LABELS[p]}
                             </option>
@@ -680,7 +680,7 @@ export function ModelsTab({
                         <input
                           type="text"
                           value={syncSearch}
-                          onChange={(e) => setSyncSearch(e.target.value)}
+                          onChange={(e: any) => setSyncSearch(e.target.value)}
                           placeholder={t('import.searchPlaceholder')}
                           className={cn(
                             'w-full rounded-xl border py-2 pr-4 pl-9',
@@ -1188,7 +1188,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}
             >
-              {PROVIDERS.map((p) => (
+              {PROVIDERS.map((p: any) => (
                 <option key={p} value={p}>
                   {PROVIDER_LABELS[p]}
                 </option>
@@ -1285,7 +1285,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
                   'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
                 )}
               >
-                {OPENROUTER_PROVIDERS.map((p) => (
+                {OPENROUTER_PROVIDERS.map((p: any) => (
                   <option key={p.value} value={p.value}>
                     {p.label}
                   </option>

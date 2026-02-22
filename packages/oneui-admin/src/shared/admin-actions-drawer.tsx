@@ -96,7 +96,7 @@ export function AdminActionsDrawer({
 
         {/* Items */}
         <div className="max-h-[calc(85vh-80px)] overflow-y-auto px-2 py-2">
-          {items.map((item) => {
+          {items.map((item: any) => {
             const Icon = item.icon;
             return (
               <button

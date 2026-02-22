@@ -102,7 +102,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
     if (selectedIds.length === exercises.length) {
       setSelectedIds([]);
     } else {
-      setSelectedIds(exercises.map((e) => e.id));
+      setSelectedIds(exercises.map((e: any) => e.id));
     }
   };
 
@@ -157,7 +157,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
   const columns: GlassTableColumn<AdminExercise>[] = [
     {
       header: t('columns.name'),
-      cell: (item) => (
+      cell: (item: any) => (
         <div className="flex flex-col">
           <span className="font-medium text-neutral-900 dark:text-neutral-100">{item.name}</span>
           {/* Show thumbnail if available for premium feel */}
@@ -214,7 +214,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
           <Button
             size="icon-sm"
             variant="ghost"
-            onClick={(e) => {
+            onClick={(e: any) => {
               e.stopPropagation();
               setDetailExerciseId(item.id);
             }}
@@ -225,7 +225,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
           <Button
             size="icon-sm"
             variant="ghost"
-            onClick={(e) => handleEdit(item.id, e)}
+            onClick={(e: any) => handleEdit(item.id, e)}
             aria-label={t('actions.edit')}
           >
             <Edit size={16} />
@@ -233,7 +233,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
           <Button
             size="icon-sm"
             variant="danger"
-            onClick={(e) => handleDelete(item.id, e)}
+            onClick={(e: any) => handleDelete(item.id, e)}
             aria-label={t('actions.delete')}
           >
             <Trash2 size={16} />
@@ -261,14 +261,14 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
           <div className="animate-in slide-in-from-top-4 fade-in relative z-50 duration-200">
             <ExerciseFilters
               statusFilter={(filters.approvalStatus || 'ALL') as FilterStatus}
-              onStatusChange={(v) => setFilters((prev) => ({ ...prev, approvalStatus: v }))}
-              onTypeChange={(id) => setFilters((prev) => ({ ...prev, exerciseTypeId: id }))}
-              onEquipmentsChange={(ids) => setFilters((prev) => ({ ...prev, equipmentIds: ids }))}
-              onBodyPartsChange={(ids) => setFilters((prev) => ({ ...prev, bodyPartIds: ids }))}
+              onStatusChange={(v: any) => setFilters((prev: any) => ({ ...prev, approvalStatus: v }))}
+              onTypeChange={(id) => setFilters((prev: any) => ({ ...prev, exerciseTypeId: id }))}
+              onEquipmentsChange={(ids) => setFilters((prev: any) => ({ ...prev, equipmentIds: ids }))}
+              onBodyPartsChange={(ids) => setFilters((prev: any) => ({ ...prev, bodyPartIds: ids }))}
               muscleIds={filters.muscleIds}
               onMusclesChange={({ primary, secondary }) => {
                 const allMuscles = [...primary, ...secondary];
-                setFilters((prev) => ({
+                setFilters((prev: any) => ({
                   ...prev,
                   muscleIds: allMuscles.length ? allMuscles : undefined,
                 }));
@@ -280,7 +280,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
 
         <GlassToolbar
           searchQuery={filters.search || ''}
-          onSearchChange={(v) => setFilters((prev) => ({ ...prev, search: v }))}
+          onSearchChange={(v: any) => setFilters((prev: any) => ({ ...prev, search: v }))}
           viewMode={viewMode}
           onViewModeChange={setViewMode}
           className="shadow-lg backdrop-blur-md"
@@ -289,8 +289,8 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
           <div className="flex items-center gap-2">
             <Select
               value={filters.approvalStatus || 'ALL'}
-              onChange={(e) =>
-                setFilters((prev) => ({ ...prev, approvalStatus: e.target.value as FilterStatus }))
+              onChange={(e: any) =>
+                setFilters((prev: any) => ({ ...prev, approvalStatus: e.target.value as FilterStatus }))
               }
               className="h-9 w-[150px] rounded-lg border-neutral-200 bg-white/50 text-sm backdrop-blur-sm dark:border-neutral-800 dark:bg-black/50"
             >
@@ -357,8 +357,8 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
               onSelectRow={(id) => handleSelectOne(String(id))}
               onSelectAll={handleSelectAll}
               isAllSelected={selectedIds.length === exercises.length && exercises.length > 0}
-              keyExtractor={(item) => item.id}
-              onRowClick={(item) => setDetailExerciseId(item.id)}
+              keyExtractor={(item: any) => item.id}
+              onRowClick={(item: any) => setDetailExerciseId(item.id)}
             />
           ) : (
             <CatalogGrid>
@@ -452,7 +452,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
         <ExerciseDetailDrawer
           isOpen={!!detailExerciseId}
           exercise={
-            exercises.find((e) => e.id === detailExerciseId) as LocalizedExercise
+            exercises.find((e: any) => e.id === detailExerciseId) as LocalizedExercise
           }
           onClose={() => setDetailExerciseId(null)}
           onEdit={() => {

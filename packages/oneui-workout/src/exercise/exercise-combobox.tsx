@@ -390,13 +390,13 @@ export function ExerciseCombobox({
                   <div className="mt-1 text-xs text-neutral-600 dark:text-neutral-400">
                     {exercise.muscles
                       .slice(0, 3)
-                      .map((m) => m.name)
+                      .map((m: any) => m.name)
                       .join(' · ')}
                   </div>
                 )}
                 {exercise.equipments.length > 0 && (
                   <div className="mt-1 text-xs text-neutral-500 dark:text-neutral-500">
-                    {exercise.equipments.map((e) => e.name).join(', ')}
+                    {exercise.equipments.map((e: any) => e.name).join(', ')}
                   </div>
                 )}
               </div>

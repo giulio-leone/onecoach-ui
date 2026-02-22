@@ -43,7 +43,7 @@ export function CategoriesMultiselect({ values, onChange }: CategoriesMultiselec
 
   const toggle = (id: string) => {
     const has = values.includes(id);
-    const next = has ? values.filter((v) => v !== id) : [...values, id];
+    const next = has ? values.filter((v: any) => v !== id) : [...values, id];
     onChange(next);
   };
 

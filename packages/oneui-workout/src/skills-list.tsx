@@ -114,7 +114,7 @@ export function SkillsList({ onEdit, onCreate }: SkillsListProps) {
 
       {/* Skills Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {skills.map((skill) => (
+        {skills.map((skill: any) => (
           <div
             key={skill.id}
             className="rounded-lg border bg-white p-6 shadow-sm transition hover:shadow-md"

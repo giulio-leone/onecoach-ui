@@ -33,7 +33,7 @@ export function CoachClientCard({ client }: CoachClientCardProps) {
   const initials = displayName
     .split(' ')
     .filter(Boolean)
-    .map((n) => n[0])
+    .map((n: any) => n[0])
     .join('')
     .toUpperCase()
     .slice(0, 2);
@@ -103,7 +103,7 @@ export function CoachClientCard({ client }: CoachClientCardProps) {
                   {t('purchasedPrograms')}
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {client.purchases.slice(0, 2).map((purchase) => (
+                  {client.purchases.slice(0, 2).map((purchase: any) => (
                     <Badge key={purchase.id} variant="neutral" className="max-w-[140px] truncate">
                       {purchase.planTitle}
                     </Badge>

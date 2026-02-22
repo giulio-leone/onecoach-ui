@@ -118,7 +118,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave, onImportClick }: 
     selectWeek,
     selectDay,
     updateCurrentDay,
-  } = useVisualBuilderState<WorkoutWeek, WorkoutDay>({
+  } = useVisualBuilderState({
     weeks: program.weeks,
     onWeeksChange: handleWeeksChange,
     createEmptyWeek,
@@ -300,7 +300,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave, onImportClick }: 
         theme="primary"
         // ... props ...
         title={program.name}
-        onTitleChange={(name) => updateProgram({ name })}
+        onTitleChange={(name: any) => updateProgram({ name })}
         subtitle={t('subtitle')}
         onBack={handleBack}
         isEditMode={isEditMode}
@@ -312,7 +312,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave, onImportClick }: 
         onSaveNow={saveNow}
         viewModes={viewModes}
         currentViewMode={viewMode}
-        onViewModeChange={(id) => setViewMode(id as 'editor' | 'statistics' | 'progression')}
+        onViewModeChange={(id: any) => setViewMode(id as 'editor' | 'statistics' | 'progression')}
         showNavigation={isEditor}
         weeks={program.weeks}
         currentWeekIndex={selectedWeekIndex}

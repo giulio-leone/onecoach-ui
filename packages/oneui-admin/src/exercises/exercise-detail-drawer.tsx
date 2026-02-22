@@ -153,12 +153,12 @@ export function ExerciseDetailDrawer({
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
                   {exercise.muscles
-                    .map((muscle) => ({
+                    .map((muscle: any) => ({
                       slug: (muscle as { slug?: string }).slug ?? '',
                       name: (muscle as { name?: string }).name ?? 'Muscolo',
                       role: ((muscle as { role?: string }).role ?? '').toLowerCase(),
                     }))
-                    .map((muscle) => (
+                    .map((muscle: any) => (
                       <span
                         key={`${exercise.id}-${muscle.slug}-${muscle.role}`}
                         className="rounded-full bg-emerald-50 px-2 py-1 text-emerald-700"
@@ -174,7 +174,7 @@ export function ExerciseDetailDrawer({
                   {t('admin.exercise_detail_drawer.parti_del_corpo')}
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                  {exercise.bodyParts.map((bodyPart) => {
+                  {exercise.bodyParts.map((bodyPart: any) => {
                     const slug = (bodyPart as { slug?: string }).slug ?? 'part';
                     const name = (bodyPart as { name?: string }).name ?? 'Body part';
                     return (
@@ -198,7 +198,7 @@ export function ExerciseDetailDrawer({
                 {(exercise.equipments.length
                   ? exercise.equipments
                   : [{ name: 'Bodyweight', slug: 'bodyweight' }]
-                ).map((equipment) => {
+                ).map((equipment: any) => {
                   const slug = (equipment as { slug?: string }).slug ?? 'equipment';
                   const name = (equipment as { name?: string }).name ?? 'Equipment';
                   return (
@@ -286,7 +286,7 @@ export function ExerciseDetailDrawer({
                   Relazioni
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                  {exercise.related.map((relation) => {
+                  {exercise.related.map((relation: any) => {
                     const relationId = (relation as { id?: string }).id ?? 'relation';
                     const relationType = (relation as { relation?: string }).relation ?? 'related';
                     const relationSlug = (relation as { slug?: string }).slug ?? '';

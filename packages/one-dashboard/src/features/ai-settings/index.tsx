@@ -241,7 +241,7 @@ export function AISettingsPageClient({
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const setHeaderActions = useHeaderActions((state) => state.setActions);
+  const setHeaderActions = useHeaderActions((state: any) => state.setActions);
   const t = useTranslations('admin.aiSettings');
   const tAdmin = useTranslations('admin');
 

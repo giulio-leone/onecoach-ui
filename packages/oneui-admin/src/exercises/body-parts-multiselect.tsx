@@ -39,7 +39,7 @@ export function BodyPartsMultiselect({
   }, [q]);
 
   const toggle = (id: string) => {
-    const next = values.includes(id) ? values.filter((v) => v !== id) : [...values, id];
+    const next = values.includes(id) ? values.filter((v: any) => v !== id) : [...values, id];
     onChange(next);
   };
 

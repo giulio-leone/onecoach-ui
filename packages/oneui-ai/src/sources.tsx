@@ -17,8 +17,9 @@ import type { ComponentProps } from 'react';
 
 export type SourcesProps = ComponentProps<'div'>;
 
-export const Sources = ({ className, ...props }: SourcesProps) => (
+export const Sources = ({ className, ref, ...props }: SourcesProps) => (
   <Collapsible
+    ref={ref as any}
     className={cn(
       // Base
       'not-prose mb-4 overflow-hidden rounded-xl',

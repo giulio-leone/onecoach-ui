@@ -50,7 +50,7 @@ const METADATA_FIELD_MAP: Record<MetadataType, string> = {
 function mapMetadataOptions(
   items: Array<{ id: string; name: string; localizedName?: string }>
 ): MetadataOption[] {
-  return items.map((item) => ({
+  return items.map((item: any) => ({
     id: item.id,
     name: item.name,
     localizedName: item.localizedName ?? item.name,
@@ -195,7 +195,7 @@ export function MetadataMultiSelect({
         setIsOpen(false);
       } else {
         onChange(
-          value.includes(optionId) ? value.filter((v) => v !== optionId) : [...value, optionId]
+          value.includes(optionId) ? value.filter((v: any) => v !== optionId) : [...value, optionId]
         );
       }
     },
@@ -205,7 +205,7 @@ export function MetadataMultiSelect({
   const handleRemove = useCallback(
     (optionId: string, e: React.MouseEvent) => {
       e.stopPropagation();
-      onChange(value.filter((v) => v !== optionId));
+      onChange(value.filter((v: any) => v !== optionId));
     },
     [value, onChange]
   );
@@ -281,7 +281,7 @@ export function MetadataMultiSelect({
                     checked={checked}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       onChange(
-                        e.target.checked ? [...value, opt.id] : value.filter((v) => v !== opt.id)
+                        e.target.checked ? [...value, opt.id] : value.filter((v: any) => v !== opt.id)
                       )
                     }
                     className="flex items-center gap-2"
@@ -310,7 +310,7 @@ export function MetadataMultiSelect({
 
       <div
         onClick={handleFieldClick}
-        onMouseDown={(e) => {
+        onMouseDown={(e: any) => {
           if (isOpen) e.preventDefault();
         }}
         className={`relative flex min-h-[42px] w-full items-center gap-2 rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm transition-all dark:border-neutral-600 dark:bg-neutral-800 dark:bg-neutral-900 ${
@@ -372,7 +372,7 @@ export function MetadataMultiSelect({
           <div
             className="fixed inset-0 z-[100]"
             onClick={() => setIsOpen(false)}
-            onMouseDown={(e) => e.preventDefault()}
+            onMouseDown={(e: any) => e.preventDefault()}
           />
           <div
             className="absolute z-[101] mt-1 w-full rounded-lg border border-neutral-200 bg-white shadow-xl dark:border-neutral-700 dark:bg-neutral-800 dark:bg-neutral-900"

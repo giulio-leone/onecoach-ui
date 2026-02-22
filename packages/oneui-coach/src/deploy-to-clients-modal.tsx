@@ -72,7 +72,7 @@ export function DeployToClientsModal({
 
   const filteredClients =
     clientsData?.clients?.filter(
-      (c) =>
+      (c: any) =>
         c.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
         c.email?.toLowerCase().includes(searchQuery.toLowerCase())
     ) || [];
@@ -84,7 +84,7 @@ export function DeployToClientsModal({
   };
 
   const selectAll = () => {
-    setSelectedUsers(filteredClients.map((c) => c.id));
+    setSelectedUsers(filteredClients.map((c: any) => c.id));
   };
 
   const deselectAll = () => {
@@ -199,7 +199,7 @@ export function DeployToClientsModal({
                     {searchQuery ? 'Nessun cliente trovato' : 'Nessun cliente disponibile'}
                   </div>
                 ) : (
-                  filteredClients.map((client) => (
+                  filteredClients.map((client: any) => (
                     <label
                       key={client.id}
                       className={`flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors ${
@@ -277,7 +277,7 @@ export function DeployToClientsModal({
             <>
               <div className="max-h-64 space-y-2 overflow-y-auto">
                 {results.map((r) => {
-                  const client = clientsData?.clients?.find((c) => c.id === r.userId);
+                  const client = clientsData?.clients?.find((c: any) => c.id === r.userId);
                   return (
                     <div
                       key={r.userId}

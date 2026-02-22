@@ -64,7 +64,7 @@ export function PromotionFormModal({ isOpen, promotion, onClose }: PromotionForm
     tomorrow.setDate(tomorrow.getDate() + 1);
     return tomorrow.toISOString().split('T')[0] as string;
   }, []);
-  const form = useForm<PromotionFormValues>({
+  const form = useForm({
     initialValues: {
       code: promotion?.code || '',
       type: (promotion?.type as 'STRIPE_COUPON' | 'BONUS_CREDITS') || 'STRIPE_COUPON',
@@ -81,7 +81,7 @@ export function PromotionFormModal({ isOpen, promotion, onClose }: PromotionForm
         : '',
       description: String(promotion?.description ?? ''),
     },
-    onSubmit: async (values) => {
+    onSubmit: async (values: any) => {
       const body: PromotionRequest = {
         code: values.code.trim().toUpperCase(),
         type: values.type,

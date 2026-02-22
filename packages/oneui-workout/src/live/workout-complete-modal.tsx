@@ -29,7 +29,7 @@ export function WorkoutCompleteModal({
   // Calculate stats (SSOT: usa getExerciseSets)
   // Memoize exercises array to prevent recalculation on every render
   const exercises = useMemo(
-    () => (session.exercises as Exercise[]) || [],
+    () => (session.exercises as unknown as Exercise[]) || [],
     [session.exercises]
   );
   const totalExercises = exercises.length;
@@ -42,7 +42,7 @@ export function WorkoutCompleteModal({
       // getExerciseSets expects an Exercise from @giulio-leone/types which conflicts slightly with schemas
       // Specifically catalogExerciseId vs exerciseId. Since we only need setGroups, we cast to any.
       const sets = getExerciseSets(exercise as any);
-      const exerciseVolume = sets.reduce((sAcc, set) => {
+      const exerciseVolume = sets.reduce((sAcc: any, set: any) => {
         // Safe access to numeric properties
         const weight = set.weight || 0;
         const reps = set.reps || 0;
@@ -54,16 +54,16 @@ export function WorkoutCompleteModal({
 
   // Memoize calculations to avoid impure function calls during render
   const { completedExercises, duration, totalSetsCompleted } = useMemo(() => {
-    const completed = exercises.filter((ex) => {
+    const completed = exercises.filter((ex: any) => {
       const sets = getExerciseSets(ex as any);
-      return sets.some((set) => set.done);
+      return sets.some((set: any) => set.done);
     }).length;
 
     // Calculate total volume
     let volume = 0;
     exercises.forEach((exercise) => {
       const sets = getExerciseSets(exercise as any);
-      sets.forEach((set) => {
+      sets.forEach((set: any) => {
         if (set.done) {
           const reps = set.repsDone || set.reps || 0;
           const weight = set.weightDone || set.weight || 0;
@@ -91,7 +91,7 @@ export function WorkoutCompleteModal({
     // Count total sets
     const setsCompleted = exercises.reduce((sum, ex) => {
       const sets = getExerciseSets(ex as any);
-      return sum + sets.filter((set) => set.done).length;
+      return sum + sets.filter((set: any) => set.done).length;
     }, 0);
 
     return {

@@ -33,6 +33,10 @@
     "./button.shared": {
       "types": "./src/button.shared.ts",
       "default": "./src/button.shared.ts"
+    },
+    "./components": {
+      "types": "./src/components/index.ts",
+      "default": "./src/components/index.ts"
     }
   },
   "files": [

@@ -126,7 +126,7 @@ export function LiveFocusView({
   const [showCompleteModal, setShowCompleteModal] = useState(false);
 
   const exercises = useMemo(
-    () => (session.exercises as Exercise[]) || [],
+    () => (session.exercises as unknown as Exercise[]) || [],
     [session.exercises]
   );
 
@@ -134,7 +134,7 @@ export function LiveFocusView({
   const findActiveExerciseIndex = useCallback(() => {
     for (let i = 0; i < exercises.length; i++) {
       const sets = getExerciseSets(exercises[i] as any);
-      if (sets.some((s) => !s.done)) {
+      if (sets.some((s: any) => !s.done)) {
         return i;
       }
     }
@@ -150,9 +150,9 @@ export function LiveFocusView({
 
   // Count completed exercises (all sets done)
   const completedExercisesCount = useMemo(() => {
-    return exercises.filter((ex) => {
+    return exercises.filter((ex: any) => {
       const sets = getExerciseSets(ex as any);
-      return sets.length > 0 && sets.every((s) => s.done);
+      return sets.length > 0 && sets.every((s: any) => s.done);
     }).length;
   }, [exercises]);
 
@@ -160,7 +160,7 @@ export function LiveFocusView({
   const isCurrentExerciseComplete = useMemo(() => {
     if (!currentExercise) return false;
     const sets = getExerciseSets(currentExercise as any);
-    return sets.length > 0 && sets.every((s) => s.done);
+    return sets.length > 0 && sets.every((s: any) => s.done);
   }, [currentExercise]);
 
   const handleStop = () => {

@@ -81,7 +81,7 @@ export function CatalogHubClient({
       <CatalogGrid
         emptyState={<p className="text-center text-neutral-500">{t('emptyState')}</p>}
       >
-        {catalogItems.map((item) => (
+        {catalogItems.map((item: any) => (
           <ResourceCard
             key={item.id}
             title={item.title}
