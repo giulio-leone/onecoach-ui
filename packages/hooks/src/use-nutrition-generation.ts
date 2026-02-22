@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useState } from 'react';
 import type { PatternBasedNutritionPlan } from '@giulio-leone/schemas';
 import type { PatternNutritionGenerationInput } from '@giulio-leone/schemas';

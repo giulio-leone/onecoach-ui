@@ -2,33 +2,17 @@
   "name": "@giulio-leone/one-dashboard",
   "version": "0.1.0",
   "private": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "files": [
     "dist"
   ],
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
-    },
-    "./layout": {
-      "import": {
-        "types": "./dist/layout/index.d.ts",
-        "default": "./dist/layout/index.js"
-      },
-      "require": {
-        "types": "./dist/layout/index.d.cts",
-        "default": "./dist/layout/index.cjs"
-      }
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
     }
   },
   "publishConfig": {
@@ -41,14 +25,14 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@giulio-leone/lib-ai": "^0.1.0",
-    "@giulio-leone/lib-api": "^0.1.0",
-    "@giulio-leone/lib-core": "^0.1.0",
-    "@giulio-leone/lib-design-system": "^0.1.0",
-    "@giulio-leone/lib-shared": "^0.1.0",
-    "@giulio-leone/lib-stores": "^0.1.0",
-    "@giulio-leone/types": "^0.1.0",
-    "@giulio-leone/ui": "^0.1.0",
+    "@giulio-leone/lib-ai": "workspace:*",
+    "@giulio-leone/lib-api": "workspace:*",
+    "@giulio-leone/lib-core": "workspace:*",
+    "@giulio-leone/lib-design-system": "workspace:*",
+    "@giulio-leone/lib-shared": "workspace:*",
+    "@giulio-leone/lib-stores": "workspace:*",
+    "@giulio-leone/types": "workspace:*",
+    "@giulio-leone/ui": "workspace:*",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.4.0"
   },

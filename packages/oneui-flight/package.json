@@ -2,17 +2,28 @@
   "name": "@giulio-leone/ui-flight",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./form": {
+      "types": "./src/form.ts",
+      "default": "./src/form.ts"
+    },
+    "./use-smart-flight-search": {
+      "types": "./src/use-smart-flight-search.ts",
+      "default": "./src/use-smart-flight-search.ts"
+    },
+    "./types": {
+      "types": "./src/types.ts",
+      "default": "./src/types.ts"
     }
   },
   "publishConfig": {
@@ -24,13 +35,13 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@giulio-leone/ui": "^0.1.0",
-    "@giulio-leone/ui-core": "^0.1.0",
-    "@giulio-leone/lib-design-system": "^0.1.0",
-    "@giulio-leone/lib-shared": "^0.1.0",
-    "@giulio-leone/hooks": "^0.1.0",
-    "@giulio-leone/one-agent-hooks": "^0.1.0",
-    "@giulio-leone/types": "^0.1.0",
+    "@giulio-leone/ui": "workspace:*",
+    "@giulio-leone/ui-core": "workspace:*",
+    "@giulio-leone/lib-design-system": "workspace:*",
+    "@giulio-leone/lib-shared": "workspace:*",
+    "@giulio-leone/hooks": "workspace:*",
+    "@giulio-leone/one-agent-hooks": "workspace:*",
+    "@giulio-leone/types": "workspace:*",
     "@tanstack/react-virtual": "^3.13.6",
     "@phosphor-icons/react": "^2.1.7"
   },

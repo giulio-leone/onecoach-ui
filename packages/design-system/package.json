@@ -2,17 +2,36 @@
   "name": "@giulio-leone/design-system",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./z-index": {
+      "types": "./src/z-index.ts",
+      "default": "./src/z-index.ts"
+    },
+    "./dark-mode-classes": {
+      "types": "./src/dark-mode-classes.ts",
+      "default": "./src/dark-mode-classes.ts"
+    },
+    "./tokens": {
+      "types": "./src/tokens.ts",
+      "default": "./src/tokens.ts"
+    },
+    "./token-utils": {
+      "types": "./src/token-utils.ts",
+      "default": "./src/token-utils.ts"
+    },
+    "./animations": {
+      "types": "./src/animations.ts",
+      "default": "./src/animations.ts"
     }
   },
   "publishConfig": {
@@ -25,7 +44,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@giulio-leone/lib-design-system": "^0.1.0",
+    "@giulio-leone/lib-design-system": "workspace:*",
     "tailwindcss": "^4.1.18"
   },
   "peerDependencies": {

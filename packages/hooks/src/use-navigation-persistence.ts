@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigationStateStore } from '@giulio-leone/lib-stores';
 // Note: Removed 'zustand/react/shallow' - direct selector is sufficient for primitive/stable values.

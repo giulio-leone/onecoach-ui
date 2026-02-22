@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useCallback } from 'react';
 import type { MeshEvent } from '@giulio-leone/one-agent';
 import { apiClient } from '@giulio-leone/lib-api-client';

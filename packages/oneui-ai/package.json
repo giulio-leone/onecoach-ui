@@ -2,23 +2,21 @@
   "name": "@giulio-leone/ui-ai",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "files": [
     "dist"
   ],
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./ai-types": {
+      "types": "./src/ai-types.ts",
+      "default": "./src/ai-types.ts"
     }
   },
   "publishConfig": {
@@ -29,15 +27,15 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@giulio-leone/constants": "^0.1.0",
-    "@giulio-leone/lib-ai": "^0.1.0",
-    "@giulio-leone/lib-api": "^0.1.0",
-    "@giulio-leone/lib-design-system": "^0.1.0",
-    "@giulio-leone/lib-shared": "^0.1.0",
-    "@giulio-leone/schemas": "^0.1.0",
-    "@giulio-leone/types": "^0.1.0",
-    "@giulio-leone/ui": "^0.1.0",
-    "@giulio-leone/ui-core": "^0.1.0"
+    "@giulio-leone/constants": "workspace:*",
+    "@giulio-leone/lib-ai": "workspace:*",
+    "@giulio-leone/lib-api": "workspace:*",
+    "@giulio-leone/lib-design-system": "workspace:*",
+    "@giulio-leone/lib-shared": "workspace:*",
+    "@giulio-leone/schemas": "workspace:*",
+    "@giulio-leone/types": "workspace:*",
+    "@giulio-leone/ui": "workspace:*",
+    "@giulio-leone/ui-core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

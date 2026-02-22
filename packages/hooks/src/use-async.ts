@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Generic async state management hook
  * Eliminates 300+ lines of duplicated loading/error/data state across 18+ hooks

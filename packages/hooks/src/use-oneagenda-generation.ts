@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useCallback } from 'react';
 
 // Interfaces duplicated to avoid dependency on app-level types

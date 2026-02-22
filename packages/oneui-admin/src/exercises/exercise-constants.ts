@@ -1,3 +1,5 @@
+'use client';
+
 import { ExerciseApprovalStatus } from "@giulio-leone/types/database";
 
 /**

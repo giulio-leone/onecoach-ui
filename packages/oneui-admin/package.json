@@ -2,19 +2,13 @@
   "name": "@giulio-leone/ui-admin",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
     }
   },
   "files": [
@@ -30,14 +24,14 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@giulio-leone/ui-core": "^0.1.0",
-    "@giulio-leone/ui-layout": "^0.1.0",
-    "@giulio-leone/lib-design-system": "^0.1.0",
-    "@giulio-leone/lib-api-client": "^0.1.0",
-    "@giulio-leone/hooks": "^0.1.0",
-    "@giulio-leone/schemas": "^0.1.0",
-    "@giulio-leone/types": "^0.1.0",
-    "@giulio-leone/ui": "^0.1.0",
+    "@giulio-leone/ui-core": "workspace:*",
+    "@giulio-leone/ui-layout": "workspace:*",
+    "@giulio-leone/lib-design-system": "workspace:*",
+    "@giulio-leone/lib-api-client": "workspace:*",
+    "@giulio-leone/hooks": "workspace:*",
+    "@giulio-leone/schemas": "workspace:*",
+    "@giulio-leone/types": "workspace:*",
+    "@giulio-leone/ui": "workspace:*",
     "lucide-react": "^0.562.0"
   },
   "peerDependencies": {

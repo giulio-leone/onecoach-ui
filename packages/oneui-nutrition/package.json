@@ -2,23 +2,17 @@
   "name": "@giulio-leone/ui-nutrition",
   "version": "0.1.0",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "files": [
     "dist"
   ],
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
     }
   },
   "publishConfig": {
@@ -30,17 +24,17 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@giulio-leone/features-food": "^0.1.0",
-    "@giulio-leone/features-nutrition": "^0.1.0",
-    "@giulio-leone/hooks": "^0.1.0",
-    "@giulio-leone/lib-design-system": "^0.1.0",
-    "@giulio-leone/lib-shared": "^0.1.0",
-    "@giulio-leone/lib-stores": "^0.1.0",
-    "@giulio-leone/schemas": "^0.1.0",
-    "@giulio-leone/types": "^0.1.0",
-    "@giulio-leone/ui": "^0.1.0",
-    "@giulio-leone/ui-coach": "^0.1.0",
-    "@giulio-leone/ui-core": "^0.1.0",
+    "@giulio-leone/features-food": "workspace:*",
+    "@giulio-leone/features-nutrition": "workspace:*",
+    "@giulio-leone/hooks": "workspace:*",
+    "@giulio-leone/lib-design-system": "workspace:*",
+    "@giulio-leone/lib-shared": "workspace:*",
+    "@giulio-leone/lib-stores": "workspace:*",
+    "@giulio-leone/schemas": "workspace:*",
+    "@giulio-leone/types": "workspace:*",
+    "@giulio-leone/ui": "workspace:*",
+    "@giulio-leone/ui-coach": "workspace:*",
+    "@giulio-leone/ui-core": "workspace:*",
     "lucide-react": "^0.300.0",
     "next-intl": "^4.7.0"
   },

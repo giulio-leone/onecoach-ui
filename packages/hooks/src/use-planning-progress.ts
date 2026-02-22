@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Hook per gestire il planning progress con SSE (Server-Sent Events)
  *
