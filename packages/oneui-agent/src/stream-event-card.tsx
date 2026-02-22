@@ -20,8 +20,8 @@ import {
   ChevronRight,
   Code2,
 } from 'lucide-react';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import { animations } from '@onecoach/lib-design-system/animations';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import { animations } from '@giulio-leone/lib-design-system/animations';
 
 export type StreamEvent = {
   type: string;

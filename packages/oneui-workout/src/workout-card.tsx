@@ -8,9 +8,9 @@
 'use client';
 
 import { Dumbbell, Calendar, Target, Eye, Edit, Trash2, Send, Copy } from 'lucide-react';
-import { ProgramCard, type ProgramCardAction } from '@onecoach/ui';
+import { ProgramCard, type ProgramCardAction } from '@giulio-leone/ui';
 import { useTranslations } from 'next-intl';
-import type { WorkoutProgram } from '@onecoach/types-workout';
+import type { WorkoutProgram } from '@giulio-leone/types/workout';
 
 interface WorkoutCardProps {
   program: WorkoutProgram;

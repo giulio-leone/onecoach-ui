@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { SidebarItem } from './sidebar-item';
 import { ThemeToggle } from './theme-toggle';
 import { Button } from './button';

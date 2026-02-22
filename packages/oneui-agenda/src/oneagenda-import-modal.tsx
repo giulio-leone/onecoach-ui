@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
  * Modal di import AI per OneAgenda (progetti, task, habit)
  */
 
-import { ImportModal } from '@onecoach/ui';
+import { ImportModal } from '@giulio-leone/ui';
 
 type OneAgendaImportModalProps = {
   isOpen: boolean;

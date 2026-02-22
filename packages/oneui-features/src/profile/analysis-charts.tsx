@@ -11,8 +11,8 @@ import {
   Tooltip,
   CartesianGrid,
 } from 'recharts';
-import { useBodyMeasurementsHistory } from '@onecoach/hooks';
-import { Card } from '@onecoach/ui';
+import { useBodyMeasurementsHistory } from '@giulio-leone/hooks';
+import { Card } from '@giulio-leone/ui';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 

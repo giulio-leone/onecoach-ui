@@ -5,11 +5,11 @@ import { View, Text } from 'react-native';
 // Mock components for app-level compatibility
 const Pressable = (props: any) => <View {...props} />;
 
-import { Card } from '@onecoach/ui';
+import { Card } from '@giulio-leone/ui';
 import { Trash2, ArrowUp, ArrowDown } from 'lucide-react-native';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { SetGroupEditor } from '../editor/set-group-editor';
-import type { Exercise, SetGroup } from '@onecoach/types-workout';
+import type { Exercise, SetGroup } from '@giulio-leone/types/workout';
 
 
 

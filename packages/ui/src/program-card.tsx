@@ -12,7 +12,7 @@ import { useRef, type ReactNode, type MouseEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 /* =============================================================================
    Types

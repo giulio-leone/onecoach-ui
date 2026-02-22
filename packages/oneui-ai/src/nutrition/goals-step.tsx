@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl';
 
 import type { Goal } from 'app/features/nutrition';
-import { ActivityLevel } from '@onecoach/types/client';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { ActivityLevel } from '@giulio-leone/types/client';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import type { NutritionFormData } from 'app/features/nutrition';
 import { Dumbbell, Scale, Zap, Trophy, Timer, Utensils } from 'lucide-react';
 

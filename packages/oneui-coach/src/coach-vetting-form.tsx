@@ -8,9 +8,9 @@ import { useTranslations } from 'next-intl';
  */
 import { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { Button, Card, Label, Textarea, Heading, Text } from '@onecoach/ui';
+import { Button, Card, Label, Textarea, Heading, Text } from '@giulio-leone/ui';
 import { Send, FileText } from 'lucide-react';
-import { dialog } from '@onecoach/lib-stores';
+import { dialog } from '@giulio-leone/lib-stores';
 export interface CoachVettingFormProps {
   hasPendingRequest: boolean;
   hasApprovedRequest: boolean;

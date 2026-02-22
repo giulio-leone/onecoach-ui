@@ -8,7 +8,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { KeyRound, Trash2, Loader2, AlertCircle, CheckCircle2, XCircle } from 'lucide-react';
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import { useTranslations, useFormatter } from 'next-intl';
 
 interface ApiKey {
@@ -62,7 +62,7 @@ export function UserApiKeys({ userId }: UserApiKeysProps) {
   }, [fetchApiKeys]);
 
   const handleRevoke = async (keyId: string) => {
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(tAdmin('revokeConfirm'));
     if (!confirmed) {
       return;

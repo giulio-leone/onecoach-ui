@@ -7,9 +7,9 @@
 
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { Button, Modal, ModalFooter } from '@onecoach/ui';
+import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
 import { Upload } from 'lucide-react';
-import { handleApiError } from '@onecoach/lib-shared';
+import { handleApiError } from '@giulio-leone/lib-shared';
 interface FoodImportModalProps {
   isOpen: boolean;
   onClose: () => void;

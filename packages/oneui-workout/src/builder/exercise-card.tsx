@@ -12,8 +12,8 @@ import {
   Scissors,
 } from 'lucide-react';
 import type { DraggableAttributes, DraggableSyntheticListeners } from '@dnd-kit/core';
-import { cn } from '@onecoach/lib-design-system';
-import { useCopilotContextReporter } from '@onecoach/lib-copilot';
+import { cn } from '@giulio-leone/lib-design-system';
+import { useCopilotContextReporter } from '@giulio-leone/lib-copilot';
 import { SetGroupEditor } from '../editor/set-group-editor';
 import { ExerciseSelector } from './exercise-selector';
 import { useExerciseClipboard } from './workout-clipboard-provider';
@@ -22,8 +22,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@onecoach/ui';
-import type { Exercise, SetGroup } from '@onecoach/types-workout';
+} from '@giulio-leone/ui';
+import type { Exercise, SetGroup } from '@giulio-leone/types/workout';
 
 interface ExerciseCardProps {
   exercise: Exercise;

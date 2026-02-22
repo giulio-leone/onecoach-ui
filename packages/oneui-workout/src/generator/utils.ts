@@ -1,5 +1,5 @@
-import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@onecoach/types/client';
-import type { WorkoutGenerationInput } from '@onecoach/schemas';
+import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@giulio-leone/types/client';
+import type { WorkoutGenerationInput } from '@giulio-leone/schemas';
 
 export function csvFromArray(values?: string[]): string {
   return (values || []).join(', ');

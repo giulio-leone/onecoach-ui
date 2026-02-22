@@ -2,8 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { FileText, CheckCircle2, Dumbbell } from 'lucide-react';
-import { Badge, Heading, Text } from '@onecoach/ui';
-import type { Exercise } from "@onecoach/schemas";
+import { Badge, Heading, Text } from '@giulio-leone/ui';
+import type { Exercise } from "@giulio-leone/schemas";
 
 
 export interface ExerciseInstructionsProps {

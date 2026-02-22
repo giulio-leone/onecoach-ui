@@ -8,11 +8,11 @@
 'use client';
 
 import type React from 'react';
-import { Button } from '@onecoach/ui';
-import { Modal, ModalFooter } from '@onecoach/ui';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { Button } from '@giulio-leone/ui';
+import { Modal, ModalFooter } from '@giulio-leone/ui';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
-import type { WorkoutTemplateType } from "@onecoach/types-workout";
+import type { WorkoutTemplateType } from "@giulio-leone/types/workout";
 
 interface WorkoutTemplateSaveDialogProps {
   isOpen: boolean;

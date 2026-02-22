@@ -10,7 +10,7 @@
 
 import { useEffect } from 'react';
 import { X } from 'lucide-react';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import type { AdminMenuItem } from './admin-menu-item.types';
 
 

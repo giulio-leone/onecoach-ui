@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-pricing
+ * @giulio-leone/ui-pricing
  * Pricing and checkout UI components.
  */
 

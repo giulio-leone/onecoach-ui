@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Info } from 'lucide-react';
-import { getExerciseSets } from '@onecoach/one-workout';
+import { getExerciseSets } from '@giulio-leone/one-workout';
 import { LiveSetTracker } from './live-set-tracker';
 import { ExerciseInstructions } from './exercise-instructions';
-import { Button, Heading, Text, Badge } from '@onecoach/ui';
-import type { Exercise, ExerciseSet } from '@onecoach/schemas';
+import { Button, Heading, Text, Badge } from '@giulio-leone/ui';
+import type { Exercise, ExerciseSet } from '@giulio-leone/schemas';
 
 export interface LiveExerciseCardProps {
   exercise: Exercise;

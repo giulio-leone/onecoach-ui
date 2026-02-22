@@ -2,8 +2,8 @@
 
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from './navigation';
-import { locales, type Locale } from '@onecoach/translations';
-import { saveLanguagePreference } from '@onecoach/hooks';
+import { locales, type Locale } from '@giulio-leone/translations';
+import { saveLanguagePreference } from '@giulio-leone/hooks';
 
 export function LanguageSwitcher() {
   const locale = useLocale();

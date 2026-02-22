@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@onecoach/lib-design-system';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@giulio-leone/ui';
 import { ChevronDownIcon, CheckCircle2, CircleDashed, AlertCircle, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import type { ComponentProps, ReactNode } from 'react';

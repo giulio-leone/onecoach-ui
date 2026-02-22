@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { useTranslations, useFormatter } from 'next-intl';
-import { Badge, Button, Input, Select, StatCard, DatePicker } from '@onecoach/ui';
+import { Badge, Button, Input, Select, StatCard, DatePicker } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { AlertCircle, CheckCircle2, Clock, Download, XCircle } from 'lucide-react';
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 import { OrderDetailsModal } from './order-details-modal';
 
 type Payment = {

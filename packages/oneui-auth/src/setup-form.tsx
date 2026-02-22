@@ -8,9 +8,9 @@ import { useTranslations } from 'next-intl';
  */
 import { useState } from 'react';
 import { useRouter } from 'app/navigation';
-import { Button, Input } from '@onecoach/ui';
-import { useForm } from '@onecoach/hooks';
-import { isValidEmail } from '@onecoach/lib-shared';
+import { Button, Input } from '@giulio-leone/ui';
+import { useForm } from '@giulio-leone/hooks';
+import { isValidEmail } from '@giulio-leone/lib-shared';
 
 interface SetupFormValues {
   email: string;

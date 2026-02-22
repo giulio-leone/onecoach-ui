@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import { Eye } from 'lucide-react';
-import { CatalogToolbar, CatalogGrid, ResourceCard, type FilterOption } from '@onecoach/ui';
+import { CatalogToolbar, CatalogGrid, ResourceCard, type FilterOption } from '@giulio-leone/ui';
 
 
 interface AdminAffiliatePayoutsProps {

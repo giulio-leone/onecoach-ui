@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   MessageSquare,
   Search,
@@ -19,7 +19,7 @@ import {
 import { formatDistanceToNow } from 'date-fns';
 import { it, enUS } from 'date-fns/locale';
 import { toast } from 'sonner';
-import { Checkbox } from '@onecoach/ui';
+import { Checkbox } from '@giulio-leone/ui';
 import { useTranslations, useLocale } from 'next-intl';
 
 interface Message {

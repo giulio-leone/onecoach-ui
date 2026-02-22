@@ -2,10 +2,10 @@
 
 import { useRouter } from 'next/navigation';
 import { Dumbbell, Calendar, Target, AlertCircle } from 'lucide-react';
-import { getExerciseSets } from '@onecoach/one-workout';
-import { DifficultyLevel } from '@onecoach/types-workout';
+import { getExerciseSets } from '@giulio-leone/one-workout';
+import { DifficultyLevel } from '@giulio-leone/types/workout';
 import { useTranslations } from 'next-intl';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   ProgramActionBar,
   ProgramInfoCard,
@@ -13,11 +13,11 @@ import {
   ProgramWeekCard,
   ProgramDayCard,
   type ProgramMetadata,
-} from '@onecoach/ui';
-import { useWeightUnit } from '@onecoach/lib-api/hooks';
-import { formatWeightByUnit } from '@onecoach/lib-shared';
-import { getWeekAndDayFromDate } from '@onecoach/lib-shared';
-import type { WorkoutProgram, ExerciseSet, WorkoutDay, Exercise } from '@onecoach/types-workout';
+} from '@giulio-leone/ui';
+import { useWeightUnit } from '@giulio-leone/lib-api/hooks';
+import { formatWeightByUnit } from '@giulio-leone/lib-shared';
+import { getWeekAndDayFromDate } from '@giulio-leone/lib-shared';
+import type { WorkoutProgram, ExerciseSet, WorkoutDay, Exercise } from '@giulio-leone/types/workout';
 
 // workoutApi is not needed in viewer - deletion is handled by parent
 

@@ -8,14 +8,14 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useMemo, useState } from 'react';
-import { useAuth } from '@onecoach/lib-api/hooks';
+import { useAuth } from '@giulio-leone/lib-api/hooks';
 import { useRouter } from 'next/navigation';
 import { Coins } from 'lucide-react';
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import { CreditCheckoutModal } from './credit-checkout-modal';
 import { PromoCodeInput } from './promo-code-input';
-import { CREDIT_PACK_OPTIONS } from '@onecoach/constants';
-import type { CreditPackOption } from "@onecoach/types-domain";
+import { CREDIT_PACK_OPTIONS } from '@giulio-leone/constants';
+import type { CreditPackOption } from "@giulio-leone/types/domain";
 
 export function CreditPacksSection() {
   const t = useTranslations('common');

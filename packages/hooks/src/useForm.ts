@@ -1,6 +1,6 @@
 import { useNavigationPersistence } from './use-navigation-persistence';
-import { useForm as useBaseForm } from '@onecoach/lib-shared/hooks/use-form';
-import type { UseFormOptions, UseFormReturn } from '@onecoach/lib-shared/hooks/use-form';
+import { useForm as useBaseForm } from '@giulio-leone/lib-shared/hooks/use-form';
+import type { UseFormOptions, UseFormReturn } from '@giulio-leone/lib-shared/hooks/use-form';
 
 export type UsePersistentFormOptions<T extends object> = UseFormOptions<T> & {
   /**

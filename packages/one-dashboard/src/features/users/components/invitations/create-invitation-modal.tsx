@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Input, Modal, ModalFooter, Select } from '@onecoach/ui';
+import { Button, Input, Modal, ModalFooter, Select } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { Loader2, Plus, Calendar, Hash, Users } from 'lucide-react';
 import { useTranslations } from 'next-intl';

@@ -1,2 +1,2 @@
-export { Input, type InputProps } from '@onecoach/ui-core';
+export { Input, type InputProps } from '@giulio-leone/ui-core';
 

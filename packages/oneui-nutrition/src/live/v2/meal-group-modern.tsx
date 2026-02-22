@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { ChevronDown, Utensils } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import type { Meal } from '@onecoach/types-nutrition';
-import type { FoodSwap } from '@onecoach/schemas';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { Meal } from '@giulio-leone/types/nutrition';
+import type { FoodSwap } from '@giulio-leone/schemas';
 import { LiveFoodItemModern } from './live-food-item-modern';
 
 export interface MealGroupModernProps {

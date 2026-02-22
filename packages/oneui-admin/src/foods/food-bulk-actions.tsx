@@ -8,9 +8,9 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useState } from 'react';
-import { Button, Checkbox } from '@onecoach/ui';
+import { Button, Checkbox } from '@giulio-leone/ui';
 import { Trash2, Edit, X } from 'lucide-react';
-import { useBatchFoodOperations } from '@onecoach/features/food/hooks';
+import { useBatchFoodOperations } from '@giulio-leone/features/food/hooks';
 
 
 interface FoodBulkActionsProps {
@@ -35,7 +35,7 @@ export function FoodBulkActions({
 
   const handleDelete = async () => {
     if (selectedCount === 0) return;
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(
       `Eliminare ${selectedCount} elemento${selectedCount > 1 ? 'i' : ''} selezionato${selectedCount > 1 ? 'i' : ''}?`
     );
@@ -48,7 +48,7 @@ export function FoodBulkActions({
       });
       onSuccess();
     } catch (error: unknown) {
-      const { dialog: dialogUtil } = await import('@onecoach/lib-stores');
+      const { dialog: dialogUtil } = await import('@giulio-leone/lib-stores');
       await dialogUtil.alert(
         error instanceof Error ? error.message : "Errore durante l'eliminazione"
       );
@@ -65,7 +65,7 @@ export function FoodBulkActions({
       setShowUpdateModal(false);
       onSuccess();
     } catch (error: unknown) {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       await dialog.alert(error instanceof Error ? error.message : "Errore durante l'aggiornamento");
     }
   };

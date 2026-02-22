@@ -6,11 +6,11 @@
  */
 'use client';
 import { useState } from 'react';
-import { AdminCard, Button } from '@onecoach/ui';
+import { AdminCard, Button } from '@giulio-leone/ui';
 import { Save, Info } from 'lucide-react';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
-import type { PlanPricing, CreditPackPricing } from '@onecoach/types-domain';
+import type { PlanPricing, CreditPackPricing } from '@giulio-leone/types/domain';
 
 type PlanPricingWithMeta = PlanPricing & { description?: string | null };
 

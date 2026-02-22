@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import type { MeshEvent } from '@onecoach/one-agent';
-import { apiClient } from '@onecoach/lib-api-client';
+import type { MeshEvent } from '@giulio-leone/one-agent';
+import { apiClient } from '@giulio-leone/lib-api-client';
 
 export interface GenerationStreamEvent<TOutput = unknown> {
   type: MeshEvent<TOutput>['type'];

@@ -11,7 +11,7 @@
 import { useTranslations } from 'next-intl';
 import { useState, useCallback, useRef, useMemo, useEffect } from 'react';
 import Image from 'next/image';
-import { Button, Modal, ModalFooter } from '@onecoach/ui';
+import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
 import {
   Upload,
   X,
@@ -27,12 +27,12 @@ import {
   Trash2,
   HelpCircle,
 } from 'lucide-react';
-import { handleApiError } from '@onecoach/lib-shared';
-import { cn } from '@onecoach/lib-design-system';
-import type { WorkoutImportResult } from '@onecoach/one-workout';
-import type { ImportProgress } from '@onecoach/lib-import-core';
-import { logger } from '@onecoach/lib-shared';
-import { createId } from '@onecoach/lib-core';
+import { handleApiError } from '@giulio-leone/lib-shared';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { WorkoutImportResult } from '@giulio-leone/one-workout';
+import type { ImportProgress } from '@giulio-leone/lib-import-core';
+import { logger } from '@giulio-leone/lib-shared';
+import { createId } from '@giulio-leone/lib-core';
 
 /**
  * Configurazione formati supportati

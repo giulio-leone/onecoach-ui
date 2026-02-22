@@ -1,13 +1,13 @@
 'use client';
 import NextImage from 'next/image';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   Button,
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
   ScrollArea,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { ChevronDownIcon, PaperclipIcon } from 'lucide-react';
 import type { ComponentProps } from 'react';
 export type QueueMessagePart = {

@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-analytics
+ * @giulio-leone/ui-analytics
  * Analytics dashboard UI components.
  */
 

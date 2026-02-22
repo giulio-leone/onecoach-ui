@@ -17,8 +17,8 @@ import {
   SuitcaseRolling,
   Check,
 } from '@phosphor-icons/react';
-import { WizardRadioGroup, DateRangePicker } from '@onecoach/ui';
-import { cn } from '@onecoach/lib-design-system';
+import { WizardRadioGroup, DateRangePicker } from '@giulio-leone/ui';
+import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
 
 import type { FlightSearchFormData, CabinClass } from './form';

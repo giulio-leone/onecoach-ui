@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { cn, darkModeClasses } from '@onecoach/lib-design-system';
+import { cn, darkModeClasses } from '@giulio-leone/lib-design-system';
 
 // ============================================================================
 // HEADING COMPONENT

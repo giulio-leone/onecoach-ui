@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { Clock, ArrowRight, PlaneTakeoff, PlaneLanding, Flame, Heart } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import { Card } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Card } from '@giulio-leone/ui';
 import { useTranslations } from 'next-intl';
-import type { Flight, FlightDirection } from '@onecoach/lib-shared';
+import type { Flight, FlightDirection } from '@giulio-leone/lib-shared';
 
 export type { Flight, FlightDirection };
 

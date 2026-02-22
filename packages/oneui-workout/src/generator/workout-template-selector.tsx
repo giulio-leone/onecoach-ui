@@ -22,10 +22,10 @@ import {
   CalendarDays,
   Filter,
 } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import { Card } from '@onecoach/ui';
-import { useDebounce } from '@onecoach/hooks';
-import type { WorkoutTemplate, WorkoutTemplateType } from "@onecoach/types-workout";
+import { cn } from '@giulio-leone/lib-design-system';
+import { Card } from '@giulio-leone/ui';
+import { useDebounce } from '@giulio-leone/hooks';
+import type { WorkoutTemplate, WorkoutTemplateType } from "@giulio-leone/types/workout";
 
 interface WorkoutTemplateSelectorProps {
   type?: WorkoutTemplateType; // Se specificato, filtra solo quel tipo

@@ -1,4 +1,4 @@
-import { ExerciseApprovalStatus } from "@onecoach/types-database";
+import { ExerciseApprovalStatus } from "@giulio-leone/types/database";
 
 export interface AdminMuscle {
   id: string;

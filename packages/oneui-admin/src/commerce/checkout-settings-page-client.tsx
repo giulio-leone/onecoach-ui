@@ -11,10 +11,10 @@ import {
   Select,
   StatCard,
   Switch,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { Activity, BarChart3, Check, Flame, Trash2 } from 'lucide-react';
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 type Settings = {
   oneClickEnabled: boolean;
@@ -176,7 +176,7 @@ export function CheckoutSettingsPageClient() {
   };
 
   const deleteOffer = async (offer: Offer) => {
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(t('offers.deleteConfirm', { name: offer.name }));
     if (!confirmed) return;
     try {

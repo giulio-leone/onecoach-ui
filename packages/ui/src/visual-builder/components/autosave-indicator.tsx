@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Check, AlertCircle, Loader2, Cloud } from 'lucide-react';
 
 export interface AutosaveIndicatorProps {

@@ -3,11 +3,11 @@
 import { useTranslations } from 'next-intl';
 import { useMemo, useRef } from 'react';
 import { X, Trophy, Clock, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-react';
-import { getExerciseSets } from '@onecoach/one-workout';
-import { formatDuration } from '@onecoach/lib-shared';
-import type { WorkoutSession } from '@onecoach/types-workout';
-import { type Exercise } from '@onecoach/schemas';
-import { Button, Heading, Text } from '@onecoach/ui';
+import { getExerciseSets } from '@giulio-leone/one-workout';
+import { formatDuration } from '@giulio-leone/lib-shared';
+import type { WorkoutSession } from '@giulio-leone/types/workout';
+import { type Exercise } from '@giulio-leone/schemas';
+import { Button, Heading, Text } from '@giulio-leone/ui';
 
 interface WorkoutCompleteModalProps {
   isOpen: boolean;
@@ -39,7 +39,7 @@ export function WorkoutCompleteModal({
 
   const totalVolume = useMemo(() => {
     return exercises.reduce((acc, exercise) => {
-      // getExerciseSets expects an Exercise from @onecoach/types which conflicts slightly with schemas
+      // getExerciseSets expects an Exercise from @giulio-leone/types which conflicts slightly with schemas
       // Specifically catalogExerciseId vs exerciseId. Since we only need setGroups, we cast to any.
       const sets = getExerciseSets(exercise as any);
       const exerciseVolume = sets.reduce((sAcc, set) => {

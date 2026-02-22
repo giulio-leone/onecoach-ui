@@ -1,5 +1,5 @@
 import type React from 'react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { KpiCard, type KpiCardProps } from './kpi-card';
 
 export interface DashboardHeaderProps {

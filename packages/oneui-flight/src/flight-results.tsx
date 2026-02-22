@@ -7,11 +7,11 @@ import {
   type FlightSearchResponse,
   type FlightDirection,
   groupFlightsByRoute,
-} from '@onecoach/lib-shared';
+} from '@giulio-leone/lib-shared';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Plane, PlaneLanding, PlaneTakeoff, SearchX, ArrowRight, Heart } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import { Button, Card, EmptyState } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Button, Card, EmptyState } from '@giulio-leone/ui';
 import { FlightCard } from './flight-card';
 import { RouteGroup } from './route-group';
 import {
@@ -19,7 +19,7 @@ import {
   type FlightAnalysis,
   type FlightRecommendation,
 } from './smart-analysis-panel';
-import { AgentEventList, useAdminMode, type ProgressField } from '@onecoach/one-agent-hooks';
+import { AgentEventList, useAdminMode, type ProgressField } from '@giulio-leone/one-agent-hooks';
 
 export type { FlightSearchResponse };
 

@@ -8,11 +8,11 @@
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { Save } from 'lucide-react';
-import { Button, Modal, ModalFooter } from '@onecoach/ui';
-import type { PolicyWithCreator } from '@onecoach/lib-core/policy.service';
-import type { PolicyType, PolicyStatus } from '@onecoach/types/client';
-import { useForm } from '@onecoach/hooks';
-import { handleApiError } from '@onecoach/lib-shared';
+import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
+import type { PolicyWithCreator } from '@giulio-leone/lib-core/policy.service';
+import type { PolicyType, PolicyStatus } from '@giulio-leone/types/client';
+import { useForm } from '@giulio-leone/hooks';
+import { handleApiError } from '@giulio-leone/lib-shared';
 interface PolicyFormModalProps {
   isOpen: boolean;
   policy?: PolicyWithCreator | null;

@@ -13,8 +13,8 @@
 
 import { useContext } from 'react';
 import { QueryClientContext } from '@tanstack/react-query';
-import { QueryProvider } from '@onecoach/lib-api/react-query';
-import { AdminRealtimeProvider } from '@onecoach/ui-core';
+import { QueryProvider } from '@giulio-leone/lib-api/react-query';
+import { AdminRealtimeProvider } from '@giulio-leone/ui-core';
 
 
 interface AdminClientLayoutProps {

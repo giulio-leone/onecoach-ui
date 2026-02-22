@@ -13,10 +13,10 @@
 
 import { useContext } from 'react';
 import { QueryClientContext } from '@tanstack/react-query';
-import { QueryProvider } from '@onecoach/lib-api/react-query';
-import { RealtimeProvider, SupabaseProvider } from '@onecoach/ui-core';
+import { QueryProvider } from '@giulio-leone/lib-api/react-query';
+import { RealtimeProvider, SupabaseProvider } from '@giulio-leone/ui-core';
 
-import { useGlobalCopilotContext } from '@onecoach/lib-copilot';
+import { useGlobalCopilotContext } from '@giulio-leone/lib-copilot';
 
 interface ProtectedClientLayoutProps {
   children: React.ReactNode;

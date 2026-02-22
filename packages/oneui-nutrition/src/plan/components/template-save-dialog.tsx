@@ -8,11 +8,11 @@
 'use client';
 
 import type React from 'react';
-import { Button } from '@onecoach/ui';
-import { Modal, ModalFooter } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
+import { Modal, ModalFooter } from '@giulio-leone/ui';
 import { useTranslations } from 'next-intl';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import type { NutritionTemplateType } from "@onecoach/types-nutrition";
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import type { NutritionTemplateType } from "@giulio-leone/types/nutrition";
 
 interface TemplateSaveDialogProps {
   isOpen: boolean;

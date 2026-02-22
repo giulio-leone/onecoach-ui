@@ -4,5 +4,5 @@ export {
   type ButtonVariant, 
   type ButtonSize, 
   type ButtonSharedProps 
-} from '@onecoach/ui-core';
+} from '@giulio-leone/ui-core';
 

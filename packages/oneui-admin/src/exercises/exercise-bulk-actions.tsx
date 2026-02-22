@@ -1,7 +1,7 @@
 'use client';
 
-import { Button, Checkbox } from '@onecoach/ui';
-import { cn } from '@onecoach/lib-design-system';
+import { Button, Checkbox } from '@giulio-leone/ui';
+import { cn } from '@giulio-leone/lib-design-system';
 import { ShieldCheck, ShieldX, Trash2 } from 'lucide-react';
 
 interface ExerciseBulkActionsProps {

@@ -4,7 +4,7 @@
  * Display card for a single client
  */
 'use client';
-import { Avatar, Badge, Card, Heading, Text } from '@onecoach/ui';
+import { Avatar, Badge, Card, Heading, Text } from '@giulio-leone/ui';
 import { formatDistanceToNow } from 'date-fns';
 import type { Locale } from 'date-fns';
 import { it, enUS } from 'date-fns/locale';
@@ -12,7 +12,7 @@ import { Clock, CreditCard, Dumbbell } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 
-import type { CoachClient } from '@onecoach/lib-api-client/queries/coach.queries';
+import type { CoachClient } from '@giulio-leone/lib-api-client/queries/coach.queries';
 
 interface CoachClientCardProps {
   client: CoachClient;

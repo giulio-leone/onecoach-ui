@@ -1,7 +1,7 @@
 
 import { Pressable, View, Text } from 'react-native';
 import { Check } from 'lucide-react-native';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface CheckboxProps {
     checked?: boolean;

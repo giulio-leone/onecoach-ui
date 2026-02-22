@@ -1,4 +1,4 @@
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
 import type { HTMLAttributes } from 'react';
 

@@ -6,8 +6,8 @@
  */
 
 'use client';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import type { Message } from "@onecoach/types-chat";
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import type { Message } from "@giulio-leone/types/chat";
 
 export interface MessageBubbleProps {
   message: Message;

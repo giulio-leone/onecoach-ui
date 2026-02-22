@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Button, Input, SelectionCard, WizardLayout } from '@onecoach/ui';
-import { cn } from '@onecoach/lib-design-system';
+import { Button, Input, SelectionCard, WizardLayout } from '@giulio-leone/ui';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Dumbbell, Clock, User, Zap, MapPin } from 'lucide-react';
 import type { ReactNode } from 'react';
 

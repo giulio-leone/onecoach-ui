@@ -5,7 +5,7 @@ import { useQueryClient } from '@tanstack/react-query';
 // We need access to the supabase client. Usually provided by a context or hook.
 // Assuming useSupabase or createClientComponentClient
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'; 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 export function useMaxesListRealtime() {
   const supabase = createClientComponentClient();

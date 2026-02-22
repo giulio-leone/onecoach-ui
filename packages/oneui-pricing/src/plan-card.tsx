@@ -9,10 +9,10 @@ import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import { Check, Sparkles } from 'lucide-react';
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import { PromoCodeInput } from './promo-code-input';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@onecoach/lib-api/hooks';
+import { useAuth } from '@giulio-leone/lib-api/hooks';
 // TODO: Move useReferralTracking to a shared package
 // import { useReferralTracking } from 'hooks/use-referral-tracking';
 

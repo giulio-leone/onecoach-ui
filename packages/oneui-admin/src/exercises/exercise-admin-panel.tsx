@@ -18,7 +18,7 @@ import {
   ResourceCard,
   type GlassTableColumn,
   Select,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { Edit, Trash2, Sparkles, Eye } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -27,9 +27,9 @@ import {
   useExercises,
   useDeleteExercise,
   useBatchExerciseOperations,
-} from '@onecoach/features/exercise/hooks';
-import type { ExercisesResponse } from '@onecoach/lib-api-client';
-import type { LocalizedExercise } from '@onecoach/lib-exercise';
+} from '@giulio-leone/features/exercise/hooks';
+import type { ExercisesResponse } from '@giulio-leone/lib-api-client';
+import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
 import type { AdminExercise } from './types';
 
 import { ExercisePagination } from './exercise-pagination';
@@ -39,7 +39,7 @@ import { ExerciseFilters } from './exercise-filters';
 import { ExerciseDetailDrawer } from './exercise-detail-drawer';
 import { type FilterStatus } from './exercise-constants';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 
 interface ExercisesAdminPanelProps {

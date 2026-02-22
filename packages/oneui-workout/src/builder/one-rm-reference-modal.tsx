@@ -2,10 +2,10 @@
 
 import { useState, useRef, useLayoutEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { Modal, ModalFooter, Button } from '@onecoach/ui';
+import { Modal, ModalFooter, Button } from '@giulio-leone/ui';
 import { Save, Search } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import type { Exercise } from '@onecoach/types-workout';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { Exercise } from '@giulio-leone/types/workout';
 
 interface OneRmReferenceModalProps {
   isOpen: boolean;

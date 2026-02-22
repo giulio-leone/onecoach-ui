@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl';
 
 import type { NutritionFormData } from 'app/features/nutrition';
-import { Sex } from '@onecoach/types/client';
-import { cn } from '@onecoach/lib-design-system';
+import { Sex } from '@giulio-leone/types/client';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Check, ArrowRight } from 'lucide-react';
 
 interface ReviewStepProps {

@@ -17,7 +17,7 @@ import { useTranslations } from 'next-intl';
 
 import { useRef, useEffect, useCallback, useState, memo, useMemo, type ReactNode } from 'react';
 import { CheckIcon, RefreshCw, Sparkles, StopCircle, X } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { useCoachChat } from '@/lib/chat';
 import type { UIMessage, MessagePart } from '@/lib/chat';
 
@@ -36,11 +36,11 @@ import {
   PromptInputSubmit,
   PromptInputButton,
   PromptInputTools,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { Reasoning, ReasoningTrigger, ReasoningContent } from '@/components/ai-elements/reasoning';
 
 // Stores
-import { useCopilotActiveContextStore, selectMcpActiveContext } from '@onecoach/lib-stores';
+import { useCopilotActiveContextStore, selectMcpActiveContext } from '@giulio-leone/lib-stores';
 import {
   Tool,
   ToolHeader,
@@ -61,7 +61,7 @@ import {
 } from '@/components/ai-elements/plan';
 import { Task, TaskTrigger, TaskContent, TaskItem } from '@/components/ai-elements/task';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 // ============================================================================
 // Types
 // ============================================================================

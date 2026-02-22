@@ -1,5 +1,5 @@
 'use client';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   Badge,
   Carousel,
@@ -9,7 +9,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
   type CarouselApi,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
 import {
   type ComponentProps,

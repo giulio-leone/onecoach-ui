@@ -1,3 +1,3 @@
 'use client';
 
-export { ThemeToggle } from '@onecoach/ui-core';
+export { ThemeToggle } from '@giulio-leone/ui-core';

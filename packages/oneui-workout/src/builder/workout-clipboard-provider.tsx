@@ -1,7 +1,7 @@
 'use client';
 
-import { createClipboardContext } from '@onecoach/ui';
-import type { Exercise } from '@onecoach/types-workout';
+import { createClipboardContext } from '@giulio-leone/ui';
+import type { Exercise } from '@giulio-leone/types/workout';
 
 const {
   Provider: ExerciseClipboardProvider,

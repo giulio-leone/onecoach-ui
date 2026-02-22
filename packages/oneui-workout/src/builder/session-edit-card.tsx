@@ -17,8 +17,8 @@ import { useState, useCallback, useMemo } from 'react';
 import { X, Plus, Copy, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { RangeInput, type RangeFieldType } from './range-input';
-import { syncSetValues, type FocusField, type SyncedValues } from '@onecoach/lib-workout';
-import type { ExerciseSet, SetGroup } from '@onecoach/types-workout';
+import { syncSetValues, type FocusField, type SyncedValues } from '@giulio-leone/lib-workout';
+import type { ExerciseSet, SetGroup } from '@giulio-leone/types/workout';
 
 // =====================================================
 // Types

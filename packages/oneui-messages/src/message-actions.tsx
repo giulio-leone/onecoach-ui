@@ -6,23 +6,23 @@
 
 'use client';
 
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@onecoach/ui-core';
+} from '@giulio-leone/ui-core';
 import {
   useMarkMessageImportant,
   useReportMessage,
   useDeleteDirectMessage,
-} from '@onecoach/lib-api-client/hooks';
+} from '@giulio-leone/lib-api-client/hooks';
 import { MoreVertical, Star, Flag, Trash2, Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import type { DirectMessageWithSender } from '@onecoach/lib-core';
+import type { DirectMessageWithSender } from '@giulio-leone/lib-core';
 
 export interface MessageActionsProps {
   message: DirectMessageWithSender;

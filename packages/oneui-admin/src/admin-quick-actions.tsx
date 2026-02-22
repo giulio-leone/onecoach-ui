@@ -1,6 +1,6 @@
 'use client';
 
-import { QuickActionsGrid } from '@onecoach/ui';
+import { QuickActionsGrid } from '@giulio-leone/ui';
 import {
   Users,
   TrendingUp,

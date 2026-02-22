@@ -8,7 +8,7 @@
 export * from './tokens';
 export * from './z-index';
 
-// Theme system (from @onecoach/lib-theme)
+// Theme system (from @giulio-leone/lib-theme)
 export {
     ThemeProvider,
     useTheme,
@@ -20,11 +20,11 @@ export {
     lightColors,
     darkColors,
     THEME_STORAGE_KEY,
-} from '@onecoach/lib-theme';
+} from '@giulio-leone/lib-theme';
 
 export type {
     ThemePreference,
     ResolvedTheme,
     ThemeColors,
     ThemeProviderProps,
-} from '@onecoach/lib-theme';
+} from '@giulio-leone/lib-theme';

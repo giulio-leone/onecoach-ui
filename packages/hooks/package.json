@@ -1,43 +1,56 @@
 {
-  "name": "@onecoach/hooks",
-  "version": "0.0.0",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "name": "@giulio-leone/hooks",
+  "version": "0.1.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./*": {
-      "types": "./src/*.ts",
-      "default": "./src/*.ts"
-    },
-    "./useForm": {
-      "types": "./src/useForm.ts",
-      "default": "./src/useForm.ts"
-    },
-    "./useFeatureFlag": {
-      "types": "./src/useFeatureFlag.ts",
-      "default": "./src/useFeatureFlag.ts"
+      "import": {
+        "types": "./dist/*.d.ts",
+        "default": "./dist/*.js"
+      },
+      "require": {
+        "types": "./dist/*.d.cts",
+        "default": "./dist/*.cjs"
+      }
     }
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
   "scripts": {
+    "build": "tsup",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@onecoach/lib-shared": "workspace:*",
-    "@onecoach/one-agent-hooks": "workspace:*",
-    "@onecoach/schemas": "workspace:*",
-    "@onecoach/constants": "workspace:*",
-    "@onecoach/types-core": "workspace:*",
-    "@onecoach/types-workout": "workspace:*",
-    "@onecoach/types-nutrition": "workspace:*",
-    "@onecoach/types-chat": "workspace:*",
-    "@onecoach/types-analytics": "workspace:*",
-    "@onecoach/types-ai": "workspace:*",
-    "@onecoach/types-ui": "workspace:*",
-    "@onecoach/types-domain": "workspace:*",
-    "@onecoach/types-database": "workspace:*",
+    "@giulio-leone/constants": "^0.1.0",
+    "@giulio-leone/lib-ai": "^0.1.0",
+    "@giulio-leone/lib-api-client": "^0.1.0",
+    "@giulio-leone/lib-core": "^0.1.0",
+    "@giulio-leone/lib-shared": "^0.1.0",
+    "@giulio-leone/lib-stores": "^0.1.0",
+    "@giulio-leone/one-agent": "^0.1.0",
+    "@giulio-leone/one-agent-hooks": "^0.1.0",
+    "@giulio-leone/schemas": "^0.1.0",
+    "@giulio-leone/translations": "^0.1.0",
+    "@giulio-leone/types": "^0.1.0",
+    "@giulio-leone/ui": "^0.1.0",
     "@supabase/auth-helpers-nextjs": "^0.8.7"
   },
   "peerDependencies": {
@@ -48,9 +61,5 @@
     "react-native": {
       "optional": true
     }
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3"
-  },
-  "sideEffects": false
+  }
 }

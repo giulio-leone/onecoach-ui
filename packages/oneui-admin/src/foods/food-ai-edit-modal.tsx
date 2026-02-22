@@ -7,12 +7,12 @@
 
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { Button, Modal, ModalFooter } from '@onecoach/ui';
-import { cn } from '@onecoach/lib-design-system';
-import { LoadingState, ErrorState } from '@onecoach/ui/components';
+import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 import { Brain, Sparkles, X } from 'lucide-react';
-import { useUpdateFoodWithAI } from '@onecoach/features/food/hooks';
-import { logger } from '@onecoach/lib-shared';
+import { useUpdateFoodWithAI } from '@giulio-leone/features/food/hooks';
+import { logger } from '@giulio-leone/lib-shared';
 interface FoodAiEditModalProps {
   isOpen: boolean;
   foodId: string;

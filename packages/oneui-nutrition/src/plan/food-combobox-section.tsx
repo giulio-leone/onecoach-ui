@@ -10,8 +10,8 @@ import { useTranslations } from 'next-intl';
 
 import { Plus } from 'lucide-react';
 import { FoodCombobox } from '../food/food-combobox';
-import type { FoodItem } from '@onecoach/types-nutrition';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import type { FoodItem } from '@giulio-leone/types/nutrition';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 
 interface FoodComboboxSectionProps {
   onSelect: (foodItem: FoodItem) => void;

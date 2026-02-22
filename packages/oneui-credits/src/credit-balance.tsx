@@ -8,12 +8,12 @@ import { useTranslations } from 'next-intl';
  */
 
 import { Coins, Infinity, TrendingUp, TrendingDown } from 'lucide-react';
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import { Link } from 'app/navigation';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import { useCredits, useCurrentUser } from '@onecoach/lib-api/hooks';
-import { creditsKeys } from '@onecoach/lib-api/queries/credits.queries';
-import { useRealtimeInvalidator } from '@onecoach/hooks';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import { useCredits, useCurrentUser } from '@giulio-leone/lib-api/hooks';
+import { creditsKeys } from '@giulio-leone/lib-api/queries/credits.queries';
+import { useRealtimeInvalidator } from '@giulio-leone/hooks';
 
 export function CreditBalance() {
   const t = useTranslations('common');

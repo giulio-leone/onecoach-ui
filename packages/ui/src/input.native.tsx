@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, TextInput } from 'react-native';
 import type { TextInputProps } from 'react-native';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface InputProps extends TextInputProps {
     label?: string;

@@ -21,7 +21,7 @@ import { useState, useCallback, useMemo, useEffect } from 'react';
 import * as Popover from '@radix-ui/react-popover';
 import { Calendar, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   type DatePickerProps,
   defaultTranslations,

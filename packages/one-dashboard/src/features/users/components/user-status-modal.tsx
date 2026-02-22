@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Modal, ModalFooter, type ButtonVariant } from '@onecoach/ui';
+import { Button, Modal, ModalFooter, type ButtonVariant } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { Loader2, UserCheck, UserX, AlertTriangle, Trash2 } from 'lucide-react';
-import type { UserWithCounts } from '@onecoach/types/prisma-helpers';
+import type { UserWithCounts } from '@giulio-leone/types/prisma-helpers';
 import { useTranslations } from 'next-intl';
 
 type ActionType = 'suspend' | 'activate' | 'delete';

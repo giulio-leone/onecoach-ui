@@ -8,7 +8,7 @@
 
 import { useState, Suspense, lazy, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   CreditCard,
   Activity,
@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { TabSkeleton, StatCard } from '../shared';
-import type { CreditPackPricing, PlanPricing } from '@onecoach/types-domain';
+import type { CreditPackPricing, PlanPricing } from '@giulio-leone/types/domain';
 
 // Lazy load heavy sub-components
 const PlansConfigForm = lazy(() =>

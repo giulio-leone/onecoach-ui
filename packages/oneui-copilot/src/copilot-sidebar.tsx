@@ -13,12 +13,12 @@
 
 'use client';
 
-import { UnifiedChat } from '@onecoach/lib-chat-core/client';
-import type { ScreenContextType } from '@onecoach/lib-chat-core/types';
-import { useCopilotStore } from '@onecoach/lib-stores';
+import { UnifiedChat } from '@giulio-leone/lib-chat-core/client';
+import type { ScreenContextType } from '@giulio-leone/lib-chat-core/types';
+import { useCopilotStore } from '@giulio-leone/lib-stores';
 import { CopilotResizeHandle } from './copilot-resize-handle';
-import type { NutritionPlan } from '@onecoach/types-nutrition';
-import type { WorkoutProgram } from '@onecoach/types-workout';
+import type { NutritionPlan } from '@giulio-leone/types/nutrition';
+import type { WorkoutProgram } from '@giulio-leone/types/workout';
 
 export interface CopilotSidebarProps {
   contextType:

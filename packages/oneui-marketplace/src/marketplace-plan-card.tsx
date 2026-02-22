@@ -12,7 +12,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Star, Users, CheckCircle2 } from 'lucide-react';
-import { Card } from '@onecoach/ui';
+import { Card } from '@giulio-leone/ui';
 
 export interface MarketplacePlanCardProps {
   id: string;

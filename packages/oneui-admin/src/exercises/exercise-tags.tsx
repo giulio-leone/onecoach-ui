@@ -11,8 +11,8 @@ import { useTranslations } from 'next-intl';
 
 import { useState, useMemo } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import type { LocalizedExercise } from '@onecoach/lib-exercise';
-import { cn } from '@onecoach/lib-design-system';
+import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
+import { cn } from '@giulio-leone/lib-design-system';
 
 interface ExerciseTagsProps {
   exercise: LocalizedExercise;

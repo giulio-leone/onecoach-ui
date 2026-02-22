@@ -2,8 +2,8 @@
 
 import { ChevronLeft, Flame, Droplets, Wheat, Beef, Utensils, Play } from 'lucide-react';
 import { MealGroupModern } from '../live/v2/meal-group-modern';
-import { Heading, Text, Button } from '@onecoach/ui';
-import type { NutritionPlan, Meal } from '@onecoach/types-nutrition';
+import { Heading, Text, Button } from '@giulio-leone/ui';
+import type { NutritionPlan, Meal } from '@giulio-leone/types/nutrition';
 
 
 // --- MAIN COMPONENT ---

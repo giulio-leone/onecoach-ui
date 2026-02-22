@@ -9,7 +9,7 @@
 
 import { useState, useRef, useCallback } from 'react';
 import { Clock, Calculator } from 'lucide-react';
-import { kgToLbs, lbsToKg, getWeightValue } from '@onecoach/lib-shared';
+import { kgToLbs, lbsToKg, getWeightValue } from '@giulio-leone/lib-shared';
 import { useBidirectionalWeightCalc } from '../hooks/use-bidirectional-weight-calc';
 import type { BuilderExerciseSet as ExerciseSet } from './builder-types';
 

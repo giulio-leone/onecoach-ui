@@ -7,7 +7,7 @@
 
 'use client';
 
-import { useCopilotStore } from '@onecoach/lib-stores';
+import { useCopilotStore } from '@giulio-leone/lib-stores';
 import { CopilotSidebar } from './copilot-sidebar';
 
 export function CopilotWrapper() {

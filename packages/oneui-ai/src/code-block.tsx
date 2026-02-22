@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@onecoach/lib-design-system';
-import { Button } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Button } from '@giulio-leone/ui';
 import { CheckIcon, CopyIcon } from 'lucide-react';
 import {
   type ComponentProps,

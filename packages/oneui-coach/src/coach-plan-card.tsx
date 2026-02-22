@@ -7,9 +7,9 @@ import { useTranslations } from 'next-intl';
  * Display card for coach's plan in repository
  */
 import Link from 'next/link';
-import { Button, Card } from '@onecoach/ui';
+import { Button, Card } from '@giulio-leone/ui';
 import { Star, Eye, Edit, Trash2, EyeOff, ExternalLink } from 'lucide-react';
-import type { MarketplacePlanType } from '@onecoach/types/client';
+import type { MarketplacePlanType } from '@giulio-leone/types/client';
 export interface CoachPlanCardProps {
   id: string;
   title: string;
@@ -54,7 +54,7 @@ export function CoachPlanCard({
   };
   const handleDelete = async () => {
     if (onDelete) {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       const confirmed = await dialog.confirm('Sei sicuro di voler eliminare questo piano?');
       if (confirmed) {
         onDelete(id);

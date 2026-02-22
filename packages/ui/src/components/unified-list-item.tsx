@@ -5,7 +5,7 @@
  * and recurring Habits in a unified "Agenda" view.
  */
 
-import { cn } from '@onecoach/lib-design-system/dark-mode-classes';
+import { cn } from '@giulio-leone/lib-design-system/dark-mode-classes';
 import { Badge } from '../badge';
 import { CheckCircle2, Clock, Repeat, Circle } from 'lucide-react';
 

@@ -16,15 +16,15 @@ import {
   MoreVertical,
   Check,
 } from 'lucide-react';
-import { DifficultyLevel } from '@onecoach/types-workout';
-import { getWeekAndDayFromDate, getWorkoutProgramWeek } from '@onecoach/one-workout';
-import { Card, Spinner } from '@onecoach/ui';
-import { GlassContainer, ScaleTouch } from '@onecoach/ui-core';
+import { DifficultyLevel } from '@giulio-leone/types/workout';
+import { getWeekAndDayFromDate, getWorkoutProgramWeek } from '@giulio-leone/one-workout';
+import { Card, Spinner } from '@giulio-leone/ui';
+import { GlassContainer, ScaleTouch } from '@giulio-leone/ui-core';
 
-import { dialog } from '@onecoach/lib-stores';
+import { dialog } from '@giulio-leone/lib-stores';
 
-import { logger } from '@onecoach/lib-shared';
-import type { WorkoutProgram, WorkoutDay } from '@onecoach/types-workout';
+import { logger } from '@giulio-leone/lib-shared';
+import type { WorkoutProgram, WorkoutDay } from '@giulio-leone/types/workout';
 
 // --- HELPER COMPONENTS ---
 

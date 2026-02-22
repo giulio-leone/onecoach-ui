@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-features
+ * @giulio-leone/ui-features
  * Feature-related UI components.
  */
 

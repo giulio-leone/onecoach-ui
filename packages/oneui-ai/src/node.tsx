@@ -1,4 +1,4 @@
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   Card,
   CardAction,
@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { Handle, Position } from '@xyflow/react';
 import type { ComponentProps } from 'react';
 

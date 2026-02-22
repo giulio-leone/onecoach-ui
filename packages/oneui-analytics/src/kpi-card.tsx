@@ -1,5 +1,5 @@
-import { cn } from '@onecoach/lib-design-system';
-import { Heading, Text } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Heading, Text } from '@giulio-leone/ui';
 
 export interface KpiCardProps {
   label: string;

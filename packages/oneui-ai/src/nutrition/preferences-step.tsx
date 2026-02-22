@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 import { DietType } from 'app/features/nutrition';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import type { NutritionFormData } from 'app/features/nutrition';
 import { Leaf, Info, AlertCircle } from 'lucide-react';
 

@@ -5,7 +5,7 @@
 
 'use client';
 
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 interface SkeletonProps {
   className?: string;

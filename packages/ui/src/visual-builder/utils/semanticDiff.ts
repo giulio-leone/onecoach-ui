@@ -1,4 +1,4 @@
-import type { StateDiff } from '@onecoach/hooks';
+import type { StateDiff } from '@giulio-leone/hooks';
 // @ts-ignore
 import get from 'lodash/get';
 

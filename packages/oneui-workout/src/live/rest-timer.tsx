@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
 import { Timer, Volume2, VolumeX, Minus, Plus, Pause, Play, FastForward, X, Dumbbell } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import { Card, Button } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Card, Button } from '@giulio-leone/ui';
 
 interface RestTimerProps {
   duration: number;

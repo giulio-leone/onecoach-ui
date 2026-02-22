@@ -42,7 +42,7 @@ import {
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { Button } from '../../button';
 import { Plus } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface DayEditorShellProps {
   /** Day title (e.g., "Giorno 1", day name) */

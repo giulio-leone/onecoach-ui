@@ -8,7 +8,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Save, Loader2, Bot, Zap, Coins, BrainCircuit, Cpu } from 'lucide-react';
 import { toast } from 'sonner';
 import type { OperationConfig, AIModel } from './types';

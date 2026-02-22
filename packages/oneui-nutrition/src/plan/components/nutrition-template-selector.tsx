@@ -20,12 +20,12 @@ import {
 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import { SelectionActionBarWeb } from './selection-action-bar-web';
-import { EmptyState } from '@onecoach/ui-core';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import { logger } from '@onecoach/lib-shared';
-import type { NutritionTemplate, NutritionTemplateType } from "@onecoach/types-nutrition";
+import { EmptyState } from '@giulio-leone/ui-core';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import { logger } from '@giulio-leone/lib-shared';
+import type { NutritionTemplate, NutritionTemplateType } from "@giulio-leone/types/nutrition";
 import { format } from 'date-fns';
 
 type NutritionTemplateSelectorProps = {

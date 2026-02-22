@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-user
+ * @giulio-leone/ui-user
  * User/admin UI components.
  */
 

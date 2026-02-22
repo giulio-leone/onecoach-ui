@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { UnifiedListItem } from './unified-list-item';
 import type { HabitProps } from './habit-card';
 

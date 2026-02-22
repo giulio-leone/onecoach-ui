@@ -3,9 +3,9 @@
 import { useTranslations } from 'next-intl';
 
 import Link from 'next/link';
-import type { PatternNutritionGenerationOutput } from '@onecoach/schemas';
-import { cn } from '@onecoach/lib-design-system';
-import { animations } from '@onecoach/lib-design-system/animations';
+import type { PatternNutritionGenerationOutput } from '@giulio-leone/schemas';
+import { cn } from '@giulio-leone/lib-design-system';
+import { animations } from '@giulio-leone/lib-design-system/animations';
 import { CheckCircle2, ArrowRight, CalendarDays } from 'lucide-react';
 
 interface GenerationSuccessProps {

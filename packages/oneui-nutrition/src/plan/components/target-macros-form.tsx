@@ -6,8 +6,8 @@
  */
 
 'use client';
-import { MacroDisplay } from '@onecoach/ui-nutrition';
-import type { NutritionPlan, Macros } from "@onecoach/types-nutrition";
+import { MacroDisplay } from '@giulio-leone/ui-nutrition';
+import type { NutritionPlan, Macros } from "@giulio-leone/types/nutrition";
 
 interface TargetMacrosFormProps {
   plan: NutritionPlan;

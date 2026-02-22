@@ -5,12 +5,12 @@ import { useState } from 'react';
 const Pressable = (props: any) => <View {...props} />;
 import { View, Text } from 'react-native';
 
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import { Plus, Dumbbell } from 'lucide-react-native';
 import { ExerciseCard } from './exercise-card.native';
 import { ExerciseSelector } from './exercise-selector';
 import { useTranslations } from 'next-intl';
-import type { WorkoutDay, Exercise } from '@onecoach/types-workout';
+import type { WorkoutDay, Exercise } from '@giulio-leone/types/workout';
 
 interface DayEditorProps {
   day: WorkoutDay;

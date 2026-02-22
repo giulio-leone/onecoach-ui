@@ -13,8 +13,8 @@ import {
   TrendingUp,
   ArrowDown,
 } from 'lucide-react';
-import { AffiliateRewardStatus } from '@onecoach/types/client';
-import type { AffiliateRewardType } from '@onecoach/types/client';
+import { AffiliateRewardStatus } from '@giulio-leone/types/client';
+import type { AffiliateRewardType } from '@giulio-leone/types/client';
 
 interface AffiliateRewardsTableProps {
   rewards: Array<{

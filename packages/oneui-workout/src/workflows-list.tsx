@@ -7,11 +7,11 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useState, useEffect } from 'react';
-import { useWorkflows } from '@onecoach/lib-visual-builder/hooks';
-import type { Workflow } from '@onecoach/lib-visual-builder/types';
+import { useWorkflows } from '@giulio-leone/lib-visual-builder/hooks';
+import type { Workflow } from '@giulio-leone/lib-visual-builder/types';
 import { Plus, Edit, Trash2, Code, Rocket, Calendar, Network } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
-import { Checkbox } from '@onecoach/ui';
+import { Checkbox } from '@giulio-leone/ui';
 
 interface WorkflowsListProps {
   onEdit?: (workflow: Workflow) => void;

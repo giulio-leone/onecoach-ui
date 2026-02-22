@@ -9,13 +9,13 @@ const XPlatInput = (props: any) => <View {...props} />;
 const Pressable = (props: any) => <View {...props} />;
 
 import { useRouter } from 'expo-router'; // Fix import
-import { Card } from '@onecoach/ui';
+import { Card } from '@giulio-leone/ui';
 import { ArrowLeft, Save, Plus, Trash2 } from 'lucide-react-native';
 import { DifficultyLevel, WorkoutStatus } from '@prisma/client';
 import { DayEditor } from './day-editor';
 
-import { logger } from '@onecoach/lib-shared';
-import type { WorkoutProgram, WorkoutDay, WorkoutWeek } from '@onecoach/types-workout';
+import { logger } from '@giulio-leone/lib-shared';
+import type { WorkoutProgram, WorkoutDay, WorkoutWeek } from '@giulio-leone/types/workout';
 
 interface WorkoutVisualBuilderProps {
   initialProgram?: WorkoutProgram;

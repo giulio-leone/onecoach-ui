@@ -1,6 +1,6 @@
 'use client';
 
-import { Heading, Label, SelectionCard, Text, Textarea } from '@onecoach/ui';
+import { Heading, Label, SelectionCard, Text, Textarea } from '@giulio-leone/ui';
 import {
   Sparkles,
   Calendar,
@@ -12,7 +12,7 @@ import {
   Layout,
   Zap,
 } from 'lucide-react';
-import { cn, darkModeClasses } from '@onecoach/lib-design-system';
+import { cn, darkModeClasses } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
 
 // Standard Mesh Wizard
@@ -20,8 +20,8 @@ import {
   MeshWizard,
   type MeshWizardStep,
   type MeshWizardStepProps,
-} from '@onecoach/ui-agent';
-import { useOneAgendaGeneration } from '@onecoach/hooks';
+} from '@giulio-leone/ui-agent';
+import { useOneAgendaGeneration } from '@giulio-leone/hooks';
 
 // ----------------------------------------------------------------------------
 // Types

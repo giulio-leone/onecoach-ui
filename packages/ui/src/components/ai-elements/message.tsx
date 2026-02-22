@@ -10,7 +10,7 @@
 import { useState, forwardRef, type ReactNode, type ComponentProps } from 'react';
 import { motion } from 'framer-motion';
 import { Bot, Copy, Check, User } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';

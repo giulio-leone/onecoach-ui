@@ -3,9 +3,9 @@
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Dumbbell, Loader2, CheckCircle2, XCircle, Clock } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, Progress } from '@onecoach/ui';
-import { cn } from '@onecoach/lib-design-system';
-import type { GenerationWithStatus } from '@onecoach/hooks';
+import { Card, CardContent, CardHeader, CardTitle, Progress } from '@giulio-leone/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { GenerationWithStatus } from '@giulio-leone/hooks';
 
 /**
  * Props for WorkoutGeneratingCard component

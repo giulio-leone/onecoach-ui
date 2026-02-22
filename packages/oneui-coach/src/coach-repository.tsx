@@ -8,13 +8,13 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { CoachPlanCard, type CoachPlanCardProps } from './coach-plan-card';
-import { EmptyState, Button } from '@onecoach/ui';
+import { EmptyState, Button } from '@giulio-leone/ui';
 import { Filter, Plus, Package } from 'lucide-react';
-import { useCoachDashboardPlans } from '@onecoach/features/coach/hooks';
-import type { MarketplacePlanCardProps } from '@onecoach/features/coach/hooks';
-import { LoadingState, ErrorState } from '@onecoach/ui/components';
+import { useCoachDashboardPlans } from '@giulio-leone/features/coach/hooks';
+import type { MarketplacePlanCardProps } from '@giulio-leone/features/coach/hooks';
+import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 import { useTranslations } from 'next-intl';
-import type { MarketplacePlanType } from "@onecoach/types/client";
+import type { MarketplacePlanType } from "@giulio-leone/types/client";
 
 interface CoachRepositoryProps {
   onPlanPublish?: (id: string) => Promise<void>;

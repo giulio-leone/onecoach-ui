@@ -1,8 +1,8 @@
 'use client';
 
 
-import { cn } from '@onecoach/lib-design-system';
-import { Button } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Button } from '@giulio-leone/ui';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +10,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { ChevronDownIcon, ExternalLinkIcon, MessageCircleIcon } from 'lucide-react';
 import { type ComponentProps, createContext, useContext } from 'react';
 

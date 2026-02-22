@@ -1,5 +1,5 @@
 import { defineRouting } from 'next-intl/routing';
-import { locales, defaultLocale } from '@onecoach/translations';
+import { locales, defaultLocale } from '@giulio-leone/translations';
 
 export const routing = defineRouting({
   locales,

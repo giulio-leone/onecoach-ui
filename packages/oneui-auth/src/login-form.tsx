@@ -11,10 +11,10 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';
 import { Link } from 'app/navigation';
-import { Button, Checkbox, Input } from '@onecoach/ui';
-import { useForm } from '@onecoach/hooks';
-import { isValidEmail } from '@onecoach/lib-shared';
-import { cn } from '@onecoach/lib-design-system';
+import { Button, Checkbox, Input } from '@giulio-leone/ui';
+import { useForm } from '@giulio-leone/hooks';
+import { isValidEmail } from '@giulio-leone/lib-shared';
+import { cn } from '@giulio-leone/lib-design-system';
 
 interface LoginFormValues {
   email: string;

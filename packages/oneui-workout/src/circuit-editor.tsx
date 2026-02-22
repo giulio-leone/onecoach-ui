@@ -1,4 +1,4 @@
 'use client';
-import { CircuitEditor } from '@onecoach/ui-workout';
+import { CircuitEditor } from '@giulio-leone/ui-workout';
 export { CircuitEditor };
 export default CircuitEditor;

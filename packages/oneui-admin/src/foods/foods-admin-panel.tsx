@@ -19,24 +19,24 @@ import {
   GlassTable,
   Combobox,
   type GlassTableColumn,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import {
   useFoods,
   useBatchFoodOperations,
   useFoodFilters,
   useFoodSelection,
-} from '@onecoach/features/food/hooks';
+} from '@giulio-leone/features/food/hooks';
 import { FoodFormModal } from './food-form-modal';
 import { FoodImportModal } from './food-import-modal';
 import { FoodScanModal } from './food-scan-modal';
 import { FoodAiEditModal } from './food-ai-edit-modal';
 import { FoodAiModal } from './food-ai-modal';
-import { FoodDetailDrawer } from '@onecoach/ui-nutrition';
+import { FoodDetailDrawer } from '@giulio-leone/ui-nutrition';
 import { FoodPagination } from './food-pagination';
 import { FoodBulkActions } from './food-bulk-actions';
-import { sanitizeImageUrl } from '@onecoach/lib-shared';
-import type { Food, FoodsResponse, FoodListParams } from '@onecoach/lib-api';
-import { useAllAdminFoodsRealtime } from '@onecoach/hooks';
+import { sanitizeImageUrl } from '@giulio-leone/lib-shared';
+import type { Food, FoodsResponse, FoodListParams } from '@giulio-leone/lib-api';
+import { useAllAdminFoodsRealtime } from '@giulio-leone/hooks';
 
 interface FoodsAdminPanelProps {
   initialData?: FoodsResponse | null;

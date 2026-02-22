@@ -4,10 +4,10 @@
  * Display list of conversations with unread badges and priority indicators
  */
 'use client';
-import { Avatar, Badge, Card } from '@onecoach/ui';
+import { Avatar, Badge, Card } from '@giulio-leone/ui';
 import { formatDistanceToNow } from 'date-fns';
 import { it } from 'date-fns/locale';
-import type { DirectConversationWithUser } from '@onecoach/lib-core';
+import type { DirectConversationWithUser } from '@giulio-leone/lib-core';
 import { BellOff, Star } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 

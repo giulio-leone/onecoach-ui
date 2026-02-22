@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, Button, Input, Badge } from '@onecoach/ui';
+import { Card, Button, Input, Badge } from '@giulio-leone/ui';
 import { Trash2, Clock, Activity, Route, Heart, Zap } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { motion } from 'framer-motion';
-import type { CardioExercise, CardioMachine, CardioIntensity } from '@onecoach/schemas';
+import type { CardioExercise, CardioMachine, CardioIntensity } from '@giulio-leone/schemas';
 
 // ============================================================================
 // Types for Builder

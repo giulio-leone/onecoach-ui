@@ -9,11 +9,11 @@ import { useTranslations } from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
 import { signIn } from 'next-auth/react';
 import { X, User, Mail, Lock, ArrowRight, Sparkles } from 'lucide-react';
-import { Button, Input } from '@onecoach/ui';
-import { useForm } from '@onecoach/hooks';
-import { isValidEmail, validatePassword, passwordsMatch } from '@onecoach/lib-shared';
-import { handleApiError } from '@onecoach/lib-shared';
-import type { CreditPackOption } from '@onecoach/types-domain';
+import { Button, Input } from '@giulio-leone/ui';
+import { useForm } from '@giulio-leone/hooks';
+import { isValidEmail, validatePassword, passwordsMatch } from '@giulio-leone/lib-shared';
+import { handleApiError } from '@giulio-leone/lib-shared';
+import type { CreditPackOption } from '@giulio-leone/types/domain';
 
 export type CheckoutMode = 'login' | 'register' | 'express';
 interface CreditCheckoutModalProps {

@@ -2,7 +2,7 @@
 
 import { format, differenceInDays, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
 import { it } from 'date-fns/locale';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface ProjectTask {
   id: string;

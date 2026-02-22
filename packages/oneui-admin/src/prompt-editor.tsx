@@ -3,12 +3,12 @@
 import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
-import { Button, Checkbox } from '@onecoach/ui';
+import { Button, Checkbox } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { Save, X, Eye } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 // Lazy load Monaco Editor
 const MonacoEditor = dynamic(() => import('@monaco-editor/react'), { ssr: false });

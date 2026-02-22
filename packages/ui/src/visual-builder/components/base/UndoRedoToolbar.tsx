@@ -9,7 +9,7 @@
 'use client';
 
 import { Undo2, Redo2, History } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface UndoRedoToolbarProps {
   /** Whether undo is available */

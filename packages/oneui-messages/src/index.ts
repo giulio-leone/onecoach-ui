@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-messages
+ * @giulio-leone/ui-messages
  * Messaging UI components.
  */
 

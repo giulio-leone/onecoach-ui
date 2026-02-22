@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Input } from '../input';
 import { Select } from '../select';
 import { Search, Check, ChevronsUpDown, Sparkles, Box, Cpu, Zap } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import type { ModelOption } from './model-selector-modal';
 import { Drawer } from '../drawer';
 

@@ -1,6 +1,6 @@
 'use client';
-import { cn } from '@onecoach/lib-design-system';
-import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@giulio-leone/ui';
 import { type LucideIcon, XIcon } from 'lucide-react';
 import type { ComponentProps, HTMLAttributes } from 'react';
 export type ArtifactProps = HTMLAttributes<HTMLDivElement>;

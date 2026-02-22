@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Card } from './card';
 
 interface StatCardProps {

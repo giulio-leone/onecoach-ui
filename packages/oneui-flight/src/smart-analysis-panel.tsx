@@ -22,9 +22,9 @@ import {
   ArrowRight,
   ShieldCheck,
 } from '@phosphor-icons/react';
-import { cn } from '@onecoach/lib-design-system';
-import { Button, Badge } from '@onecoach/ui';
-import type { FlightAnalysis, FlightRecommendation } from '@onecoach/types-flight';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Button, Badge } from '@giulio-leone/ui';
+import type { FlightAnalysis, FlightRecommendation } from '@giulio-leone/types/flight';
 
 // Re-export types for consumers
 export type { FlightAnalysis, FlightRecommendation };

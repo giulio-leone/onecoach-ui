@@ -22,8 +22,8 @@ import {
   Plane,
 } from 'lucide-react';
 import { ModernSidebar, type SidebarNavigationItem } from '../modern-sidebar';
-import { useSignOut } from '@onecoach/lib-api/hooks';
-import { useUIStore } from '@onecoach/lib-stores';
+import { useSignOut } from '@giulio-leone/lib-api/hooks';
+import { useUIStore } from '@giulio-leone/lib-stores';
 
 export interface AppShellSidebarProps {
   user: AuthenticatedUser;
@@ -33,7 +33,7 @@ export interface AppShellSidebarProps {
 // ... imports kept ... (Logic below replaces the function body)
 
 import { useTranslations } from 'next-intl';
-import type { AuthenticatedUser } from "@onecoach/types-core";
+import type { AuthenticatedUser } from "@giulio-leone/types/core";
 
 export function AppShellSidebar({
   user, navigation: propsNavigation }: AppShellSidebarProps) {

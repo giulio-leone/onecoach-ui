@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl';
 
 import { useEffect, useMemo, useState } from 'react';
-import { Input } from '@onecoach/ui';
-import { useDebounce } from '@onecoach/hooks';
+import { Input } from '@giulio-leone/ui';
+import { useDebounce } from '@giulio-leone/hooks';
 
 
 interface BrandOption {

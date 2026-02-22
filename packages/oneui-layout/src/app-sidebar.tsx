@@ -1,8 +1,8 @@
 'use client';
 
-import { AppShellSidebar } from '@onecoach/ui';
-import { useAppNavigation } from '@onecoach/hooks';
-import type { AuthenticatedUser } from "@onecoach/types-core";
+import { AppShellSidebar } from '@giulio-leone/ui';
+import { useAppNavigation } from '@giulio-leone/hooks';
+import type { AuthenticatedUser } from "@giulio-leone/types/core";
 
 interface AppSidebarProps {
   user: AuthenticatedUser;

@@ -14,9 +14,9 @@ import {
   Clock,
   ShoppingCart,
 } from 'lucide-react';
-import { getWeekAndDayFromDate } from '@onecoach/lib-shared';
-import { Spinner, Heading, Text, Button } from '@onecoach/ui';
-import type { NutritionPlan, Meal, NutritionDay } from '@onecoach/types-nutrition';
+import { getWeekAndDayFromDate } from '@giulio-leone/lib-shared';
+import { Spinner, Heading, Text, Button } from '@giulio-leone/ui';
+import type { NutritionPlan, Meal, NutritionDay } from '@giulio-leone/types/nutrition';
 
 // --- HELPER COMPONENTS ---
 

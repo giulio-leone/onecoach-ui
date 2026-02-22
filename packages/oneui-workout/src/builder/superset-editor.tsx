@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
-import { Card, Button, Input, Badge } from '@onecoach/ui';
+import { Card, Button, Input, Badge } from '@giulio-leone/ui';
 import { Plus, Trash2, Clock, Link2, GripVertical } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { Superset, Exercise, ExerciseSet } from '@onecoach/schemas';
+import type { Superset, Exercise, ExerciseSet } from '@giulio-leone/schemas';
 
 // ============================================================================
 // Types & Converters

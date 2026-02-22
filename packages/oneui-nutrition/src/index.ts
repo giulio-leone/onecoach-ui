@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-nutrition
+ * @giulio-leone/ui-nutrition
  * Nutrition UI components for meal planning and tracking.
  */
 

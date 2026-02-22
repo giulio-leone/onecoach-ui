@@ -12,12 +12,12 @@ import { useMemo, useCallback, memo } from 'react';
 import { ChevronDown, ChevronRight, Plus, Trash2, Bookmark, GripVertical } from 'lucide-react';
 import { FoodItemCard } from './food-item-card';
 import { FoodComboboxSection } from './food-combobox-section';
-import { SortableList, SortableItem, type SortableItemRenderProps } from '@onecoach/ui-core';
-import { createFoodDragId } from '@onecoach/lib-shared';
-import { cn } from '@onecoach/lib-design-system';
+import { SortableList, SortableItem, type SortableItemRenderProps } from '@giulio-leone/ui-core';
+import { createFoodDragId } from '@giulio-leone/lib-shared';
+import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
-import type { Meal } from "@onecoach/types-nutrition";
-import type { FoodItem } from "@onecoach/types-nutrition";
+import type { Meal } from "@giulio-leone/types/nutrition";
+import type { FoodItem } from "@giulio-leone/types/nutrition";
 
 interface MealCardProps {
   meal: Meal;

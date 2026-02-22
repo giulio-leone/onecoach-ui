@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { useNavigationStateStore } from '@onecoach/lib-stores';
+import { useNavigationStateStore } from '@giulio-leone/lib-stores';
 // Note: Removed 'zustand/react/shallow' - direct selector is sufficient for primitive/stable values.
 // useShallow was causing "Cannot read properties of undefined (reading 'apply')" in Turbopack.
 

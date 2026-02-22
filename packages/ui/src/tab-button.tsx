@@ -17,7 +17,7 @@ export interface TabButtonProps extends TabButtonSharedProps {
   className?: string;
 }
 
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export const TabButton = ({
   active, onClick, icon: Icon, label, count, className }: TabButtonProps) => {

@@ -2,7 +2,7 @@
 
 import { memo, type ReactNode } from 'react';
 import { SettingsIcon } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 interface ChatHeaderProps {
   credits: number;

@@ -8,9 +8,9 @@ import { useTranslations } from 'next-intl';
  * Si affida alle API admin per la validazione ed il merge.
  */
 import { useState } from 'react';
-import { Button, Modal, ModalFooter, Checkbox } from '@onecoach/ui';
+import { Button, Modal, ModalFooter, Checkbox } from '@giulio-leone/ui';
 import { Upload, X, FileJson, AlertTriangle } from 'lucide-react';
-import { handleApiError } from '@onecoach/lib-shared';
+import { handleApiError } from '@giulio-leone/lib-shared';
 interface ExerciseImportModalProps {
   isOpen: boolean;
   onClose: () => void;

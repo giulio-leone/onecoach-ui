@@ -1,4 +1,4 @@
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { NodeToolbar, Position } from '@xyflow/react';
 import type { ComponentProps } from 'react';
 

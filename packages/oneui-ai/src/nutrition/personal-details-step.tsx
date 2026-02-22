@@ -2,8 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 
-import { Sex } from '@onecoach/types/client';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { Sex } from '@giulio-leone/types/client';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import type { NutritionFormData } from 'app/features/nutrition';
 
 interface PersonalDetailsStepProps {

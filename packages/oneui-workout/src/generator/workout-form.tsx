@@ -1,8 +1,8 @@
 'use client';
 
 
-import { Card, SelectionCard, Input, Button } from '@onecoach/ui';
-import { DifficultyLevel, Sex, WorkoutGoal } from '@onecoach/types/client';
+import { Card, SelectionCard, Input, Button } from '@giulio-leone/ui';
+import { DifficultyLevel, Sex, WorkoutGoal } from '@giulio-leone/types/client';
 import { Dumbbell, Target, User, Activity, Zap, AlertCircle, Settings } from 'lucide-react';
 import type { WorkoutFormData, TierAI } from './types';
 import { SPLIT_OPTIONS, TIER_OPTIONS } from './constants';

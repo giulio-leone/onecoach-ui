@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowLeft, Play, Trash2 } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface ProgramActionBarProps {
   onBack: () => void;

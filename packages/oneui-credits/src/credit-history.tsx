@@ -8,9 +8,9 @@ import { useTranslations } from 'next-intl';
  */
 
 import { ArrowUpRight, ArrowDownRight, Clock } from 'lucide-react';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import { TransactionItem } from '@onecoach/ui';
-import { useCreditsHistory } from '@onecoach/lib-api/hooks';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import { TransactionItem } from '@giulio-leone/ui';
+import { useCreditsHistory } from '@giulio-leone/lib-api/hooks';
 
 interface CreditHistoryProps {
   limit?: number;

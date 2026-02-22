@@ -12,7 +12,7 @@ import {
   generateSetsFromGroup,
   calculateGroupSummary,
   isUniformGroup,
-} from '@onecoach/one-workout/utils/progression-calculator';
+} from '@giulio-leone/one-workout/utils/progression-calculator';
 import { SetEditor } from './set-editor';
 import type { BuilderSetGroup as SetGroup, BuilderSetProgression as SetProgression, BuilderExerciseSet as ExerciseSet } from './builder-types';
 

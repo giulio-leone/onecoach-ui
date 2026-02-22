@@ -8,15 +8,15 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button, Checkbox, Input, Select } from '@onecoach/ui';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@onecoach/ui/dialog';
-import { useCoachClients } from '@onecoach/features/coach/hooks';
-import { LoadingState } from '@onecoach/ui/components';
+import { Button, Checkbox, Input, Select } from '@giulio-leone/ui';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@giulio-leone/ui/dialog';
+import { useCoachClients } from '@giulio-leone/features/coach/hooks';
+import { LoadingState } from '@giulio-leone/ui/components';
 import { Users, Send, Check, AlertCircle, Search } from 'lucide-react';
 import { toast } from 'sonner';
 import { useTranslations } from 'next-intl';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 type DeployResult = {
   userId: string;
   success: boolean;

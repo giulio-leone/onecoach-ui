@@ -1,8 +1,8 @@
 'use client';
 
-import { cn } from '@onecoach/lib-design-system';
-import { Button, Collapsible, CollapsibleContent, CollapsibleTrigger } from '@onecoach/ui';
-import { CardContent, CardDescription, CardHeader, CardTitle } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Button, Collapsible, CollapsibleContent, CollapsibleTrigger } from '@giulio-leone/ui';
+import { CardContent, CardDescription, CardHeader, CardTitle } from '@giulio-leone/ui';
 import { ChevronsUpDownIcon, Sparkles } from 'lucide-react';
 import type { ComponentProps } from 'react';
 import { createContext, useContext } from 'react';

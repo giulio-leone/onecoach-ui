@@ -14,7 +14,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { Card, LoadingIndicator, Text, Heading } from '@onecoach/ui';
+import { Card, LoadingIndicator, Text, Heading } from '@giulio-leone/ui';
 
 import { AlertTriangle } from 'lucide-react';
 

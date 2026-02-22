@@ -2,7 +2,7 @@
 
 import { Avatar } from './avatar';
 import { Card } from './card';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 interface WelcomeHeaderProps {
   userName?: string | null;

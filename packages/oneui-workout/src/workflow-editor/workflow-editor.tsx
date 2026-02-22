@@ -22,10 +22,10 @@ import {
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { nodeTypes, type CustomNodeData } from './custom-nodes';
-import { useWorkflows } from '@onecoach/lib-visual-builder/hooks';
-import type { Workflow, NodeType } from '@onecoach/lib-visual-builder/types';
+import { useWorkflows } from '@giulio-leone/lib-visual-builder/hooks';
+import type { Workflow, NodeType } from '@giulio-leone/lib-visual-builder/types';
 import { Save, Code, Rocket, Plus, Trash2 } from 'lucide-react';
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 interface WorkflowEditorProps {
   workflowId?: string;

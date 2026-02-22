@@ -13,7 +13,7 @@ import {
   Minus,
 } from 'lucide-react';
 // import { useTranslations } from 'next-intl';
-import { EmptyState, Card, Button, Badge } from '@onecoach/ui';
+import { EmptyState, Card, Button, Badge } from '@giulio-leone/ui';
 // We'll define the types locally for now if they aren't exported yet from lib-flight to avoid build errors
 // or assume they are compatible with the API response
 import { format } from 'date-fns';

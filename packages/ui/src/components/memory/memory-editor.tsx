@@ -13,8 +13,8 @@ import { Card } from '../../card';
 import { Button } from '../../button';
 import { Input } from '../../input';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../tabs';
-import type { MemoryDomain } from '@onecoach/lib-core/user-memory/types';
-import { cn } from '@onecoach/lib-design-system';
+import type { MemoryDomain } from '@giulio-leone/lib-core/user-memory/types';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Save, Plus, Trash2 } from 'lucide-react';
 
 export interface MemoryEditorProps {

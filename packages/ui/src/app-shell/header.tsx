@@ -11,8 +11,8 @@ import { Menu, Sparkles, Bot, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import { usePathname } from 'next/navigation';
-import { cn } from '@onecoach/lib-design-system';
-import { useUIStore, useHeaderActions, useAuthStore } from '@onecoach/lib-stores';
+import { cn } from '@giulio-leone/lib-design-system';
+import { useUIStore, useHeaderActions, useAuthStore } from '@giulio-leone/lib-stores';
 import { ThemeToggle } from '../theme-toggle';
 
 export interface AppShellHeaderLabels {

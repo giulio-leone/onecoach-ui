@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
-import { Button, CatalogGrid, ResourceCard, Slider } from '@onecoach/ui';
+import { Button, CatalogGrid, ResourceCard, Slider } from '@giulio-leone/ui';
 import { Power, PowerOff, Save } from 'lucide-react';
 import { toast } from 'sonner';
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 import { useTranslations } from 'next-intl';
 
 export type AgentConfig = {

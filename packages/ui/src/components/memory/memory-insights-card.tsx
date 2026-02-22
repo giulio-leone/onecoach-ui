@@ -8,8 +8,8 @@
 'use client';
 
 import { Card } from '../../card';
-import type { MemoryPattern, MemoryInsight } from '@onecoach/lib-core/user-memory/types';
-import { cn } from '@onecoach/lib-design-system';
+import type { MemoryPattern, MemoryInsight } from '@giulio-leone/lib-core/user-memory/types';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface MemoryInsightsCardProps {
   patterns?: MemoryPattern[];

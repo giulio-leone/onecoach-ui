@@ -21,7 +21,7 @@ import {
   INTENSITY_OPTIONS,
   RPE_OPTIONS,
   REST_OPTIONS,
-} from '@onecoach/one-workout';
+} from '@giulio-leone/one-workout';
 
 // =====================================================
 // Types

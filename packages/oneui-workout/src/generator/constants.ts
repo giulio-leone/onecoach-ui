@@ -1,4 +1,4 @@
-import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@onecoach/types/client';
+import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@giulio-leone/types/client';
 
 export type SplitType =
   | 'full_body'

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { CheckCircle2, Loader2, ChevronDown, ChevronRight, AlertCircle, Sparkles } from 'lucide-react';
 import { Card } from './card';
 

@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@onecoach/types/client';
-import type { WorkoutGenerationInput } from '@onecoach/schemas';
+import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@giulio-leone/types/client';
+import type { WorkoutGenerationInput } from '@giulio-leone/schemas';
 import type { WorkoutFormData, ApiProfileData } from './types';
 import { mapActivityLevel, mapActivityToExperience, mapGender, mapGoalToAgentValue } from './utils';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 const DEFAULT_FORM_DATA: WorkoutFormData = {
   userProfile: {
     weight: undefined,

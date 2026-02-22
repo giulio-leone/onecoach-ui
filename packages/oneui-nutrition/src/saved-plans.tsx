@@ -15,16 +15,16 @@ import {
   useNutritionPlans,
   useDeleteNutritionPlan,
   useDuplicateNutritionPlan,
-} from '@onecoach/features-nutrition';
-import { SelectionToolbar, useSupabaseContext } from '@onecoach/ui-core';
-import { DeployToClientsModal } from '@onecoach/ui-coach';
+} from '@giulio-leone/features-nutrition';
+import { SelectionToolbar, useSupabaseContext } from '@giulio-leone/ui-core';
+import { DeployToClientsModal } from '@giulio-leone/ui-coach';
 import { useSession } from 'next-auth/react';
-import { ErrorState } from '@onecoach/ui/components';
-import { useUserActiveGenerations } from '@onecoach/hooks';
+import { ErrorState } from '@giulio-leone/ui/components';
+import { useUserActiveGenerations } from '@giulio-leone/hooks';
 import { useTranslations } from 'next-intl';
-import { NutritionPlanCard } from '@onecoach/ui-nutrition';
+import { NutritionPlanCard } from '@giulio-leone/ui-nutrition';
 import { NutritionGeneratingCard } from './nutrition-generating-card';
-import type { NutritionPlan } from '@onecoach/types-nutrition';
+import type { NutritionPlan } from '@giulio-leone/types/nutrition';
 
 export interface SavedNutritionPlansRef {
   refresh: () => void;
@@ -75,7 +75,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
       const { toast } = await import('sonner');
       toast.success(t('duplicateSuccess'));
     } catch (err: unknown) {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       await dialog.error(err instanceof Error ? err.message : t('duplicateError'));
     }
   };
@@ -86,7 +86,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
   }));
 
   const handleDelete = async (id: string) => {
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(t('deleteConfirm'));
     if (!confirmed) return;
 
@@ -98,7 +98,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
         return next;
       });
     } catch (err: unknown) {
-      const { dialog: errorDialog } = await import('@onecoach/lib-stores');
+      const { dialog: errorDialog } = await import('@giulio-leone/lib-stores');
       await errorDialog.error(err instanceof Error ? err.message : t('deleteError'));
     }
   };
@@ -106,7 +106,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
   const handleBulkDelete = async () => {
     if (selectedIds.size === 0) return;
 
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(t('bulkDeleteConfirm', { count: selectedIds.size }));
     if (!confirmed) return;
 
@@ -115,7 +115,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
       await refetch();
       setSelectedIds(new Set());
     } catch (err: unknown) {
-      const { dialog: errDialog } = await import('@onecoach/lib-stores');
+      const { dialog: errDialog } = await import('@giulio-leone/lib-stores');
       await errDialog.error(err instanceof Error ? err.message : t('bulkDeleteError'));
     }
   };

@@ -16,6 +16,6 @@ export {
   Modal,
   ModalFooter,
   getDialogInputValue,
-} from '@onecoach/ui-core';
+} from '@giulio-leone/ui-core';
 
-export type { SimpleDialogProps, ModalProps, DialogType } from '@onecoach/ui-core';
+export type { SimpleDialogProps, ModalProps, DialogType } from '@giulio-leone/ui-core';

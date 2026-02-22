@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { ArrowLeft, Pause, Play, Square } from 'lucide-react';
-import { Button, Heading, Text } from '@onecoach/ui';
+import { Button, Heading, Text } from '@giulio-leone/ui';
 
 interface LiveWorkoutHeaderProps {
   programName?: string;

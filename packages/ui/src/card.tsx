@@ -7,5 +7,5 @@ export {
   CardFooter,
   CardAction,
   type CardProps 
-} from '@onecoach/ui-core';
+} from '@giulio-leone/ui-core';
 

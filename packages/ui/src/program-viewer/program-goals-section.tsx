@@ -1,7 +1,7 @@
 'use client';
 
 import { Target } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface ProgramGoalsSectionProps {
   goals: string[];

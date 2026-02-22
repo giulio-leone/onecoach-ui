@@ -8,7 +8,7 @@
 
 import { useState, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { BarChart3, MessageSquare } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { TabSkeleton } from '../shared';

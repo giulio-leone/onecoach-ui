@@ -9,7 +9,7 @@
 import React from 'react';
 import Link from 'next/link';
 import type { LucideIcon } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { getIconSize } from './button.shared';
 
 export interface ButtonLinkProps {

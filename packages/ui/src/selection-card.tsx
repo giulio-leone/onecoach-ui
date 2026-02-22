@@ -1,4 +1,4 @@
 'use client';
 
-export { SelectionCard } from '@onecoach/ui-core';
-export type { SelectionCardProps } from '@onecoach/ui-core';
+export { SelectionCard } from '@giulio-leone/ui-core';
+export type { SelectionCardProps } from '@giulio-leone/ui-core';

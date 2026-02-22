@@ -1,45 +1,59 @@
 {
-  "name": "@onecoach/lib-design-system",
-  "version": "0.0.0",
+  "name": "@giulio-leone/lib-design-system",
+  "version": "0.1.0",
   "description": "Design system (tokens, theme, animations)",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./animations": {
-      "types": "./src/animations.ts",
-      "default": "./src/animations.ts"
+      "types": "./dist/animations.d.ts",
+      "import": "./dist/animations.js",
+      "require": "./dist/animations.cjs"
     },
     "./dark-mode-classes": {
-      "types": "./src/dark-mode-classes.ts",
-      "default": "./src/dark-mode-classes.ts"
+      "types": "./dist/dark-mode-classes.d.ts",
+      "import": "./dist/dark-mode-classes.js",
+      "require": "./dist/dark-mode-classes.cjs"
     },
     "./tokens": {
-      "types": "./src/tokens.ts",
-      "default": "./src/tokens.ts"
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js",
+      "require": "./dist/tokens.cjs"
     },
     "./tokens-complete": {
-      "types": "./src/tokens-complete.ts",
-      "default": "./src/tokens-complete.ts"
+      "types": "./dist/tokens-complete.d.ts",
+      "import": "./dist/tokens-complete.js",
+      "require": "./dist/tokens-complete.cjs"
     }
   },
   "scripts": {
+    "build": "tsup",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.4.0"
   },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  },
+  "sideEffects": false,
+  "module": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
   "devDependencies": {
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
-  },
-  "peerDependencies": {
-    "react": "^18.3.1"
-  },
-  "sideEffects": false
+  }
 }

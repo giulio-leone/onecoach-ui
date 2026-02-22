@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-copilot
+ * @giulio-leone/ui-copilot
  * Copilot sidebar and resize handle components.
  */
 

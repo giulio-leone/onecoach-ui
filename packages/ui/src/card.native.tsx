@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { View, Platform } from 'react-native';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import type { ViewProps } from 'react-native';
 
 export interface CardProps extends ViewProps {

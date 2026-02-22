@@ -5,11 +5,11 @@
  */
 'use client';
 import { useState, type KeyboardEvent } from 'react';
-import { Button, Textarea } from '@onecoach/ui';
-import { useSendDirectMessage } from '@onecoach/lib-api-client/hooks';
+import { Button, Textarea } from '@giulio-leone/ui';
+import { useSendDirectMessage } from '@giulio-leone/lib-api-client/hooks';
 import { Send, Star } from 'lucide-react';
 import { toast } from 'sonner';
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 import { useTranslations } from 'next-intl';
 
 export interface MessageInputProps {

@@ -7,7 +7,7 @@
 
 'use client';
 
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { AdminMenuMobile } from './admin-menu-mobile';
 import { AdminDropdownDesktop } from './admin-dropdown-desktop';
 import type { AdminMenuItem } from './admin-menu-item.types';

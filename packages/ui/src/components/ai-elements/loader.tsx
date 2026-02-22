@@ -7,7 +7,7 @@
 'use client';
 
 import { forwardRef, type ComponentProps } from 'react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 // ============================================================================
 // Streaming Dots Loader

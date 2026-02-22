@@ -7,9 +7,9 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import type { FoodItem } from '@onecoach/types-nutrition';
-import { Button } from '@onecoach/ui-core';
-import { Drawer } from '@onecoach/ui';
+import type { FoodItem } from '@giulio-leone/types/nutrition';
+import { Button } from '@giulio-leone/ui-core';
+import { Drawer } from '@giulio-leone/ui';
 import {
   Edit3,
   Trash2,
@@ -21,10 +21,10 @@ import {
   Save,
 
 } from 'lucide-react';
-import { logger } from '@onecoach/lib-shared';
-import type { Macros } from '@onecoach/types-nutrition';
-import { dialog } from '@onecoach/lib-stores';
-import { LoadingIndicator } from '@onecoach/ui';
+import { logger } from '@giulio-leone/lib-shared';
+import type { Macros } from '@giulio-leone/types/nutrition';
+import { dialog } from '@giulio-leone/lib-stores';
+import { LoadingIndicator } from '@giulio-leone/ui';
 interface FoodDetailDrawerProps {
   isOpen: boolean;
   foodItemId?: string | null; // null per modalità create

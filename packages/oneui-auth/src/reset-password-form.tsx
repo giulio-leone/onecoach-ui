@@ -6,10 +6,10 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'app/navigation';
-import { Button, Input } from '@onecoach/ui';
-import { useForm } from '@onecoach/hooks';
-import { validatePassword, passwordsMatch } from '@onecoach/lib-shared';
-import { handleApiError } from '@onecoach/lib-shared';
+import { Button, Input } from '@giulio-leone/ui';
+import { useForm } from '@giulio-leone/hooks';
+import { validatePassword, passwordsMatch } from '@giulio-leone/lib-shared';
+import { handleApiError } from '@giulio-leone/lib-shared';
 import { useTranslations } from 'next-intl';
 
 

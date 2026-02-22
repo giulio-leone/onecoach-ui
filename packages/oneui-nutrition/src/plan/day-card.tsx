@@ -10,12 +10,12 @@
 import { useMemo } from 'react';
 import { Trash2, GripVertical, Plus, BookOpen, Bookmark } from 'lucide-react';
 import { MealCard } from './meal-card';
-import { SortableList, SortableItem, type SortableItemRenderProps, Button } from '@onecoach/ui-core';
-import { createMealDragId } from '@onecoach/lib-shared';
-import { cn } from '@onecoach/lib-design-system';
+import { SortableList, SortableItem, type SortableItemRenderProps, Button } from '@giulio-leone/ui-core';
+import { createMealDragId } from '@giulio-leone/lib-shared';
+import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
-import type { NutritionDay } from "@onecoach/types-nutrition";
-import type { FoodItem } from "@onecoach/types-nutrition";
+import type { NutritionDay } from "@giulio-leone/types/nutrition";
+import type { FoodItem } from "@giulio-leone/types/nutrition";
 
 interface DayCardProps {
   day: NutritionDay;

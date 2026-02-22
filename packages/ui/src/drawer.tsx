@@ -9,7 +9,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import { type DrawerProps, getDrawerSizeStyles } from './drawer.shared';
 
 export type { DrawerProps, DrawerPosition } from './drawer.shared';

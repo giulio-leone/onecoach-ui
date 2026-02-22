@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-flight
+ * @giulio-leone/ui-flight
  *
  * Flight search and booking UI components for OneCoach.
  * Provides flight search wizard, results display, and booking cards.

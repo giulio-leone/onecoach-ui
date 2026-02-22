@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Layers, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
-import type { Superset, Exercise, ExerciseSet } from '@onecoach/schemas';
-import { Card } from '@onecoach/ui';
+import type { Superset, Exercise, ExerciseSet } from '@giulio-leone/schemas';
+import { Card } from '@giulio-leone/ui';
 
 export interface LiveSupersetCardProps {
   superset: Superset;

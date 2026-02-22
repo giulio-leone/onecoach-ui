@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-affiliates
+ * @giulio-leone/ui-affiliates
  * Affiliate program UI components.
  */
 

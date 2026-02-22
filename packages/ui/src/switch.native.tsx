@@ -1,6 +1,6 @@
 
 import { View, Switch as RNSwitch, Text, type SwitchProps as RNSwitchProps } from 'react-native';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface SwitchProps extends RNSwitchProps {
     label?: string;

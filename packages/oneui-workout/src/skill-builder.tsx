@@ -7,8 +7,8 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useState } from 'react';
-import { useSkills } from '@onecoach/lib-visual-builder/hooks';
-import type { Skill, SkillFormData } from '@onecoach/lib-visual-builder/types';
+import { useSkills } from '@giulio-leone/lib-visual-builder/hooks';
+import type { Skill, SkillFormData } from '@giulio-leone/lib-visual-builder/types';
 import { Plus, Save, Code, Rocket, Trash2 } from 'lucide-react';
 
 interface SkillBuilderProps {

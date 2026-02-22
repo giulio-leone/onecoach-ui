@@ -1,8 +1,8 @@
 'use client';
 
 import NextImage from 'next/image';
-import { cn } from '@onecoach/lib-design-system';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@giulio-leone/ui';
 import { BookOpenIcon, ChevronDownIcon, ExternalLinkIcon, GlobeIcon } from 'lucide-react';
 import type { ComponentProps } from 'react';
 

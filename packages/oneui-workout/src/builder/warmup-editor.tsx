@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { Card, Button, Input, Badge } from '@onecoach/ui';
+import { Card, Button, Input, Badge } from '@giulio-leone/ui';
 import { Plus, Trash2, Clock, Flame, GripVertical } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { WarmupSection, WarmupExerciseItem } from '@onecoach/schemas';
+import type { WarmupSection, WarmupExerciseItem } from '@giulio-leone/schemas';
 
 // ============================================================================
 // Types

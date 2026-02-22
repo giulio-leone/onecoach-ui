@@ -1,6 +1,6 @@
 'use client';
-import { cn } from '@onecoach/lib-design-system';
-import { Button, ScrollArea, ScrollBar } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Button, ScrollArea, ScrollBar } from '@giulio-leone/ui';
 import { ArrowRightIcon, SparklesIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 /**

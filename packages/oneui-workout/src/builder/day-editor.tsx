@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { arrayMove, SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import type { DragEndEvent } from '@dnd-kit/core';
 import { Dumbbell, ClipboardPaste, MoreVertical } from 'lucide-react';
-import { DayEditorShell } from '@onecoach/ui/visual-builder';
+import { DayEditorShell } from '@giulio-leone/ui/visual-builder';
 import { SortableExerciseCard } from './sortable-exercise-card';
 import { ExerciseSelector } from './exercise-selector';
 import { useExerciseClipboard, cloneExerciseWithNewIds } from './workout-clipboard-provider';
@@ -14,8 +14,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@onecoach/ui';
-import type { WorkoutDay, Exercise } from '@onecoach/types-workout';
+} from '@giulio-leone/ui';
+import type { WorkoutDay, Exercise } from '@giulio-leone/types/workout';
 
 interface DayEditorProps {
   day: WorkoutDay;

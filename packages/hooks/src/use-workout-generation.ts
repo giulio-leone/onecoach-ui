@@ -6,8 +6,8 @@ import type {
   GenerationStreamEvent,
   GenerationState,
 } from './utils/create-generation-hook';
-import type { WorkoutGenerationInput, WorkoutGenerationOutput } from '@onecoach/types-ai';
-import type { ProgressField } from '@onecoach/one-agent-hooks';
+import type { WorkoutGenerationInput, WorkoutGenerationOutput } from '@giulio-leone/types/ai';
+import type { ProgressField } from '@giulio-leone/one-agent-hooks';
 
 // Re-export for convenience (DRY: single source of truth)
 export type { ProgressField };

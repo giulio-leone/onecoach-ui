@@ -3,11 +3,11 @@
 import { useTranslations } from 'next-intl';
 
 import { useState, useEffect } from 'react';
-import { Card, Button, Modal, Input, Label, Spinner, Checkbox } from '@onecoach/ui';
+import { Card, Button, Modal, Input, Label, Spinner, Checkbox } from '@giulio-leone/ui';
 import { Plus, RefreshCw, Edit, Trash, Play } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 type OpenRouterModel = {
   id: string;

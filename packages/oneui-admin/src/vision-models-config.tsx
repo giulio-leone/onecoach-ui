@@ -1,8 +1,8 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { Camera, Scan, Loader2, Check, AlertCircle } from 'lucide-react';
-import { Button, Input } from '@onecoach/ui';
-import { useAuth } from '@onecoach/lib-api/hooks';
+import { Button, Input } from '@giulio-leone/ui';
+import { useAuth } from '@giulio-leone/lib-api/hooks';
 import { useTranslations } from 'next-intl';
 
 // DRY: Costanti centralizzate

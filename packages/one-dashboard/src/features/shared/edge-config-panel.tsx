@@ -6,7 +6,7 @@
  * Componente per visualizzare e aggiornare i valori di Vercel Edge Config
  */
 import { useState, useEffect } from 'react';
-import { Button, Input, Label } from '@onecoach/ui';
+import { Button, Input, Label } from '@giulio-leone/ui';
 import { Save, Plus, Trash2, RefreshCw } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -131,7 +131,7 @@ export function EdgeConfigPanel() {
   };
 
   const handleDelete = async (key: string) => {
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(t('deleteConfirm', { key }));
 
     if (!confirmed) {

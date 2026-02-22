@@ -10,7 +10,7 @@
 import React, { useRef, useEffect, forwardRef, type ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, MessageSquare } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 // ============================================================================
 // Conversation Container

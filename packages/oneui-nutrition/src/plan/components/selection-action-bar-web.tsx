@@ -1,8 +1,8 @@
 'use client';
 
 import { X } from 'lucide-react';
-import { Button } from '@onecoach/ui';
-import { cn } from '@onecoach/lib-design-system';
+import { Button } from '@giulio-leone/ui';
+import { cn } from '@giulio-leone/lib-design-system';
 
 interface Action {
   id: string;

@@ -14,10 +14,10 @@
  */
 
 import { useEffect, memo, useMemo, useCallback, useState } from 'react';
-import { useSidebarStore, useUIStore } from '@onecoach/lib-stores';
-import { ConversationList, type ConversationListItem } from '@onecoach/ui';
+import { useSidebarStore, useUIStore } from '@giulio-leone/lib-stores';
+import { ConversationList, type ConversationListItem } from '@giulio-leone/ui';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 interface ChatSidebarInjectorProps {
   conversations: ConversationListItem[];
   activeId: string | null;

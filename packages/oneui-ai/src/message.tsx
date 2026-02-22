@@ -1,6 +1,6 @@
 'use client';
 import NextImage from 'next/image';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   Button,
   ButtonGroup,
@@ -9,7 +9,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import type { FileUIPart } from './ai-types';
 // import type { UIMessage } from 'ai';
 import { ChevronLeftIcon, ChevronRightIcon, PaperclipIcon, XIcon } from 'lucide-react';

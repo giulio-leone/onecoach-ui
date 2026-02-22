@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Input, Modal, ModalFooter } from '@onecoach/ui';
+import { Button, Input, Modal, ModalFooter } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { Loader2, Coins, Plus, Minus } from 'lucide-react';
-import type { UserWithCounts } from '@onecoach/types/prisma-helpers';
+import type { UserWithCounts } from '@giulio-leone/types/prisma-helpers';
 import { useTranslations } from 'next-intl';
 
 interface ManageCreditsModalProps {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { ArrowUpRight } from 'lucide-react';
 
 export interface QuickAction {

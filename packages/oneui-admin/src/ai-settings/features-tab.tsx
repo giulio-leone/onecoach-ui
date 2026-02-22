@@ -8,7 +8,7 @@
 import { useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   Bot,
   Mic,

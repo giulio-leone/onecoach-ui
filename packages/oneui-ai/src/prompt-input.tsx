@@ -22,8 +22,8 @@ export {
   PromptInputAttachment,
   PromptInputSpeechButton,
   usePromptInput,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 
 // Type exports
-export type { PromptAttachment } from '@onecoach/ui';
+export type { PromptAttachment } from '@giulio-leone/ui';
 export type { FileUIPart } from './ai-types';

@@ -11,9 +11,9 @@ import { useTranslations } from 'next-intl';
  * Segue i principi KISS, SOLID, DRY.
  * Pattern coerente con FoodDetailDrawer per UX uniforme.
  */
-import type { LocalizedExercise } from '@onecoach/lib-exercise';
-import { ExerciseApprovalStatus } from '@onecoach/types/client';
-import { Button, Drawer, LoadingIndicator } from '@onecoach/ui';
+import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
+import { ExerciseApprovalStatus } from '@giulio-leone/types/client';
+import { Button, Drawer, LoadingIndicator } from '@giulio-leone/ui';
 import {
   CheckCircle2,
   ClipboardList,

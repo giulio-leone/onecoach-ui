@@ -8,12 +8,12 @@
 
 'use client';
 
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import type { LucideIcon } from 'lucide-react';
 import { MoreVertical } from 'lucide-react';
 import { AdminDropdownMenu } from '../shared/admin-dropdown-menu';
 import type { AdminMenuItem } from '../shared/admin-menu-item.types';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface ExerciseAction {
   id: string;

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Card } from '@onecoach/ui';
+import { Button, Card } from '@giulio-leone/ui';
 import {
   User,
   Edit,
@@ -17,8 +17,8 @@ import {
   Dumbbell,
   Utensils,
 } from 'lucide-react';
-import type { UserWithCounts } from '@onecoach/types/prisma-helpers';
-import { cn } from '@onecoach/lib-design-system';
+import type { UserWithCounts } from '@giulio-leone/types/prisma-helpers';
+import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations, useFormatter } from 'next-intl';
 
 interface UserCardProps {

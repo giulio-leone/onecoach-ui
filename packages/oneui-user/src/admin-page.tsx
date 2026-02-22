@@ -1,6 +1,6 @@
 import React from 'react';
-import { cn } from '@onecoach/lib-design-system';
-import { Container, Stack, Heading, Text } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Container, Stack, Heading, Text } from '@giulio-leone/ui';
 
 export type AdminPageProps = {
   children: React.ReactNode;

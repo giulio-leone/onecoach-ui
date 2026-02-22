@@ -9,10 +9,10 @@ import { useTranslations } from 'next-intl';
  * Principi: KISS, SOLID, DRY, YAGNI
  */
 import { useEffect, useMemo, useRef } from 'react';
-import { AdminCard, Button, Input, Checkbox } from '@onecoach/ui';
-import { useForm } from '@onecoach/hooks';
-import { handleApiError } from '@onecoach/lib-shared';
-import { cn } from '@onecoach/lib-design-system';
+import { AdminCard, Button, Input, Checkbox } from '@giulio-leone/ui';
+import { useForm } from '@giulio-leone/hooks';
+import { handleApiError } from '@giulio-leone/lib-shared';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Layers, Coins, Calendar, Percent } from 'lucide-react';
 const darkModeClasses = {
   text: {

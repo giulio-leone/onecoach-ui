@@ -7,9 +7,9 @@
 import { useMemo } from 'react';
 import { Save } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { Button, Modal, ModalFooter, Radio, RadioGroup, DatePicker, Input } from '@onecoach/ui';
-import { useForm } from '@onecoach/hooks';
-import { handleApiError } from '@onecoach/lib-shared';
+import { Button, Modal, ModalFooter, Radio, RadioGroup, DatePicker, Input } from '@giulio-leone/ui';
+import { useForm } from '@giulio-leone/hooks';
+import { handleApiError } from '@giulio-leone/lib-shared';
 interface PromotionData {
   id: string;
   code: string;

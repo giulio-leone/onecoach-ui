@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { WizardStepper, WizardContainer, WizardActions } from '@onecoach/ui';
+import { WizardStepper, WizardContainer, WizardActions } from '@giulio-leone/ui';
 import type { GenerationLogEvent } from '@/components/ai-elements/generation-log';
 import { MeshGenerationView } from './mesh-generation-view';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 
 // ----------------------------------------------------------------------------

@@ -8,8 +8,8 @@
 'use client';
 
 import { Settings, Sparkles, Zap } from 'lucide-react';
-import { AI_MODELS } from '@onecoach/constants';
-import type { AiModel } from "@onecoach/types-chat";
+import { AI_MODELS } from '@giulio-leone/constants';
+import type { AiModel } from "@giulio-leone/types/chat";
 
 export interface ModelSelectorProps {
   model: AiModel;

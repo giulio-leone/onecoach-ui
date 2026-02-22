@@ -5,11 +5,11 @@
  */
 'use client';
 import { useState } from 'react';
-import { Button, Input } from '@onecoach/ui';
-import { useForm } from '@onecoach/hooks';
-import { isValidEmail } from '@onecoach/lib-shared';
-import { handleApiError } from '@onecoach/lib-shared';
-import { logger } from '@onecoach/lib-shared';
+import { Button, Input } from '@giulio-leone/ui';
+import { useForm } from '@giulio-leone/hooks';
+import { isValidEmail } from '@giulio-leone/lib-shared';
+import { handleApiError } from '@giulio-leone/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 import { useTranslations } from 'next-intl';
 
 interface ForgotPasswordFormValues {

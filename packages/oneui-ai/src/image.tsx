@@ -1,5 +1,5 @@
 import NextImage from 'next/image';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import type { GeneratedImage } from './ai-types';
 
 export type ImageProps = GeneratedImage & {

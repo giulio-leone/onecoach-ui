@@ -14,7 +14,7 @@ import {
   AdminTabs,
   AdminTabPanel,
   type AdminTab,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { CreateInvitationModal } from './components/invitations/create-invitation-modal';
 import { InvitationCard } from './components/invitations/invitation-card';
 import {
@@ -23,7 +23,7 @@ import {
   UserStatusModal,
   UserCard,
 } from './components';
-import { Button, Input, Select, Switch } from '@onecoach/ui';
+import { Button, Input, Select, Switch } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import {
   Loader2,
@@ -37,12 +37,12 @@ import {
   List,
 } from 'lucide-react';
 import { useDebounce } from 'use-debounce';
-import type { UserWithCounts } from '@onecoach/types/prisma-helpers';
-import { cn } from '@onecoach/lib-design-system';
+import type { UserWithCounts } from '@giulio-leone/types/prisma-helpers';
+import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
 import { useQueryClient } from '@tanstack/react-query';
-import { logger } from '@onecoach/lib-shared';
-import { isAdminRole } from "@onecoach/types-core";
+import { logger } from '@giulio-leone/lib-shared';
+import { isAdminRole } from "@giulio-leone/types/core";
 
 interface Invitation {
   id: string;

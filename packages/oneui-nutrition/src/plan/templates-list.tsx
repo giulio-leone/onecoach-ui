@@ -23,9 +23,9 @@ import {
   Bookmark,
   Clock,
 } from 'lucide-react';
-import type { NutritionTemplate, NutritionTemplateType } from '@onecoach/types-nutrition';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import { useDebounce } from '@onecoach/hooks';
+import type { NutritionTemplate, NutritionTemplateType } from '@giulio-leone/types/nutrition';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import { useDebounce } from '@giulio-leone/hooks';
 
 interface TemplatesListProps {
   onSelect?: (template: NutritionTemplate) => void;
@@ -115,7 +115,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
   }, [loadTemplates]);
 
   const handleDelete = async (template: NutritionTemplate) => {
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(t('confirmDelete', { name: template.name }));
     if (!confirmed) return;
 

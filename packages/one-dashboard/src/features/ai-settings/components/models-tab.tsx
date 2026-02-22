@@ -9,7 +9,7 @@
 import React, { useCallback, useMemo, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   Bot,
   Plus,
@@ -47,9 +47,9 @@ import {
 import type { UserRole, AIProvider } from '@prisma/client';
 import { toast } from 'sonner';
 import { createPortal } from 'react-dom';
-import { Checkbox, Drawer } from '@onecoach/ui';
+import { Checkbox, Drawer } from '@giulio-leone/ui';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 // Model returned from the sync endpoint
 interface SyncModelData {
   modelId: string;

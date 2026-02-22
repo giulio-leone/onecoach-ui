@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { Text as RNText, type TextProps as RNTextProps } from 'react-native';
-import { cn, darkModeClasses } from '@onecoach/lib-design-system';
+import { cn, darkModeClasses } from '@giulio-leone/lib-design-system';
 
 // ============================================================================
 // HEADING COMPONENT

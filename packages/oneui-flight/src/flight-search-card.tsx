@@ -1,8 +1,8 @@
 'use client';
 
 import { Heart, Trash2, MapPin, Calendar, Users, Plane, ArrowRight } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import { Card } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Card } from '@giulio-leone/ui';
 import { useState } from 'react';
 import Link from 'next/link';
 

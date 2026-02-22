@@ -7,10 +7,10 @@ import { useTranslations } from 'next-intl';
  * Modal per visualizzare e modificare dettagli utente
  */
 import { Plus, Minus, Save } from 'lucide-react';
-import { Button, Input, Modal, ModalFooter } from '@onecoach/ui';
+import { Button, Input, Modal, ModalFooter } from '@giulio-leone/ui';
 import { UserApiKeys } from './user-api-keys';
-import { useForm } from '@onecoach/hooks';
-import { handleApiError } from '@onecoach/lib-shared';
+import { useForm } from '@giulio-leone/hooks';
+import { handleApiError } from '@giulio-leone/lib-shared';
 // AdminSelect is a simple styled select component
 const AdminSelect = ({ children, ...props }: React.SelectHTMLAttributes<HTMLSelectElement>) => (
   <select
@@ -20,8 +20,8 @@ const AdminSelect = ({ children, ...props }: React.SelectHTMLAttributes<HTMLSele
     {children}
   </select>
 );
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import { useSyncField } from '@onecoach/lib-stores';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import { useSyncField } from '@giulio-leone/lib-stores';
 import { useEffect, useState, useCallback, useRef } from 'react';
 interface UserData {
   id: string;

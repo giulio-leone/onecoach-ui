@@ -1,6 +1,6 @@
 'use client';
-import { cn } from '@onecoach/lib-design-system';
-import { Alert, AlertDescription, Button } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Alert, AlertDescription, Button } from '@giulio-leone/ui';
 import type { ToolUIPart } from './ai-types';
 import { type ComponentProps, createContext, type ReactNode, useContext } from 'react';
 type ToolUIPartApproval =

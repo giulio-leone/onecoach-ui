@@ -9,7 +9,7 @@
 
 import { useEffect, useState, useMemo, useCallback } from 'react';
 import { Check, ChevronDown, X, Search } from 'lucide-react';
-import { Checkbox } from '@onecoach/ui';
+import { Checkbox } from '@giulio-leone/ui';
 import { useTranslations } from 'next-intl';
 
 

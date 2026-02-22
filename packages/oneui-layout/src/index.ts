@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-layout
+ * @giulio-leone/ui-layout
  * Layout UI components.
  */
 

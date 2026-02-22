@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
  */
 
 import { Search } from 'lucide-react';
-import { Input } from '@onecoach/ui';
+import { Input } from '@giulio-leone/ui';
 
 export interface MarketplaceFilters {
   planType?: 'WORKOUT' | 'NUTRITION';

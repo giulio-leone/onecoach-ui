@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-marketplace
+ * @giulio-leone/ui-marketplace
  * Marketplace UI components.
  */
 

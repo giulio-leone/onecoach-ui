@@ -10,12 +10,12 @@ import {
   DialogTitle,
   DialogTrigger,
   Button
-} from '@onecoach/ui-core';
+} from '@giulio-leone/ui-core';
 import { Upload, FileText, Loader2, X } from 'lucide-react';
-import { useImportMeasurements } from '@onecoach/hooks';
+import { useImportMeasurements } from '@giulio-leone/hooks';
 import { toast } from 'sonner';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 export function MeasurementsImportModal() {
   const t = useTranslations('common');
 

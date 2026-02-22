@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-chat
+ * @giulio-leone/ui-chat
  * Chat and messaging UI components.
  */
 

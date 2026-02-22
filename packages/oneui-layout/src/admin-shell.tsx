@@ -1,9 +1,9 @@
 'use client';
 
-import { useAppNavigation } from '@onecoach/hooks';
+import { useAppNavigation } from '@giulio-leone/hooks';
 import { useTranslations } from 'next-intl';
-import { OneDashboardLayout } from '@onecoach/one-dashboard';
-import type { AuthenticatedUser } from "@onecoach/types-core";
+import { OneDashboardLayout } from '@giulio-leone/one-dashboard';
+import type { AuthenticatedUser } from "@giulio-leone/types/core";
 
 interface AdminShellProps {
   children: React.ReactNode;

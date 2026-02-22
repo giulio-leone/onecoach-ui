@@ -1,7 +1,7 @@
 'use client';
 
 import { memo, type ReactNode, useEffect, useRef } from 'react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface ChatMessagesListProps {
   children: ReactNode;

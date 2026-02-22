@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl';
 
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
-import { cn } from '@onecoach/lib-design-system';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@giulio-leone/ui';
 import { BrainIcon, ChevronDownIcon, SparklesIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 import { createContext, memo, useContext, useEffect, useState } from 'react';

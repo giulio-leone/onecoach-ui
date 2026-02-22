@@ -1,18 +1,43 @@
 {
-  "name": "@onecoach/ui-ai",
-  "version": "0.0.0",
+  "name": "@giulio-leone/ui-ai",
+  "version": "0.1.0",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup"
+  },
   "dependencies": {
-    "@onecoach/ui-core": "workspace:*",
-    "@onecoach/lib-design-system": "workspace:*"
+    "@giulio-leone/constants": "^0.1.0",
+    "@giulio-leone/lib-ai": "^0.1.0",
+    "@giulio-leone/lib-api": "^0.1.0",
+    "@giulio-leone/lib-design-system": "^0.1.0",
+    "@giulio-leone/lib-shared": "^0.1.0",
+    "@giulio-leone/schemas": "^0.1.0",
+    "@giulio-leone/types": "^0.1.0",
+    "@giulio-leone/ui": "^0.1.0",
+    "@giulio-leone/ui-core": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

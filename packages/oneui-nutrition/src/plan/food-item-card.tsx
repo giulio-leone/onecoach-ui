@@ -12,9 +12,9 @@ import { useTranslations } from 'next-intl';
 import { useState, memo, useCallback, useLayoutEffect } from 'react';
 import { GripVertical, Trash2 } from 'lucide-react';
 import { MacroDisplay } from './macro-display';
-import { SortableItem, type SortableItemRenderProps } from '@onecoach/ui-core';
-import { cn } from '@onecoach/lib-design-system';
-import type { Food } from "@onecoach/types-nutrition";
+import { SortableItem, type SortableItemRenderProps } from '@giulio-leone/ui-core';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { Food } from "@giulio-leone/types/nutrition";
 
 interface FoodItemCardProps {
   food: Food;

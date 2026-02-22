@@ -9,13 +9,13 @@ const getExercises = async (_query: string) => {
   return [] as any[];
 };
 
-import { Card } from '@onecoach/ui';
+import { Card } from '@giulio-leone/ui';
 import { Search, X, Dumbbell, Plus } from 'lucide-react-native';
 // import { getExercises } from '@/app/actions/workouts';
 import { useTranslations } from 'next-intl';
 
-import { logger } from '@onecoach/lib-shared';
-import type { Exercise } from '@onecoach/types-workout';
+import { logger } from '@giulio-leone/lib-shared';
+import type { Exercise } from '@giulio-leone/types/workout';
 
 interface ExerciseSelectorProps {
   isOpen: boolean;

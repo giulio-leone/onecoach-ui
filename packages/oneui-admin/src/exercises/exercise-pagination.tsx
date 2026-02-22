@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useCallback } from 'react';
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 
 interface ExercisePaginationProps {
   page: number;

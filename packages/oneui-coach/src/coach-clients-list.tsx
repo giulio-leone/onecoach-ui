@@ -7,10 +7,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Input, Select, Heading, Text } from '@onecoach/ui';
+import { Input, Select, Heading, Text } from '@giulio-leone/ui';
 import { CoachClientCard } from './coach-client-card';
-import { useCoachClients } from '@onecoach/features/coach/hooks';
-import { LoadingState, ErrorState } from '@onecoach/ui/components';
+import { useCoachClients } from '@giulio-leone/features/coach/hooks';
+import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 // ... imports ...
 import { useTranslations } from 'next-intl';
 import { Search, Users } from 'lucide-react';

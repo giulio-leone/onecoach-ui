@@ -3,10 +3,10 @@
 import { useTranslations } from 'next-intl';
 import { useState, useMemo, useCallback } from 'react';
 import { AlertTriangle, ChevronRight, Dumbbell } from 'lucide-react';
-import { EmptyState, Heading, Text, Button } from '@onecoach/ui';
-import { getExerciseSets } from '@onecoach/one-workout';
-import type { Exercise, ExerciseSet } from '@onecoach/schemas';
-import type { WorkoutSession } from '@onecoach/types-workout';
+import { EmptyState, Heading, Text, Button } from '@giulio-leone/ui';
+import { getExerciseSets } from '@giulio-leone/one-workout';
+import type { Exercise, ExerciseSet } from '@giulio-leone/schemas';
+import type { WorkoutSession } from '@giulio-leone/types/workout';
 import { LiveWorkoutHeader } from './live-workout-header';
 import { LiveExerciseCard } from './live-exercise-card';
 import { RestTimer } from './rest-timer';

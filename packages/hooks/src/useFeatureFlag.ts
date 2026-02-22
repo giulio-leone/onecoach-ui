@@ -1,1 +1,1 @@
-export { useFeatureFlag } from '@onecoach/lib-shared/hooks/use-feature-flag';
+export { useFeatureFlag } from '@giulio-leone/lib-shared/hooks/use-feature-flag';

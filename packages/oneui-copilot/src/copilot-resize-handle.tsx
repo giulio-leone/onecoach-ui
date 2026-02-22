@@ -1,8 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useRef } from 'react';
-import { useCopilotStore } from '@onecoach/lib-stores';
-import { cn } from '@onecoach/lib-design-system';
+import { useCopilotStore } from '@giulio-leone/lib-stores';
+import { cn } from '@giulio-leone/lib-design-system';
 
 interface CopilotResizeHandleProps {
   className?: string;

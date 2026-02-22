@@ -11,8 +11,8 @@ import {
   Coins,
   Timer,
 } from 'lucide-react';
-import { Input, Select } from '@onecoach/ui';
-import { useAuth } from '@onecoach/lib-api/hooks';
+import { Input, Select } from '@giulio-leone/ui';
+import { useAuth } from '@giulio-leone/lib-api/hooks';
 import { useTranslations } from 'next-intl';
 
 // Tipo compatibile per il dropdown (mappato da OpenRouterModelOption)

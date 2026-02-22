@@ -1,6 +1,6 @@
 
 import { View, Pressable, Text } from 'react-native';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export interface RadioProps {
     label?: string;

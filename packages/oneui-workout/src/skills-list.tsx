@@ -7,11 +7,11 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useState, useEffect } from 'react';
-import { useSkills } from '@onecoach/lib-visual-builder/hooks';
-import type { Skill } from '@onecoach/lib-visual-builder/types';
+import { useSkills } from '@giulio-leone/lib-visual-builder/hooks';
+import type { Skill } from '@giulio-leone/lib-visual-builder/types';
 import { Plus, Edit, Trash2, Code, Rocket, Calendar } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
-import { Checkbox, Heading, Text, Button, Badge } from '@onecoach/ui';
+import { Checkbox, Heading, Text, Button, Badge } from '@giulio-leone/ui';
 
 interface SkillsListProps {
   onEdit?: (skill: Skill) => void;

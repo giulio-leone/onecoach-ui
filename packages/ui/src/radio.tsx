@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useId } from 'react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 // ============================================================================
 // RADIO COMPONENT

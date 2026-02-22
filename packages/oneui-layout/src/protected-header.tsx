@@ -8,8 +8,8 @@
 
 import { Link, usePathname } from './navigation';
 
-import { useSignOut } from '@onecoach/lib-api/hooks';
-import { useHeaderActions } from '@onecoach/lib-stores';
+import { useSignOut } from '@giulio-leone/lib-api/hooks';
+import { useHeaderActions } from '@giulio-leone/lib-stores';
 import {
   LayoutDashboard,
   MessageSquare,
@@ -23,12 +23,12 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ThemeToggle } from '@onecoach/ui-core';
+import { ThemeToggle } from '@giulio-leone/ui-core';
 import { LanguageSwitcher } from './language-switcher';
 
 import { useTranslations } from 'next-intl';
-import { isAdminRole } from "@onecoach/types-core";
-import { normalizeRole } from "@onecoach/types";
+import { isAdminRole } from "@giulio-leone/types/core";
+import { normalizeRole } from "@giulio-leone/types";
 
 
 interface ProtectedHeaderProps {

@@ -9,14 +9,14 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import type { LocalizedExercise } from '@onecoach/lib-exercise';
-import { ExerciseApprovalStatus } from '@onecoach/types/client';
+import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
+import { ExerciseApprovalStatus } from '@giulio-leone/types/client';
 import { ExerciseTags } from './exercise-tags';
 import { ExerciseActionsMenu, type ExerciseAction } from './exercise-actions-menu';
 import { STATUS_BADGE_STYLES, STATUS_LABELS } from './exercise-constants';
 import { ShieldCheck, ShieldX, Edit3, ClipboardList, Trash2, Dumbbell } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import { Checkbox, Heading, Text } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Checkbox, Heading, Text } from '@giulio-leone/ui';
 
 function getExerciseName(exercise: LocalizedExercise): string {
   return exercise.translations?.[0]?.name || exercise.slug || exercise.id;

@@ -4,10 +4,10 @@ import { useTranslations } from 'next-intl';
 
 import { motion } from 'framer-motion';
 import { AlertCircle, Sparkles } from 'lucide-react';
-import { Button, Card } from '@onecoach/ui';
-import { GenerationLog, type GenerationLogEvent } from '@onecoach/ui-ai';
-import { GenerationSuccess } from '@onecoach/ui-ai';
-import { AgentEventList, useAdminMode, type ProgressField } from '@onecoach/one-agent-hooks';
+import { Button, Card } from '@giulio-leone/ui';
+import { GenerationLog, type GenerationLogEvent } from '@giulio-leone/ui-ai';
+import { GenerationSuccess } from '@giulio-leone/ui-ai';
+import { AgentEventList, useAdminMode, type ProgressField } from '@giulio-leone/one-agent-hooks';
 
 // ----------------------------------------------------------------------------
 // Types

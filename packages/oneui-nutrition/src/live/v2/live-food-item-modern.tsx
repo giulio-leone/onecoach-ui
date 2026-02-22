@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { RefreshCw, Check } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import type { Food } from '@onecoach/types-nutrition';
-import type { FoodSwap } from '@onecoach/schemas';
-import { ScaleTouch } from '@onecoach/ui-core';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { Food } from '@giulio-leone/types/nutrition';
+import type { FoodSwap } from '@giulio-leone/schemas';
+import { ScaleTouch } from '@giulio-leone/ui-core';
 
 export interface LiveFoodItemModernProps {
   food: Food;

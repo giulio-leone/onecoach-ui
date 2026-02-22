@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { cn } from '@onecoach/lib-design-system';
-import { Input } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Input } from '@giulio-leone/ui';
 import { Search } from 'lucide-react';
 
 export interface FilterBarProps {

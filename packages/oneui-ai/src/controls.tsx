@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Controls as ControlsPrimitive } from '@xyflow/react';
 import type { ComponentProps } from 'react';
 

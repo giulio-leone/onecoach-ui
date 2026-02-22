@@ -10,14 +10,14 @@ import {
   Checkbox,
   LoadingIndicator,
   ErrorState,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { Save } from 'lucide-react';
 import {
   useExercise,
   useCreateExercise,
   useUpdateExercise,
-} from '@onecoach/features/exercise/hooks';
-import { useForm } from '@onecoach/hooks';
+} from '@giulio-leone/features/exercise/hooks';
+import { useForm } from '@giulio-leone/hooks';
 import { ExerciseTypeCombobox } from './exercise-type-combobox';
 import { MusclesMultiselect } from './muscles-multiselect';
 import { BodyPartsMultiselect } from './body-parts-multiselect';

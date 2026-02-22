@@ -1,4 +1,4 @@
 'use client';
-import { SupersetEditor } from '@onecoach/ui-workout';
+import { SupersetEditor } from '@giulio-leone/ui-workout';
 export { SupersetEditor };
 export default SupersetEditor;

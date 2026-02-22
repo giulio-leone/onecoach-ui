@@ -3,7 +3,7 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { ExerciseCard } from './exercise-card';
-import type { Exercise } from '@onecoach/types-workout';
+import type { Exercise } from '@giulio-leone/types/workout';
 
 interface SortableExerciseCardProps {
   exercise: Exercise;

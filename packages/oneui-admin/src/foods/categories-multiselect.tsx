@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 import { useEffect, useState } from 'react';
-import { Checkbox } from '@onecoach/ui';
+import { Checkbox } from '@giulio-leone/ui';
 
 
 interface Category {

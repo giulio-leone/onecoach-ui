@@ -2,12 +2,12 @@
 
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import { Play, RefreshCw, Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
 import { cn } from 'design-system';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 interface PromptPreviewProps {
   agentId: string;
   template: string;

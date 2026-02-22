@@ -10,8 +10,8 @@
 import { useTranslations } from 'next-intl';
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { Camera, X, Loader2, CheckCircle2, AlertCircle, Image as ImageIcon } from 'lucide-react';
-import { Button } from '@onecoach/ui-core';
-import { logger } from '@onecoach/lib-shared';
+import { Button } from '@giulio-leone/ui-core';
+import { logger } from '@giulio-leone/lib-shared';
 
 export type FoodCameraMode = 'label' | 'dish';
 

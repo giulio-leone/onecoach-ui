@@ -3,10 +3,10 @@
 import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
-import { Card, Button, Input } from '@onecoach/ui';
+import { Card, Button, Input } from '@giulio-leone/ui';
 import { Trash2, ArrowUp, ArrowDown, Plus, X } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import type { Meal, Food } from "@onecoach/types-nutrition";
+import { cn } from '@giulio-leone/lib-design-system';
+import type { Meal, Food } from "@giulio-leone/types/nutrition";
 
 
 interface MealCardProps {

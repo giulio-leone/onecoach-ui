@@ -28,10 +28,10 @@ import {
   Activity,
   Plane,
 } from 'lucide-react';
-import { defaultLocale, locales, messages, type Locale } from '@onecoach/translations';
-import type { SidebarNavigationItem } from '@onecoach/ui';
-import { isAdminRole } from '@onecoach/types-core';
-import { isCoachRole } from '@onecoach/lib-core/auth/roles';
+import { defaultLocale, locales, messages, type Locale } from '@giulio-leone/translations';
+import type { SidebarNavigationItem } from '@giulio-leone/ui';
+import { isAdminRole } from '@giulio-leone/types/core';
+import { isCoachRole } from '@giulio-leone/lib-core/auth/roles';
 
 function dedupeNavigation(items: SidebarNavigationItem[]): SidebarNavigationItem[] {
   const seen = new Set<string>();

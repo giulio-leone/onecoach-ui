@@ -11,8 +11,8 @@
 
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, Pen } from 'lucide-react';
-import type { ExerciseOccurrence, ProgressionType } from '@onecoach/lib-workout';
-import type { SetGroup } from '@onecoach/types-workout';
+import type { ExerciseOccurrence, ProgressionType } from '@giulio-leone/lib-workout';
+import type { SetGroup } from '@giulio-leone/types/workout';
 
 // =====================================================
 // Types

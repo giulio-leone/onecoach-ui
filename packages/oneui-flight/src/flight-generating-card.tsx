@@ -3,10 +3,10 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Plane, Loader2, CheckCircle2, XCircle, Clock, Search } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, Progress } from '@onecoach/ui';
-import { cn } from '@onecoach/lib-design-system';
-import type { GenerationWithStatus } from '@onecoach/hooks';
-import { AgentEventList, useAdminMode, type ProgressField } from '@onecoach/one-agent-hooks';
+import { Card, CardContent, CardHeader, CardTitle, Progress } from '@giulio-leone/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { GenerationWithStatus } from '@giulio-leone/hooks';
+import { AgentEventList, useAdminMode, type ProgressField } from '@giulio-leone/one-agent-hooks';
 
 /**
  * Props for FlightGeneratingCard component

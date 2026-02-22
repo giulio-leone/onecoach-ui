@@ -11,9 +11,9 @@ import { useTranslations } from 'next-intl';
 import { FoodCamera, type FoodCameraMode } from './food-camera';
 import { useState } from 'react';
 import { Camera, Scan as ScanBarcode, Sparkles, ChevronRight } from 'lucide-react';
-import type { FoodItem } from '@onecoach/types-nutrition';
-import { cn } from '@onecoach/lib-design-system';
-import { logger } from '@onecoach/lib-shared';
+import type { FoodItem } from '@giulio-leone/types/nutrition';
+import { cn } from '@giulio-leone/lib-design-system';
+import { logger } from '@giulio-leone/lib-shared';
 
 export interface FoodCameraInlineProps {
   onFoodAdded?: (foodItem: FoodItem) => void;
@@ -58,7 +58,7 @@ export function FoodCameraInline({
       setMode(null);
     } catch (error: unknown) {
       logger.error('Error processing image:', error);
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       await dialog.error(error instanceof Error ? error.message : t('common.errors.unknown'));
     }
   };

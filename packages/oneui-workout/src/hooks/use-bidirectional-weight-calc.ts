@@ -12,8 +12,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { calculateWeightFromIntensity, calculateIntensityFromWeight } from '@onecoach/one-workout';
-import { kgToLbs } from '@onecoach/lib-shared';
+import { calculateWeightFromIntensity, calculateIntensityFromWeight } from '@giulio-leone/one-workout';
+import { kgToLbs } from '@giulio-leone/lib-shared';
 
 export interface UseBidirectionalWeightCalcParams {
   intensityPercent?: number | null;

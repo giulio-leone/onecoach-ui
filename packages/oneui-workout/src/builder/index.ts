@@ -18,5 +18,5 @@ export { ElementTypeSelector } from './element-type-selector';
 export { WorkoutVisualBuilder } from './workout-visual-builder';
 
 // Re-export types from SSOT
-export type { WorkoutElementType } from '@onecoach/schemas';
+export type { WorkoutElementType } from '@giulio-leone/schemas';
 

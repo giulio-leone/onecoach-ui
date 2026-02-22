@@ -10,12 +10,12 @@ import { useTranslations } from 'next-intl';
 
 import { useState, useEffect, useCallback } from 'react';
 import { Settings, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
-import type { ProviderName, ModelTier } from '@onecoach/lib-ai';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import { AI_REASONING_CONFIG } from '@onecoach/constants';
-import { Checkbox } from '@onecoach/ui';
+import type { ProviderName, ModelTier } from '@giulio-leone/lib-ai';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import { AI_REASONING_CONFIG } from '@giulio-leone/constants';
+import { Checkbox } from '@giulio-leone/ui';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 type NonRouterProvider = Exclude<ProviderName, 'openrouter'>;
 
 export const PROVIDER_OPTIONS: { value: ProviderName; label: string }[] = [

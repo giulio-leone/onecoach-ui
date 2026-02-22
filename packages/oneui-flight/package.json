@@ -1,36 +1,36 @@
 {
-  "name": "@onecoach/ui-flight",
-  "version": "0.0.0",
+  "name": "@giulio-leone/ui-flight",
+  "version": "0.1.0",
   "type": "module",
-  "description": "Flight-specific UI components for OneCoach",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "sideEffects": false,
   "scripts": {
-    "type-check": "tsc --noEmit"
+    "build": "tsup"
   },
   "dependencies": {
-    "@onecoach/ui": "workspace:*",
-    "@onecoach/ui-core": "workspace:*",
-    "@onecoach/lib-design-system": "workspace:*",
-    "@onecoach/lib-shared": "workspace:*",
-    "@onecoach/hooks": "workspace:*",
-    "@onecoach/one-agent-hooks": "workspace:*",
-    "@onecoach/types-core": "workspace:*",
-    "@onecoach/types-workout": "workspace:*",
-    "@onecoach/types-nutrition": "workspace:*",
-    "@onecoach/types-chat": "workspace:*",
-    "@onecoach/types-analytics": "workspace:*",
-    "@onecoach/types-ai": "workspace:*",
-    "@onecoach/types-ui": "workspace:*",
-    "@onecoach/types-domain": "workspace:*",
-    "@onecoach/types-flight": "workspace:*",
-    "@onecoach/types-database": "workspace:*",
+    "@giulio-leone/ui": "^0.1.0",
+    "@giulio-leone/ui-core": "^0.1.0",
+    "@giulio-leone/lib-design-system": "^0.1.0",
+    "@giulio-leone/lib-shared": "^0.1.0",
+    "@giulio-leone/hooks": "^0.1.0",
+    "@giulio-leone/one-agent-hooks": "^0.1.0",
+    "@giulio-leone/types": "^0.1.0",
     "@tanstack/react-virtual": "^3.13.6",
     "@phosphor-icons/react": "^2.1.7"
   },
@@ -41,10 +41,5 @@
     "react-dom": ">=18.0.0",
     "next-intl": "^4.7.0"
   },
-  "devDependencies": {
-    "@types/react": "^19.0.10",
-    "typescript": "^5.9.3",
-    "@prisma/client": "^6.3.1"
-  },
-  "sideEffects": false
+  "description": "Flight-specific UI components for OneCoach"
 }

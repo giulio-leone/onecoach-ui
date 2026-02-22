@@ -1,8 +1,8 @@
-import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@onecoach/types/client';
+import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@giulio-leone/types/client';
 import type { SplitType, TierAI } from './constants';
 export type { SplitType, TierAI };
-import type { StreamEvent as UIStreamEvent } from '@onecoach/ui';
-import type { WorkoutGenerationInput as DomainWorkoutGenerationInput, WorkoutGenerationOutput as DomainWorkoutGenerationOutput } from "@onecoach/types-ai";
+import type { StreamEvent as UIStreamEvent } from '@giulio-leone/ui';
+import type { WorkoutGenerationInput as DomainWorkoutGenerationInput, WorkoutGenerationOutput as DomainWorkoutGenerationOutput } from "@giulio-leone/types/ai";
 
 export interface UserProfileState {
   weight?: number;

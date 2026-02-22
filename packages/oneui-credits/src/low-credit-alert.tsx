@@ -9,9 +9,9 @@ import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import { AlertTriangle, X } from 'lucide-react';
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import { Link } from 'app/navigation';
-import { useCredits } from '@onecoach/lib-api/hooks';
+import { useCredits } from '@giulio-leone/lib-api/hooks';
 
 
 interface LowCreditAlertProps {

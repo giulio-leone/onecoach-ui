@@ -1,4 +1,4 @@
 'use client';
-import { WarmupEditor } from '@onecoach/ui-workout';
+import { WarmupEditor } from '@giulio-leone/ui-workout';
 export { WarmupEditor };
 export default WarmupEditor;

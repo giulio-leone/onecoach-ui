@@ -5,8 +5,8 @@
  */
 'use client';
 import { useState } from 'react';
-import { Button, Modal, ModalFooter } from '@onecoach/ui';
-import { FoodCameraInline } from '@onecoach/ui-nutrition';
+import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
+import { FoodCameraInline } from '@giulio-leone/ui-nutrition';
 interface FoodAiModalProps {
   isOpen: boolean;
   onClose: () => void;

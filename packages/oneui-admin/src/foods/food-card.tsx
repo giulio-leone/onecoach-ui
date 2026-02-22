@@ -8,9 +8,9 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Button, Checkbox, Text } from '@onecoach/ui';
+import { Button, Checkbox, Text } from '@giulio-leone/ui';
 import { UtensilsCrossed, Eye, Edit, Trash2, MoreVertical } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { AdminDropdownMenu } from '../shared/admin-dropdown-menu';
 
 export interface FoodCardProps {

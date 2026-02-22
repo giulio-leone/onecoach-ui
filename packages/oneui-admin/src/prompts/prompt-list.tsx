@@ -1,5 +1,5 @@
 import type { SystemPrompt } from './use-prompts-manager';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { motion } from 'framer-motion';
 import { Search, Sparkles, Power } from 'lucide-react';
 import { useTranslations } from 'next-intl';

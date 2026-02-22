@@ -11,11 +11,11 @@ import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
 import { useNutritionGeneration } from 'submodules/onecoach-ui/packages/hooks/src/use-nutrition-generation';
 import type { NutritionGenerationInput } from 'submodules/onecoach-ui/packages/hooks/src/use-nutrition-generation';
-import { cn, darkModeClasses } from '@onecoach/lib-design-system';
-import { useProfile } from '@onecoach/lib-api/hooks';
+import { cn, darkModeClasses } from '@giulio-leone/lib-design-system';
+import { useProfile } from '@giulio-leone/lib-api/hooks';
 
 import { Scale, Dumbbell, Zap, Trophy, Leaf } from 'lucide-react';
-import { SelectionCard, WizardRadioGroup, WizardSlider } from '@onecoach/ui';
+import { SelectionCard, WizardRadioGroup, WizardSlider } from '@giulio-leone/ui';
 import {
   DietType as DietTypeConst,
   mapActivityLevel,
@@ -23,11 +23,11 @@ import {
   mapGender,
 } from 'app/features/nutrition';
 import type { Goal } from 'app/features/nutrition';
-import { Sex, ActivityLevel } from '@onecoach/types/client';
+import { Sex, ActivityLevel } from '@giulio-leone/types/client';
 
 import type { DietType } from 'app/features/nutrition';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 // Standard Mesh Wizard
 import {
   MeshWizard,

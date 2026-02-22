@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
  * Rifattorizzato: usa GlassCard, mobile-first, semplificato
  */
 
-import { Select, Card, Button } from '@onecoach/ui';
+import { Select, Card, Button } from '@giulio-leone/ui';
 import { RotateCcw } from 'lucide-react';
 import type { FilterStatus } from './exercise-constants';
 import { STATUS_FILTERS } from './exercise-constants';

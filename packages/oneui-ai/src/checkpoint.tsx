@@ -1,6 +1,6 @@
 'use client';
-import { cn } from '@onecoach/lib-design-system';
-import { Button, Separator, Tooltip, TooltipContent, TooltipTrigger } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Button, Separator, Tooltip, TooltipContent, TooltipTrigger } from '@giulio-leone/ui';
 import { BookmarkIcon, type LucideProps } from 'lucide-react';
 import type { ComponentProps, HTMLAttributes } from 'react';
 export type CheckpointProps = HTMLAttributes<HTMLDivElement>;

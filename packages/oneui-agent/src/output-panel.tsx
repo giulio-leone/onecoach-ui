@@ -9,9 +9,9 @@
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, Code, Copy, Check } from 'lucide-react';
-import { logger } from '@onecoach/lib-shared';
-import type { NutritionPlan } from '@onecoach/types-nutrition';
-import type { WorkoutProgram } from '@onecoach/types-workout';
+import { logger } from '@giulio-leone/lib-shared';
+import type { NutritionPlan } from '@giulio-leone/types/nutrition';
+import type { WorkoutProgram } from '@giulio-leone/types/workout';
 
 interface StreamingOutputPanelProps {
   content: string;

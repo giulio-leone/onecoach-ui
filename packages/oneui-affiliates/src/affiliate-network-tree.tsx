@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import { ChevronDown, ChevronRight, Users, User, Crown } from 'lucide-react';
-import type { ReferralAttributionStatus } from '@onecoach/types/client';
+import type { ReferralAttributionStatus } from '@giulio-leone/types/client';
 
 interface NetworkNode {
   id: string;

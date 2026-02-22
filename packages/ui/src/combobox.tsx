@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, Search, Check } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import * as Popover from '@radix-ui/react-popover';
 import { Command } from 'cmdk';
 

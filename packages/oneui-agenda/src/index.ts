@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-agenda
+ * @giulio-leone/ui-agenda
  * Agenda and calendar UI components.
  */
 

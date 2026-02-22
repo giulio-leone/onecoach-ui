@@ -7,7 +7,7 @@ import { Card } from '../../card';
 import { Badge } from '../../badge';
 import { Button } from '../../button';
 import { MoreHorizontal } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Image } from '../../image';
 
 export interface ResourceAction {

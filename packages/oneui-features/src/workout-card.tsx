@@ -9,8 +9,8 @@ import { useTranslations } from 'next-intl';
  */
 
 import { Dumbbell, Eye, Trash2, Target, Calendar, TrendingUp, Clock } from 'lucide-react';
-import { Card } from '@onecoach/ui';
-import type { WorkoutProgram, WorkoutDay } from '@onecoach/types-workout';
+import { Card } from '@giulio-leone/ui';
+import type { WorkoutProgram, WorkoutDay } from '@giulio-leone/types/workout';
 
 export interface WorkoutCardProps {
   program: WorkoutProgram;

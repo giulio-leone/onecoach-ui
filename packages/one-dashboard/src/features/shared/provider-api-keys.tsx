@@ -26,9 +26,9 @@ import {
   ChevronDown,
   ChevronUp,
 } from 'lucide-react';
-import { Button, Input, Switch } from '@onecoach/ui';
-import { cn } from '@onecoach/lib-design-system';
-import type { ProviderName } from '@onecoach/lib-ai';
+import { Button, Input, Switch } from '@giulio-leone/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { ProviderName } from '@giulio-leone/lib-ai';
 interface ProviderConfigClient {
   provider: ProviderName;
   label: string;

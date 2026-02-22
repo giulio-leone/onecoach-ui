@@ -1,8 +1,8 @@
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   Button,
   Collapsible,
@@ -13,7 +13,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { ChevronDownIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';

@@ -1,4 +1,4 @@
-import type { NutritionPlan } from '@onecoach/types-nutrition';
+import type { NutritionPlan } from '@giulio-leone/types/nutrition';
 
 import { ScrollView, Text, View } from 'react-native';
 

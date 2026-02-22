@@ -12,15 +12,15 @@ import { forwardRef, useImperativeHandle, useState } from 'react';
 import Link from 'next/link';
 import { Plus } from 'lucide-react';
 import { useSession } from 'next-auth/react';
-import { useWorkouts, useDeleteWorkout, useDuplicateWorkout } from '@onecoach/features-workout';
-import { ErrorState } from '@onecoach/ui/components';
-import { SelectionToolbar, useSupabaseContext } from '@onecoach/ui-core';
-import { useUserActiveGenerations } from '@onecoach/hooks';
-import { DeployToClientsModal } from '@onecoach/ui-coach';
+import { useWorkouts, useDeleteWorkout, useDuplicateWorkout } from '@giulio-leone/features-workout';
+import { ErrorState } from '@giulio-leone/ui/components';
+import { SelectionToolbar, useSupabaseContext } from '@giulio-leone/ui-core';
+import { useUserActiveGenerations } from '@giulio-leone/hooks';
+import { DeployToClientsModal } from '@giulio-leone/ui-coach';
 import { WorkoutCard } from './workout-card';
 import { WorkoutGeneratingCard } from './workout-generating-card';
 import { useTranslations } from 'next-intl';
-import type { WorkoutProgram } from '@onecoach/types-workout';
+import type { WorkoutProgram } from '@giulio-leone/types/workout';
 
 export interface SavedWorkoutProgramsRef {
   refresh: () => void;
@@ -94,13 +94,13 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
       const { toast } = await import('sonner');
       toast.success(t('duplicateSuccess'));
     } catch (err: unknown) {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       await dialog.error(err instanceof Error ? err.message : t('duplicateError'));
     }
   };
 
   const handleDelete = async (id: string) => {
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(t('deleteConfirm'));
     if (!confirmed) return;
 
@@ -109,14 +109,14 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
       const { toast } = await import('sonner');
       toast.success(tCommon('success'));
     } catch (err: unknown) {
-      const { dialog: errorDialog } = await import('@onecoach/lib-stores');
+      const { dialog: errorDialog } = await import('@giulio-leone/lib-stores');
       await errorDialog.error(err instanceof Error ? err.message : t('deleteError'));
     }
   };
 
   const handleBulkDelete = async () => {
     if (selectedIds.size === 0) return;
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(t('bulkDeleteConfirm', { count: selectedIds.size }));
     if (!confirmed) return;
 
@@ -130,7 +130,7 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
       toast.success(tCommon('success'));
       clearSelection();
     } catch (err: unknown) {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       await dialog.error(err instanceof Error ? err.message : t('bulkDeleteError'));
     }
   };

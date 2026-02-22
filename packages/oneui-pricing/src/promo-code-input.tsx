@@ -8,8 +8,8 @@ import { useTranslations } from 'next-intl';
  */
 
 import { Tag, CheckCircle2, XCircle } from 'lucide-react';
-import { Input } from '@onecoach/ui';
-import { usePromoCodeValidation } from '@onecoach/lib-api/hooks';
+import { Input } from '@giulio-leone/ui';
+import { usePromoCodeValidation } from '@giulio-leone/lib-api/hooks';
 
 /** Local promotion type aligned with the usePromoCodeValidation hook */
 interface PromotionInfo {

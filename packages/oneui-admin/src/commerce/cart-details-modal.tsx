@@ -1,9 +1,9 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { Badge, Button, Modal, ModalFooter, Select, Textarea } from '@onecoach/ui';
+import { Badge, Button, Modal, ModalFooter, Select, Textarea } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { Clock, TicketPercent, User } from 'lucide-react';
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 import { useTranslations, useFormatter } from 'next-intl';
 
 type CartItem = {

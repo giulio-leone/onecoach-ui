@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { signIn } from 'next-auth/react';
-import { Button, Input, Checkbox } from '@onecoach/ui';
+import { Button, Input, Checkbox } from '@giulio-leone/ui';
 import { useReferralTracking } from 'hooks/use-referral-tracking';
-import { useFeatureFlag } from '@onecoach/hooks/useFeatureFlag';
-import { useForm } from '@onecoach/hooks';
-import { isValidEmail, validatePassword, passwordsMatch } from '@onecoach/lib-shared';
-import { handleApiError } from '@onecoach/lib-shared';
+import { useFeatureFlag } from '@giulio-leone/hooks/useFeatureFlag';
+import { useForm } from '@giulio-leone/hooks';
+import { isValidEmail, validatePassword, passwordsMatch } from '@giulio-leone/lib-shared';
+import { handleApiError } from '@giulio-leone/lib-shared';
 
 
 interface RegisterFormValues {

@@ -161,4 +161,4 @@ export * from './program-card';
 export * from './programs-page-layout';
 
 // Import Modal (generic file upload component)
-export { ImportModal } from '@onecoach/ui-core';
+export { ImportModal } from '@giulio-leone/ui-core';

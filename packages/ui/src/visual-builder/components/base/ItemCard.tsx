@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { GripVertical } from 'lucide-react';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 
 export interface ItemCardProps {
   children: React.ReactNode;

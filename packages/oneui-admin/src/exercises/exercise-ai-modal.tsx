@@ -9,11 +9,11 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useState } from 'react';
-import { useExerciseGeneration } from '@onecoach/hooks/use-exercise-generation';
+import { useExerciseGeneration } from '@giulio-leone/hooks/use-exercise-generation';
 import type {
   ExerciseGenerationInput,
   ExerciseGenerationOutput,
-} from '@onecoach/hooks/use-exercise-generation';
+} from '@giulio-leone/hooks/use-exercise-generation';
 import {
   AiGenerationModal,
   type OptionConfig,

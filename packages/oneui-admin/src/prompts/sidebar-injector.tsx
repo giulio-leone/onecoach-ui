@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, memo } from 'react';
-import { useSidebarStore } from '@onecoach/lib-stores';
+import { useSidebarStore } from '@giulio-leone/lib-stores';
 import type { ReactNode } from 'react';
 
 interface SidebarInjectorProps {

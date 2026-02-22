@@ -6,10 +6,10 @@ import {
   type GroupedExercise,
   type ExerciseOccurrence,
   type ProgressionParams,
-} from '@onecoach/lib-workout';
-import { Button } from '@onecoach/ui';
+} from '@giulio-leone/lib-workout';
+import { Button } from '@giulio-leone/ui';
 import { useTranslations } from 'next-intl';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   Dumbbell,
   TrendingUp,
@@ -32,8 +32,8 @@ import {
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { SetGroupEditor } from '../editor/set-group-editor';
 
-import { logger } from '@onecoach/lib-shared';
-import type { WorkoutProgram, SetGroup } from '@onecoach/types-workout';
+import { logger } from '@giulio-leone/lib-shared';
+import type { WorkoutProgram, SetGroup } from '@giulio-leone/types/workout';
 
 type GroupedExerciseWithCatalog = GroupedExercise & { catalogExerciseId?: string };
 

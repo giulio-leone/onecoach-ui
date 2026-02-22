@@ -10,8 +10,8 @@ import { useTranslations } from 'next-intl';
 import {
   MarketplacePlanCard,
   type MarketplacePlanCardProps,
-} from '@onecoach/ui-marketplace';
-import { EmptyState } from '@onecoach/ui';
+} from '@giulio-leone/ui-marketplace';
+import { EmptyState } from '@giulio-leone/ui';
 import { Package } from 'lucide-react';
 
 interface CoachPlansListProps {

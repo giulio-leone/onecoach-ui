@@ -8,7 +8,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import type { AdminMenuItem } from './admin-menu-item.types';
 
 

@@ -3,16 +3,16 @@
 import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
-import { Button, Checkbox } from '@onecoach/ui';
+import { Button, Checkbox } from '@giulio-leone/ui';
 import { Save, RotateCcw, Columns, Monitor, Sparkles } from 'lucide-react';
 import type { SystemPrompt } from './use-prompts-manager';
 import { PromptPreview } from './prompt-preview';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Monaco } from '@monaco-editor/react';
 import type * as monacoEditor from 'monaco-editor';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 // Lazy load Monaco Editor
 const MonacoEditor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 
@@ -132,7 +132,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
   };
 
   const handleReset = async () => {
-    const { dialog } = await import('@onecoach/lib-stores');
+    const { dialog } = await import('@giulio-leone/lib-stores');
     const confirmed = await dialog.confirm(tAdmin('resetConfirm'));
     if (confirmed) {
       setTemplate(prompt.defaultPrompt);

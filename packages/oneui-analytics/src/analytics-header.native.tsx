@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, useColorScheme } from 'react-native';
-import { Card } from '@onecoach/ui';
+import { Card } from '@giulio-leone/ui';
 import { Calendar, Download, Share2 } from 'lucide-react-native';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 export type Period = '7d' | '30d' | '90d' | '1y' | 'custom';
 

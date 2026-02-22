@@ -11,22 +11,22 @@
  */
 'use client';
 import { useEffect, useMemo, useRef } from 'react';
-import { createFoodSchema } from '@onecoach/schemas';
-import { Button, Input, Modal, ModalFooter } from '@onecoach/ui';
+import { createFoodSchema } from '@giulio-leone/schemas';
+import { Button, Input, Modal, ModalFooter } from '@giulio-leone/ui';
 import { Save } from 'lucide-react';
 import { BrandCombobox } from './brand-combobox';
 import { CategoriesMultiselect } from './categories-multiselect';
-import { useFood, useCreateFood, useUpdateFood } from '@onecoach/features/food/hooks';
-import { useForm } from '@onecoach/hooks';
-import { LoadingState, ErrorState } from '@onecoach/ui/components';
+import { useFood, useCreateFood, useUpdateFood } from '@giulio-leone/features/food/hooks';
+import { useForm } from '@giulio-leone/hooks';
+import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 import { useTranslations } from 'next-intl';
 import {
   calculateMainMacro,
   getMainMacroDescription,
   getMainMacroEmoji,
-} from '@onecoach/lib-shared';
-import type { FoodItem } from "@onecoach/types-nutrition";
-import type { Macros } from "@onecoach/types-nutrition";
+} from '@giulio-leone/lib-shared';
+import type { FoodItem } from "@giulio-leone/types/nutrition";
+import type { Macros } from "@giulio-leone/types/nutrition";
 
 type Mode = 'create' | 'edit';
 interface FoodFormModalProps {

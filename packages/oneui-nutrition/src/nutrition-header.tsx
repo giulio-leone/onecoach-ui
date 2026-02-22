@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Heading, Text } from '@onecoach/ui';
+import { Heading, Text } from '@giulio-leone/ui';
 
 export interface NutritionHeaderProps {
   title: string;

@@ -11,17 +11,17 @@
 'use client';
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { AlertCircle, Check, Calculator, Edit3, Info, Loader2 } from 'lucide-react';
-import { Button, Modal, ModalFooter, Tooltip } from '@onecoach/ui';
-import { ExerciseCombobox } from '@onecoach/ui-workout';
-import { useOneRepMax, type MissingOneRM } from '@onecoach/features/workout/hooks';
-import { useWeightUnit } from '@onecoach/lib-api/hooks';
-import { estimateOneRMFromReps } from '@onecoach/lib-workout/intensity-calculator';
-import { kgToLbs, lbsToKg } from '@onecoach/lib-shared';
-import { logger } from '@onecoach/lib-shared';
-import { useMagicAnimation } from '@onecoach/lib-stores';
-import { useMaxesListRealtime } from '@onecoach/hooks';
+import { Button, Modal, ModalFooter, Tooltip } from '@giulio-leone/ui';
+import { ExerciseCombobox } from '@giulio-leone/ui-workout';
+import { useOneRepMax, type MissingOneRM } from '@giulio-leone/features/workout/hooks';
+import { useWeightUnit } from '@giulio-leone/lib-api/hooks';
+import { estimateOneRMFromReps } from '@giulio-leone/lib-workout/intensity-calculator';
+import { kgToLbs, lbsToKg } from '@giulio-leone/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
+import { useMagicAnimation } from '@giulio-leone/lib-stores';
+import { useMaxesListRealtime } from '@giulio-leone/hooks';
 import { useTranslations } from 'next-intl';
-import type { LocalizedExercise } from '@onecoach/lib-exercise';
+import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
 
 interface MissingOneRMModalProps {
   missing: MissingOneRM[];

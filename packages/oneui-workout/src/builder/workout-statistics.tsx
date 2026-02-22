@@ -19,15 +19,15 @@ import {
   Line,
   type TooltipProps,
 } from 'recharts';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Activity, Dumbbell, TrendingUp, Zap, Layers, Repeat } from 'lucide-react';
-import { Heading, Text } from '@onecoach/ui';
+import { Heading, Text } from '@giulio-leone/ui';
 import type { NameType, Payload, ValueType } from 'recharts/types/component/DefaultTooltipContent';
-import { WorkoutStatisticsService } from '@onecoach/lib-workout';
+import { WorkoutStatisticsService } from '@giulio-leone/lib-workout';
 import { motion, type Variants } from 'framer-motion';
 import { useTheme, designTokens } from 'design-system';
 import { useTranslations } from 'next-intl';
-import type { WorkoutProgram } from '@onecoach/types-workout';
+import type { WorkoutProgram } from '@giulio-leone/types/workout';
 
 type ChartColors = {
   primary: string;

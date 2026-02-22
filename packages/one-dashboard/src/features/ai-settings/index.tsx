@@ -33,10 +33,10 @@ import {
   ChevronRight,
   Database,
 } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { toast } from 'sonner';
-import { STRIPE_PLANS } from '@onecoach/lib-core/stripe/config';
-import type { ProviderName } from '@onecoach/lib-ai';
+import { STRIPE_PLANS } from '@giulio-leone/lib-core/stripe/config';
+import type { ProviderName } from '@giulio-leone/lib-ai';
 import {
   ModelsTab,
   FeaturesTab,
@@ -53,10 +53,10 @@ import type {
   FrameworkConfig,
 } from './components/types';
 import type { AgentConfig } from '../shared/ai-agents-config';
-import { useHeaderActions } from '@onecoach/lib-stores/header-actions.store';
+import { useHeaderActions } from '@giulio-leone/lib-stores/header-actions.store';
 
-import { logger } from '@onecoach/lib-shared';
-import type { CreditPackPricing } from "@onecoach/types-domain";
+import { logger } from '@giulio-leone/lib-shared';
+import type { CreditPackPricing } from "@giulio-leone/types/domain";
 
 const ProviderApiKeysSection = lazy(() =>
   import('../shared/provider-api-keys').then((m) => ({

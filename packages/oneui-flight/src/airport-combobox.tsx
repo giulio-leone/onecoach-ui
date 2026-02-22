@@ -3,7 +3,7 @@
 import React, { useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import * as Popover from '@radix-ui/react-popover';
 import { MagnifyingGlass, Check, X, Airplane, SpinnerGap, MapPin, CaretDown } from '@phosphor-icons/react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import type { Airport } from './types';
 
 // ----------------------------------------------------------------------------

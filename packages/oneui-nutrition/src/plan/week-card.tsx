@@ -10,12 +10,12 @@
 import { useMemo } from 'react';
 import { Plus, Trash2, BookOpen, Bookmark, GripVertical } from 'lucide-react';
 import { DayCard } from './day-card';
-import { SortableList, SortableItem, type SortableItemRenderProps, Button } from '@onecoach/ui-core';
-import { createNutritionDayDragId } from '@onecoach/lib-shared';
-import { cn } from '@onecoach/lib-design-system';
+import { SortableList, SortableItem, type SortableItemRenderProps, Button } from '@giulio-leone/ui-core';
+import { createNutritionDayDragId } from '@giulio-leone/lib-shared';
+import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
-import type { NutritionWeek } from "@onecoach/types-nutrition";
-import type { FoodItem } from "@onecoach/types-nutrition";
+import type { NutritionWeek } from "@giulio-leone/types/nutrition";
+import type { FoodItem } from "@giulio-leone/types/nutrition";
 
 interface WeekCardProps {
   week: NutritionWeek;

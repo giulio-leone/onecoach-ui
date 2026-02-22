@@ -1,13 +1,31 @@
 {
-  "version": "0.0.0",
-  "name": "design-system",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "name": "@giulio-leone/design-system",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "sideEffects": false,
   "scripts": {
+    "build": "tsup",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@onecoach/lib-design-system": "workspace:*",
+    "@giulio-leone/lib-design-system": "^0.1.0",
     "tailwindcss": "^4.1.18"
   },
   "peerDependencies": {
@@ -18,9 +36,5 @@
     "react-native": {
       "optional": true
     }
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3"
-  },
-  "sideEffects": false
+  }
 }

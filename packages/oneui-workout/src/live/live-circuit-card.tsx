@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { RotateCw, CheckCircle2 } from 'lucide-react';
-import type { Circuit } from '@onecoach/schemas';
-import { Card } from '@onecoach/ui';
+import type { Circuit } from '@giulio-leone/schemas';
+import { Card } from '@giulio-leone/ui';
 
 export interface LiveCircuitCardProps {
   circuit: Circuit;

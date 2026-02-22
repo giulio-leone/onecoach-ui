@@ -1,11 +1,11 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { Copy, Users, Coins, Share2, Check } from 'lucide-react';
-import { Button, IconBadge, Input, Heading, Text } from '@onecoach/ui';
+import { Button, IconBadge, Input, Heading, Text } from '@giulio-leone/ui';
 import { useTranslations } from 'next-intl';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import { LoadingState } from '@onecoach/ui/components';
-import { logger } from '@onecoach/lib-shared';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import { LoadingState } from '@giulio-leone/ui/components';
+import { logger } from '@giulio-leone/lib-shared';
 interface ReferralData {
   referralCode: {
     code: string;

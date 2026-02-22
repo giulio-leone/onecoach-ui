@@ -6,8 +6,8 @@
  */
 
 import { type ReactNode } from 'react';
-import { cn, darkModeClasses } from '@onecoach/lib-design-system';
-import { Heading, Text } from '@onecoach/ui';
+import { cn, darkModeClasses } from '@giulio-leone/lib-design-system';
+import { Heading, Text } from '@giulio-leone/ui';
 
 export interface AdminCardProps {
   title?: string;

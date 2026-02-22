@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-credits
+ * @giulio-leone/ui-credits
  * Credit system UI components.
  */
 

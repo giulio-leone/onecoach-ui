@@ -9,8 +9,8 @@
 
 import { useState, useMemo } from 'react';
 import { X, RotateCcw, GitCompare, Clock, Check } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import type { VersionSnapshot, StateDiff } from '@onecoach/hooks';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { VersionSnapshot, StateDiff } from '@giulio-leone/hooks';
 import { computeSemanticDiff } from '../../utils';
 
 export interface VersionHistoryModalProps<T = unknown> {

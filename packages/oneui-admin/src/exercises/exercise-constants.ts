@@ -1,4 +1,4 @@
-import { ExerciseApprovalStatus } from "@onecoach/types-database";
+import { ExerciseApprovalStatus } from "@giulio-leone/types/database";
 
 /**
  * Tipo per i filtri di stato
@@ -65,6 +65,6 @@ export interface FetchParams {
   muscleIds?: string[];
 }
 
-// SSOT: Rimuoviamo ExerciseListResponse - usa direttamente ExercisesResponse<LocalizedExercise> da @onecoach/lib-api
+// SSOT: Rimuoviamo ExerciseListResponse - usa direttamente ExercisesResponse<LocalizedExercise> da @giulio-leone/lib-api
 // Questo file non esporta più ExerciseListResponse per evitare duplicazioni
 // Usa direttamente: ExercisesResponse<LocalizedExercise> & { page: number; pageSize: number; total: number; }

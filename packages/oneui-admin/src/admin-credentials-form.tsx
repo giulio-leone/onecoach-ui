@@ -7,8 +7,8 @@ import { useTranslations } from 'next-intl';
  * Form per aggiornare le credenziali admin o super admin
  */
 import { useState } from 'react';
-import { Button, Input, Label, Text } from '@onecoach/ui';
-import { validatePassword } from '@onecoach/lib-shared';
+import { Button, Input, Label, Text } from '@giulio-leone/ui';
+import { validatePassword } from '@giulio-leone/lib-shared';
 
 const ADMIN_PASSWORD_REQUIREMENTS = {
   minLength: 8,

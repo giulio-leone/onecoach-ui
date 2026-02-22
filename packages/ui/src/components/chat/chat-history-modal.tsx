@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import { Search, Trash2, MessageSquare, Calendar, X, Pencil, Check } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Modal } from '../../dialog';
 import { Input } from '../../input';
 import { Button } from '../../button';

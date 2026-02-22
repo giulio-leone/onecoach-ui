@@ -4,7 +4,7 @@
  * Badge component con varianti per ruoli e status, dark mode ottimizzato
  */
 
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Shield, User } from 'lucide-react';
 
 export type BadgeVariant =

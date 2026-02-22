@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { CheckCircle, X, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 interface AffiliateRegistrationSuccess {
   creditReward: number;

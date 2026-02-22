@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Plane } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import { Card } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Card } from '@giulio-leone/ui';
 import { useTranslations } from 'next-intl';
 import { FlightCard } from './flight-card';
-import type { Flight, RouteGroup as RouteGroupType, FlightDirection } from '@onecoach/lib-shared';
+import type { Flight, RouteGroup as RouteGroupType, FlightDirection } from '@giulio-leone/lib-shared';
 
 export interface RouteGroupProps {
   group: RouteGroupType;

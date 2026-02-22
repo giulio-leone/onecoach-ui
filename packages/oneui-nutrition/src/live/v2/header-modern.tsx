@@ -3,8 +3,8 @@
 import { useLocale } from 'next-intl';
 
 import { ChevronLeft, ChevronRight, Calendar, CheckCircle2 } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
-import { Heading, Text, Button } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Heading, Text, Button } from '@giulio-leone/ui';
 
 export interface LiveNutritionHeaderModernProps {
   planName?: string;

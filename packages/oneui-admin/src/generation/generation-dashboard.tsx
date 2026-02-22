@@ -6,7 +6,7 @@ import {
   useWorkflowRuns,
   type WorkflowRun,
   type WorkflowRunStatus,
-} from '@onecoach/hooks';
+} from '@giulio-leone/hooks';
 import {
   Activity,
   Clock,

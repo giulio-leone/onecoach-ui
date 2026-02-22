@@ -9,8 +9,8 @@ const getExercises = async (_query: string) => {
   return [] as any[];
 };
 
-import { logger } from '@onecoach/lib-shared';
-import type { Exercise } from '@onecoach/types-workout';
+import { logger } from '@giulio-leone/lib-shared';
+import type { Exercise } from '@giulio-leone/types/workout';
 
 interface ExerciseSelectorProps {
   isOpen: boolean;
@@ -55,7 +55,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
 
   const filteredExercises = exercises.filter((ex: Exercise) => {
     const matchesMuscle = selectedMuscle
-      ? ex.muscleGroups?.includes(selectedMuscle as import('@onecoach/types').MuscleGroup)
+      ? ex.muscleGroups?.includes(selectedMuscle as import('@giulio-leone/types').MuscleGroup)
       : true;
     return matchesMuscle;
   });

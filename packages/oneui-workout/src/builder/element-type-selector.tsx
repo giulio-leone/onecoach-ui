@@ -1,11 +1,11 @@
 'use client';
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@onecoach/ui';
-import { Button } from '@onecoach/ui';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@giulio-leone/ui';
+import { Button } from '@giulio-leone/ui';
 import { Flame, Link2, RefreshCw, Activity, Dumbbell, X } from 'lucide-react';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { motion } from 'framer-motion';
-import type { WorkoutElementType } from '@onecoach/schemas';
+import type { WorkoutElementType } from '@giulio-leone/schemas';
 
 // ============================================================================
 // Types

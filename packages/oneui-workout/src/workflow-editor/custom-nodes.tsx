@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
  */
 
 import { Handle, Position, type NodeProps, type Node } from '@xyflow/react';
-import type { NodeType } from '@onecoach/lib-visual-builder/types';
+import type { NodeType } from '@giulio-leone/lib-visual-builder/types';
 import { Bot, Zap, GitBranch, Repeat, AlertCircle } from 'lucide-react';
 
 export interface CustomNodeData extends Record<string, unknown> {

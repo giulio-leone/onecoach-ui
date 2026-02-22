@@ -8,7 +8,7 @@ import type { UseWorkoutGenerationHook, ApiProfileData, TierAI } from './types';
 import { useWorkoutForm } from './use-workout-form';
 import { WorkoutForm } from './workout-form';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 export interface WorkoutGeneratorProps {
   useWorkoutGenerationHook: UseWorkoutGenerationHook;

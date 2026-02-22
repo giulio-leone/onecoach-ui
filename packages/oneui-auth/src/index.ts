@@ -1,5 +1,5 @@
 /**
- * @onecoach/ui-auth
+ * @giulio-leone/ui-auth
  * Authentication UI components.
  */
 

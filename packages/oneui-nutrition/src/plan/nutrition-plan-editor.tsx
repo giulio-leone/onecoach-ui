@@ -12,7 +12,7 @@ import { useCallback, useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation'; // Use standard hook for library components, or pass nav
 import { useTranslations } from 'next-intl';
 import { Plus } from 'lucide-react';
-import { Button, EditorHeader, VersionHistory } from '@onecoach/ui';
+import { Button, EditorHeader, VersionHistory } from '@giulio-leone/ui';
 import {
   DndContext,
   closestCenter,
@@ -24,8 +24,8 @@ import {
 } from '@dnd-kit/core';
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 // Next.js specific components - manteniamo import da apps/next
-import { SortableList } from '@onecoach/ui-core';
-// import { WeekCard, FoodDetailDrawer } from '@onecoach/ui-nutrition'; // Internal imports now
+import { SortableList } from '@giulio-leone/ui-core';
+// import { WeekCard, FoodDetailDrawer } from '@giulio-leone/ui-nutrition'; // Internal imports now
 import { WeekCard } from './week-card';
 // FoodDetailDrawer is in food? or builder?
 // Checking where WeekCard is... it is in ./week-card.tsx
@@ -33,20 +33,20 @@ import { WeekCard } from './week-card';
 // I will assume absolute import from package for now if internal structure is unknown
 import { FoodDetailDrawer } from '../food/food-detail-drawer'; // Guessed path, or import from package index
 
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import { createNutritionWeekDragId } from '@onecoach/lib-shared';
-import { getAllNutritionPlanDays } from '@onecoach/lib-shared';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import { createNutritionWeekDragId } from '@giulio-leone/lib-shared';
+import { getAllNutritionPlanDays } from '@giulio-leone/lib-shared';
 import {
   useNutritionPlanState,
   usePlanOperations,
   useMacrosCalculations,
   useTemplateOperations,
-} from '@onecoach/features-nutrition/hooks'; // Assuming this works if oneui-nutrition depends on it
-import { useExpansionState } from '@onecoach/hooks'; // Fixed import
-import { useFoodDrawer } from '@onecoach/features-food/hooks';
-import { useAdminCheck } from '@onecoach/hooks'; // Fixed import
-import { needsRecalculation } from '@onecoach/lib-shared';
-import { useNutritionDnd } from '@onecoach/features-nutrition/hooks';
+} from '@giulio-leone/features-nutrition/hooks'; // Assuming this works if oneui-nutrition depends on it
+import { useExpansionState } from '@giulio-leone/hooks'; // Fixed import
+import { useFoodDrawer } from '@giulio-leone/features-food/hooks';
+import { useAdminCheck } from '@giulio-leone/hooks'; // Fixed import
+import { needsRecalculation } from '@giulio-leone/lib-shared';
+import { useNutritionDnd } from '@giulio-leone/features-nutrition/hooks';
 import { PlanMetadataForm } from './components/plan-metadata-form';
 import { TargetMacrosForm } from './components/target-macros-form';
 import { RecalculateModal } from './components/recalculate-modal';
@@ -58,7 +58,7 @@ import { NutritionTemplateSelector } from './components/nutrition-template-selec
 // Or maybe I should move useNutritionPlanDetailRealtime to hooks package too?
 // It was in @/hooks... I'll check if I can rely on useNutritionPlanState for data.
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 import type {
   NutritionPlan,
   NutritionTemplate,
@@ -67,8 +67,8 @@ import type {
   NutritionDay,
   NutritionWeek,
   Meal,
-} from '@onecoach/types-nutrition';
-import type { FoodItem } from '@onecoach/types-nutrition';
+} from '@giulio-leone/types/nutrition';
+import type { FoodItem } from '@giulio-leone/types/nutrition';
 
 type NutritionPlanEditorProps = {
   planId?: string;
@@ -184,19 +184,19 @@ export function NutritionPlanEditor({
   const handleSave = useCallback(async () => {
     try {
       const savedPlan = await savePlan();
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       await dialog.success(isEditMode ? t('save_success') : t('created_success'));
       if (!isEditMode && savedPlan) {
         router.push(`/nutrition/${savedPlan.id}/edit`);
       }
     } catch (_err: unknown) {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       await dialog.error(_err instanceof Error ? _err.message : t('save_error'));
     }
   }, [savePlan, isEditMode, router, t]);
   const handleRestoreVersion = useCallback(
     async (version: number) => {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       const confirmed = await dialog.confirm(t('restore_confirm', { version }));
       if (!confirmed) return;
       try {
@@ -219,7 +219,7 @@ export function NutritionPlanEditor({
   }, [plan, planOps, setPlan, expandWeek, expandDay]);
   const handleRemoveWeek = useCallback(
     async (weekNumber: number) => {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       const confirmed = await dialog.confirm(t('delete_week_confirm'));
       if (!confirmed) return;
       const updatedPlan = planOps.removeWeek(plan, weekNumber);
@@ -236,7 +236,7 @@ export function NutritionPlanEditor({
   }, [plan, planOps, setPlan, expandWeek, expandDay]);
   const handleRemoveDay = useCallback(
     async (dayNumber: number) => {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       const confirmed = await dialog.confirm(t('delete_day_confirm'));
       if (!confirmed) return;
       const updatedPlan = planOps.removeDay(plan, dayNumber);
@@ -263,7 +263,7 @@ export function NutritionPlanEditor({
   );
   const handleRemoveMeal = useCallback(
     async (dayNumber: number, mealId: string) => {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       const confirmed = await dialog.confirm(t('delete_meal_confirm'));
       if (!confirmed) return;
       const updatedPlan = planOps.removeMeal(plan, dayNumber, mealId);
@@ -288,7 +288,7 @@ export function NutritionPlanEditor({
   );
   const handleRemoveFood = useCallback(
     async (dayNumber: number, mealId: string, foodId: string) => {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       const confirmed = await dialog.confirm(t('delete_food_confirm'));
       if (!confirmed) return;
       const updatedPlan = planOps.removeFood(plan, dayNumber, mealId, foodId);
@@ -334,7 +334,7 @@ export function NutritionPlanEditor({
         setRecalculateInfo(null);
       } catch (err: unknown) {
         logger.error(t('common.error'), err);
-        const { dialog } = await import('@onecoach/lib-stores');
+        const { dialog } = await import('@giulio-leone/lib-stores');
         await dialog.error(err instanceof Error ? err.message : t('recalculate_error'));
       } finally {
         setIsRecalculating(false);
@@ -451,11 +451,11 @@ export function NutritionPlanEditor({
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.error || t('template_save_error'));
       }
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       await dialog.success(t('template_saved'));
       templateOps.closeSaveTemplateDialog();
     } catch (_err: unknown) {
-      const { dialog } = await import('@onecoach/lib-stores');
+      const { dialog } = await import('@giulio-leone/lib-stores');
       await dialog.error(_err instanceof Error ? _err.message : t('template_save_error'));
     } finally {
       templateOps.setIsSavingTemplate(false);
@@ -661,7 +661,7 @@ export function NutritionPlanEditor({
             if (!response.ok) throw new Error(t('delete_error'));
             closeDrawer();
           } catch (_err: unknown) {
-            const { dialog } = await import('@onecoach/lib-stores');
+            const { dialog } = await import('@giulio-leone/lib-stores');
             await dialog.error(_err instanceof Error ? _err.message : t('delete_error'));
           }
         }}

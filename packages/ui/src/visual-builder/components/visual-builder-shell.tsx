@@ -5,7 +5,7 @@ import type { LucideIcon } from 'lucide-react';
 import { ArrowLeft, Plus, Trash2, MoreVertical } from 'lucide-react';
 import { Button } from '../../button';
 import { AutosaveIndicator } from './autosave-indicator';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   DropdownMenu,
   DropdownMenuContent,

@@ -12,14 +12,14 @@ import { useState } from 'react';
 import { Edit2, Trash2, History, FileText } from 'lucide-react';
 import { PolicyFormModal } from './policy-form-modal';
 import { PolicyHistoryModal } from './policy-history-modal';
-import type { PolicyWithCreator } from '@onecoach/lib-core/policy.service';
+import type { PolicyWithCreator } from '@giulio-leone/lib-core/policy.service';
 import {
   CatalogHeader,
   CatalogToolbar,
   CatalogGrid,
   ResourceCard,
   type FilterOption,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 
 interface PolicyListProps {
   policies: PolicyWithCreator[];

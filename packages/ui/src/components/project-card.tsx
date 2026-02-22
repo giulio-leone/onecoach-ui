@@ -2,7 +2,7 @@
 
 import { Card } from '../card';
 import { ProgressBar } from './progress-bar';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Calendar, MoreVertical, ArrowRight, Edit, Copy, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import {

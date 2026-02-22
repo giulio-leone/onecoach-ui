@@ -1,6 +1,6 @@
 'use client';
 
-import type { NutritionPlan, NutritionStatus } from "@onecoach/types-nutrition";
+import type { NutritionPlan, NutritionStatus } from "@giulio-leone/types/nutrition";
 
 /**
  * PlanMetadataForm Component

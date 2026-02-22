@@ -1,8 +1,8 @@
 'use client';
 
-import { CatalogHeader, CatalogGrid, ResourceCard } from '@onecoach/ui';
+import { CatalogHeader, CatalogGrid, ResourceCard } from '@giulio-leone/ui';
 import { Dumbbell, UtensilsCrossed, FileText, ArrowRight, type LucideIcon } from 'lucide-react';
-import { useRouter } from '@onecoach/ui-layout';
+import { useRouter } from '@giulio-leone/ui-layout';
 import { useTranslations, useLocale } from 'next-intl';
 
 interface CatalogHubClientProps {

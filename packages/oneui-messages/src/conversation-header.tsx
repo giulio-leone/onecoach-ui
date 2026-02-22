@@ -4,22 +4,22 @@
  * Header with user info and action menu (mute, priority, report, delete)
  */
 'use client';
-import { Avatar, Button } from '@onecoach/ui';
+import { Avatar, Button } from '@giulio-leone/ui';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@onecoach/ui-core';
+} from '@giulio-leone/ui-core';
 import {
   useUpdateConversationSettings,
   useDeleteDirectConversation,
-} from '@onecoach/lib-api-client/hooks';
+} from '@giulio-leone/lib-api-client/hooks';
 import { useRouter } from 'app/navigation';
 import { MoreVertical, BellOff, Bell, Star, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useTranslations } from 'next-intl';
-import type { DirectConversationWithUser } from '@onecoach/lib-core';
+import type { DirectConversationWithUser } from '@giulio-leone/lib-core';
 import type { ConversationPriority } from '@prisma/client';
 
 export interface ConversationHeaderProps {

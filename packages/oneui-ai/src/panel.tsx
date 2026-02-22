@@ -1,4 +1,4 @@
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Panel as PanelPrimitive } from '@xyflow/react';
 import type { ComponentProps } from 'react';
 

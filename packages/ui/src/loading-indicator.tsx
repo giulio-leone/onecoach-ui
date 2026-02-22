@@ -7,7 +7,7 @@
 
 'use client';
 
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { Sparkles, Brain, Zap, CheckCircle2 } from 'lucide-react';
 
 export interface LoadingIndicatorProps {

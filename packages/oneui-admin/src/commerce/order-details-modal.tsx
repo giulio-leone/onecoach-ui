@@ -1,5 +1,5 @@
 'use client';
-import { Badge, Button, Modal, ModalFooter } from '@onecoach/ui';
+import { Badge, Button, Modal, ModalFooter } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { CreditCard, User } from 'lucide-react';
 import { useTranslations, useFormatter } from 'next-intl';

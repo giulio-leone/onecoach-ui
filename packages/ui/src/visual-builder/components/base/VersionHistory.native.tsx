@@ -6,7 +6,7 @@
  */
 
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 
 export interface Version {
   id: string;

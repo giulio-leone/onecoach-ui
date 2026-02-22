@@ -17,7 +17,7 @@ import {
   ModalFooter,
   Checkbox,
   type AIGenerationLog,
-} from '@onecoach/ui';
+} from '@giulio-leone/ui';
 import { Brain, X } from 'lucide-react';
 export interface GenerationHookState<TOutput> {
   isGenerating: boolean;

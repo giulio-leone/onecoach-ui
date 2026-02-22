@@ -1,10 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useTranslations, useFormatter } from 'next-intl';
-import { Badge, Button, Select, StatCard, DatePicker } from '@onecoach/ui';
+import { Badge, Button, Select, StatCard, DatePicker } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { Activity, Clock, ShoppingCart, XCircle } from 'lucide-react';
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 import { CartDetailsModal } from './cart-details-modal';
 
 type Cart = {

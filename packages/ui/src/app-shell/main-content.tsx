@@ -7,8 +7,8 @@
  */
 
 import { useEffect, useState } from 'react';
-import { useSidebar, useUIStore, useCopilotStore } from '@onecoach/lib-stores';
-import { cn } from '@onecoach/lib-design-system';
+import { useSidebar, useUIStore, useCopilotStore } from '@giulio-leone/lib-stores';
+import { cn } from '@giulio-leone/lib-design-system';
 import { SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '../modern-sidebar';
 
 export interface AppShellMainContentProps {

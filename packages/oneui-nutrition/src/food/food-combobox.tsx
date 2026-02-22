@@ -4,8 +4,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Search, Loader2, X, Check } from 'lucide-react';
-import type { FoodItem } from '@onecoach/types-nutrition';
-import { useDebounce } from '@onecoach/hooks';
+import type { FoodItem } from '@giulio-leone/types/nutrition';
+import { useDebounce } from '@giulio-leone/hooks';
 
 interface FoodComboboxProps {
   onSelect?: (food: FoodItem) => void;

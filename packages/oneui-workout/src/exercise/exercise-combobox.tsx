@@ -15,11 +15,11 @@
 
 import { useCallback, useRef, useState, useEffect } from 'react';
 import { Search, Loader2, X, Check } from 'lucide-react';
-import type { LocalizedExercise } from '@onecoach/lib-exercise';
-import { useDebounce } from '@onecoach/hooks';
+import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
+import { useDebounce } from '@giulio-leone/hooks';
 import { useTranslations } from 'next-intl';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 interface ExerciseComboboxProps {
   // Modalità select (default)

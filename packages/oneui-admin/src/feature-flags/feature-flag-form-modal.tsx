@@ -9,9 +9,9 @@ import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 import { toast } from 'sonner';
-import { Checkbox } from '@onecoach/ui';
+import { Checkbox } from '@giulio-leone/ui';
 
 
 interface FlagData {

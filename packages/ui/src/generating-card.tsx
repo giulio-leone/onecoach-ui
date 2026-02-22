@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@onecoach/lib-design-system';
-import { Card, CardContent, CardHeader, CardTitle } from '@onecoach/ui-core';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Card, CardContent, CardHeader, CardTitle } from '@giulio-leone/ui-core';
 import { Progress } from './progress';
 import {
   Dumbbell,

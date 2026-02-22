@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import { motion } from 'motion/react';
 import { type CSSProperties, type ElementType, memo, useMemo } from 'react';
 

@@ -5,11 +5,11 @@
  */
 
 'use client';
-import { Button } from '@onecoach/ui';
-import { Modal, ModalFooter } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
+import { Modal, ModalFooter } from '@giulio-leone/ui';
 
-import { darkModeClasses, cn } from '@onecoach/lib-design-system';
-import type { Food } from "@onecoach/types-nutrition";
+import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
+import type { Food } from "@giulio-leone/types/nutrition";
 
 interface RecalculateInfo {
   dayNumber: number;

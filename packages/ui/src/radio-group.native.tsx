@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import { View, Text } from 'react-native';
 import { Radio, type RadioProps } from './radio';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 
 interface RadioGroupContextValue {
     value?: string;

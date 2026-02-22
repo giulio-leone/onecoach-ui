@@ -1,7 +1,7 @@
 'use client';
 
 import NextImage from 'next/image';
-import { cn } from '@onecoach/lib-design-system';
+import { cn } from '@giulio-leone/lib-design-system';
 import {
   Command,
   CommandDialog,
@@ -12,8 +12,8 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from '@onecoach/ui';
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@onecoach/ui';
+} from '@giulio-leone/ui';
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@giulio-leone/ui';
 import { CheckIcon, ChevronDownIcon, SparklesIcon, ZapIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 

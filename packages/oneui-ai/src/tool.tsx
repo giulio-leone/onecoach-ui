@@ -1,6 +1,6 @@
 'use client';
-import { cn } from '@onecoach/lib-design-system';
-import { Badge, Collapsible, CollapsibleContent, CollapsibleTrigger } from '@onecoach/ui';
+import { cn } from '@giulio-leone/lib-design-system';
+import { Badge, Collapsible, CollapsibleContent, CollapsibleTrigger } from '@giulio-leone/ui';
 import type { ToolUIPart } from './ai-types';
 import {
   CheckCircleIcon,

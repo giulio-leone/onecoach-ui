@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Button } from '../button';
 import { CreditCard } from 'lucide-react';
-import { handleApiError } from '@onecoach/lib-shared';
+import { handleApiError } from '@giulio-leone/lib-shared';
 
 interface SubscriptionFormProps {
   clientSecret: string;

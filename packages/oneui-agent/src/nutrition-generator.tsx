@@ -9,22 +9,22 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useMemo } from 'react';
-import { useNutritionGeneration, type NutritionGenerationInput } from '@onecoach/hooks';
-import { cn, darkModeClasses } from '@onecoach/lib-design-system';
-import { useProfile } from '@onecoach/lib-api/hooks';
+import { useNutritionGeneration, type NutritionGenerationInput } from '@giulio-leone/hooks';
+import { cn, darkModeClasses } from '@giulio-leone/lib-design-system';
+import { useProfile } from '@giulio-leone/lib-api/hooks';
 
 import { Scale, Dumbbell, Zap, Trophy, Leaf } from 'lucide-react';
-import { SelectionCard, WizardRadioGroup, WizardSlider } from '@onecoach/ui-core';
+import { SelectionCard, WizardRadioGroup, WizardSlider } from '@giulio-leone/ui-core';
 
 import type { 
   NutritionGoalCode as Goal, 
   DietaryRestrictions 
-} from '@onecoach/types-nutrition';
+} from '@giulio-leone/types/nutrition';
 
 // Extract DietType from DietaryRestrictions
 type DietType = DietaryRestrictions['dietType'];
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 // Standard Mesh Wizard
 import {

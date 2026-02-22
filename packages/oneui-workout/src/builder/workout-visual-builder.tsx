@@ -4,24 +4,24 @@ import { useState, useMemo, useCallback, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
-import { VisualBuilderShell } from '@onecoach/ui/visual-builder';
-import { useAutoSave, useVisualBuilderState } from '@onecoach/hooks';
-import { useHeaderActions, useCopilotActiveContextStore } from '@onecoach/lib-stores';
-import { CopilotDomainProvider } from '@onecoach/lib-copilot';
-import { logger } from '@onecoach/lib-shared';
+import { VisualBuilderShell } from '@giulio-leone/ui/visual-builder';
+import { useAutoSave, useVisualBuilderState } from '@giulio-leone/hooks';
+import { useHeaderActions, useCopilotActiveContextStore } from '@giulio-leone/lib-stores';
+import { CopilotDomainProvider } from '@giulio-leone/lib-copilot';
+import { logger } from '@giulio-leone/lib-shared';
 import { ArrowLeft, BarChart2, Layout, TrendingUp, Dumbbell, Upload } from 'lucide-react';
 // import { WorkoutImportModal } from '@/components/workout/workout-import-modal';
 // import { WorkoutClipboardProvider } from './workout-clipboard-provider';
 import type { LucideIcon } from 'lucide-react';
-import { WorkoutStatus } from '@onecoach/types/client';
-import { Text, Button } from '@onecoach/ui';
+import { WorkoutStatus } from '@giulio-leone/types/client';
+import { Text, Button } from '@giulio-leone/ui';
 import { DayEditor } from './day-editor';
 import { WorkoutStatistics } from './workout-statistics';
 import { ProgressionManager } from './progression-manager';
 import { OneRmReferenceModal } from './one-rm-reference-modal';
-import { cn } from '@onecoach/lib-design-system';
-import type { WorkoutProgram, WorkoutDay, WorkoutWeek, Exercise } from '@onecoach/types-workout';
-import { DifficultyLevel } from '@onecoach/types-workout';
+import { cn } from '@giulio-leone/lib-design-system';
+import type { WorkoutProgram, WorkoutDay, WorkoutWeek, Exercise } from '@giulio-leone/types/workout';
+import { DifficultyLevel } from '@giulio-leone/types/workout';
 
 interface SaveResult {
   success: boolean;

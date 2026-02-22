@@ -9,9 +9,9 @@ import { useTranslations } from 'next-intl';
 
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { Card, Button, Input, Label, Switch, Textarea, Avatar, Heading, Text } from '@onecoach/ui';
-import { coachApi, coachKeys, type CoachProfile } from '@onecoach/lib-api-client';
-import { cn } from '@onecoach/lib-design-system';
+import { Card, Button, Input, Label, Switch, Textarea, Avatar, Heading, Text } from '@giulio-leone/ui';
+import { coachApi, coachKeys, type CoachProfile } from '@giulio-leone/lib-api-client';
+import { cn } from '@giulio-leone/lib-design-system';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   User,
@@ -31,9 +31,9 @@ import {
   Eye,
   EyeOff,
 } from 'lucide-react';
-import { useAuthStore, useRealtimeSubscription, useMagicAnimation } from '@onecoach/lib-stores';
+import { useAuthStore, useRealtimeSubscription, useMagicAnimation } from '@giulio-leone/lib-stores';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 // ----------------------------------------------------------------------------
 // Types

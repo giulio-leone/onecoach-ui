@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Button } from '@onecoach/ui';
+import { Button } from '@giulio-leone/ui';
 import { X, Clock } from 'lucide-react';
 import { useTranslations, useFormatter } from 'next-intl';
 
-import { logger } from '@onecoach/lib-shared';
+import { logger } from '@giulio-leone/lib-shared';
 
 
 interface PromptHistoryEntry {
