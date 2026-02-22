@@ -4,12 +4,27 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@onecoach/lib-stores": ["../../../onecoach-backend/packages/lib-stores/src/index.ts"],
-      "@onecoach/lib-stores/*": ["../../../onecoach-backend/packages/lib-stores/src/*"],
-      "@onecoach/types": ["../../../onecoach-types/src/index.ts"]
-    }
+      "@/*": [
+        "./src/*"
+      ],
+      "@onecoach/lib-stores": [
+        "../../../onecoach-backend/packages/lib-stores/src/index.ts"
+      ],
+      "@onecoach/lib-stores/*": [
+        "../../../onecoach-backend/packages/lib-stores/src/*"
+      ],
+      "@onecoach/types": [
+        "../../../onecoach-types/src/index.ts"
+      ]
+    },
+    "incremental": false
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

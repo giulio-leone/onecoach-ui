@@ -1,7 +1,10 @@
 {
   "extends": "./packages/tsconfig.base.json",
   "compilerOptions": {
-    "noEmit": true
+    "noEmit": true,
+    "incremental": false
   },
-  "include": ["packages/**/*"]
+  "include": [
+    "packages/**/*"
+  ]
 }

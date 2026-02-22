@@ -8,7 +8,7 @@ export default defineConfig({
     'visual-builder': 'src/visual-builder/index.ts',
   },
   format: ['esm', 'cjs'],
-  dts: false,
+  dts: { tsconfig: 'tsconfig.build.json' },
   splitting: true,
   treeshake: true,
   clean: true,

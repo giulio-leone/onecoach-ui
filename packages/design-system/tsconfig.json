@@ -5,10 +5,18 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
-      "design-system/*": ["./src/*"]
+      "design-system/*": [
+        "./src/*"
+      ]
     },
-    "strict": true
+    "strict": true,
+    "incremental": false
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
