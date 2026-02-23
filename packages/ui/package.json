@@ -104,7 +104,6 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@giulio-leone/constants": "workspace:*",
-    "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-api-client": "workspace:*",
     "@giulio-leone/lib-chat-core": "workspace:*",
@@ -114,7 +113,6 @@
     "@giulio-leone/lib-stores": "workspace:*",
     "@giulio-leone/translations": "workspace:*",
     "@giulio-leone/types": "workspace:*",
-    "@giulio-leone/ui-agent": "workspace:*",
     "@radix-ui/react-collapsible": "^1.1.12",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
@@ -143,7 +141,9 @@
   "peerDependencies": {
     "expo-linear-gradient": "*",
     "react": ">=19.1.0 <20",
-    "react-native": ">=0.81 <0.83"
+    "react-native": ">=0.81 <0.83",
+    "@giulio-leone/ui-agent": "workspace:*",
+    "@giulio-leone/hooks": "workspace:*"
   },
   "peerDependenciesMeta": {
     "react-native": {
