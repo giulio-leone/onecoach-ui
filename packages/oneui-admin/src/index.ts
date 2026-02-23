@@ -1,5 +1,5 @@
 /**
- * @giulio-leone/ui-admin
+ * @giulio-leone/ui/admin
  * Admin panel UI components.
  */
 

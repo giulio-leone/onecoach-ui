@@ -20,7 +20,7 @@ import {
   MeshWizard,
   type MeshWizardStep,
   type MeshWizardStepProps,
-} from '@giulio-leone/ui-agent';
+} from '@giulio-leone/ui/agent';
 import { useOneAgendaGeneration } from '@giulio-leone/hooks';
 
 // ----------------------------------------------------------------------------

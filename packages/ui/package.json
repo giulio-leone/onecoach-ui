@@ -105,6 +105,30 @@
       "types": "./dist/core/index.d.ts",
       "import": "./dist/core/index.js",
       "default": "./src/core/index.ts"
+    },
+    "./agent": {
+      "types": "./src/agent/index.ts",
+      "default": "./src/agent/index.ts"
+    },
+    "./coach": {
+      "types": "./src/coach/index.ts",
+      "default": "./src/coach/index.ts"
+    },
+    "./nutrition": {
+      "types": "./src/nutrition/index.ts",
+      "default": "./src/nutrition/index.ts"
+    },
+    "./workout": {
+      "types": "./src/workout/index.ts",
+      "default": "./src/workout/index.ts"
+    },
+    "./ai": {
+      "types": "./src/ai/index.ts",
+      "default": "./src/ai/index.ts"
+    },
+    "./flight": {
+      "types": "./src/flight/index.ts",
+      "default": "./src/flight/index.ts"
     }
   },
   "files": [
@@ -159,11 +183,16 @@
     "tailwind-merge": "^3.4.0"
   },
   "peerDependencies": {
+    "@giulio-leone/hooks": "workspace:*",
+    "@giulio-leone/lib-ai": "workspace:*",
+    "@giulio-leone/lib-exercise": "workspace:*",
+    "@giulio-leone/lib-visual-builder": "workspace:*",
+    "@giulio-leone/one-workout": "workspace:*",
+    "@giulio-leone/ui-agent": "workspace:*",
+    "@phosphor-icons/react": "*",
     "expo-linear-gradient": "*",
     "react": ">=19.1.0 <20",
-    "react-native": ">=0.81 <0.83",
-    "@giulio-leone/ui-agent": "workspace:*",
-    "@giulio-leone/hooks": "workspace:*"
+    "react-native": ">=0.81 <0.83"
   },
   "peerDependenciesMeta": {
     "react-native": {
