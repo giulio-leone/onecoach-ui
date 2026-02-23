@@ -30,7 +30,7 @@ import {
 import { handleApiError } from '@giulio-leone/lib-shared';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { WorkoutImportResult } from '@giulio-leone/one-workout';
-import type { ImportProgress } from '@giulio-leone/lib-import-core';
+import type { ImportProgress } from '@giulio-leone/lib-shared/import-core';
 import { logger } from '@giulio-leone/lib-shared';
 import { createId } from '@giulio-leone/lib-core';
 
