@@ -2,7 +2,7 @@
 
 import { useAppNavigation } from '@giulio-leone/hooks';
 import { useTranslations } from 'next-intl';
-import { OneDashboardLayout } from '@giulio-leone/one-dashboard';
+import { OneDashboardLayout } from '@giulio-leone/ui/dashboard';
 import type { AuthenticatedUser } from "@giulio-leone/types/core";
 
 interface AdminShellProps {
