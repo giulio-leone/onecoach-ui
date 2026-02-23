@@ -190,7 +190,6 @@
     "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-ai": "workspace:*",
     "@giulio-leone/lib-exercise": "workspace:*",
-    "@giulio-leone/lib-visual-builder": "workspace:*",
     "@giulio-leone/one-workout": "workspace:*",
     "@giulio-leone/ui-agent": "workspace:*",
     "@phosphor-icons/react": "*",

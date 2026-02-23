@@ -95,12 +95,6 @@
       "@onecoach/ui-nutrition/*": [
         "./packages/oneui-nutrition/src/*"
       ],
-      "@onecoach/ui-flight": [
-        "./packages/oneui-flight/src/index.ts"
-      ],
-      "@onecoach/ui-flight/*": [
-        "./packages/oneui-flight/src/*"
-      ],
       "@onecoach/ui-coach": [
         "./packages/oneui-coach/src/index.ts"
       ],
@@ -232,12 +226,6 @@
       ],
       "@onecoach/features/exercise/hooks": [
         "../features/exercise/hooks/index.ts"
-      ],
-      "@onecoach/lib-visual-builder": [
-        "../onecoach-backend/packages/lib-visual-builder/src/index.ts"
-      ],
-      "@onecoach/lib-visual-builder/*": [
-        "../onecoach-backend/packages/lib-visual-builder/src/*"
       ],
       "@onecoach/one-workout/utils/progression-calculator": [
         "../one-workout/src/core/calculators/progression-calculator.ts"
