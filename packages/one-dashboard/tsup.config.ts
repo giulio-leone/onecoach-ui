@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup';
 export default defineConfig({
   entry: ['src/index.ts', 'src/layout/index.tsx'],
   format: ['esm', 'cjs'],
-  dts: { tsconfig: 'tsconfig.build.json' },
+  dts: false,
   splitting: true,
   treeshake: true,
   clean: true,

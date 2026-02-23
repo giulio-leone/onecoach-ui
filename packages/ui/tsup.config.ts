@@ -8,7 +8,7 @@ export default defineConfig({
     'visual-builder': 'src/visual-builder/index.ts',
   },
   format: ['esm', 'cjs'],
-  dts: { tsconfig: 'tsconfig.build.json' },
+  dts: false,
   splitting: true,
   treeshake: true,
   clean: true,
@@ -26,5 +26,6 @@ export default defineConfig({
     'react-markdown', 'react-syntax-highlighter',
     'react-native', 'react-native-web', 'expo-image', 'expo-linear-gradient',
     'tailwindcss',
+    /^app\//, /^hooks\//, /^@\//,
   ],
 });
