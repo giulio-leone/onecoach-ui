@@ -2,27 +2,31 @@
   "name": "@giulio-leone/ui-flight",
   "version": "0.1.0",
   "type": "module",
-  "main": "./src/index.ts",
-  "module": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "types": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
       "default": "./src/index.ts"
     },
     "./form": {
-      "types": "./src/form.ts",
+      "types": "./dist/form.d.ts",
+      "import": "./dist/form.js",
       "default": "./src/form.ts"
     },
     "./use-smart-flight-search": {
-      "types": "./src/use-smart-flight-search.ts",
+      "types": "./dist/use-smart-flight-search.d.ts",
+      "import": "./dist/use-smart-flight-search.js",
       "default": "./src/use-smart-flight-search.ts"
     },
     "./types": {
-      "types": "./src/types.ts",
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js",
       "default": "./src/types.ts"
     }
   },

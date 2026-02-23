@@ -1,164 +1,202 @@
 {
   "name": "@giulio-leone/hooks",
   "version": "0.1.0",
-  "main": "./src/index.ts",
-  "module": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
       "default": "./src/index.ts"
     },
     "./use-async": {
-      "types": "./src/use-async.ts",
+      "types": "./dist/use-async.d.ts",
+      "import": "./dist/use-async.js",
       "default": "./src/use-async.ts"
     },
     "./use-app-navigation": {
-      "types": "./src/use-app-navigation.ts",
+      "types": "./dist/use-app-navigation.d.ts",
+      "import": "./dist/use-app-navigation.js",
       "default": "./src/use-app-navigation.ts"
     },
     "./use-local-storage.native": {
-      "types": "./src/use-local-storage.native.ts",
+      "types": "./dist/use-local-storage.native.d.ts",
+      "import": "./dist/use-local-storage.native.js",
       "default": "./src/use-local-storage.native.ts"
     },
     "./use-referral-tracking.native": {
-      "types": "./src/use-referral-tracking.native.ts",
+      "types": "./dist/use-referral-tracking.native.d.ts",
+      "import": "./dist/use-referral-tracking.native.js",
       "default": "./src/use-referral-tracking.native.ts"
     },
     "./use-navigation-persistence": {
-      "types": "./src/use-navigation-persistence.ts",
+      "types": "./dist/use-navigation-persistence.d.ts",
+      "import": "./dist/use-navigation-persistence.js",
       "default": "./src/use-navigation-persistence.ts"
     },
     "./use-memory": {
-      "types": "./src/use-memory.ts",
+      "types": "./dist/use-memory.d.ts",
+      "import": "./dist/use-memory.js",
       "default": "./src/use-memory.ts"
     },
     "./useForm": {
-      "types": "./src/useForm.ts",
+      "types": "./dist/useForm.d.ts",
+      "import": "./dist/useForm.js",
       "default": "./src/useForm.ts"
     },
     "./use-auto-save": {
-      "types": "./src/use-auto-save.ts",
+      "types": "./dist/use-auto-save.d.ts",
+      "import": "./dist/use-auto-save.js",
       "default": "./src/use-auto-save.ts"
     },
     "./use-admin-check": {
-      "types": "./src/use-admin-check.ts",
+      "types": "./dist/use-admin-check.d.ts",
+      "import": "./dist/use-admin-check.js",
       "default": "./src/use-admin-check.ts"
     },
     "./use-body-measurements": {
-      "types": "./src/use-body-measurements.ts",
+      "types": "./dist/use-body-measurements.d.ts",
+      "import": "./dist/use-body-measurements.js",
       "default": "./src/use-body-measurements.ts"
     },
     "./use-referral-tracking": {
-      "types": "./src/use-referral-tracking.ts",
+      "types": "./dist/use-referral-tracking.d.ts",
+      "import": "./dist/use-referral-tracking.js",
       "default": "./src/use-referral-tracking.ts"
     },
     "./use-debounce": {
-      "types": "./src/use-debounce.ts",
+      "types": "./dist/use-debounce.d.ts",
+      "import": "./dist/use-debounce.js",
       "default": "./src/use-debounce.ts"
     },
     "./use-calendar-assignments": {
-      "types": "./src/use-calendar-assignments.ts",
+      "types": "./dist/use-calendar-assignments.d.ts",
+      "import": "./dist/use-calendar-assignments.js",
       "default": "./src/use-calendar-assignments.ts"
     },
     "./use-local-storage": {
-      "types": "./src/use-local-storage.ts",
+      "types": "./dist/use-local-storage.d.ts",
+      "import": "./dist/use-local-storage.js",
       "default": "./src/use-local-storage.ts"
     },
     "./use-food-generation": {
-      "types": "./src/use-food-generation.ts",
+      "types": "./dist/use-food-generation.d.ts",
+      "import": "./dist/use-food-generation.js",
       "default": "./src/use-food-generation.ts"
     },
     "./use-versioned-state": {
-      "types": "./src/use-versioned-state.ts",
+      "types": "./dist/use-versioned-state.d.ts",
+      "import": "./dist/use-versioned-state.js",
       "default": "./src/use-versioned-state.ts"
     },
     "./user-preferences": {
-      "types": "./src/user-preferences.ts",
+      "types": "./dist/user-preferences.d.ts",
+      "import": "./dist/user-preferences.js",
       "default": "./src/user-preferences.ts"
     },
     "./use-all-admin-foods-realtime": {
-      "types": "./src/use-all-admin-foods-realtime.ts",
+      "types": "./dist/use-all-admin-foods-realtime.d.ts",
+      "import": "./dist/use-all-admin-foods-realtime.js",
       "default": "./src/use-all-admin-foods-realtime.ts"
     },
     "./use-workflow-runs": {
-      "types": "./src/use-workflow-runs.ts",
+      "types": "./dist/use-workflow-runs.d.ts",
+      "import": "./dist/use-workflow-runs.js",
       "default": "./src/use-workflow-runs.ts"
     },
     "./use-calendar-navigation": {
-      "types": "./src/use-calendar-navigation.ts",
+      "types": "./dist/use-calendar-navigation.d.ts",
+      "import": "./dist/use-calendar-navigation.js",
       "default": "./src/use-calendar-navigation.ts"
     },
     "./use-persistent-versioned-state": {
-      "types": "./src/use-persistent-versioned-state.ts",
+      "types": "./dist/use-persistent-versioned-state.d.ts",
+      "import": "./dist/use-persistent-versioned-state.js",
       "default": "./src/use-persistent-versioned-state.ts"
     },
     "./use-credits": {
-      "types": "./src/use-credits.ts",
+      "types": "./dist/use-credits.d.ts",
+      "import": "./dist/use-credits.js",
       "default": "./src/use-credits.ts"
     },
     "./use-expansion-state": {
-      "types": "./src/use-expansion-state.ts",
+      "types": "./dist/use-expansion-state.d.ts",
+      "import": "./dist/use-expansion-state.js",
       "default": "./src/use-expansion-state.ts"
     },
     "./use-nutrition-generation": {
-      "types": "./src/use-nutrition-generation.ts",
+      "types": "./dist/use-nutrition-generation.d.ts",
+      "import": "./dist/use-nutrition-generation.js",
       "default": "./src/use-nutrition-generation.ts"
     },
     "./use-oneagenda-generation": {
-      "types": "./src/use-oneagenda-generation.ts",
+      "types": "./dist/use-oneagenda-generation.d.ts",
+      "import": "./dist/use-oneagenda-generation.js",
       "default": "./src/use-oneagenda-generation.ts"
     },
     "./use-optimistic-update": {
-      "types": "./src/use-optimistic-update.ts",
+      "types": "./dist/use-optimistic-update.d.ts",
+      "import": "./dist/use-optimistic-update.js",
       "default": "./src/use-optimistic-update.ts"
     },
     "./use-visual-builder-state": {
-      "types": "./src/use-visual-builder-state.ts",
+      "types": "./dist/use-visual-builder-state.d.ts",
+      "import": "./dist/use-visual-builder-state.js",
       "default": "./src/use-visual-builder-state.ts"
     },
     "./use-import-measurements": {
-      "types": "./src/use-import-measurements.ts",
+      "types": "./dist/use-import-measurements.d.ts",
+      "import": "./dist/use-import-measurements.js",
       "default": "./src/use-import-measurements.ts"
     },
     "./use-durable-generation": {
-      "types": "./src/use-durable-generation.ts",
+      "types": "./dist/use-durable-generation.d.ts",
+      "import": "./dist/use-durable-generation.js",
       "default": "./src/use-durable-generation.ts"
     },
     "./use-chat": {
-      "types": "./src/use-chat.ts",
+      "types": "./dist/use-chat.d.ts",
+      "import": "./dist/use-chat.js",
       "default": "./src/use-chat.ts"
     },
     "./use-workout-generation": {
-      "types": "./src/use-workout-generation.ts",
+      "types": "./dist/use-workout-generation.d.ts",
+      "import": "./dist/use-workout-generation.js",
       "default": "./src/use-workout-generation.ts"
     },
     "./use-planning-progress": {
-      "types": "./src/use-planning-progress.ts",
+      "types": "./dist/use-planning-progress.d.ts",
+      "import": "./dist/use-planning-progress.js",
       "default": "./src/use-planning-progress.ts"
     },
     "./useFeatureFlag": {
-      "types": "./src/useFeatureFlag.ts",
+      "types": "./dist/useFeatureFlag.d.ts",
+      "import": "./dist/useFeatureFlag.js",
       "default": "./src/useFeatureFlag.ts"
     },
     "./use-maxes-list-realtime": {
-      "types": "./src/use-maxes-list-realtime.ts",
+      "types": "./dist/use-maxes-list-realtime.d.ts",
+      "import": "./dist/use-maxes-list-realtime.js",
       "default": "./src/use-maxes-list-realtime.ts"
     },
     "./use-user-profile": {
-      "types": "./src/use-user-profile.ts",
+      "types": "./dist/use-user-profile.d.ts",
+      "import": "./dist/use-user-profile.js",
       "default": "./src/use-user-profile.ts"
     },
     "./use-user-active-generations": {
-      "types": "./src/use-user-active-generations.ts",
+      "types": "./dist/use-user-active-generations.d.ts",
+      "import": "./dist/use-user-active-generations.js",
       "default": "./src/use-user-active-generations.ts"
     },
     "./use-exercise-generation": {
-      "types": "./src/use-exercise-generation.ts",
+      "types": "./dist/use-exercise-generation.d.ts",
+      "import": "./dist/use-exercise-generation.js",
       "default": "./src/use-exercise-generation.ts"
     }
   },

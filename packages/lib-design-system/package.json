@@ -2,35 +2,42 @@
   "name": "@giulio-leone/lib-design-system",
   "version": "0.1.0",
   "description": "Design system (tokens, theme, animations)",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
       "default": "./src/index.ts"
     },
     "./animations.native": {
-      "types": "./src/animations.native.ts",
+      "types": "./dist/animations.native.d.ts",
+      "import": "./dist/animations.native.js",
       "default": "./src/animations.native.ts"
     },
     "./dark-mode-classes": {
-      "types": "./src/dark-mode-classes.ts",
+      "types": "./dist/dark-mode-classes.d.ts",
+      "import": "./dist/dark-mode-classes.js",
       "default": "./src/dark-mode-classes.ts"
     },
     "./tokens": {
-      "types": "./src/tokens.ts",
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js",
       "default": "./src/tokens.ts"
     },
     "./tokens-complete": {
-      "types": "./src/tokens-complete.ts",
+      "types": "./dist/tokens-complete.d.ts",
+      "import": "./dist/tokens-complete.js",
       "default": "./src/tokens-complete.ts"
     },
     "./tailwind.preset": {
-      "types": "./src/tailwind.preset.ts",
+      "types": "./dist/tailwind.preset.d.ts",
+      "import": "./dist/tailwind.preset.js",
       "default": "./src/tailwind.preset.ts"
     },
     "./animations": {
-      "types": "./src/animations.ts",
+      "types": "./dist/animations.d.ts",
+      "import": "./dist/animations.js",
       "default": "./src/animations.ts"
     }
   },
@@ -46,7 +53,7 @@
     "react": "^18.3.1"
   },
   "sideEffects": false,
-  "module": "./src/index.ts",
+  "module": "./dist/index.js",
   "files": [
     "dist"
   ],

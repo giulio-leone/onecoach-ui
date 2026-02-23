@@ -2,88 +2,108 @@
   "name": "@giulio-leone/ui",
   "version": "0.1.0",
   "type": "module",
-  "main": "./src/index.ts",
-  "module": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
       "default": "./src/index.ts"
     },
     "./drawer.shared": {
-      "types": "./src/drawer.shared.ts",
+      "types": "./dist/drawer.shared.d.ts",
+      "import": "./dist/drawer.shared.js",
       "default": "./src/drawer.shared.ts"
     },
     "./tab-button.shared": {
-      "types": "./src/tab-button.shared.ts",
+      "types": "./dist/tab-button.shared.d.ts",
+      "import": "./dist/tab-button.shared.js",
       "default": "./src/tab-button.shared.ts"
     },
     "./date-picker-with-presets.shared": {
-      "types": "./src/date-picker-with-presets.shared.ts",
+      "types": "./dist/date-picker-with-presets.shared.d.ts",
+      "import": "./dist/date-picker-with-presets.shared.js",
       "default": "./src/date-picker-with-presets.shared.ts"
     },
     "./date-picker.shared": {
-      "types": "./src/date-picker.shared.ts",
+      "types": "./dist/date-picker.shared.d.ts",
+      "import": "./dist/date-picker.shared.js",
       "default": "./src/date-picker.shared.ts"
     },
     "./index.web": {
-      "types": "./src/index.web.ts",
+      "types": "./dist/index.web.d.ts",
+      "import": "./dist/index.web.js",
       "default": "./src/index.web.ts"
     },
     "./button.shared": {
-      "types": "./src/button.shared.ts",
+      "types": "./dist/button.shared.d.ts",
+      "import": "./dist/button.shared.js",
       "default": "./src/button.shared.ts"
     },
     "./components": {
-      "types": "./src/components/index.ts",
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js",
       "default": "./src/components/index.ts"
     },
     "./copilot": {
-      "types": "./src/copilot/index.ts",
+      "types": "./dist/copilot/index.d.ts",
+      "import": "./dist/copilot/index.js",
       "default": "./src/copilot/index.ts"
     },
     "./features": {
-      "types": "./src/features/index.ts",
+      "types": "./dist/features/index.d.ts",
+      "import": "./dist/features/index.js",
       "default": "./src/features/index.ts"
     },
     "./agenda": {
-      "types": "./src/agenda/index.ts",
+      "types": "./dist/agenda/index.d.ts",
+      "import": "./dist/agenda/index.js",
       "default": "./src/agenda/index.ts"
     },
     "./analytics": {
-      "types": "./src/analytics/index.ts",
+      "types": "./dist/analytics/index.d.ts",
+      "import": "./dist/analytics/index.js",
       "default": "./src/analytics/index.ts"
     },
     "./marketplace": {
-      "types": "./src/marketplace/index.ts",
+      "types": "./dist/marketplace/index.d.ts",
+      "import": "./dist/marketplace/index.js",
       "default": "./src/marketplace/index.ts"
     },
     "./layout": {
-      "types": "./src/layout/index.ts",
+      "types": "./dist/layout/index.d.ts",
+      "import": "./dist/layout/index.js",
       "default": "./src/layout/index.ts"
     },
     "./layout/navigation": {
-      "types": "./src/layout/navigation.ts",
+      "types": "./dist/layout/navigation.d.ts",
+      "import": "./dist/layout/navigation.js",
       "default": "./src/layout/navigation.ts"
     },
     "./layout/routing": {
-      "types": "./src/layout/routing.ts",
+      "types": "./dist/layout/routing.d.ts",
+      "import": "./dist/layout/routing.js",
       "default": "./src/layout/routing.ts"
     },
     "./messages": {
-      "types": "./src/messages/index.ts",
+      "types": "./dist/messages/index.d.ts",
+      "import": "./dist/messages/index.js",
       "default": "./src/messages/index.ts"
     },
     "./auth": {
-      "types": "./src/auth/index.ts",
+      "types": "./dist/auth/index.d.ts",
+      "import": "./dist/auth/index.js",
       "default": "./src/auth/index.ts"
     },
     "./pricing": {
-      "types": "./src/pricing/index.ts",
+      "types": "./dist/pricing/index.d.ts",
+      "import": "./dist/pricing/index.js",
       "default": "./src/pricing/index.ts"
     },
     "./core": {
-      "types": "./src/core/index.ts",
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js",
       "default": "./src/core/index.ts"
     }
   },
