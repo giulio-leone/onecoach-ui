@@ -19,7 +19,7 @@ import {
   type FlightAnalysis,
   type FlightRecommendation,
 } from './smart-analysis-panel';
-import { AgentEventList, useAdminMode, type ProgressField } from '@giulio-leone/one-agent-hooks';
+import { AgentEventList, useAdminMode, type ProgressField } from '@giulio-leone/one-agent/hooks';
 
 interface SaveTripPayload {
   name?: string;

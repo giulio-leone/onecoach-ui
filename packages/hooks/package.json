@@ -178,7 +178,6 @@
     "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/lib-stores": "workspace:*",
     "@giulio-leone/one-agent": "workspace:*",
-    "@giulio-leone/one-agent-hooks": "workspace:*",
     "@giulio-leone/schemas": "workspace:*",
     "@giulio-leone/translations": "workspace:*",
     "@giulio-leone/types": "workspace:*",

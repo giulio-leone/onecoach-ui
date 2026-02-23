@@ -3,7 +3,7 @@
 import { useState, useCallback, useRef } from 'react';
 import type { FlightAnalysis, FlightRecommendation } from './smart-analysis-panel';
 import type { Flight } from './flight-card';
-import type { ProgressField } from '@giulio-leone/one-agent-hooks';
+import type { ProgressField } from '@giulio-leone/one-agent/hooks';
 
 // Re-export for convenience (DRY: single source of truth)
 export type { ProgressField };
