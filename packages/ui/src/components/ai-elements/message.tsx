@@ -191,7 +191,9 @@ export const MessageResponse = forwardRef<HTMLDivElement, MessageResponseProps>(
                   )}
                 />
               ),
-              ul: ({ ref: _ref, node: _node, ...ulProps }) => <ul className="my-2 list-disc space-y-1 pl-4" {...ulProps} />,
+              ul: ({ ref: _ref, node: _node, ...ulProps }) => (
+                <ul className="my-2 list-disc space-y-1 pl-4" {...ulProps} />
+              ),
               ol: ({ ref: _ref, node: _node, ...olProps }) => (
                 <ol className="my-2 list-decimal space-y-1 pl-4" {...olProps} />
               ),

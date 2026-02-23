@@ -25,7 +25,7 @@
   "dependencies": {
     "@giulio-leone/constants": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
-    "@giulio-leone/ui-core": "workspace:*",
+    "@onecoach/ui-core": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/types": "workspace:*",
     "@giulio-leone/ui": "workspace:*",

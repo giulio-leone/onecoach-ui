@@ -25,7 +25,7 @@ import {
 import { cn } from '@giulio-leone/lib-design-system';
 import { Card } from '@giulio-leone/ui';
 import { useDebounce } from '@giulio-leone/hooks';
-import type { WorkoutTemplate, WorkoutTemplateType } from "@giulio-leone/types/workout";
+import type { WorkoutTemplate, WorkoutTemplateType } from '@giulio-leone/types/workout';
 
 interface WorkoutTemplateSelectorProps {
   type?: WorkoutTemplateType; // Se specificato, filtra solo quel tipo
@@ -302,7 +302,9 @@ export function WorkoutTemplateSelector({
           {isLoading ? (
             <div className="flex flex-col items-center justify-center py-16">
               <Loader2 className="h-8 w-8 animate-spin text-blue-600 dark:text-blue-500" />
-              <span className="mt-4 text-sm font-medium text-neutral-500 dark:text-neutral-400">{t('common.loadingTemplates')}</span>
+              <span className="mt-4 text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                {t('common.loadingTemplates')}
+              </span>
             </div>
           ) : error ? (
             <div className="py-16 text-center">

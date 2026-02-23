@@ -6,7 +6,8 @@ import { X, Trophy, Clock, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-r
 import { getExerciseSets } from '@giulio-leone/one-workout';
 import { formatDuration } from '@giulio-leone/lib-shared';
 import type { WorkoutSession } from '@giulio-leone/types/workout';
-import { type Exercise } from '@giulio-leone/schemas';
+import { type Exercise, type ExerciseSet } from '@giulio-leone/schemas';
+import type { Exercise as TypesExercise } from '@giulio-leone/types';
 import { Button, Heading, Text } from '@giulio-leone/ui';
 
 interface WorkoutCompleteModalProps {
@@ -40,9 +41,8 @@ export function WorkoutCompleteModal({
   const totalVolume = useMemo(() => {
     return exercises.reduce((acc, exercise) => {
       // getExerciseSets expects an Exercise from @giulio-leone/types which conflicts slightly with schemas
-      // Specifically catalogExerciseId vs exerciseId. Since we only need setGroups, we cast to any.
-      const sets = getExerciseSets(exercise as any);
-      const exerciseVolume = sets.reduce((sAcc: any, set: any) => {
+      const sets = getExerciseSets(exercise as unknown as TypesExercise);
+      const exerciseVolume = sets.reduce((sAcc: number, set: ExerciseSet) => {
         // Safe access to numeric properties
         const weight = set.weight || 0;
         const reps = set.reps || 0;
@@ -54,16 +54,16 @@ export function WorkoutCompleteModal({
 
   // Memoize calculations to avoid impure function calls during render
   const { completedExercises, duration, totalSetsCompleted } = useMemo(() => {
-    const completed = exercises.filter((ex: any) => {
-      const sets = getExerciseSets(ex as any);
-      return sets.some((set: any) => set.done);
+    const completed = exercises.filter((ex: Exercise) => {
+      const sets = getExerciseSets(ex as unknown as TypesExercise);
+      return sets.some((set: ExerciseSet) => set.done);
     }).length;
 
     // Calculate total volume
     let volume = 0;
     exercises.forEach((exercise) => {
-      const sets = getExerciseSets(exercise as any);
-      sets.forEach((set: any) => {
+      const sets = getExerciseSets(exercise as unknown as TypesExercise);
+      sets.forEach((set: ExerciseSet) => {
         if (set.done) {
           const reps = set.repsDone || set.reps || 0;
           const weight = set.weightDone || set.weight || 0;
@@ -87,11 +87,10 @@ export function WorkoutCompleteModal({
     // Use fallback duration calculation if endTime is invalid or same as start
     const dur = Math.max(0, Math.floor((endTime - startTime) / 1000));
 
-
     // Count total sets
     const setsCompleted = exercises.reduce((sum, ex) => {
-      const sets = getExerciseSets(ex as any);
-      return sum + sets.filter((set: any) => set.done).length;
+      const sets = getExerciseSets(ex as unknown as TypesExercise);
+      return sum + sets.filter((set: ExerciseSet) => set.done).length;
     }, 0);
 
     return {
@@ -129,7 +128,12 @@ export function WorkoutCompleteModal({
             <Trophy className="h-10 w-10 text-white drop-shadow-md" />
           </div>
 
-          <Heading level={2} size="3xl" weight="extrabold" className="mb-2 tracking-tight text-white">
+          <Heading
+            level={2}
+            size="3xl"
+            weight="extrabold"
+            className="mb-2 tracking-tight text-white"
+          >
             {t('workout_complete_modal.allenamento_completato')}
           </Heading>
           <Text size="base" className="mb-8 text-neutral-400">

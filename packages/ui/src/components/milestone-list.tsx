@@ -16,8 +16,7 @@ export interface MilestoneProps {
   className?: string;
 }
 
-export function MilestoneItem({
-  title, progress, tasks, className }: MilestoneProps) {
+export function MilestoneItem({ title, progress, tasks, className }: MilestoneProps) {
   const [isExpanded, setIsExpanded] = useState(true);
 
   return (

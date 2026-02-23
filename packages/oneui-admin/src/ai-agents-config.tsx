@@ -25,7 +25,11 @@ interface AIAgentsConfigProps {
   onUpdateRetryCount?: (count: number) => Promise<{ success: boolean; error?: string }>;
 }
 
-export function AIAgentsConfig({ configs, onToggleAgent, onUpdateRetryCount }: AIAgentsConfigProps) {
+export function AIAgentsConfig({
+  configs,
+  onToggleAgent,
+  onUpdateRetryCount,
+}: AIAgentsConfigProps) {
   const t = useTranslations('admin.aiSettings.framework.agents');
   const [optimisticConfigs, setOptimisticConfigs] = useState(configs);
   const [retryCount, setRetryCount] = useState<number>(() => {

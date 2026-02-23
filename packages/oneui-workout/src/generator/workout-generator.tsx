@@ -39,27 +39,24 @@ export function WorkoutGenerator({
   const [generatedId, setGeneratedId] = useState<string | null>(null);
 
   // 1. Form State Management
-  const { 
-    formData, 
+  const {
+    formData,
     // isLoadingProfile, // unused
-    updateField, 
-    getGenerationInput 
+    updateField,
+    getGenerationInput,
   } = useWorkoutForm(profileLoader);
 
-  const handleSuccess = useCallback((id: string) => {
-    setGeneratedId(id);
-    onSuccess?.(id);
-  }, [onSuccess]);
+  const handleSuccess = useCallback(
+    (id: string) => {
+      setGeneratedId(id);
+      onSuccess?.(id);
+    },
+    [onSuccess]
+  );
 
   // 2. Generation Logic
   // eslint-disable-next-line
-  const { 
-    generate, 
-    isGenerating, 
-    progress, 
-    error, 
-    reset 
-  } = useWorkoutGenerationHook({
+  const { generate, isGenerating, progress, error, reset } = useWorkoutGenerationHook({
     onSuccess: handleSuccess,
   });
 
@@ -68,12 +65,12 @@ export function WorkoutGenerator({
     const input = getGenerationInput();
     if (!input) {
       logger.warn('Form validation failed or incomplete');
-      return; 
+      return;
     }
-    
+
     // Reset previous state if any
     setGeneratedId(null);
-    
+
     await generate(input);
   };
 
@@ -86,22 +83,22 @@ export function WorkoutGenerator({
 
   if (isGenerating) {
     return (
-      <div className="flex flex-col items-center justify-center p-8 space-y-6 animate-in fade-in zoom-in-95 duration-300">
+      <div className="animate-in fade-in zoom-in-95 flex flex-col items-center justify-center space-y-6 p-8 duration-300">
         <div className="relative">
-          <div className="w-16 h-16 rounded-full border-4 border-slate-700/30 border-t-indigo-500 animate-spin" />
+          <div className="h-16 w-16 animate-spin rounded-full border-4 border-slate-700/30 border-t-indigo-500" />
         </div>
-        
-        <div className="space-y-2 text-center max-w-sm">
+
+        <div className="max-w-sm space-y-2 text-center">
           <p className="text-lg font-medium text-slate-100">
             {progress?.message || t('status.generating')}
           </p>
-          
-          {(progress as any)?.output && (
-            <div className="p-4 bg-slate-900/50 rounded-xl border border-slate-800/50">
-              <p className="text-sm text-slate-400 font-mono">
-                {typeof (progress as any).output === 'string' 
-                  ? (progress as any).output 
-                  : JSON.stringify((progress as any).output).slice(0, 100) + '...'}
+
+          {progress?.data?.output && (
+            <div className="rounded-xl border border-slate-800/50 bg-slate-900/50 p-4">
+              <p className="font-mono text-sm text-slate-400">
+                {typeof progress.data.output === 'string'
+                  ? progress.data.output
+                  : JSON.stringify(progress.data.output).slice(0, 100) + '...'}
               </p>
             </div>
           )}
@@ -112,26 +109,24 @@ export function WorkoutGenerator({
 
   if (error) {
     return (
-      <div className="flex flex-col items-center justify-center p-8 space-y-6 animate-in fade-in zoom-in-95 duration-300">
-        <div className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center">
+      <div className="animate-in fade-in zoom-in-95 flex flex-col items-center justify-center space-y-6 p-8 duration-300">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-500/10">
           <span className="text-3xl">⚠️</span>
         </div>
-        
-        <div className="text-center space-y-2 max-w-sm">
-          <p className="text-lg font-medium text-red-400">
-            {t('status.error')}
-          </p>
+
+        <div className="max-w-sm space-y-2 text-center">
+          <p className="text-lg font-medium text-red-400">{t('status.error')}</p>
           <p className="text-sm text-slate-400">
             {error instanceof Error ? error.message : String(error)}
           </p>
         </div>
-        
+
         <button
           onClick={() => {
             reset?.();
-            // window.location.reload() - avoids full reload 
+            // window.location.reload() - avoids full reload
           }}
-          className="px-6 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium transition-colors"
+          className="rounded-lg bg-slate-800 px-6 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-700"
         >
           {t('actions.tryAgain')}
         </button>
@@ -141,23 +136,19 @@ export function WorkoutGenerator({
 
   if (generatedId) {
     return (
-      <div className="flex flex-col items-center justify-center p-8 space-y-6 animate-in fade-in zoom-in-95 duration-300">
-        <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center">
+      <div className="animate-in fade-in zoom-in-95 flex flex-col items-center justify-center space-y-6 p-8 duration-300">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10">
           <span className="text-3xl">✨</span>
         </div>
-        
-        <div className="text-center space-y-2">
-          <p className="text-xl font-medium text-emerald-400">
-            {t('status.success')}
-          </p>
-          <p className="text-sm text-slate-400">
-            {t('status.redirecting')}
-          </p>
+
+        <div className="space-y-2 text-center">
+          <p className="text-xl font-medium text-emerald-400">{t('status.success')}</p>
+          <p className="text-sm text-slate-400">{t('status.redirecting')}</p>
         </div>
-        
-        <Link 
+
+        <Link
           href={`/workouts/${generatedId}`}
-          className="px-8 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-medium shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+          className="rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 px-8 py-3 font-medium text-white shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02] hover:shadow-emerald-500/30 active:scale-[0.98]"
         >
           {t('actions.viewProgram')}
         </Link>
@@ -166,8 +157,8 @@ export function WorkoutGenerator({
   }
 
   return (
-    <WorkoutForm 
-      formData={formData} 
+    <WorkoutForm
+      formData={formData}
       updateField={updateField}
       updateAdditionalNotes={updateAdditionalNotes}
       updateTierAI={updateTierAI}

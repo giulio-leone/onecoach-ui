@@ -27,7 +27,7 @@ import {
   useExercises,
   useDeleteExercise,
   useBatchExerciseOperations,
-} from '@giulio-leone/features/exercise/hooks';
+} from '@giulio-leone/features-exercise/hooks';
 import type { ExercisesResponse } from '@giulio-leone/lib-api-client';
 import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
 import type { AdminExercise } from './types';
@@ -40,7 +40,6 @@ import { ExerciseDetailDrawer } from './exercise-detail-drawer';
 import { type FilterStatus } from './exercise-constants';
 
 import { logger } from '@giulio-leone/lib-shared';
-
 
 interface ExercisesAdminPanelProps {
   initialData: ExercisesResponse;
@@ -261,10 +260,16 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
           <div className="animate-in slide-in-from-top-4 fade-in relative z-50 duration-200">
             <ExerciseFilters
               statusFilter={(filters.approvalStatus || 'ALL') as FilterStatus}
-              onStatusChange={(v: any) => setFilters((prev: any) => ({ ...prev, approvalStatus: v }))}
+              onStatusChange={(v: any) =>
+                setFilters((prev: any) => ({ ...prev, approvalStatus: v }))
+              }
               onTypeChange={(id) => setFilters((prev: any) => ({ ...prev, exerciseTypeId: id }))}
-              onEquipmentsChange={(ids) => setFilters((prev: any) => ({ ...prev, equipmentIds: ids }))}
-              onBodyPartsChange={(ids) => setFilters((prev: any) => ({ ...prev, bodyPartIds: ids }))}
+              onEquipmentsChange={(ids) =>
+                setFilters((prev: any) => ({ ...prev, equipmentIds: ids }))
+              }
+              onBodyPartsChange={(ids) =>
+                setFilters((prev: any) => ({ ...prev, bodyPartIds: ids }))
+              }
               muscleIds={filters.muscleIds}
               onMusclesChange={({ primary, secondary }) => {
                 const allMuscles = [...primary, ...secondary];
@@ -290,7 +295,10 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
             <Select
               value={filters.approvalStatus || 'ALL'}
               onChange={(e: any) =>
-                setFilters((prev: any) => ({ ...prev, approvalStatus: e.target.value as FilterStatus }))
+                setFilters((prev: any) => ({
+                  ...prev,
+                  approvalStatus: e.target.value as FilterStatus,
+                }))
               }
               className="h-9 w-[150px] rounded-lg border-neutral-200 bg-white/50 text-sm backdrop-blur-sm dark:border-neutral-800 dark:bg-black/50"
             >
@@ -451,9 +459,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
       {detailExerciseId && (
         <ExerciseDetailDrawer
           isOpen={!!detailExerciseId}
-          exercise={
-            exercises.find((e: any) => e.id === detailExerciseId) as LocalizedExercise
-          }
+          exercise={exercises.find((e: any) => e.id === detailExerciseId) as LocalizedExercise}
           onClose={() => setDetailExerciseId(null)}
           onEdit={() => {
             setDetailExerciseId(null);

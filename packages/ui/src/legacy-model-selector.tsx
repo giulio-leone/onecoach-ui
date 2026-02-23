@@ -9,7 +9,7 @@
 
 import { Settings, Sparkles, Zap } from 'lucide-react';
 import { AI_MODELS } from '@giulio-leone/constants';
-import type { AiModel } from "@giulio-leone/types/chat";
+import type { AiModel } from '@giulio-leone/types/chat';
 
 export interface ModelSelectorProps {
   model: AiModel;

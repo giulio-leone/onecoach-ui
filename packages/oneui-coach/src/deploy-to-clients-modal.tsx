@@ -10,7 +10,7 @@
 import { useState, useEffect } from 'react';
 import { Button, Checkbox, Input, Select } from '@giulio-leone/ui';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@giulio-leone/ui/dialog';
-import { useCoachClients } from '@giulio-leone/features/coach/hooks';
+import { useCoachClients } from '@giulio-leone/features-coach/hooks';
 import { LoadingState } from '@giulio-leone/ui/components';
 import { Users, Send, Check, AlertCircle, Search } from 'lucide-react';
 import { toast } from 'sonner';

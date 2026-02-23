@@ -21,7 +21,7 @@ export interface AutosaveIndicatorProps {
 
 /**
  * AutosaveIndicator
- * 
+ *
  * Visual feedback component for autosave status.
  * Shows: saving spinner, saved checkmark, or error state.
  */
@@ -58,10 +58,7 @@ export function AutosaveIndicator({
         <AlertCircle size={14} />
         <span>Errore</span>
         {onRetry && (
-          <button
-            onClick={onRetry}
-            className="ml-1 underline hover:no-underline"
-          >
+          <button onClick={onRetry} className="ml-1 underline hover:no-underline">
             Riprova
           </button>
         )}

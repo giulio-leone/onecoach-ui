@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Info } from 'lucide-react';
 import { getExerciseSets } from '@giulio-leone/one-workout';
+import type { Exercise as TypesExercise } from '@giulio-leone/types';
 import { LiveSetTracker } from './live-set-tracker';
 import { ExerciseInstructions } from './exercise-instructions';
 import { Button, Heading, Text, Badge } from '@giulio-leone/ui';
@@ -27,8 +28,8 @@ export function LiveExerciseCard({
   const t = useTranslations('workouts');
   const [showInfo, setShowInfo] = useState(false);
 
-  const sets = getExerciseSets(exercise as any);
-  const activeSetIndex = sets.findIndex((set: any) => !set.done);
+  const sets = getExerciseSets(exercise as unknown as TypesExercise);
+  const activeSetIndex = sets.findIndex((set: ExerciseSet) => !set.done);
   const muscleGroups = exercise.muscleGroups || [];
 
   return (
@@ -41,11 +42,7 @@ export function LiveExerciseCard({
         {/* Muscle Tags */}
         <div className="flex flex-wrap justify-center gap-2">
           {muscleGroups.map((mg: string) => (
-            <Badge
-              key={mg}
-              variant="outline"
-              className="bg-neutral-800 text-neutral-300 border-0"
-            >
+            <Badge key={mg} variant="outline" className="border-0 bg-neutral-800 text-neutral-300">
               {t(`muscles.${mg.toLowerCase()}`) || mg}
             </Badge>
           ))}
@@ -74,7 +71,7 @@ export function LiveExerciseCard({
 
       {/* Sets Stack */}
       <div className="space-y-3">
-        {sets.map((set: any, setIndex: any) => {
+        {sets.map((set: ExerciseSet, setIndex: number) => {
           const isActive = setIndex === activeSetIndex;
           const isNext = setIndex === activeSetIndex + 1;
 

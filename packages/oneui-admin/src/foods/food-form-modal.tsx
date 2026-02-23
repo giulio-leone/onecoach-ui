@@ -16,7 +16,7 @@ import { Button, Input, Modal, ModalFooter } from '@giulio-leone/ui';
 import { Save } from 'lucide-react';
 import { BrandCombobox } from './brand-combobox';
 import { CategoriesMultiselect } from './categories-multiselect';
-import { useFood, useCreateFood, useUpdateFood } from '@giulio-leone/features/food/hooks';
+import { useFood, useCreateFood, useUpdateFood } from '@giulio-leone/features-food/hooks';
 import { useForm } from '@giulio-leone/hooks';
 import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 import { useTranslations } from 'next-intl';
@@ -25,8 +25,8 @@ import {
   getMainMacroDescription,
   getMainMacroEmoji,
 } from '@giulio-leone/lib-shared';
-import type { FoodItem } from "@giulio-leone/types/nutrition";
-import type { Macros } from "@giulio-leone/types/nutrition";
+import type { FoodItem } from '@giulio-leone/types/nutrition';
+import type { Macros } from '@giulio-leone/types/nutrition';
 
 type Mode = 'create' | 'edit';
 interface FoodFormModalProps {

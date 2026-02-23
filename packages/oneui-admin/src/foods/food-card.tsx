@@ -70,7 +70,11 @@ export function FoodCard({
 
       {/* Info */}
       <div className="min-w-0 flex-1">
-        <Text weight="semibold" className="truncate text-neutral-900 dark:text-neutral-100" size="sm">
+        <Text
+          weight="semibold"
+          className="truncate text-neutral-900 dark:text-neutral-100"
+          size="sm"
+        >
           {name}
         </Text>
         <Text className="mt-0.5 truncate text-neutral-600 dark:text-neutral-400" size="xs">
@@ -98,7 +102,7 @@ export function FoodCard({
             <Button
               variant="outline"
               className={cn(
-                'min-h-[2.75rem] min-w-[2.75rem] rounded-lg p-2 h-auto',
+                'h-auto min-h-[2.75rem] min-w-[2.75rem] rounded-lg p-2',
                 'touch-manipulation bg-white text-neutral-600 hover:bg-neutral-50',
                 'dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700'
               )}

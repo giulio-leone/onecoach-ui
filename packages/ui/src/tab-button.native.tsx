@@ -21,21 +21,21 @@ export const TabButton = ({ active, onClick, icon: Icon, label, count }: TabButt
       variant={active ? 'primary' : 'ghost'}
       size="md"
       onPress={onClick}
-      className={`flex-row items-center justify-start rounded-2xl px-4 py-3 min-h-[44px] ${active ? 'shadow-sm elevation-3 bg-primary-600' : 'bg-white dark:bg-neutral-800 elevation-2 shadow-xs'
-        }`}
+      className={`min-h-[44px] flex-row items-center justify-start rounded-2xl px-4 py-3 ${
+        active
+          ? 'elevation-3 bg-primary-600 shadow-sm'
+          : 'elevation-2 bg-white shadow-xs dark:bg-neutral-800'
+      }`}
     >
       <Icon size={20} color={active ? '#ffffff' : '#374151'} />
-      <Text
-        variant={active ? 'inverse' : 'secondary'}
-        weight="semibold"
-        className="ml-2 text-base"
-      >
+      <Text variant={active ? 'inverse' : 'secondary'} weight="semibold" className="ml-2 text-base">
         {label}
       </Text>
       {count !== undefined && (
         <View
-          className={`ml-1 rounded-full px-2 py-0.5 min-w-[24px] items-center justify-center ${active ? 'bg-white/20' : 'bg-emerald-100 dark:bg-emerald-900/30'
-            }`}
+          className={`ml-1 min-w-[24px] items-center justify-center rounded-full px-2 py-0.5 ${
+            active ? 'bg-white/20' : 'bg-emerald-100 dark:bg-emerald-900/30'
+          }`}
         >
           <Text
             size="xs"

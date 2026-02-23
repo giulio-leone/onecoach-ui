@@ -17,6 +17,5 @@ export * from './ResponsiveActionPill';
 export * from './UndoRedoToolbar';
 export * from './VersionHistoryModal';
 
-
 // React Native versions are in .native.tsx files
 // They will be automatically resolved by React Native/Expo module resolution

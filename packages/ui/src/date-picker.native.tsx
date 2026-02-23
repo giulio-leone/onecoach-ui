@@ -6,14 +6,7 @@
  */
 
 import { useState, useCallback, useMemo } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Modal,
-  StyleSheet,
-  ScrollView,
-} from 'react-native';
+import { View, Text, TouchableOpacity, Modal, StyleSheet, ScrollView } from 'react-native';
 import { Calendar, ChevronLeft, ChevronRight, X } from 'lucide-react-native';
 import {
   type DatePickerProps,
@@ -72,7 +65,7 @@ export function DatePicker({
     }
   }, [onChange, minDate, maxDate]);
 
-  const displayValue = value ? formatDateDisplay(value, t.months) : placeholder ?? t.selectDate;
+  const displayValue = value ? formatDateDisplay(value, t.months) : (placeholder ?? t.selectDate);
 
   return (
     <>
@@ -83,9 +76,7 @@ export function DatePicker({
         disabled={disabled}
       >
         <Calendar size={16} color="#3b82f6" />
-        <Text style={[styles.triggerText, !value && styles.placeholderText]}>
-          {displayValue}
-        </Text>
+        <Text style={[styles.triggerText, !value && styles.placeholderText]}>{displayValue}</Text>
       </TouchableOpacity>
 
       <Modal
@@ -99,10 +90,7 @@ export function DatePicker({
             {/* Header */}
             <View style={styles.header}>
               <Text style={styles.headerTitle}>{t.selectDate}</Text>
-              <TouchableOpacity
-                onPress={() => setModalVisible(false)}
-                style={styles.closeButton}
-              >
+              <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
                 <X size={20} color="#6b7280" />
               </TouchableOpacity>
             </View>

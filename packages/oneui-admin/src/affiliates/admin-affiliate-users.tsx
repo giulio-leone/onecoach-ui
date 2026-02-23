@@ -13,7 +13,6 @@ import { ExternalLink } from 'lucide-react';
 import { useRouter } from '@giulio-leone/ui-layout';
 import { CatalogToolbar, CatalogGrid, ResourceCard } from '@giulio-leone/ui';
 
-
 interface AdminAffiliateUsersProps {
   affiliates: Array<{
     id: string;

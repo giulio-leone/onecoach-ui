@@ -2,7 +2,18 @@
 
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
-import { Timer, Volume2, VolumeX, Minus, Plus, Pause, Play, FastForward, X, Dumbbell } from 'lucide-react';
+import {
+  Timer,
+  Volume2,
+  VolumeX,
+  Minus,
+  Plus,
+  Pause,
+  Play,
+  FastForward,
+  X,
+  Dumbbell,
+} from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 import { Card, Button } from '@giulio-leone/ui';
 
@@ -43,7 +54,10 @@ export function RestTimer({
   const playBeep = (type: 'tick' | 'finish') => {
     if (typeof window === 'undefined') return;
     try {
-      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      const AudioContext =
+        window.AudioContext ||
+        (window as unknown as { webkitAudioContext?: typeof window.AudioContext })
+          .webkitAudioContext;
       if (!AudioContext) return;
       const ctx = new AudioContext();
       const osc = ctx.createOscillator();
@@ -245,7 +259,7 @@ export function RestTimer({
           onClick={isActive ? onPause : () => onStart()}
           variant="default"
           className="h-16 w-16 rounded-2xl bg-white p-0 text-indigo-950 shadow-lg shadow-indigo-500/20 hover:scale-105 hover:bg-indigo-50 active:scale-95"
-          aria-label={isActive ? "Pause" : "Play"}
+          aria-label={isActive ? 'Pause' : 'Play'}
         >
           {isActive ? (
             <Pause className="h-7 w-7 fill-current" />

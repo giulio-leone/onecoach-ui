@@ -335,8 +335,10 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
           body: JSON.stringify(configToSave),
         });
         if (!response.ok) {
-          const message = await fetchErrorMessage(response, visionT('unknownError'), (key: string) =>
-            visionT(key)
+          const message = await fetchErrorMessage(
+            response,
+            visionT('unknownError'),
+            (key: string) => visionT(key)
           );
           throw new Error(message);
         }
@@ -454,7 +456,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
       )}
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {modelFields.map((field: any) => {
+        {modelFields.map((field: ModelFieldConfig) => {
           const Icon = field.icon;
           const colors = getColorClasses(field.color);
           return (
@@ -480,12 +482,12 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
                   {visionT('openrouterModel')}
                 </label>
                 <Select
-                  value={(config as any)[field.key]}
+                  value={config[field.key]}
                   onChange={handleFieldChange(field.key)}
                   className="font-mono text-sm"
                 >
                   <option value="">{t('selectEnabled')}</option>
-                  {(modelOptionsByKey as any)[field.key].map((option: any) => (
+                  {modelOptionsByKey[field.key].map((option: SelectOption) => (
                     <option key={option.value} value={option.value}>
                       {option.label}
                     </option>
@@ -515,7 +517,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {creditFields.map((field: any) => {
+          {creditFields.map((field: CreditFieldConfig) => {
             const Icon = field.icon;
             const colors = getColorClasses(field.color);
             return (
@@ -539,7 +541,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
                 <Input
                   type="number"
                   min={0}
-                  value={(config.creditCosts as any)[field.key]}
+                  value={config.creditCosts[field.key]}
                   onChange={handleCreditCostChange(field.key)}
                   className="font-mono text-sm"
                 />

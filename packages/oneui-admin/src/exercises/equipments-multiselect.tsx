@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { Checkbox } from '@giulio-leone/ui';
 
-
 interface Opt {
   id: string;
   name: string;

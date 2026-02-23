@@ -6,11 +6,7 @@ import { ArrowLeft, Plus, Trash2, MoreVertical } from 'lucide-react';
 import { Button } from '../../button';
 import { AutosaveIndicator } from './autosave-indicator';
 import { cn } from '@giulio-leone/lib-design-system';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from '../../dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '../../dropdown-menu';
 
 export interface ViewModeItem {
   id: string;
@@ -33,11 +29,11 @@ export interface VisualBuilderShellProps {
   title: string;
   onTitleChange: (newTitle: string) => void;
   subtitle: ReactNode;
-  
+
   // Navigation State
   onBack: () => void;
   isEditMode: boolean;
-  
+
   // Save State
   isSaving: boolean;
   lastSaved?: Date | null;
@@ -45,25 +41,25 @@ export interface VisualBuilderShellProps {
   hasPendingChanges: boolean;
   onSave: () => void;
   onSaveNow: () => void;
-  
+
   // View Config
   viewModes: ViewModeItem[];
   currentViewMode: string;
   onViewModeChange: (modeId: string) => void;
-  
+
   // Week/Day Navigation (Only visible in Editor mode usually)
   showNavigation?: boolean;
   weeks?: WeekData[];
   currentWeekIndex: number;
   onSelectWeek: (index: number) => void;
   onAddWeek: () => void;
-  
+
   days?: DayData[];
   currentDayIndex: number;
   onSelectDay: (index: number) => void;
   onAddDay: () => void;
   onRemoveDay: (weekIndex: number, dayIndex: number) => void;
-  
+
   // Custom Slots
   headerLeftStart?: ReactNode;
   headerActions?: ReactNode;
@@ -80,7 +76,7 @@ export interface VisualBuilderShellProps {
     dayPrefix?: string; // Used when day.name is missing
     addDay?: string;
   };
-  
+
   children: ReactNode;
 }
 
@@ -115,9 +111,8 @@ export function VisualBuilderShell({
   headerBottomSlot,
   mobileActionsMenu,
   labels,
-  children
+  children,
 }: VisualBuilderShellProps) {
-
   const l = {
     save: labels?.save || 'Salva',
     saving: labels?.saving || 'Salvataggio...',
@@ -131,65 +126,85 @@ export function VisualBuilderShell({
   // Theme configuration
   const themeConfig = {
     primary: {
-      header: 'bg-white/80 border-b border-neutral-200/50 dark:bg-slate-900/90 dark:border-blue-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(59,130,246,0.1)]',
+      header:
+        'bg-white/80 border-b border-neutral-200/50 dark:bg-slate-900/90 dark:border-blue-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(59,130,246,0.1)]',
       glow1: 'from-blue-500/20 via-indigo-500/20',
       glow2: 'from-indigo-500/20 via-blue-500/20',
       glow3: 'from-blue-500/10 via-indigo-500/10',
       selection: 'selection:bg-blue-500/30',
       accentColor: 'primary',
-      activeTab: 'bg-white shadow-sm ring-1 ring-neutral-200 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 dark:ring-blue-800',
-      activeDay: 'border-blue-500 bg-blue-50/50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-200',
+      activeTab:
+        'bg-white shadow-sm ring-1 ring-neutral-200 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 dark:ring-blue-800',
+      activeDay:
+        'border-blue-500 bg-blue-50/50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-200',
       activeDayGlow: 'from-blue-500/10',
       addBtnText: 'text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/20',
-      viewModeActive: 'bg-neutral-50 shadow-sm ring-1 ring-neutral-200 dark:bg-blue-600 dark:ring-0',
+      viewModeActive:
+        'bg-neutral-50 shadow-sm ring-1 ring-neutral-200 dark:bg-blue-600 dark:ring-0',
       viewModeActiveText: 'text-blue-700 dark:text-white',
-      pulseDot: 'bg-blue-500'
+      pulseDot: 'bg-blue-500',
     },
     emerald: {
-      header: 'bg-white/80 border-b border-neutral-200/50 dark:bg-slate-900/90 dark:border-emerald-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(16,185,129,0.1)]',
+      header:
+        'bg-white/80 border-b border-neutral-200/50 dark:bg-slate-900/90 dark:border-emerald-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(16,185,129,0.1)]',
       glow1: 'from-emerald-500/20 via-teal-500/20',
       glow2: 'from-teal-500/20 via-emerald-500/20',
       glow3: 'from-emerald-500/10 via-teal-500/10',
       selection: 'selection:bg-emerald-500/30',
       accentColor: 'emerald',
-      activeTab: 'bg-white shadow-sm ring-1 ring-neutral-200 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 dark:ring-emerald-800',
-      activeDay: 'border-emerald-500 bg-emerald-50/50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-200',
+      activeTab:
+        'bg-white shadow-sm ring-1 ring-neutral-200 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 dark:ring-emerald-800',
+      activeDay:
+        'border-emerald-500 bg-emerald-50/50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-200',
       activeDayGlow: 'from-emerald-500/10',
-      addBtnText: 'text-emerald-600 hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-emerald-900/20',
-      viewModeActive: 'bg-neutral-50 shadow-sm ring-1 ring-neutral-200 dark:bg-emerald-600 dark:ring-0',
+      addBtnText:
+        'text-emerald-600 hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-emerald-900/20',
+      viewModeActive:
+        'bg-neutral-50 shadow-sm ring-1 ring-neutral-200 dark:bg-emerald-600 dark:ring-0',
       viewModeActiveText: 'text-emerald-700 dark:text-white',
-      pulseDot: 'bg-emerald-500'
-    }
+      pulseDot: 'bg-emerald-500',
+    },
   }[theme];
 
   return (
-    <div className={cn("relative min-h-[100dvh] w-full bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50", themeConfig.selection)}>
+    <div
+      className={cn(
+        'relative min-h-[100dvh] w-full bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50',
+        themeConfig.selection
+      )}
+    >
       {/* Atmosphere / Background Glows - Subtler & Light Mode Compatible */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div
           className={cn(
-            "absolute -top-[20%] -left-[10%] h-[800px] w-[800px] rounded-full bg-gradient-to-br to-transparent blur-[120px] opacity-40 dark:opacity-20",
+            'absolute -top-[20%] -left-[10%] h-[800px] w-[800px] rounded-full bg-gradient-to-br to-transparent opacity-40 blur-[120px] dark:opacity-20',
             themeConfig.glow1
           )}
         />
-        <div className={cn(
-          "absolute top-[10%] -right-[10%] h-[600px] w-[600px] rounded-full bg-gradient-to-bl to-transparent blur-[100px] opacity-40 dark:opacity-20",
-          themeConfig.glow2
-        )} />
+        <div
+          className={cn(
+            'absolute top-[10%] -right-[10%] h-[600px] w-[600px] rounded-full bg-gradient-to-bl to-transparent opacity-40 blur-[100px] dark:opacity-20',
+            themeConfig.glow2
+          )}
+        />
       </div>
 
       {/* Main Content Container */}
       <div className="relative z-10 min-h-[100dvh]">
         {/* Header - Sticky with semantic glass effect */}
-        <header className={cn("sticky top-0 z-[1020] p-3 sm:px-6 sm:py-4 transition-all duration-300", themeConfig.header)}>
-          
+        <header
+          className={cn(
+            'sticky top-0 z-[1020] p-3 transition-all duration-300 sm:px-6 sm:py-4',
+            themeConfig.header
+          )}
+        >
           {/* Top Bar: View Mode + Actions */}
           <div className="mb-2 flex items-center justify-between gap-2 sm:mb-6 sm:gap-4">
             <div className="flex items-center gap-2 sm:gap-4">
               {onBack && (
                 <button
-                   onClick={onBack}
-                   className="mr-2 hidden items-center gap-1 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-white sm:flex"
+                  onClick={onBack}
+                  className="mr-2 hidden items-center gap-1 text-sm font-medium text-neutral-500 transition-colors hover:text-neutral-900 sm:flex dark:hover:text-white"
                 >
                   <ArrowLeft size={16} />
                 </button>
@@ -209,7 +224,12 @@ export function VisualBuilderShell({
                     )}
                   >
                     {currentViewMode === mode.id && (
-                      <div className={cn("absolute inset-0 -z-10 rounded-full", themeConfig.viewModeActive)} />
+                      <div
+                        className={cn(
+                          'absolute inset-0 -z-10 rounded-full',
+                          themeConfig.viewModeActive
+                        )}
+                      />
                     )}
                     <mode.icon size={14} />
                     <span className="hidden sm:inline">{mode.label}</span>
@@ -217,24 +237,18 @@ export function VisualBuilderShell({
                 ))}
               </div>
 
-               {/* Optional Bottom/Middle Slot */}
-               {headerBottomSlot && (
-                 <div className="hidden md:block">
-                   {headerBottomSlot}
-                 </div>
-               )}
+              {/* Optional Bottom/Middle Slot */}
+              {headerBottomSlot && <div className="hidden md:block">{headerBottomSlot}</div>}
             </div>
 
             {/* Right Actions */}
             <div className="flex items-center gap-2">
               {/* Desktop Actions */}
-              <div className="hidden items-center gap-2 sm:flex">
-                {headerActions}
-              </div>
+              <div className="hidden items-center gap-2 sm:flex">{headerActions}</div>
 
               {/* Mobile Menu Action */}
               <div className="sm:hidden">
-                 <DropdownMenu>
+                <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <button className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
                       <MoreVertical size={16} />
@@ -243,11 +257,11 @@ export function VisualBuilderShell({
                   <DropdownMenuContent align="end" className="w-48">
                     {/* Inject actions as menu items */}
                     <div className="p-1 sm:hidden">
-                       {mobileActionsMenu ? (
-                         mobileActionsMenu
-                       ) : (
-                         <div className="p-2 text-xs text-neutral-400">No extra actions</div>
-                       )}
+                      {mobileActionsMenu ? (
+                        mobileActionsMenu
+                      ) : (
+                        <div className="p-2 text-xs text-neutral-400">No extra actions</div>
+                      )}
                     </div>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -255,32 +269,32 @@ export function VisualBuilderShell({
 
               {/* Centralized Save Button Section */}
               <div className="ml-2 flex items-center gap-2 border-l border-neutral-200 pl-4 dark:border-white/10">
-                  {isEditMode && (
-                    <AutosaveIndicator
-                      isSaving={isSaving}
-                      lastSaved={lastSaved ?? null}
-                      error={saveError ?? null}
-                      hasPendingChanges={hasPendingChanges}
-                      onRetry={onSaveNow}
-                    />
+                {isEditMode && (
+                  <AutosaveIndicator
+                    isSaving={isSaving}
+                    lastSaved={lastSaved ?? null}
+                    error={saveError ?? null}
+                    hasPendingChanges={hasPendingChanges}
+                    onRetry={onSaveNow}
+                  />
+                )}
+                <Button
+                  variant="secondary"
+                  onPress={onSave}
+                  className={cn(
+                    'h-9 px-3 text-sm font-medium transition-all duration-300 sm:px-5',
+                    'border border-neutral-200 bg-neutral-50 text-neutral-900 shadow-sm hover:bg-neutral-100',
+                    'dark:border-white/20 dark:bg-transparent dark:text-white dark:hover:bg-white/10'
                   )}
-                  <Button
-                    variant="secondary"
-                    onPress={onSave}
-                    className={cn(
-                      'h-9 px-3 text-sm font-medium transition-all duration-300 sm:px-5',
-                      'border border-neutral-200 bg-neutral-50 text-neutral-900 shadow-sm hover:bg-neutral-100',
-                      'dark:border-white/20 dark:bg-transparent dark:text-white dark:hover:bg-white/10'
-                    )}
-                  >
-                    {isSaving ? l.saving : l.save}
-                  </Button>
+                >
+                  {isSaving ? l.saving : l.save}
+                </Button>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-4 sm:gap-6">
-            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between sm:gap-6">
+            <div className="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-end md:justify-between">
               {/* Title Section */}
               <div className="min-w-0 flex-1 space-y-1 sm:space-y-2">
                 <div className="flex items-center gap-2 sm:gap-3">
@@ -297,8 +311,13 @@ export function VisualBuilderShell({
                     )}
                   />
                 </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-neutral-500 dark:text-neutral-400 sm:text-sm">
-                  <span className={cn("inline-block h-1.5 w-1.5 animate-pulse rounded-full", themeConfig.pulseDot)} />
+                <div className="flex items-center gap-2 text-xs font-medium text-neutral-500 sm:text-sm dark:text-neutral-400">
+                  <span
+                    className={cn(
+                      'inline-block h-1.5 w-1.5 animate-pulse rounded-full',
+                      themeConfig.pulseDot
+                    )}
+                  />
                   {subtitle}
                 </div>
               </div>
@@ -323,7 +342,10 @@ export function VisualBuilderShell({
                     ))}
                     <button
                       onClick={onAddWeek}
-                      className={cn("flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors", themeConfig.addBtnText)}
+                      className={cn(
+                        'flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors',
+                        themeConfig.addBtnText
+                      )}
                     >
                       <Plus size={12} />
                       <span>{l.add}</span>
@@ -348,14 +370,21 @@ export function VisualBuilderShell({
                           : 'border-transparent text-neutral-500 hover:bg-neutral-50 hover:text-neutral-700 dark:hover:bg-white/[0.01] dark:hover:text-neutral-300'
                       )}
                     >
-                      <span className="relative z-10 truncate">{day.name || `${l.dayPrefix} ${day.dayNumber}`}</span>
+                      <span className="relative z-10 truncate">
+                        {day.name || `${l.dayPrefix} ${day.dayNumber}`}
+                      </span>
 
                       {/* Active Glow Effect */}
                       {currentDayIndex === index && (
-                        <div className={cn("absolute inset-0 bg-gradient-to-t to-transparent opacity-50", themeConfig.activeDayGlow)} />
+                        <div
+                          className={cn(
+                            'absolute inset-0 bg-gradient-to-t to-transparent opacity-50',
+                            themeConfig.activeDayGlow
+                          )}
+                        />
                       )}
 
-                      {(days.length > 1 && currentDayIndex === index) && (
+                      {days.length > 1 && currentDayIndex === index && (
                         <span
                           onClick={(e) => {
                             e.stopPropagation();
@@ -382,11 +411,8 @@ export function VisualBuilderShell({
         </header>
 
         {/* Main Content */}
-        <main className="touch-pan-y">
-          {children}
-        </main>
+        <main className="touch-pan-y">{children}</main>
       </div>
     </div>
   );
 }
-

@@ -1,6 +1,12 @@
 'use client';
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@giulio-leone/ui';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from '@giulio-leone/ui';
 import { Button } from '@giulio-leone/ui';
 import { Flame, Link2, RefreshCw, Activity, Dumbbell, X } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
@@ -36,7 +42,7 @@ const ELEMENT_OPTIONS: ElementOption[] = [
     type: 'warmup',
     label: 'Riscaldamento',
     description: 'Preparazione muscolare con esercizi leggeri',
-    icon: <Flame className="w-6 h-6" />,
+    icon: <Flame className="h-6 w-6" />,
     color: 'text-orange-500',
     bgColor: 'bg-orange-500/10 hover:bg-orange-500/20 border-orange-500/30',
   },
@@ -44,7 +50,7 @@ const ELEMENT_OPTIONS: ElementOption[] = [
     type: 'exercise',
     label: 'Esercizio',
     description: 'Esercizio standard con serie e ripetizioni',
-    icon: <Dumbbell className="w-6 h-6" />,
+    icon: <Dumbbell className="h-6 w-6" />,
     color: 'text-blue-500',
     bgColor: 'bg-blue-500/10 hover:bg-blue-500/20 border-blue-500/30',
   },
@@ -52,7 +58,7 @@ const ELEMENT_OPTIONS: ElementOption[] = [
     type: 'superset',
     label: 'Superset',
     description: '2-4 esercizi eseguiti back-to-back',
-    icon: <Link2 className="w-6 h-6" />,
+    icon: <Link2 className="h-6 w-6" />,
     color: 'text-purple-500',
     bgColor: 'bg-purple-500/10 hover:bg-purple-500/20 border-purple-500/30',
   },
@@ -60,7 +66,7 @@ const ELEMENT_OPTIONS: ElementOption[] = [
     type: 'circuit',
     label: 'Circuito',
     description: 'Esercizi in sequenza per più round',
-    icon: <RefreshCw className="w-6 h-6" />,
+    icon: <RefreshCw className="h-6 w-6" />,
     color: 'text-green-500',
     bgColor: 'bg-green-500/10 hover:bg-green-500/20 border-green-500/30',
   },
@@ -68,7 +74,7 @@ const ELEMENT_OPTIONS: ElementOption[] = [
     type: 'cardio',
     label: 'Cardio',
     description: 'Attività cardiovascolare (corsa, bici, etc.)',
-    icon: <Activity className="w-6 h-6" />,
+    icon: <Activity className="h-6 w-6" />,
     color: 'text-cyan-500',
     bgColor: 'bg-cyan-500/10 hover:bg-cyan-500/20 border-cyan-500/30',
   },
@@ -78,11 +84,11 @@ const ELEMENT_OPTIONS: ElementOption[] = [
 // ElementTypeSelector Component
 // ============================================================================
 
-export function ElementTypeSelector({ 
-  open, 
-  onOpenChange, 
+export function ElementTypeSelector({
+  open,
+  onOpenChange,
   onSelect,
-  className 
+  className,
 }: ElementTypeSelectorProps) {
   const handleSelect = (type: WorkoutElementType) => {
     onSelect(type);
@@ -99,7 +105,7 @@ export function ElementTypeSelector({
           </DialogDescription>
         </DialogHeader>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
           {ELEMENT_OPTIONS.map((option, index) => (
             <motion.button
               key={option.type}
@@ -110,28 +116,22 @@ export function ElementTypeSelector({
               whileTap={{ scale: 0.98 }}
               onClick={() => handleSelect(option.type)}
               className={cn(
-                'flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all',
+                'flex flex-col items-center justify-center rounded-xl border-2 p-4 transition-all',
                 option.bgColor
               )}
             >
-              <div className={cn('mb-2', option.color)}>
-                {option.icon}
-              </div>
-              <span className="font-medium text-sm mb-1">{option.label}</span>
-              <span className="text-[10px] text-muted-foreground text-center leading-tight">
+              <div className={cn('mb-2', option.color)}>{option.icon}</div>
+              <span className="mb-1 text-sm font-medium">{option.label}</span>
+              <span className="text-muted-foreground text-center text-[10px] leading-tight">
                 {option.description}
               </span>
             </motion.button>
           ))}
         </div>
 
-        <div className="mt-4 pt-4 border-t border-border/50">
-          <Button
-            variant="ghost"
-            onClick={() => onOpenChange(false)}
-            className="w-full"
-          >
-            <X className="w-4 h-4 mr-1" />
+        <div className="border-border/50 mt-4 border-t pt-4">
+          <Button variant="ghost" onClick={() => onOpenChange(false)} className="w-full">
+            <X className="mr-1 h-4 w-4" />
             Annulla
           </Button>
         </div>
@@ -141,4 +141,3 @@ export function ElementTypeSelector({
 }
 
 export default ElementTypeSelector;
-

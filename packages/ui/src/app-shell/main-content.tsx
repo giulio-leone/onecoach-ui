@@ -16,8 +16,7 @@ export interface AppShellMainContentProps {
   className?: string;
 }
 
-export function AppShellMainContent({
-  children, className }: AppShellMainContentProps) {
+export function AppShellMainContent({ children, className }: AppShellMainContentProps) {
   const { isOpen } = useSidebar();
   const isCollapsed = !isOpen;
   const sidebarWidth = isCollapsed ? SIDEBAR_COLLAPSED_WIDTH : SIDEBAR_WIDTH;

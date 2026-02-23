@@ -24,7 +24,12 @@ import { GlassContainer, ScaleTouch } from '@giulio-leone/ui-core';
 import { dialog } from '@giulio-leone/lib-stores';
 
 import { logger } from '@giulio-leone/lib-shared';
-import type { WorkoutProgram, WorkoutDay } from '@giulio-leone/types/workout';
+import type {
+  WorkoutProgram,
+  WorkoutDay,
+  WorkoutWeek,
+  Exercise,
+} from '@giulio-leone/types/workout';
 
 // --- HELPER COMPONENTS ---
 
@@ -39,12 +44,11 @@ function formatMuscleLabel(value: string): string {
 }
 
 function collectTargetMuscles(day: WorkoutDay): string[] {
-  const safeDay = day as any;
   const fromDay = (day.targetMuscles || []).map(formatMuscleLabel);
-  const fromExercises = (safeDay.exercises || [])
-    .flatMap((exercise: any) => exercise.muscleGroups || [])
+  const fromExercises = (day.exercises || [])
+    .flatMap((exercise: Exercise) => exercise.muscleGroups || [])
     .map(formatMuscleLabel);
-  return Array.from(new Set([...fromDay, ...fromExercises])).filter(Boolean) as string[];
+  return Array.from(new Set([...fromDay, ...fromExercises])).filter(Boolean);
 }
 
 // --- MAIN COMPONENT ---
@@ -90,12 +94,12 @@ export function WorkoutProgramDashboard({
     const weekDay = getWeekAndDayFromDate(program, today);
 
     if (weekDay) {
-      const week = getWorkoutProgramWeek(program as any, weekDay.weekNumber);
-      const day = week?.days?.find((d: any) => d.dayNumber === weekDay.dayNumber);
+      const week = getWorkoutProgramWeek(program, weekDay.weekNumber);
+      const day = week?.days?.find((d: WorkoutDay) => d.dayNumber === weekDay.dayNumber);
       if (week && day) {
         return {
           week,
-          day: day as any,
+          day,
           weekNumber: weekDay.weekNumber,
           dayNumber: weekDay.dayNumber,
         };
@@ -107,7 +111,7 @@ export function WorkoutProgramDashboard({
       const week = program.weeks[0];
       const day = week.days[0];
       if (day) {
-        return { week, day: day as any, weekNumber: week.weekNumber, dayNumber: day.dayNumber };
+        return { week, day, weekNumber: week.weekNumber, dayNumber: day.dayNumber };
       }
     }
 
@@ -165,9 +169,9 @@ export function WorkoutProgramDashboard({
 
             <div className="mb-3 flex items-center gap-3">
               <span
-                className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-bold tracking-wider uppercase ${difficultyBadgeStyles[(program as any).difficulty as DifficultyLevel]}`}
+                className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-bold tracking-wider uppercase ${difficultyBadgeStyles[program.difficulty]}`}
               >
-                {difficultyLabels[(program as any).difficulty as DifficultyLevel]}
+                {difficultyLabels[program.difficulty]}
               </span>
               <span className="flex items-center gap-1.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">
                 <Clock className="h-3.5 w-3.5" />
@@ -245,7 +249,7 @@ export function WorkoutProgramDashboard({
 
                       <div>
                         <h2 className="mb-2 text-3xl font-black tracking-tight text-white sm:text-4xl">
-                          {(nextSession.day as any)?.name}
+                          {nextSession.day?.name}
                         </h2>
                         <p className="text-lg font-medium text-neutral-400">
                           Settimana {nextSession.weekNumber}{' '}
@@ -256,7 +260,7 @@ export function WorkoutProgramDashboard({
 
                       <div className="flex flex-wrap gap-2">
                         {nextSession.day &&
-                          collectTargetMuscles(nextSession.day as any).map((muscle: any) => (
+                          collectTargetMuscles(nextSession.day).map((muscle: string) => (
                             <span
                               key={muscle}
                               className="inline-flex items-center rounded-lg border border-white/5 bg-neutral-800/80 px-3 py-1.5 text-xs font-semibold text-neutral-300 transition-colors hover:bg-neutral-700"
@@ -303,7 +307,7 @@ export function WorkoutProgramDashboard({
               </h3>
 
               <div className="space-y-8">
-                {program.weeks.map((week: any) => (
+                {program.weeks.map((week: WorkoutWeek) => (
                   <div key={week.weekNumber} className="space-y-4">
                     {/* Week Header */}
                     <div className="flex items-center gap-4">
@@ -325,7 +329,7 @@ export function WorkoutProgramDashboard({
 
                     {/* Days Grid */}
                     <div className="grid gap-4 sm:grid-cols-2">
-                      {week.days.map((day: any) => {
+                      {week.days.map((day: WorkoutDay) => {
                         const targetMuscles = collectTargetMuscles(day);
                         const isCreatingThis =
                           creatingSessionFor?.week === week.weekNumber &&
@@ -372,20 +376,22 @@ export function WorkoutProgramDashboard({
                                   </h5>
 
                                   <div className="flex flex-wrap gap-2">
-                                    {targetMuscles.slice(0, 3).map((muscle: any, idx: number) => (
-                                      <span
-                                        key={muscle}
-                                        className={`inline-flex items-center rounded-lg px-3 py-1.5 text-[10px] font-bold tracking-wider uppercase shadow-sm transition-all duration-300 ${
-                                          idx === 0
-                                            ? 'bg-indigo-500/20 text-indigo-300 ring-1 ring-indigo-500/30 group-hover:bg-indigo-500/30 group-hover:text-indigo-200'
-                                            : idx === 1
-                                              ? 'bg-purple-500/20 text-purple-300 ring-1 ring-purple-500/30 group-hover:bg-purple-500/30 group-hover:text-purple-200'
-                                              : 'bg-pink-500/20 text-pink-300 ring-1 ring-pink-500/30 group-hover:bg-pink-500/30 group-hover:text-pink-200'
-                                        }`}
-                                      >
-                                        {muscle}
-                                      </span>
-                                    ))}
+                                    {targetMuscles
+                                      .slice(0, 3)
+                                      .map((muscle: string, idx: number) => (
+                                        <span
+                                          key={muscle}
+                                          className={`inline-flex items-center rounded-lg px-3 py-1.5 text-[10px] font-bold tracking-wider uppercase shadow-sm transition-all duration-300 ${
+                                            idx === 0
+                                              ? 'bg-indigo-500/20 text-indigo-300 ring-1 ring-indigo-500/30 group-hover:bg-indigo-500/30 group-hover:text-indigo-200'
+                                              : idx === 1
+                                                ? 'bg-purple-500/20 text-purple-300 ring-1 ring-purple-500/30 group-hover:bg-purple-500/30 group-hover:text-purple-200'
+                                                : 'bg-pink-500/20 text-pink-300 ring-1 ring-pink-500/30 group-hover:bg-pink-500/30 group-hover:text-pink-200'
+                                          }`}
+                                        >
+                                          {muscle}
+                                        </span>
+                                      ))}
                                     {targetMuscles.length > 3 && (
                                       <span className="self-center px-2 text-[10px] font-semibold text-neutral-500">
                                         +{targetMuscles.length - 3}

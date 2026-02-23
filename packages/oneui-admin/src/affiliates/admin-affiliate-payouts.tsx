@@ -12,7 +12,6 @@ import { useState } from 'react';
 import { Eye } from 'lucide-react';
 import { CatalogToolbar, CatalogGrid, ResourceCard, type FilterOption } from '@giulio-leone/ui';
 
-
 interface AdminAffiliatePayoutsProps {
   rewards: Array<{
     id: string;

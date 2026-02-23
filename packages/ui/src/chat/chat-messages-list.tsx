@@ -27,7 +27,7 @@ export const ChatMessagesList = memo(function ChatMessagesList({
 
   return (
     <div className={cn('relative flex flex-1 flex-col overflow-hidden', className)}>
-      <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-neutral-200 dark:scrollbar-thumb-neutral-800">
+      <div className="scrollbar-thin scrollbar-thumb-neutral-200 dark:scrollbar-thumb-neutral-800 flex-1 overflow-y-auto">
         <div className="px-3 py-4 sm:px-4 sm:py-6 lg:px-6">
           {isEmpty ? (
             <div className="flex h-full min-h-[50vh] flex-col items-center justify-center">

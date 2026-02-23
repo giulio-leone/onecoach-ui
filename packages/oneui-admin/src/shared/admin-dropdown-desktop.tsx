@@ -11,7 +11,6 @@ import { useState, useRef, useEffect } from 'react';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import type { AdminMenuItem } from './admin-menu-item.types';
 
-
 interface AdminDropdownDesktopProps {
   trigger: React.ReactNode;
   items: AdminMenuItem[];
@@ -142,7 +141,7 @@ export function AdminDropdownDesktop({
           )}
         >
           <div className="py-1">
-            {items.map((item: any) => {
+            {items.map((item: AdminMenuItem) => {
               const Icon = item.icon;
               return (
                 <button

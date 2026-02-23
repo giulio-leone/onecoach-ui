@@ -188,13 +188,17 @@ export function AdminCredentialsForm({ type, initialData, canEdit }: AdminCreden
       {/* Error Message */}
       {error && (
         <div className="rounded-lg border border-red-200 bg-red-50 p-3 dark:border-red-800 dark:bg-red-900/20">
-          <Text size="sm" className="text-red-800 dark:text-red-200">{error}</Text>
+          <Text size="sm" className="text-red-800 dark:text-red-200">
+            {error}
+          </Text>
         </div>
       )}
       {/* Success Message */}
       {success && (
         <div className="rounded-lg border border-green-200 bg-green-50 p-3 dark:border-green-800 dark:bg-green-900/20">
-          <Text size="sm" className="text-green-800 dark:text-green-200">{success}</Text>
+          <Text size="sm" className="text-green-800 dark:text-green-200">
+            {success}
+          </Text>
         </div>
       )}
       {/* Submit Button */}

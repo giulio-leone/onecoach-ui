@@ -213,7 +213,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                 </label>
                 <select
                   value={config.model}
-                  onChange={(e: any) => {
+                  onChange={(e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
                     const val = e.target.value;
                     if (configs.find((c) => c.operationType === config.operationType)) {
                       updateField(config.operationType, 'model', val);
@@ -241,7 +241,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                     type="number"
                     min={0}
                     value={config.creditCost}
-                    onChange={(e: any) => {
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
                       const val = parseInt(e.target.value) || 0;
                       if (configs.find((c) => c.operationType === config.operationType)) {
                         updateField(config.operationType, 'creditCost', val);
@@ -263,7 +263,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                     min={100}
                     step={100}
                     value={config.maxTokens}
-                    onChange={(e: any) => {
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
                       const val = parseInt(e.target.value) || 1000;
                       if (configs.find((c) => c.operationType === config.operationType)) {
                         updateField(config.operationType, 'maxTokens', val);

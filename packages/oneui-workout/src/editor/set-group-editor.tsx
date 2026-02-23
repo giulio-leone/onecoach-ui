@@ -13,8 +13,13 @@ import {
   calculateGroupSummary,
   isUniformGroup,
 } from '@giulio-leone/one-workout/utils/progression-calculator';
+import type { SetGroup as TypesSetGroup } from '@giulio-leone/types';
 import { SetEditor } from './set-editor';
-import type { BuilderSetGroup as SetGroup, BuilderSetProgression as SetProgression, BuilderExerciseSet as ExerciseSet } from './builder-types';
+import type {
+  BuilderSetGroup as SetGroup,
+  BuilderSetProgression as SetProgression,
+  BuilderExerciseSet as ExerciseSet,
+} from './builder-types';
 
 interface SetGroupEditorProps {
   group: SetGroup;
@@ -80,7 +85,7 @@ export function SetGroupEditor({
   // Genera serie se mancanti - usa useMemo solo per calcolare, useEffect per aggiornare
   const displaySets = useMemo<ExerciseSet[]>(() => {
     if (group.sets.length === 0 || group.sets.length !== group.count) {
-      return generateSetsFromGroup(group as any);
+      return generateSetsFromGroup(group as unknown as TypesSetGroup);
     }
     return group.sets;
   }, [group]);
@@ -89,7 +94,7 @@ export function SetGroupEditor({
   useEffect(() => {
     // Solo se le serie sono mancanti o non corrispondono al count
     if (group.sets.length === 0 || group.sets.length !== group.count) {
-      const newSets = generateSetsFromGroup(group as any);
+      const newSets = generateSetsFromGroup(group as unknown as TypesSetGroup);
       // Crea una chiave univoca per lo stato del gruppo
       const groupKey = `${group.count}-${JSON.stringify(group.baseSet)}-${JSON.stringify(group.progression)}`;
 
@@ -108,7 +113,7 @@ export function SetGroupEditor({
       baseSet: updatedSet,
     };
     // Rigenera tutte le serie dal nuovo baseSet
-    const newSets = generateSetsFromGroup(newGroup as any);
+    const newSets = generateSetsFromGroup(newGroup as unknown as TypesSetGroup);
     newGroup.sets = newSets;
     onGroupChange(newGroup);
   };
@@ -121,7 +126,7 @@ export function SetGroupEditor({
         ...group,
         baseSet: newBaseSet,
       };
-      const newSets = generateSetsFromGroup(newGroup as any);
+      const newSets = generateSetsFromGroup(newGroup as unknown as TypesSetGroup);
       newGroup.sets = newSets;
       onGroupChange(newGroup);
     } else {
@@ -145,7 +150,7 @@ export function SetGroupEditor({
       ...group,
       count: newCount,
     };
-    const newSets = generateSetsFromGroup(newGroup as any);
+    const newSets = generateSetsFromGroup(newGroup as unknown as TypesSetGroup);
     newGroup.sets = newSets;
     onGroupChange(newGroup);
   };
@@ -165,7 +170,7 @@ export function SetGroupEditor({
       ...group,
       progression: newProgression,
     };
-    const newSets = generateSetsFromGroup(newGroup as any);
+    const newSets = generateSetsFromGroup(newGroup as unknown as TypesSetGroup);
     newGroup.sets = newSets;
     onGroupChange(newGroup);
     setIsEditing(true);
@@ -176,7 +181,7 @@ export function SetGroupEditor({
       ...group,
       progression: undefined,
     };
-    const newSets = generateSetsFromGroup(newGroup as any);
+    const newSets = generateSetsFromGroup(newGroup as unknown as TypesSetGroup);
     newGroup.sets = newSets;
     onGroupChange(newGroup);
   };
@@ -186,13 +191,13 @@ export function SetGroupEditor({
       ...group,
       progression,
     };
-    const newSets = generateSetsFromGroup(newGroup as any);
+    const newSets = generateSetsFromGroup(newGroup as unknown as TypesSetGroup);
     newGroup.sets = newSets;
     onGroupChange(newGroup);
   };
 
-  const summary = calculateGroupSummary(group as any);
-  const isUniform = isUniformGroup(group as any);
+  const summary = calculateGroupSummary(group as unknown as TypesSetGroup);
+  const isUniform = isUniformGroup(group as unknown as TypesSetGroup);
 
   return (
     <div className="rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900">

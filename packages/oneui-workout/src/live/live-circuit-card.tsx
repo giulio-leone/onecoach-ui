@@ -17,11 +17,7 @@ export interface LiveCircuitCardProps {
  * Displays exercises in sequence with round counter.
  * Each round cycles through all exercises.
  */
-export function LiveCircuitCard({
-  circuit,
-  onComplete,
-  className = '',
-}: LiveCircuitCardProps) {
+export function LiveCircuitCard({ circuit, onComplete, className = '' }: LiveCircuitCardProps) {
   const [currentRound, setCurrentRound] = useState(1);
   const [currentExerciseIdx, setCurrentExerciseIdx] = useState(0);
   const [exercisesDone, setExercisesDone] = useState<Set<string>>(new Set());

@@ -27,7 +27,10 @@ export function SelectionCard({
 }: SelectionCardProps) {
   // Fix for "shadow* style props are deprecated" warning on Web
   const isWeb = Platform.OS === 'web';
-  const webShadowStyle = isWeb && selected ? { boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' } : undefined;
+  const webShadowStyle =
+    isWeb && selected
+      ? { boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }
+      : undefined;
 
   return (
     <TouchableOpacity activeOpacity={0.7} {...props}>
@@ -37,32 +40,37 @@ export function SelectionCard({
         className={cn(
           'relative overflow-hidden transition-all duration-300',
           compact && 'rounded-xl',
-          selected 
+          selected
             ? cn(
-                'scale-[1.02] border-primary-500/50',
+                'border-primary-500/50 scale-[1.02]',
                 !isWeb && 'shadow-md', // Only use Native shadow classes on Native
                 compact && 'shadow-none' // Disable large shadow if compact (web handles it via style or lighter class)
-              ) 
+              )
             : 'hover:bg-white/50 dark:hover:bg-neutral-800/50',
           className
         )}
         style={webShadowStyle}
       >
         {image && (
-          <View className={cn("w-full overflow-hidden", compact ? "h-16" : "h-32")}>
+          <View className={cn('w-full overflow-hidden', compact ? 'h-16' : 'h-32')}>
             <Image source={image} className="h-full w-full object-cover opacity-90" />
             <View className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent dark:from-neutral-900/90" />
           </View>
         )}
 
-        <View className={cn(compact ? "p-3" : "p-5")}>
-          <View className={cn("flex-row justify-between gap-3", compact ? "items-center" : "items-start")}>
+        <View className={cn(compact ? 'p-3' : 'p-5')}>
+          <View
+            className={cn(
+              'flex-row justify-between gap-3',
+              compact ? 'items-center' : 'items-start'
+            )}
+          >
             <View className="flex-1">
-              <View className={cn("flex-row items-center gap-2", compact && "flex-1")}>
-                 {icon && (
+              <View className={cn('flex-row items-center gap-2', compact && 'flex-1')}>
+                {icon && (
                   <View
                     className={cn(
-                      'transition-colors justify-center items-center',
+                      'items-center justify-center transition-colors',
                       compact ? 'mr-2 rounded-lg p-1.5' : 'mb-3 self-start rounded-xl p-2.5',
                       selected
                         ? 'bg-blue-500 text-white'
@@ -73,7 +81,7 @@ export function SelectionCard({
                     {icon}
                   </View>
                 )}
-                
+
                 <View className="flex-1">
                   <View className="flex-row items-center gap-2">
                     <Text
@@ -102,7 +110,7 @@ export function SelectionCard({
                       numberOfLines={compact ? 1 : undefined}
                       className={cn(
                         'leading-relaxed',
-                        compact ? 'text-xs mt-0.5' : 'text-sm mt-1.5',
+                        compact ? 'mt-0.5 text-xs' : 'mt-1.5 text-sm',
                         selected
                           ? 'text-blue-600/90 dark:text-blue-200/90'
                           : 'text-neutral-500 dark:text-neutral-300'
@@ -124,7 +132,11 @@ export function SelectionCard({
                   : 'border-neutral-300 bg-transparent dark:border-neutral-600'
               )}
             >
-              {selected && <View className={cn("rounded-full bg-white", compact ? "h-1.5 w-1.5" : "h-2.5 w-2.5")} />}
+              {selected && (
+                <View
+                  className={cn('rounded-full bg-white', compact ? 'h-1.5 w-1.5' : 'h-2.5 w-2.5')}
+                />
+              )}
             </View>
           </View>
         </View>

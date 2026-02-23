@@ -19,8 +19,7 @@ import {
 // Re-export types for convenience
 export type { DatePickerWithPresetsProps, Presets } from './date-picker-with-presets.shared';
 
-export function DatePickerWithPresets({
-  date, onDateChange, presets }: DatePickerWithPresetsProps) {
+export function DatePickerWithPresets({ date, onDateChange, presets }: DatePickerWithPresetsProps) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [inputValue, setInputValue] = useState(formatDateForInput(date));
   const [error, setError] = useState<string | null>(null);

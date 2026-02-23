@@ -12,7 +12,6 @@ import { Check, ChevronDown, X, Search } from 'lucide-react';
 import { Checkbox } from '@giulio-leone/ui';
 import { useTranslations } from 'next-intl';
 
-
 export type MetadataType = 'exerciseType' | 'muscle' | 'bodyPart' | 'equipment' | 'workoutGoal';
 
 interface MetadataOption {
@@ -281,7 +280,9 @@ export function MetadataMultiSelect({
                     checked={checked}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       onChange(
-                        e.target.checked ? [...value, opt.id] : value.filter((v: any) => v !== opt.id)
+                        e.target.checked
+                          ? [...value, opt.id]
+                          : value.filter((v: any) => v !== opt.id)
                       )
                     }
                     className="flex items-center gap-2"

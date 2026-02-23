@@ -14,55 +14,68 @@ export interface WizardStepperProps {
   className?: string;
 }
 
-export const WizardStepper = ({ steps, currentStep, onStepClick, className }: WizardStepperProps) => {
+export const WizardStepper = ({
+  steps,
+  currentStep,
+  onStepClick,
+  className,
+}: WizardStepperProps) => {
   return (
-    <nav aria-label="Progress" className={cn("w-full px-6 py-4", className)}>
-      <ol role="list" className="flex items-center justify-between gap-2 max-w-4xl mx-auto">
+    <nav aria-label="Progress" className={cn('w-full px-6 py-4', className)}>
+      <ol role="list" className="mx-auto flex max-w-4xl items-center justify-between gap-2">
         {steps.map((step, index) => {
           const isActive = index === currentStep;
           const isCompleted = index < currentStep;
-          
+
           return (
-            <li key={step.title} className="relative flex-1 group">
+            <li key={step.title} className="group relative flex-1">
               <div className="flex flex-col items-center gap-2">
                 <button
                   onClick={() => isCompleted && onStepClick?.(index)}
                   disabled={index > currentStep}
                   className={cn(
-                    "relative z-10 flex items-center justify-center rounded-xl border-2 transition-all duration-500",
-                    "h-8 w-8 sm:h-10 sm:w-10",
-                    isActive 
-                      ? "border-transparent bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-[0_0_30px_rgba(37,99,235,0.4)] scale-110" 
-                      : isCompleted 
-                        ? "border-blue-500/40 bg-blue-500/10 text-blue-500 dark:bg-blue-500/20 shadow-[0_0_15px_rgba(37,99,235,0.1)]" 
-                        : "border-neutral-200/50 bg-white/40 text-neutral-400 dark:border-neutral-800/50 dark:bg-neutral-900/40 backdrop-blur-md"
+                    'relative z-10 flex items-center justify-center rounded-xl border-2 transition-all duration-500',
+                    'h-8 w-8 sm:h-10 sm:w-10',
+                    isActive
+                      ? 'scale-110 border-transparent bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-[0_0_30px_rgba(37,99,235,0.4)]'
+                      : isCompleted
+                        ? 'border-blue-500/40 bg-blue-500/10 text-blue-500 shadow-[0_0_15px_rgba(37,99,235,0.1)] dark:bg-blue-500/20'
+                        : 'border-neutral-200/50 bg-white/40 text-neutral-400 backdrop-blur-md dark:border-neutral-800/50 dark:bg-neutral-900/40'
                   )}
                 >
                   {isCompleted ? (
                     <Check className="h-4 w-4 sm:h-5 sm:w-5" />
                   ) : (
-                    <span className="text-xs sm:text-sm font-black tracking-tighter">{index + 1}</span>
+                    <span className="text-xs font-black tracking-tighter sm:text-sm">
+                      {index + 1}
+                    </span>
                   )}
                 </button>
 
-                <div className="hidden sm:flex flex-col items-center text-center px-1">
-                  <span className={cn(
-                    "text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.15em] transition-all duration-500", 
-                    isActive ? "text-blue-600 dark:text-blue-400" : 
-                    isCompleted ? "text-neutral-900 dark:text-neutral-200 opacity-80" :
-                    "text-neutral-400 dark:text-neutral-500 opacity-40"
-                  )}>
+                <div className="hidden flex-col items-center px-1 text-center sm:flex">
+                  <span
+                    className={cn(
+                      'text-[9px] font-bold tracking-[0.15em] uppercase transition-all duration-500 sm:text-[10px]',
+                      isActive
+                        ? 'text-blue-600 dark:text-blue-400'
+                        : isCompleted
+                          ? 'text-neutral-900 opacity-80 dark:text-neutral-200'
+                          : 'text-neutral-400 opacity-40 dark:text-neutral-500'
+                    )}
+                  >
                     {step.title}
                   </span>
                 </div>
 
                 {index !== steps.length - 1 && (
-                  <div 
+                  <div
                     className={cn(
-                      "absolute top-4 sm:top-5 left-[calc(50%+24px)] right-[calc(-50%+24px)] h-[1px] -z-0 transition-all duration-700",
-                      isCompleted ? "bg-gradient-to-r from-blue-600/60 to-blue-400/40" : "bg-neutral-200 dark:bg-neutral-800/50"
-                    )} 
-                    aria-hidden="true" 
+                      'absolute top-4 right-[calc(-50%+24px)] left-[calc(50%+24px)] -z-0 h-[1px] transition-all duration-700 sm:top-5',
+                      isCompleted
+                        ? 'bg-gradient-to-r from-blue-600/60 to-blue-400/40'
+                        : 'bg-neutral-200 dark:bg-neutral-800/50'
+                    )}
+                    aria-hidden="true"
                   />
                 )}
               </div>
@@ -86,16 +99,12 @@ export interface WizardContainerProps {
 
 export const WizardContainer = ({ children, header, footer, className }: WizardContainerProps) => {
   return (
-    <div className={cn("flex-1 flex flex-col min-h-0 overflow-hidden", className)}>
-      {header && (
-        <div className="flex-shrink-0 px-6 py-4 sm:px-8 sm:py-6">
-          {header}
-        </div>
-      )}
+    <div className={cn('flex min-h-0 flex-1 flex-col overflow-hidden', className)}>
+      {header && <div className="flex-shrink-0 px-6 py-4 sm:px-8 sm:py-6">{header}</div>}
       <div className="flex-1 overflow-y-auto px-6 sm:px-8">
         {children}
         {footer && (
-          <div className="mt-8 flex flex-shrink-0 items-center justify-between py-4 pb-safe">
+          <div className="pb-safe mt-8 flex flex-shrink-0 items-center justify-between py-4">
             {footer}
           </div>
         )}
@@ -119,39 +128,39 @@ export interface WizardActionsProps {
   className?: string;
 }
 
-export const WizardActions = ({ 
-  onBack, 
-  onNext, 
-  canBack, 
-  canNext, 
+export const WizardActions = ({
+  onBack,
+  onNext,
+  canBack,
+  canNext,
   isLastStep,
-  nextLabel = "Continue",
-  backLabel = "Back",
-  generateLabel = "Generate Plan",
-  className 
+  nextLabel = 'Continue',
+  backLabel = 'Back',
+  generateLabel = 'Generate Plan',
+  className,
 }: WizardActionsProps) => {
   return (
-    <div className={cn("flex items-center justify-between w-full", className)}>
+    <div className={cn('flex w-full items-center justify-between', className)}>
       <Button
         variant="ghost"
         onClick={onBack}
         disabled={!canBack}
         className={cn(
-          "h-12 px-6 gap-2 rounded-2xl text-neutral-600 dark:text-neutral-400 font-bold transition-all hover:bg-white/50 dark:hover:bg-white/5",
-          !canBack && "opacity-0 pointer-events-none"
+          'h-12 gap-2 rounded-2xl px-6 font-bold text-neutral-600 transition-all hover:bg-white/50 dark:text-neutral-400 dark:hover:bg-white/5',
+          !canBack && 'pointer-events-none opacity-0'
         )}
       >
         <ChevronLeft className="h-5 w-5" />
         {backLabel}
       </Button>
 
-      <Button 
+      <Button
         onClick={onNext}
         disabled={!canNext}
         className={cn(
-          "h-12 min-w-[160px] gap-2 font-black rounded-2xl shadow-[0_12px_24px_-8px_rgba(37,99,235,0.5)] transition-all",
-          "bg-blue-600 hover:bg-blue-500 active:scale-95 text-white border-0",
-          !canNext && "opacity-40 grayscale pointer-events-none shadow-none"
+          'h-12 min-w-[160px] gap-2 rounded-2xl font-black shadow-[0_12px_24px_-8px_rgba(37,99,235,0.5)] transition-all',
+          'border-0 bg-blue-600 text-white hover:bg-blue-500 active:scale-95',
+          !canNext && 'pointer-events-none opacity-40 shadow-none grayscale'
         )}
       >
         {isLastStep ? (
@@ -185,40 +194,47 @@ export interface WizardRadioGroupProps {
   className?: string;
 }
 
-export const WizardRadioGroup = ({ options, value, onChange, className }: WizardRadioGroupProps) => {
+export const WizardRadioGroup = ({
+  options,
+  value,
+  onChange,
+  className,
+}: WizardRadioGroupProps) => {
   return (
-    <div className={cn(
-      "relative flex p-1.5 gap-1.5 items-center rounded-2xl overflow-hidden",
-      "bg-white/30 dark:bg-neutral-900/40 backdrop-blur-xl border border-white/40 dark:border-white/10",
-      "shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] dark:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.3)]",
-      className
-    )}>
+    <div
+      className={cn(
+        'relative flex items-center gap-1.5 overflow-hidden rounded-2xl p-1.5',
+        'border border-white/40 bg-white/30 backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/40',
+        'shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] dark:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.3)]',
+        className
+      )}
+    >
       {options.map((option) => {
         const isSelected = option.id === value;
-        
+
         return (
           <button
             key={option.id}
             type="button"
             onClick={() => onChange(option.id)}
             className={cn(
-              "relative flex-1 z-10 py-2.5 px-4 rounded-xl text-sm font-bold transition-all duration-300",
-              isSelected 
-                ? "text-blue-700 dark:text-blue-50" 
-                : "text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200"
+              'relative z-10 flex-1 rounded-xl px-4 py-2.5 text-sm font-bold transition-all duration-300',
+              isSelected
+                ? 'text-blue-700 dark:text-blue-50'
+                : 'text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200'
             )}
           >
             {isSelected && (
               <motion.div
                 layoutId="active-pill"
                 className={cn(
-                  "absolute inset-0 -z-10 rounded-xl",
-                  "bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600/40 dark:to-blue-500/30",
-                  "shadow-[0_4px_12px_rgba(59,130,246,0.3)] dark:shadow-[0_8px_20px_rgba(37,99,235,0.4)]",
-                  "border border-blue-400/50 dark:border-blue-400/30",
-                  "before:absolute before:inset-0 before:bg-white/20 before:rounded-xl before:opacity-0 hover:before:opacity-100 transition-opacity"
+                  'absolute inset-0 -z-10 rounded-xl',
+                  'bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600/40 dark:to-blue-500/30',
+                  'shadow-[0_4px_12px_rgba(59,130,246,0.3)] dark:shadow-[0_8px_20px_rgba(37,99,235,0.4)]',
+                  'border border-blue-400/50 dark:border-blue-400/30',
+                  'transition-opacity before:absolute before:inset-0 before:rounded-xl before:bg-white/20 before:opacity-0 hover:before:opacity-100'
                 )}
-                transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+                transition={{ type: 'spring', bounce: 0.15, duration: 0.5 }}
               />
             )}
             {option.label}

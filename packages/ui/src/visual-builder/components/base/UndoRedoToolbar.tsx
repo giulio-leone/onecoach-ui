@@ -38,8 +38,7 @@ export interface UndoRedoToolbarProps {
 
 const VARIANT_STYLES = {
   primary: {
-    active:
-      'text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-500/10',
+    active: 'text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-500/10',
     disabled: 'text-neutral-300 dark:text-neutral-600',
     badge: 'bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400',
   },
@@ -50,8 +49,7 @@ const VARIANT_STYLES = {
     badge: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400',
   },
   neutral: {
-    active:
-      'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800',
+    active: 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800',
     disabled: 'text-neutral-300 dark:text-neutral-600',
     badge: 'bg-neutral-200 text-neutral-600 dark:bg-neutral-700 dark:text-neutral-300',
   },
@@ -133,7 +131,7 @@ export function UndoRedoToolbar({
             {historyCount > 0 && (
               <span
                 className={cn(
-                  'absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center',
+                  'absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center',
                   'rounded-full px-1 text-[10px] font-bold',
                   styles.badge
                 )}

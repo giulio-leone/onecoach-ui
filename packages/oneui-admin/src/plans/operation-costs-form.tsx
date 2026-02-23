@@ -110,7 +110,9 @@ export function OperationCostsForm({ configs, onUpdateCost }: OperationCostsForm
                   type="number"
                   min="0"
                   value={config.creditCost}
-                  onChange={(e: any) => handleCostChange(config.operationType, e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    handleCostChange(config.operationType, e.target.value)
+                  }
                   className="w-20 rounded border border-neutral-300 bg-white px-2 py-1 text-right text-sm outline-none focus:ring-1 focus:ring-indigo-500 dark:border-white/10 dark:bg-black/20"
                 />
               </div>

@@ -2,7 +2,10 @@ import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@giulio-leone/
 import type { SplitType, TierAI } from './constants';
 export type { SplitType, TierAI };
 import type { StreamEvent as UIStreamEvent } from '@giulio-leone/ui';
-import type { WorkoutGenerationInput as DomainWorkoutGenerationInput, WorkoutGenerationOutput as DomainWorkoutGenerationOutput } from "@giulio-leone/types/ai";
+import type {
+  WorkoutGenerationInput as DomainWorkoutGenerationInput,
+  WorkoutGenerationOutput as DomainWorkoutGenerationOutput,
+} from '@giulio-leone/types/ai';
 
 export interface UserProfileState {
   weight?: number;

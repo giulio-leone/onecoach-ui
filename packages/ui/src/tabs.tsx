@@ -33,8 +33,7 @@ const TabsContext = React.createContext<{
   setValue: (value: string) => void;
 } | null>(null);
 
-export function Tabs({
-  defaultValue, children, className, value, onValueChange }: TabsProps) {
+export function Tabs({ defaultValue, children, className, value, onValueChange }: TabsProps) {
   const [internalValue, setInternalValue] = React.useState(value ?? defaultValue);
 
   React.useEffect(() => {

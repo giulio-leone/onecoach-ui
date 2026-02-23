@@ -1,4 +1,12 @@
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 import { Card } from './card';
 import { Button } from './button';
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react-native';
@@ -56,12 +64,8 @@ export function WizardLayout({
     <View style={[styles.container, style]}>
       {/* Header */}
       <View style={styles.header}>
-        {title && (
-          <Text style={styles.headerTitle}>{title}</Text>
-        )}
-        {subtitle && (
-          <Text style={styles.headerSubtitle}>{subtitle}</Text>
-        )}
+        {title && <Text style={styles.headerTitle}>{title}</Text>}
+        {subtitle && <Text style={styles.headerSubtitle}>{subtitle}</Text>}
 
         {/* Progress Bar */}
         <View style={styles.progressArea}>
@@ -79,14 +83,10 @@ export function WizardLayout({
                         ? styles.progressBarCompleted
                         : isActive
                           ? styles.progressBarActive
-                          : styles.progressBarInactive
+                          : styles.progressBarInactive,
                     ]}
                   />
-                  {isActive && (
-                    <Text style={styles.stepLabel}>
-                      Step {index + 1}
-                    </Text>
-                  )}
+                  {isActive && <Text style={styles.stepLabel}>Step {index + 1}</Text>}
                 </View>
               );
             })}
@@ -106,13 +106,9 @@ export function WizardLayout({
           keyboardShouldPersistTaps="handled"
         >
           <View style={styles.contentHeader}>
-            <Text style={styles.currentStepTitle}>
-              {currentStep.title}
-            </Text>
+            <Text style={styles.currentStepTitle}>{currentStep.title}</Text>
             {currentStep.description && (
-              <Text style={styles.currentStepDescription}>
-                {currentStep.description}
-              </Text>
+              <Text style={styles.currentStepDescription}>{currentStep.description}</Text>
             )}
           </View>
 
@@ -121,17 +117,11 @@ export function WizardLayout({
       </KeyboardAvoidingView>
 
       {/* Footer Actions */}
-      <Card
-        variant="glass"
-        style={styles.footer}
-      >
+      <Card variant="glass" style={styles.footer}>
         <TouchableOpacity
           onPress={handleBack}
           disabled={isFirstStep}
-          style={[
-            styles.backButton,
-            isFirstStep && { opacity: 0 }
-          ]}
+          style={[styles.backButton, isFirstStep && { opacity: 0 }]}
         >
           {/* @ts-ignore */}
           <ChevronLeft size={20} style={{ color: isFirstStep ? '#cbd5e1' : '#475569' }} />

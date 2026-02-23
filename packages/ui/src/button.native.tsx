@@ -93,7 +93,16 @@ export const Button = React.forwardRef<View, ButtonProps>(
               <Icon size={iconSize} color={textColor} style={styles.icon} />
             )}
             {children && (
-              <Text style={[styles.text, sizeStyles.text, { color: textColor }, textStyle] as StyleProp<TextStyle>}>
+              <Text
+                style={
+                  [
+                    styles.text,
+                    sizeStyles.text,
+                    { color: textColor },
+                    textStyle,
+                  ] as StyleProp<TextStyle>
+                }
+              >
                 {children}
               </Text>
             )}
@@ -120,9 +129,10 @@ export const Button = React.forwardRef<View, ButtonProps>(
             borderRadius: sizeStyles.container.borderRadius,
             backgroundColor: 'transparent',
             // Add shadow for gradient manually if needed or via style prop
-            boxShadow: variant === 'gradient-primary' 
-              ? '0 4px 4.65px rgba(59, 130, 246, 0.3)' 
-              : '0 4px 4.65px rgba(217, 70, 239, 0.3)',
+            boxShadow:
+              variant === 'gradient-primary'
+                ? '0 4px 4.65px rgba(59, 130, 246, 0.3)'
+                : '0 4px 4.65px rgba(217, 70, 239, 0.3)',
             elevation: 8,
           },
           !isGradient && sizeStyles.container, // Padding is handled inside for gradient? logic check below.
@@ -147,10 +157,12 @@ export const Button = React.forwardRef<View, ButtonProps>(
             colors={gradientColors}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
-            style={[
-              sizeStyles.container, // Apply padding here for gradient
-              { flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center' }
-            ] as StyleProp<ViewStyle>}
+            style={
+              [
+                sizeStyles.container, // Apply padding here for gradient
+                { flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center' },
+              ] as StyleProp<ViewStyle>
+            }
           >
             {renderContent('#ffffff')}
           </LinearGradient>

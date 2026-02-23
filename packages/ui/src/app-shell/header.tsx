@@ -42,7 +42,11 @@ const DEFAULT_LABELS: AppShellHeaderLabels = {
 };
 
 export function AppShellHeader({
-  brandHref, brandLabel, rightExtra, labels = DEFAULT_LABELS }: AppShellHeaderProps) {
+  brandHref,
+  brandLabel,
+  rightExtra,
+  labels = DEFAULT_LABELS,
+}: AppShellHeaderProps) {
   const { toggleMobileMenu } = useUIStore();
   const { user, updateUser } = useAuthStore();
   const { actions: headerActions, leftContent } = useHeaderActions();
@@ -73,16 +77,16 @@ export function AppShellHeader({
       // Revert on error
       updateUser({ copilotEnabled: !newValue });
       console.error('Failed to update copilot preference', e);
-      toast.error(
-        e instanceof Error ? e.message : labels.updateError
-      );
+      toast.error(e instanceof Error ? e.message : labels.updateError);
     }
   };
 
   const isOneAgenda = pathname?.startsWith('/oneagenda');
   const isProject = pathname?.startsWith('/projects/');
-  const safeBrandHref = brandHref ?? (isOneAgenda ? '/oneagenda' : isProject ? '/projects' : '/dashboard');
-  const safeBrandLabel = brandLabel ?? (isOneAgenda ? 'OneAgenda' : isProject ? 'Progetto' : 'OneCoach');
+  const safeBrandHref =
+    brandHref ?? (isOneAgenda ? '/oneagenda' : isProject ? '/projects' : '/dashboard');
+  const safeBrandLabel =
+    brandLabel ?? (isOneAgenda ? 'OneAgenda' : isProject ? 'Progetto' : 'OneCoach');
 
   return (
     <header
@@ -106,13 +110,18 @@ export function AppShellHeader({
 
           <div className="flex min-w-0 items-center gap-3">
             {leftContent ? (
-              <div className="flex min-w-0 items-center gap-2">
-                {leftContent}
-              </div>
+              <div className="flex min-w-0 items-center gap-2">{leftContent}</div>
             ) : (
-              <Link href={safeBrandHref} className="group flex min-w-0 items-center gap-2 lg:hidden">
+              <Link
+                href={safeBrandHref}
+                className="group flex min-w-0 items-center gap-2 lg:hidden"
+              >
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20">
-                  {isOneAgenda ? <Calendar className="h-4 w-4" /> : <Sparkles className="h-4 w-4" />}
+                  {isOneAgenda ? (
+                    <Calendar className="h-4 w-4" />
+                  ) : (
+                    <Sparkles className="h-4 w-4" />
+                  )}
                 </div>
                 <span className="truncate text-sm font-semibold text-neutral-900 dark:text-white">
                   {safeBrandLabel}

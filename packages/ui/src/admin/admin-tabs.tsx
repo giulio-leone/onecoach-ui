@@ -26,8 +26,7 @@ interface AdminTabsProps {
   className?: string;
 }
 
-export function AdminTabs({
-  tabs, defaultTab, onTabChange, className }: AdminTabsProps) {
+export function AdminTabs({ tabs, defaultTab, onTabChange, className }: AdminTabsProps) {
   const [activeTab, setActiveTab] = useState<string>(() => {
     // Preferisci hash dall'URL, poi default
     if (typeof window !== 'undefined') {
@@ -36,14 +35,15 @@ export function AdminTabs({
         return hash;
       }
     }
-    return defaultTab || tabs.find((t: any) => !t.disabled)?.id || tabs[0]?.id || '';
+    return defaultTab || tabs.find((t: AdminTab) => !t.disabled)?.id || tabs[0]?.id || '';
   });
 
   useEffect(() => {
     // Imposta l'hash URL al mount se non c'è già uno valido
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.slice(1);
-      const initialTab = defaultTab || tabs.find((t: any) => !t.disabled)?.id || tabs[0]?.id || '';
+      const initialTab =
+        defaultTab || tabs.find((t: AdminTab) => !t.disabled)?.id || tabs[0]?.id || '';
 
       if (!hash || !tabs.some((t) => t.id === hash && !t.disabled)) {
         // Imposta l'hash con il tab iniziale
@@ -67,7 +67,7 @@ export function AdminTabs({
   }, [tabs]);
 
   const handleTabClick = (tabId: string) => {
-    if (tabs.find((t: any) => t.id === tabId)?.disabled) return;
+    if (tabs.find((t: AdminTab) => t.id === tabId)?.disabled) return;
 
     setActiveTab(tabId);
     onTabChange?.(tabId);
@@ -98,7 +98,7 @@ export function AdminTabs({
           scrollbarColor: 'rgb(212 212 212) transparent',
         }}
       >
-        {tabs.map((tab: any) => {
+        {tabs.map((tab: AdminTab) => {
           const isActive = activeTab === tab.id;
           const isDisabled = tab.disabled;
 

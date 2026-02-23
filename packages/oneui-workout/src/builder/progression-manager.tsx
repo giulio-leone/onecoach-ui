@@ -152,7 +152,10 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
     setGroupedExercises(groups);
 
     if (groups.length > 0) {
-      if (!selectedGroup || !groups.find((g: GroupedExercise) => g.exerciseId === selectedGroup.exerciseId)) {
+      if (
+        !selectedGroup ||
+        !groups.find((g: GroupedExercise) => g.exerciseId === selectedGroup.exerciseId)
+      ) {
         const firstGroup = groups[0];
         if (firstGroup) setSelectedGroup(firstGroup);
       }
@@ -732,7 +735,9 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                   {progressionTypes.map((typeOption) => (
                     <button
                       key={typeOption.id}
-                      onClick={() => setParams((p: ProgressionParams) => ({ ...p, type: typeOption.id }))}
+                      onClick={() =>
+                        setParams((p: ProgressionParams) => ({ ...p, type: typeOption.id }))
+                      }
                       className={cn(
                         'flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium transition-all',
                         params.type === typeOption.id
@@ -755,7 +760,10 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                     type="number"
                     value={params.startValue}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      setParams((p: ProgressionParams) => ({ ...p, startValue: parseFloat(e.target.value) || 0 }))
+                      setParams((p: ProgressionParams) => ({
+                        ...p,
+                        startValue: parseFloat(e.target.value) || 0,
+                      }))
                     }
                     className="w-full bg-transparent text-neutral-900 outline-none dark:text-white"
                   />
@@ -774,7 +782,10 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                     type="number"
                     value={params.increment}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      setParams((p: ProgressionParams) => ({ ...p, increment: parseFloat(e.target.value) || 0 }))
+                      setParams((p: ProgressionParams) => ({
+                        ...p,
+                        increment: parseFloat(e.target.value) || 0,
+                      }))
                     }
                     className="w-full bg-transparent pl-4 text-neutral-900 outline-none dark:text-white"
                   />
@@ -789,7 +800,10 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                   <select
                     value={params.frequency}
                     onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                      setParams((p: ProgressionParams) => ({ ...p, frequency: parseInt(e.target.value) }))
+                      setParams((p: ProgressionParams) => ({
+                        ...p,
+                        frequency: parseInt(e.target.value),
+                      }))
                     }
                     className="w-full bg-transparent text-neutral-900 outline-none dark:text-white [&>option]:text-neutral-900 dark:[&>option]:bg-neutral-900 dark:[&>option]:text-white"
                   >
@@ -922,7 +936,9 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
 
                         <SetGroupEditor
                           group={currentSetGroup}
-                          onGroupChange={(updated) => handleGroupUpdate(idx, toDomainSetGroup(updated))}
+                          onGroupChange={(updated) =>
+                            handleGroupUpdate(idx, toDomainSetGroup(updated))
+                          }
                           onGroupDelete={() => handleRemoveSetGroup(idx, editingSetGroupIndex)}
                           onGroupDuplicate={() =>
                             handleDuplicateSetGroup(idx, editingSetGroupIndex)

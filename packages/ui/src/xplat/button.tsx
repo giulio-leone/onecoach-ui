@@ -15,7 +15,10 @@ export type XButtonProps = PressableProps & {
 export function XButton({ label, variant = 'primary', ...props }: XButtonProps) {
   if (Platform.OS === 'web') {
     return (
-      <Button variant={variant === 'ghost' ? 'ghost' : 'primary'} {...(props as any)}>
+      <Button
+        variant={variant === 'ghost' ? 'ghost' : 'primary'}
+        {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+      >
         {label}
       </Button>
     );

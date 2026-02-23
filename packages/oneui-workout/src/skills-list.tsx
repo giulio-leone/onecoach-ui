@@ -73,7 +73,9 @@ export function SkillsList({ onEdit, onCreate }: SkillsListProps) {
   if (loading && skills.length === 0) {
     return (
       <div className="flex h-64 items-center justify-center">
-        <Text size="lg" className="text-gray-500">{t('common.skills_list.loading_skills')}</Text>
+        <Text size="lg" className="text-gray-500">
+          {t('common.skills_list.loading_skills')}
+        </Text>
       </div>
     );
   }
@@ -83,15 +85,14 @@ export function SkillsList({ onEdit, onCreate }: SkillsListProps) {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <Heading level={1} size="3xl" weight="bold">{t('common.skills_list.my_skills')}</Heading>
+          <Heading level={1} size="3xl" weight="bold">
+            {t('common.skills_list.my_skills')}
+          </Heading>
           <Text className="text-muted-foreground">
             {t('common.skills_list.manage_your_custom_skills')}
           </Text>
         </div>
-        <Button
-          onClick={onCreate}
-          className="gap-2"
-        >
+        <Button onClick={onCreate} className="gap-2">
           <Plus size={16} />
           {t('common.skills_list.create_new_skill')}
         </Button>
@@ -122,14 +123,14 @@ export function SkillsList({ onEdit, onCreate }: SkillsListProps) {
             {/* Header */}
             <div className="mb-3 flex items-start justify-between">
               <div className="flex-1">
-                <Heading level={3} weight="semibold">{skill.name}</Heading>
-                <Text size="sm" className="text-gray-600">v{skill.version}</Text>
+                <Heading level={3} weight="semibold">
+                  {skill.name}
+                </Heading>
+                <Text size="sm" className="text-gray-600">
+                  v{skill.version}
+                </Text>
               </div>
-              {skill.isActive && (
-                <Badge variant="success">
-                  Active
-                </Badge>
-              )}
+              {skill.isActive && <Badge variant="success">Active</Badge>}
             </div>
 
             {/* Description */}
@@ -166,7 +167,7 @@ export function SkillsList({ onEdit, onCreate }: SkillsListProps) {
               <Button
                 size="sm"
                 onClick={() => handleGenerateCode(skill.id, skill.name)}
-                className="gap-1 bg-purple-600 hover:bg-purple-700 text-white border-0"
+                className="gap-1 border-0 bg-purple-600 text-white hover:bg-purple-700"
                 title={t('common.skills_list.generate_code')}
               >
                 <Code size={14} />
@@ -198,11 +199,10 @@ export function SkillsList({ onEdit, onCreate }: SkillsListProps) {
 
       {skills.length === 0 && !loading && (
         <div className="rounded-lg border-2 border-dashed border-gray-300 p-12 text-center">
-          <Text size="lg" className="mb-4 text-gray-600">{t('common.skills_list.no_skills_yet')}</Text>
-          <Button
-            onClick={onCreate}
-            className="gap-2"
-          >
+          <Text size="lg" className="mb-4 text-gray-600">
+            {t('common.skills_list.no_skills_yet')}
+          </Text>
+          <Button onClick={onCreate} className="gap-2">
             <Plus size={16} />
             {t('common.skills_list.create_your_first_skill')}
           </Button>

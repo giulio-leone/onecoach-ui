@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Modal, ActivityIndicator, TextInput } from 'react-native';
 // Mock components/actions for decoupling
-const Pressable = (props: any) => <View {...props} />;
+const Pressable = (props: React.ComponentProps<typeof View> & { onPress?: () => void }) => (
+  <View {...props} />
+);
 const getExercises = async (_query: string) => {
   console.warn('getExercises is not implemented in native UI package');
-  return [] as any[];
+  return [] as Exercise[];
 };
 
 import { Card } from '@giulio-leone/ui';
@@ -50,7 +52,9 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
   }, [searchQuery, isOpen]);
 
   const filteredExercises = exercises.filter((ex) => {
-    const matchesMuscle = selectedMuscle ? ex.muscleGroups?.includes(selectedMuscle as any) : true;
+    const matchesMuscle = selectedMuscle
+      ? ex.muscleGroups?.includes(selectedMuscle as import('@giulio-leone/types').MuscleGroup)
+      : true;
     return matchesMuscle;
   });
 
@@ -60,8 +64,8 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
       catalogExerciseId: ex.id || '',
       name: ex.name!,
       description: '',
-      category: ex.category as any,
-      muscleGroups: ex.muscleGroups as any,
+      category: ex.category!,
+      muscleGroups: ex.muscleGroups || [],
       setGroups: [
         {
           id: Math.random().toString(),
@@ -111,7 +115,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                 onChangeText={setSearchQuery}
                 placeholder="Cerca esercizio..."
                 placeholderTextColor="#A3A3A3"
-                className="flex-1 h-10 bg-transparent px-2 text-neutral-900 dark:text-white"
+                className="h-10 flex-1 bg-transparent px-2 text-neutral-900 dark:text-white"
               />
             </View>
 

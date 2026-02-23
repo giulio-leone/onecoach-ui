@@ -13,8 +13,7 @@ interface SliderProps {
   className?: string;
 }
 
-export function Slider({
-  value, min, max, step, onValueChange, disabled, className }: SliderProps) {
+export function Slider({ value, min, max, step, onValueChange, disabled, className }: SliderProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onValueChange([parseFloat(e.target.value)]);
   };

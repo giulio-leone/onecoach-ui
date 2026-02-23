@@ -13,7 +13,6 @@ import { logger } from '@giulio-leone/lib-shared';
 import { toast } from 'sonner';
 import { Checkbox } from '@giulio-leone/ui';
 
-
 interface FlagData {
   id: string;
   key: string;

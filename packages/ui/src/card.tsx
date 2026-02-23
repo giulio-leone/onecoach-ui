@@ -1,4 +1,4 @@
-export { 
+export {
   Card,
   CardHeader,
   CardTitle,
@@ -6,6 +6,5 @@ export {
   CardContent,
   CardFooter,
   CardAction,
-  type CardProps 
+  type CardProps,
 } from '@giulio-leone/ui-core';
-

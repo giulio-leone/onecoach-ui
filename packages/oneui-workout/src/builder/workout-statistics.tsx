@@ -223,7 +223,9 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
                 <Text weight="bold" className="text-2xl text-neutral-900 dark:text-white">
                   {item.value}
                   {item.sub && (
-                    <Text as="span" size="sm" weight="normal" className="text-neutral-500">{item.sub}</Text>
+                    <Text as="span" size="sm" weight="normal" className="text-neutral-500">
+                      {item.sub}
+                    </Text>
                   )}
                 </Text>
               </div>
@@ -245,7 +247,12 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
               <div className="rounded-md bg-blue-500/10 p-1.5 ring-1 ring-blue-500/20">
                 <Layers size={18} className="text-blue-600 dark:text-blue-400" />
               </div>
-              <Heading level={3} size="lg" weight="semibold" className="text-neutral-900 dark:text-white">
+              <Heading
+                level={3}
+                size="lg"
+                weight="semibold"
+                className="text-neutral-900 dark:text-white"
+              >
                 {t('volumePerMuscle')}
               </Heading>
             </div>
@@ -308,7 +315,12 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
               <div className="rounded-md bg-purple-500/10 p-1.5 ring-1 ring-purple-500/20">
                 <Activity size={18} className="text-purple-600 dark:text-purple-400" />
               </div>
-              <Heading level={3} size="lg" weight="semibold" className="text-neutral-900 dark:text-white">
+              <Heading
+                level={3}
+                size="lg"
+                weight="semibold"
+                className="text-neutral-900 dark:text-white"
+              >
                 {t('balance')}
               </Heading>
             </div>
@@ -344,7 +356,12 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
             <div className="rounded-md bg-emerald-500/10 p-1.5 ring-1 ring-emerald-500/20">
               <TrendingUp size={18} className="text-emerald-600 dark:text-emerald-400" />
             </div>
-            <Heading level={3} size="lg" weight="semibold" className="text-neutral-900 dark:text-white">
+            <Heading
+              level={3}
+              size="lg"
+              weight="semibold"
+              className="text-neutral-900 dark:text-white"
+            >
               {t('weeklyProgression')}
             </Heading>
           </div>
@@ -428,7 +445,12 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
                 <div className="rounded-md bg-orange-500/10 p-1.5 ring-1 ring-orange-500/20">
                   <Repeat size={18} className="text-orange-600 dark:text-orange-400" />
                 </div>
-                <Heading level={3} size="lg" weight="semibold" className="text-neutral-900 dark:text-white">
+                <Heading
+                  level={3}
+                  size="lg"
+                  weight="semibold"
+                  className="text-neutral-900 dark:text-white"
+                >
                   {t('exerciseAnalysis')}
                 </Heading>
               </div>
@@ -509,7 +531,12 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
                 <div className="rounded-md bg-pink-500/10 p-1.5 ring-1 ring-pink-500/20">
                   <Dumbbell size={18} className="text-pink-600 dark:text-pink-400" />
                 </div>
-                <Heading level={3} size="lg" weight="semibold" className="text-neutral-900 dark:text-white">
+                <Heading
+                  level={3}
+                  size="lg"
+                  weight="semibold"
+                  className="text-neutral-900 dark:text-white"
+                >
                   {t('muscleGroupDetails')}
                 </Heading>
               </div>

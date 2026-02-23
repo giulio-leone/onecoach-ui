@@ -30,8 +30,7 @@ interface CheckoutProviderProps {
   children: React.ReactNode;
 }
 
-export function CheckoutProvider({
-  clientSecret, children }: CheckoutProviderProps) {
+export function CheckoutProvider({ clientSecret, children }: CheckoutProviderProps) {
   const stripePromise = useMemo(() => getStripeClient(), []);
 
   if (!process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) {

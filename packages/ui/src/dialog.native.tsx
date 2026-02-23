@@ -169,10 +169,7 @@ export const Modal = ({
       onRequestClose={onClose}
       statusBarTranslucent
     >
-      <Pressable
-        style={styles.backdrop}
-        onPress={() => closeOnBackdropClick && onClose()}
-      >
+      <Pressable style={styles.backdrop} onPress={() => closeOnBackdropClick && onClose()}>
         <View style={[styles.container, mobileFullScreen && styles.fullScreen]}>
           <Pressable
             style={[styles.modal, mobileFullScreen && styles.modalFullScreen]}
@@ -183,7 +180,11 @@ export const Modal = ({
               <View style={styles.modalHeader}>
                 {title && <Text style={styles.title}>{title}</Text>}
                 {showCloseButton && (
-                  <Button variant="ghost" onPress={onClose} className="p-1 min-w-[32px] min-h-[32px]">
+                  <Button
+                    variant="ghost"
+                    onPress={onClose}
+                    className="min-h-[32px] min-w-[32px] p-1"
+                  >
                     <Text style={{ color: '#737373' }}>✕</Text>
                   </Button>
                 )}
@@ -191,16 +192,13 @@ export const Modal = ({
             )}
 
             {/* Body */}
-            <View style={styles.body}>
-              {children}
-            </View>
+            <View style={styles.body}>{children}</View>
           </Pressable>
         </View>
       </Pressable>
     </RNModal>
   );
 };
-
 
 const styles = StyleSheet.create({
   backdrop: {

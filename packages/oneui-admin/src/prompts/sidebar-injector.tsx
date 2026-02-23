@@ -8,8 +8,7 @@ interface SidebarInjectorProps {
   content: ReactNode;
 }
 
-export const SidebarInjector = memo(function SidebarInjector({
-  content }: SidebarInjectorProps) {
+export const SidebarInjector = memo(function SidebarInjector({ content }: SidebarInjectorProps) {
   const setExtraContent = useSidebarStore((state) => state.setExtraContent);
 
   useEffect(() => {

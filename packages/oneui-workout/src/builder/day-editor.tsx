@@ -24,7 +24,12 @@ interface DayEditorProps {
   weightUnit?: 'KG' | 'LBS';
 }
 
-export function DayEditor({ day, onUpdate, referenceMaxes = {}, weightUnit = 'KG' }: DayEditorProps) {
+export function DayEditor({
+  day,
+  onUpdate,
+  referenceMaxes = {},
+  weightUnit = 'KG',
+}: DayEditorProps) {
   const t = useTranslations('workouts.builder.dayEditor');
   const [isSelectorOpen, setIsSelectorOpen] = useState(false);
   const exerciseClipboard = useExerciseClipboard();

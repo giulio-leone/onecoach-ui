@@ -56,14 +56,7 @@ export function SortableItemCard({
 }: SortableItemCardProps) {
   const sortableId = id || `item-${index}`;
 
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition,
-    isDragging,
-  } = useSortable({
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: sortableId,
     disabled,
     data,
@@ -77,11 +70,7 @@ export function SortableItemCard({
   };
 
   return (
-    <div
-      ref={setNodeRef}
-      style={style}
-      className={className}
-    >
+    <div ref={setNodeRef} style={style} className={className}>
       {children({
         isDragging,
         dragAttributes: attributes,
@@ -109,14 +98,7 @@ export function SimpleSortableItem({
   className = '',
   disabled = false,
 }: SimpleSortableItemProps) {
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition,
-    isDragging,
-  } = useSortable({
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id,
     disabled,
   });
@@ -129,13 +111,7 @@ export function SimpleSortableItem({
   };
 
   return (
-    <div
-      ref={setNodeRef}
-      style={style}
-      className={className}
-      {...attributes}
-      {...listeners}
-    >
+    <div ref={setNodeRef} style={style} className={className} {...attributes} {...listeners}>
       {children}
     </div>
   );

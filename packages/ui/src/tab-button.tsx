@@ -20,21 +20,24 @@ export interface TabButtonProps extends TabButtonSharedProps {
 import { cn } from '@giulio-leone/lib-design-system';
 
 export const TabButton = ({
-  active, onClick, icon: Icon, label, count, className }: TabButtonProps) => {
+  active,
+  onClick,
+  icon: Icon,
+  label,
+  count,
+  className,
+}: TabButtonProps) => {
   const safeIcon =
-    typeof Icon === 'function'
-      ? Icon
-      : React.isValidElement(Icon)
-        ? Icon
-        : undefined;
+    typeof Icon === 'function' ? Icon : React.isValidElement(Icon) ? Icon : undefined;
 
   return (
     <Button
-       variant={active ? 'primary' : 'ghost'}
-       size="md"
-        icon={safeIcon as LucideIcon | React.ReactElement | undefined}
-        onClick={onClick}
-        className={cn(active ? 'scale-105 shadow-lg' : '', className)}   >
+      variant={active ? 'primary' : 'ghost'}
+      size="md"
+      icon={safeIcon as LucideIcon | React.ReactElement | undefined}
+      onClick={onClick}
+      className={cn(active ? 'scale-105 shadow-lg' : '', className)}
+    >
       <span className="hidden sm:inline">{label}</span>
       {count !== undefined && (
         <span

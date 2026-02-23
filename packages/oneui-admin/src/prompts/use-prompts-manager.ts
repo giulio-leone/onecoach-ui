@@ -90,7 +90,9 @@ export function usePromptsManager() {
       if (!response.ok) throw new Error('Failed to save prompt');
 
       setPrompts((prev) =>
-        prev.map((p: any) => (p.agentId === agentId ? { ...p, promptTemplate: template, isActive } : p))
+        prev.map((p: any) =>
+          p.agentId === agentId ? { ...p, promptTemplate: template, isActive } : p
+        )
       );
       toast.success('Prompt saved successfully');
     } catch (error) {

@@ -21,7 +21,6 @@ import type { UserWithCounts } from '@giulio-leone/types/prisma-helpers';
 import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations, useFormatter } from 'next-intl';
 
-
 interface UserCardProps {
   user: UserWithCounts;
   onEdit: (user: UserWithCounts) => void;

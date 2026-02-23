@@ -29,7 +29,8 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
 
         return (
           <Link key={action.id} href={action.href} viewProps={{ style: { flex: 1 } }}>
-            <Card variant="glass"
+            <Card
+              variant="glass"
               intensity="light"
               className={cn(
                 'group relative flex h-full flex-row items-center gap-4 p-4 transition-all duration-300',

@@ -50,8 +50,7 @@ const domains: Array<{
   { id: 'general', label: 'Generale', icon: User },
 ];
 
-export function MemoryViewer({
-  userId, initialDomain = 'workout', className }: MemoryViewerProps) {
+export function MemoryViewer({ userId, initialDomain = 'workout', className }: MemoryViewerProps) {
   const [memory, setMemory] = useState<UserMemory | null>(null);
   const [activeDomain, setActiveDomain] = useState<MemoryDomain>(initialDomain);
   const [isLoading, setIsLoading] = useState(true);

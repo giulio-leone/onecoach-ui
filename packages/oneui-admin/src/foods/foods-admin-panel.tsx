@@ -25,7 +25,7 @@ import {
   useBatchFoodOperations,
   useFoodFilters,
   useFoodSelection,
-} from '@giulio-leone/features/food/hooks';
+} from '@giulio-leone/features-food/hooks';
 import { FoodFormModal } from './food-form-modal';
 import { FoodImportModal } from './food-import-modal';
 import { FoodScanModal } from './food-scan-modal';

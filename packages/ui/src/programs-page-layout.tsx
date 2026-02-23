@@ -32,46 +32,46 @@ export interface TipItem {
 export interface ProgramsPageLayoutProps {
   /** Color theme for the page */
   colorTheme: 'blue' | 'emerald';
-  
+
   /** Header configuration */
   header: {
     icon: ReactNode;
     title: string;
     subtitle: string;
   };
-  
+
   /** AI Generator CTA configuration */
   generatorCta: {
     title: string;
     description: string;
     generateLink: string;
   };
-  
+
   /** Saved programs section */
   savedPrograms: {
     icon: ReactNode;
     title: string;
     content: ReactNode;
   };
-  
+
   /** Sidebar feature cards */
   featureCards: FeatureCardProps[];
-  
+
   /** Sidebar tips */
   tips: TipItem[];
-  
+
   /** Optional extra content after saved programs (e.g., tools section) */
   extraContent?: ReactNode;
-  
+
   /** Modal/overlay content */
   modals?: ReactNode;
-  
+
   /** Action button handlers */
   onImportClick: () => void;
-  
+
   /** Create manually link */
   createLink: string;
-  
+
   /** Import button label */
   /** Import button label */
   importLabel?: string;
@@ -205,7 +205,7 @@ export function ProgramsPageLayout({
             {/* Generator Call-to-Action Card */}
             <div
               className={cn(
-                'relative overflow-hidden rounded-3xl p-8 text-white shadow-xl bg-gradient-to-br',
+                'relative overflow-hidden rounded-3xl bg-gradient-to-br p-8 text-white shadow-xl',
                 theme.ctaGradient
               )}
             >

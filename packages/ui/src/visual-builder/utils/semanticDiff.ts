@@ -17,8 +17,8 @@ export interface EntityReference {
 
 export interface SemanticChangeDetail {
   label: string;
-  from?: any;
-  to?: any;
+  from?: unknown;
+  to?: unknown;
 }
 
 export interface SemanticChange {
@@ -36,9 +36,13 @@ export interface SemanticChange {
 /**
  * Extract an entity name from the snapshot at a specific path
  */
-function resolveEntityName(snapshot: any, path: string, type: EntityReference['type']): string {
+function resolveEntityName(
+  snapshot: Record<string, unknown>,
+  path: string,
+  type: EntityReference['type']
+): string {
   const entity = get(snapshot, path);
-  
+
   if (!entity) {
     const match = path.match(/\[(\d+)\]$/);
     const index = match && match[1] ? parseInt(match[1], 10) + 1 : 1;
@@ -48,12 +52,12 @@ function resolveEntityName(snapshot: any, path: string, type: EntityReference['t
   // Domain specific name resolution
   if (type === 'exercise' && entity.exercise?.name) return entity.exercise.name; // If wrapped in object
   if (type === 'exercise' && entity.name) return entity.name;
-  
+
   if (type === 'day' && entity.name) return entity.name;
   if (type === 'day' && entity.dayName) return entity.dayName;
-  
+
   if (type === 'week' && entity.name) return entity.name;
-  
+
   if (type === 'set' || type === 'setGroup') {
     const match = path.match(/\[(\d+)\]$/);
     const index = match && match[1] ? parseInt(match[1], 10) + 1 : 1;
@@ -68,26 +72,26 @@ function resolveEntityName(snapshot: any, path: string, type: EntityReference['t
 // ----------------------------------------------------------------------------
 
 export function computeSemanticDiff(
-  diff: StateDiff, 
-  oldState: any,
-  newState: any
+  diff: StateDiff,
+  oldState: Record<string, unknown>,
+  newState: Record<string, unknown>
 ): SemanticChange[] {
   const changes = new Map<string, SemanticChange>();
 
   // Helper to process a raw change path
   const processPath = (
-    rawPath: string, 
-    action: ChangeType, 
-    valueChange?: { from: any; to: any }
+    rawPath: string,
+    action: ChangeType,
+    valueChange?: { from: unknown; to: unknown }
   ) => {
     const parts = rawPath.split('.');
     let entityPath = '';
     let entityType: EntityReference['type'] = 'program';
     let subPath = '';
 
-    const exerciseIdx = parts.findIndex(p => p.startsWith('exercises'));
-    const dayIdx = parts.findIndex(p => p.startsWith('days'));
-    const weekIdx = parts.findIndex(p => p.startsWith('weeks'));
+    const exerciseIdx = parts.findIndex((p) => p.startsWith('exercises'));
+    const dayIdx = parts.findIndex((p) => p.startsWith('days'));
+    const weekIdx = parts.findIndex((p) => p.startsWith('weeks'));
 
     if (exerciseIdx !== -1) {
       entityType = 'exercise';
@@ -103,7 +107,7 @@ export function computeSemanticDiff(
       subPath = parts.slice(weekIdx + 1).join('.');
     } else {
       entityType = 'program';
-      entityPath = 'root'; 
+      entityPath = 'root';
       subPath = rawPath;
     }
 
@@ -120,26 +124,26 @@ export function computeSemanticDiff(
     } else {
       name = resolveEntityName(snapshotToUse, entityPath, entityType);
     }
-    
+
     let parentName = '';
     if (entityType === 'exercise') {
       const dayPath = parts.slice(0, dayIdx + 1).join('.');
       // Parent should exist in both usually, but safety first
       parentName = resolveEntityName(snapshotToUse, dayPath, 'day');
     } else if (entityType === 'day') {
-       const weekPath = parts.slice(0, weekIdx + 1).join('.');
-       parentName = resolveEntityName(snapshotToUse, weekPath, 'week');
+      const weekPath = parts.slice(0, weekIdx + 1).join('.');
+      parentName = resolveEntityName(snapshotToUse, weekPath, 'week');
     }
 
     const key = `${entityType}:${entityPath}`;
-    
+
     if (!changes.has(key)) {
       changes.set(key, {
         id: key,
         entity: { type: entityType, name, path: entityPath, parentName },
-        action: 'modified', 
+        action: 'modified',
         description: `Updated ${name}`,
-        details: []
+        details: [],
       });
     }
 
@@ -152,29 +156,29 @@ export function computeSemanticDiff(
       if (action === 'removed') entry.description = `Removed ${name}`;
     } else {
       const readableField = formatDiffSubPath(subPath);
-      
+
       entry.details.push({
         label: readableField,
         from: valueChange?.from,
-        to: valueChange?.to
+        to: valueChange?.to,
       });
     }
   };
-  
-  diff.changed.forEach(c => processPath(c.path, 'modified', { from: c.from, to: c.to }));
+
+  diff.changed.forEach((c) => processPath(c.path, 'modified', { from: c.from, to: c.to }));
   // For added/removed, we don't usually have "sub-field" details unless we traverse the object.
   // For now, if "Added" acts on 'self', we don't list details.
-  // If "Modified" acts on fields, we list details. 
+  // If "Modified" acts on fields, we list details.
   // What if "Added" path is weeks[0].days[0].exercises[2].setGroups[0] ?
   // If it's a deep add, we currently mark the Whole Entity as Modified, with a detail of "Added Set Group 1".
-  diff.added.forEach(path => processPath(path, 'modified', { from: undefined, to: 'Added' })); // Treat deep adds as modifications to parent with "Added" value
-  diff.removed.forEach(path => processPath(path, 'modified', { from: 'Removed', to: undefined }));
+  diff.added.forEach((path) => processPath(path, 'modified', { from: undefined, to: 'Added' })); // Treat deep adds as modifications to parent with "Added" value
+  diff.removed.forEach((path) => processPath(path, 'modified', { from: 'Removed', to: undefined }));
 
   // Post-processing: If an entry has "Added" or "Removed" action on 'self', clear details?
   // Actually, if we add an Exercise, we don't want 10 details saying "Added Set 1", "Added Weight", etc.
   // The 'self' logic above handles the top-level entity.
   // If we have `exercises[0]` added, subPath is 'self', action becomes 'added'. Details should be empty.
-  
+
   return Array.from(changes.values());
 }
 
@@ -183,13 +187,11 @@ export function computeSemanticDiff(
  */
 function formatDiffSubPath(subPath: string): string {
   return subPath
-    .replace(/setGroups\[(\d+)\]/g, (_, i) => `Set Group ${parseInt(i)+1}`)
-    .replace(/sets\[(\d+)\]/g, (_, i) => `Set ${parseInt(i)+1}`)
-    .replace(/exercises\[(\d+)\]/g, (_, i) => `Ex ${parseInt(i)+1}`)
+    .replace(/setGroups\[(\d+)\]/g, (_, i) => `Set Group ${parseInt(i) + 1}`)
+    .replace(/sets\[(\d+)\]/g, (_, i) => `Set ${parseInt(i) + 1}`)
+    .replace(/exercises\[(\d+)\]/g, (_, i) => `Ex ${parseInt(i) + 1}`)
     .replace(/\./g, ' › ')
     .replace(/([A-Z])/g, ' $1') // Camel to space
-    .replace(/^./, str => str.toUpperCase())
+    .replace(/^./, (str) => str.toUpperCase())
     .trim();
 }
-
-

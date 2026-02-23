@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { Checkbox } from '@giulio-leone/ui';
 
-
 interface Category {
   id: string;
   name: string;

@@ -17,7 +17,13 @@ import {
 import { useWeightUnit } from '@giulio-leone/lib-api/hooks';
 import { formatWeightByUnit } from '@giulio-leone/lib-shared';
 import { getWeekAndDayFromDate } from '@giulio-leone/lib-shared';
-import type { WorkoutProgram, ExerciseSet, WorkoutDay, Exercise } from '@giulio-leone/types/workout';
+import type {
+  WorkoutProgram,
+  ExerciseSet,
+  WorkoutDay,
+  WorkoutWeek,
+  Exercise,
+} from '@giulio-leone/types/workout';
 
 // workoutApi is not needed in viewer - deletion is handled by parent
 
@@ -27,7 +33,7 @@ function formatMuscleLabel(value: string): string {
   return trimmed
     .split(/\s+|_/)
     .filter(Boolean)
-    .map((part: any) => part.charAt(0).toUpperCase() + part.slice(1))
+    .map((part: string) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(' ');
 }
 
@@ -140,8 +146,7 @@ export function WorkoutProgramViewer({
   const handleTrack = () => {
     if (onTrack) {
       const today = new Date();
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const weekDay = getWeekAndDayFromDate(program as any, today);
+      const weekDay = getWeekAndDayFromDate(program, today);
       if (weekDay) {
         onTrack(weekDay.weekNumber, weekDay.dayNumber);
       } else {
@@ -149,8 +154,7 @@ export function WorkoutProgramViewer({
       }
     } else {
       const today = new Date();
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const weekDay = getWeekAndDayFromDate(program as any, today);
+      const weekDay = getWeekAndDayFromDate(program, today);
       if (weekDay) {
         router.push(
           `/workouts/${programId}/start?week=${weekDay.weekNumber}&day=${weekDay.dayNumber}`
@@ -193,221 +197,220 @@ export function WorkoutProgramViewer({
         <div className="absolute -top-[20%] -left-[10%] h-[60%] w-[60%] rounded-full bg-indigo-500/5 blur-[120px]" />
         <div className="absolute top-[20%] -right-[10%] h-[50%] w-[50%] rounded-full bg-purple-500/5 blur-[100px]" />
       </div>
-      
+
       <div className="relative z-10 px-4 py-8 sm:px-6 lg:px-8">
-      {/* Missing 1RM Alert */}
-      {missingOneRM.length > 0 && (
-        <div className="mb-6 rounded-xl border border-amber-500/20 bg-amber-900/20 p-4 backdrop-blur-sm">
-          <div className="flex items-start gap-3">
-            <AlertCircle className="h-5 w-5 flex-shrink-0 text-amber-400" />
-            <div className="flex-1">
-              <h3 className="font-medium text-amber-300">
-                {missingOneRM.length} esercizio{missingOneRM.length > 1 ? 'i' : ''} richiedono un
-                1RM
-              </h3>
-              <p className="mt-1 text-sm text-amber-400/80">
-                Inserisci i massimali per questi esercizi per calcolare automaticamente i pesi in
-                base all'intensità percentuale.
-              </p>
-              {onOpenMissingOneRM && (
-                <button
-                  onClick={onOpenMissingOneRM}
-                  className="mt-3 rounded-lg bg-amber-500 px-4 py-2 text-sm font-medium text-amber-950 transition hover:bg-amber-400"
-                >
-                  {t('workout.oneRm.insertMissing')}
-                </button>
-              )}
+        {/* Missing 1RM Alert */}
+        {missingOneRM.length > 0 && (
+          <div className="mb-6 rounded-xl border border-amber-500/20 bg-amber-900/20 p-4 backdrop-blur-sm">
+            <div className="flex items-start gap-3">
+              <AlertCircle className="h-5 w-5 flex-shrink-0 text-amber-400" />
+              <div className="flex-1">
+                <h3 className="font-medium text-amber-300">
+                  {missingOneRM.length} esercizio{missingOneRM.length > 1 ? 'i' : ''} richiedono un
+                  1RM
+                </h3>
+                <p className="mt-1 text-sm text-amber-400/80">
+                  Inserisci i massimali per questi esercizi per calcolare automaticamente i pesi in
+                  base all'intensità percentuale.
+                </p>
+                {onOpenMissingOneRM && (
+                  <button
+                    onClick={onOpenMissingOneRM}
+                    className="mt-3 rounded-lg bg-amber-500 px-4 py-2 text-sm font-medium text-amber-950 transition hover:bg-amber-400"
+                  >
+                    {t('workout.oneRm.insertMissing')}
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Action Bar */}
-      <ProgramActionBar
-        onBack={onBack}
-        onTrack={handleTrack}
-        onDelete={onDelete}
-        trackLabel={t('workout.actions.trackToday')}
-        deleteLabel={t('workout.actions.deleteProgram')}
-        variant="workout"
-      />
+        {/* Action Bar */}
+        <ProgramActionBar
+          onBack={onBack}
+          onTrack={handleTrack}
+          onDelete={onDelete}
+          trackLabel={t('workout.actions.trackToday')}
+          deleteLabel={t('workout.actions.deleteProgram')}
+          variant="workout"
+        />
 
-      {/* Program Info */}
-      <ProgramInfoCard
-        name={program.name}
-        description={program.description}
-        metadata={metadata}
-        icon={Dumbbell}
-        variant="workout"
-      />
+        {/* Program Info */}
+        <ProgramInfoCard
+          name={program.name}
+          description={program.description}
+          metadata={metadata}
+          icon={Dumbbell}
+          variant="workout"
+        />
 
-      {/* Goals */}
-      {program.goals && program.goals.length > 0 && (
-        <ProgramGoalsSection goals={program.goals} variant="workout" />
-      )}
+        {/* Goals */}
+        {program.goals && program.goals.length > 0 && (
+          <ProgramGoalsSection goals={program.goals} variant="workout" />
+        )}
 
-      {/* Weeks */}
-      <div className="space-y-8">
-        {program.weeks.map((week: any) => (
-          <ProgramWeekCard
-            key={week.weekNumber}
-            weekNumber={week.weekNumber}
-            focus={week.focus}
-            notes={week.notes}
-          >
-            {/* Days */}
-            <div className="space-y-6">
-              {week.days.map((day: any) => {
-                const targetMuscles = collectTargetMuscles(day);
+        {/* Weeks */}
+        <div className="space-y-8">
+          {program.weeks.map((week: WorkoutWeek) => (
+            <ProgramWeekCard
+              key={week.weekNumber}
+              weekNumber={week.weekNumber}
+              focus={week.focus}
+              notes={week.notes}
+            >
+              {/* Days */}
+              <div className="space-y-6">
+                {week.days.map((day: WorkoutDay) => {
+                  const targetMuscles = collectTargetMuscles(day);
 
-                return (
-                  <ProgramDayCard
-                    key={day.dayNumber}
-                    dayNumber={day.dayNumber}
-                    name={day.name}
-                    notes={day.notes}
-                    onTrack={() => handleDayTrack(week.weekNumber, day.dayNumber)}
-                    trackLabel="Inizia Allenamento"
-                    variant="workout"
-                  >
-                    {/* Target Muscles */}
-                    {targetMuscles.length > 0 && (
-                      <div className="mb-4 flex flex-wrap gap-2">
-                        {targetMuscles.map((muscle: string) => (
-                          <span
-                            key={muscle}
-                            className="rounded-lg border border-indigo-200/50 bg-indigo-500/10 px-2.5 py-1 text-xs font-medium text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/20 dark:text-indigo-400"
+                  return (
+                    <ProgramDayCard
+                      key={day.dayNumber}
+                      dayNumber={day.dayNumber}
+                      name={day.name}
+                      notes={day.notes}
+                      onTrack={() => handleDayTrack(week.weekNumber, day.dayNumber)}
+                      trackLabel="Inizia Allenamento"
+                      variant="workout"
+                    >
+                      {/* Target Muscles */}
+                      {targetMuscles.length > 0 && (
+                        <div className="mb-4 flex flex-wrap gap-2">
+                          {targetMuscles.map((muscle: string) => (
+                            <span
+                              key={muscle}
+                              className="rounded-lg border border-indigo-200/50 bg-indigo-500/10 px-2.5 py-1 text-xs font-medium text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/20 dark:text-indigo-400"
+                            >
+                              {muscle}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Warmup */}
+                      {day.warmup && (
+                        <div className="mb-4 rounded-xl border border-amber-500/20 bg-amber-900/20 p-3 text-sm text-amber-300 backdrop-blur-sm">
+                          <span className="font-semibold">Warm-up:</span> {day.warmup}
+                        </div>
+                      )}
+
+                      {/* Exercises */}
+                      <div className="space-y-3">
+                        {(day.exercises || []).map((exercise: Exercise) => (
+                          <div
+                            key={exercise.id}
+                            className="group rounded-2xl border border-white/5 bg-neutral-900/80 p-4 shadow-lg shadow-black/20 backdrop-blur-xl transition-all duration-300 hover:border-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/5"
                           >
-                            {muscle}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Warmup */}
-                    {day.warmup && (
-                      <div className="mb-4 rounded-xl border border-amber-500/20 bg-amber-900/20 p-3 text-sm text-amber-300 backdrop-blur-sm">
-                        <span className="font-semibold">Warm-up:</span> {day.warmup}
-                      </div>
-                    )}
-
-                    {/* Exercises */}
-                    <div className="space-y-3">
-                      {(day.exercises || []).map((exercise: any) => (
-                        <div
-                          key={exercise.id}
-                          className="group rounded-2xl border border-white/5 bg-neutral-900/80 p-4 shadow-lg shadow-black/20 backdrop-blur-xl transition-all duration-300 hover:border-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/5">
-                          <div className="mb-2 flex items-start justify-between">
-                            <div>
-                              <h4 className="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">
-                                {exercise.name}
-                              </h4>
-                              <div className="mt-1 flex flex-wrap gap-2 text-xs">
-                                <span className="rounded-md bg-neutral-800 px-2 py-0.5 text-neutral-400">
-                                  {exercise.category}
-                                </span>
-                                {exercise.muscleGroups?.map((group: string) => (
-                                  <span
-                                    key={group}
-                                    className="rounded-md bg-indigo-500/20 px-2 py-0.5 text-indigo-400"
-                                  >
-                                    {group}
+                            <div className="mb-2 flex items-start justify-between">
+                              <div>
+                                <h4 className="text-lg font-bold text-white transition-colors group-hover:text-indigo-300">
+                                  {exercise.name}
+                                </h4>
+                                <div className="mt-1 flex flex-wrap gap-2 text-xs">
+                                  <span className="rounded-md bg-neutral-800 px-2 py-0.5 text-neutral-400">
+                                    {exercise.category}
                                   </span>
-                                ))}
+                                  {exercise.muscleGroups?.map((group: string) => (
+                                    <span
+                                      key={group}
+                                      className="rounded-md bg-indigo-500/20 px-2 py-0.5 text-indigo-400"
+                                    >
+                                      {group}
+                                    </span>
+                                  ))}
+                                </div>
                               </div>
                             </div>
-                          </div>
 
-                          {exercise.description && (
-                            <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                              {exercise.description}
-                            </p>
-                          )}
+                            {exercise.description && (
+                              <p className="text-sm text-neutral-700 dark:text-neutral-300">
+                                {exercise.description}
+                              </p>
+                            )}
 
-                          {(exercise.typeLabel || exercise.repRange) && (
-                            <div className="mt-2 flex flex-wrap gap-3 text-xs">
-                              {exercise.typeLabel && (
-                                <span className="rounded-md bg-neutral-800 px-2 py-1 font-medium text-neutral-300">
-                                  {exercise.typeLabel}
-                                </span>
-                              )}
-                              {exercise.repRange && (
-                                <span className="rounded-md bg-indigo-500/20 px-2 py-1 font-medium text-indigo-400">
-                                  Ripetizioni: {exercise.repRange}
-                                </span>
-                              )}
-                            </div>
-                          )}
+                            {(exercise.typeLabel || exercise.repRange) && (
+                              <div className="mt-2 flex flex-wrap gap-3 text-xs">
+                                {exercise.typeLabel && (
+                                  <span className="rounded-md bg-neutral-800 px-2 py-1 font-medium text-neutral-300">
+                                    {exercise.typeLabel}
+                                  </span>
+                                )}
+                                {exercise.repRange && (
+                                  <span className="rounded-md bg-indigo-500/20 px-2 py-1 font-medium text-indigo-400">
+                                    Ripetizioni: {exercise.repRange}
+                                  </span>
+                                )}
+                              </div>
+                            )}
 
-                          {exercise.notes && (
-                            <div className="mt-2 text-sm text-neutral-400 italic">
-                              💡 {exercise.notes}
-                            </div>
-                          )}
+                            {exercise.notes && (
+                              <div className="mt-2 text-sm text-neutral-400 italic">
+                                💡 {exercise.notes}
+                              </div>
+                            )}
 
-                          {/* SSOT: usa getExerciseSets() invece di exercise.sets */}
-                          {(() => {
-                            const sets = getExerciseSets(exercise as Exercise);
-                            return (
-                              sets.length > 0 && (
-                                <ul className="mt-3 space-y-1 text-xs text-neutral-400">
-                                  {sets.map((set: ExerciseSet, setIdx: number) => (
-                                    <li key={`${exercise.id}-set-${setIdx}`}>
-                                      • {describeSet(set, setIdx, exercise.repRange, weightUnit)}
-                                    </li>
+                            {/* SSOT: usa getExerciseSets() invece di exercise.sets */}
+                            {(() => {
+                              const sets = getExerciseSets(exercise as Exercise);
+                              return (
+                                sets.length > 0 && (
+                                  <ul className="mt-3 space-y-1 text-xs text-neutral-400">
+                                    {sets.map((set: ExerciseSet, setIdx: number) => (
+                                      <li key={`${exercise.id}-set-${setIdx}`}>
+                                        • {describeSet(set, setIdx, exercise.repRange, weightUnit)}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )
+                              );
+                            })()}
+
+                            {exercise.formCues && exercise.formCues.length > 0 && (
+                              <div className="mt-3">
+                                <p className="text-xs font-semibold text-neutral-300">Form cues:</p>
+                                <ul className="mt-1 space-y-1 text-xs text-neutral-400">
+                                  {exercise.formCues.map((cue: string, cueIdx: number) => (
+                                    <li key={`${exercise.id}-cue-${cueIdx}`}>• {cue}</li>
                                   ))}
                                 </ul>
-                              )
-                            );
-                          })()}
+                              </div>
+                            )}
 
-                          {exercise.formCues && exercise.formCues.length > 0 && (
-                            <div className="mt-3">
-                              <p className="text-xs font-semibold text-neutral-300">
-                                Form cues:
-                              </p>
-                              <ul className="mt-1 space-y-1 text-xs text-neutral-400">
-                                {exercise.formCues.map((cue: string, cueIdx: number) => (
-                                  <li key={`${exercise.id}-cue-${cueIdx}`}>• {cue}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
+                            {exercise.equipment && exercise.equipment.length > 0 && (
+                              <div className="mt-3 text-xs text-neutral-400">
+                                <span className="font-semibold text-neutral-300">
+                                  Attrezzatura:
+                                </span>{' '}
+                                {exercise.equipment.join(', ')}
+                              </div>
+                            )}
+                          </div>
+                        ))}
 
-                          {exercise.equipment && exercise.equipment.length > 0 && (
-                            <div className="mt-3 text-xs text-neutral-400">
-                              <span className="font-semibold text-neutral-300">
-                                Attrezzatura:
-                              </span>{' '}
-                              {exercise.equipment.join(', ')}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-
-                      {(!day.exercises || day.exercises.length === 0) && (
-                        <p className="text-center text-sm text-neutral-500 dark:text-neutral-500">
-                          {t('common.empty.noExercisesInDay')}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Cooldown */}
-                    {day.cooldown && (
-                      <div className="mt-4 rounded-xl border border-blue-500/20 bg-blue-900/20 p-3 text-sm text-blue-300 backdrop-blur-sm">
-                        <span className="font-semibold">Cooldown:</span> {day.cooldown}
+                        {(!day.exercises || day.exercises.length === 0) && (
+                          <p className="text-center text-sm text-neutral-500 dark:text-neutral-500">
+                            {t('common.empty.noExercisesInDay')}
+                          </p>
+                        )}
                       </div>
-                    )}
-                  </ProgramDayCard>
-                );
-              })}
-            </div>
-          </ProgramWeekCard>
-        ))}
-      </div>
 
-      {/* Copilot Sidebar */}
-      {copilotSidebar}
+                      {/* Cooldown */}
+                      {day.cooldown && (
+                        <div className="mt-4 rounded-xl border border-blue-500/20 bg-blue-900/20 p-3 text-sm text-blue-300 backdrop-blur-sm">
+                          <span className="font-semibold">Cooldown:</span> {day.cooldown}
+                        </div>
+                      )}
+                    </ProgramDayCard>
+                  );
+                })}
+              </div>
+            </ProgramWeekCard>
+          ))}
+        </div>
+
+        {/* Copilot Sidebar */}
+        {copilotSidebar}
       </div>
     </div>
   );

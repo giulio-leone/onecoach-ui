@@ -24,7 +24,7 @@ declare module 'app/navigation' {
 }
 
 // Features subpath aliases (actual packages are @giulio-leone/features-*)
-declare module '@giulio-leone/features/food/hooks' {
+declare module '@giulio-leone/features-food/hooks' {
   export const useFood: (...args: any[]) => any;
   export const useFoods: (...args: any[]) => any;
   export const useCreateFood: (...args: any[]) => any;
@@ -38,7 +38,7 @@ declare module '@giulio-leone/features/food/hooks' {
   export const useFoodCategories: (...args: any[]) => any;
 }
 
-declare module '@giulio-leone/features/exercise/hooks' {
+declare module '@giulio-leone/features-exercise/hooks' {
   export const useExercise: (...args: any[]) => any;
   export const useExercises: (...args: any[]) => any;
   export const useCreateExercise: (...args: any[]) => any;
@@ -51,14 +51,14 @@ declare module '@giulio-leone/features/exercise/hooks' {
   export const useExerciseApproval: (...args: any[]) => any;
 }
 
-declare module '@giulio-leone/features/coach/hooks' {
+declare module '@giulio-leone/features-coach/hooks' {
   export const useCoachClients: (...args: any[]) => any;
   export const useCoachDashboardPlans: (...args: any[]) => any;
   export type CoachDashboardStats = any;
   export type MarketplacePlanCardProps = any;
 }
 
-declare module '@giulio-leone/features/workout/hooks' {
+declare module '@giulio-leone/features-workout/hooks' {
   export const useOneRepMax: (...args: any[]) => any;
   export type MissingOneRM = any;
 }

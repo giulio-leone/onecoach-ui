@@ -44,13 +44,9 @@ export function StatCard({
     <Card variant="elevated" style={[styles.card, style]} padding="md">
       <View style={styles.header}>
         <View>
-          <Text style={styles.label}>
-            {label}
-          </Text>
+          <Text style={styles.label}>{label}</Text>
           <View style={styles.valueContainer}>
-            <Text style={styles.value}>
-              {value}
-            </Text>
+            <Text style={styles.value}>{value}</Text>
           </View>
         </View>
         {Icon && (
@@ -71,24 +67,20 @@ export function StatCard({
             <View
               style={[
                 styles.trendBadge,
-                trend.isPositive ? styles.trendPositive : styles.trendNegative
+                trend.isPositive ? styles.trendPositive : styles.trendNegative,
               ]}
             >
               <Text
                 style={[
                   styles.trendText,
-                  trend.isPositive ? styles.trendTextPositive : styles.trendTextNegative
+                  trend.isPositive ? styles.trendTextPositive : styles.trendTextNegative,
                 ]}
               >
                 {trend.isPositive ? '↑' : '↓'} {Math.abs(trend.value)}%
               </Text>
             </View>
           )}
-          {subtitle && (
-            <Text style={styles.subtitle}>
-              {subtitle}
-            </Text>
-          )}
+          {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
         </View>
       )}
     </Card>

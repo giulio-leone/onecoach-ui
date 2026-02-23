@@ -58,14 +58,16 @@ export function LiveWorkoutHeader({
           <ArrowLeft className="h-5 w-5" />
         </Button>
         <div>
-        <div>
-          <Heading level={1} size="xl" weight="bold" className="leading-tight text-white">
-            {programName || t('common.workout') || 'Training Session'}
-          </Heading>
-          {sessionLabel && (
-            <Text size="xs" className="text-neutral-500">{sessionLabel}</Text>
-          )}
-        </div>
+          <div>
+            <Heading level={1} size="xl" weight="bold" className="leading-tight text-white">
+              {programName || t('common.workout') || 'Training Session'}
+            </Heading>
+            {sessionLabel && (
+              <Text size="xs" className="text-neutral-500">
+                {sessionLabel}
+              </Text>
+            )}
+          </div>
         </div>
       </div>
 
@@ -74,9 +76,7 @@ export function LiveWorkoutHeader({
         {/* Timer Display - Hidden on mobile for cleaner look, or show smaller */}
         <div
           className={`hidden items-center gap-1.5 rounded-lg px-2.5 py-1 font-mono text-xs font-semibold sm:flex ${
-            isPaused
-              ? 'bg-amber-500/10 text-amber-400'
-              : 'bg-emerald-500/10 text-emerald-400'
+            isPaused ? 'bg-amber-500/10 text-amber-400' : 'bg-emerald-500/10 text-emerald-400'
           }`}
         >
           <span className="relative flex h-2 w-2">

@@ -15,4 +15,3 @@ export {
   CardSkeleton,
   TableSkeleton,
 } from './loading-skeleton';
-

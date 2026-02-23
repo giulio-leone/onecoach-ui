@@ -257,8 +257,7 @@ export interface ToolBubbleProps {
   result?: unknown;
 }
 
-export function ToolBubble({
-  toolName, state, args, result }: ToolBubbleProps) {
+export function ToolBubble({ toolName, state, args, result }: ToolBubbleProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Map legacy states to new format

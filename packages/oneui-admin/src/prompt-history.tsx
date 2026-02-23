@@ -7,7 +7,6 @@ import { useTranslations, useFormatter } from 'next-intl';
 
 import { logger } from '@giulio-leone/lib-shared';
 
-
 interface PromptHistoryEntry {
   id: string;
   promptTemplate: string;

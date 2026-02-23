@@ -20,7 +20,12 @@ import { WorkoutStatistics } from './workout-statistics';
 import { ProgressionManager } from './progression-manager';
 import { OneRmReferenceModal } from './one-rm-reference-modal';
 import { cn } from '@giulio-leone/lib-design-system';
-import type { WorkoutProgram, WorkoutDay, WorkoutWeek, Exercise } from '@giulio-leone/types/workout';
+import type {
+  WorkoutProgram,
+  WorkoutDay,
+  WorkoutWeek,
+  Exercise,
+} from '@giulio-leone/types/workout';
 import { DifficultyLevel } from '@giulio-leone/types/workout';
 
 interface SaveResult {
@@ -65,7 +70,11 @@ const createEmptyWorkoutDay = (dayNumber: number, dayLabel: string = 'Giorno'): 
   cooldown: '',
 });
 
-export function WorkoutVisualBuilder({ initialProgram, onSave, onImportClick }: WorkoutVisualBuilderProps) {
+export function WorkoutVisualBuilder({
+  initialProgram,
+  onSave,
+  onImportClick,
+}: WorkoutVisualBuilderProps) {
   const t = useTranslations('workouts.builder');
   const router = useRouter();
 
@@ -248,10 +257,10 @@ export function WorkoutVisualBuilder({ initialProgram, onSave, onImportClick }: 
       variant="success"
       onClick={() => {
         if (onImportClick) onImportClick();
-         /* else setIsImportModalOpen(true); */
+        /* else setIsImportModalOpen(true); */
       }}
       className={cn(
-        "h-9 w-9 justify-center rounded-full sm:h-auto sm:w-auto sm:px-4 sm:py-2",
+        'h-9 w-9 justify-center rounded-full sm:h-auto sm:w-auto sm:px-4 sm:py-2',
         !onImportClick && 'hidden'
       )}
       title={t('actions.importFile')}
@@ -335,7 +344,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave, onImportClick }: 
               variant="ghost"
               onClick={() => {
                 // setIsImportModalOpen(true);
-                 if (onImportClick) onImportClick();
+                if (onImportClick) onImportClick();
               }}
               className="w-full justify-start gap-2"
             >
@@ -367,10 +376,16 @@ export function WorkoutVisualBuilder({ initialProgram, onSave, onImportClick }: 
                   <Layout className="h-10 w-10" />
                 </div>
                 <div className="space-y-1">
-                  <Text size="xl" weight="medium" className="text-neutral-900 dark:text-neutral-300">
+                  <Text
+                    size="xl"
+                    weight="medium"
+                    className="text-neutral-900 dark:text-neutral-300"
+                  >
                     {t('emptyState.noDaySelected')}
                   </Text>
-                  <Text size="sm" className="text-neutral-500">{t('emptyState.selectDay')}</Text>
+                  <Text size="sm" className="text-neutral-500">
+                    {t('emptyState.selectDay')}
+                  </Text>
                 </div>
               </div>
             )

@@ -22,12 +22,7 @@ interface CircuitEditorProps {
 // CircuitEditor Component
 // ============================================================================
 
-export function CircuitEditor({ 
-  circuit, 
-  onChange, 
-  onRemove,
-  className 
-}: CircuitEditorProps) {
+export function CircuitEditor({ circuit, onChange, onRemove, className }: CircuitEditorProps) {
   const [exercises, setExercises] = useState<CircuitExerciseItem[]>(
     circuit?.exercises ?? [
       { exerciseId: 'burpees', name: 'Burpees', reps: 10 },
@@ -41,21 +36,27 @@ export function CircuitEditor({
   const [restBetweenRounds, setRestBetweenRounds] = useState(circuit?.restBetweenRounds ?? 60);
   const [name, setName] = useState(circuit?.name ?? 'Circuito Full Body');
 
-  const emitChange = useCallback((updates?: Partial<Circuit>) => {
-    onChange({
-      id: circuit?.id ?? `circuit_${Math.random().toString(36).substr(2, 9)}`,
-      type: 'circuit',
-      name,
-      exercises,
-      rounds,
-      restBetweenExercises,
-      restBetweenRounds,
-      ...updates,
-    });
-  }, [circuit?.id, name, exercises, rounds, restBetweenExercises, restBetweenRounds, onChange]);
+  const emitChange = useCallback(
+    (updates?: Partial<Circuit>) => {
+      onChange({
+        id: circuit?.id ?? `circuit_${Math.random().toString(36).substr(2, 9)}`,
+        type: 'circuit',
+        name,
+        exercises,
+        rounds,
+        restBetweenExercises,
+        restBetweenRounds,
+        ...updates,
+      });
+    },
+    [circuit?.id, name, exercises, rounds, restBetweenExercises, restBetweenRounds, onChange]
+  );
 
   const handleAddExercise = useCallback(() => {
-    const updated = [...exercises, { exerciseId: `ex_${Math.random().toString(36).substr(2, 9)}`, name: '', reps: 10 }];
+    const updated = [
+      ...exercises,
+      { exerciseId: `ex_${Math.random().toString(36).substr(2, 9)}`, name: '', reps: 10 },
+    ];
     setExercises(updated);
     emitChange({ exercises: updated });
   }, [exercises, emitChange]);
@@ -68,13 +69,11 @@ export function CircuitEditor({
   };
 
   const handleExerciseChange = (
-    index: number, 
-    field: keyof CircuitExerciseItem, 
+    index: number,
+    field: keyof CircuitExerciseItem,
     value: string | number
   ) => {
-    const updated = exercises.map((ex, i) => 
-      i === index ? { ...ex, [field]: value } : ex
-    );
+    const updated = exercises.map((ex, i) => (i === index ? { ...ex, [field]: value } : ex));
     setExercises(updated);
     emitChange({ exercises: updated });
   };
@@ -93,31 +92,37 @@ export function CircuitEditor({
     emitChange({ exercises: updated });
   };
 
-  const estimatedDuration = exercises.reduce((sum, ex) => {
-    return sum + (ex.duration ?? (ex.reps ?? 10) * 3);
-  }, 0) * rounds + restBetweenExercises * (exercises.length - 1) * rounds + restBetweenRounds * (rounds - 1);
+  const estimatedDuration =
+    exercises.reduce((sum, ex) => {
+      return sum + (ex.duration ?? (ex.reps ?? 10) * 3);
+    }, 0) *
+      rounds +
+    restBetweenExercises * (exercises.length - 1) * rounds +
+    restBetweenRounds * (rounds - 1);
   const estimatedMinutes = Math.ceil(estimatedDuration / 60);
 
   return (
-    <Card className={cn(
-      'p-4 md:p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10',
-      'border-green-500/30 hover:border-green-500/50 transition-all',
-      className
-    )}>
+    <Card
+      className={cn(
+        'bg-gradient-to-br from-green-500/10 to-emerald-500/10 p-4 md:p-6',
+        'border-green-500/30 transition-all hover:border-green-500/50',
+        className
+      )}
+    >
       {/* Header */}
-      <div className="flex items-center justify-between gap-3 mb-4">
+      <div className="mb-4 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <div className="p-2 rounded-lg bg-green-500/20">
-            <RefreshCw className="w-5 h-5 text-green-500" />
+          <div className="rounded-lg bg-green-500/20 p-2">
+            <RefreshCw className="h-5 w-5 text-green-500" />
           </div>
-          <div className="flex-1 min-w-0">
+          <div className="min-w-0 flex-1">
             <Input
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
                 emitChange({ name: e.target.value });
               }}
-              className="text-lg font-semibold bg-transparent border-none p-0 h-auto focus:ring-0"
+              className="h-auto border-none bg-transparent p-0 text-lg font-semibold focus:ring-0"
               placeholder="Nome circuito"
             />
           </div>
@@ -127,14 +132,13 @@ export function CircuitEditor({
             {rounds}x
           </Badge>
           <Badge variant="outline" className="text-muted-foreground">
-            <Clock className="w-3 h-3 mr-1" />
-            ~{estimatedMinutes} min
+            <Clock className="mr-1 h-3 w-3" />~{estimatedMinutes} min
           </Badge>
         </div>
       </div>
 
       {/* Rounds Counter */}
-      <div className="flex items-center justify-center gap-4 p-3 rounded-lg bg-green-500/10 mb-4">
+      <div className="mb-4 flex items-center justify-center gap-4 rounded-lg bg-green-500/10 p-3">
         <Button
           variant="outline"
           size="icon"
@@ -150,7 +154,7 @@ export function CircuitEditor({
         </Button>
         <div className="text-center">
           <div className="text-3xl font-bold text-green-600">{rounds}</div>
-          <div className="text-xs text-muted-foreground">Round</div>
+          <div className="text-muted-foreground text-xs">Round</div>
         </div>
         <Button
           variant="outline"
@@ -168,26 +172,21 @@ export function CircuitEditor({
       </div>
 
       {/* Visual Round Progress */}
-      <div className="flex justify-center gap-1 mb-4">
+      <div className="mb-4 flex justify-center gap-1">
         {Array.from({ length: rounds }).map((_, i) => (
           <motion.div
             key={i}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: i * 0.05 }}
-            className={cn(
-              'w-3 h-3 rounded-full',
-              i === 0 ? 'bg-green-500' : 'bg-green-500/30'
-            )}
+            className={cn('h-3 w-3 rounded-full', i === 0 ? 'bg-green-500' : 'bg-green-500/30')}
           />
         ))}
       </div>
 
       {/* Exercise List */}
-      <div className="space-y-2 mb-4">
-        <label className="text-sm text-muted-foreground">
-          Esercizi ({exercises.length})
-        </label>
+      <div className="mb-4 space-y-2">
+        <label className="text-muted-foreground text-sm">Esercizi ({exercises.length})</label>
         <AnimatePresence mode="popLayout">
           {exercises.map((exercise, index) => (
             <motion.div
@@ -197,28 +196,27 @@ export function CircuitEditor({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center gap-2 p-2 rounded-lg bg-background/50 
-                         border border-border/50 hover:border-green-500/30 transition-colors"
+              className="bg-background/50 border-border/50 flex items-center gap-2 rounded-lg border p-2 transition-colors hover:border-green-500/30"
             >
-              <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-xs font-medium text-green-600">
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-xs font-medium text-green-600">
                 {index + 1}
               </div>
-              
-              <GripVertical className="w-4 h-4 text-muted-foreground/50 cursor-grab" />
-              
+
+              <GripVertical className="text-muted-foreground/50 h-4 w-4 cursor-grab" />
+
               <Input
                 value={exercise.name}
                 onChange={(e) => handleExerciseChange(index, 'name', e.target.value)}
                 placeholder="Nome esercizio"
-                className="flex-1 h-8 text-sm"
+                className="h-8 flex-1 text-sm"
               />
 
               <button
                 onClick={() => toggleExerciseType(index)}
                 className={cn(
-                  'px-2 py-1 text-xs rounded transition-colors',
-                  exercise.duration !== undefined 
-                    ? 'bg-cyan-500/20 text-cyan-600' 
+                  'rounded px-2 py-1 text-xs transition-colors',
+                  exercise.duration !== undefined
+                    ? 'bg-cyan-500/20 text-cyan-600'
                     : 'bg-purple-500/20 text-purple-600'
                 )}
               >
@@ -229,8 +227,10 @@ export function CircuitEditor({
                 <Input
                   type="number"
                   value={exercise.duration}
-                  onChange={(e) => handleExerciseChange(index, 'duration', parseInt(e.target.value) || 0)}
-                  className="w-16 h-8 text-sm text-center"
+                  onChange={(e) =>
+                    handleExerciseChange(index, 'duration', parseInt(e.target.value) || 0)
+                  }
+                  className="h-8 w-16 text-center text-sm"
                   min={5}
                   max={120}
                 />
@@ -238,8 +238,10 @@ export function CircuitEditor({
                 <Input
                   type="number"
                   value={exercise.reps}
-                  onChange={(e) => handleExerciseChange(index, 'reps', parseInt(e.target.value) || 0)}
-                  className="w-16 h-8 text-sm text-center"
+                  onChange={(e) =>
+                    handleExerciseChange(index, 'reps', parseInt(e.target.value) || 0)
+                  }
+                  className="h-8 w-16 text-center text-sm"
                   min={1}
                   max={100}
                 />
@@ -250,9 +252,9 @@ export function CircuitEditor({
                 size="icon"
                 onClick={() => handleRemoveExercise(index)}
                 disabled={exercises.length <= 2}
-                className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                className="text-muted-foreground hover:text-destructive h-8 w-8"
               >
-                <Trash2 className="w-4 h-4" />
+                <Trash2 className="h-4 w-4" />
               </Button>
             </motion.div>
           ))}
@@ -262,18 +264,17 @@ export function CircuitEditor({
           variant="outline"
           size="sm"
           onClick={handleAddExercise}
-          className="w-full mt-2 border-dashed border-green-500/30 text-green-600 
-                     hover:bg-green-500/10 hover:border-green-500/50"
+          className="mt-2 w-full border-dashed border-green-500/30 text-green-600 hover:border-green-500/50 hover:bg-green-500/10"
         >
-          <Plus className="w-4 h-4 mr-1" />
+          <Plus className="mr-1 h-4 w-4" />
           Aggiungi Esercizio
         </Button>
       </div>
 
       {/* Rest Settings */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-3 rounded-lg bg-background/50 border border-border/50">
+      <div className="bg-background/50 border-border/50 grid grid-cols-1 gap-4 rounded-lg border p-3 sm:grid-cols-2">
         <div>
-          <label className="text-xs text-muted-foreground block mb-2">
+          <label className="text-muted-foreground mb-2 block text-xs">
             Riposo tra esercizi: <span className="font-medium">{restBetweenExercises}s</span>
           </label>
           <input
@@ -287,17 +288,12 @@ export function CircuitEditor({
               setRestBetweenEx(val);
               emitChange({ restBetweenExercises: val });
             }}
-            className="w-full h-1.5 bg-green-200 rounded appearance-none cursor-pointer
-                       [&::-webkit-slider-thumb]:appearance-none
-                       [&::-webkit-slider-thumb]:w-3
-                       [&::-webkit-slider-thumb]:h-3
-                       [&::-webkit-slider-thumb]:rounded-full
-                       [&::-webkit-slider-thumb]:bg-green-500"
+            className="h-1.5 w-full cursor-pointer appearance-none rounded bg-green-200 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-green-500"
           />
         </div>
 
         <div>
-          <label className="text-xs text-muted-foreground block mb-2">
+          <label className="text-muted-foreground mb-2 block text-xs">
             Riposo tra round: <span className="font-medium">{restBetweenRounds}s</span>
           </label>
           <input
@@ -311,25 +307,20 @@ export function CircuitEditor({
               setRestBetweenRounds(val);
               emitChange({ restBetweenRounds: val });
             }}
-            className="w-full h-1.5 bg-green-200 rounded appearance-none cursor-pointer
-                       [&::-webkit-slider-thumb]:appearance-none
-                       [&::-webkit-slider-thumb]:w-3
-                       [&::-webkit-slider-thumb]:h-3
-                       [&::-webkit-slider-thumb]:rounded-full
-                       [&::-webkit-slider-thumb]:bg-green-500"
+            className="h-1.5 w-full cursor-pointer appearance-none rounded bg-green-200 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-green-500"
           />
         </div>
       </div>
 
       {onRemove && (
-        <div className="mt-4 pt-4 border-t border-border/50">
+        <div className="border-border/50 mt-4 border-t pt-4">
           <Button
             variant="ghost"
             size="sm"
             onClick={onRemove}
-            className="w-full text-muted-foreground hover:text-destructive"
+            className="text-muted-foreground hover:text-destructive w-full"
           >
-            <Trash2 className="w-4 h-4 mr-1" />
+            <Trash2 className="mr-1 h-4 w-4" />
             Rimuovi Circuito
           </Button>
         </div>

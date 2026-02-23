@@ -99,11 +99,11 @@ export const Combobox = ({
 
       <Popover.Portal>
         <Popover.Content
-          className="z-[9999] w-[var(--radix-popover-trigger-width)] min-w-[200px] overflow-hidden rounded-xl border border-white/20 bg-white/95 p-1 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/95 animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2"
+          className="animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-[9999] w-[var(--radix-popover-trigger-width)] min-w-[200px] overflow-hidden rounded-xl border border-white/20 bg-white/95 p-1 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/95"
           sideOffset={5}
         >
           <Command className="w-full">
-            <div className="relative mb-2 px-2 pt-2 border-b border-neutral-100 dark:border-neutral-800 pb-2">
+            <div className="relative mb-2 border-b border-neutral-100 px-2 pt-2 pb-2 dark:border-neutral-800">
               <Search className="absolute top-1/2 left-4 h-4 w-4 -translate-y-[calc(50%+4px)] text-neutral-400" />
               <Command.Input
                 placeholder={searchPlaceholder}
@@ -123,7 +123,8 @@ export const Combobox = ({
                   onSelect={() => handleSelect(option.value)}
                   className={cn(
                     'flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors aria-selected:bg-blue-50 aria-selected:text-blue-600 dark:aria-selected:bg-blue-500/10 dark:aria-selected:text-blue-400',
-                    isSelected(option.value) && 'bg-blue-50 font-medium text-blue-600 dark:bg-blue-500/20 dark:text-blue-400'
+                    isSelected(option.value) &&
+                      'bg-blue-50 font-medium text-blue-600 dark:bg-blue-500/20 dark:text-blue-400'
                   )}
                 >
                   <div
@@ -137,7 +138,9 @@ export const Combobox = ({
                     {isSelected(option.value) && <Check size={12} />}
                   </div>
                   {option.icon && <span className="text-neutral-500">{option.icon}</span>}
-                  <span className="flex-1 text-neutral-700 dark:text-neutral-200">{option.label}</span>
+                  <span className="flex-1 text-neutral-700 dark:text-neutral-200">
+                    {option.label}
+                  </span>
                 </Command.Item>
               ))}
             </Command.List>

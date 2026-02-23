@@ -24,8 +24,7 @@ type CatalogItem = {
   available: boolean;
 };
 
-export function CatalogHubClient({
-  stats }: CatalogHubClientProps) {
+export function CatalogHubClient({ stats }: CatalogHubClientProps) {
   const t = useTranslations('admin.catalog');
   const locale = useLocale();
   const router = useRouter();
@@ -72,16 +71,10 @@ export function CatalogHubClient({
 
   return (
     <div className="container mx-auto max-w-[1600px] px-4 py-8">
-      <CatalogHeader
-        title={t('title')}
-        description={t('description')}
-        stats={headerStats}
-      />
+      <CatalogHeader title={t('title')} description={t('description')} stats={headerStats} />
 
-      <CatalogGrid
-        emptyState={<p className="text-center text-neutral-500">{t('emptyState')}</p>}
-      >
-        {catalogItems.map((item: any) => (
+      <CatalogGrid emptyState={<p className="text-center text-neutral-500">{t('emptyState')}</p>}>
+        {catalogItems.map((item: CatalogItem) => (
           <ResourceCard
             key={item.id}
             title={item.title}

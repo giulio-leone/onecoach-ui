@@ -116,7 +116,7 @@ export function formatDiffPath(
   for (let i = 0; i < segments.length; i++) {
     const segment = segments[i];
     if (!segment) continue;
-    
+
     const parsed = parseSegment(segment);
     const { name, index } = parsed;
 

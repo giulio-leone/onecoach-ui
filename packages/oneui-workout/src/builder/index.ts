@@ -19,4 +19,3 @@ export { WorkoutVisualBuilder } from './workout-visual-builder';
 
 // Re-export types from SSOT
 export type { WorkoutElementType } from '@giulio-leone/schemas';
-

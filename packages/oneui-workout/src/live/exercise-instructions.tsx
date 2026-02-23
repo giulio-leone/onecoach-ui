@@ -3,8 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { FileText, CheckCircle2, Dumbbell } from 'lucide-react';
 import { Badge, Heading, Text } from '@giulio-leone/ui';
-import type { Exercise } from "@giulio-leone/schemas";
-
+import type { Exercise } from '@giulio-leone/schemas';
 
 export interface ExerciseInstructionsProps {
   exercise: Exercise;
@@ -31,9 +30,13 @@ export function ExerciseInstructions({ exercise, className = '' }: ExerciseInstr
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-indigo-400">
                 <FileText className="h-4 w-4" />
-                <Heading level={4} size="xs" weight="bold" className="tracking-widest uppercase">Descrizione</Heading>
+                <Heading level={4} size="xs" weight="bold" className="tracking-widest uppercase">
+                  Descrizione
+                </Heading>
               </div>
-              <Text size="sm" className="leading-relaxed text-neutral-300">{exercise.description}</Text>
+              <Text size="sm" className="leading-relaxed text-neutral-300">
+                {exercise.description}
+              </Text>
             </div>
           )}
 
@@ -42,7 +45,9 @@ export function ExerciseInstructions({ exercise, className = '' }: ExerciseInstr
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-indigo-400">
                 <Dumbbell className="h-4 w-4" />
-                <Heading level={4} size="xs" weight="bold" className="tracking-widest uppercase">Attrezzatura</Heading>
+                <Heading level={4} size="xs" weight="bold" className="tracking-widest uppercase">
+                  Attrezzatura
+                </Heading>
               </div>
               <div className="flex flex-wrap gap-2">
                 {exercise.equipment.map((eq: string, index: number) => (

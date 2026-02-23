@@ -20,9 +20,9 @@ export function HabitList({ habits, onToggleHabit, className }: HabitListProps) 
           key={habit.id}
           className={cn(
             'group relative rounded-2xl border p-4 transition-all',
-            'bg-white/50 backdrop-blur-sm shadow-sm',
-            'dark:bg-neutral-900/50 dark:border-neutral-800',
-            'hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-800'
+            'bg-white/50 shadow-sm backdrop-blur-sm',
+            'dark:border-neutral-800 dark:bg-neutral-900/50',
+            'hover:border-indigo-200 hover:shadow-md dark:hover:border-indigo-800'
           )}
         >
           <div className="flex items-start gap-3">
@@ -33,27 +33,34 @@ export function HabitList({ habits, onToggleHabit, className }: HabitListProps) 
               className={cn(
                 'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 transition-colors',
                 habit.completedToday
-                  ? 'bg-emerald-500 border-emerald-500 text-white'
+                  ? 'border-emerald-500 bg-emerald-500 text-white'
                   : 'border-neutral-300 hover:border-indigo-500 dark:border-neutral-600'
               )}
             >
               {habit.completedToday && (
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
               )}
             </button>
 
             {/* Content */}
-            <div className="flex-1 min-w-0">
-              <h4 className={cn(
-                'font-semibold text-neutral-900 dark:text-white truncate',
-                habit.completedToday && 'line-through opacity-60'
-              )}>
+            <div className="min-w-0 flex-1">
+              <h4
+                className={cn(
+                  'truncate font-semibold text-neutral-900 dark:text-white',
+                  habit.completedToday && 'line-through opacity-60'
+                )}
+              >
                 {habit.title}
               </h4>
               {habit.description && (
-                <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400 line-clamp-2">
+                <p className="mt-1 line-clamp-2 text-sm text-neutral-500 dark:text-neutral-400">
                   {habit.description}
                 </p>
               )}

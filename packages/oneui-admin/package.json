@@ -24,7 +24,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@giulio-leone/ui-core": "workspace:*",
+    "@onecoach/ui-core": "workspace:*",
     "@giulio-leone/ui-layout": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/lib-api-client": "workspace:*",

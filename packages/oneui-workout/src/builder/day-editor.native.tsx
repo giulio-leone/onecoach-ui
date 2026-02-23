@@ -19,7 +19,12 @@ interface DayEditorProps {
   weightUnit?: 'KG' | 'LBS';
 }
 
-export function DayEditor({ day, onUpdate, referenceMaxes = {}, weightUnit = 'KG' }: DayEditorProps) {
+export function DayEditor({
+  day,
+  onUpdate,
+  referenceMaxes = {},
+  weightUnit = 'KG',
+}: DayEditorProps) {
   const t = useTranslations();
   const [isSelectorOpen, setIsSelectorOpen] = useState(false);
 
@@ -68,8 +73,8 @@ export function DayEditor({ day, onUpdate, referenceMaxes = {}, weightUnit = 'KG
           onPress={() => setIsSelectorOpen(true)}
           className="h-8 px-3"
         >
-          <Plus size={16} className="text-white mr-2" />
-          <Text className="text-white font-medium">Aggiungi Esercizio</Text>
+          <Plus size={16} className="mr-2 text-white" />
+          <Text className="font-medium text-white">Aggiungi Esercizio</Text>
         </Button>
       </View>
 
@@ -87,9 +92,7 @@ export function DayEditor({ day, onUpdate, referenceMaxes = {}, weightUnit = 'KG
               index < (day.exercises?.length || 0) - 1 && handleReorderExercise(index, index + 1)
             }
             referenceOneRm={
-              exercise.catalogExerciseId
-                ? referenceMaxes[exercise.catalogExerciseId]
-                : undefined
+              exercise.catalogExerciseId ? referenceMaxes[exercise.catalogExerciseId] : undefined
             }
             weightUnit={weightUnit}
           />

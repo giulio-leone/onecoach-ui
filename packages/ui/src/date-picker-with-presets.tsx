@@ -17,8 +17,7 @@ import {
 
 export type { DatePickerWithPresetsProps, Presets } from './date-picker-with-presets.shared';
 
-export function DatePickerWithPresets({
-  date, onDateChange, presets }: DatePickerWithPresetsProps) {
+export function DatePickerWithPresets({ date, onDateChange, presets }: DatePickerWithPresetsProps) {
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newDate = parseDateFromInput(event.target.value);
     if (newDate) {

@@ -2,7 +2,14 @@
 
 import { useState } from 'react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { CheckCircle2, Loader2, ChevronDown, ChevronRight, AlertCircle, Sparkles } from 'lucide-react';
+import {
+  CheckCircle2,
+  Loader2,
+  ChevronDown,
+  ChevronRight,
+  AlertCircle,
+  Sparkles,
+} from 'lucide-react';
 import { Card } from './card';
 
 export interface StreamEvent {
@@ -37,8 +44,7 @@ function getEventIcon(type: string, message: string) {
   return <Sparkles className="h-4 w-4 text-neutral-400 dark:text-neutral-500" />;
 }
 
-function EventCard({
-  event }: { event: StreamEvent }) {
+function EventCard({ event }: { event: StreamEvent }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const hasData = event.data && Object.keys(event.data).length > 0;
 
@@ -46,20 +52,21 @@ function EventCard({
     <button
       onClick={() => hasData && setIsExpanded((prev) => !prev)}
       className={cn(
-        'w-full text-left rounded-xl border border-neutral-200/60 bg-white/50 dark:border-neutral-700/60 dark:bg-neutral-800/50',
+        'w-full rounded-xl border border-neutral-200/60 bg-white/50 text-left dark:border-neutral-700/60 dark:bg-neutral-800/50',
         'px-3 py-2.5 transition-colors',
-        hasData && 'hover:bg-neutral-50 active:bg-neutral-100 dark:hover:bg-neutral-700/30 dark:active:bg-neutral-700/50',
+        hasData &&
+          'hover:bg-neutral-50 active:bg-neutral-100 dark:hover:bg-neutral-700/30 dark:active:bg-neutral-700/50',
         !hasData && 'cursor-default'
       )}
       type="button"
     >
       <div className="flex items-start gap-3">
         <div className="mt-0.5 flex-shrink-0">{getEventIcon(event.type, event.message)}</div>
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0 flex-1">
           <div
             className={cn(
-              "text-sm font-medium text-neutral-800 dark:text-neutral-100 line-clamp-2",
-              isExpanded && "line-clamp-none"
+              'line-clamp-2 text-sm font-medium text-neutral-800 dark:text-neutral-100',
+              isExpanded && 'line-clamp-none'
             )}
           >
             {event.message}
@@ -79,7 +86,7 @@ function EventCard({
         )}
       </div>
       {isExpanded && hasData && (
-        <div className="mt-3 rounded-lg bg-neutral-950 p-3 overflow-x-auto">
+        <div className="mt-3 overflow-x-auto rounded-lg bg-neutral-950 p-3">
           <pre className="font-mono text-xs text-emerald-300">
             {JSON.stringify(event.data, null, 2)}
           </pre>
@@ -102,11 +109,15 @@ export function StreamingResult({
   // Process events to merge same-agent updates
   const processedEvents = events.reduce((acc, event) => {
     // Try to find if this agent/role already exists in accumulator
-    const agentId = event.data?.agent || event.data?.role || (event.type.startsWith('agent_') ? event.data?.step : undefined);
-    
+    const agentId =
+      event.data?.agent ||
+      event.data?.role ||
+      (event.type.startsWith('agent_') ? event.data?.step : undefined);
+
     if (agentId) {
-      const existingIndex = acc.findIndex(e => {
-        const eId = e.data?.agent || e.data?.role || (e.type.startsWith('agent_') ? e.data?.step : undefined);
+      const existingIndex = acc.findIndex((e) => {
+        const eId =
+          e.data?.agent || e.data?.role || (e.type.startsWith('agent_') ? e.data?.step : undefined);
         return eId === agentId;
       });
 
@@ -114,18 +125,18 @@ export function StreamingResult({
         // Update existing entry
         const existingEvent = acc[existingIndex];
         if (existingEvent) {
-            acc[existingIndex] = {
+          acc[existingIndex] = {
             ...existingEvent,
             type: event.type,
             message: event.message,
             timestamp: event.timestamp,
-            data: { ...(existingEvent.data || {}), ...event.data }
-            };
+            data: { ...(existingEvent.data || {}), ...event.data },
+          };
         }
         return acc;
       }
     }
-    
+
     // Default: append
     acc.push(event);
     return acc;
@@ -136,11 +147,9 @@ export function StreamingResult({
       {/* Progress Card */}
       <Card variant="glass" className="overflow-hidden p-4">
         <div className="mb-3 flex items-center justify-between">
-          <div className="flex items-center gap-2 flex-1 min-w-0">
+          <div className="flex min-w-0 flex-1 items-center gap-2">
             {isStreaming && <Loader2 className="h-4 w-4 animate-spin text-emerald-500" />}
-            <span
-              className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex-1 truncate"
-            >
+            <span className="flex-1 truncate text-sm font-medium text-neutral-700 dark:text-neutral-300">
               {currentMessage || 'Inizializzazione...'}
             </span>
           </div>
@@ -158,8 +167,8 @@ export function StreamingResult({
       </Card>
 
       {/* Events Log */}
-      <Card variant="glass" className="max-h-80 overflow-hidden p-0 flex flex-col">
-        <div className="border-b border-neutral-100 bg-neutral-50/80 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800/50 flex-shrink-0">
+      <Card variant="glass" className="flex max-h-80 flex-col overflow-hidden p-0">
+        <div className="flex-shrink-0 border-b border-neutral-100 bg-neutral-50/80 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800/50">
           <div className="flex items-center gap-2">
             <Sparkles className="h-4 w-4 text-blue-500" />
             <span className="font-semibold text-neutral-900 dark:text-neutral-100">
@@ -167,9 +176,7 @@ export function StreamingResult({
             </span>
           </div>
         </div>
-        <div
-          className="p-3 overflow-y-auto space-y-2 custom-scrollbar"
-        >
+        <div className="custom-scrollbar space-y-2 overflow-y-auto p-3">
           {processedEvents.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-6">
               <Loader2 className="h-6 w-6 animate-spin text-blue-500" />

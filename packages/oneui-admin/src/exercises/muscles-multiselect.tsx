@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { Checkbox } from '@giulio-leone/ui';
 
-
 interface Opt {
   id: string;
   name: string;
@@ -15,8 +14,7 @@ interface MusclesMultiselectProps {
   onChange: (val: { primary: string[]; secondary: string[] }) => void;
 }
 
-export function MusclesMultiselect({
-  primary, secondary, onChange }: MusclesMultiselectProps) {
+export function MusclesMultiselect({ primary, secondary, onChange }: MusclesMultiselectProps) {
   const [opts, setOpts] = useState<Opt[]>([]);
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState('');

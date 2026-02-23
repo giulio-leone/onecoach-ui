@@ -17,17 +17,17 @@ export interface ButtonLinkProps {
   children?: React.ReactNode;
   icon?: LucideIcon;
   variant?:
-  | 'primary'
-  | 'secondary'
-  | 'danger'
-  | 'ghost'
-  | 'default'
-  | 'outline'
-  | 'success'
-  | 'info'
-  | 'glass'
-  | 'gradient-primary'
-  | 'gradient-secondary';
+    | 'primary'
+    | 'secondary'
+    | 'danger'
+    | 'ghost'
+    | 'default'
+    | 'outline'
+    | 'success'
+    | 'info'
+    | 'glass'
+    | 'gradient-primary'
+    | 'gradient-secondary';
   size?: 'sm' | 'md' | 'lg' | 'icon' | 'icon-sm';
   className?: string;
   fullWidth?: boolean;
@@ -53,8 +53,7 @@ const variantStyles = {
     'border border-neutral-200 bg-transparent text-neutral-900 hover:bg-neutral-50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800',
   success:
     'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
-  info:
-    'bg-gradient-to-r from-sky-500 to-sky-600 text-white shadow-lg hover:shadow-sky-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
+  info: 'bg-gradient-to-r from-sky-500 to-sky-600 text-white shadow-lg hover:shadow-sky-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
   glass:
     'border border-white/10 bg-white/5 text-white shadow-lg backdrop-blur-md hover:bg-white/10 hover:border-white/20 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
   'gradient-primary':
@@ -115,19 +114,11 @@ export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
         {...props}
       >
         {Icon && iconPosition === 'left' && (
-          <Icon
-            size={iconSize}
-            className="flex-shrink-0"
-            aria-hidden="true"
-          />
+          <Icon size={iconSize} className="flex-shrink-0" aria-hidden="true" />
         )}
         {!isIconButton && children}
         {Icon && iconPosition === 'right' && (
-          <Icon
-            size={iconSize}
-            className="flex-shrink-0"
-            aria-hidden="true"
-          />
+          <Icon size={iconSize} className="flex-shrink-0" aria-hidden="true" />
         )}
         {isIconButton && <span className="sr-only">{children}</span>}
       </Link>

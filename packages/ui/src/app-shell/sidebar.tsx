@@ -33,10 +33,9 @@ export interface AppShellSidebarProps {
 // ... imports kept ... (Logic below replaces the function body)
 
 import { useTranslations } from 'next-intl';
-import type { AuthenticatedUser } from "@giulio-leone/types/core";
+import type { AuthenticatedUser } from '@giulio-leone/types/core';
 
-export function AppShellSidebar({
-  user, navigation: propsNavigation }: AppShellSidebarProps) {
+export function AppShellSidebar({ user, navigation: propsNavigation }: AppShellSidebarProps) {
   const t = useTranslations('navigation');
   const pathname = usePathname();
   const signOut = useSignOut();

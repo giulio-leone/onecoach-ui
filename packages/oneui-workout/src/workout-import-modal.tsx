@@ -639,14 +639,15 @@ export function WorkoutImportModal({
                 style={{ width: `${progress.progress}%` }}
               />
             </div>
-            {progress.metadata &&
-              (progress.metadata as any).unmatchedExercises &&
-              (progress.metadata as any).unmatchedExercises.length > 0 && (
+            {(() => {
+              const unmatched = (progress.metadata as Record<string, unknown> | undefined)
+                ?.unmatchedExercises as string[] | undefined;
+              return unmatched && unmatched.length > 0 ? (
                 <p className="text-xs text-amber-600 dark:text-amber-400">
-                  {(progress.metadata as any).unmatchedExercises.length}{' '}
-                  {t('workouts.workout_import_modal.esercizi_non_trovati')}
+                  {unmatched.length} {t('workouts.workout_import_modal.esercizi_non_trovati')}
                 </p>
-              )}
+              ) : null;
+            })()}
           </div>
         )}
         {/* Error */}

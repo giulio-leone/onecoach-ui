@@ -436,8 +436,7 @@ export const usePromptInput = () => {
   return ctx;
 };
 
-export function PromptInputProvider({
-  children }: { children: React.ReactNode }) {
+export function PromptInputProvider({ children }: { children: React.ReactNode }) {
   const [attachments, setAttachments] = useState<PromptAttachment[]>([]);
   const [accept, setAccept] = useState<string | undefined>();
   const [multiple, setMultiple] = useState<boolean | undefined>(undefined);
@@ -445,7 +444,7 @@ export function PromptInputProvider({
 
   const addFiles = useCallback((files: FileList) => {
     const next: PromptAttachment[] = [];
-    Array.from(files).forEach((file: any) => {
+    Array.from(files).forEach((file: File) => {
       const id = `${Date.now()}-${file.name}-${Math.random().toString(16).slice(2)}`;
       next.push({
         id,
@@ -460,7 +459,7 @@ export function PromptInputProvider({
   }, []);
 
   const removeAttachment = useCallback((id: string) => {
-    setAttachments((prev) => prev.filter((a: any) => a.id !== id));
+    setAttachments((prev) => prev.filter((a: PromptAttachment) => a.id !== id));
   }, []);
 
   const triggerFileDialog = useCallback(() => {
@@ -562,7 +561,9 @@ export const PromptInputAttachments = ({
   const { attachments } = usePromptInput();
   if (!attachments.length) return null;
   return (
-    <div className="flex flex-wrap gap-2 px-4 pt-3">{attachments.map((a: any) => children(a))}</div>
+    <div className="flex flex-wrap gap-2 px-4 pt-3">
+      {attachments.map((a: PromptAttachment) => children(a))}
+    </div>
   );
 };
 

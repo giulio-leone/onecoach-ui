@@ -72,8 +72,6 @@ export function VersionHistoryModal<T>({
   const [selectedForCompare, setSelectedForCompare] = useState<number[]>([]);
   const [showDiff, setShowDiff] = useState(false);
 
-
-
   const accentClass =
     variant === 'emerald'
       ? 'text-emerald-600 dark:text-emerald-400'
@@ -93,12 +91,8 @@ export function VersionHistoryModal<T>({
     const sorted = [...selectedForCompare].sort((a, b) => a - b);
     const newerIdx = sorted[0] ?? 0;
     const olderIdx = sorted[1] ?? 0;
-    
-    return computeSemanticDiff(
-      diff, 
-      history[olderIdx]?.state, 
-      history[newerIdx]?.state
-    );
+
+    return computeSemanticDiff(diff, history[olderIdx]?.state, history[newerIdx]?.state);
   }, [diff, selectedForCompare, history]);
 
   const toggleCompareSelection = (index: number) => {
@@ -134,10 +128,7 @@ export function VersionHistoryModal<T>({
       aria-modal="true"
     >
       {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
 
       {/* Modal */}
       <div
@@ -177,27 +168,29 @@ export function VersionHistoryModal<T>({
               >
                 ← Back to history
               </button>
-              
+
               <div className="flex items-center justify-between">
-                 <h3 className="text-sm font-medium text-neutral-500">
-                    Comparing Version {history.length - (selectedForCompare.sort((a,b)=>a-b)[1] ?? 0)} vs {history.length - (selectedForCompare.sort((a,b)=>a-b)[0] ?? 0)}
-                 </h3>
-                 <button
-                    onClick={() => {
-                      const olderIdx = [...selectedForCompare].sort((a,b)=>a-b)[1];
-                      if (olderIdx !== undefined) {
-                        handleRestore(olderIdx);
-                      }
-                    }}
-                    className={cn(
-                      "flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors",
-                      "bg-neutral-100 text-neutral-700 hover:bg-neutral-200",
-                      "dark:bg-white/10 dark:text-neutral-300 dark:hover:bg-white/20"
-                    )}
-                 >
-                    <RotateCcw size={14} />
-                    Restore Original
-                 </button>
+                <h3 className="text-sm font-medium text-neutral-500">
+                  Comparing Version{' '}
+                  {history.length - (selectedForCompare.sort((a, b) => a - b)[1] ?? 0)} vs{' '}
+                  {history.length - (selectedForCompare.sort((a, b) => a - b)[0] ?? 0)}
+                </h3>
+                <button
+                  onClick={() => {
+                    const olderIdx = [...selectedForCompare].sort((a, b) => a - b)[1];
+                    if (olderIdx !== undefined) {
+                      handleRestore(olderIdx);
+                    }
+                  }}
+                  className={cn(
+                    'flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors',
+                    'bg-neutral-100 text-neutral-700 hover:bg-neutral-200',
+                    'dark:bg-white/10 dark:text-neutral-300 dark:hover:bg-white/20'
+                  )}
+                >
+                  <RotateCcw size={14} />
+                  Restore Original
+                </button>
               </div>
 
               <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-white/10 dark:bg-neutral-800/50">
@@ -205,101 +198,124 @@ export function VersionHistoryModal<T>({
                   <p className="text-center text-neutral-500">No differences found</p>
                 ) : (
                   <div className="space-y-3">
-                     {semanticDiff.map((change) => (
-                      <div 
-                        key={change.id} 
+                    {semanticDiff.map((change) => (
+                      <div
+                        key={change.id}
                         className="relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-neutral-800"
                       >
                         {/* Status Bar */}
-                        <div className={cn(
-                          "absolute bottom-0 left-0 top-0 w-1",
-                          change.action === 'added' ? "bg-emerald-500" :
-                          change.action === 'removed' ? "bg-red-500" :
-                          "bg-amber-500"
-                        )} />
+                        <div
+                          className={cn(
+                            'absolute top-0 bottom-0 left-0 w-1',
+                            change.action === 'added'
+                              ? 'bg-emerald-500'
+                              : change.action === 'removed'
+                                ? 'bg-red-500'
+                                : 'bg-amber-500'
+                          )}
+                        />
 
                         <div className="ml-3">
-                           {/* Context (Parent) */}
-                           {change.entity.parentName && (
-                             <div className="mb-0.5 text-xs font-medium text-neutral-400 dark:text-neutral-500">
-                               {change.entity.parentName}
-                             </div>
-                           )}
-                           
-                           {/* Main Entity Header */}
-                           <div className="flex items-center gap-2">
-                             <span className="text-lg">
-                               {change.entity.type === 'program' ? '📋' :
-                                change.entity.type === 'week' ? '📅' :
-                                change.entity.type === 'day' ? '📆' :
-                                change.entity.type === 'exercise' ? '🏋️' :
-                                change.entity.type === 'set' ? '🔢' : '•'}
-                             </span>
-                             <span className="font-semibold text-neutral-900 dark:text-neutral-100">
-                                {change.entity.name}
-                             </span>
-                             <span className={cn(
-                               "rounded px-1.5 py-0.5 text-[10px] uppercase font-bold tracking-wider",
-                               change.action === 'added' ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400" :
-                               change.action === 'removed' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
-                               "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
-                             )}>
-                               {change.action}
-                             </span>
-                           </div>
+                          {/* Context (Parent) */}
+                          {change.entity.parentName && (
+                            <div className="mb-0.5 text-xs font-medium text-neutral-400 dark:text-neutral-500">
+                              {change.entity.parentName}
+                            </div>
+                          )}
 
-                           {/* Description */}
-                           {/* <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-1">
+                          {/* Main Entity Header */}
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg">
+                              {change.entity.type === 'program'
+                                ? '📋'
+                                : change.entity.type === 'week'
+                                  ? '📅'
+                                  : change.entity.type === 'day'
+                                    ? '📆'
+                                    : change.entity.type === 'exercise'
+                                      ? '🏋️'
+                                      : change.entity.type === 'set'
+                                        ? '🔢'
+                                        : '•'}
+                            </span>
+                            <span className="font-semibold text-neutral-900 dark:text-neutral-100">
+                              {change.entity.name}
+                            </span>
+                            <span
+                              className={cn(
+                                'rounded px-1.5 py-0.5 text-[10px] font-bold tracking-wider uppercase',
+                                change.action === 'added'
+                                  ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+                                  : change.action === 'removed'
+                                    ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                                    : 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
+                              )}
+                            >
+                              {change.action}
+                            </span>
+                          </div>
+
+                          {/* Description */}
+                          {/* <p className="text-sm text-neutral-600 dark:text-neutral-300 mt-1">
                              {change.description}
                            </p> */}
 
-                           {/* Details List */}
-                           {change.details.length > 0 && (
-                             <div className="mt-3">
-                               {/* Headers for Desktop */}
-                               <div className="hidden grid-cols-2 gap-4 border-b border-neutral-100 pb-1 text-xs font-medium text-neutral-400 dark:border-white/5 dark:text-neutral-500 sm:grid">
-                                 <div>PREVIOUS</div>
-                                 <div className="border-l border-neutral-100 pl-4 dark:border-white/5">CURRENT</div>
-                               </div>
+                          {/* Details List */}
+                          {change.details.length > 0 && (
+                            <div className="mt-3">
+                              {/* Headers for Desktop */}
+                              <div className="hidden grid-cols-2 gap-4 border-b border-neutral-100 pb-1 text-xs font-medium text-neutral-400 sm:grid dark:border-white/5 dark:text-neutral-500">
+                                <div>PREVIOUS</div>
+                                <div className="border-l border-neutral-100 pl-4 dark:border-white/5">
+                                  CURRENT
+                                </div>
+                              </div>
 
-                               <div className="divide-y divide-neutral-100 dark:divide-white/5">
-                                 {change.details.map((detail, idx) => (
-                                   <div key={idx} className="grid grid-cols-1 gap-1 py-2 sm:grid-cols-2 sm:gap-4">
-                                     {/* Left Column (Previous) */}
-                                     <div className="flex flex-col sm:block">
-                                       <span className="mb-0.5 text-[10px] font-medium text-neutral-400 sm:hidden">PREVIOUS</span>
-                                       <div className="flex items-baseline justify-between gap-2">
-                                         <span className="text-sm text-neutral-500 dark:text-neutral-400">
-                                            {detail.label}
-                                         </span>
-                                         <span className="text-sm font-medium text-red-600/80 line-through decoration-red-600/50 dark:text-red-400/80">
-                                            {formatValue(detail.from)}
-                                         </span>
-                                       </div>
-                                     </div>
+                              <div className="divide-y divide-neutral-100 dark:divide-white/5">
+                                {change.details.map((detail, idx) => (
+                                  <div
+                                    key={idx}
+                                    className="grid grid-cols-1 gap-1 py-2 sm:grid-cols-2 sm:gap-4"
+                                  >
+                                    {/* Left Column (Previous) */}
+                                    <div className="flex flex-col sm:block">
+                                      <span className="mb-0.5 text-[10px] font-medium text-neutral-400 sm:hidden">
+                                        PREVIOUS
+                                      </span>
+                                      <div className="flex items-baseline justify-between gap-2">
+                                        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                                          {detail.label}
+                                        </span>
+                                        <span className="text-sm font-medium text-red-600/80 line-through decoration-red-600/50 dark:text-red-400/80">
+                                          {formatValue(detail.from)}
+                                        </span>
+                                      </div>
+                                    </div>
 
-                                     {/* Right Column (Current) */}
-                                     {change.action !== 'removed' && (
-                                      <div className="flex flex-col border-l border-neutral-100 pl-0 dark:border-white/5 sm:pl-4">
-                                        <span className="mb-0.5 mt-1 text-[10px] font-medium text-neutral-400 sm:hidden">CURRENT</span>
+                                    {/* Right Column (Current) */}
+                                    {change.action !== 'removed' && (
+                                      <div className="flex flex-col border-l border-neutral-100 pl-0 sm:pl-4 dark:border-white/5">
+                                        <span className="mt-1 mb-0.5 text-[10px] font-medium text-neutral-400 sm:hidden">
+                                          CURRENT
+                                        </span>
                                         <div className="flex items-baseline justify-between gap-2">
-                                          <span className="text-sm text-neutral-500 dark:text-neutral-400 sm:hidden">
-                                              {detail.label}
+                                          <span className="text-sm text-neutral-500 sm:hidden dark:text-neutral-400">
+                                            {detail.label}
                                           </span>
                                           <span className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
-                                              {formatValue(detail.to)}
+                                            {formatValue(detail.to)}
                                           </span>
                                         </div>
                                       </div>
-                                     )}
-                                   </div>
-                                 ))}
-                               </div>
-                             </div>
-                           )}
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
-                     ))}
+                    ))}
                   </div>
                 )}
               </div>
@@ -310,7 +326,7 @@ export function VersionHistoryModal<T>({
               {history.map((version, index) => {
                 const isCurrent = index === 0;
                 const isSelected = selectedForCompare.includes(index);
-                
+
                 return (
                   <div
                     key={index}
@@ -324,24 +340,25 @@ export function VersionHistoryModal<T>({
                   >
                     <div className="relative mt-1">
                       {isSelected ? (
-                         <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-white">
-                           <Check size={12} />
-                         </div>
+                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-white">
+                          <Check size={12} />
+                        </div>
                       ) : (
-                         <div className="h-5 w-5 rounded-full border-2 border-neutral-300 dark:border-neutral-600 group-hover:border-neutral-400" />
+                        <div className="h-5 w-5 rounded-full border-2 border-neutral-300 group-hover:border-neutral-400 dark:border-neutral-600" />
                       )}
                     </div>
-                    
+
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                         <span className="font-medium text-neutral-900 dark:text-white">
-                            {version.description || (index === 0 ? 'Current Version' : `Version ${history.length - index}`)}
-                         </span>
-                         {isCurrent && (
-                           <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600 dark:bg-white/10 dark:text-neutral-300">
-                             Current
-                           </span>
-                         )}
+                        <span className="font-medium text-neutral-900 dark:text-white">
+                          {version.description ||
+                            (index === 0 ? 'Current Version' : `Version ${history.length - index}`)}
+                        </span>
+                        {isCurrent && (
+                          <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600 dark:bg-white/10 dark:text-neutral-300">
+                            Current
+                          </span>
+                        )}
                       </div>
                       <div className="mt-1 flex items-center text-xs text-neutral-500 dark:text-neutral-400">
                         <span>{formatTimestamp(new Date(version.timestamp))}</span>
@@ -349,16 +366,16 @@ export function VersionHistoryModal<T>({
                     </div>
 
                     <div className="flex items-center gap-1">
-                       <button
-                         onClick={(e) => {
-                           e.stopPropagation();
-                           handleRestore(index);
-                         }}
-                         className="rounded p-1.5 hover:bg-neutral-200 dark:hover:bg-white/10"
-                         title={labels.restore ?? 'Restore this version'}
-                       >
-                         <RotateCcw size={16} className="text-neutral-500 dark:text-neutral-400" />
-                       </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleRestore(index);
+                        }}
+                        className="rounded p-1.5 hover:bg-neutral-200 dark:hover:bg-white/10"
+                        title={labels.restore ?? 'Restore this version'}
+                      >
+                        <RotateCcw size={16} className="text-neutral-500 dark:text-neutral-400" />
+                      </button>
                     </div>
                   </div>
                 );
@@ -369,25 +386,25 @@ export function VersionHistoryModal<T>({
 
         {/* Footer */}
         <div className="flex items-center justify-between border-t border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-white/10 dark:bg-neutral-900/50">
-           <div className="text-sm text-neutral-500 dark:text-neutral-400">
-             {selectedForCompare.length === 2 
-                ? '2 versions selected' 
-                : `${selectedForCompare.length} selected for compare`}
-           </div>
-           {selectedForCompare.length === 2 && !showDiff && (
-             <button
-               onClick={handleCompare}
-               className={cn(
-                 "flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors",
-                 variant === 'emerald' 
-                    ? "bg-emerald-600 hover:bg-emerald-700"
-                    : "bg-blue-600 hover:bg-blue-700"
-               )}
-             >
-               <GitCompare size={16} />
-               {labels.compare ?? 'Compare Versions'}
-             </button>
-           )}
+          <div className="text-sm text-neutral-500 dark:text-neutral-400">
+            {selectedForCompare.length === 2
+              ? '2 versions selected'
+              : `${selectedForCompare.length} selected for compare`}
+          </div>
+          {selectedForCompare.length === 2 && !showDiff && (
+            <button
+              onClick={handleCompare}
+              className={cn(
+                'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors',
+                variant === 'emerald'
+                  ? 'bg-emerald-600 hover:bg-emerald-700'
+                  : 'bg-blue-600 hover:bg-blue-700'
+              )}
+            >
+              <GitCompare size={16} />
+              {labels.compare ?? 'Compare Versions'}
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 'use client';
 
-
 import { Card, SelectionCard, Input, Button } from '@giulio-leone/ui';
 import { DifficultyLevel, Sex, WorkoutGoal } from '@giulio-leone/types/client';
 import { Dumbbell, Target, User, Activity, Zap, AlertCircle, Settings } from 'lucide-react';
@@ -31,7 +30,7 @@ export function WorkoutForm({
   return (
     <div className="space-y-8">
       {/* Parametri Personali */}
-      <Card className="overflow-hidden p-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border-slate-200 dark:border-slate-800">
+      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
         <div className="border-b border-neutral-200 bg-blue-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-blue-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
@@ -98,7 +97,9 @@ export function WorkoutForm({
                 icon={
                   <User
                     size={20}
-                    className={formData.userProfile.gender === Sex.MALE ? 'text-white' : 'text-slate-500'}
+                    className={
+                      formData.userProfile.gender === Sex.MALE ? 'text-white' : 'text-slate-500'
+                    }
                   />
                 }
                 className="flex-1"
@@ -110,7 +111,9 @@ export function WorkoutForm({
                 icon={
                   <User
                     size={20}
-                    className={formData.userProfile.gender === Sex.FEMALE ? 'text-white' : 'text-slate-500'}
+                    className={
+                      formData.userProfile.gender === Sex.FEMALE ? 'text-white' : 'text-slate-500'
+                    }
                   />
                 }
                 className="flex-1"
@@ -121,7 +124,7 @@ export function WorkoutForm({
       </Card>
 
       {/* Livello Esperienza */}
-      <Card className="overflow-hidden p-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border-slate-200 dark:border-slate-800">
+      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
         <div className="border-b border-neutral-200 bg-purple-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-purple-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/30">
@@ -146,7 +149,16 @@ export function WorkoutForm({
             onPress={() =>
               updateField('userProfile', { experienceLevel: DifficultyLevel.BEGINNER })
             }
-            icon={<Zap size={24} className={formData.userProfile.experienceLevel === DifficultyLevel.BEGINNER ? 'text-white' : 'text-slate-500'} />}
+            icon={
+              <Zap
+                size={24}
+                className={
+                  formData.userProfile.experienceLevel === DifficultyLevel.BEGINNER
+                    ? 'text-white'
+                    : 'text-slate-500'
+                }
+              />
+            }
             className="w-full sm:basis-[31%]"
             compact
           />
@@ -157,7 +169,16 @@ export function WorkoutForm({
             onPress={() =>
               updateField('userProfile', { experienceLevel: DifficultyLevel.INTERMEDIATE })
             }
-            icon={<Zap size={24} className={formData.userProfile.experienceLevel === DifficultyLevel.INTERMEDIATE ? 'text-white' : 'text-slate-500'} />}
+            icon={
+              <Zap
+                size={24}
+                className={
+                  formData.userProfile.experienceLevel === DifficultyLevel.INTERMEDIATE
+                    ? 'text-white'
+                    : 'text-slate-500'
+                }
+              />
+            }
             className="w-full sm:basis-[31%]"
             compact
           />
@@ -168,7 +189,16 @@ export function WorkoutForm({
             onPress={() =>
               updateField('userProfile', { experienceLevel: DifficultyLevel.ADVANCED })
             }
-            icon={<Zap size={24} className={formData.userProfile.experienceLevel === DifficultyLevel.ADVANCED ? 'text-white' : 'text-slate-500'} />}
+            icon={
+              <Zap
+                size={24}
+                className={
+                  formData.userProfile.experienceLevel === DifficultyLevel.ADVANCED
+                    ? 'text-white'
+                    : 'text-slate-500'
+                }
+              />
+            }
             className="w-full sm:basis-[31%]"
             compact
           />
@@ -176,7 +206,7 @@ export function WorkoutForm({
       </Card>
 
       {/* Obiettivi */}
-      <Card className="overflow-hidden p-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border-slate-200 dark:border-slate-800">
+      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
         <div className="border-b border-neutral-200 bg-red-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-red-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30">
@@ -194,12 +224,21 @@ export function WorkoutForm({
         </div>
 
         <div className="space-y-6 p-5">
-          <div className="flex flex-wrap gap-3 mb-6">
+          <div className="mb-6 flex flex-wrap gap-3">
             <SelectionCard
               title="Ipertrofia"
               selected={formData.goals.primaryGoal === WorkoutGoal.HYPERTROPHY}
               onPress={() => updateField('goals', { primaryGoal: WorkoutGoal.HYPERTROPHY })}
-              icon={<Dumbbell size={24} className={formData.goals.primaryGoal === WorkoutGoal.HYPERTROPHY ? 'text-white' : 'text-slate-500'} />}
+              icon={
+                <Dumbbell
+                  size={24}
+                  className={
+                    formData.goals.primaryGoal === WorkoutGoal.HYPERTROPHY
+                      ? 'text-white'
+                      : 'text-slate-500'
+                  }
+                />
+              }
               className="w-full sm:basis-[31%]"
               compact
             />
@@ -207,7 +246,16 @@ export function WorkoutForm({
               title="Forza"
               selected={formData.goals.primaryGoal === WorkoutGoal.STRENGTH}
               onPress={() => updateField('goals', { primaryGoal: WorkoutGoal.STRENGTH })}
-              icon={<Activity size={24} className={formData.goals.primaryGoal === WorkoutGoal.STRENGTH ? 'text-white' : 'text-slate-500'} />}
+              icon={
+                <Activity
+                  size={24}
+                  className={
+                    formData.goals.primaryGoal === WorkoutGoal.STRENGTH
+                      ? 'text-white'
+                      : 'text-slate-500'
+                  }
+                />
+              }
               className="w-full sm:basis-[31%]"
               compact
             />
@@ -215,7 +263,16 @@ export function WorkoutForm({
               title="Dimagrimento"
               selected={formData.goals.primaryGoal === WorkoutGoal.GENERAL_FITNESS}
               onPress={() => updateField('goals', { primaryGoal: WorkoutGoal.GENERAL_FITNESS })}
-              icon={<Activity size={24} className={formData.goals.primaryGoal === WorkoutGoal.GENERAL_FITNESS ? 'text-white' : 'text-slate-500'} />}
+              icon={
+                <Activity
+                  size={24}
+                  className={
+                    formData.goals.primaryGoal === WorkoutGoal.GENERAL_FITNESS
+                      ? 'text-white'
+                      : 'text-slate-500'
+                  }
+                />
+              }
               className="w-full sm:basis-[31%]"
               compact
             />
@@ -226,7 +283,9 @@ export function WorkoutForm({
               <Input
                 label="Giorni/Settimana"
                 value={formData.goals.daysPerWeek.toString()}
-                onChange={(e) => updateField('goals', { daysPerWeek: parseInt(e.target.value) || 0 })}
+                onChange={(e) =>
+                  updateField('goals', { daysPerWeek: parseInt(e.target.value) || 0 })
+                }
                 type="number"
                 className="bg-neutral-50 dark:bg-neutral-800/50"
               />
@@ -257,7 +316,14 @@ export function WorkoutForm({
                   onPress={() => updateField('goals', { splitType: option.value })}
                   className="basis-[48%] sm:basis-[31%]"
                   compact
-                  icon={<Zap size={20} className={formData.goals.splitType === option.value ? 'text-white' : 'text-slate-500'} />}
+                  icon={
+                    <Zap
+                      size={20}
+                      className={
+                        formData.goals.splitType === option.value ? 'text-white' : 'text-slate-500'
+                      }
+                    />
+                  }
                 />
               ))}
             </div>
@@ -266,7 +332,7 @@ export function WorkoutForm({
       </Card>
 
       {/* Preferenze & Limitazioni */}
-      <Card className="overflow-hidden p-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border-slate-200 dark:border-slate-800">
+      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
         <div className="border-b border-neutral-200 bg-orange-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-orange-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
@@ -322,7 +388,7 @@ export function WorkoutForm({
       </Card>
 
       {/* AI Settings */}
-      <Card className="overflow-hidden p-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border-slate-200 dark:border-slate-800">
+      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
         <div className="border-b border-neutral-200 bg-gray-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-gray-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
@@ -348,7 +414,12 @@ export function WorkoutForm({
               onPress={() => updateTierAI(option.value)}
               className="basis-[48%] sm:basis-[31%]"
               compact
-              icon={<Zap size={20} className={formData.tierAI === option.value ? 'text-white' : 'text-slate-500'} />}
+              icon={
+                <Zap
+                  size={20}
+                  className={formData.tierAI === option.value ? 'text-white' : 'text-slate-500'}
+                />
+              }
             />
           ))}
         </div>
@@ -356,10 +427,10 @@ export function WorkoutForm({
 
       <div className="pt-4">
         <Button
-          variant="default" 
+          variant="default"
           onClick={generate}
           disabled={isGenerating}
-          className="w-full shadow-xl shadow-blue-500/20 bg-blue-600 hover:bg-blue-700 text-white h-12 text-lg"
+          className="h-12 w-full bg-blue-600 text-lg text-white shadow-xl shadow-blue-500/20 hover:bg-blue-700"
         >
           {isGenerating ? 'Generazione in corso...' : 'Genera Programma'}
         </Button>

@@ -1,8 +1,7 @@
-export { 
-  getIconSize, 
+export {
+  getIconSize,
   getMinHeight,
-  type ButtonVariant, 
-  type ButtonSize, 
-  type ButtonSharedProps 
+  type ButtonVariant,
+  type ButtonSize,
+  type ButtonSharedProps,
 } from '@giulio-leone/ui-core';
-

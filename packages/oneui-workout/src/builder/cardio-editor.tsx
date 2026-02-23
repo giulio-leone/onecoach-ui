@@ -43,12 +43,7 @@ const INTENSITY_OPTIONS: { value: CardioIntensity; label: string; color: string 
 // CardioEditor Component
 // ============================================================================
 
-export function CardioEditor({ 
-  cardio, 
-  onChange, 
-  onRemove,
-  className 
-}: CardioEditorProps) {
+export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEditorProps) {
   const [machine, setMachine] = useState<CardioMachine>(cardio?.machine ?? 'treadmill');
   const [duration, setDuration] = useState(cardio?.duration ?? 1200);
   const [intensity, setIntensity] = useState<CardioIntensity>(cardio?.intensity ?? 'moderate');
@@ -80,41 +75,41 @@ export function CardioEditor({
   };
 
   return (
-    <Card className={cn(
-      'p-4 md:p-6 bg-gradient-to-br from-cyan-500/10 to-blue-500/10',
-      'border-cyan-500/30 hover:border-cyan-500/50 transition-all',
-      className
-    )}>
+    <Card
+      className={cn(
+        'bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-4 md:p-6',
+        'border-cyan-500/30 transition-all hover:border-cyan-500/50',
+        className
+      )}
+    >
       {/* Header */}
-      <div className="flex items-center justify-between gap-3 mb-4">
+      <div className="mb-4 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <div className="p-2 rounded-lg bg-cyan-500/20">
-            <Activity className="w-5 h-5 text-cyan-500" />
+          <div className="rounded-lg bg-cyan-500/20 p-2">
+            <Activity className="h-5 w-5 text-cyan-500" />
           </div>
-          <div className="flex-1 min-w-0">
+          <div className="min-w-0 flex-1">
             <Input
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
                 emitChange({ name: e.target.value });
               }}
-              className="text-lg font-semibold bg-transparent border-none p-0 h-auto focus:ring-0"
+              className="h-auto border-none bg-transparent p-0 text-lg font-semibold focus:ring-0"
               placeholder="Nome sessione cardio"
             />
           </div>
         </div>
         <Badge variant="outline" className="bg-cyan-500/20 text-cyan-600">
-          <Clock className="w-3 h-3 mr-1" />
+          <Clock className="mr-1 h-3 w-3" />
           {durationMinutes} min
         </Badge>
       </div>
 
       {/* Machine Selector */}
       <div className="mb-4">
-        <label className="text-sm text-muted-foreground block mb-2">
-          Macchina
-        </label>
-        <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
+        <label className="text-muted-foreground mb-2 block text-sm">Macchina</label>
+        <div className="grid grid-cols-4 gap-2 sm:grid-cols-7">
           {MACHINE_OPTIONS.map((option) => (
             <motion.button
               key={option.value}
@@ -125,14 +120,14 @@ export function CardioEditor({
                 emitChange({ machine: option.value });
               }}
               className={cn(
-                'flex flex-col items-center justify-center p-2 rounded-lg border-2 transition-all',
+                'flex flex-col items-center justify-center rounded-lg border-2 p-2 transition-all',
                 machine === option.value
                   ? 'border-cyan-500 bg-cyan-500/20 shadow-md'
                   : 'border-border/50 hover:border-cyan-500/30'
               )}
             >
-              <span className="text-xl mb-1">{option.icon}</span>
-              <span className="text-[10px] text-center leading-tight">{option.label}</span>
+              <span className="mb-1 text-xl">{option.icon}</span>
+              <span className="text-center text-[10px] leading-tight">{option.label}</span>
             </motion.button>
           ))}
         </div>
@@ -140,8 +135,8 @@ export function CardioEditor({
 
       {/* Duration Slider */}
       <div className="mb-4">
-        <label className="text-sm text-muted-foreground block mb-2">
-          Durata: <span className="font-medium text-foreground">{durationMinutes} minuti</span>
+        <label className="text-muted-foreground mb-2 block text-sm">
+          Durata: <span className="text-foreground font-medium">{durationMinutes} minuti</span>
         </label>
         <input
           type="range"
@@ -154,15 +149,9 @@ export function CardioEditor({
             setDuration(val);
             emitChange({ duration: val });
           }}
-          className="w-full h-2 bg-cyan-200 rounded-lg appearance-none cursor-pointer
-                     [&::-webkit-slider-thumb]:appearance-none
-                     [&::-webkit-slider-thumb]:w-4
-                     [&::-webkit-slider-thumb]:h-4
-                     [&::-webkit-slider-thumb]:rounded-full
-                     [&::-webkit-slider-thumb]:bg-cyan-500
-                     [&::-webkit-slider-thumb]:shadow-md"
+          className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-cyan-200 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-cyan-500 [&::-webkit-slider-thumb]:shadow-md"
         />
-        <div className="flex justify-between text-xs text-muted-foreground mt-1">
+        <div className="text-muted-foreground mt-1 flex justify-between text-xs">
           <span>5 min</span>
           <span>30 min</span>
           <span>60 min</span>
@@ -171,9 +160,7 @@ export function CardioEditor({
 
       {/* Intensity Selector */}
       <div className="mb-4">
-        <label className="text-sm text-muted-foreground block mb-2">
-          Intensità
-        </label>
+        <label className="text-muted-foreground mb-2 block text-sm">Intensità</label>
         <div className="grid grid-cols-4 gap-2">
           {INTENSITY_OPTIONS.map((option) => (
             <motion.button
@@ -185,13 +172,13 @@ export function CardioEditor({
                 emitChange({ intensity: option.value });
               }}
               className={cn(
-                'flex items-center justify-center gap-1.5 p-2 rounded-lg border-2 transition-all',
+                'flex items-center justify-center gap-1.5 rounded-lg border-2 p-2 transition-all',
                 intensity === option.value
                   ? 'border-cyan-500 bg-cyan-500/10 shadow-sm'
                   : 'border-border/50 hover:border-cyan-500/30'
               )}
             >
-              <div className={cn('w-2 h-2 rounded-full', option.color)} />
+              <div className={cn('h-2 w-2 rounded-full', option.color)} />
               <span className="text-xs font-medium">{option.label}</span>
             </motion.button>
           ))}
@@ -203,9 +190,9 @@ export function CardioEditor({
         variant="ghost"
         size="sm"
         onClick={() => setShowAdvanced(!showAdvanced)}
-        className="w-full mb-3 text-muted-foreground"
+        className="text-muted-foreground mb-3 w-full"
       >
-        <Zap className="w-4 h-4 mr-1" />
+        <Zap className="mr-1 h-4 w-4" />
         {showAdvanced ? 'Nascondi' : 'Mostra'} impostazioni avanzate
       </Button>
 
@@ -215,11 +202,11 @@ export function CardioEditor({
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3 rounded-lg bg-background/50 border border-border/50 mb-4"
+          className="bg-background/50 border-border/50 mb-4 grid grid-cols-2 gap-3 rounded-lg border p-3 sm:grid-cols-4"
         >
           <div>
-            <label className="text-xs text-muted-foreground flex items-center gap-1 mb-1">
-              <Heart className="w-3 h-3" /> FC Target
+            <label className="text-muted-foreground mb-1 flex items-center gap-1 text-xs">
+              <Heart className="h-3 w-3" /> FC Target
             </label>
             <Input
               type="number"
@@ -235,8 +222,8 @@ export function CardioEditor({
           </div>
 
           <div>
-            <label className="text-xs text-muted-foreground flex items-center gap-1 mb-1">
-              <Route className="w-3 h-3" /> Distanza
+            <label className="text-muted-foreground mb-1 flex items-center gap-1 text-xs">
+              <Route className="h-3 w-3" /> Distanza
             </label>
             <Input
               type="number"
@@ -253,7 +240,7 @@ export function CardioEditor({
           </div>
 
           <div>
-            <label className="text-xs text-muted-foreground mb-1 block">Velocità</label>
+            <label className="text-muted-foreground mb-1 block text-xs">Velocità</label>
             <Input
               type="number"
               value={speed ?? ''}
@@ -270,7 +257,7 @@ export function CardioEditor({
 
           {machine === 'treadmill' && (
             <div>
-              <label className="text-xs text-muted-foreground mb-1 block">Inclinazione</label>
+              <label className="text-muted-foreground mb-1 block text-xs">Inclinazione</label>
               <Input
                 type="number"
                 value={incline ?? ''}
@@ -302,14 +289,14 @@ export function CardioEditor({
       </div>
 
       {onRemove && (
-        <div className="pt-4 border-t border-border/50">
+        <div className="border-border/50 border-t pt-4">
           <Button
             variant="ghost"
             size="sm"
             onClick={onRemove}
-            className="w-full text-muted-foreground hover:text-destructive"
+            className="text-muted-foreground hover:text-destructive w-full"
           >
-            <Trash2 className="w-4 h-4 mr-1" />
+            <Trash2 className="mr-1 h-4 w-4" />
             Rimuovi Cardio
           </Button>
         </div>

@@ -24,7 +24,7 @@ interface WarmupEditorProps {
 
 /**
  * WarmupEditor - Form for configuring warmup sections
- * 
+ *
  * Features:
  * - Duration slider (5-15 min)
  * - Dynamic exercise list with add/remove
@@ -32,12 +32,7 @@ interface WarmupEditorProps {
  * - Drag-to-reorder (visual feedback)
  * - Mobile-first responsive design
  */
-export function WarmupEditor({ 
-  warmup, 
-  onChange, 
-  onRemove,
-  className 
-}: WarmupEditorProps) {
+export function WarmupEditor({ warmup, onChange, onRemove, className }: WarmupEditorProps) {
   const [exercises, setExercises] = useState<WarmupExerciseItem[]>(
     warmup?.exercises ?? [
       { name: 'Jumping Jacks', duration: 60 },
@@ -49,19 +44,18 @@ export function WarmupEditor({
   const [name, setName] = useState(warmup?.name ?? 'Riscaldamento Dinamico');
 
   // Notify parent of changes
-  const emitChange = useCallback((
-    newExercises?: WarmupExerciseItem[],
-    newDuration?: number,
-    newName?: string
-  ) => {
-    onChange({
-      id: warmup?.id ?? `warmup_${Math.random().toString(36).substr(2, 9)}`,
-      type: 'warmup',
-      name: newName ?? name,
-      durationMinutes: newDuration ?? durationMinutes,
-      exercises: newExercises ?? exercises,
-    });
-  }, [warmup?.id, name, durationMinutes, exercises, onChange]);
+  const emitChange = useCallback(
+    (newExercises?: WarmupExerciseItem[], newDuration?: number, newName?: string) => {
+      onChange({
+        id: warmup?.id ?? `warmup_${Math.random().toString(36).substr(2, 9)}`,
+        type: 'warmup',
+        name: newName ?? name,
+        durationMinutes: newDuration ?? durationMinutes,
+        exercises: newExercises ?? exercises,
+      });
+    },
+    [warmup?.id, name, durationMinutes, exercises, onChange]
+  );
 
   const handleAddExercise = useCallback(() => {
     const updated = [...exercises, { name: '', duration: 30 }];
@@ -76,13 +70,11 @@ export function WarmupEditor({
   };
 
   const handleExerciseChange = (
-    index: number, 
-    field: keyof WarmupExerciseItem, 
+    index: number,
+    field: keyof WarmupExerciseItem,
     value: string | number
   ) => {
-    const updated = exercises.map((ex, i) => 
-      i === index ? { ...ex, [field]: value } : ex
-    );
+    const updated = exercises.map((ex, i) => (i === index ? { ...ex, [field]: value } : ex));
     setExercises(updated);
     emitChange(updated);
   };
@@ -101,40 +93,40 @@ export function WarmupEditor({
   };
 
   return (
-    <Card className={cn(
-      'p-4 md:p-6 bg-gradient-to-br from-orange-500/10 to-yellow-500/10',
-      'border-orange-500/30 hover:border-orange-500/50 transition-all',
-      className
-    )}>
+    <Card
+      className={cn(
+        'bg-gradient-to-br from-orange-500/10 to-yellow-500/10 p-4 md:p-6',
+        'border-orange-500/30 transition-all hover:border-orange-500/50',
+        className
+      )}
+    >
       {/* Header */}
-      <div className="flex items-center justify-between gap-3 mb-4">
+      <div className="mb-4 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <div className="p-2 rounded-lg bg-orange-500/20">
-            <Flame className="w-5 h-5 text-orange-500" />
+          <div className="rounded-lg bg-orange-500/20 p-2">
+            <Flame className="h-5 w-5 text-orange-500" />
           </div>
-          <div className="flex-1 min-w-0">
+          <div className="min-w-0 flex-1">
             <Input
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
                 emitChange(undefined, undefined, e.target.value);
               }}
-              className="text-lg font-semibold bg-transparent border-none p-0 h-auto focus:ring-0"
+              className="h-auto border-none bg-transparent p-0 text-lg font-semibold focus:ring-0"
               placeholder="Nome riscaldamento"
             />
           </div>
         </div>
         <Badge variant="outline" className="bg-orange-500/20 text-orange-600">
-          <Clock className="w-3 h-3 mr-1" />
+          <Clock className="mr-1 h-3 w-3" />
           {durationMinutes} min
         </Badge>
       </div>
 
       {/* Duration Slider */}
       <div className="mb-4">
-        <label className="text-sm text-muted-foreground block mb-2">
-          Durata Totale
-        </label>
+        <label className="text-muted-foreground mb-2 block text-sm">Durata Totale</label>
         <div className="flex items-center gap-3">
           <input
             type="range"
@@ -146,26 +138,15 @@ export function WarmupEditor({
               setDurationMinutes(val);
               emitChange(undefined, val);
             }}
-            className="flex-1 h-2 bg-orange-200 rounded-lg appearance-none cursor-pointer
-                       [&::-webkit-slider-thumb]:appearance-none
-                       [&::-webkit-slider-thumb]:w-4
-                       [&::-webkit-slider-thumb]:h-4
-                       [&::-webkit-slider-thumb]:rounded-full
-                       [&::-webkit-slider-thumb]:bg-orange-500
-                       [&::-webkit-slider-thumb]:shadow-md
-                       [&::-webkit-slider-thumb]:cursor-pointer"
+            className="h-2 flex-1 cursor-pointer appearance-none rounded-lg bg-orange-200 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-orange-500 [&::-webkit-slider-thumb]:shadow-md"
           />
-          <span className="text-sm font-medium w-12 text-right">
-            {durationMinutes} min
-          </span>
+          <span className="w-12 text-right text-sm font-medium">{durationMinutes} min</span>
         </div>
       </div>
 
       {/* Exercise List */}
       <div className="space-y-2">
-        <label className="text-sm text-muted-foreground">
-          Esercizi ({exercises.length})
-        </label>
+        <label className="text-muted-foreground text-sm">Esercizi ({exercises.length})</label>
         <AnimatePresence mode="popLayout">
           {exercises.map((exercise, index) => (
             <motion.div
@@ -175,21 +156,20 @@ export function WarmupEditor({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center gap-2 p-2 rounded-lg bg-background/50 
-                         border border-border/50 hover:border-orange-500/30 transition-colors"
+              className="bg-background/50 border-border/50 flex items-center gap-2 rounded-lg border p-2 transition-colors hover:border-orange-500/30"
             >
-              <GripVertical className="w-4 h-4 text-muted-foreground/50 cursor-grab" />
-              
+              <GripVertical className="text-muted-foreground/50 h-4 w-4 cursor-grab" />
+
               <Input
                 value={exercise.name}
                 onChange={(e) => handleExerciseChange(index, 'name', e.target.value)}
                 placeholder="Nome esercizio"
-                className="flex-1 h-8 text-sm"
+                className="h-8 flex-1 text-sm"
               />
 
               <button
                 onClick={() => toggleExerciseType(index)}
-                className="px-2 py-1 text-xs rounded bg-muted hover:bg-muted/80 transition-colors"
+                className="bg-muted hover:bg-muted/80 rounded px-2 py-1 text-xs transition-colors"
               >
                 {exercise.duration !== undefined ? 'Tempo' : 'Reps'}
               </button>
@@ -199,18 +179,22 @@ export function WarmupEditor({
                   <Input
                     type="number"
                     value={exercise.duration}
-                    onChange={(e) => handleExerciseChange(index, 'duration', parseInt(e.target.value) || 0)}
-                    className="w-16 h-8 text-sm text-center"
+                    onChange={(e) =>
+                      handleExerciseChange(index, 'duration', parseInt(e.target.value) || 0)
+                    }
+                    className="h-8 w-16 text-center text-sm"
                     min={0}
                   />
-                  <span className="text-xs text-muted-foreground">s</span>
+                  <span className="text-muted-foreground text-xs">s</span>
                 </div>
               ) : (
                 <Input
                   type="number"
                   value={exercise.reps}
-                  onChange={(e) => handleExerciseChange(index, 'reps', parseInt(e.target.value) || 0)}
-                  className="w-16 h-8 text-sm text-center"
+                  onChange={(e) =>
+                    handleExerciseChange(index, 'reps', parseInt(e.target.value) || 0)
+                  }
+                  className="h-8 w-16 text-center text-sm"
                   min={0}
                 />
               )}
@@ -219,9 +203,9 @@ export function WarmupEditor({
                 variant="ghost"
                 size="icon"
                 onClick={() => handleRemoveExercise(index)}
-                className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                className="text-muted-foreground hover:text-destructive h-8 w-8"
               >
-                <Trash2 className="w-4 h-4" />
+                <Trash2 className="h-4 w-4" />
               </Button>
             </motion.div>
           ))}
@@ -232,24 +216,23 @@ export function WarmupEditor({
           variant="outline"
           size="sm"
           onClick={handleAddExercise}
-          className="w-full mt-2 border-dashed border-orange-500/30 text-orange-600 
-                     hover:bg-orange-500/10 hover:border-orange-500/50"
+          className="mt-2 w-full border-dashed border-orange-500/30 text-orange-600 hover:border-orange-500/50 hover:bg-orange-500/10"
         >
-          <Plus className="w-4 h-4 mr-1" />
+          <Plus className="mr-1 h-4 w-4" />
           Aggiungi Esercizio
         </Button>
       </div>
 
       {/* Remove Section Button */}
       {onRemove && (
-        <div className="mt-4 pt-4 border-t border-border/50">
+        <div className="border-border/50 mt-4 border-t pt-4">
           <Button
             variant="ghost"
             size="sm"
             onClick={onRemove}
-            className="w-full text-muted-foreground hover:text-destructive"
+            className="text-muted-foreground hover:text-destructive w-full"
           >
-            <Trash2 className="w-4 h-4 mr-1" />
+            <Trash2 className="mr-1 h-4 w-4" />
             Rimuovi Riscaldamento
           </Button>
         </div>

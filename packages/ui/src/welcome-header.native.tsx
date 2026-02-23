@@ -14,7 +14,8 @@ interface WelcomeHeaderProps {
 
 export function WelcomeHeader({ userName, className, title, subtitle }: WelcomeHeaderProps) {
   return (
-    <Card variant="glass"
+    <Card
+      variant="glass"
       intensity="light"
       className={cn(
         'flex flex-row items-center gap-4 p-6',

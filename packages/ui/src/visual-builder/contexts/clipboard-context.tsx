@@ -38,7 +38,7 @@ export interface ClipboardContextValue<T> {
 /**
  * Creates a typed clipboard context and provider.
  * Use this factory to create domain-specific clipboards (Meal, Food, Exercise, etc.)
- * 
+ *
  * @example
  * const { Provider: MealClipboardProvider, useClipboard: useMealClipboard } = createClipboardContext<Meal>();
  */
@@ -119,7 +119,7 @@ export function createClipboardContext<T>() {
 /**
  * Creates a deep clone of an item, replacing all `id` properties with new unique IDs.
  * Handles nested arrays recursively.
- * 
+ *
  * @param item - The item to clone
  * @param generateId - Function to generate new IDs (e.g., createId from lib-shared)
  */

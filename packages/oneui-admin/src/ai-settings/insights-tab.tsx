@@ -51,7 +51,7 @@ export function InsightsTab({ projectId }: InsightsTabProps) {
                 'flex items-center gap-2 rounded-xl px-4 py-2.5',
                 'text-sm font-medium transition-all duration-200',
                 isActive
-                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/20'
+                  ? 'bg-primary-500 shadow-primary-500/20 text-white shadow-lg'
                   : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
               )}
             >

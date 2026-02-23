@@ -62,7 +62,8 @@ export const ResourceCard = ({
   };
 
   const CardContent = (
-    <Card variant="glass"
+    <Card
+      variant="glass"
       className={cn(
         'group hover:shadow-primary/5 relative h-full cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-xl',
         isSelected && 'ring-2 ring-blue-500 dark:ring-blue-400',

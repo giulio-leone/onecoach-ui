@@ -12,7 +12,10 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { calculateWeightFromIntensity, calculateIntensityFromWeight } from '@giulio-leone/one-workout';
+import {
+  calculateWeightFromIntensity,
+  calculateIntensityFromWeight,
+} from '@giulio-leone/one-workout';
 import { kgToLbs } from '@giulio-leone/lib-shared';
 
 export interface UseBidirectionalWeightCalcParams {

@@ -15,14 +15,9 @@ interface SortableExerciseCardProps {
 }
 
 export function SortableExerciseCard(props: SortableExerciseCardProps) {
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition,
-    isDragging,
-  } = useSortable({ id: props.exercise.id || `exercise-${props.index}` });
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id: props.exercise.id || `exercise-${props.index}`,
+  });
 
   const style = {
     transform: CSS.Transform.toString(transform),

@@ -125,7 +125,11 @@ export function AIGenerationView({
                 <h2 className="mb-2 text-3xl font-bold text-white">{successTitle}</h2>
                 <p className="mb-8 text-neutral-400">{successMessage}</p>
                 {onSuccessAction && (
-                  <Button variant="gradient-primary" onClick={onSuccessAction} className="min-w-[200px]">
+                  <Button
+                    variant="gradient-primary"
+                    onClick={onSuccessAction}
+                    className="min-w-[200px]"
+                  >
                     <div className="flex items-center gap-2">
                       <span>{successActionLabel}</span>
                       <ArrowRight className="h-4 w-4" />

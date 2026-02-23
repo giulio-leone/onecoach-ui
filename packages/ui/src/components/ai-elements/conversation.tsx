@@ -57,7 +57,7 @@ export const ConversationContent = forwardRef<HTMLDivElement, ConversationConten
         className={cn(
           'scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-200',
           'dark:scrollbar-thumb-white/10',
-          'flex-1 overflow-y-auto px-4 pb-2 pt-6 lg:px-8',
+          'flex-1 overflow-y-auto px-4 pt-6 pb-2 lg:px-8',
           className
         )}
         {...props}

@@ -1,6 +1,6 @@
 'use client';
 
-import { ExerciseApprovalStatus } from "@giulio-leone/types/database";
+import { ExerciseApprovalStatus } from '@giulio-leone/types/database';
 
 /**
  * Tipo per i filtri di stato

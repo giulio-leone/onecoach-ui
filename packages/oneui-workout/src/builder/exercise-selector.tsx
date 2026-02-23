@@ -6,7 +6,7 @@ import { Search, X, Dumbbell, Plus } from 'lucide-react';
 // import { getExercises } from '@/app/actions/workouts';
 const getExercises = async (_query: string) => {
   console.warn('getExercises mocked in UI package');
-  return [] as any[];
+  return [] as Exercise[];
 };
 
 import { logger } from '@giulio-leone/lib-shared';

@@ -1,6 +1,6 @@
 /**
  * Section Card
- * 
+ *
  * Reusable card wrapper for admin sections with glassmorphism styling.
  * Extracted from ai-settings-page-client for DRY principle.
  */

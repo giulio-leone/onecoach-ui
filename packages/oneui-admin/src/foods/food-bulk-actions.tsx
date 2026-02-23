@@ -10,8 +10,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { Button, Checkbox } from '@giulio-leone/ui';
 import { Trash2, Edit, X } from 'lucide-react';
-import { useBatchFoodOperations } from '@giulio-leone/features/food/hooks';
-
+import { useBatchFoodOperations } from '@giulio-leone/features-food/hooks';
 
 interface FoodBulkActionsProps {
   selectedCount: number;

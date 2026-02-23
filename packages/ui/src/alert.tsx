@@ -80,11 +80,7 @@ export const AlertDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={`text-sm [&_p]:leading-relaxed ${className || ''}`}
-    {...props}
-  />
+  <div ref={ref} className={`text-sm [&_p]:leading-relaxed ${className || ''}`} {...props} />
 ));
 AlertDescription.displayName = 'AlertDescription';
 
@@ -94,10 +90,8 @@ export const AlertTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h5
     ref={ref}
-    className={`mb-1 font-medium leading-none tracking-tight ${className || ''}`}
+    className={`mb-1 leading-none font-medium tracking-tight ${className || ''}`}
     {...props}
   />
 ));
 AlertTitle.displayName = 'AlertTitle';
-
-

@@ -1,6 +1,6 @@
 /**
  * WizardSlider - Premium Range Slider Component
- * 
+ *
  * A styled range slider with value display, min/max labels, and consistent dark mode support.
  */
 
@@ -38,7 +38,7 @@ export function WizardSlider({
   color = 'green',
 }: WizardSliderProps) {
   const percentage = ((value - min) / (max - min)) * 100;
-  
+
   const colorClasses = {
     blue: {
       track: 'from-blue-500 to-blue-600',
@@ -62,13 +62,9 @@ export function WizardSlider({
   return (
     <div className={cn('space-y-3', className)}>
       <div className="flex items-baseline justify-between gap-2">
-        <h4 className="text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-          {label}
-        </h4>
+        <h4 className="text-sm font-semibold text-neutral-800 dark:text-neutral-200">{label}</h4>
         <div className="flex items-baseline gap-1">
-          <span className={cn('text-xl font-bold tabular-nums', colors.text)}>
-            {value}
-          </span>
+          <span className={cn('text-xl font-bold tabular-nums', colors.text)}>{value}</span>
           {valueLabel && (
             <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
               {valueLabel}
@@ -79,17 +75,20 @@ export function WizardSlider({
 
       <div className="relative">
         {/* Track background */}
-        <div className="absolute inset-y-0 left-0 right-0 flex items-center pointer-events-none">
+        <div className="pointer-events-none absolute inset-y-0 right-0 left-0 flex items-center">
           {/* Track Background */}
           <div className="absolute top-1/2 h-1.5 w-full -translate-y-1/2 rounded-full bg-neutral-200 dark:bg-neutral-800/80" />
 
           {/* Filled Track - Gradient */}
           <div
-            className={cn('absolute top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all duration-150', colors.track)}
+            className={cn(
+              'absolute top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all duration-150',
+              colors.track
+            )}
             style={{ width: `${percentage}%` }}
           />
         </div>
-        
+
         {/* Native range input */}
         <input
           type="range"
@@ -99,7 +98,7 @@ export function WizardSlider({
           value={value}
           onChange={(e) => onChange(Number(e.target.value))}
           className={cn(
-            'relative z-10 w-full h-6 appearance-none bg-transparent cursor-pointer',
+            'relative z-10 h-6 w-full cursor-pointer appearance-none bg-transparent',
             '[&::-webkit-slider-thumb]:appearance-none',
             '[&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4',
             '[&::-webkit-slider-thumb]:rounded-full',
@@ -125,9 +124,9 @@ export function WizardSlider({
         <span>{minLabel || min}</span>
         <span>{maxLabel || max}</span>
       </div>
-      
+
       {description && (
-        <p className="text-[10px] text-neutral-500 dark:text-neutral-400 leading-relaxed">
+        <p className="text-[10px] leading-relaxed text-neutral-500 dark:text-neutral-400">
           {description}
         </p>
       )}

@@ -95,7 +95,7 @@ export const Heading = React.forwardRef<RNText, HeadingProps>(
       headingWeightStyles[weight],
       headingAlignStyles[align],
       !gradient && headingVariantStyles[variant],
-      // Valid NativeWind gradient support depends on specific setup, 
+      // Valid NativeWind gradient support depends on specific setup,
       // but usually requires a View wrapper or MaskedView for text gradients.
       // For now, we mimic the web intent with color fallback if gradient isn't directly supported on Text.
       // If we need true gradients, we should implement a specific GradientText component.
@@ -130,16 +130,16 @@ export interface TextProps extends RNTextProps {
   weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold';
   align?: 'left' | 'center' | 'right' | 'justify';
   variant?:
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'muted'
-  | 'inverse'
-  | 'link'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'info';
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'muted'
+    | 'inverse'
+    | 'link'
+    | 'success'
+    | 'warning'
+    | 'error'
+    | 'info';
   truncate?: boolean;
   lineClamp?: number;
   className?: string;
@@ -272,11 +272,7 @@ export const Label = React.forwardRef<RNText, LabelProps>(
     return (
       <RNText ref={ref} className={classes} style={style} {...props}>
         {children}
-        {required && (
-          <RNText className="ml-1 text-red-600 dark:text-red-400">
-            *
-          </RNText>
-        )}
+        {required && <RNText className="ml-1 text-red-600 dark:text-red-400">*</RNText>}
       </RNText>
     );
   }
@@ -303,11 +299,7 @@ const helperTextVariantStyles = {
 
 export const HelperText = React.forwardRef<RNText, HelperTextProps>(
   ({ variant = 'default', className, style, children, ...props }, ref) => {
-    const classes = cn(
-      'mt-1.5 text-xs leading-4',
-      helperTextVariantStyles[variant],
-      className
-    );
+    const classes = cn('mt-1.5 text-xs leading-4', helperTextVariantStyles[variant], className);
 
     return (
       <RNText ref={ref} className={classes} style={style} {...props}>

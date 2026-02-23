@@ -106,31 +106,36 @@ export function DayEditorShell({
   const colorClasses = {
     primary: {
       // Container
-      container: 'dark:border-blue-500/20 dark:bg-gradient-to-br dark:from-slate-900/90 dark:via-blue-950/40 dark:to-slate-900/90 dark:shadow-[0_0_40px_-10px_rgba(59,130,246,0.2)]',
+      container:
+        'dark:border-blue-500/20 dark:bg-gradient-to-br dark:from-slate-900/90 dark:via-blue-950/40 dark:to-slate-900/90 dark:shadow-[0_0_40px_-10px_rgba(59,130,246,0.2)]',
       accentLine: 'bg-gradient-to-r from-transparent via-blue-400/40 to-transparent',
-      
+
       // Badge
       badge: 'bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400',
-      
+
       // Empty State
-      emptyBorder: 'hover:border-blue-400/50 hover:bg-blue-50/50 dark:hover:border-blue-500/40 dark:hover:bg-blue-950/20',
+      emptyBorder:
+        'hover:border-blue-400/50 hover:bg-blue-50/50 dark:hover:border-blue-500/40 dark:hover:bg-blue-950/20',
       emptyIcon: 'group-hover:shadow-blue-500/10',
-      
+
       // Mobile Shadow
       shadow: 'shadow-blue-500/30',
     },
     emerald: {
       // Container
-      container: 'dark:border-emerald-500/20 dark:bg-gradient-to-br dark:from-slate-900/90 dark:via-emerald-950/40 dark:to-slate-900/90 dark:shadow-[0_0_40px_-10px_rgba(16,185,129,0.2)]',
+      container:
+        'dark:border-emerald-500/20 dark:bg-gradient-to-br dark:from-slate-900/90 dark:via-emerald-950/40 dark:to-slate-900/90 dark:shadow-[0_0_40px_-10px_rgba(16,185,129,0.2)]',
       accentLine: 'bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent',
-      
+
       // Badge
       badge: 'bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400',
-      
+
       // Empty State
-      emptyBorder: 'hover:border-emerald-400/50 hover:bg-emerald-50/50 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-950/20',
-      emptyIcon: 'group-hover:shadow-emerald-500/10 group-hover:bg-emerald-500/20 group-hover:text-emerald-500',
-      
+      emptyBorder:
+        'hover:border-emerald-400/50 hover:bg-emerald-50/50 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-950/20',
+      emptyIcon:
+        'group-hover:shadow-emerald-500/10 group-hover:bg-emerald-500/20 group-hover:text-emerald-500',
+
       // Mobile Shadow
       shadow: 'shadow-emerald-500/30',
     },
@@ -169,14 +174,14 @@ export function DayEditorShell({
       >
         {/* Subtle top accent line */}
         <div className={cn('absolute inset-x-0 top-0 h-px', colors.accentLine)} />
-        
+
         <div className="relative flex flex-col gap-4">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1.5">
-              <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
+              <h2 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl dark:text-white">
                 {title}
               </h2>
-              <div className="flex items-center gap-2.5 text-xs font-medium text-slate-500 dark:text-slate-400 sm:text-sm">
+              <div className="flex items-center gap-2.5 text-xs font-medium text-slate-500 sm:text-sm dark:text-slate-400">
                 <span className={cn('rounded-full px-2 py-0.5', colors.badge)}>
                   {itemCount} {itemLabel}
                 </span>
@@ -193,7 +198,10 @@ export function DayEditorShell({
                 variant={themeColor === 'emerald' ? 'success' : 'primary'}
                 icon={<Plus size={16} className="text-white" />}
                 onPress={onAdd}
-                className={cn('flex-1 shadow-lg sm:w-auto', themeColor === 'emerald' ? 'shadow-emerald-500/20' : 'shadow-blue-500/20')}
+                className={cn(
+                  'flex-1 shadow-lg sm:w-auto',
+                  themeColor === 'emerald' ? 'shadow-emerald-500/20' : 'shadow-blue-500/20'
+                )}
               >
                 {addButtonLabel}
               </Button>
@@ -241,8 +249,12 @@ export function DayEditorShell({
               >
                 {emptyIcon}
               </div>
-              <span className="font-semibold text-slate-700 dark:text-slate-300">{emptyMessage}</span>
-              <span className="mt-1 text-sm text-slate-500 dark:text-slate-400">{emptySubMessage}</span>
+              <span className="font-semibold text-slate-700 dark:text-slate-300">
+                {emptyMessage}
+              </span>
+              <span className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                {emptySubMessage}
+              </span>
             </button>
           )}
         </div>

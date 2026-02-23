@@ -39,7 +39,7 @@ export function LiveSetTracker({
       <div className="relative">
         {/* Outer Gradient Border */}
         <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-80" />
-        
+
         {/* Inner Content */}
         <div className="relative rounded-3xl bg-neutral-900 p-5">
           {/* Header */}
@@ -117,22 +117,21 @@ export function LiveSetTracker({
           <div>
             <span className="text-sm font-bold text-white">
               {actualWeight}
-              <span className="text-neutral-400"> kg</span> ×{' '}
-              {actualReps}
+              <span className="text-neutral-400"> kg</span> × {actualReps}
               <span className="text-neutral-400"> reps</span>
             </span>
           </div>
         </div>
 
         <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => onUpdate(setIndex, { done: false })}
-            className="rounded-lg p-2 text-neutral-600 opacity-0 transition-all group-hover:opacity-100 hover:bg-neutral-800 hover:text-neutral-300"
-            aria-label="Edit"
-          >
-            <Edit2 className="h-4 w-4" />
-          </Button>
+          variant="ghost"
+          size="icon"
+          onClick={() => onUpdate(setIndex, { done: false })}
+          className="rounded-lg p-2 text-neutral-600 opacity-0 transition-all group-hover:opacity-100 hover:bg-neutral-800 hover:text-neutral-300"
+          aria-label="Edit"
+        >
+          <Edit2 className="h-4 w-4" />
+        </Button>
       </div>
     );
   }

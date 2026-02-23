@@ -37,12 +37,15 @@ export function XCard({ heading, description, ...props }: XCardProps) {
     );
     if (onPress) {
       return (
-        <Card className="cursor-pointer" onClick={onPress as any}>
+        <Card
+          className="cursor-pointer"
+          onClick={onPress as unknown as React.MouseEventHandler<HTMLDivElement>}
+        >
           {content}
         </Card>
       );
     }
-    return <Card {...(rest as any)}>{content}</Card>;
+    return <Card {...(rest as React.HTMLAttributes<HTMLDivElement>)}>{content}</Card>;
   }
 
   const { onPress, children, ...rest } = props as PressableProps;

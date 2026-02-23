@@ -225,7 +225,10 @@ export function ExerciseCard({
 
           {/* Overview */}
           {exercise.overview && (
-            <Text className="line-clamp-1 leading-relaxed text-neutral-600 dark:text-neutral-300" size="sm">
+            <Text
+              className="line-clamp-1 leading-relaxed text-neutral-600 dark:text-neutral-300"
+              size="sm"
+            >
               {exercise.overview}
             </Text>
           )}

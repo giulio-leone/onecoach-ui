@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { Input } from '@giulio-leone/ui';
 
-
 interface Option {
   id: string;
   name: string;

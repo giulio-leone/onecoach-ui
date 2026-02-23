@@ -11,7 +11,7 @@ import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
 import { cn } from '@giulio-leone/lib-design-system';
 import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 import { Brain, Sparkles, X } from 'lucide-react';
-import { useUpdateFoodWithAI } from '@giulio-leone/features/food/hooks';
+import { useUpdateFoodWithAI } from '@giulio-leone/features-food/hooks';
 import { logger } from '@giulio-leone/lib-shared';
 interface FoodAiEditModalProps {
   isOpen: boolean;

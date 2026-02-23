@@ -22,8 +22,7 @@ export interface MemoryProgressTrackerProps {
   className?: string;
 }
 
-export function MemoryProgressTracker({
-  userId, className }: MemoryProgressTrackerProps) {
+export function MemoryProgressTracker({ userId, className }: MemoryProgressTrackerProps) {
   const [showAddForm, setShowAddForm] = useState(false);
   const [eventType, setEventType] = useState<TimelineEventType>('progress');
   const [title, setTitle] = useState('');

@@ -11,8 +11,6 @@ import { cn } from '@giulio-leone/lib-design-system';
 import { SetGroupEditor } from '../editor/set-group-editor';
 import type { Exercise, SetGroup } from '@giulio-leone/types/workout';
 
-
-
 // Helper to sanitise BuilderSetGroup to Domain SetGroup
 const toDomainSetGroup = (group: any): SetGroup => {
   const sanitizeSet = (s: any) => ({

@@ -20,14 +20,12 @@ import { useState, useRef, useEffect, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import type { AISettingsTab } from './types';
 
-
 interface AISettingsTabsProps {
   activeTab: AISettingsTab;
   onTabChange: (tab: AISettingsTab) => void;
 }
 
-export function AISettingsTabs({
-  activeTab, onTabChange }: AISettingsTabsProps) {
+export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) {
   const t = useTranslations('admin.aiSettings.navigation');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);

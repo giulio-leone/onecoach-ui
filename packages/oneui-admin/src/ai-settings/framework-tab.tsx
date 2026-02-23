@@ -32,7 +32,6 @@ import { FRAMEWORK_METADATA } from './constants';
 import { toast } from 'sonner';
 import { useTranslations } from 'next-intl';
 
-
 // Icon mapping
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   Vote,
@@ -56,7 +55,7 @@ export function FrameworkTab({
   onFrameworkConfigsChange,
 }: FrameworkTabProps) {
   const frameT = useTranslations('admin.aiSettings.framework');
-  
+
   const [expandedFeature, setExpandedFeature] = useState<string | null>(null);
   const [savingFeature, setSavingFeature] = useState<string | null>(null);
   const [localConfigs, setLocalConfigs] = useState<FrameworkConfig[]>([]);
@@ -116,7 +115,7 @@ export function FrameworkTab({
         });
 
         if (!res.ok) throw new Error();
-        
+
         const label = frameT(`metadata.${feature}.label`);
         toast.success(
           `${label} ${newEnabled ? frameT('status.active').toLowerCase() : frameT('status.inactive').toLowerCase()}`
@@ -345,9 +344,9 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
               {frameT(`metadata.${feature}.config.${key}`)}
             </label>
             {frameT.has(`metadata.${feature}.description`) && (
-               <p className="mb-2 text-xs text-neutral-500">
-                 {/* Optional field description if and where applicable */}
-               </p>
+              <p className="mb-2 text-xs text-neutral-500">
+                {/* Optional field description if and where applicable */}
+              </p>
             )}
 
             {/* Boolean Toggle */}
@@ -425,8 +424,8 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                 {field.options?.map((opt) => (
                   <option key={opt.value} value={opt.value}>
                     {/* Handle special select cases like strategies or feedback levels */}
-                    {key === 'votingStrategy' 
-                      ? frameT(`metadata.${feature}.strategies.${opt.value}`) 
+                    {key === 'votingStrategy'
+                      ? frameT(`metadata.${feature}.strategies.${opt.value}`)
                       : key === 'errorFeedbackLevel'
                         ? frameT(`metadata.${feature}.feedbackLevels.${opt.value}`)
                         : opt.label}
@@ -446,7 +445,7 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                       key={opt.value}
                       onClick={() => {
                         const newValues = isSelected
-                          ? values.filter((v: any) => v !== opt.value)
+                          ? values.filter((v: string) => v !== opt.value)
                           : [...values, opt.value];
                         updateValue(key, newValues);
                       }}

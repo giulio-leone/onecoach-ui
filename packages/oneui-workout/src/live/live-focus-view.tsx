@@ -6,6 +6,7 @@ import { AlertTriangle, ChevronRight, Dumbbell } from 'lucide-react';
 import { EmptyState, Heading, Text, Button } from '@giulio-leone/ui';
 import { getExerciseSets } from '@giulio-leone/one-workout';
 import type { Exercise, ExerciseSet } from '@giulio-leone/schemas';
+import type { Exercise as TypesExercise } from '@giulio-leone/types';
 import type { WorkoutSession } from '@giulio-leone/types/workout';
 import { LiveWorkoutHeader } from './live-workout-header';
 import { LiveExerciseCard } from './live-exercise-card';
@@ -64,11 +65,7 @@ function SegmentedProgress({
           <div
             key={i}
             className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${
-              isCompleted
-                ? 'bg-emerald-500'
-                : isCurrent
-                  ? 'bg-indigo-500'
-                  : 'bg-neutral-700'
+              isCompleted ? 'bg-emerald-500' : isCurrent ? 'bg-indigo-500' : 'bg-neutral-700'
             }`}
           />
         );
@@ -78,14 +75,8 @@ function SegmentedProgress({
 }
 
 /** "Coming Up Next" preview card */
-function UpNextCard({
-  exercise,
-  onClick,
-}: {
-  exercise: Exercise;
-  onClick?: () => void;
-}) {
-  const sets = getExerciseSets(exercise as any);
+function UpNextCard({ exercise, onClick }: { exercise: Exercise; onClick?: () => void }) {
+  const sets = getExerciseSets(exercise as unknown as TypesExercise);
   const setCount = sets.length;
 
   return (
@@ -98,8 +89,12 @@ function UpNextCard({
           <Dumbbell className="h-5 w-5" />
         </div>
         <div>
-          <Heading level={4} size="md" weight="bold" className="text-white">{exercise.name}</Heading>
-          <Text size="sm" className="text-neutral-500">{setCount} Sets</Text>
+          <Heading level={4} size="md" weight="bold" className="text-white">
+            {exercise.name}
+          </Heading>
+          <Text size="sm" className="text-neutral-500">
+            {setCount} Sets
+          </Text>
         </div>
       </div>
       <ChevronRight className="h-5 w-5 text-neutral-600 transition-transform group-hover:translate-x-1 group-hover:text-neutral-400" />
@@ -133,34 +128,32 @@ export function LiveFocusView({
   // Find the first exercise with at least one incomplete set
   const findActiveExerciseIndex = useCallback(() => {
     for (let i = 0; i < exercises.length; i++) {
-      const sets = getExerciseSets(exercises[i] as any);
-      if (sets.some((s: any) => !s.done)) {
+      const sets = getExerciseSets(exercises[i] as unknown as TypesExercise);
+      if (sets.some((s: ExerciseSet) => !s.done)) {
         return i;
       }
     }
     return exercises.length > 0 ? exercises.length - 1 : 0;
   }, [exercises]);
 
-  const [activeExerciseIndex, setActiveExerciseIndex] = useState(
-    findActiveExerciseIndex
-  );
+  const [activeExerciseIndex, setActiveExerciseIndex] = useState(findActiveExerciseIndex);
 
   const currentExercise = exercises[activeExerciseIndex];
   const nextExercise = exercises[activeExerciseIndex + 1];
 
   // Count completed exercises (all sets done)
   const completedExercisesCount = useMemo(() => {
-    return exercises.filter((ex: any) => {
-      const sets = getExerciseSets(ex as any);
-      return sets.length > 0 && sets.every((s: any) => s.done);
+    return exercises.filter((ex: Exercise) => {
+      const sets = getExerciseSets(ex as unknown as TypesExercise);
+      return sets.length > 0 && sets.every((s: ExerciseSet) => s.done);
     }).length;
   }, [exercises]);
 
   // Check if current exercise is fully complete
   const isCurrentExerciseComplete = useMemo(() => {
     if (!currentExercise) return false;
-    const sets = getExerciseSets(currentExercise as any);
-    return sets.length > 0 && sets.every((s: any) => s.done);
+    const sets = getExerciseSets(currentExercise as unknown as TypesExercise);
+    return sets.length > 0 && sets.every((s: ExerciseSet) => s.done);
   }, [currentExercise]);
 
   const handleStop = () => {
@@ -190,7 +183,7 @@ export function LiveFocusView({
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute -top-[30%] left-1/2 h-[60%] w-[80%] -translate-x-1/2 rounded-full bg-indigo-600/10 blur-[150px]" />
         <div className="absolute top-[40%] -left-[20%] h-[50%] w-[50%] rounded-full bg-purple-600/10 blur-[120px]" />
-        <div className="absolute -bottom-[20%] right-[10%] h-[40%] w-[40%] rounded-full bg-pink-600/5 blur-[100px]" />
+        <div className="absolute right-[10%] -bottom-[20%] h-[40%] w-[40%] rounded-full bg-pink-600/5 blur-[100px]" />
       </div>
 
       {/* Header - Fixed */}
@@ -260,7 +253,11 @@ export function LiveFocusView({
             {/* Up Next Preview */}
             {nextExercise && !isCurrentExerciseComplete && (
               <div className="mt-auto pt-8">
-                <Text size="xs" weight="bold" className="mb-3 tracking-widest text-neutral-600 uppercase">
+                <Text
+                  size="xs"
+                  weight="bold"
+                  className="mb-3 tracking-widest text-neutral-600 uppercase"
+                >
                   COMING UP NEXT
                 </Text>
                 <UpNextCard exercise={nextExercise} onClick={handleNextExercise} />
@@ -288,11 +285,7 @@ export function LiveFocusView({
               >
                 Cancel
               </Button>
-              <Button
-                variant="danger"
-                className="flex-1"
-                onClick={onBack}
-              >
+              <Button variant="danger" className="flex-1" onClick={onBack}>
                 End Workout
               </Button>
             </div>

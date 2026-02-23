@@ -6,7 +6,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { Input } from '@giulio-leone/ui';
 import { useDebounce } from '@giulio-leone/hooks';
 
-
 interface BrandOption {
   id: string;
   name: string;

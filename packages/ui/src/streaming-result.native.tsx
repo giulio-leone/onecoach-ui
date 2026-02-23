@@ -1,9 +1,24 @@
 'use client';
 
 import { useState } from 'react';
-import { ActivityIndicator, ScrollView, Text, View, Pressable, StyleSheet, type ViewStyle } from 'react-native';
+import {
+  ActivityIndicator,
+  ScrollView,
+  Text,
+  View,
+  Pressable,
+  StyleSheet,
+  type ViewStyle,
+} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { CheckCircle2, Loader2, ChevronDown, ChevronRight, AlertCircle, Sparkles } from 'lucide-react-native';
+import {
+  CheckCircle2,
+  Loader2,
+  ChevronDown,
+  ChevronRight,
+  AlertCircle,
+  Sparkles,
+} from 'lucide-react-native';
 import { Card } from './card';
 
 export interface StreamEvent {
@@ -41,31 +56,22 @@ function getEventIcon(type: string, message: string) {
   return <Sparkles size={16} color="#a3a3a3" />; // neutral-400
 }
 
-function EventCard({
-  event }: { event: StreamEvent }) {
+function EventCard({ event }: { event: StreamEvent }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const hasData = event.data && Object.keys(event.data).length > 0;
 
   return (
     <Pressable
       onPress={() => hasData && setIsExpanded((prev) => !prev)}
-      style={({ pressed }) => [
-        styles.eventCard,
-        hasData && pressed && styles.eventCardPressed
-      ]}
+      style={({ pressed }) => [styles.eventCard, hasData && pressed && styles.eventCardPressed]}
     >
       <View style={styles.eventRow}>
         <View style={styles.iconContainer}>{getEventIcon(event.type, event.message)}</View>
         <View style={styles.textContainer}>
-          <Text
-            style={styles.eventMessage}
-            numberOfLines={isExpanded ? undefined : 2}
-          >
+          <Text style={styles.eventMessage} numberOfLines={isExpanded ? undefined : 2}>
             {event.message}
           </Text>
-          <Text style={styles.timestamp}>
-            {event.timestamp.toLocaleTimeString()}
-          </Text>
+          <Text style={styles.timestamp}>{event.timestamp.toLocaleTimeString()}</Text>
         </View>
         {hasData && (
           <View style={styles.chevronContainer}>
@@ -80,9 +86,7 @@ function EventCard({
       {isExpanded && hasData && (
         <View style={styles.dataContainer}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <Text style={styles.dataText}>
-              {JSON.stringify(event.data, null, 2)}
-            </Text>
+            <Text style={styles.dataText}>{JSON.stringify(event.data, null, 2)}</Text>
           </ScrollView>
         </View>
       )}
@@ -103,11 +107,15 @@ export function StreamingResult({
   // Process events to merge same-agent updates
   const processedEvents = events.reduce((acc, event) => {
     // Try to find if this agent/role already exists in accumulator
-    const agentId = event.data?.agent || event.data?.role || (event.type.startsWith('agent_') ? event.data?.step : undefined);
-    
+    const agentId =
+      event.data?.agent ||
+      event.data?.role ||
+      (event.type.startsWith('agent_') ? event.data?.step : undefined);
+
     if (agentId) {
-      const existingIndex = acc.findIndex(e => {
-        const eId = e.data?.agent || e.data?.role || (e.type.startsWith('agent_') ? e.data?.step : undefined);
+      const existingIndex = acc.findIndex((e) => {
+        const eId =
+          e.data?.agent || e.data?.role || (e.type.startsWith('agent_') ? e.data?.step : undefined);
         return eId === agentId;
       });
 
@@ -115,18 +123,18 @@ export function StreamingResult({
         // Update existing entry
         const existingEvent = acc[existingIndex];
         if (existingEvent) {
-            acc[existingIndex] = {
+          acc[existingIndex] = {
             ...existingEvent,
             type: event.type,
             message: event.message,
             timestamp: event.timestamp,
-            data: { ...(existingEvent.data || {}), ...event.data }
-            };
+            data: { ...(existingEvent.data || {}), ...event.data },
+          };
         }
         return acc;
       }
     }
-    
+
     // Default: append
     acc.push(event);
     return acc;
@@ -138,19 +146,16 @@ export function StreamingResult({
       <Card variant="glass" style={styles.progressCard} padding="md">
         <View style={styles.progressHeader}>
           <View style={styles.statusContainer}>
-            {isStreaming && <ActivityIndicator size="small" color="#10B981" style={{ marginRight: 8 }} />}
-            <Text
-              style={styles.statusText}
-              numberOfLines={1}
-            >
+            {isStreaming && (
+              <ActivityIndicator size="small" color="#10B981" style={{ marginRight: 8 }} />
+            )}
+            <Text style={styles.statusText} numberOfLines={1}>
               {currentMessage || 'Inizializzazione...'}
             </Text>
           </View>
-          <Text style={styles.progressText}>
-            {Math.round(progress)}%
-          </Text>
+          <Text style={styles.progressText}>{Math.round(progress)}%</Text>
         </View>
-        
+
         {/* Gradient Progress Bar */}
         <View style={styles.progressBarBg}>
           <LinearGradient
@@ -166,9 +171,7 @@ export function StreamingResult({
       <Card variant="glass" style={styles.logCard} padding="none">
         <View style={styles.logHeader}>
           <Sparkles size={16} color="#3b82f6" />
-          <Text style={styles.logTitle}>
-            {title || 'AI Agent Orchestrator'}
-          </Text>
+          <Text style={styles.logTitle}>{title || 'AI Agent Orchestrator'}</Text>
         </View>
         <ScrollView
           style={styles.logScroll}
@@ -178,10 +181,8 @@ export function StreamingResult({
         >
           {processedEvents.length === 0 ? (
             <View style={styles.emptyState}>
-              <Loader2 size={24} color="#3b82f6" /> 
-              <Text style={styles.emptyText}>
-                In attesa di aggiornamenti...
-              </Text>
+              <Loader2 size={24} color="#3b82f6" />
+              <Text style={styles.emptyText}>In attesa di aggiornamenti...</Text>
             </View>
           ) : (
             processedEvents.map((event, index) => (
@@ -271,7 +272,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#737373', // neutral-500
   },
-  
+
   // Event Card Styles
   eventCard: {
     borderRadius: 12,
