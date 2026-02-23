@@ -2,7 +2,7 @@
 
 import { CatalogHeader, CatalogGrid, ResourceCard } from '@giulio-leone/ui';
 import { Dumbbell, UtensilsCrossed, FileText, ArrowRight, type LucideIcon } from 'lucide-react';
-import { useRouter } from '@giulio-leone/ui-layout';
+import { useRouter } from '@giulio-leone/ui';
 import { useTranslations, useLocale } from 'next-intl';
 
 interface CatalogHubClientProps {

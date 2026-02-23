@@ -2,7 +2,11 @@
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -25,96 +29,237 @@
     "incremental": true,
     "baseUrl": "..",
     "paths": {
-      "@onecoach/schemas": ["../onecoach-schemas/src/index.ts"],
-      "@onecoach/schemas/*": ["../onecoach-schemas/src/*"],
-      "@onecoach/ui": ["./packages/ui/src/index.ts"],
-      "@onecoach/ui/*": ["./packages/ui/src/*"],
-      "@onecoach/ui/components": ["./packages/ui/src/components/index.ts"],
-      "@onecoach/ui/components/*": ["./packages/ui/src/components/*"],
-      "@onecoach/hooks": ["./packages/hooks/src/index.ts"],
-      "@onecoach/hooks/*": ["./packages/hooks/src/*"],
-      "@onecoach/lib-design-system": ["./packages/lib-design-system/src/index.ts"],
-      "@onecoach/lib-design-system/*": ["./packages/lib-design-system/src/*"],
-      "design-system": ["./packages/design-system/src/index.ts"],
-      "design-system/*": ["./packages/design-system/src/*"],
-      "hooks": ["./packages/hooks/src/index.ts"],
-      "hooks/*": ["./packages/hooks/src/*"],
-      "ui": ["./packages/ui/src/index.ts"],
-      "ui/*": ["./packages/ui/src/*"],
-      "@onecoach/ui-core": ["./packages/oneui-core/src/index.ts"],
-      "@onecoach/ui-core/*": ["./packages/oneui-core/src/*"],
-      "@onecoach/ui-workout": ["./packages/oneui-workout/src/index.ts"],
-      "@onecoach/ui-workout/*": ["./packages/oneui-workout/src/*"],
-      "@onecoach/ui-workout/builder": ["./packages/oneui-workout/src/builder/index.ts"],
-      "@onecoach/ui-workout/live": ["./packages/oneui-workout/src/live/index.ts"],
-      "@onecoach/ui-nutrition": ["./packages/oneui-nutrition/src/index.ts"],
-      "@onecoach/ui-nutrition/*": ["./packages/oneui-nutrition/src/*"],
-      "@onecoach/ui-flight": ["./packages/oneui-flight/src/index.ts"],
-      "@onecoach/ui-flight/*": ["./packages/oneui-flight/src/*"],
-      "@onecoach/ui-coach": ["./packages/oneui-coach/src/index.ts"],
-      "@onecoach/ui-coach/*": ["./packages/oneui-coach/src/*"],
-      
-      "@onecoach/types": ["../onecoach-types/src/index.ts"],
-      "@onecoach/types/*": ["../onecoach-types/src/*"],
-      "@onecoach/types/client": ["../onecoach-types/src/index.client.ts"],
-      
-      "@onecoach/types-nutrition": ["../onecoach-types/onecoach-types-nutrition/src/index.ts"],
-      "@onecoach/types-nutrition/*": ["../onecoach-types/onecoach-types-nutrition/src/*"],
-      "@onecoach/types-workout": ["../onecoach-types/onecoach-types-workout/src/index.ts"],
-      "@onecoach/types-workout/*": ["../onecoach-types/onecoach-types-workout/src/*"],
-      "@onecoach/types-domain": ["../onecoach-types/onecoach-types-domain/src/index.ts"],
-      "@onecoach/types-domain/*": ["../onecoach-types/onecoach-types-domain/src/*"],
-      "@onecoach/types-core": ["../onecoach-types/onecoach-types-core/src/index.ts"],
-      "@onecoach/types-core/*": ["../onecoach-types/onecoach-types-core/src/*"],
-      "@onecoach/types-ai": ["../onecoach-types/onecoach-types-ai/src/index.ts"],
-      "@onecoach/types-ai/*": ["../onecoach-types/onecoach-types-ai/src/*"],
-      "@onecoach/types-chat": ["../onecoach-types/onecoach-types-chat/src/index.ts"],
-      "@onecoach/types-chat/*": ["../onecoach-types/onecoach-types-chat/src/*"],
-      "@onecoach/types-analytics": ["../onecoach-types/onecoach-types-analytics/src/index.ts"],
-      "@onecoach/types-analytics/*": ["../onecoach-types/onecoach-types-analytics/src/*"],
-      "@onecoach/types-ui": ["../onecoach-types/onecoach-types-ui/src/index.ts"],
-      "@onecoach/types-ui/*": ["../onecoach-types/onecoach-types-ui/src/*"],
-      "@onecoach/types-database": ["../onecoach-types/onecoach-types-database/src/index.ts"],
-      "@onecoach/types-database/*": ["../onecoach-types/onecoach-types-database/src/*"],
-      
-      "@onecoach/lib-shared": ["../onecoach-shared/packages/lib-shared/src/index.ts"],
-      "@onecoach/lib-shared/*": ["../onecoach-shared/packages/lib-shared/src/*"],
-      
-      "@onecoach/lib-stores": ["../onecoach-backend/packages/lib-stores/src/index.ts"],
-      "@onecoach/lib-stores/*": ["../onecoach-backend/packages/lib-stores/src/*"],
-      
-      "@onecoach/features": ["../features/index.ts"],
-      "@onecoach/features/*": ["../features/*"],
-      "@onecoach/features/workout": ["../features/workout/index.ts"],
-      "@onecoach/features/workout/*": ["../features/workout/*"],
-      "@onecoach/features/workout/hooks": ["../features/workout/hooks/index.ts"],
-      
-      "@onecoach/features/food": ["../features/food/index.ts"],
-      "@onecoach/features/food/*": ["../features/food/*"],
-      "@onecoach/features/food/hooks": ["../features/food/hooks/index.ts"],
-      
-      "@onecoach/features/coach": ["../features/coach/index.ts"],
-      "@onecoach/features/coach/*": ["../features/coach/*"],
-      "@onecoach/features/coach/hooks": ["../features/coach/hooks/index.ts"],
-
-      "@onecoach/features/nutrition": ["../features/nutrition/index.ts"],
-      "@onecoach/features/nutrition/*": ["../features/nutrition/*"],
-      "@onecoach/features/nutrition/hooks": ["../features/nutrition/hooks/index.ts"],
-
-      "@onecoach/features/exercise": ["../features/exercise/index.ts"],
-      "@onecoach/features/exercise/*": ["../features/exercise/*"],
-      "@onecoach/features/exercise/hooks": ["../features/exercise/hooks/index.ts"],
-      
-      "@onecoach/lib-visual-builder": ["../onecoach-backend/packages/lib-visual-builder/src/index.ts"],
-      "@onecoach/lib-visual-builder/*": ["../onecoach-backend/packages/lib-visual-builder/src/*"],
-      
-      "@onecoach/one-workout/utils/progression-calculator": ["../one-workout/src/core/calculators/progression-calculator.ts"],
-      "@onecoach/one-workout": ["../one-workout/src/index.ts"],
-      
-      "@onecoach/lib-workout/intensity-calculator": ["../one-workout/src/core/calculators/intensity-calculator.ts"],
-      "@onecoach/lib-workout": ["../one-workout/src/index.ts"],
-      "@onecoach/lib-workout/*": ["../one-workout/src/*"]
-
+      "@onecoach/schemas": [
+        "../onecoach-schemas/src/index.ts"
+      ],
+      "@onecoach/schemas/*": [
+        "../onecoach-schemas/src/*"
+      ],
+      "@onecoach/ui": [
+        "./packages/ui/src/index.ts"
+      ],
+      "@onecoach/ui/*": [
+        "./packages/ui/src/*"
+      ],
+      "@onecoach/ui/components": [
+        "./packages/ui/src/components/index.ts"
+      ],
+      "@onecoach/ui/components/*": [
+        "./packages/ui/src/components/*"
+      ],
+      "@onecoach/hooks": [
+        "./packages/hooks/src/index.ts"
+      ],
+      "@onecoach/hooks/*": [
+        "./packages/hooks/src/*"
+      ],
+      "@onecoach/lib-design-system": [
+        "./packages/lib-design-system/src/index.ts"
+      ],
+      "@onecoach/lib-design-system/*": [
+        "./packages/lib-design-system/src/*"
+      ],
+      "design-system": [
+        "./packages/design-system/src/index.ts"
+      ],
+      "design-system/*": [
+        "./packages/design-system/src/*"
+      ],
+      "hooks": [
+        "./packages/hooks/src/index.ts"
+      ],
+      "hooks/*": [
+        "./packages/hooks/src/*"
+      ],
+      "ui": [
+        "./packages/ui/src/index.ts"
+      ],
+      "ui/*": [
+        "./packages/ui/src/*"
+      ],
+      "@onecoach/ui-workout": [
+        "./packages/oneui-workout/src/index.ts"
+      ],
+      "@onecoach/ui-workout/*": [
+        "./packages/oneui-workout/src/*"
+      ],
+      "@onecoach/ui-workout/builder": [
+        "./packages/oneui-workout/src/builder/index.ts"
+      ],
+      "@onecoach/ui-workout/live": [
+        "./packages/oneui-workout/src/live/index.ts"
+      ],
+      "@onecoach/ui-nutrition": [
+        "./packages/oneui-nutrition/src/index.ts"
+      ],
+      "@onecoach/ui-nutrition/*": [
+        "./packages/oneui-nutrition/src/*"
+      ],
+      "@onecoach/ui-flight": [
+        "./packages/oneui-flight/src/index.ts"
+      ],
+      "@onecoach/ui-flight/*": [
+        "./packages/oneui-flight/src/*"
+      ],
+      "@onecoach/ui-coach": [
+        "./packages/oneui-coach/src/index.ts"
+      ],
+      "@onecoach/ui-coach/*": [
+        "./packages/oneui-coach/src/*"
+      ],
+      "@onecoach/types": [
+        "../onecoach-types/src/index.ts"
+      ],
+      "@onecoach/types/*": [
+        "../onecoach-types/src/*"
+      ],
+      "@onecoach/types/client": [
+        "../onecoach-types/src/index.client.ts"
+      ],
+      "@onecoach/types-nutrition": [
+        "../onecoach-types/onecoach-types-nutrition/src/index.ts"
+      ],
+      "@onecoach/types-nutrition/*": [
+        "../onecoach-types/onecoach-types-nutrition/src/*"
+      ],
+      "@onecoach/types-workout": [
+        "../onecoach-types/onecoach-types-workout/src/index.ts"
+      ],
+      "@onecoach/types-workout/*": [
+        "../onecoach-types/onecoach-types-workout/src/*"
+      ],
+      "@onecoach/types-domain": [
+        "../onecoach-types/onecoach-types-domain/src/index.ts"
+      ],
+      "@onecoach/types-domain/*": [
+        "../onecoach-types/onecoach-types-domain/src/*"
+      ],
+      "@onecoach/types-core": [
+        "../onecoach-types/onecoach-types-core/src/index.ts"
+      ],
+      "@onecoach/types-core/*": [
+        "../onecoach-types/onecoach-types-core/src/*"
+      ],
+      "@onecoach/types-ai": [
+        "../onecoach-types/onecoach-types-ai/src/index.ts"
+      ],
+      "@onecoach/types-ai/*": [
+        "../onecoach-types/onecoach-types-ai/src/*"
+      ],
+      "@onecoach/types-chat": [
+        "../onecoach-types/onecoach-types-chat/src/index.ts"
+      ],
+      "@onecoach/types-chat/*": [
+        "../onecoach-types/onecoach-types-chat/src/*"
+      ],
+      "@onecoach/types-analytics": [
+        "../onecoach-types/onecoach-types-analytics/src/index.ts"
+      ],
+      "@onecoach/types-analytics/*": [
+        "../onecoach-types/onecoach-types-analytics/src/*"
+      ],
+      "@onecoach/types-ui": [
+        "../onecoach-types/onecoach-types-ui/src/index.ts"
+      ],
+      "@onecoach/types-ui/*": [
+        "../onecoach-types/onecoach-types-ui/src/*"
+      ],
+      "@onecoach/types-database": [
+        "../onecoach-types/onecoach-types-database/src/index.ts"
+      ],
+      "@onecoach/types-database/*": [
+        "../onecoach-types/onecoach-types-database/src/*"
+      ],
+      "@onecoach/lib-shared": [
+        "../onecoach-shared/packages/lib-shared/src/index.ts"
+      ],
+      "@onecoach/lib-shared/*": [
+        "../onecoach-shared/packages/lib-shared/src/*"
+      ],
+      "@onecoach/lib-stores": [
+        "../onecoach-backend/packages/lib-stores/src/index.ts"
+      ],
+      "@onecoach/lib-stores/*": [
+        "../onecoach-backend/packages/lib-stores/src/*"
+      ],
+      "@onecoach/features": [
+        "../features/index.ts"
+      ],
+      "@onecoach/features/*": [
+        "../features/*"
+      ],
+      "@onecoach/features/workout": [
+        "../features/workout/index.ts"
+      ],
+      "@onecoach/features/workout/*": [
+        "../features/workout/*"
+      ],
+      "@onecoach/features/workout/hooks": [
+        "../features/workout/hooks/index.ts"
+      ],
+      "@onecoach/features/food": [
+        "../features/food/index.ts"
+      ],
+      "@onecoach/features/food/*": [
+        "../features/food/*"
+      ],
+      "@onecoach/features/food/hooks": [
+        "../features/food/hooks/index.ts"
+      ],
+      "@onecoach/features/coach": [
+        "../features/coach/index.ts"
+      ],
+      "@onecoach/features/coach/*": [
+        "../features/coach/*"
+      ],
+      "@onecoach/features/coach/hooks": [
+        "../features/coach/hooks/index.ts"
+      ],
+      "@onecoach/features/nutrition": [
+        "../features/nutrition/index.ts"
+      ],
+      "@onecoach/features/nutrition/*": [
+        "../features/nutrition/*"
+      ],
+      "@onecoach/features/nutrition/hooks": [
+        "../features/nutrition/hooks/index.ts"
+      ],
+      "@onecoach/features/exercise": [
+        "../features/exercise/index.ts"
+      ],
+      "@onecoach/features/exercise/*": [
+        "../features/exercise/*"
+      ],
+      "@onecoach/features/exercise/hooks": [
+        "../features/exercise/hooks/index.ts"
+      ],
+      "@onecoach/lib-visual-builder": [
+        "../onecoach-backend/packages/lib-visual-builder/src/index.ts"
+      ],
+      "@onecoach/lib-visual-builder/*": [
+        "../onecoach-backend/packages/lib-visual-builder/src/*"
+      ],
+      "@onecoach/one-workout/utils/progression-calculator": [
+        "../one-workout/src/core/calculators/progression-calculator.ts"
+      ],
+      "@onecoach/one-workout": [
+        "../one-workout/src/index.ts"
+      ],
+      "@onecoach/lib-workout/intensity-calculator": [
+        "../one-workout/src/core/calculators/intensity-calculator.ts"
+      ],
+      "@onecoach/lib-workout": [
+        "../one-workout/src/index.ts"
+      ],
+      "@onecoach/lib-workout/*": [
+        "../one-workout/src/*"
+      ],
+      "@onecoach/ui/core": [
+        "./packages/ui/src/core/index.ts"
+      ],
+      "@onecoach/ui/core/*": [
+        "./packages/ui/src/core/*"
+      ]
     }
   }
 }

@@ -4,4 +4,4 @@ export {
   type ButtonVariant,
   type ButtonSize,
   type ButtonSharedProps,
-} from '@giulio-leone/ui-core';
+} from './core/components/button.shared';

@@ -12,7 +12,7 @@ import { useMemo, useCallback, memo } from 'react';
 import { ChevronDown, ChevronRight, Plus, Trash2, Bookmark, GripVertical } from 'lucide-react';
 import { FoodItemCard } from './food-item-card';
 import { FoodComboboxSection } from './food-combobox-section';
-import { SortableList, SortableItem, type SortableItemRenderProps } from '@giulio-leone/ui-core';
+import { SortableList, SortableItem, type SortableItemRenderProps } from '@giulio-leone/ui';
 import { createFoodDragId } from '@giulio-leone/lib-shared';
 import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';

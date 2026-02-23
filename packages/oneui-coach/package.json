@@ -28,8 +28,6 @@
     "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/types": "workspace:*",
     "@giulio-leone/ui": "workspace:*",
-    "@giulio-leone/ui-analytics": "workspace:*",
-    "@giulio-leone/ui-marketplace": "workspace:*",
     "lucide-react": "^0.562.0"
   },
   "peerDependencies": {

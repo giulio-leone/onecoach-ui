@@ -54,7 +54,7 @@ export * from './date-range-picker';
 export * from './typography';
 
 // Design System - Layout
-export * from './layout';
+export * from './layout-primitives';
 
 // Design System - Form Controls
 // Design System - Form Controls
@@ -160,5 +160,30 @@ export * from './chat/chat-input-area';
 export * from './program-card';
 export * from './programs-page-layout';
 
-// Import Modal (generic file upload component)
-export { ImportModal } from '@giulio-leone/ui-core';
+// Core (merged from @onecoach/ui-core) — selective re-exports to avoid conflicts
+export {
+  // DnD
+  DndProvider, SortableItem, SortableList, ClientOnlyDndWrapper,
+  // Providers
+  RealtimeProvider, AdminRealtimeProvider,
+  SupabaseProvider, useSupabaseContext,
+  DialogRenderer, SessionProvider, IntlProvider,
+  PwaProvider, QueryProvider, ThemeInitializer,
+  ReactNativeWebPolyfill,
+  // Unique components
+  GlassContainer, ScaleTouch, PulseIndicator,
+  ProgressRing, NotesInput, ImportModal,
+  SelectionToolbar,
+} from './core';
+export type { SortableItemRenderProps } from './core';
+
+// Domain modules (merged packages)
+export * from './copilot';
+export * from './features';
+export * from './agenda';
+// analytics: use @giulio-leone/ui/analytics (names conflict with ./dashboard)
+// messages: use @giulio-leone/ui/messages (names conflict with ./components)
+export * from './marketplace';
+export * from './layout';
+export * from './auth';
+export * from './pricing';

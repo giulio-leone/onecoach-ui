@@ -16,6 +16,6 @@ export {
   Modal,
   ModalFooter,
   getDialogInputValue,
-} from '@giulio-leone/ui-core';
+} from './core/components/dialog';
 
-export type { SimpleDialogProps, ModalProps, DialogType } from '@giulio-leone/ui-core';
+export type { SimpleDialogProps, ModalProps, DialogType } from './core/components/dialog';

@@ -5,4 +5,4 @@ export {
   type ButtonProps,
   type ButtonVariant,
   type ButtonSize,
-} from '@giulio-leone/ui-core';
+} from './core/components/button';

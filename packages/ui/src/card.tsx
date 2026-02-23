@@ -7,4 +7,4 @@ export {
   CardFooter,
   CardAction,
   type CardProps,
-} from '@giulio-leone/ui-core';
+} from './core/components/card';

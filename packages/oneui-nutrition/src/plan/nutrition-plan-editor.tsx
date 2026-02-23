@@ -24,7 +24,7 @@ import {
 } from '@dnd-kit/core';
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 // Next.js specific components - manteniamo import da apps/next
-import { SortableList } from '@giulio-leone/ui-core';
+import { SortableList } from '@giulio-leone/ui';
 // import { WeekCard, FoodDetailDrawer } from '@giulio-leone/ui-nutrition'; // Internal imports now
 import { WeekCard } from './week-card';
 // FoodDetailDrawer is in food? or builder?

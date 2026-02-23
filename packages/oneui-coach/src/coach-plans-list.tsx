@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl';
 import {
   MarketplacePlanCard,
   type MarketplacePlanCardProps,
-} from '@giulio-leone/ui-marketplace';
+} from '@giulio-leone/ui';
 import { EmptyState } from '@giulio-leone/ui';
 import { Package } from 'lucide-react';
 

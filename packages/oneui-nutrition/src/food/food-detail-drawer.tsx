@@ -8,7 +8,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import type { FoodItem } from '@giulio-leone/types/nutrition';
-import { Button } from '@giulio-leone/ui-core';
+import { Button } from '@giulio-leone/ui';
 import { Drawer } from '@giulio-leone/ui';
 import {
   Edit3,

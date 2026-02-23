@@ -1,1 +1,1 @@
-export { Input, type InputProps } from '@giulio-leone/ui-core';
+export { Input, type InputProps } from './core/components/input';

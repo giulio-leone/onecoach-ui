@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Card, CardContent, CardHeader, CardTitle } from '@giulio-leone/ui-core';
+import { Card, CardContent, CardHeader, CardTitle } from './core/components/card';
 import { Progress } from './progress';
 import {
   Dumbbell,

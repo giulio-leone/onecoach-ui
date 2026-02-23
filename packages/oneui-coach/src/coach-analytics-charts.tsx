@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 import {
   AnalyticsChart as ProgressChart,
   type AnalyticsChartDataPoint as ChartDataPoint,
-} from '@giulio-leone/ui-analytics';
+} from '@giulio-leone/ui/analytics';
 import { LoadingIndicator } from '@giulio-leone/ui';
 import { logger } from '@giulio-leone/lib-shared';
 

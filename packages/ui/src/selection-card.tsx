@@ -1,4 +1,4 @@
 'use client';
 
-export { SelectionCard } from '@giulio-leone/ui-core';
-export type { SelectionCardProps } from '@giulio-leone/ui-core';
+export { SelectionCard } from './core/components/wizard/selection-card';
+export type { SelectionCardProps } from './core/components/wizard/selection-card';

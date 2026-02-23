@@ -14,7 +14,7 @@ import { Plus } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import { useWorkouts, useDeleteWorkout, useDuplicateWorkout } from '@giulio-leone/features/workout';
 import { ErrorState } from '@giulio-leone/ui/components';
-import { SelectionToolbar, useSupabaseContext } from '@giulio-leone/ui-core';
+import { SelectionToolbar, useSupabaseContext } from '@giulio-leone/ui';
 import { useUserActiveGenerations, type GenerationWithStatus } from '@giulio-leone/hooks';
 import { DeployToClientsModal } from '@giulio-leone/ui-coach';
 import { WorkoutCard } from './workout-card';

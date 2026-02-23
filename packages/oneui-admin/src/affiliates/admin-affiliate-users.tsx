@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
-import { useRouter } from '@giulio-leone/ui-layout';
+import { useRouter } from '@giulio-leone/ui';
 import { CatalogToolbar, CatalogGrid, ResourceCard } from '@giulio-leone/ui';
 
 interface AdminAffiliateUsersProps {

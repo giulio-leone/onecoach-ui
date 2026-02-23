@@ -19,7 +19,7 @@ import {
 import { DifficultyLevel } from '@giulio-leone/types/workout';
 import { getWeekAndDayFromDate, getWorkoutProgramWeek } from '@giulio-leone/one-workout';
 import { Card, Spinner } from '@giulio-leone/ui';
-import { GlassContainer, ScaleTouch } from '@giulio-leone/ui-core';
+import { GlassContainer, ScaleTouch } from '@giulio-leone/ui';
 
 import { dialog } from '@giulio-leone/lib-stores';
 

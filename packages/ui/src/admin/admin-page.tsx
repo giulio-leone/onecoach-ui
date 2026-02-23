@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Container, Stack } from '../layout';
+import { Container, Stack } from '../layout-primitives';
 
 type AdminPageProps = {
   children: React.ReactNode;

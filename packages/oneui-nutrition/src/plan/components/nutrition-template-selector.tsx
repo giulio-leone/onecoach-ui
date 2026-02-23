@@ -13,7 +13,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { Button } from '@giulio-leone/ui';
 import { SelectionActionBarWeb } from './selection-action-bar-web';
-import { EmptyState } from '@giulio-leone/ui-core';
+import { EmptyState } from '@giulio-leone/ui';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import { logger } from '@giulio-leone/lib-shared';
 import type { NutritionTemplate, NutritionTemplateType } from '@giulio-leone/types/nutrition';

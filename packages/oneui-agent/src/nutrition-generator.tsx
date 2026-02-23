@@ -14,7 +14,7 @@ import { cn, darkModeClasses } from '@giulio-leone/lib-design-system';
 import { useProfile } from '@giulio-leone/lib-api/hooks';
 
 import { Scale, Dumbbell, Zap, Trophy, Leaf } from 'lucide-react';
-import { SelectionCard, WizardRadioGroup, WizardSlider } from '@giulio-leone/ui-core';
+import { SelectionCard, WizardRadioGroup, WizardSlider } from '@giulio-leone/ui';
 
 import type { NutritionGoalCode as Goal, DietaryRestrictions } from '@giulio-leone/types/nutrition';
 

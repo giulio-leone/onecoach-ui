@@ -29,7 +29,7 @@ export * from './image';
 export * from './input';
 export * from './input-group';
 export * from './label';
-export * from './layout';
+export * from './layout-primitives';
 export * from './loading-indicator';
 export * from './modern-sidebar';
 export * from './progress';
@@ -82,8 +82,30 @@ export * from './visual-builder/components/base/EditorHeader';
 export * from './visual-builder/components/base/VersionHistory';
 export * from './visual-builder/contexts/clipboard-context';
 
-// Exported from ui-core below
+// Core (merged from @onecoach/ui-core) — selective re-exports to avoid conflicts
+export {
+  // DnD
+  DndProvider, SortableItem, SortableList, ClientOnlyDndWrapper,
+  // Providers
+  RealtimeProvider, AdminRealtimeProvider,
+  SupabaseProvider, useSupabaseContext,
+  DialogRenderer, SessionProvider, IntlProvider,
+  PwaProvider, QueryProvider, ThemeInitializer,
+  ReactNativeWebPolyfill,
+  // Unique components
+  GlassContainer, ScaleTouch, PulseIndicator,
+  ProgressRing, NotesInput, ImportModal,
+  SelectionToolbar,
+} from './core';
+export type { SortableItemRenderProps } from './core';
 
-// Re-export common UI Core components that are not wrapped
-export { GlassContainer } from '@giulio-leone/ui-core';
-export { ScaleTouch, PulseIndicator, AnimatedNumber, ImportModal, DialogRenderer } from '@giulio-leone/ui-core';
+// Domain modules (merged packages)
+export * from './copilot';
+export * from './features';
+export * from './agenda';
+// analytics: use @giulio-leone/ui/analytics (names conflict with ./dashboard)
+// messages: use @giulio-leone/ui/messages (names conflict with ./components)
+export * from './marketplace';
+export * from './layout';
+export * from './auth';
+export * from './pricing';
