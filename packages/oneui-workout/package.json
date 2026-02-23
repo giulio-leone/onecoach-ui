@@ -29,7 +29,6 @@
     "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
-    "@giulio-leone/lib-exercise": "workspace:*",
     "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/one-workout": "workspace:*",
     "@giulio-leone/schemas": "workspace:*",

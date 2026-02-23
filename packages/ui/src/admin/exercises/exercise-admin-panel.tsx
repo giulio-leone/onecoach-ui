@@ -29,7 +29,7 @@ import {
   useBatchExerciseOperations,
 } from '@giulio-leone/features/exercise/hooks';
 import type { ExercisesResponse } from '@giulio-leone/lib-api-client';
-import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
+import type { LocalizedExercise } from '@giulio-leone/one-workout';
 import type { AdminExercise } from './types';
 
 import { ExercisePagination } from './exercise-pagination';

@@ -15,7 +15,7 @@
 
 import { useCallback, useRef, useState, useEffect } from 'react';
 import { Search, Loader2, X, Check } from 'lucide-react';
-import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
+import type { LocalizedExercise } from '@giulio-leone/one-workout';
 import { useDebounce } from '@giulio-leone/hooks';
 import { useTranslations } from 'next-intl';
 

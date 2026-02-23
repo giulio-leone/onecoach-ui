@@ -21,7 +21,7 @@ import { logger } from '@giulio-leone/lib-shared';
 import { useMagicAnimation } from '@giulio-leone/lib-stores';
 import { useMaxesListRealtime } from '@giulio-leone/hooks';
 import { useTranslations } from 'next-intl';
-import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
+import type { LocalizedExercise } from '@giulio-leone/one-workout';
 
 interface MissingOneRMModalProps {
   missing: MissingOneRM[];

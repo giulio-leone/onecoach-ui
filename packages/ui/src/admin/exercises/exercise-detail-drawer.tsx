@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
  * Segue i principi KISS, SOLID, DRY.
  * Pattern coerente con FoodDetailDrawer per UX uniforme.
  */
-import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
+import type { LocalizedExercise } from '@giulio-leone/one-workout';
 import { ExerciseApprovalStatus } from '@giulio-leone/types/client';
 import { Button, Drawer, LoadingIndicator } from '@giulio-leone/ui';
 import {
