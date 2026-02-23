@@ -8,7 +8,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { semanticColors } from '@giulio-leone/constants';
+import { semanticColors } from '@giulio-leone/lib-shared';
 
 export type DialogType = 'alert' | 'confirm' | 'prompt' | 'info' | 'success' | 'warning' | 'error';
 

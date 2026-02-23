@@ -14,7 +14,7 @@ import { Coins } from 'lucide-react';
 import { Button } from '@giulio-leone/ui';
 import { CreditCheckoutModal } from './credit-checkout-modal';
 import { PromoCodeInput } from './promo-code-input';
-import { CREDIT_PACK_OPTIONS } from '@giulio-leone/constants';
+import { CREDIT_PACK_OPTIONS } from '@giulio-leone/lib-shared';
 import type { CreditPackOption } from "@giulio-leone/types/domain";
 
 export function CreditPacksSection() {

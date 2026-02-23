@@ -10,7 +10,7 @@
 import { useState, useEffect, useRef, useCallback, startTransition } from 'react';
 import { useCompletion } from '@ai-sdk/react';
 import type { ModelTier } from '@giulio-leone/lib-ai';
-import { AI_REASONING_CONFIG } from '@giulio-leone/constants';
+import { AI_REASONING_CONFIG } from '@giulio-leone/lib-shared';
 import type { ExtendedMessage } from "@giulio-leone/types/chat";
 import type { NutritionPlan } from "@giulio-leone/types/nutrition";
 import type { WorkoutProgram } from "@giulio-leone/types/workout";

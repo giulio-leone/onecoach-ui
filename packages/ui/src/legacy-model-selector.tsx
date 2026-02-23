@@ -8,7 +8,7 @@
 'use client';
 
 import { Settings, Sparkles, Zap } from 'lucide-react';
-import { AI_MODELS } from '@giulio-leone/constants';
+import { AI_MODELS } from '@giulio-leone/lib-shared';
 import type { AiModel } from '@giulio-leone/types/chat';
 
 export interface ModelSelectorProps {
