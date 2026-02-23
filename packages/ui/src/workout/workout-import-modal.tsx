@@ -312,7 +312,7 @@ export function WorkoutImportModal({
         }))
       );
       // Chiama API di import
-      const response = await fetch('/api/workout/import', {
+      const response = await fetch('/api/workouts/import', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -139,7 +139,7 @@ export function useWorkoutGeneration(
 
       while (attempts < maxAttempts) {
         try {
-          const response = await fetch(`/api/workout/generate?runId=${runId}`);
+          const response = await fetch(`/api/workouts/generate?runId=${runId}`);
           if (!response.ok) {
             // If 404, maybe workflow hasn't started yet or is lost
             if (response.status === 404) {
@@ -223,7 +223,7 @@ export function useWorkoutGeneration(
       let currentRunId: string | null = null;
 
       try {
-        const response = await fetch('/api/workout/generate', {
+        const response = await fetch('/api/workouts/generate', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(input),
