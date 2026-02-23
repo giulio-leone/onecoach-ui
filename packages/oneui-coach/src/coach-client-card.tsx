@@ -33,7 +33,7 @@ export function CoachClientCard({ client }: CoachClientCardProps) {
   const initials = displayName
     .split(' ')
     .filter(Boolean)
-    .map((n: any) => n[0])
+    .map((n: string) => n[0])
     .join('')
     .toUpperCase()
     .slice(0, 2);
@@ -57,12 +57,19 @@ export function CoachClientCard({ client }: CoachClientCardProps) {
                   bordered
                 />
                 <div>
-                  <Heading level={3} size="md" weight="semibold" className="line-clamp-1 text-neutral-900 dark:text-neutral-100">
+                  <Heading
+                    level={3}
+                    size="md"
+                    weight="semibold"
+                    className="line-clamp-1 text-neutral-900 dark:text-neutral-100"
+                  >
                     {displayName}
                   </Heading>
                   <div className="flex items-center gap-1.5 text-xs text-neutral-500">
                     <Clock className="h-3 w-3" />
-                    <Text size="xs" className="text-neutral-500">{lastActiveText}</Text>
+                    <Text size="xs" className="text-neutral-500">
+                      {lastActiveText}
+                    </Text>
                   </div>
                 </div>
               </div>
@@ -103,11 +110,13 @@ export function CoachClientCard({ client }: CoachClientCardProps) {
                   {t('purchasedPrograms')}
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {client.purchases.slice(0, 2).map((purchase: any) => (
-                    <Badge key={purchase.id} variant="neutral" className="max-w-[140px] truncate">
-                      {purchase.planTitle}
-                    </Badge>
-                  ))}
+                  {client.purchases
+                    .slice(0, 2)
+                    .map((purchase: CoachClient['purchases'][number]) => (
+                      <Badge key={purchase.id} variant="neutral" className="max-w-[140px] truncate">
+                        {purchase.planTitle}
+                      </Badge>
+                    ))}
                   {client.purchases.length > 2 && (
                     <Badge variant="outline" className="text-neutral-500">
                       +{client.purchases.length - 2} {t('others')}

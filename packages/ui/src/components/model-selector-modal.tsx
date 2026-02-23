@@ -119,7 +119,7 @@ export function ModelSelectorModal({
               </div>
             ) : (
               <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
-                {filteredModels.map((model: any) => (
+                {filteredModels.map((model: ModelOption) => (
                   <button
                     key={model.id}
                     className={cn(

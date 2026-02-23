@@ -43,7 +43,7 @@ interface UserDetailModalProps {
   onClose: () => void;
   onSuccess?: () => void;
 }
-/* interface UserFormValues {
+interface UserFormValues {
   email: string;
   name: string;
   password: string;
@@ -52,7 +52,7 @@ interface UserDetailModalProps {
   credits: number;
   creditAdjustment: number;
   reason: string;
-} */
+}
 export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetailModalProps) {
   const t = useTranslations('admin');
 
@@ -98,7 +98,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
       creditAdjustment: 0,
       reason: '',
     },
-    onSubmit: async (values: any) => {
+    onSubmit: async (values: UserFormValues) => {
       if (!user) {
         throw new Error('User is required');
       }
@@ -164,7 +164,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
       onClose();
     },
     validate: {
-      reason: (value: any, allValues: any) => {
+      reason: (value: string, allValues: UserFormValues) => {
         if (
           allValues &&
           typeof allValues === 'object' &&

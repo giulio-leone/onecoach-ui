@@ -36,7 +36,6 @@ interface FoodFormModalProps {
   onClose: () => void;
   onSuccess: () => void | Promise<void>;
 }
-// @ts-ignore unused
 interface FoodFormValues extends Record<string, unknown> {
   name: string;
   brand: string;
@@ -79,7 +78,7 @@ export function FoodFormModal({ isOpen, mode, foodId, onClose, onSuccess }: Food
       brandName: '',
       categoryIds: [],
     },
-    onSubmit: async (values: any) => {
+    onSubmit: async (values: FoodFormValues) => {
       // Validazione campi obbligatori
       if (
         !values.servingSize ||
@@ -350,7 +349,7 @@ export function FoodFormModal({ isOpen, mode, foodId, onClose, onSuccess }: Food
             <BrandCombobox
               valueId={form.values.brandId}
               valueName={form.values.brandName}
-              onChange={(v: any) => {
+              onChange={(v: { id?: string; name?: string } | null) => {
                 form.setValue('brandId', v?.id);
                 form.setValue('brandName', v?.name || '');
               }}

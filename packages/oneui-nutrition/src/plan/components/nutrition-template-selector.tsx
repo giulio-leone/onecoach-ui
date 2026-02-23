@@ -7,17 +7,8 @@
 
 // Fixed component with correct imports and logic
 'use client';
-import { useState } from 'react';
-import {
-  Search,
-  Filter,
-  Trash2,
-  Calendar,
-  Utensils,
-  Sun,
-  Moon,
-  Coffee,
-} from 'lucide-react';
+import React, { useState } from 'react';
+import { Search, Filter, Trash2, Calendar, Utensils, Sun, Moon, Coffee } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { Button } from '@giulio-leone/ui';
@@ -25,7 +16,7 @@ import { SelectionActionBarWeb } from './selection-action-bar-web';
 import { EmptyState } from '@giulio-leone/ui-core';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import { logger } from '@giulio-leone/lib-shared';
-import type { NutritionTemplate, NutritionTemplateType } from "@giulio-leone/types/nutrition";
+import type { NutritionTemplate, NutritionTemplateType } from '@giulio-leone/types/nutrition';
 import { format } from 'date-fns';
 
 type NutritionTemplateSelectorProps = {
@@ -34,7 +25,7 @@ type NutritionTemplateSelectorProps = {
   onClose: () => void;
 };
 
-const TYPE_ICONS: Record<string, any> = {
+const TYPE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   meal: Utensils,
   day: Sun,
   week: Calendar,
@@ -58,7 +49,11 @@ export function NutritionTemplateSelector({
   const [isMouseInteracting, setIsMouseInteracting] = useState(false);
 
   // Fetch templates
-  const { data: templates = [], isLoading, refetch: loadTemplates } = useQuery({
+  const {
+    data: templates = [],
+    isLoading,
+    refetch: loadTemplates,
+  } = useQuery({
     queryKey: ['nutrition-templates', type],
     queryFn: async () => {
       const response = await fetch(`/api/nutrition-templates?type=${type}`);
@@ -69,7 +64,8 @@ export function NutritionTemplateSelector({
 
   // Filter logic
   const filteredTemplates = templates.filter((template: NutritionTemplate) => {
-    const matchesSearch = !searchQuery ||
+    const matchesSearch =
+      !searchQuery ||
       template.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       template.description?.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesTags = true;
@@ -110,20 +106,20 @@ export function NutritionTemplateSelector({
   const TypeIcon = TYPE_ICONS[type] || TYPE_ICONS.meal;
 
   return (
-    <div className={cn("flex flex-col h-full", darkModeClasses.bg.base)}>
+    <div className={cn('flex h-full flex-col', darkModeClasses.bg.base)}>
       <div className="flex-1 overflow-y-auto p-4 pb-24">
         {/* Search & Filters Header */}
         <div className="mb-6 space-y-4">
           <div className="flex gap-2">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" />
+              <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-400" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={t('searchPlaceholder')}
                 className={cn(
-                  "w-full rounded-xl border py-2 pl-9 pr-4 text-sm outline-none transition-all focus:ring-2",
+                  'w-full rounded-xl border py-2 pr-4 pl-9 text-sm transition-all outline-none focus:ring-2',
                   darkModeClasses.input.base,
                   darkModeClasses.input.focus
                 )}
@@ -142,28 +138,39 @@ export function NutritionTemplateSelector({
 
           {/* Expanded Filters */}
           {showFilters && (
-            <div className={cn("rounded-xl border p-4 space-y-4", darkModeClasses.bg.subtle, darkModeClasses.border.base)}>
+            <div
+              className={cn(
+                'space-y-4 rounded-xl border p-4',
+                darkModeClasses.bg.subtle,
+                darkModeClasses.border.base
+              )}
+            >
               {/* Category Filter */}
               <div>
-                 <h5 className={cn("mb-2 text-xs font-semibold uppercase tracking-wider", darkModeClasses.text.secondary)}>
-                   {t('form.category')}
-                 </h5>
-                 <div className="flex flex-wrap gap-2">
-                   {['colazione', 'pranzo', 'cena', 'snack'].map(cat => (
-                     <button
-                       key={cat}
-                       onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
-                       className={cn(
-                         "rounded-full px-3 py-1 text-xs font-medium transition-colors border",
-                         selectedCategory === cat
-                           ? "bg-green-100 text-green-700 border-green-200 dark:bg-green-900/30 dark:text-green-400 dark:border-green-800"
-                           : "bg-white text-neutral-600 border-neutral-200 hover:bg-neutral-50 dark:bg-neutral-800 dark:text-neutral-400 dark:border-neutral-700 dark:hover:bg-neutral-700"
-                       )}
-                     >
-                       {cat}
-                     </button>
-                   ))}
-                 </div>
+                <h5
+                  className={cn(
+                    'mb-2 text-xs font-semibold tracking-wider uppercase',
+                    darkModeClasses.text.secondary
+                  )}
+                >
+                  {t('form.category')}
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  {['colazione', 'pranzo', 'cena', 'snack'].map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
+                      className={cn(
+                        'rounded-full border px-3 py-1 text-xs font-medium transition-colors',
+                        selectedCategory === cat
+                          ? 'border-green-200 bg-green-100 text-green-700 dark:border-green-800 dark:bg-green-900/30 dark:text-green-400'
+                          : 'border-neutral-200 bg-white text-neutral-600 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                      )}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           )}
@@ -172,14 +179,14 @@ export function NutritionTemplateSelector({
         {/* Template List */}
         <div className="space-y-2">
           {isLoading ? (
-             <div className="py-12 text-center text-sm text-neutral-500">Loading templates...</div>
+            <div className="py-12 text-center text-sm text-neutral-500">Loading templates...</div>
           ) : filteredTemplates.length === 0 ? (
-             <EmptyState
-                title={t('empty.title')}
-                description={t('empty.description')}
-                icon={TypeIcon}
-                action={<Button onClick={() => {}}>{t('empty.action')}</Button>}
-             />
+            <EmptyState
+              title={t('empty.title')}
+              description={t('empty.description')}
+              icon={TypeIcon}
+              action={<Button onClick={() => {}}>{t('empty.action')}</Button>}
+            />
           ) : (
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {filteredTemplates.map((template: NutritionTemplate) => {
@@ -188,14 +195,14 @@ export function NutritionTemplateSelector({
                   <div
                     key={template.id}
                     onClick={() => {
-                       if (!isMouseInteracting) handleSelect(template);
+                      if (!isMouseInteracting) handleSelect(template);
                     }}
                     onContextMenu={(e) => {
-                       e.preventDefault();
-                       startSelection(template.id);
+                      e.preventDefault();
+                      startSelection(template.id);
                     }}
                     className={cn(
-                      'group cursor-pointer touch-manipulation rounded-xl border-2 p-4 transition-all duration-200 relative overflow-hidden',
+                      'group relative cursor-pointer touch-manipulation overflow-hidden rounded-xl border-2 p-4 transition-all duration-200',
                       darkModeClasses.card.base,
                       isSelected
                         ? selectionMode
@@ -228,27 +235,40 @@ export function NutritionTemplateSelector({
                             {template.name}
                           </h4>
                           <span
-                             className={cn(
-                               'flex-shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold',
-                               darkModeClasses.bg.muted,
-                               darkModeClasses.text.secondary
-                             )}
+                            className={cn(
+                              'flex-shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold',
+                              darkModeClasses.bg.muted,
+                              darkModeClasses.text.secondary
+                            )}
                           >
-                             {template.category || type}
+                            {template.category || type}
                           </span>
                         </div>
                         {template.description && (
-                          <p className={cn('mt-1 line-clamp-2 text-sm', darkModeClasses.text.tertiary)}>
+                          <p
+                            className={cn(
+                              'mt-1 line-clamp-2 text-sm',
+                              darkModeClasses.text.tertiary
+                            )}
+                          >
                             {template.description}
                           </p>
                         )}
                         <div className="mt-3 flex flex-wrap gap-2 text-xs text-neutral-500">
-                           {template.tags.map(tag => (
-                             <span key={tag} className="bg-neutral-100 px-2 py-0.5 rounded dark:bg-neutral-800">#{tag}</span>
-                           ))}
+                          {template.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="rounded bg-neutral-100 px-2 py-0.5 dark:bg-neutral-800"
+                            >
+                              #{tag}
+                            </span>
+                          ))}
                         </div>
                         <div className="mt-2 text-xs text-neutral-400">
-                          Last used: {template.lastUsedAt ? format(new Date(template.lastUsedAt), 'PPP') : 'Never'}
+                          Last used:{' '}
+                          {template.lastUsedAt
+                            ? format(new Date(template.lastUsedAt), 'PPP')
+                            : 'Never'}
                         </div>
                       </div>
                     </div>
@@ -259,36 +279,36 @@ export function NutritionTemplateSelector({
           )}
         </div>
       </div>
-      
+
       {/* Selection Action Bar - simplified since original was app specific */}
       {selectionMode && (
-         <SelectionActionBarWeb
-           isVisible={selectionMode}
-           selectedCount={selectedIds.size}
-           onClose={exitSelectionMode}
-           actions={[
+        <SelectionActionBarWeb
+          isVisible={selectionMode}
+          selectedCount={selectedIds.size}
+          onClose={exitSelectionMode}
+          actions={[
             {
               id: 'delete',
               label: tCommon('actions.delete'),
               icon: Trash2,
               variant: 'danger',
               onPress: async () => {
-                 if (confirm(tCommon('confirmDeleteTemplates', { count: selectedIds.size }))) {
-                    const ids = Array.from(selectedIds);
-                    for (const id of ids) {
-                       try {
-                         await fetch(`/api/nutrition-templates/${id}`, { method: 'DELETE' });
-                       } catch (e) {
-                         logger.error('Failed to delete', id, e);
-                       }
+                if (confirm(tCommon('confirmDeleteTemplates', { count: selectedIds.size }))) {
+                  const ids = Array.from(selectedIds);
+                  for (const id of ids) {
+                    try {
+                      await fetch(`/api/nutrition-templates/${id}`, { method: 'DELETE' });
+                    } catch (e) {
+                      logger.error('Failed to delete', id, e);
                     }
-                    await loadTemplates();
-                    exitSelectionMode();
-                 }
+                  }
+                  await loadTemplates();
+                  exitSelectionMode();
+                }
               },
             },
-           ]}
-         />
+          ]}
+        />
       )}
     </div>
   );

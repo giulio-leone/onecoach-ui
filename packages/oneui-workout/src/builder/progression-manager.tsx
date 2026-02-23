@@ -71,8 +71,8 @@ function cloneSetGroupWithNewId(setGroup: SetGroup): SetGroup {
   };
 }
 
-const toDomainSetGroup = (group: any): SetGroup => {
-  const sanitizeSet = (s: any) => ({
+const toDomainSetGroup = (group: Partial<SetGroup> & Pick<SetGroup, 'baseSet'>): SetGroup => {
+  const sanitizeSet = (s: Partial<SetGroup['baseSet']>) => ({
     ...s,
     weight: s.weight ?? null,
     rest: s.rest ?? 90,
@@ -165,7 +165,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
   // Handle selection change
   useEffect(() => {
     if (selectedGroup) {
-      setSelectedIndices(new Set(selectedGroup.occurrences.map((_: any, i: number) => i)));
+      setSelectedIndices(new Set(selectedGroup.occurrences.map((_: unknown, i: number) => i)));
       setOverrides(new Map()); // Reset overrides on exercise switch
 
       const firstSet = selectedGroup.occurrences[0]?.exercise.setGroups[0]?.baseSet;

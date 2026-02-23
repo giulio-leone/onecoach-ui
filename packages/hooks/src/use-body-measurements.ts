@@ -7,7 +7,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import type { BodyMeasurement } from "@giulio-leone/types/analytics";
+import type { BodyMeasurement } from '@giulio-leone/types/analytics';
 
 /**
  * Get all body measurements
@@ -154,7 +154,7 @@ export function useBodyMeasurements(): UseBodyMeasurementsReturn {
         );
       } catch (caughtError: unknown) {
         // Rollback on error
-        setMeasurements((prev) => prev.filter((m: any) => m.id !== tempId));
+        setMeasurements((prev) => prev.filter((m: BodyMeasurement) => m.id !== tempId));
         throw caughtError;
       }
     },
@@ -166,7 +166,7 @@ export function useBodyMeasurements(): UseBodyMeasurementsReturn {
       id: string,
       data: Partial<Omit<BodyMeasurement, 'id' | 'userId' | 'createdAt' | 'updatedAt'>>
     ) => {
-      const existing = measurements.find((m: any) => m.id === id);
+      const existing = measurements.find((m: BodyMeasurement) => m.id === id);
       if (!existing) return;
 
       const optimisticMeasurement: BodyMeasurement = {
@@ -185,7 +185,7 @@ export function useBodyMeasurements(): UseBodyMeasurementsReturn {
         setMeasurements((prev) => prev.map((m: BodyMeasurement) => (m.id === id ? updated : m)));
       } catch (caughtError: unknown) {
         // Rollback on error
-        setMeasurements((prev) => prev.map((m: any) => (m.id === id ? existing : m)));
+        setMeasurements((prev) => prev.map((m: BodyMeasurement) => (m.id === id ? existing : m)));
         throw caughtError;
       }
     },
@@ -194,7 +194,7 @@ export function useBodyMeasurements(): UseBodyMeasurementsReturn {
 
   const deleteMeasurement = useCallback(
     async (id: string) => {
-      const toDelete = measurements.find((m: any) => m.id === id);
+      const toDelete = measurements.find((m: BodyMeasurement) => m.id === id);
       if (!toDelete) return;
 
       // Optimistic update

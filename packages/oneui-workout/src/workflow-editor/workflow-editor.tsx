@@ -23,7 +23,12 @@ import {
 import '@xyflow/react/dist/style.css';
 import { nodeTypes, type CustomNodeData } from './custom-nodes';
 import { useWorkflows } from '@giulio-leone/lib-visual-builder/hooks';
-import type { Workflow, NodeType } from '@giulio-leone/lib-visual-builder/types';
+import type {
+  Workflow,
+  WorkflowNode,
+  WorkflowEdge,
+  NodeType,
+} from '@giulio-leone/lib-visual-builder/types';
 import { Save, Code, Rocket, Plus, Trash2 } from 'lucide-react';
 import { logger } from '@giulio-leone/lib-shared';
 
@@ -72,7 +77,7 @@ export function WorkflowEditor({ workflowId, onSave }: WorkflowEditorProps) {
       setWorkflow(wf);
 
       // Convert database nodes to ReactFlow nodes
-      const flowNodes: Node<CustomNodeData>[] = wf.nodes.map((node: any) => ({
+      const flowNodes: Node<CustomNodeData>[] = wf.nodes.map((node: WorkflowNode) => ({
         id: node.id,
         type: 'workflowNode',
         position: node.position as { x: number; y: number },
@@ -84,7 +89,7 @@ export function WorkflowEditor({ workflowId, onSave }: WorkflowEditorProps) {
       }));
 
       // Convert database edges to ReactFlow edges
-      const flowEdges: Edge[] = wf.edges.map((edge: any) => ({
+      const flowEdges: Edge[] = wf.edges.map((edge: WorkflowEdge) => ({
         id: edge.id,
         source: edge.sourceId,
         target: edge.targetId,
@@ -185,8 +190,8 @@ export function WorkflowEditor({ workflowId, onSave }: WorkflowEditorProps) {
   const handleDeleteSelected = async () => {
     if (!workflowId) return;
 
-    const selectedNodes = nodes.filter((node: any) => node.selected);
-    const selectedEdges = edges.filter((edge: any) => edge.selected);
+    const selectedNodes = nodes.filter((node: Node<CustomNodeData>) => node.selected);
+    const selectedEdges = edges.filter((edge: Edge) => edge.selected);
 
     if (selectedNodes.length === 0 && selectedEdges.length === 0) {
       alert(t('common.workflow_editor.no_nodes_or_edges_selected'));

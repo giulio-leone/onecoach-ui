@@ -33,7 +33,7 @@ export const StreamingDots = forwardRef<HTMLDivElement, StreamingDotsProps>(
         aria-label="Caricamento..."
         {...props}
       >
-        {[0, 1, 2].map((i: any) => (
+        {[0, 1, 2].map((i: number) => (
           <span
             key={i}
             className={cn(sizeClasses[size], 'animate-bounce rounded-full bg-current')}

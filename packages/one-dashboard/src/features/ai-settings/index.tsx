@@ -46,17 +46,12 @@ import {
   AnalyticsTab,
   ConversationsTab,
 } from './components';
-import type {
-  AIModel,
-  FeatureConfig,
-  ModelAccess,
-  FrameworkConfig,
-} from './components/types';
+import type { AIModel, FeatureConfig, ModelAccess, FrameworkConfig } from './components/types';
 import type { AgentConfig } from '../shared/ai-agents-config';
 import { useHeaderActions } from '@giulio-leone/lib-stores/header-actions.store';
 
 import { logger } from '@giulio-leone/lib-shared';
-import type { CreditPackPricing } from "@giulio-leone/types/domain";
+import type { CreditPackPricing } from '@giulio-leone/types/domain';
 
 const ProviderApiKeysSection = lazy(() =>
   import('../shared/provider-api-keys').then((m) => ({
@@ -137,7 +132,10 @@ interface AISettingsPageClientProps {
     userCount: number;
   };
   initialSection?: string;
-  onToggleAgent: (agentId: string, isEnabled: boolean) => Promise<{ success: boolean; error?: string }>;
+  onToggleAgent: (
+    agentId: string,
+    isEnabled: boolean
+  ) => Promise<{ success: boolean; error?: string }>;
   onUpdateRetry: (count: number) => Promise<{ success: boolean; error?: string }>;
 }
 
@@ -241,7 +239,7 @@ export function AISettingsPageClient({
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const setHeaderActions = useHeaderActions((state: any) => state.setActions);
+  const setHeaderActions = useHeaderActions((state) => state.setActions);
   const t = useTranslations('admin.aiSettings');
   const tAdmin = useTranslations('admin');
 
@@ -772,7 +770,11 @@ export function AISettingsPageClient({
                   <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60" />
                 }
               >
-                <AIAgentsConfig configs={aiFrameworkConfigs} onToggleAgent={onToggleAgent} onUpdateRetry={onUpdateRetry} />
+                <AIAgentsConfig
+                  configs={aiFrameworkConfigs}
+                  onToggleAgent={onToggleAgent}
+                  onUpdateRetry={onUpdateRetry}
+                />
               </Suspense>
             </SectionCard>
 

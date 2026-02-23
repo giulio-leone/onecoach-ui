@@ -42,7 +42,7 @@ export function ConversationList({
   const [selectedIds, setSelectedIds] = React.useState<Set<string>>(new Set());
   const [confirmDeleteAll, setConfirmDeleteAll] = React.useState(false);
 
-  const filteredConversations = conversations.filter((conv: any) =>
+  const filteredConversations = conversations.filter((conv: ConversationListItem) =>
     conv.title?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 

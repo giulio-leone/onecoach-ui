@@ -7,20 +7,20 @@ export interface GenerationLogEvent {
   type: string;
   timestamp?: Date | string;
   message?: string;
-  data?: any;
+  data?: unknown;
 }
 
 export interface OneAgendaGenerationInput {
   description: string;
-  userPreferences?: Record<string, any>;
+  userPreferences?: Record<string, unknown>;
   resumeFromStateId?: string;
 }
 
 export interface OneAgendaGenerationResult {
-  goals: any[];
-  tasks: any[];
-  schedule: any;
-  qaReport?: any;
+  goals: unknown[];
+  tasks: unknown[];
+  schedule: unknown;
+  qaReport?: unknown;
 }
 
 export interface UseOneAgendaGenerationReturn {
@@ -92,22 +92,18 @@ export function useOneAgendaGeneration(): UseOneAgendaGenerationReturn {
                 const msg = json.data?.message ?? json.message ?? '';
                 setProgress(pct);
                 if (msg) setCurrentMessage(msg);
-              } 
-              else if (json.type === 'agent_start') {
-                 setLogs((prev) => [...prev, { ...json, timestamp: new Date() }]);
-                 setCurrentMessage(json.data?.label || `Avvio ${json.data?.agent}...`);
-              } 
-              else if (['agent_complete', 'agent_error', 'agent_step'].includes(json.type)) {
-                 setLogs((prev) => [...prev, { ...json, timestamp: new Date() }]);
-              } 
-              else if (json.type === 'complete') {
-                  setResult(json.data?.result || json.data?.plan);
-                  setProgress(100);
-                  setCurrentMessage('Completato');
-                  setIsGenerating(false);
-              } 
-              else if (json.type === 'error') {
-                  throw new Error(json.data?.message || 'Errore di generazione');
+              } else if (json.type === 'agent_start') {
+                setLogs((prev) => [...prev, { ...json, timestamp: new Date() }]);
+                setCurrentMessage(json.data?.label || `Avvio ${json.data?.agent}...`);
+              } else if (['agent_complete', 'agent_error', 'agent_step'].includes(json.type)) {
+                setLogs((prev) => [...prev, { ...json, timestamp: new Date() }]);
+              } else if (json.type === 'complete') {
+                setResult(json.data?.result || json.data?.plan);
+                setProgress(100);
+                setCurrentMessage('Completato');
+                setIsGenerating(false);
+              } else if (json.type === 'error') {
+                throw new Error(json.data?.message || 'Errore di generazione');
               }
             } catch (e) {
               console.error('SSE Parse Error', e);
@@ -115,9 +111,9 @@ export function useOneAgendaGeneration(): UseOneAgendaGenerationReturn {
           }
         }
       }
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.error('Generation Error', e);
-      setError(e.message || 'Errore di connessione');
+      setError(e instanceof Error ? e.message : 'Errore di connessione');
       setIsGenerating(false);
     }
   }, []);
@@ -130,6 +126,6 @@ export function useOneAgendaGeneration(): UseOneAgendaGenerationReturn {
     result,
     error,
     generate,
-    reset
+    reset,
   };
 }

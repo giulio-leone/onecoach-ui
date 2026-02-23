@@ -190,7 +190,7 @@ export interface WizardRadioOption {
 export interface WizardRadioGroupProps {
   options: WizardRadioOption[];
   value: string | number;
-  onChange: (value: any) => void;
+  onChange: (value: string | number) => void;
   className?: string;
 }
 

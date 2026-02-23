@@ -1,12 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 // import { Pressable, XPlatButton, XPlatInput } from '../../../../components/ui';
 // Mock components for now as they are app-level
-const XPlatButton = (props: any) => <View {...props} />;
-const XPlatInput = (props: any) => <View {...props} />;
-const Pressable = (props: any) => <View {...props} />;
+const XPlatButton = (props: React.ComponentProps<typeof View>) => <View {...props} />;
+const XPlatInput = (props: React.ComponentProps<typeof View>) => <View {...props} />;
+const Pressable = (props: React.ComponentProps<typeof View>) => <View {...props} />;
 
 import { useRouter } from 'expo-router'; // Fix import
 import { Card } from '@giulio-leone/ui';

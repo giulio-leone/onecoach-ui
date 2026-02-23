@@ -126,21 +126,32 @@ export function SwipeableListItem({
     <View style={containerStyle}>
       {/* Delete Background (Left Swipe) */}
       {onDelete && (
-        <Animated.View style={deleteBgStyle as any}>
+        <Animated.View
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          style={deleteBgStyle as any}
+        >
           <Text style={styles.deleteText}>🗑️ Delete</Text>
         </Animated.View>
       )}
 
       {/* Archive Background (Right Swipe) */}
       {onArchive && (
-        <Animated.View style={archiveBgStyle as any}>
+        <Animated.View
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          style={archiveBgStyle as any}
+        >
           <Text style={styles.archiveText}>📦 Archive</Text>
         </Animated.View>
       )}
 
       {/* Swipeable Content */}
       <GestureDetector gesture={panGesture}>
-        <Animated.View style={contentStyle as any}>{children}</Animated.View>
+        <Animated.View
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          style={contentStyle as any}
+        >
+          {children}
+        </Animated.View>
       </GestureDetector>
     </View>
   );

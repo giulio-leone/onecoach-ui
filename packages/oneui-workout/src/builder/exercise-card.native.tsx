@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 // Mock components for app-level compatibility
-const Pressable = (props: any) => <View {...props} />;
+const Pressable = (props: React.ComponentProps<typeof View>) => <View {...props} />;
 
 import { Card } from '@giulio-leone/ui';
 import { Trash2, ArrowUp, ArrowDown } from 'lucide-react-native';
@@ -12,8 +12,8 @@ import { SetGroupEditor } from '../editor/set-group-editor';
 import type { Exercise, SetGroup } from '@giulio-leone/types/workout';
 
 // Helper to sanitise BuilderSetGroup to Domain SetGroup
-const toDomainSetGroup = (group: any): SetGroup => {
-  const sanitizeSet = (s: any) => ({
+const toDomainSetGroup = (group: Partial<SetGroup> & Pick<SetGroup, 'baseSet'>): SetGroup => {
+  const sanitizeSet = (s: Partial<SetGroup['baseSet']>) => ({
     ...s,
     weight: s.weight ?? null,
     rest: s.rest ?? 90,

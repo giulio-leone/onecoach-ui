@@ -19,6 +19,43 @@ import { EmptyState, Card, Button, Badge } from '@giulio-leone/ui';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 
+interface FlightSegment {
+  departure: { local: string };
+  arrival: { local: string };
+  layovers?: unknown[];
+  totalDurationInSeconds: number;
+}
+
+interface PriceHistoryEntry {
+  priceChange: number;
+}
+
+interface SavedTrip {
+  id: string;
+  name?: string;
+  departureDate: string;
+  returnDate?: string;
+  originCityCode: string;
+  destinationCityCode: string;
+  originCity: string;
+  destinationCity: string;
+  note?: string;
+  outboundFlight: FlightSegment;
+  returnFlight?: FlightSegment;
+  totalPrice: number;
+  priceHistory?: PriceHistoryEntry[];
+  combinedDeepLink?: string;
+  outboundDeepLink?: string;
+}
+
+interface DestinationGroup {
+  destinationCityCode: string;
+  destinationCity: string;
+  tripCount: number;
+  avgPrice: number;
+  trips: SavedTrip[];
+}
+
 interface SavedTripsDashboardProps {
   userId: string;
   initialDestination?: string | null;
@@ -26,7 +63,7 @@ interface SavedTripsDashboardProps {
 
 export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDashboardProps) {
   // const t = useTranslations('flight');
-  const [groupedTrips, setGroupedTrips] = useState<any[]>([]);
+  const [groupedTrips, setGroupedTrips] = useState<DestinationGroup[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -36,7 +73,9 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
         if (data.groups) {
           let groups = data.groups;
           if (initialDestination) {
-            groups = groups.filter((g: any) => g.destinationCityCode === initialDestination);
+            groups = groups.filter(
+              (g: DestinationGroup) => g.destinationCityCode === initialDestination
+            );
           }
           setGroupedTrips(groups);
         }
@@ -103,7 +142,7 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             <AnimatePresence mode="popLayout">
-              {group.trips.map((trip: any) => (
+              {group.trips.map((trip: SavedTrip) => (
                 <SavedTripCard key={trip.id} trip={trip} />
               ))}
             </AnimatePresence>
@@ -114,7 +153,7 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
   );
 }
 
-function SavedTripCard({ trip }: { trip: any }) {
+function SavedTripCard({ trip }: { trip: SavedTrip }) {
   const [isDeleting, setIsDeleting] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
 
@@ -231,7 +270,13 @@ function SavedTripCard({ trip }: { trip: any }) {
   );
 }
 
-function FlightSegmentPreview({ flight, isReturn = false }: { flight: any; isReturn?: boolean }) {
+function FlightSegmentPreview({
+  flight,
+  isReturn = false,
+}: {
+  flight: FlightSegment;
+  isReturn?: boolean;
+}) {
   const time = (iso: string) => format(new Date(iso), 'HH:mm');
 
   return (
@@ -259,7 +304,7 @@ function FlightSegmentPreview({ flight, isReturn = false }: { flight: any; isRet
   );
 }
 
-function PriceTrendBadge({ history }: { history: any }) {
+function PriceTrendBadge({ history }: { history: PriceHistoryEntry }) {
   if (!history || !history.priceChange) return null;
 
   const isUp = history.priceChange > 0;

@@ -175,7 +175,7 @@ export function useCalendarAssignments(options: UseCalendarAssignmentsOptions) {
       const targetDate = new Date(date);
       targetDate.setHours(0, 0, 0, 0);
 
-      return assignments.filter((assignment: any) => {
+      return assignments.filter((assignment: CalendarAssignment) => {
         const assignmentDate = new Date(assignment.date);
         assignmentDate.setHours(0, 0, 0, 0);
         return assignmentDate.getTime() === targetDate.getTime();

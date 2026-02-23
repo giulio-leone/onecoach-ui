@@ -81,7 +81,7 @@ export function PromotionFormModal({ isOpen, promotion, onClose }: PromotionForm
         : '',
       description: String(promotion?.description ?? ''),
     },
-    onSubmit: async (values: any) => {
+    onSubmit: async (values: PromotionFormValues) => {
       const body: PromotionRequest = {
         code: values.code.trim().toUpperCase(),
         type: values.type,

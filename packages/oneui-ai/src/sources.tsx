@@ -19,7 +19,7 @@ export type SourcesProps = ComponentProps<'div'>;
 
 export const Sources = ({ className, ref, ...props }: SourcesProps) => (
   <Collapsible
-    ref={ref as any}
+    ref={ref as React.Ref<HTMLElement>}
     className={cn(
       // Base
       'not-prose mb-4 overflow-hidden rounded-xl',

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
+  type ViewStyle,
 } from 'react-native';
 import { Card } from './card';
 import { Button } from './button';
@@ -27,7 +28,7 @@ interface WizardLayoutProps {
   isCompleting?: boolean;
   title?: string;
   subtitle?: string;
-  style?: any;
+  style?: ViewStyle;
 }
 
 export function WizardLayout({

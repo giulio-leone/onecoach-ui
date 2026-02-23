@@ -47,7 +47,7 @@ export const Combobox = ({
     if (multiple) {
       const currentValues = Array.isArray(value) ? value : [];
       const newValue = currentValues.includes(optionValue)
-        ? currentValues.filter((v: any) => v !== optionValue)
+        ? currentValues.filter((v: string) => v !== optionValue)
         : [...currentValues, optionValue];
       onChange(newValue);
     } else {
@@ -67,7 +67,7 @@ export const Combobox = ({
       return <span className="text-neutral-900 dark:text-white">{count} selected</span>;
     }
 
-    const selectedOption = options.find((opt: any) => opt.value === value);
+    const selectedOption = options.find((opt: ComboboxOption) => opt.value === value);
     return (
       <span className="text-neutral-900 dark:text-white">{selectedOption?.label || value}</span>
     );

@@ -175,9 +175,10 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
     return null;
   }
   const getCurrentFormError = () => {
-    if (mode === 'login') return (loginForm.errors as any)._form as string | undefined;
-    if (mode === 'register') return (registerForm.errors as any)._form as string | undefined;
-    if (mode === 'express') return (expressForm.errors as any)._form as string | undefined;
+    if (mode === 'login') return (loginForm.errors as Record<string, string | undefined>)._form;
+    if (mode === 'register')
+      return (registerForm.errors as Record<string, string | undefined>)._form;
+    if (mode === 'express') return (expressForm.errors as Record<string, string | undefined>)._form;
     return undefined;
   };
   const renderSummary = () => (
@@ -237,7 +238,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
     </div>
   );
   const renderLoginForm = () => {
-    const formError = (loginForm.errors as any)._form as string | undefined;
+    const formError = (loginForm.errors as Record<string, string | undefined>)._form;
     return (
       <form onSubmit={loginForm.handleSubmit} className="space-y-4">
         {formError && (
@@ -317,7 +318,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
     );
   };
   const renderRegisterForm = () => {
-    const formError = (registerForm.errors as any)._form as string | undefined;
+    const formError = (registerForm.errors as Record<string, string | undefined>)._form;
     return (
       <form onSubmit={registerForm.handleSubmit} className="space-y-4">
         {formError && (
@@ -447,7 +448,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
     );
   };
   const renderExpressForm = () => {
-    const formError = (expressForm.errors as any)._form as string | undefined;
+    const formError = (expressForm.errors as Record<string, string | undefined>)._form;
     return (
       <form onSubmit={expressForm.handleSubmit} className="space-y-4">
         {formError && (

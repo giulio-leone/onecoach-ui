@@ -39,8 +39,8 @@ interface ExerciseCardProps {
   weightUnit?: 'KG' | 'LBS';
 }
 
-const toDomainSetGroup = (group: any): SetGroup => {
-  const sanitizeSet = (s: any) => ({
+const toDomainSetGroup = (group: Partial<SetGroup> & Pick<SetGroup, 'baseSet'>): SetGroup => {
+  const sanitizeSet = (s: Partial<SetGroup['baseSet']>) => ({
     ...s,
     weight: s.weight ?? null,
     rest: s.rest ?? 90, // Default to 90s if missing

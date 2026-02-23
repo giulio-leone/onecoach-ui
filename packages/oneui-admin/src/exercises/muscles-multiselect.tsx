@@ -39,7 +39,7 @@ export function MusclesMultiselect({ primary, secondary, onChange }: MusclesMult
 
   const toggle = (role: 'primary' | 'secondary', id: string) => {
     const src = role === 'primary' ? primary : secondary;
-    const next = src.includes(id) ? src.filter((v: any) => v !== id) : [...src, id];
+    const next = src.includes(id) ? src.filter((v: string) => v !== id) : [...src, id];
     onChange(role === 'primary' ? { primary: next, secondary } : { primary, secondary: next });
   };
 

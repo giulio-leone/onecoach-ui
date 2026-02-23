@@ -15,7 +15,7 @@ import { useSession } from 'next-auth/react';
 import { useWorkouts, useDeleteWorkout, useDuplicateWorkout } from '@giulio-leone/features-workout';
 import { ErrorState } from '@giulio-leone/ui/components';
 import { SelectionToolbar, useSupabaseContext } from '@giulio-leone/ui-core';
-import { useUserActiveGenerations } from '@giulio-leone/hooks';
+import { useUserActiveGenerations, type GenerationWithStatus } from '@giulio-leone/hooks';
 import { DeployToClientsModal } from '@giulio-leone/ui-coach';
 import { WorkoutCard } from './workout-card';
 import { WorkoutGeneratingCard } from './workout-generating-card';
@@ -169,7 +169,7 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
         {/* Active AI Generations even with empty programs */}
         {isGenerating && (
           <div className="space-y-3">
-            {activeGenerations.map((gen: any) => (
+            {activeGenerations.map((gen: GenerationWithStatus) => (
               <WorkoutGeneratingCard key={gen.run_id} generation={gen} />
             ))}
           </div>
@@ -200,7 +200,7 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
       {/* Active AI Generations (SDK 4.0 Durable Mode) */}
       {isGenerating && (
         <div className="space-y-3">
-          {activeGenerations.map((gen: any) => (
+          {activeGenerations.map((gen: GenerationWithStatus) => (
             <WorkoutGeneratingCard key={gen.run_id} generation={gen} />
           ))}
         </div>

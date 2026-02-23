@@ -386,7 +386,7 @@ export function useWorkoutGeneration(
 
   return {
     ...state,
-    generate: generateStream as any,
+    generate: generateStream as (input: WorkoutInput) => Promise<WorkoutGenerationOutput | null>,
     generateStream,
     abort,
     reset,

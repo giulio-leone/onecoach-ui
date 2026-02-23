@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { Input, Select, Heading, Text } from '@giulio-leone/ui';
 import { CoachClientCard } from './coach-client-card';
 import { useCoachClients } from '@giulio-leone/features-coach/hooks';
+import type { CoachClient } from '@giulio-leone/lib-api-client/queries/coach.queries';
 import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 // ... imports ...
 import { useTranslations } from 'next-intl';
@@ -48,7 +49,9 @@ export function CoachClientsList() {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center">
         <Users className="mb-4 h-12 w-12 text-neutral-300 dark:text-neutral-600" />
-        <Heading level={3} size="lg" weight="semibold" className="mb-2">{t('empty.title')}</Heading>
+        <Heading level={3} size="lg" weight="semibold" className="mb-2">
+          {t('empty.title')}
+        </Heading>
         <Text className="text-neutral-500 dark:text-neutral-400">{t('empty.description')}</Text>
       </div>
     );
@@ -102,7 +105,7 @@ export function CoachClientsList() {
 
       {/* Clients Grid */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {data.clients.map((client: any) => (
+        {data.clients.map((client: CoachClient) => (
           <CoachClientCard key={client.id} client={client} />
         ))}
       </div>

@@ -94,7 +94,7 @@ export function GlassTable<T>({
             </tr>
           </thead>
           <tbody className="divide-y divide-white/10">
-            {data.map((item: any) => {
+            {data.map((item: T) => {
               const id = keyExtractor(item);
               const isSelected = selectedSet.has(id);
 

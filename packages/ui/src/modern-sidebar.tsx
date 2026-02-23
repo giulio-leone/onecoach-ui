@@ -140,7 +140,7 @@ export function ModernSidebar({
     isRouteActive(effectivePath, item.href) || Boolean(item.children?.some(isItemActive));
 
   const renderItems = (items: SidebarNavigationItem[], depth = 0) =>
-    items.map((item: any) => {
+    items.map((item: SidebarNavigationItem) => {
       const hasChildren = Boolean(item.children?.length);
       const key = getItemKey(item);
       const isGroupOpen = openGroups[key];

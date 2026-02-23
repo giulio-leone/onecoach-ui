@@ -138,7 +138,10 @@ function RunRow({
       </div>
 
       {/* Actions */}
-      <div className="flex items-center gap-2" onClick={(e: any) => e.stopPropagation()}>
+      <div
+        className="flex items-center gap-2"
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
+      >
         {canCancel && (
           <button
             onClick={() => onCancel(run.run_id)}
@@ -374,7 +377,9 @@ export function GenerationDashboard({ supabase }: GenerationDashboardProps) {
         <Filter className="h-4 w-4 text-neutral-400" />
         <select
           value={statusFilter}
-          onChange={(e: any) => setStatusFilter(e.target.value as WorkflowRunStatus | 'all')}
+          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+            setStatusFilter(e.target.value as WorkflowRunStatus | 'all')
+          }
           className="rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-1.5 text-sm text-neutral-100 focus:border-blue-500 focus:outline-none"
         >
           <option value="all">All statuses</option>
@@ -409,7 +414,7 @@ export function GenerationDashboard({ supabase }: GenerationDashboardProps) {
             </p>
           </div>
         ) : (
-          runs.map((run: any) => (
+          runs.map((run: WorkflowRun) => (
             <RunRow
               key={run.run_id}
               run={run}

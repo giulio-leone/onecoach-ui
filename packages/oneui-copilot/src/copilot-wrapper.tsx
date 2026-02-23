@@ -9,6 +9,7 @@
 
 import { useCopilotStore } from '@giulio-leone/lib-stores';
 import { CopilotSidebar } from './copilot-sidebar';
+import type { CopilotSidebarProps } from './copilot-sidebar';
 
 export function CopilotWrapper() {
   const isOpen = useCopilotStore((state) => state.isOpen);
@@ -46,24 +47,24 @@ export function CopilotWrapper() {
   // If isOpen is false, we might still want to render if there's an animation, but let's stick to the previous logic of hiding it effectively.
   // Actually, CopilotSidebar takes an `isOpen` prop, implying it stays mounted or handles transition.
   // Let's pass isOpen to it.
-  
+
   // If we return null when not open, we can't animate opening.
   // But if the sidebar is just a conditional render in layout, maybe it's fine.
-  // Let's assume we render it always so it can handle its state? 
+  // Let's assume we render it always so it can handle its state?
   // Wait, the previous implementation returned null.
   // Let's check CopilotSidebar content again. It uses UnifiedChat in 'sidebar' mode.
   // UnifiedChat likely has a Drawer or similar.
   // If we return null, we lose state.
   // However, layout.tsx is the root layout.
-  
+
   // New logic: Just render it. Passage of `isOpen` handles visibility.
   // But we need to make sure `contextType` is valid.
-  
+
   if (!mcpContext.domain && !isOpen) return null;
 
   return (
     <CopilotSidebar
-      contextType={(mcpContext.domain || 'general') as any}
+      contextType={(mcpContext.domain || 'general') as CopilotSidebarProps['contextType']}
       contextData={contextData as Record<string, unknown> | null}
       isOpen={isOpen}
       onToggle={toggleOpen}

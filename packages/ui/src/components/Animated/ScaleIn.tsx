@@ -21,5 +21,6 @@ export function ScaleIn({ children, delay, damping, stiffness, style }: ScaleInP
   const { animatedStyle } = useScaleIn(config);
   const composedStyle = [animatedStyle, style].filter(Boolean) as unknown as StyleProp<ViewStyle>;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return <Animated.View style={composedStyle as any}>{children}</Animated.View>;
 }

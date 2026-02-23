@@ -184,7 +184,7 @@ export function useCalendarNavigation(options: UseCalendarNavigationOptions = {}
     return eachDayOfInterval({
       start,
       end: addDays(start, 6),
-    }).map((day: any) => format(day, 'EEEEEE', { locale })); // Short weekday names
+    }).map((day: Date) => format(day, 'EEEEEE', { locale })); // Short weekday names
   }, [locale]);
 
   return {

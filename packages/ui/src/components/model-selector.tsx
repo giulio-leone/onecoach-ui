@@ -60,7 +60,7 @@ export function ModelSelector({
         const data = await res.json();
         if (data.success) {
           setModels(
-            data.models.map((m: any) => ({
+            data.models.map((m: { modelId: string; name: string }) => ({
               id: m.modelId,
               name: m.name,
               provider: 'openrouter',
@@ -148,7 +148,7 @@ export function ModelSelector({
             No models found.
           </div>
         ) : (
-          filteredModels.map((model: any) => (
+          filteredModels.map((model: ModelOption) => (
             <div
               key={model.id}
               className={cn(

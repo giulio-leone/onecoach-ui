@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 // We need access to the supabase client. Usually provided by a context or hook.
 // Assuming useSupabase or createClientComponentClient
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'; 
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { logger } from '@giulio-leone/lib-shared';
 
 export function useMaxesListRealtime() {
@@ -21,7 +21,7 @@ export function useMaxesListRealtime() {
           schema: 'public',
           table: 'user_one_rep_maxes',
         },
-        (payload: any) => {
+        (payload: unknown) => {
           logger.debug('One Rep Max changed realtime:', payload);
           void queryClient.invalidateQueries({ queryKey: ['one-rep-maxes'] });
         }

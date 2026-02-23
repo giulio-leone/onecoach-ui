@@ -41,5 +41,6 @@ export function StaggeredListItem({
     transition: `opacity ${duration}ms ease-out, transform ${duration}ms ease-out`,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return <View style={[animatedStyle, style] as any}>{children}</View>;
 }

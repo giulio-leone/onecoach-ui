@@ -10,7 +10,6 @@ import { useForm } from '@giulio-leone/hooks';
 import { isValidEmail, validatePassword, passwordsMatch } from '@giulio-leone/lib-shared';
 import { handleApiError } from '@giulio-leone/lib-shared';
 
-
 interface RegisterFormValues {
   name: string;
   email: string;
@@ -164,26 +163,26 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
       }
     },
     validate: {
-      name: (value: any) => (!value ? t('validation.nameRequired') : null),
-      email: (value: any) =>
+      name: (value: string) => (!value ? t('validation.nameRequired') : null),
+      email: (value: string) =>
         !value
           ? t('validation.emailRequired')
           : !isValidEmail(value)
             ? t('validation.emailInvalid')
             : null,
-      password: (value: any) => {
+      password: (value: string) => {
         if (!value) return t('validation.passwordRequired');
         const validation = validatePassword(value, { minLength: 8 });
         return validation.valid ? null : validation.errors[0] || null;
       },
-      confirmPassword: (value: any, allValues: RegisterFormValues | undefined) => {
+      confirmPassword: (value: string, allValues: RegisterFormValues | undefined) => {
         if (!value) return t('validation.confirmPasswordRequired');
         return !passwordsMatch(allValues?.password || '', value)
           ? t('validation.passwordsMismatch')
           : null;
       },
-      privacyConsent: (value: any) => (!value ? t('validation.privacyRequired') : null),
-      termsConsent: (value: any) => (!value ? t('validation.termsRequired') : null),
+      privacyConsent: (value: boolean) => (!value ? t('validation.privacyRequired') : null),
+      termsConsent: (value: boolean) => (!value ? t('validation.termsRequired') : null),
     },
     validateOnBlur: true,
   });

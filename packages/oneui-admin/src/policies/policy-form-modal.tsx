@@ -18,7 +18,6 @@ interface PolicyFormModalProps {
   policy?: PolicyWithCreator | null;
   onClose: (updatedPolicy?: PolicyWithCreator) => void;
 }
-// @ts-ignore unused
 interface PolicyFormValues {
   type: PolicyType;
   slug: string;
@@ -41,7 +40,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
       status: policy?.status || 'DRAFT',
       changeReason: '',
     },
-    onSubmit: async (values: any) => {
+    onSubmit: async (values: PolicyFormValues) => {
       const url = isEditing ? `/api/admin/policies/${policy.id}` : '/api/admin/policies';
       const method = isEditing ? 'PUT' : 'POST';
       const body = isEditing

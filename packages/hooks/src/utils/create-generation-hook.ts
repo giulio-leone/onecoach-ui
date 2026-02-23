@@ -245,7 +245,7 @@ export function createGenerationHook<TInput, TOutput>(
 
               // Update Progress
               const progress = plan.progress || 0;
-              const currentRole = (plan.metadata as any)?.currentRole;
+              const currentRole = (plan.metadata as Record<string, unknown>)?.currentRole;
               const message = plan.metadata?.lastMessage || '';
 
               setState((prev) => {
@@ -253,7 +253,7 @@ export function createGenerationHook<TInput, TOutput>(
 
                 if (currentRole) {
                   const lastEvent = newEvents.length > 0 ? newEvents[newEvents.length - 1] : null;
-                  const lastRole = (lastEvent?.data as any)?.role;
+                  const lastRole = (lastEvent?.data as Record<string, unknown>)?.role;
 
                   if (lastRole !== currentRole) {
                     newEvents.push({
@@ -274,6 +274,7 @@ export function createGenerationHook<TInput, TOutput>(
                   newEvents.push({
                     type: 'agent_progress',
                     timestamp: new Date(),
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     data: { role: 'coordinator' as any, message, progress },
                     message: message,
                   });
@@ -391,17 +392,16 @@ export function createGenerationHook<TInput, TOutput>(
               const event = parseEventLine<TOutput>(line);
               if (!event) continue;
 
-
-
               switch (event.type) {
-
                 case 'agent_start': {
                   const role = event.data.role;
                   setState((prev) => {
                     const exists = prev.streamEvents.some(
-                      (e) => e.type === 'agent_start' && (e.data as any)?.role === role
+                      (e) =>
+                        e.type === 'agent_start' &&
+                        (e.data as Record<string, unknown>)?.role === role
                     );
-                    
+
                     // If exists, just update the message, don't add to log
                     if (exists) {
                       return {
@@ -445,8 +445,8 @@ export function createGenerationHook<TInput, TOutput>(
                   break;
                 case 'agent_error':
                   setState((prev) => ({
-                      ...prev,
-                      streamEvents: [...prev.streamEvents, createStreamEvent(event, getMessage)],
+                    ...prev,
+                    streamEvents: [...prev.streamEvents, createStreamEvent(event, getMessage)],
                   }));
 
                   if (!event.data.retrying) {
@@ -467,8 +467,8 @@ export function createGenerationHook<TInput, TOutput>(
                   break;
                 case 'validation':
                   setState((prev) => ({
-                      ...prev,
-                      streamEvents: [...prev.streamEvents, createStreamEvent(event, getMessage)],
+                    ...prev,
+                    streamEvents: [...prev.streamEvents, createStreamEvent(event, getMessage)],
                   }));
                   if (!event.data.isValid) {
                     console.warn('Validation issues:', event.data.issues);
@@ -506,8 +506,8 @@ export function createGenerationHook<TInput, TOutput>(
                   break;
                 default:
                   setState((prev) => ({
-                      ...prev,
-                      streamEvents: [...prev.streamEvents, createStreamEvent(event, getMessage)],
+                    ...prev,
+                    streamEvents: [...prev.streamEvents, createStreamEvent(event, getMessage)],
                   }));
                   break;
               }

@@ -75,7 +75,7 @@ export function SkeletonList({ count = 3 }: { count?: number }) {
 export function SkeletonStats() {
   return (
     <View style={styles.statsContainer}>
-      {[1, 2, 3, 4].map((i: any) => (
+      {[1, 2, 3, 4].map((i: number) => (
         <View key={i} style={styles.statCard}>
           <SkeletonLoader width={40} height={40} borderRadius={20} style={{ marginBottom: 8 }} />
           <SkeletonLoader width="60%" height={24} style={{ marginBottom: 4 }} />

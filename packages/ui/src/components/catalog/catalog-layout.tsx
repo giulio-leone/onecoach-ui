@@ -32,7 +32,7 @@ export const CatalogHeader = ({
 
         {stats.length > 0 && (
           <div className="flex gap-6 pt-2">
-            {stats.map((stat: any) => (
+            {stats.map((stat: { label: string; value: string | number }) => (
               <div key={stat.label} className="flex items-baseline gap-2">
                 <span className="text-2xl font-bold text-neutral-900 dark:text-white">
                   {stat.value}
@@ -107,7 +107,7 @@ export const CatalogToolbar = ({
       <div className="flex items-center gap-2 px-2 pb-2 sm:pb-0">
         {/* Filter Pills (Scrollable) */}
         <div className="no-scrollbar flex flex-1 gap-2 overflow-x-auto sm:flex-none">
-          {filterOptions.map((option: any) => {
+          {filterOptions.map((option: FilterOption) => {
             const isActive = activeFilters.includes(option.value);
             return (
               <button

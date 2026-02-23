@@ -43,5 +43,6 @@ export function ScaleIn({
     transition: `transform ${duration}ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 200ms ease-out`,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return <View style={[animatedStyle, style] as any}>{children}</View>;
 }

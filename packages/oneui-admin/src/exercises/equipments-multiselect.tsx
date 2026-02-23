@@ -38,7 +38,7 @@ export function EquipmentsMultiselect({
   }, [q]);
 
   const toggle = (id: string) => {
-    const next = values.includes(id) ? values.filter((v: any) => v !== id) : [...values, id];
+    const next = values.includes(id) ? values.filter((v: string) => v !== id) : [...values, id];
     onChange(next);
   };
 

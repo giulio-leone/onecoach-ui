@@ -21,6 +21,25 @@ import {
 } from './smart-analysis-panel';
 import { AgentEventList, useAdminMode, type ProgressField } from '@giulio-leone/one-agent-hooks';
 
+interface SaveTripPayload {
+  name?: string;
+  outboundFlight: Flight;
+  returnFlight?: Flight;
+  aiAnalysis: FlightAnalysis;
+  aiRecommendation:
+    | FlightRecommendation
+    | {
+        outboundFlightId: string;
+        returnFlightId?: string;
+        totalPrice: number;
+        strategy: string;
+        confidence: number;
+        reasoning: string;
+        deepLink: undefined;
+      };
+  combinedDeepLink?: string;
+}
+
 export type { FlightSearchResponse };
 
 export interface FlightResultsProps {
@@ -53,13 +72,13 @@ function useSavedTrips() {
         if (data.trips) {
           // We track saved trips by ID, but for duplicate checking we might need more smarts.
           // For now, just tracking IDs of newly saved trips in this session + loaded ones.
-          setSavedTripIds(new Set(data.trips.map((t: any) => t.id)));
+          setSavedTripIds(new Set(data.trips.map((t: { id: string }) => t.id)));
         }
       })
       .catch(() => {});
   }, []);
 
-  const saveTrip = useCallback(async (tripData: any) => {
+  const saveTrip = useCallback(async (tripData: SaveTripPayload) => {
     try {
       const res = await fetch('/api/flight/trips', {
         method: 'POST',
@@ -154,16 +173,16 @@ export function FlightResults({
     // If the recommendation only has IDs, we need to look them up.
 
     // Helper to find flight by ID
-    const findFlight = (id: string, list: any[]) => list.find((f) => f.id === id);
+    const findFlight = (id: string, list: Flight[]) => list.find((f) => f.id === id);
 
     // Search in all results
     const outboundList =
       results?.tripType === 'round-trip' ? results.outbound : results?.flights || [];
     const returnList = results?.tripType === 'round-trip' ? results.return : [];
 
-    const outboundF = findFlight(rec.outboundFlightId, outboundList as any[]);
+    const outboundF = findFlight(rec.outboundFlightId, outboundList as Flight[]);
     const returnF = rec.returnFlightId
-      ? findFlight(rec.returnFlightId, returnList as any[])
+      ? findFlight(rec.returnFlightId, returnList as Flight[])
       : undefined;
 
     if (outboundF) {

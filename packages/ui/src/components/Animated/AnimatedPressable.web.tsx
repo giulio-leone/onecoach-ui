@@ -31,6 +31,7 @@ export function AnimatedPressableButton({
     <Pressable
       onPressIn={() => setIsPressed(true)}
       onPressOut={() => setIsPressed(false)}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       style={[animatedStyle, style] as any}
       {...props}
     >

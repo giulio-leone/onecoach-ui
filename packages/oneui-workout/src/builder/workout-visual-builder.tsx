@@ -309,7 +309,7 @@ export function WorkoutVisualBuilder({
         theme="primary"
         // ... props ...
         title={program.name}
-        onTitleChange={(name: any) => updateProgram({ name })}
+        onTitleChange={(name: string) => updateProgram({ name })}
         subtitle={t('subtitle')}
         onBack={handleBack}
         isEditMode={isEditMode}
@@ -321,7 +321,9 @@ export function WorkoutVisualBuilder({
         onSaveNow={saveNow}
         viewModes={viewModes}
         currentViewMode={viewMode}
-        onViewModeChange={(id: any) => setViewMode(id as 'editor' | 'statistics' | 'progression')}
+        onViewModeChange={(id: string) =>
+          setViewMode(id as 'editor' | 'statistics' | 'progression')
+        }
         showNavigation={isEditor}
         weeks={program.weeks}
         currentWeekIndex={selectedWeekIndex}

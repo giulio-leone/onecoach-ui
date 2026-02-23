@@ -15,7 +15,7 @@ export function useAllAdminFoodsRealtime() {
 
   useEffect(() => {
     logger.debug('Subscribing to food_items realtime changes');
-    
+
     const channel = supabase
       .channel('admin-foods-changes')
       .on(
@@ -25,7 +25,7 @@ export function useAllAdminFoodsRealtime() {
           schema: 'public',
           table: 'food_items',
         },
-        (payload: any) => {
+        (payload: unknown) => {
           logger.debug('Food item changed realtime:', payload);
           // Invalidate all food lists
           void queryClient.invalidateQueries({ queryKey: ['foods'] });

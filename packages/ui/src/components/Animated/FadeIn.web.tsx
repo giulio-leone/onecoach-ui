@@ -30,5 +30,6 @@ export function FadeIn({ children, duration = 300, delay = 0, style }: FadeInPro
     transition: `opacity ${duration}ms ease-in-out`,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return <View style={[animatedStyle, style] as any}>{children}</View>;
 }

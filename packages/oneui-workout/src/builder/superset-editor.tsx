@@ -183,7 +183,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
   const handleExerciseChange = (
     index: number,
     field: keyof SupersetBuilderExercise,
-    value: any
+    value: string | number
   ) => {
     const updated = exercises.map((ex, i) => (i === index ? { ...ex, [field]: value } : ex));
     setExercises(updated);

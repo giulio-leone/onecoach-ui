@@ -7,7 +7,7 @@
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-import type { PlanningProgress, PlanningTask } from "@giulio-leone/types/domain";
+import type { PlanningProgress, PlanningTask } from '@giulio-leone/types/domain';
 
 interface UsePlanningProgressOptions {
   planId: string | null;
@@ -123,32 +123,36 @@ export function usePlanningProgress({
     eventSource.addEventListener('progress', (event) => {
       try {
         const raw =
-          typeof (event as unknown as MessageEvent).data === 'string' ? (event as unknown as MessageEvent).data : '';
+          typeof (event as unknown as MessageEvent).data === 'string'
+            ? (event as unknown as MessageEvent).data
+            : '';
         if (!raw) return; // skip eventi senza data
         const data: ProgressEvent = JSON.parse(raw);
         setProgress({
           planId: data.planId,
-          planStatus: (data as any).planStatus || (progress?.planStatus as any),
+          planStatus:
+            ((data as Record<string, unknown>).planStatus as PlanningProgress['planStatus']) ||
+            progress?.planStatus,
           totalTasks: data.totalTasks,
           completedTasks: data.completedTasks,
           totalSubTasks: data.totalSubTasks,
           completedSubTasks: data.completedSubTasks,
           progressPercentage: data.progressPercentage,
-          tasks: (data.tasks as any) || [],
+          tasks: (data.tasks as PlanningTask[] | undefined) || [],
           currentTask: data.currentTask
             ? {
-                id: (data.currentTask as any).id,
+                id: (data.currentTask as Record<string, unknown>).id as string | undefined,
                 weekNumber: data.currentTask.weekNumber,
-                status: (data.currentTask as any).status,
+                status: (data.currentTask as Record<string, unknown>).status as string,
                 subTasks: [],
               }
             : undefined,
           currentSubTask: data.currentSubTask
             ? {
-                id: (data.currentSubTask as any).id,
+                id: (data.currentSubTask as Record<string, unknown>).id as string | undefined,
                 dayNumber: data.currentSubTask.dayNumber,
                 dayName: data.currentSubTask.dayName,
-                status: (data.currentSubTask as any).status,
+                status: (data.currentSubTask as Record<string, unknown>).status as string,
               }
             : undefined,
         });
@@ -178,7 +182,7 @@ export function usePlanningProgress({
               totalSubTasks: 0,
               completedSubTasks: 0,
               progressPercentage: 0,
-              planStatus: 'PENDING' as any,
+              planStatus: 'PENDING' as PlanningProgress['planStatus'],
             }),
             totalTasks: init.totalTasks,
             totalSubTasks: init.totalSubTasks,

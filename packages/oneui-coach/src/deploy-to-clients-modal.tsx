@@ -17,6 +17,7 @@ import { toast } from 'sonner';
 import { useTranslations } from 'next-intl';
 
 import { logger } from '@giulio-leone/lib-shared';
+import type { CoachClient } from '@giulio-leone/lib-api-client/queries/coach.queries';
 type DeployResult = {
   userId: string;
   success: boolean;
@@ -72,7 +73,7 @@ export function DeployToClientsModal({
 
   const filteredClients =
     clientsData?.clients?.filter(
-      (c: any) =>
+      (c: CoachClient) =>
         c.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
         c.email?.toLowerCase().includes(searchQuery.toLowerCase())
     ) || [];
@@ -84,7 +85,7 @@ export function DeployToClientsModal({
   };
 
   const selectAll = () => {
-    setSelectedUsers(filteredClients.map((c: any) => c.id));
+    setSelectedUsers(filteredClients.map((c: CoachClient) => c.id));
   };
 
   const deselectAll = () => {
@@ -178,12 +179,22 @@ export function DeployToClientsModal({
                 <span className="text-neutral-500">
                   {selectedUsers.length} / {filteredClients.length} selezionati
                 </span>
-                <div className="flex gap-2 items-center">
-                  <Button variant="ghost" size="sm" onClick={selectAll} className="text-primary-600 hover:underline h-auto p-0">
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={selectAll}
+                    className="text-primary-600 h-auto p-0 hover:underline"
+                  >
                     Tutti
                   </Button>
                   <span className="text-neutral-300">|</span>
-                  <Button variant="ghost" size="sm" onClick={deselectAll} className="text-primary-600 hover:underline h-auto p-0">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={deselectAll}
+                    className="text-primary-600 h-auto p-0 hover:underline"
+                  >
                     Nessuno
                   </Button>
                 </div>
@@ -199,7 +210,7 @@ export function DeployToClientsModal({
                     {searchQuery ? 'Nessun cliente trovato' : 'Nessun cliente disponibile'}
                   </div>
                 ) : (
-                  filteredClients.map((client: any) => (
+                  filteredClients.map((client: CoachClient) => (
                     <label
                       key={client.id}
                       className={`flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors ${
@@ -277,7 +288,7 @@ export function DeployToClientsModal({
             <>
               <div className="max-h-64 space-y-2 overflow-y-auto">
                 {results.map((r) => {
-                  const client = clientsData?.clients?.find((c: any) => c.id === r.userId);
+                  const client = clientsData?.clients?.find((c: CoachClient) => c.id === r.userId);
                   return (
                     <div
                       key={r.userId}

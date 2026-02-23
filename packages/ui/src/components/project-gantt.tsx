@@ -1,6 +1,7 @@
 'use client';
 
 import { format, differenceInDays, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
+import type { Locale } from 'date-fns';
 import { it } from 'date-fns/locale';
 import { cn } from '@giulio-leone/lib-design-system';
 
@@ -30,7 +31,7 @@ export function ProjectGantt({
   project: Project;
   className?: string;
   wholeProjectLabel?: string;
-  locale?: any;
+  locale?: Locale;
 }) {
   const startDate = startOfWeek(new Date(project.startDate), { weekStartsOn: 1 });
   const endDate = endOfWeek(new Date(project.endDate), { weekStartsOn: 1 });

@@ -70,23 +70,25 @@ export function CreditHistory({ limit = 10 }: CreditHistoryProps) {
       </div>
 
       <div className={cn(darkModeClasses.list.container)}>
-        {transactions.map((transaction: any) => (
-          <TransactionItem
-            key={transaction.id}
-            icon={transaction.amount > 0 ? ArrowUpRight : ArrowDownRight}
-            iconVariant={transaction.amount > 0 ? 'success' : 'error'}
-            title={transaction.description}
-            subtitle={new Date(transaction.createdAt).toLocaleString('it-IT', {
-              day: '2-digit',
-              month: 'short',
-              year: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit',
-            })}
-            amount={transaction.amount}
-            showBalance={false}
-          />
-        ))}
+        {transactions.map(
+          (transaction: { id: string; amount: number; description: string; createdAt: string }) => (
+            <TransactionItem
+              key={transaction.id}
+              icon={transaction.amount > 0 ? ArrowUpRight : ArrowDownRight}
+              iconVariant={transaction.amount > 0 ? 'success' : 'error'}
+              title={transaction.description}
+              subtitle={new Date(transaction.createdAt).toLocaleString('it-IT', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+              })}
+              amount={transaction.amount}
+              showBalance={false}
+            />
+          )
+        )}
       </div>
     </div>
   );

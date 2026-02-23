@@ -120,7 +120,7 @@ const LoadingIndicatorComponent = ({
                 />
               </div>
               <div className="flex gap-1">
-                {[0, 1, 2, 3].map((i: any) => (
+                {[0, 1, 2, 3].map((i: number) => (
                   <div
                     key={i}
                     className={cn(

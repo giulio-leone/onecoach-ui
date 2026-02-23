@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-// Mock components for app-level compatibility
-const Pressable = (props: any) => <View {...props} />;
+import React, { useState } from 'react';
 import { View, Text } from 'react-native';
+// Mock components for app-level compatibility
+const Pressable = (props: React.ComponentProps<typeof View>) => <View {...props} />;
 
 import { Button } from '@giulio-leone/ui';
 import { Plus, Dumbbell } from 'lucide-react-native';

@@ -23,11 +23,11 @@ export function NutritionImportModal({ isOpen, onClose, onSuccess }: NutritionIm
       endpoint="/api/nutrition/import"
       title={t('nutrition_import_modal.importa_piano_nutrizionale_ai')}
       description={t('nutrition_import_modal.carica_pdf_docx_immagini_o_csv_xlsx_l_ai')}
-      buildPayload={(files: any[]) => ({
+      buildPayload={(files: unknown[]) => ({
         files,
         options: { mode: 'auto' },
       })}
-      onSuccess={async (res: any) => {
+      onSuccess={async (res: unknown) => {
         if (onSuccess) {
           await onSuccess((res as { planId?: string })?.planId);
         }

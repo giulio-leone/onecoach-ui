@@ -27,5 +27,6 @@ export function StaggeredListItem({
   const { animatedStyle } = useStaggeredFadeIn(index, config);
   const composedStyle = [animatedStyle, style].filter(Boolean) as unknown as StyleProp<ViewStyle>;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return <Animated.View style={composedStyle as any}>{children}</Animated.View>;
 }

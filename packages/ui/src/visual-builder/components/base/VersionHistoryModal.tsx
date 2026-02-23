@@ -411,7 +411,7 @@ export function VersionHistoryModal<T>({
   );
 }
 
-function formatValue(val: any): string {
+function formatValue(val: unknown): string {
   if (val === null || val === undefined) return 'empty';
   if (typeof val === 'boolean') return val ? 'Yes' : 'No';
   if (typeof val === 'object') return '...';

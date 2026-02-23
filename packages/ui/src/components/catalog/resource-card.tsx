@@ -150,7 +150,7 @@ export const ResourceCard = ({
         {/* Badges / Tags */}
         {badges.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
-            {badges.slice(0, 3).map((badge: any) => (
+            {badges.slice(0, 3).map((badge: string) => (
               <span
                 key={badge}
                 className="inline-flex items-center rounded-md bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
@@ -169,7 +169,7 @@ export const ResourceCard = ({
         {/* Stats Grid */}
         {stats.length > 0 && (
           <div className="mt-auto grid grid-cols-2 gap-2 border-t border-neutral-100 pt-3 dark:border-neutral-800">
-            {stats.map((stat: any) => (
+            {stats.map((stat: { label: string; value: string | number }) => (
               <div key={stat.label} className="flex flex-col">
                 <span className="text-[10px] tracking-wider text-neutral-400 uppercase">
                   {stat.label}
