@@ -24,8 +24,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@giulio-leone/features-exercise": "workspace:*",
-    "@giulio-leone/features-food": "workspace:*",
+    "@giulio-leone/features": "workspace:*",
     "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-api-client": "workspace:*",

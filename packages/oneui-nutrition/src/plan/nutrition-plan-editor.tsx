@@ -41,12 +41,12 @@ import {
   usePlanOperations,
   useMacrosCalculations,
   useTemplateOperations,
-} from '@giulio-leone/features-nutrition/hooks'; // Assuming this works if oneui-nutrition depends on it
+} from '@giulio-leone/features/nutrition/hooks'; // Assuming this works if oneui-nutrition depends on it
 import { useExpansionState } from '@giulio-leone/hooks'; // Fixed import
-import { useFoodDrawer } from '@giulio-leone/features-food/hooks';
+import { useFoodDrawer } from '@giulio-leone/features/food/hooks';
 import { useAdminCheck } from '@giulio-leone/hooks'; // Fixed import
 import { needsRecalculation } from '@giulio-leone/lib-shared';
-import { useNutritionDnd } from '@giulio-leone/features-nutrition/hooks';
+import { useNutritionDnd } from '@giulio-leone/features/nutrition/hooks';
 import { PlanMetadataForm } from './components/plan-metadata-form';
 import { TargetMacrosForm } from './components/target-macros-form';
 import { RecalculateModal } from './components/recalculate-modal';

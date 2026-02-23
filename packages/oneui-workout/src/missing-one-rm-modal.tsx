@@ -13,7 +13,7 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import { AlertCircle, Check, Calculator, Edit3, Info, Loader2 } from 'lucide-react';
 import { Button, Modal, ModalFooter, Tooltip } from '@giulio-leone/ui';
 import { ExerciseCombobox } from '@giulio-leone/ui-workout';
-import { useOneRepMax, type MissingOneRM } from '@giulio-leone/features-workout/hooks';
+import { useOneRepMax, type MissingOneRM } from '@giulio-leone/features/workout/hooks';
 import { useWeightUnit } from '@giulio-leone/lib-api/hooks';
 import { estimateOneRMFromReps } from '@giulio-leone/lib-workout/intensity-calculator';
 import { kgToLbs, lbsToKg } from '@giulio-leone/lib-shared';

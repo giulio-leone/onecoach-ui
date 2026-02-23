@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
  */
 import { LoadingIndicator, StatCard } from '@giulio-leone/ui';
 import { TrendingUp, DollarSign, Star, Package } from 'lucide-react';
-import type { CoachDashboardStats as CoachDashboardStatsType } from '@giulio-leone/features-coach/hooks';
+import type { CoachDashboardStats as CoachDashboardStatsType } from '@giulio-leone/features/coach/hooks';
 
 interface CoachDashboardStatsProps {
   stats: CoachDashboardStatsType | null;

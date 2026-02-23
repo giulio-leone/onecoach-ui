@@ -16,7 +16,7 @@ import {
   useExercise,
   useCreateExercise,
   useUpdateExercise,
-} from '@giulio-leone/features-exercise/hooks';
+} from '@giulio-leone/features/exercise/hooks';
 import { useForm } from '@giulio-leone/hooks';
 import { ExerciseTypeCombobox } from './exercise-type-combobox';
 import { MusclesMultiselect } from './muscles-multiselect';

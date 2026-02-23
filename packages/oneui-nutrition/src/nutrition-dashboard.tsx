@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Plus, Sparkles, ChefHat, ArrowRight, Calendar, Utensils, Play } from 'lucide-react';
-import { useNutritionPlans } from '@giulio-leone/features-nutrition';
+import { useNutritionPlans } from '@giulio-leone/features/nutrition';
 import { getAllNutritionPlanDays } from '@giulio-leone/lib-shared';
 import { cn } from '@giulio-leone/lib-design-system';
 import { Card, Heading, Text, Button } from '@giulio-leone/ui';

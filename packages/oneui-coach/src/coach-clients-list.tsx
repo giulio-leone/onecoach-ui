@@ -9,7 +9,7 @@
 import { useState } from 'react';
 import { Input, Select, Heading, Text } from '@giulio-leone/ui';
 import { CoachClientCard } from './coach-client-card';
-import { useCoachClients } from '@giulio-leone/features-coach/hooks';
+import { useCoachClients } from '@giulio-leone/features/coach/hooks';
 import type { CoachClient } from '@giulio-leone/lib-api-client/queries/coach.queries';
 import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 // ... imports ...

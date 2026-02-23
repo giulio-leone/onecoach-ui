@@ -27,7 +27,7 @@ import {
   useExercises,
   useDeleteExercise,
   useBatchExerciseOperations,
-} from '@giulio-leone/features-exercise/hooks';
+} from '@giulio-leone/features/exercise/hooks';
 import type { ExercisesResponse } from '@giulio-leone/lib-api-client';
 import type { LocalizedExercise } from '@giulio-leone/lib-exercise';
 import type { AdminExercise } from './types';

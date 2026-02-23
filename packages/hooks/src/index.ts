@@ -3,12 +3,12 @@
  *
  * Esporta solo utility hooks cross-feature.
  * Feature-specific hooks sono disponibili nei feature modules:
- * - @giulio-leone/features-workout/hooks
- * - @giulio-leone/features-nutrition/hooks
- * - @giulio-leone/features-exercise/hooks
- * - @giulio-leone/features-food/hooks
+ * - @giulio-leone/features/workout/hooks
+ * - @giulio-leone/features/nutrition/hooks
+ * - @giulio-leone/features/exercise/hooks
+ * - @giulio-leone/features/food/hooks
  * - @giulio-leone/features/analytics/hooks
- * - @giulio-leone/features-coach/hooks
+ * - @giulio-leone/features/coach/hooks
  */
 
 // Generation hooks (cross-feature utility)

@@ -24,7 +24,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@giulio-leone/features-workout": "workspace:*",
+    "@giulio-leone/features": "workspace:*",
     "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
