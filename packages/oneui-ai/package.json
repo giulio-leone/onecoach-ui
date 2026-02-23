@@ -28,15 +28,13 @@
   },
   "dependencies": {
     "@giulio-leone/constants": "workspace:*",
-    "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-ai": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/schemas": "workspace:*",
     "@giulio-leone/types": "workspace:*",
-    "@giulio-leone/ui": "workspace:*",
-    "@onecoach/ui-core": "workspace:*"
+    "@giulio-leone/ui": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

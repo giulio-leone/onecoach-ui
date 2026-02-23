@@ -34,7 +34,6 @@
     "@giulio-leone/types": "workspace:*",
     "@giulio-leone/ui": "workspace:*",
     "@giulio-leone/ui-coach": "workspace:*",
-    "@onecoach/ui-core": "workspace:*",
     "lucide-react": "^0.300.0",
     "next-intl": "^4.7.0"
   },

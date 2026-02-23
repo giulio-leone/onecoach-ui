@@ -43,10 +43,7 @@
     "build": "tsup",
     "type-check": "tsc --noEmit"
   },
-  "dependencies": {
-    "@giulio-leone/lib-design-system": "workspace:*",
-    "tailwindcss": "^4.1.18"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": ">=19.1.0 <20",
     "react-native": ">=0.81 <0.83"

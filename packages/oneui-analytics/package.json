@@ -23,7 +23,6 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@onecoach/ui-core": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/ui": "workspace:*",
     "recharts": "^3.6.0",

@@ -26,13 +26,10 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@onecoach/ui-core": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/types": "workspace:*",
     "@giulio-leone/lib-chat-core": "workspace:*",
-    "@giulio-leone/lib-stores": "workspace:*",
-    "@giulio-leone/ui": "workspace:*",
-    "lucide-react": "^0.562.0"
+    "@giulio-leone/lib-stores": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

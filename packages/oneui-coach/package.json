@@ -30,7 +30,6 @@
     "@giulio-leone/ui": "workspace:*",
     "@giulio-leone/ui-analytics": "workspace:*",
     "@giulio-leone/ui-marketplace": "workspace:*",
-    "@onecoach/ui-core": "workspace:*",
     "lucide-react": "^0.562.0"
   },
   "peerDependencies": {

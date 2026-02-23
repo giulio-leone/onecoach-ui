@@ -32,9 +32,7 @@
     "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/lib-stores": "workspace:*",
     "@giulio-leone/types": "workspace:*",
-    "@giulio-leone/ui": "workspace:*",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^3.4.0"
+    "@giulio-leone/ui": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=19.1.0",

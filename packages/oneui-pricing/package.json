@@ -25,8 +25,6 @@
   "dependencies": {
     "@giulio-leone/constants": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
-    "@onecoach/ui-core": "workspace:*",
-    "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/types": "workspace:*",
     "@giulio-leone/ui": "workspace:*",
     "lucide-react": "^0.562.0"

@@ -24,13 +24,11 @@
   },
   "dependencies": {
     "@giulio-leone/ui": "workspace:*",
-    "@onecoach/ui-core": "workspace:*",
     "@giulio-leone/ui-ai": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/one-agent-hooks": "workspace:*",
-    "@giulio-leone/one-nutrition": "workspace:*",
     "@giulio-leone/types": "workspace:*",
     "@giulio-leone/constants": "workspace:*",
     "@giulio-leone/hooks": "workspace:*",

@@ -35,7 +35,6 @@
     "@giulio-leone/types": "workspace:*",
     "@giulio-leone/ui": "workspace:*",
     "@giulio-leone/ui-layout": "workspace:*",
-    "@onecoach/ui-core": "workspace:*",
     "lucide-react": "^0.562.0"
   },
   "peerDependencies": {
