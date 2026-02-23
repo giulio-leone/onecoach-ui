@@ -13,8 +13,8 @@
 
 'use client';
 
-import { UnifiedChat } from '@giulio-leone/lib-chat-core/client';
-import type { ScreenContextType } from '@giulio-leone/lib-chat-core/types';
+import { UnifiedChat } from '@giulio-leone/one-agent/chat/client';
+import type { ScreenContextType } from '@giulio-leone/one-agent/chat/types';
 import { useCopilotStore } from '@giulio-leone/lib-stores';
 import { CopilotResizeHandle } from './copilot-resize-handle';
 import type { NutritionPlan } from '@giulio-leone/types/nutrition';
