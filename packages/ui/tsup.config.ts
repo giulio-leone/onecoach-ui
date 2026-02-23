@@ -25,6 +25,7 @@ export default defineConfig({
     /^@hello-pangea\//, 'input-otp', 'react-dropzone',
     'react-markdown', 'react-syntax-highlighter',
     'react-native', 'react-native-web', 'expo-image', 'expo-linear-gradient',
+    /^expo-/,
     'tailwindcss',
     /^app\//, /^hooks\//, /^@\//,
   ],
