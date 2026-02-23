@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@giulio-leone/constants": "workspace:*",
+    "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-ai": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",

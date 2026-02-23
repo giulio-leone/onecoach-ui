@@ -23,12 +23,14 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@onecoach/ui-core": "workspace:*",
-    "@giulio-leone/lib-design-system": "workspace:*",
+    "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-api-client": "workspace:*",
     "@giulio-leone/lib-core": "workspace:*",
+    "@giulio-leone/lib-design-system": "workspace:*",
+    "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/lib-stores": "workspace:*",
-    "@giulio-leone/lib-shared": "workspace:*"
+    "@giulio-leone/ui": "workspace:*",
+    "@onecoach/ui-core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18.0.0",

@@ -24,15 +24,20 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@onecoach/ui-core": "workspace:*",
+    "@giulio-leone/features-workout": "workspace:*",
+    "@giulio-leone/hooks": "workspace:*",
+    "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
+    "@giulio-leone/lib-exercise": "workspace:*",
+    "@giulio-leone/lib-shared": "workspace:*",
+    "@giulio-leone/lib-visual-builder": "workspace:*",
+    "@giulio-leone/lib-workout": "workspace:*",
+    "@giulio-leone/one-workout": "workspace:*",
     "@giulio-leone/schemas": "workspace:*",
     "@giulio-leone/types": "workspace:*",
-    "@giulio-leone/one-workout": "workspace:*",
-    "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/ui": "workspace:*",
-    "@giulio-leone/features-workout": "workspace:*",
     "@giulio-leone/ui-coach": "workspace:*",
+    "@onecoach/ui-core": "workspace:*",
     "lucide-react": "^0.300.0"
   },
   "peerDependencies": {

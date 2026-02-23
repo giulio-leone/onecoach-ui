@@ -23,10 +23,11 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@onecoach/ui-core": "workspace:*",
+    "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/types": "workspace:*",
     "@giulio-leone/ui": "workspace:*",
+    "@onecoach/ui-core": "workspace:*",
     "lucide-react": "^0.562.0"
   },
   "peerDependencies": {
