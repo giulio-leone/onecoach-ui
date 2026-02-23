@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "@giulio-leone/ui": "workspace:*",
-    "@giulio-leone/ui-ai": "workspace:*",
     "@giulio-leone/lib-design-system": "workspace:*",
     "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-shared": "workspace:*",
