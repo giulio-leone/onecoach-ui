@@ -52,7 +52,7 @@
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
-    "access": "public"
+    "access": "restricted"
   },
   "devDependencies": {
     "@types/node": "^25.0.3",
