@@ -34,6 +34,7 @@ import {
   type MeshWizardStep,
   type MeshWizardStepProps,
 } from '@/components/agent/mesh-wizard';
+import type { GenerationLogEvent } from '@/components/ai-elements/generation-log';
 
 // ----------------------------------------------------------------------------
 // Types
@@ -635,8 +636,7 @@ export function NutritionGenerator() {
         }
         progress={progress}
         currentMessage={currentMessage}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        logs={streamEvents as any[]}
+        logs={streamEvents as GenerationLogEvent[]}
         result={result}
         error={error}
         onReset={reset}
@@ -645,15 +645,17 @@ export function NutritionGenerator() {
           message: 'Il tuo piano nutrizionale personalizzato è stato generato.',
           actionLabel: 'Vai ai miei piani',
           onAction: () => (window.location.href = '/nutrition'),
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          stats: (res: any) =>
-            res?.dayPatterns
+          stats: (res: unknown) => {
+            const r = res as Record<string, unknown> | null;
+            const dayPatterns = r?.dayPatterns as unknown[] | undefined;
+            return dayPatterns
               ? [
-                  { label: 'Pattern', value: res.dayPatterns.length },
-                  { label: 'Settimane', value: res.weeks?.length || 0 },
-                  { label: 'Obiettivo', value: res.goals?.[0] || 'N/A' },
+                  { label: 'Pattern', value: dayPatterns.length },
+                  { label: 'Settimane', value: (r?.weeks as unknown[] | undefined)?.length || 0 },
+                  { label: 'Obiettivo', value: (r?.goals as string[] | undefined)?.[0] || 'N/A' },
                 ]
-              : [],
+              : [];
+          },
         }}
       />
     </div>

@@ -16,10 +16,7 @@ import { useProfile } from '@giulio-leone/lib-api/hooks';
 import { Scale, Dumbbell, Zap, Trophy, Leaf } from 'lucide-react';
 import { SelectionCard, WizardRadioGroup, WizardSlider } from '@giulio-leone/ui-core';
 
-import type { 
-  NutritionGoalCode as Goal, 
-  DietaryRestrictions 
-} from '@giulio-leone/types/nutrition';
+import type { NutritionGoalCode as Goal, DietaryRestrictions } from '@giulio-leone/types/nutrition';
 
 // Extract DietType from DietaryRestrictions
 type DietType = DietaryRestrictions['dietType'];
@@ -27,11 +24,8 @@ type DietType = DietaryRestrictions['dietType'];
 import { logger } from '@giulio-leone/lib-shared';
 
 // Standard Mesh Wizard
-import {
-  MeshWizard,
-  type MeshWizardStep,
-  type MeshWizardStepProps,
-} from './mesh-wizard';
+import { MeshWizard, type MeshWizardStep, type MeshWizardStepProps } from './mesh-wizard';
+import type { GenerationLogEvent } from '@giulio-leone/ui-ai';
 
 // ----------------------------------------------------------------------------
 // Types & Constants
@@ -40,18 +34,18 @@ import {
 export const Sex = {
   MALE: 'male',
   FEMALE: 'female',
-  OTHER: 'other'
+  OTHER: 'other',
 } as const;
-export type Sex = typeof Sex[keyof typeof Sex];
+export type Sex = (typeof Sex)[keyof typeof Sex];
 
 export const ActivityLevel = {
   SEDENTARY: 'sedentary',
   LIGHT: 'light',
   MODERATE: 'moderate',
   ACTIVE: 'active',
-  VERY_ACTIVE: 'very_active'
+  VERY_ACTIVE: 'very_active',
 } as const;
-export type ActivityLevel = typeof ActivityLevel[keyof typeof ActivityLevel];
+export type ActivityLevel = (typeof ActivityLevel)[keyof typeof ActivityLevel];
 
 const DIET_TYPES = {
   OMNIVORE: 'omnivore',
@@ -72,25 +66,31 @@ const mapGender = (sex: string): Sex | null => {
 
 const mapActivityLevel = (level: string): ActivityLevel | null => {
   switch (level) {
-    case 'sedentary': return ActivityLevel.SEDENTARY;
-    case 'light': return ActivityLevel.LIGHT;
-    case 'moderate': return ActivityLevel.MODERATE;
-    case 'active': return ActivityLevel.ACTIVE;
-    case 'very_active': return ActivityLevel.VERY_ACTIVE;
-    default: return null;
+    case 'sedentary':
+      return ActivityLevel.SEDENTARY;
+    case 'light':
+      return ActivityLevel.LIGHT;
+    case 'moderate':
+      return ActivityLevel.MODERATE;
+    case 'active':
+      return ActivityLevel.ACTIVE;
+    case 'very_active':
+      return ActivityLevel.VERY_ACTIVE;
+    default:
+      return null;
   }
 };
 
 const mapDietType = (type: string): DietType | null => {
   const normalized = type.toLowerCase();
-  
+
   // Cast to allow checking if the string exists in our subset of diet types
   if ((Object.values(DIET_TYPES) as string[]).includes(normalized)) {
     return normalized as DietType;
   }
-  
+
   if (normalized === 'none') return 'none';
-  
+
   return null;
 };
 
@@ -690,8 +690,7 @@ export function NutritionGenerator() {
         }
         progress={progress}
         currentMessage={currentMessage}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        logs={streamEvents as any[]}
+        logs={streamEvents as GenerationLogEvent[]}
         result={result}
         error={error}
         onReset={reset}
@@ -700,15 +699,17 @@ export function NutritionGenerator() {
           message: 'Il tuo piano nutrizionale personalizzato è stato generato.',
           actionLabel: 'Vai ai miei piani',
           onAction: () => (window.location.href = '/nutrition'),
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          stats: (res: any) =>
-            res?.dayPatterns
+          stats: (res: unknown) => {
+            const r = res as Record<string, unknown> | null;
+            const dayPatterns = r?.dayPatterns as unknown[] | undefined;
+            return dayPatterns
               ? [
-                  { label: 'Pattern', value: res.dayPatterns.length },
-                  { label: 'Settimane', value: res.weeks?.length || 0 },
-                  { label: 'Obiettivo', value: res.goals?.[0] || 'N/A' },
+                  { label: 'Pattern', value: dayPatterns.length },
+                  { label: 'Settimane', value: (r?.weeks as unknown[] | undefined)?.length || 0 },
+                  { label: 'Obiettivo', value: (r?.goals as string[] | undefined)?.[0] || 'N/A' },
                 ]
-              : [],
+              : [];
+          },
         }}
       />
     </div>

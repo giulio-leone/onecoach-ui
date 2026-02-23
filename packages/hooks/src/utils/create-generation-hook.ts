@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import type { MeshEvent } from '@giulio-leone/one-agent';
+import type { MeshEvent, AgentRole } from '@giulio-leone/one-agent';
 import { apiClient } from '@giulio-leone/lib-api-client';
 
 export interface GenerationStreamEvent<TOutput = unknown> {
@@ -274,8 +274,7 @@ export function createGenerationHook<TInput, TOutput>(
                   newEvents.push({
                     type: 'agent_progress',
                     timestamp: new Date(),
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    data: { role: 'coordinator' as any, message, progress },
+                    data: { role: 'coordinator' as AgentRole, message, progress },
                     message: message,
                   });
                 }
