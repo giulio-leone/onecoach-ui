@@ -86,4 +86,4 @@ export * from './visual-builder/contexts/clipboard-context';
 
 // Re-export common UI Core components that are not wrapped
 export { GlassContainer } from '@giulio-leone/ui-core';
-export { ScaleTouch, PulseIndicator, AnimatedNumber, ImportModal } from '@giulio-leone/ui-core';
+export { ScaleTouch, PulseIndicator, AnimatedNumber, ImportModal, DialogRenderer } from '@giulio-leone/ui-core';

@@ -25,7 +25,7 @@ import { Heading, Text } from '@giulio-leone/ui';
 import type { NameType, Payload, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import { WorkoutStatisticsService } from '@giulio-leone/lib-workout';
 import { motion, type Variants } from 'framer-motion';
-import { useTheme, designTokens } from 'design-system';
+import { useTheme, designTokens } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
 import type { WorkoutProgram } from '@giulio-leone/types/workout';
 
