@@ -187,7 +187,6 @@
     "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/lib-ai": "workspace:*",
     "@giulio-leone/one-workout": "workspace:*",
-    "@giulio-leone/ui-agent": "workspace:*",
     "@phosphor-icons/react": "*",
     "expo-linear-gradient": "*",
     "react": ">=19.1.0 <20",
