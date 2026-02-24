@@ -13,6 +13,9 @@
 // Legacy hook (usato anche altrove)
 export { useSyncCreditsRealtime } from './use-sync-credits-realtime';
 
+// Live Session
+export { useLiveSessionRealtime } from './use-live-session';
+
 // Workouts
 export {
   useWorkoutsListRealtime,
