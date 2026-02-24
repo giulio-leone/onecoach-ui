@@ -17,9 +17,7 @@ export * from './use-nutrition-generation';
 export * from './use-exercise-generation';
 export * from './use-food-generation';
 export * from './use-app-navigation';
-export * from './use-durable-generation'; // SDK v4.0 - Durable AI generation
-export * from './use-workflow-runs'; // SDK v4.0 - Admin Realtime monitoring
-export * from './use-user-active-generations'; // SDK v4.0 - User generation progress
+export * from './use-user-active-generations';
 
 // Cross-feature utility hooks
 export * from './use-chat';
