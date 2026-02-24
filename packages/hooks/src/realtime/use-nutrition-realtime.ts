@@ -15,14 +15,7 @@ import {
   useRealtimeSync,
 } from '@giulio-leone/lib-stores';
 import { useAuthStore } from '@giulio-leone/lib-stores';
-// Importa le query keys da lib-api per garantire corrispondenza esatta
-import { nutritionKeys as baseNutritionKeys } from '@giulio-leone/lib-api';
-
-// Estende le query keys con dayLogs che manca nella versione base
-export const nutritionKeys = {
-  ...baseNutritionKeys,
-  dayLogs: (planId: string) => [...baseNutritionKeys.detail(planId), 'day-logs'] as const,
-} as const;
+import { nutritionKeys } from '@giulio-leone/lib-api';
 
 // Tipi per i record del database (struttura reale dal Prisma schema)
 interface NutritionPlanRecord {
