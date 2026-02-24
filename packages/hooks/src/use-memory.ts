@@ -18,7 +18,7 @@ import {
   saveVersion,
   getTimeline,
   createTimelineEvent,
-} from '@giulio-leone/lib-api-client/memory';
+} from '@giulio-leone/lib-api/memory';
 import type {
   UserMemory,
   MemoryDomain,

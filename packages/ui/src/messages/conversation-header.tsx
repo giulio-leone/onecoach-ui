@@ -14,7 +14,7 @@ import {
 import {
   useUpdateConversationSettings,
   useDeleteDirectConversation,
-} from '@giulio-leone/lib-api-client/hooks';
+} from '@giulio-leone/lib-api/hooks';
 import { useRouter } from 'app/navigation';
 import { MoreVertical, BellOff, Bell, Star, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';

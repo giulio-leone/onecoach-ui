@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl';
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Card, Button, Input, Label, Switch, Textarea, Avatar, Heading, Text } from '@giulio-leone/ui';
-import { coachApi, coachKeys, type CoachProfile } from '@giulio-leone/lib-api-client';
+import { coachApi, coachKeys, type CoachProfile } from '@giulio-leone/lib-api';
 import { cn } from '@giulio-leone/lib-design-system';
 import { motion, AnimatePresence } from 'framer-motion';
 import {

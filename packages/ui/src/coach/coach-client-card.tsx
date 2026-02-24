@@ -12,7 +12,7 @@ import { Clock, CreditCard, Dumbbell } from 'lucide-react';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 
-import type { CoachClient } from '@giulio-leone/lib-api-client/queries/coach.queries';
+import type { CoachClient } from '@giulio-leone/lib-api/queries/coach.queries';
 
 interface CoachClientCardProps {
   client: CoachClient;

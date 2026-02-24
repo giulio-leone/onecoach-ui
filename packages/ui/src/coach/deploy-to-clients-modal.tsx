@@ -17,7 +17,7 @@ import { toast } from 'sonner';
 import { useTranslations } from 'next-intl';
 
 import { logger } from '@giulio-leone/lib-shared';
-import type { CoachClient } from '@giulio-leone/lib-api-client/queries/coach.queries';
+import type { CoachClient } from '@giulio-leone/lib-api/queries/coach.queries';
 type DeployResult = {
   userId: string;
   success: boolean;

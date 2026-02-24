@@ -7,14 +7,14 @@
 'use client';
 
 import { useEffect, useMemo, useRef } from 'react';
-import { useDirectMessages, useMarkMessageAsRead } from '@giulio-leone/lib-api-client/hooks';
+import { useDirectMessages, useMarkMessageAsRead } from '@giulio-leone/lib-api/hooks';
 import { useDirectMessagesSync } from '@giulio-leone/lib-stores';
 import { useQueryClient } from '@tanstack/react-query';
 import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 import { Avatar } from '@giulio-leone/ui';
 import { format } from 'date-fns';
 import { it, enUS } from 'date-fns/locale';
-import { directMessagingKeys } from '@giulio-leone/lib-api-client';
+import { directMessagingKeys } from '@giulio-leone/lib-api';
 import { MessageActions } from './message-actions';
 import { Star, CheckCheck } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';

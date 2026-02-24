@@ -211,7 +211,6 @@
   "dependencies": {
     "@giulio-leone/constants": "workspace:*",
     "@giulio-leone/lib-ai": "workspace:*",
-    "@giulio-leone/lib-api-client": "workspace:*",
     "@giulio-leone/lib-core": "workspace:*",
     "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/lib-stores": "workspace:*",
@@ -220,7 +219,8 @@
     "@giulio-leone/translations": "workspace:*",
     "@giulio-leone/types": "workspace:*",
     "@giulio-leone/ui": "workspace:*",
-    "@supabase/auth-helpers-nextjs": "^0.8.7"
+    "@supabase/auth-helpers-nextjs": "^0.8.7",
+    "@giulio-leone/lib-api": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=19.1.0 <20",

@@ -6,7 +6,7 @@
 'use client';
 import { useState, type KeyboardEvent } from 'react';
 import { Button, Textarea } from '@giulio-leone/ui';
-import { useSendDirectMessage } from '@giulio-leone/lib-api-client/hooks';
+import { useSendDirectMessage } from '@giulio-leone/lib-api/hooks';
 import { Send, Star } from 'lucide-react';
 import { toast } from 'sonner';
 import { logger } from '@giulio-leone/lib-shared';

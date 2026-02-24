@@ -17,7 +17,7 @@ import {
   useMarkMessageImportant,
   useReportMessage,
   useDeleteDirectMessage,
-} from '@giulio-leone/lib-api-client/hooks';
+} from '@giulio-leone/lib-api/hooks';
 import { MoreVertical, Star, Flag, Trash2, Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
 import { useState } from 'react';

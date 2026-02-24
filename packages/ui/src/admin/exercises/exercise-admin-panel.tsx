@@ -28,7 +28,7 @@ import {
   useDeleteExercise,
   useBatchExerciseOperations,
 } from '@giulio-leone/features/exercise/hooks';
-import type { ExercisesResponse } from '@giulio-leone/lib-api-client';
+import type { ExercisesResponse } from '@giulio-leone/lib-api';
 import type { LocalizedExercise } from '@giulio-leone/one-workout';
 import type { AdminExercise } from './types';
 
