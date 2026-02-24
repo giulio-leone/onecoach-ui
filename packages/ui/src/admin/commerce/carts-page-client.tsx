@@ -4,7 +4,7 @@ import { useTranslations, useFormatter } from 'next-intl';
 import { Badge, Button, Select, StatCard, DatePicker } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { Activity, Clock, ShoppingCart, XCircle } from 'lucide-react';
-import { logger } from '@giulio-leone/lib-shared';
+import { logger, formatCurrency } from '@giulio-leone/lib-shared';
 import { CartDetailsModal } from './cart-details-modal';
 
 type Cart = {
@@ -50,13 +50,6 @@ export function CartsPageClient() {
     to: '',
   });
 
-  const formatCurrency = (value: string | number, currency: string) => {
-    const amount = typeof value === 'string' ? Number.parseFloat(value) : value;
-    return format.number(amount || 0, {
-      style: 'currency',
-      currency: currency || 'EUR',
-    });
-  };
 
   const loadData = async () => {
     setLoading(true);

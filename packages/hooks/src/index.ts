@@ -23,8 +23,6 @@ export * from './use-user-active-generations'; // SDK v4.0 - User generation pro
 
 // Cross-feature utility hooks
 export * from './use-chat';
-export * from './use-credits';
-export * from './use-user-profile';
 export * from './use-admin-check';
 export * from './use-calendar-assignments';
 export * from './use-calendar-navigation';
@@ -38,7 +36,6 @@ export * from './use-auto-save';
 export * from './use-expansion-state';
 export * from './use-planning-progress';
 export * from './use-memory';
-export * from './use-body-measurements';
 export * from './use-navigation-persistence';
 
 // Form handling hook

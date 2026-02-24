@@ -11,7 +11,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from 'recharts';
-import { useBodyMeasurementsHistory } from '@giulio-leone/hooks';
+import { useBodyMeasurementsHistory } from '@giulio-leone/lib-api/hooks';
 import { Card } from '@giulio-leone/ui';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';

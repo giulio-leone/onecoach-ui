@@ -11,6 +11,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { Eye } from 'lucide-react';
 import { CatalogToolbar, CatalogGrid, ResourceCard, type FilterOption } from '@giulio-leone/ui';
+import { formatCurrency } from '@giulio-leone/lib-shared';
 
 interface AdminAffiliatePayoutsProps {
   rewards: Array<{
@@ -47,13 +48,6 @@ export function AdminAffiliatePayouts({
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('it-IT', {
-      style: 'currency',
-      currency: 'EUR',
-      minimumFractionDigits: 2,
-    }).format(amount);
-  };
 
   const getTypeLabel = (type: string) => {
     switch (type) {

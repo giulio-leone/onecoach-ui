@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Badge, Button, Modal, ModalFooter, Select, Textarea } from '@giulio-leone/ui';
 import { toast } from 'sonner';
 import { Clock, TicketPercent, User } from 'lucide-react';
-import { logger } from '@giulio-leone/lib-shared';
+import { logger, formatCurrency } from '@giulio-leone/lib-shared';
 import { useTranslations, useFormatter } from 'next-intl';
 
 type CartItem = {
@@ -60,13 +60,6 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
   const [note, setNote] = useState('');
   const [status, setStatus] = useState('');
 
-  const formatCurrency = (value: string | number, currency: string) => {
-    const amount = typeof value === 'string' ? Number.parseFloat(value) : value;
-    return format.number(amount || 0, {
-      style: 'currency',
-      currency: currency || 'EUR',
-    });
-  };
 
   useEffect(() => {
     if (!open) return;

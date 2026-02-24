@@ -10,6 +10,7 @@ import { useTranslations } from 'next-intl';
 import { useState, useEffect, useCallback } from 'react';
 import { X, History, Clock } from 'lucide-react';
 import { Button } from '@giulio-leone/ui';
+import { formatDateTime } from '@giulio-leone/lib-shared';
 
 interface PolicyHistory {
   id: string;
@@ -59,16 +60,6 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
   useEffect(() => {
     fetchHistory();
   }, [fetchHistory]);
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleString('it-IT', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-  };
 
   const getStatusBadge = (status: string) => {
     const styles = {
@@ -165,7 +156,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
                         </div>
                         <div className="mt-1 flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-500">
                           <Clock className="h-3 w-3" />
-                          <span>{formatDate(item.createdAt)}</span>
+                          <span>{formatDateTime(item.createdAt)}</span>
                           {item.changeReason && (
                             <>
                               <span>•</span>

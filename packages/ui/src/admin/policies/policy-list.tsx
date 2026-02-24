@@ -13,6 +13,7 @@ import { Edit2, Trash2, History, FileText } from 'lucide-react';
 import { PolicyFormModal } from './policy-form-modal';
 import { PolicyHistoryModal } from './policy-history-modal';
 import type { PolicyWithCreator } from '@giulio-leone/lib-core/policy.service';
+import { formatDate } from '@giulio-leone/lib-shared';
 import {
   CatalogHeader,
   CatalogToolbar,
@@ -106,14 +107,6 @@ export function PolicyList({ policies: initialPolicies, stats }: PolicyListProps
   const handleViewHistory = (policyId: string) => {
     setHistoryPolicyId(policyId);
     setIsHistoryModalOpen(true);
-  };
-
-  const formatDate = (date: Date | string) => {
-    return new Date(date).toLocaleDateString('it-IT', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-    });
   };
 
   const filterOptions: FilterOption[] = [

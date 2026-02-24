@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 import { Users, TrendingUp, Clock, Coins, Gift, Target, Activity } from 'lucide-react';
+import { formatCurrency } from '@giulio-leone/lib-shared';
 
 type AffiliateProgram = {
   name: string;
@@ -32,13 +33,6 @@ interface AdminAffiliateStatsProps {
 export function AdminAffiliateStats({ stats, program }: AdminAffiliateStatsProps) {
   const t = useTranslations('admin');
 
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('it-IT', {
-      style: 'currency',
-      currency: 'EUR',
-      minimumFractionDigits: 2,
-    }).format(amount);
-  };
 
   const formatPercent = (value: number, total: number) => {
     if (total === 0) return '0%';

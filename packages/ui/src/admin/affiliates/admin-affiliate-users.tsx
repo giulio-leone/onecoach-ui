@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { useRouter } from '@giulio-leone/ui';
 import { CatalogToolbar, CatalogGrid, ResourceCard } from '@giulio-leone/ui';
+import { formatCurrency } from '@giulio-leone/lib-shared';
 
 interface AdminAffiliateUsersProps {
   affiliates: Array<{
@@ -37,13 +38,6 @@ export function AdminAffiliateUsers({ affiliates }: AdminAffiliateUsersProps) {
   const [sortBy, setSortBy] = useState<'referrals' | 'earnings' | 'joined'>('referrals');
   const router = useRouter();
 
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('it-IT', {
-      style: 'currency',
-      currency: 'EUR',
-      minimumFractionDigits: 2,
-    }).format(amount);
-  };
 
   const filteredAndSortedAffiliates = affiliates
     .filter(
