@@ -1,6 +1,6 @@
 {
   "name": "@giulio-leone/ui-agent",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -29,7 +29,6 @@
     "@giulio-leone/lib-api": "workspace:*",
     "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/types": "workspace:*",
-    "@giulio-leone/constants": "workspace:*",
     "@giulio-leone/hooks": "workspace:*",
     "lucide-react": "^0.303.0",
     "react": "^18.2.0"
