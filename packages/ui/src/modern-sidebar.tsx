@@ -7,7 +7,6 @@ import { SidebarItem } from './sidebar-item';
 import { ThemeToggle } from './theme-toggle';
 import { Button } from './button';
 import { Drawer } from './drawer';
-import type { LucideIcon } from 'lucide-react';
 import {
   ChevronLeft,
   ChevronRight,
@@ -20,18 +19,12 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import Link from 'next/link';
+import type { SidebarNavigationItem } from '@giulio-leone/types';
+
+export type { SidebarNavigationItem };
 
 export const SIDEBAR_WIDTH = 280;
 export const SIDEBAR_COLLAPSED_WIDTH = 80;
-
-export interface SidebarNavigationItem {
-  name: string;
-  href?: string;
-  icon: LucideIcon;
-  badge?: string;
-  children?: SidebarNavigationItem[];
-  defaultOpen?: boolean;
-}
 
 interface UserProfile {
   name: string | null;

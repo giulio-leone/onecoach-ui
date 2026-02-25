@@ -31,7 +31,7 @@ import {
   Plane,
 } from 'lucide-react';
 import { defaultLocale, locales, messages, type Locale } from '@giulio-leone/translations';
-import type { SidebarNavigationItem } from '@giulio-leone/ui';
+import type { SidebarNavigationItem } from '@giulio-leone/types';
 import { isAdminRole } from '@giulio-leone/types/core';
 import { isCoachRole } from '@giulio-leone/lib-core/auth/roles';
 

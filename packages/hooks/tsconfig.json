@@ -25,6 +25,15 @@
       "@onecoach/types/*": [
         "../../../onecoach-types/src/*"
       ],
+      "@giulio-leone/types": [
+        "../../../onecoach-types/src/index.ts"
+      ],
+      "@giulio-leone/types/*": [
+        "../../../onecoach-types/src/*"
+      ],
+      "@giulio-leone/types/core": [
+        "../../../onecoach-types/src/auth.types.ts"
+      ],
       "@onecoach/schemas": [
         "../../../onecoach-schemas/src/index.ts"
       ],
