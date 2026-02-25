@@ -1,6 +1,7 @@
 'use client';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Badge, Collapsible, CollapsibleContent, CollapsibleTrigger } from '@giulio-leone/ui';
+import { Badge } from '../badge';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../collapsible';
 import type { ToolUIPart } from './ai-types';
 import {
   CheckCircleIcon,

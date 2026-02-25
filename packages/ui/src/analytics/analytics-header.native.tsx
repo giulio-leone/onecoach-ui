@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, useColorScheme } from 'react-native';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../card';
 import { Calendar, Download, Share2 } from 'lucide-react-native';
 import { cn } from '@giulio-leone/lib-design-system';
 

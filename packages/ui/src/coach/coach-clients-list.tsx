@@ -7,7 +7,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Input, Select, Heading, Text } from '@giulio-leone/ui';
+import { Input } from '../input';
+import { Select } from '../select';
+import { Heading, Text } from '../typography';
 import { CoachClientCard } from './coach-client-card';
 import { useCoachClients } from '@giulio-leone/features/coach/hooks';
 import type { CoachClient } from '@giulio-leone/lib-api/queries/coach.queries';

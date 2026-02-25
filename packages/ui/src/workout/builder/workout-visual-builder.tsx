@@ -14,7 +14,8 @@ import { ArrowLeft, BarChart2, Layout, TrendingUp, Dumbbell, Upload } from 'luci
 // import { WorkoutClipboardProvider } from './workout-clipboard-provider';
 import type { LucideIcon } from 'lucide-react';
 import { WorkoutStatus } from '@giulio-leone/types/client';
-import { Text, Button } from '@giulio-leone/ui';
+import { Text } from '../../typography';
+import { Button } from '../../button';
 import { DayEditor } from './day-editor';
 import { WorkoutStatistics } from './workout-statistics';
 import { ProgressionManager } from './progression-manager';

@@ -8,7 +8,10 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Button, Checkbox, Input, Select } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Checkbox } from '../checkbox';
+import { Input } from '../input';
+import { Select } from '../select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@giulio-leone/ui/dialog';
 import { useCoachClients } from '@giulio-leone/features/coach/hooks';
 import { LoadingState } from '@giulio-leone/ui/components';

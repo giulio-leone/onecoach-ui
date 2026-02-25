@@ -1,15 +1,9 @@
 'use client';
 import NextImage from 'next/image';
 import { cn } from '@giulio-leone/lib-design-system';
-import {
-  Button,
-  ButtonGroup,
-  ButtonGroupText,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@giulio-leone/ui';
+import { Button } from '../button';
+import { ButtonGroup, ButtonGroupText } from '../button-group';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../tooltip';
 import type { FileUIPart } from './ai-types';
 // import type { UIMessage } from 'ai';
 import { ChevronLeftIcon, ChevronRightIcon, PaperclipIcon, XIcon } from 'lucide-react';

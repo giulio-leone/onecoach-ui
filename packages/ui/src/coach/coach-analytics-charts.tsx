@@ -12,7 +12,7 @@ import {
   AnalyticsChart as ProgressChart,
   type AnalyticsChartDataPoint as ChartDataPoint,
 } from '@giulio-leone/ui/analytics';
-import { LoadingIndicator } from '@giulio-leone/ui';
+import { LoadingIndicator } from '../loading-indicator';
 import { logger } from '@giulio-leone/lib-shared';
 
 export type Period = '7d' | '30d' | '90d' | '1y';

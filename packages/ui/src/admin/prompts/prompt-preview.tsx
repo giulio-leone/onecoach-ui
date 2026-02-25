@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../../button';
 import { Play, RefreshCw, Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
 import { cn } from '@giulio-leone/lib-design-system';

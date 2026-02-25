@@ -16,7 +16,7 @@ import {
   useDeleteNutritionPlan,
   useDuplicateNutritionPlan,
 } from '@giulio-leone/features/nutrition';
-import { SelectionToolbar, useSupabaseContext } from '@giulio-leone/ui';
+import { SelectionToolbar, useSupabaseContext } from '../core';
 import { DeployToClientsModal } from '@giulio-leone/ui/coach';
 import { useSession } from 'next-auth/react';
 import { ErrorState } from '@giulio-leone/ui/components';

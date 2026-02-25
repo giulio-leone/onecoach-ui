@@ -1,4 +1,6 @@
-import { Badge, Button, Card } from '@giulio-leone/ui';
+import { Badge } from '../../../../../../badge';
+import { Button } from '../../../../../../button';
+import { Card } from '../../../../../../card';
 import { Copy, Trash2, Calendar, User, Repeat } from 'lucide-react';
 import { toast } from 'sonner';
 import { useTranslations, useFormatter } from 'next-intl';

@@ -2,7 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { useTranslations, useFormatter } from 'next-intl';
-import { Badge, Button, Input, Select, StatCard, DatePicker } from '@giulio-leone/ui';
+import { Badge } from '../../badge';
+import { Button } from '../../button';
+import { Input } from '../../input';
+import { Select } from '../../select';
+import { StatCard } from '..';
+import { DatePicker } from '../../date-picker';
 import { toast } from 'sonner';
 import { AlertCircle, CheckCircle2, Clock, Download, XCircle } from 'lucide-react';
 import { logger } from '@giulio-leone/lib-shared';

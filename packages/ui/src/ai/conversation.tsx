@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@giulio-leone/lib-design-system';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../button';
 import { ArrowDownIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 import { useCallback } from 'react';

@@ -9,7 +9,7 @@
 
 import { useEffect, useState, useMemo, useCallback } from 'react';
 import { Check, ChevronDown, X, Search } from 'lucide-react';
-import { Checkbox } from '@giulio-leone/ui';
+import { Checkbox } from '../../checkbox';
 import { useTranslations } from 'next-intl';
 
 export type MetadataType = 'exerciseType' | 'muscle' | 'bodyPart' | 'equipment' | 'workoutGoal';

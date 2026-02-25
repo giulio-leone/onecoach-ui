@@ -1,13 +1,8 @@
 'use client';
 
 import React from 'react';
-import {
-  AppShellHeader,
-  AppShellMainContent,
-  AppShellSidebar,
-  type AppShellHeaderLabels,
-  type SidebarNavigationItem,
-} from '@giulio-leone/ui';
+import { AppShellHeader, AppShellMainContent, AppShellSidebar, type AppShellHeaderLabels } from '../../../app-shell';
+import { type SidebarNavigationItem } from '../../../modern-sidebar';
 import type { AuthenticatedUser } from "@giulio-leone/types/core";
 
 export interface OneDashboardLabels {

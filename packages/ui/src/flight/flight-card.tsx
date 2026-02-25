@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Clock, ArrowRight, PlaneTakeoff, PlaneLanding, Flame, Heart } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../card';
 import { useTranslations } from 'next-intl';
 import type { Flight, FlightDirection } from '@giulio-leone/lib-shared';
 

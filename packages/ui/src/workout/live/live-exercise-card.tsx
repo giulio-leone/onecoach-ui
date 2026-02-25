@@ -7,7 +7,9 @@ import { getExerciseSets } from '@giulio-leone/one-workout';
 import type { Exercise as TypesExercise } from '@giulio-leone/types';
 import { LiveSetTracker } from './live-set-tracker';
 import { ExerciseInstructions } from './exercise-instructions';
-import { Button, Heading, Text, Badge } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Heading, Text } from '../../typography';
+import { Badge } from '../../badge';
 import type { Exercise, ExerciseSet } from '@giulio-leone/schemas';
 
 export interface LiveExerciseCardProps {

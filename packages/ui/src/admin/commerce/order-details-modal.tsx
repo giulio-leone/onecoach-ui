@@ -1,5 +1,7 @@
 'use client';
-import { Badge, Button, Modal, ModalFooter } from '@giulio-leone/ui';
+import { Badge } from '../../badge';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
 import { toast } from 'sonner';
 import { CreditCard, User } from 'lucide-react';
 import { useTranslations, useFormatter } from 'next-intl';

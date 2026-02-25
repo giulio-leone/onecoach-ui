@@ -7,7 +7,9 @@ import { useTranslations } from 'next-intl';
  * Modal per visualizzare e modificare dettagli utente
  */
 import { Plus, Minus, Save } from 'lucide-react';
-import { Button, Input, Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Input } from '../input';
+import { Modal, ModalFooter } from '../dialog';
 import { UserApiKeys } from './user-api-keys';
 import { useForm } from '@giulio-leone/hooks';
 import { handleApiError } from '@giulio-leone/lib-shared';

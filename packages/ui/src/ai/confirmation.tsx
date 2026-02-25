@@ -1,6 +1,7 @@
 'use client';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Alert, AlertDescription, Button } from '@giulio-leone/ui';
+import { Alert, AlertDescription } from '../alert';
+import { Button } from '../button';
 import type { ToolUIPart } from './ai-types';
 import { type ComponentProps, createContext, type ReactNode, useContext } from 'react';
 type ToolUIPartApproval =

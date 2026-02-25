@@ -10,7 +10,9 @@
 import { useMemo } from 'react';
 import { Trash2, GripVertical, Plus, BookOpen, Bookmark } from 'lucide-react';
 import { MealCard } from './meal-card';
-import { SortableList, SortableItem, type SortableItemRenderProps, Button } from '@giulio-leone/ui';
+import { SortableList, SortableItem } from '../../core';
+import { Button } from '../../button';
+import { type SortableItemRenderProps } from '../../core/components/dnd/sortable-item';
 import { createMealDragId } from '@giulio-leone/lib-shared';
 import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';

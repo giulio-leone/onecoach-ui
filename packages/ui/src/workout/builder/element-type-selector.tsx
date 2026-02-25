@@ -1,13 +1,7 @@
 'use client';
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@giulio-leone/ui';
-import { Button } from '@giulio-leone/ui';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '../../dialog';
+import { Button } from '../../button';
 import { Flame, Link2, RefreshCw, Activity, Dumbbell, X } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 import { motion } from 'framer-motion';

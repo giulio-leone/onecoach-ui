@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
  * Supporta visualizzazione circolare (ProgressRing) e compatta
  */
 
-import { ProgressRing } from '@giulio-leone/ui';
+import { ProgressRing } from '../../core';
 import type { Macros } from '@giulio-leone/types/nutrition';
 
 interface MacroDisplayProps {

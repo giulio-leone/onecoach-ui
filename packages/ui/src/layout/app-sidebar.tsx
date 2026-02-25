@@ -1,6 +1,6 @@
 'use client';
 
-import { AppShellSidebar } from '@giulio-leone/ui';
+import { AppShellSidebar } from '../app-shell';
 import { useAppNavigation } from '@giulio-leone/hooks';
 import type { AuthenticatedUser } from "@giulio-leone/types/core";
 

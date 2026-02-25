@@ -8,7 +8,7 @@
 
 'use client';
 
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../../button';
 import type { LucideIcon } from 'lucide-react';
 import { MoreVertical } from 'lucide-react';
 import { AdminDropdownMenu } from '../shared/admin-dropdown-menu';

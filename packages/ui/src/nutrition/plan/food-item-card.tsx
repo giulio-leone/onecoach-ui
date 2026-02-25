@@ -12,7 +12,8 @@ import { useTranslations } from 'next-intl';
 import { useState, memo, useCallback, useLayoutEffect } from 'react';
 import { GripVertical, Trash2 } from 'lucide-react';
 import { MacroDisplay } from './macro-display';
-import { SortableItem, type SortableItemRenderProps } from '@giulio-leone/ui';
+import { SortableItem } from '../../core';
+import { type SortableItemRenderProps } from '../../core/components/dnd/sortable-item';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { Food } from "@giulio-leone/types/nutrition";
 

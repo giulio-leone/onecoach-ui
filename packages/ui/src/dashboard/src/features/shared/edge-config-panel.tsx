@@ -6,7 +6,9 @@
  * Componente per visualizzare e aggiornare i valori di Vercel Edge Config
  */
 import { useState, useEffect } from 'react';
-import { Button, Input, Label } from '@giulio-leone/ui';
+import { Button } from '../../../../button';
+import { Input } from '../../../../input';
+import { Label } from '../../../../label';
 import { Save, Plus, Trash2, RefreshCw } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 

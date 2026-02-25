@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
  */
 
 import { Dumbbell, Eye, Trash2, Target, Calendar, TrendingUp, Clock } from 'lucide-react';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../card';
 import type { WorkoutProgram, WorkoutDay } from '@giulio-leone/types/workout';
 
 export interface WorkoutCardProps {

@@ -8,7 +8,9 @@ import { useTranslations } from 'next-intl';
  * (types, muscles, body parts, equipment)
  */
 import { useEffect, useState } from 'react';
-import { Button, Input, LoadingIndicator } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Input } from '../input';
+import { LoadingIndicator } from '../loading-indicator';
 import { Save, AlertTriangle, CheckCircle2 } from 'lucide-react';
 interface Translation {
   locale: string;

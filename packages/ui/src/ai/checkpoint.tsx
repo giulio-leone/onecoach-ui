@@ -1,6 +1,8 @@
 'use client';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Button, Separator, Tooltip, TooltipContent, TooltipTrigger } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Separator } from '../separator';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../tooltip';
 import { BookmarkIcon, type LucideProps } from 'lucide-react';
 import type { ComponentProps, HTMLAttributes } from 'react';
 export type CheckpointProps = HTMLAttributes<HTMLDivElement>;

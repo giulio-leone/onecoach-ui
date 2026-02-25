@@ -4,7 +4,9 @@
  * Display list of conversations with unread badges and priority indicators
  */
 'use client';
-import { Avatar, Badge, Card } from '@giulio-leone/ui';
+import { Avatar } from '../avatar';
+import { Badge } from '../badge';
+import { Card } from '../card';
 import { formatDistanceToNow } from 'date-fns';
 import { it } from 'date-fns/locale';
 import type { DirectConversationWithUser } from '@giulio-leone/lib-core';

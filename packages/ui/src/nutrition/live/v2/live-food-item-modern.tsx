@@ -5,7 +5,7 @@ import { RefreshCw, Check } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { Food } from '@giulio-leone/types/nutrition';
 import type { FoodSwap } from '@giulio-leone/schemas';
-import { ScaleTouch } from '@giulio-leone/ui';
+import { ScaleTouch } from '../../../core';
 
 export interface LiveFoodItemModernProps {
   food: Food;

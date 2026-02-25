@@ -5,7 +5,8 @@
  */
 'use client';
 import { useState } from 'react';
-import { Button, Input } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Input } from '../input';
 import { useForm } from '@giulio-leone/hooks';
 import { isValidEmail } from '@giulio-leone/lib-shared';
 import { handleApiError } from '@giulio-leone/lib-shared';

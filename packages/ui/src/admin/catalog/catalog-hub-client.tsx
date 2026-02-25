@@ -1,8 +1,10 @@
 'use client';
 
-import { CatalogHeader, CatalogGrid, ResourceCard } from '@giulio-leone/ui';
+import { CatalogHeader } from '../../components/catalog/catalog-layout';
+import { CatalogGrid } from '../../components/catalog/catalog-grid';
+import { ResourceCard } from '../../components/catalog/resource-card';
 import { Dumbbell, UtensilsCrossed, FileText, ArrowRight, type LucideIcon } from 'lucide-react';
-import { useRouter } from '@giulio-leone/ui';
+import { useRouter } from '../../layout';
 import { useTranslations, useLocale } from 'next-intl';
 
 interface CatalogHubClientProps {

@@ -17,7 +17,8 @@ import {
   SuitcaseRolling,
   Check,
 } from '@phosphor-icons/react';
-import { WizardRadioGroup, DateRangePicker } from '@giulio-leone/ui';
+import { WizardRadioGroup } from '../wizard';
+import { DateRangePicker } from '../date-range-picker';
 import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
 

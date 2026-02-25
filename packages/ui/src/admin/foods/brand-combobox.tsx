@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 import { useEffect, useMemo, useState } from 'react';
-import { Input } from '@giulio-leone/ui';
+import { Input } from '../../input';
 import { useDebounce } from '@giulio-leone/hooks';
 
 interface BrandOption {

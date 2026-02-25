@@ -11,15 +11,12 @@ import { useTranslations } from 'next-intl';
 import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Sparkles, Edit, Trash2 } from 'lucide-react';
-import {
-  CatalogHeader,
-  CatalogGrid,
-  ResourceCard,
-  GlassToolbar,
-  GlassTable,
-  Combobox,
-  type GlassTableColumn,
-} from '@giulio-leone/ui';
+import { CatalogHeader } from '../../components/catalog/catalog-layout';
+import { CatalogGrid } from '../../components/catalog/catalog-grid';
+import { ResourceCard } from '../../components/catalog/resource-card';
+import { GlassToolbar } from '../../glass-toolbar';
+import { GlassTable, type GlassTableColumn } from '../../glass-table';
+import { Combobox } from '../../combobox';
 import {
   useFoods,
   useBatchFoodOperations,

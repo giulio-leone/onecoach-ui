@@ -3,7 +3,8 @@
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Dumbbell, Loader2, CheckCircle2, XCircle, Clock } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, Progress } from '@giulio-leone/ui';
+import { Card, CardContent, CardHeader, CardTitle } from '../card';
+import { Progress } from '../progress';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { GenerationWithStatus } from '@giulio-leone/hooks';
 

@@ -1,7 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useTranslations, useFormatter } from 'next-intl';
-import { Badge, Button, Select, StatCard, DatePicker } from '@giulio-leone/ui';
+import { Badge } from '../../badge';
+import { Button } from '../../button';
+import { Select } from '../../select';
+import { StatCard } from '..';
+import { DatePicker } from '../../date-picker';
 import { toast } from 'sonner';
 import { Activity, Clock, ShoppingCart, XCircle } from 'lucide-react';
 import { logger, formatCurrency } from '@giulio-leone/lib-shared';

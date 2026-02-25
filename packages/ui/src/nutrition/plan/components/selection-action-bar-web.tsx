@@ -1,7 +1,7 @@
 'use client';
 
 import { X } from 'lucide-react';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../../../button';
 import { cn } from '@giulio-leone/lib-design-system';
 
 interface Action {

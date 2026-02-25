@@ -10,8 +10,10 @@ import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
-import { useRouter } from '@giulio-leone/ui';
-import { CatalogToolbar, CatalogGrid, ResourceCard } from '@giulio-leone/ui';
+import { useRouter } from '../../layout';
+import { CatalogToolbar } from '../../components/catalog/catalog-layout';
+import { CatalogGrid } from '../../components/catalog/catalog-grid';
+import { ResourceCard } from '../../components/catalog/resource-card';
 import { formatCurrency } from '@giulio-leone/lib-shared';
 
 interface AdminAffiliateUsersProps {

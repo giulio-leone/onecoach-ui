@@ -16,7 +16,8 @@ import { ExerciseActionsMenu, type ExerciseAction } from './exercise-actions-men
 import { STATUS_BADGE_STYLES, STATUS_LABELS } from './exercise-constants';
 import { ShieldCheck, ShieldX, Edit3, ClipboardList, Trash2, Dumbbell } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Checkbox, Heading, Text } from '@giulio-leone/ui';
+import { Checkbox } from '../../checkbox';
+import { Heading, Text } from '../../typography';
 
 function getExerciseName(exercise: LocalizedExercise): string {
   return exercise.translations?.[0]?.name || exercise.slug || exercise.id;

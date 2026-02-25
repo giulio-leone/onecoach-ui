@@ -12,7 +12,7 @@ import {
   CartesianGrid,
 } from 'recharts';
 import { useBodyMeasurementsHistory } from '@giulio-leone/lib-api/hooks';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../../card';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 

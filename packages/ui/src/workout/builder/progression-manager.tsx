@@ -7,7 +7,7 @@ import {
   type ExerciseOccurrence,
   type ProgressionParams,
 } from '@giulio-leone/lib-workout';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../../button';
 import { useTranslations } from 'next-intl';
 import { cn } from '@giulio-leone/lib-design-system';
 import {

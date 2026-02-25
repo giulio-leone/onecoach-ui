@@ -7,11 +7,9 @@ import { useTranslations } from 'next-intl';
  * Display list of published plans from a coach
  */
 
-import {
-  MarketplacePlanCard,
-  type MarketplacePlanCardProps,
-} from '@giulio-leone/ui';
-import { EmptyState } from '@giulio-leone/ui';
+import { MarketplacePlanCard } from '../marketplace';
+import { type MarketplacePlanCardProps } from '../marketplace/marketplace-plan-card';
+import { EmptyState } from '../empty-state';
 import { Package } from 'lucide-react';
 
 interface CoachPlansListProps {

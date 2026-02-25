@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 // Mock components for app-level compatibility
 const Pressable = (props: React.ComponentProps<typeof View>) => <View {...props} />;
 
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../../card';
 import { Trash2, ArrowUp, ArrowDown } from 'lucide-react-native';
 import { cn } from '@giulio-leone/lib-design-system';
 import { SetGroupEditor } from '../editor/set-group-editor';

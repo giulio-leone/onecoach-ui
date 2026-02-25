@@ -11,7 +11,7 @@ import { useDirectMessages, useMarkMessageAsRead } from '@giulio-leone/lib-api/h
 import { useDirectMessagesSync } from '@giulio-leone/lib-stores';
 import { useQueryClient } from '@tanstack/react-query';
 import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
-import { Avatar } from '@giulio-leone/ui';
+import { Avatar } from '../avatar';
 import { format } from 'date-fns';
 import { it, enUS } from 'date-fns/locale';
 import { directMessagingKeys } from '@giulio-leone/lib-api';

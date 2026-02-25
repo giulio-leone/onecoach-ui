@@ -46,7 +46,7 @@ import {
 } from './constants';
 import type { UserRole, AIProvider } from '@prisma/client';
 import { toast } from 'sonner';
-import { Checkbox } from '@giulio-leone/ui';
+import { Checkbox } from '../../checkbox';
 import { createPortal } from 'react-dom';
 
 import { logger } from '@giulio-leone/lib-shared';

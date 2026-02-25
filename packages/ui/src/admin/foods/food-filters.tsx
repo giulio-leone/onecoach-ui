@@ -9,7 +9,10 @@ import { useTranslations } from 'next-intl';
  */
 import { useEffect, useState } from 'react';
 import type { ChangeEvent } from 'react';
-import { Button, Card, Input, Select } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Card } from '../../card';
+import { Input } from '../../input';
+import { Select } from '../../select';
 import { BrandCombobox } from './brand-combobox';
 import { CategoriesMultiselect } from './categories-multiselect';
 import { RotateCcw } from 'lucide-react';

@@ -1,6 +1,7 @@
 'use client';
 
-import { Button, Checkbox } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Checkbox } from '../../checkbox';
 import { cn } from '@giulio-leone/lib-design-system';
 import { ShieldCheck, ShieldX, Trash2 } from 'lucide-react';
 

@@ -2,7 +2,10 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Button, Input, SelectionCard, WizardLayout } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Input } from '../../input';
+import { SelectionCard } from '../../selection-card';
+import { WizardLayout } from '../../wizard-layout';
 import { cn } from '@giulio-leone/lib-design-system';
 import { Dumbbell, Clock, User, Zap, MapPin } from 'lucide-react';
 import type { ReactNode } from 'react';

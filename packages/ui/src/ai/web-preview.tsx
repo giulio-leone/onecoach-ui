@@ -1,19 +1,12 @@
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../button';
 'use client';
 
 import { useTranslations } from 'next-intl';
 import { cn } from '@giulio-leone/lib-design-system';
-import {
-  Button,
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-  Input,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../collapsible';
+import { Input } from '../input';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../tooltip';
 import { ChevronDownIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';

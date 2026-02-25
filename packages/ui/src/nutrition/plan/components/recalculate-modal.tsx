@@ -5,8 +5,8 @@
  */
 
 'use client';
-import { Button } from '@giulio-leone/ui';
-import { Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../../../button';
+import { Modal, ModalFooter } from '../../../dialog';
 
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import type { Food } from "@giulio-leone/types/nutrition";

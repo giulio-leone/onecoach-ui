@@ -21,7 +21,7 @@ import {
 } from 'recharts';
 import { cn } from '@giulio-leone/lib-design-system';
 import { Activity, Dumbbell, TrendingUp, Zap, Layers, Repeat } from 'lucide-react';
-import { Heading, Text } from '@giulio-leone/ui';
+import { Heading, Text } from '../../typography';
 import type { NameType, Payload, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import { WorkoutStatisticsService } from '@giulio-leone/lib-workout';
 import { motion, type Variants } from 'framer-motion';

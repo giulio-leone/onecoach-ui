@@ -9,7 +9,10 @@ import { useTranslations } from 'next-intl';
  * Principi: KISS, SOLID, DRY, YAGNI
  */
 import { useEffect, useMemo, useRef } from 'react';
-import { AdminCard, Button, Input, Checkbox } from '@giulio-leone/ui';
+import { AdminCard } from '..';
+import { Button } from '../../button';
+import { Input } from '../../input';
+import { Checkbox } from '../../checkbox';
 import { useForm } from '@giulio-leone/hooks';
 import { handleApiError } from '@giulio-leone/lib-shared';
 import { cn } from '@giulio-leone/lib-design-system';

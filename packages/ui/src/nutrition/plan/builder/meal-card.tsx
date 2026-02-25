@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../../../card';
 import { Trash2, ArrowUp, ArrowDown, Plus, X } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { Meal, Food } from '@giulio-leone/types/nutrition';

@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Modal, ModalFooter, type ButtonVariant } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
+import { type ButtonVariant } from '../../button';
 import { toast } from 'sonner';
 import { Loader2, UserCheck, UserX, AlertTriangle, Trash2 } from 'lucide-react';
 import type { UserWithCounts } from '@giulio-leone/types/prisma-helpers';

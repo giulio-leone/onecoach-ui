@@ -8,7 +8,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { CoachPlanCard, type CoachPlanCardProps } from './coach-plan-card';
-import { EmptyState, Button } from '@giulio-leone/ui';
+import { EmptyState } from '../empty-state';
+import { Button } from '../button';
 import { Filter, Plus, Package } from 'lucide-react';
 import { useCoachDashboardPlans } from '@giulio-leone/features/coach/hooks';
 import type { MarketplacePlanCardProps } from '@giulio-leone/features/coach/hooks';

@@ -1,6 +1,6 @@
 'use client';
 
-import { QuickActionsGrid } from '@giulio-leone/ui';
+import { QuickActionsGrid } from '../quick-actions-grid';
 import {
   Users,
   TrendingUp,

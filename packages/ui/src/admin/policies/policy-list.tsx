@@ -14,13 +14,9 @@ import { PolicyFormModal } from './policy-form-modal';
 import { PolicyHistoryModal } from './policy-history-modal';
 import type { PolicyWithCreator } from '@giulio-leone/lib-core/policy.service';
 import { formatDate } from '@giulio-leone/lib-shared';
-import {
-  CatalogHeader,
-  CatalogToolbar,
-  CatalogGrid,
-  ResourceCard,
-  type FilterOption,
-} from '@giulio-leone/ui';
+import { CatalogHeader, CatalogToolbar, type FilterOption } from '../../components/catalog/catalog-layout';
+import { CatalogGrid } from '../../components/catalog/catalog-grid';
+import { ResourceCard } from '../../components/catalog/resource-card';
 
 interface PolicyListProps {
   policies: PolicyWithCreator[];

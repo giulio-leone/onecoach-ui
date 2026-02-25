@@ -2,15 +2,8 @@
 
 
 import { cn } from '@giulio-leone/lib-design-system';
-import { Button } from '@giulio-leone/ui';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@giulio-leone/ui';
+import { Button } from '../button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '../dropdown-menu';
 import { ChevronDownIcon, ExternalLinkIcon, MessageCircleIcon } from 'lucide-react';
 import { type ComponentProps, createContext, useContext } from 'react';
 

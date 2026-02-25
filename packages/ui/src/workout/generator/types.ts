@@ -1,7 +1,7 @@
 import { ActivityLevel, DifficultyLevel, Sex, WorkoutGoal } from '@giulio-leone/types/client';
 import type { SplitType, TierAI } from './constants';
 export type { SplitType, TierAI };
-import type { StreamEvent as UIStreamEvent } from '@giulio-leone/ui';
+import type { StreamEvent as UIStreamEvent } from '../../streaming-result';
 import type {
   WorkoutGenerationInput as DomainWorkoutGenerationInput,
   WorkoutGenerationOutput as DomainWorkoutGenerationOutput,

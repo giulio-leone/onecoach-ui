@@ -1,13 +1,9 @@
 'use client';
 import NextImage from 'next/image';
 import { cn } from '@giulio-leone/lib-design-system';
-import {
-  Button,
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-  ScrollArea,
-} from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../collapsible';
+import { ScrollArea } from '../scroll-area';
 import { ChevronDownIcon, PaperclipIcon } from 'lucide-react';
 import type { ComponentProps } from 'react';
 export type QueueMessagePart = {

@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
  */
 
 import { Search } from 'lucide-react';
-import { Input } from '@giulio-leone/ui';
+import { Input } from '../input';
 
 export interface MarketplaceFilters {
   planType?: 'WORKOUT' | 'NUTRITION';

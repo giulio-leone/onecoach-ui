@@ -4,7 +4,8 @@ import { useLocale } from 'next-intl';
 
 import { ChevronLeft, ChevronRight, Calendar, CheckCircle2 } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Heading, Text, Button } from '@giulio-leone/ui';
+import { Heading, Text } from '../../../typography';
+import { Button } from '../../../button';
 
 export interface LiveNutritionHeaderModernProps {
   planName?: string;

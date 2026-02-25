@@ -10,14 +10,10 @@ import { useTranslations } from 'next-intl';
  * Principi: KISS, SOLID (Open/Closed), DRY
  */
 import { useState, useEffect, type ReactNode } from 'react';
-import {
-  AIGenerationView,
-  Button,
-  Modal,
-  ModalFooter,
-  Checkbox,
-  type AIGenerationLog,
-} from '@giulio-leone/ui';
+import { AIGenerationView, type AIGenerationLog } from '../../components/ai-generation-view';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
+import { Checkbox } from '../../checkbox';
 import { Brain, X } from 'lucide-react';
 export interface GenerationHookState<TOutput> {
   isGenerating: boolean;

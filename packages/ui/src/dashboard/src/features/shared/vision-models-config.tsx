@@ -1,7 +1,8 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { Camera, Scan, Loader2, Check, AlertCircle } from 'lucide-react';
-import { Button, Input } from '@giulio-leone/ui';
+import { Button } from '../../../../button';
+import { Input } from '../../../../input';
 import { useAuth } from '@giulio-leone/lib-api/hooks';
 import { useTranslations } from 'next-intl';
 

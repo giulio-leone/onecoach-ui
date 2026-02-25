@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Play, Pause, CheckCircle2, Timer, Activity } from 'lucide-react';
 import type { WarmupSection } from '@giulio-leone/schemas';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../../card';
 
 export interface LiveWarmupCardProps {
   warmup: WarmupSection;

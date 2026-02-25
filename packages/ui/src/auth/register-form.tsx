@@ -3,7 +3,9 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { signIn } from 'next-auth/react';
-import { Button, Input, Checkbox } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Input } from '../input';
+import { Checkbox } from '../checkbox';
 import { useReferralTracking } from 'hooks/use-referral-tracking';
 import { useFeatureFlag } from '@giulio-leone/hooks/useFeatureFlag';
 import { useForm } from '@giulio-leone/hooks';

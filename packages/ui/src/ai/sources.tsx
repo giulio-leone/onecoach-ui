@@ -2,7 +2,7 @@
 
 import NextImage from 'next/image';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@giulio-leone/ui';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../collapsible';
 import { BookOpenIcon, ChevronDownIcon, ExternalLinkIcon, GlobeIcon } from 'lucide-react';
 import type { ComponentProps } from 'react';
 

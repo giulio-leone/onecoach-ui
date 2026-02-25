@@ -6,7 +6,8 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'app/navigation';
-import { Button, Input } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Input } from '../input';
 import { useForm } from '@giulio-leone/hooks';
 import { validatePassword, passwordsMatch } from '@giulio-leone/lib-shared';
 import { handleApiError } from '@giulio-leone/lib-shared';

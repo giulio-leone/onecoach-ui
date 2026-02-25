@@ -9,12 +9,7 @@ import { DayEditorShell } from '@giulio-leone/ui/visual-builder';
 import { SortableExerciseCard } from './sortable-exercise-card';
 import { ExerciseSelector } from './exercise-selector';
 import { useExerciseClipboard, cloneExerciseWithNewIds } from './workout-clipboard-provider';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@giulio-leone/ui';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../../dropdown-menu';
 import type { WorkoutDay, Exercise } from '@giulio-leone/types/workout';
 
 interface DayEditorProps {

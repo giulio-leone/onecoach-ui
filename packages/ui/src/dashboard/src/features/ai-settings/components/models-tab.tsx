@@ -47,7 +47,8 @@ import {
 import type { UserRole, AIProvider } from '@prisma/client';
 import { toast } from 'sonner';
 import { createPortal } from 'react-dom';
-import { Checkbox, Drawer } from '@giulio-leone/ui';
+import { Checkbox } from '../../../../../checkbox';
+import { Drawer } from '../../../../../drawer';
 
 import { logger } from '@giulio-leone/lib-shared';
 // Model returned from the sync endpoint

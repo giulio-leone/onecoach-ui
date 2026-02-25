@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
  * Design user-friendly con animazioni fluide
  */
 
-import { ProgressRing } from '@giulio-leone/ui';
+import { ProgressRing } from '../core';
 
 import { Loader2, Sparkles } from 'lucide-react';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';

@@ -1,6 +1,7 @@
 'use client';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../tooltip';
 import { type LucideIcon, XIcon } from 'lucide-react';
 import type { ComponentProps, HTMLAttributes } from 'react';
 export type ArtifactProps = HTMLAttributes<HTMLDivElement>;

@@ -6,7 +6,9 @@ import { useTranslations } from 'next-intl';
  *
  * Display vetting request status
  */
-import { Badge, Card, Heading, Text } from '@giulio-leone/ui';
+import { Badge } from '../badge';
+import { Card } from '../card';
+import { Heading, Text } from '../typography';
 import { CheckCircle2, XCircle, Clock, AlertCircle } from 'lucide-react';
 import type { coach_vetting_requests } from '@prisma/client';
 import { formatDistanceToNow } from 'date-fns';

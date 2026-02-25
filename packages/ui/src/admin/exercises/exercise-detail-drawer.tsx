@@ -13,7 +13,9 @@ import { useTranslations } from 'next-intl';
  */
 import type { LocalizedExercise } from '@giulio-leone/one-workout';
 import { ExerciseApprovalStatus } from '@giulio-leone/types/client';
-import { Button, Drawer, LoadingIndicator } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Drawer } from '../../drawer';
+import { LoadingIndicator } from '../../loading-indicator';
 import {
   CheckCircle2,
   ClipboardList,

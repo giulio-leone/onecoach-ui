@@ -7,7 +7,8 @@
 
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
 import { Upload } from 'lucide-react';
 import { handleApiError } from '@giulio-leone/lib-shared';
 interface FoodImportModalProps {

@@ -10,7 +10,9 @@
 import { useMemo } from 'react';
 import { Plus, Trash2, BookOpen, Bookmark, GripVertical } from 'lucide-react';
 import { DayCard } from './day-card';
-import { SortableList, SortableItem, type SortableItemRenderProps, Button } from '@giulio-leone/ui';
+import { SortableList, SortableItem } from '../../core';
+import { Button } from '../../button';
+import { type SortableItemRenderProps } from '../../core/components/dnd/sortable-item';
 import { createNutritionDayDragId } from '@giulio-leone/lib-shared';
 import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';

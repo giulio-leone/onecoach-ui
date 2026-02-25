@@ -1,8 +1,9 @@
 'use client';
 
 import { cn } from '@giulio-leone/lib-design-system';
-import { Button, Collapsible, CollapsibleContent, CollapsibleTrigger } from '@giulio-leone/ui';
-import { CardContent, CardDescription, CardHeader, CardTitle } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../collapsible';
+import { CardContent, CardDescription, CardHeader, CardTitle } from '../card';
 import { ChevronsUpDownIcon, Sparkles } from 'lucide-react';
 import type { ComponentProps } from 'react';
 import { createContext, useContext } from 'react';

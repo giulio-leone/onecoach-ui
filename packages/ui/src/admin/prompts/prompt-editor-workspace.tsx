@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
-import { Button, Checkbox } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Checkbox } from '../../checkbox';
 import { Save, RotateCcw, Columns, Monitor, Sparkles } from 'lucide-react';
 import type { SystemPrompt } from './use-prompts-manager';
 import { PromptPreview } from './prompt-preview';

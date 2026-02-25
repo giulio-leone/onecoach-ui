@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 // Mock components for app-level compatibility
 const Pressable = (props: React.ComponentProps<typeof View>) => <View {...props} />;
 
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../../button';
 import { Plus, Dumbbell } from 'lucide-react-native';
 import { ExerciseCard } from './exercise-card.native';
 import { ExerciseSelector } from './exercise-selector';

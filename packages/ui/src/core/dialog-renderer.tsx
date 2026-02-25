@@ -7,7 +7,7 @@
 
 'use client';
 
-import { SimpleDialog } from '@giulio-leone/ui';
+import { SimpleDialog } from '../dialog';
 import { useDialogState } from '@giulio-leone/lib-stores';
 
 export function DialogRenderer() {

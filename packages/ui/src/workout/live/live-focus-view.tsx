@@ -3,7 +3,9 @@
 import { useTranslations } from 'next-intl';
 import { useState, useMemo, useCallback } from 'react';
 import { AlertTriangle, ChevronRight, Dumbbell } from 'lucide-react';
-import { EmptyState, Heading, Text, Button } from '@giulio-leone/ui';
+import { EmptyState } from '../../empty-state';
+import { Heading, Text } from '../../typography';
+import { Button } from '../../button';
 import { getExerciseSets } from '@giulio-leone/one-workout';
 import type { Exercise, ExerciseSet } from '@giulio-leone/schemas';
 import type { Exercise as TypesExercise } from '@giulio-leone/types';

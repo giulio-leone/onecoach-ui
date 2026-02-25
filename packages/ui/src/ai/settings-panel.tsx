@@ -13,7 +13,7 @@ import { Settings, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
 import type { ProviderName, ModelTier } from '@giulio-leone/lib-ai';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import { AI_REASONING_CONFIG } from '@giulio-leone/lib-shared';
-import { Checkbox } from '@giulio-leone/ui';
+import { Checkbox } from '../checkbox';
 
 import { logger } from '@giulio-leone/lib-shared';
 type NonRouterProvider = Exclude<ProviderName, 'openrouter'>;

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Checkbox } from '@giulio-leone/ui';
+import { Checkbox } from '../../checkbox';
 
 interface Opt {
   id: string;

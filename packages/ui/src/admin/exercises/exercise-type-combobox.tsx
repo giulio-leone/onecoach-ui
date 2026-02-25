@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Input } from '@giulio-leone/ui';
+import { Input } from '../../input';
 
 interface Option {
   id: string;

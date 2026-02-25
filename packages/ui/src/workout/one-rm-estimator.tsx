@@ -13,7 +13,7 @@ import { Calculator, Info, Check } from 'lucide-react';
 import { estimateOneRMFromReps } from '@giulio-leone/lib-workout/intensity-calculator';
 import { kgToLbs, lbsToKg } from '@giulio-leone/lib-shared';
 import { useWeightUnit } from '@giulio-leone/lib-api/hooks';
-import { Tooltip } from '@giulio-leone/ui';
+import { Tooltip } from '../tooltip';
 
 interface OneRMEstimatorProps {
   exerciseName: string;

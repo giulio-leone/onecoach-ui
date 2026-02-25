@@ -3,7 +3,13 @@
 import { useTranslations } from 'next-intl';
 
 import { useState, useEffect } from 'react';
-import { Card, Button, Modal, Input, Label, Spinner, Checkbox } from '@giulio-leone/ui';
+import { Card } from '../card';
+import { Button } from '../button';
+import { Modal } from '../dialog';
+import { Input } from '../input';
+import { Label } from '../label';
+import { Spinner } from '../spinner';
+import { Checkbox } from '../checkbox';
 import { Plus, RefreshCw, Edit, Trash, Play } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 

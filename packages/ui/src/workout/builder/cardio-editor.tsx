@@ -1,7 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, Button, Input, Badge } from '@giulio-leone/ui';
+import { Card } from '../../card';
+import { Button } from '../../button';
+import { Input } from '../../input';
+import { Badge } from '../../badge';
 import { Trash2, Clock, Activity, Route, Heart, Zap } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 import { motion } from 'framer-motion';

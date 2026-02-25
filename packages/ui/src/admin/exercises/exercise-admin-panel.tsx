@@ -9,16 +9,13 @@
 'use client';
 
 import { Suspense, useEffect, useMemo, useState } from 'react';
-import {
-  Button,
-  CatalogGrid,
-  CatalogHeader,
-  GlassTable,
-  GlassToolbar,
-  ResourceCard,
-  type GlassTableColumn,
-  Select,
-} from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { CatalogGrid } from '../../components/catalog/catalog-grid';
+import { CatalogHeader } from '../../components/catalog/catalog-layout';
+import { GlassTable, type GlassTableColumn } from '../../glass-table';
+import { GlassToolbar } from '../../glass-toolbar';
+import { ResourceCard } from '../../components/catalog/resource-card';
+import { Select } from '../../select';
 import { Edit, Trash2, Sparkles, Eye } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 

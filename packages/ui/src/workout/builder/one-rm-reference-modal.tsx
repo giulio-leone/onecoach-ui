@@ -2,7 +2,8 @@
 
 import { useState, useRef, useLayoutEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { Modal, ModalFooter, Button } from '@giulio-leone/ui';
+import { Modal, ModalFooter } from '../../dialog';
+import { Button } from '../../button';
 import { Save, Search } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { Exercise } from '@giulio-leone/types/workout';

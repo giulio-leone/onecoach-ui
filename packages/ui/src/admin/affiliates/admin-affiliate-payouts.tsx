@@ -10,7 +10,9 @@ import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import { Eye } from 'lucide-react';
-import { CatalogToolbar, CatalogGrid, ResourceCard, type FilterOption } from '@giulio-leone/ui';
+import { CatalogToolbar, type FilterOption } from '../../components/catalog/catalog-layout';
+import { CatalogGrid } from '../../components/catalog/catalog-grid';
+import { ResourceCard } from '../../components/catalog/resource-card';
 import { formatCurrency } from '@giulio-leone/lib-shared';
 
 interface AdminAffiliatePayoutsProps {

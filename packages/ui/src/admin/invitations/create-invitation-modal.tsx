@@ -1,7 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Input, Modal, ModalFooter, Select } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Input } from '../../input';
+import { Modal, ModalFooter } from '../../dialog';
+import { Select } from '../../select';
 import { toast } from 'sonner';
 import { Loader2, Plus, Calendar, Hash, Users } from 'lucide-react';
 import { useTranslations } from 'next-intl';

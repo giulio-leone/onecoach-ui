@@ -2,7 +2,9 @@
 
 import { useTranslations } from 'next-intl';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Button, HoverCard, HoverCardContent, HoverCardTrigger, Progress } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '../hover-card';
+import { Progress } from '../progress';
 import type { LanguageModelUsage } from './ai-types';
 import { type ComponentProps, createContext, useContext } from 'react';
 import { getUsage } from 'tokenlens';

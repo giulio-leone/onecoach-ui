@@ -18,8 +18,10 @@ import {
 } from 'lucide-react';
 import { DifficultyLevel } from '@giulio-leone/types/workout';
 import { getWeekAndDayFromDate, getWorkoutProgramWeek } from '@giulio-leone/one-workout';
-import { Card, Spinner } from '@giulio-leone/ui';
-import { GlassContainer, ScaleTouch } from '@giulio-leone/ui';
+import { Card } from '../../card';
+import { Spinner } from '../../spinner';
+import { ScaleTouch } from '../../core';
+import { GlassContainer } from '../../core/components/glass-container';
 
 import { dialog } from '@giulio-leone/lib-stores';
 

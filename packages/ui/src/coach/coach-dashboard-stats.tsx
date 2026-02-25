@@ -6,7 +6,8 @@ import { useTranslations } from 'next-intl';
  *
  * Display overview statistics for coach dashboard
  */
-import { LoadingIndicator, StatCard } from '@giulio-leone/ui';
+import { LoadingIndicator } from '../loading-indicator';
+import { StatCard } from '../admin';
 import { TrendingUp, DollarSign, Star, Package } from 'lucide-react';
 import type { CoachDashboardStats as CoachDashboardStatsType } from '@giulio-leone/features/coach/hooks';
 

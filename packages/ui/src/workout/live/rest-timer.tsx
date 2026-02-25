@@ -15,7 +15,8 @@ import {
   Dumbbell,
 } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Card, Button } from '@giulio-leone/ui';
+import { Card } from '../../card';
+import { Button } from '../../button';
 
 interface RestTimerProps {
   duration: number;

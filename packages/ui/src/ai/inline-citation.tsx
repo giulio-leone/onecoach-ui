@@ -1,15 +1,9 @@
 'use client';
 import { cn } from '@giulio-leone/lib-design-system';
-import {
-  Badge,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-  type CarouselApi,
-} from '@giulio-leone/ui';
+import { Badge } from '../badge';
+import { Carousel, CarouselContent, CarouselItem } from '../carousel';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '../hover-card';
+import { type CarouselApi } from '../carousel';
 import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
 import {
   type ComponentProps,

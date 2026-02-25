@@ -5,7 +5,8 @@
  */
 'use client';
 import { useState } from 'react';
-import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
 import { FoodCameraInline } from '@giulio-leone/ui/nutrition';
 interface FoodAiModalProps {
   isOpen: boolean;

@@ -1,4 +1,6 @@
-import { Card, Heading, Text, Button } from '@giulio-leone/ui';
+import { Card } from '../card';
+import { Heading, Text } from '../typography';
+import { Button } from '../button';
 import { Calendar, Download, Share2 } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 

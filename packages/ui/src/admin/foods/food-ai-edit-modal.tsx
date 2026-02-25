@@ -7,7 +7,8 @@
 
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
 import { cn } from '@giulio-leone/lib-design-system';
 import { LoadingState, ErrorState } from '@giulio-leone/ui/components';
 import { Brain, Sparkles, X } from 'lucide-react';

@@ -3,7 +3,8 @@
 import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
-import { AdminCard, Button } from '@giulio-leone/ui';
+import { AdminCard } from '..';
+import { Button } from '../../button';
 import { Save, Coins } from 'lucide-react';
 
 import { OperationType } from '@prisma/client';

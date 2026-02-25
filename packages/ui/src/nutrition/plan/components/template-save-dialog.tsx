@@ -8,8 +8,8 @@
 'use client';
 
 import type React from 'react';
-import { Button } from '@giulio-leone/ui';
-import { Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../../../button';
+import { Modal, ModalFooter } from '../../../dialog';
 import { useTranslations } from 'next-intl';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import type { NutritionTemplateType } from "@giulio-leone/types/nutrition";

@@ -8,7 +8,9 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Button, Checkbox, Text } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Checkbox } from '../../checkbox';
+import { Text } from '../../typography';
 import { UtensilsCrossed, Eye, Edit, Trash2, MoreVertical } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 import { AdminDropdownMenu } from '../shared/admin-dropdown-menu';

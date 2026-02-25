@@ -9,7 +9,7 @@ const XPlatInput = (props: React.ComponentProps<typeof View>) => <View {...props
 const Pressable = (props: React.ComponentProps<typeof View>) => <View {...props} />;
 
 import { useRouter } from 'expo-router'; // Fix import
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../../card';
 import { ArrowLeft, Save, Plus, Trash2 } from 'lucide-react-native';
 import { DifficultyLevel, WorkoutStatus } from '@prisma/client';
 import { DayEditor } from './day-editor';

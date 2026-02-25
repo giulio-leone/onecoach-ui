@@ -6,14 +6,7 @@ import { getExerciseSets } from '@giulio-leone/one-workout';
 import { DifficultyLevel } from '@giulio-leone/types/workout';
 import { useTranslations } from 'next-intl';
 import { cn } from '@giulio-leone/lib-design-system';
-import {
-  ProgramActionBar,
-  ProgramInfoCard,
-  ProgramGoalsSection,
-  ProgramWeekCard,
-  ProgramDayCard,
-  type ProgramMetadata,
-} from '@giulio-leone/ui';
+import { ProgramActionBar, ProgramInfoCard, ProgramGoalsSection, ProgramWeekCard, ProgramDayCard, type ProgramMetadata } from '../../program-viewer';
 import { useWeightUnit } from '@giulio-leone/lib-api/hooks';
 import { formatWeightByUnit } from '@giulio-leone/lib-shared';
 import { getWeekAndDayFromDate } from '@giulio-leone/lib-shared';

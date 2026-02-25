@@ -11,7 +11,9 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Plane, PlaneLanding, PlaneTakeoff, SearchX, ArrowRight, Heart } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Button, Card, EmptyState } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Card } from '../card';
+import { EmptyState } from '../empty-state';
 import { FlightCard } from './flight-card';
 import { RouteGroup } from './route-group';
 import {

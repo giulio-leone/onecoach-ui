@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Layers, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
 import type { Superset, Exercise, ExerciseSet } from '@giulio-leone/schemas';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../../card';
 
 export interface LiveSupersetCardProps {
   superset: Superset;

@@ -11,7 +11,9 @@
 'use client';
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { AlertCircle, Check, Calculator, Edit3, Info, Loader2 } from 'lucide-react';
-import { Button, Modal, ModalFooter, Tooltip } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Modal, ModalFooter } from '../dialog';
+import { Tooltip } from '../tooltip';
 import { ExerciseCombobox } from '@giulio-leone/ui/workout';
 import { useOneRepMax, type MissingOneRM } from '@giulio-leone/features/workout/hooks';
 import { useWeightUnit } from '@giulio-leone/lib-api/hooks';

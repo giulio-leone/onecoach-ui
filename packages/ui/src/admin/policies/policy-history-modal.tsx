@@ -9,7 +9,7 @@
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, useCallback } from 'react';
 import { X, History, Clock } from 'lucide-react';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../../button';
 import { formatDateTime } from '@giulio-leone/lib-shared';
 
 interface PolicyHistory {

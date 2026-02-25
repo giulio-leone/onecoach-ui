@@ -4,7 +4,8 @@
  * Header with user info and action menu (mute, priority, report, delete)
  */
 'use client';
-import { Avatar, Button } from '@giulio-leone/ui';
+import { Avatar } from '../avatar';
+import { Button } from '../button';
 import {
   DropdownMenu,
   DropdownMenuContent,

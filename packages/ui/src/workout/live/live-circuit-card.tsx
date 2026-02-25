@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { RotateCw, CheckCircle2 } from 'lucide-react';
 import type { Circuit } from '@giulio-leone/schemas';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../../card';
 
 export interface LiveCircuitCardProps {
   circuit: Circuit;

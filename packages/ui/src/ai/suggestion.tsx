@@ -1,6 +1,7 @@
 'use client';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Button, ScrollArea, ScrollBar } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { ScrollArea, ScrollBar } from '../scroll-area';
 import { ArrowRightIcon, SparklesIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 /**

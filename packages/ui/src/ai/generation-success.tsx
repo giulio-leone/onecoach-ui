@@ -2,7 +2,8 @@
 
 import { CheckIcon, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Button, Card } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Card } from '../card';
 
 interface GenerationSuccessProps {
   title: string;

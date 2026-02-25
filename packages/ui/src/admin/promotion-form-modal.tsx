@@ -7,7 +7,12 @@
 import { useMemo } from 'react';
 import { Save } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { Button, Modal, ModalFooter, Radio, RadioGroup, DatePicker, Input } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Modal, ModalFooter } from '../dialog';
+import { Radio } from '../radio';
+import { RadioGroup } from '../radio-group';
+import { DatePicker } from '../date-picker';
+import { Input } from '../input';
 import { useForm } from '@giulio-leone/hooks';
 import { handleApiError } from '@giulio-leone/lib-shared';
 interface PromotionData {

@@ -1,13 +1,5 @@
 import { cn } from '@giulio-leone/lib-design-system';
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@giulio-leone/ui';
+import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../card';
 import { Handle, Position } from '@xyflow/react';
 import type { ComponentProps } from 'react';
 

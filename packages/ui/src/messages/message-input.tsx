@@ -5,7 +5,8 @@
  */
 'use client';
 import { useState, type KeyboardEvent } from 'react';
-import { Button, Textarea } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Textarea } from '../textarea';
 import { useSendDirectMessage } from '@giulio-leone/lib-api/hooks';
 import { Send, Star } from 'lucide-react';
 import { toast } from 'sonner';

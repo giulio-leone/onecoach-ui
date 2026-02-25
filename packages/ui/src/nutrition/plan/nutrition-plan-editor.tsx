@@ -12,7 +12,8 @@ import { useCallback, useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation'; // Use standard hook for library components, or pass nav
 import { useTranslations } from 'next-intl';
 import { Plus } from 'lucide-react';
-import { Button, EditorHeader, VersionHistory } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { EditorHeader, VersionHistory } from '../../visual-builder';
 import {
   DndContext,
   closestCenter,
@@ -24,7 +25,7 @@ import {
 } from '@dnd-kit/core';
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 // Next.js specific components - manteniamo import da apps/next
-import { SortableList } from '@giulio-leone/ui';
+import { SortableList } from '../../core';
 // import { WeekCard, FoodDetailDrawer } from '@giulio-leone/ui/nutrition'; // Internal imports now
 import { WeekCard } from './week-card';
 // FoodDetailDrawer is in food? or builder?

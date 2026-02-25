@@ -6,7 +6,8 @@
  */
 'use client';
 import { useState } from 'react';
-import { AdminCard, Button } from '@giulio-leone/ui';
+import { AdminCard } from '../../../../../admin';
+import { Button } from '../../../../../button';
 import { Save, Info } from 'lucide-react';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';

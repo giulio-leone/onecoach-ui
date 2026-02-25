@@ -15,7 +15,9 @@ import {
   ShoppingCart,
 } from 'lucide-react';
 import { getWeekAndDayFromDate } from '@giulio-leone/lib-shared';
-import { Spinner, Heading, Text, Button } from '@giulio-leone/ui';
+import { Spinner } from '../../spinner';
+import { Heading, Text } from '../../typography';
+import { Button } from '../../button';
 import type { NutritionPlan, Meal, NutritionDay } from '@giulio-leone/types/nutrition';
 
 // --- HELPER COMPONENTS ---

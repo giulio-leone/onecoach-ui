@@ -2,15 +2,12 @@
 
 import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
-import {
-  Button,
-  Input,
-  Modal,
-  ModalFooter,
-  Checkbox,
-  LoadingIndicator,
-  ErrorState,
-} from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Input } from '../../input';
+import { Modal, ModalFooter } from '../../dialog';
+import { Checkbox } from '../../checkbox';
+import { LoadingIndicator } from '../../loading-indicator';
+import { ErrorState } from '../../error-state';
 import { Save } from 'lucide-react';
 import {
   useExercise,

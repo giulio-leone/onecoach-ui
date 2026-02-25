@@ -8,7 +8,8 @@
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { Save } from 'lucide-react';
-import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
 import type { PolicyWithCreator } from '@giulio-leone/lib-core/policy.service';
 import type { PolicyType, PolicyStatus } from '@giulio-leone/types/client';
 import { useForm } from '@giulio-leone/hooks';

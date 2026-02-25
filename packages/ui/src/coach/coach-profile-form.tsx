@@ -9,7 +9,14 @@ import { useTranslations } from 'next-intl';
 
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { Card, Button, Input, Label, Switch, Textarea, Avatar, Heading, Text } from '@giulio-leone/ui';
+import { Card } from '../card';
+import { Button } from '../button';
+import { Input } from '../input';
+import { Label } from '../label';
+import { Switch } from '../switch';
+import { Textarea } from '../textarea';
+import { Avatar } from '../avatar';
+import { Heading, Text } from '../typography';
 import { coachApi, coachKeys, type CoachProfile } from '@giulio-leone/lib-api';
 import { cn } from '@giulio-leone/lib-design-system';
 import { motion, AnimatePresence } from 'framer-motion';

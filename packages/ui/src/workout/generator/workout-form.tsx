@@ -1,6 +1,9 @@
 'use client';
 
-import { Card, SelectionCard, Input, Button } from '@giulio-leone/ui';
+import { Card } from '../../card';
+import { SelectionCard } from '../../selection-card';
+import { Input } from '../../input';
+import { Button } from '../../button';
 import { DifficultyLevel, Sex, WorkoutGoal } from '@giulio-leone/types/client';
 import { Dumbbell, Target, User, Activity, Zap, AlertCircle, Settings } from 'lucide-react';
 import type { WorkoutFormData, TierAI } from './types';

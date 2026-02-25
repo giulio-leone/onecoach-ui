@@ -14,7 +14,9 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { Card, LoadingIndicator, Text, Heading } from '@giulio-leone/ui';
+import { Card } from '../card';
+import { LoadingIndicator } from '../loading-indicator';
+import { Text, Heading } from '../typography';
 
 import { AlertTriangle } from 'lucide-react';
 

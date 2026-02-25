@@ -2,7 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { FileText, CheckCircle2, Dumbbell } from 'lucide-react';
-import { Badge, Heading, Text } from '@giulio-leone/ui';
+import { Badge } from '../../badge';
+import { Heading, Text } from '../../typography';
 import type { Exercise } from '@giulio-leone/schemas';
 
 export interface ExerciseInstructionsProps {

@@ -11,7 +11,7 @@ import { useMemo, useState } from 'react';
 import { useAuth } from '@giulio-leone/lib-api/hooks';
 import { useRouter } from 'next/navigation';
 import { Coins } from 'lucide-react';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../button';
 import { CreditCheckoutModal } from './credit-checkout-modal';
 import { PromoCodeInput } from './promo-code-input';
 import { CREDIT_PACK_OPTIONS } from '@giulio-leone/lib-shared';

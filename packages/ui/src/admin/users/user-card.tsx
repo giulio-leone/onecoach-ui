@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Card } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Card } from '../../card';
 import {
   User,
   Edit,

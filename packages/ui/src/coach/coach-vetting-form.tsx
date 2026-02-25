@@ -8,7 +8,11 @@ import { useTranslations } from 'next-intl';
  */
 import { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { Button, Card, Label, Textarea, Heading, Text } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Card } from '../card';
+import { Label } from '../label';
+import { Textarea } from '../textarea';
+import { Heading, Text } from '../typography';
 import { Send, FileText } from 'lucide-react';
 import { dialog } from '@giulio-leone/lib-stores';
 export interface CoachVettingFormProps {

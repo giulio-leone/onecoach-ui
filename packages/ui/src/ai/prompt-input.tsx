@@ -22,8 +22,8 @@ export {
   PromptInputAttachment,
   PromptInputSpeechButton,
   usePromptInput,
-} from '@giulio-leone/ui';
+} from '../components/ai-elements';
 
 // Type exports
-export type { PromptAttachment } from '@giulio-leone/ui';
+export type { PromptAttachment } from '../components/ai-elements/prompt-input';
 export type { FileUIPart } from './ai-types';

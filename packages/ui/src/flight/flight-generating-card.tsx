@@ -3,7 +3,8 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Plane, Loader2, CheckCircle2, XCircle, Clock, Search } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, Progress } from '@giulio-leone/ui';
+import { Card, CardContent, CardHeader, CardTitle } from '../card';
+import { Progress } from '../progress';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { GenerationWithStatus } from '@giulio-leone/hooks';
 import { AgentEventList, useAdminMode, type ProgressField } from '@giulio-leone/one-agent/hooks';

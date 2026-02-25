@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../button';
 import { X, Clock } from 'lucide-react';
 import { useTranslations, useFormatter } from 'next-intl';
 

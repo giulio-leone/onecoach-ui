@@ -26,7 +26,9 @@ import {
   ChevronDown,
   ChevronUp,
 } from 'lucide-react';
-import { Button, Input, Switch } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Input } from '../input';
+import { Switch } from '../switch';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { ProviderName } from '@giulio-leone/lib-ai';
 

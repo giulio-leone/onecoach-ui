@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { X } from 'lucide-react';
 import { logger } from '@giulio-leone/lib-shared';
 import { toast } from 'sonner';
-import { Checkbox } from '@giulio-leone/ui';
+import { Checkbox } from '../../checkbox';
 
 interface FlagData {
   id: string;

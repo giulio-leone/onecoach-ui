@@ -7,7 +7,8 @@ import { useTranslations } from 'next-intl';
  * Display public coach profile information
  */
 
-import { Card, Heading, Text } from '@giulio-leone/ui';
+import { Card } from '../card';
+import { Heading, Text } from '../typography';
 import { CheckCircle2, Linkedin, Instagram, Globe } from 'lucide-react';
 
 export interface PublicCoachProfileData {

@@ -8,7 +8,8 @@ import { formatDuration } from '@giulio-leone/lib-shared';
 import type { WorkoutSession } from '@giulio-leone/types/workout';
 import { type Exercise, type ExerciseSet } from '@giulio-leone/schemas';
 import type { Exercise as TypesExercise } from '@giulio-leone/types';
-import { Button, Heading, Text } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Heading, Text } from '../../typography';
 
 interface WorkoutCompleteModalProps {
   isOpen: boolean;

@@ -7,7 +7,10 @@ import { useTranslations } from 'next-intl';
  * Form per aggiornare le credenziali admin o super admin
  */
 import { useState } from 'react';
-import { Button, Input, Label, Text } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Input } from '../input';
+import { Label } from '../label';
+import { Text } from '../typography';
 import { validatePassword } from '@giulio-leone/lib-shared';
 
 const ADMIN_PASSWORD_REQUIREMENTS = {

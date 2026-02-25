@@ -2,18 +2,8 @@
 
 import NextImage from 'next/image';
 import { cn } from '@giulio-leone/lib-design-system';
-import {
-  Command,
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from '@giulio-leone/ui';
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@giulio-leone/ui';
+import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from '../command';
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '../dialog';
 import { CheckIcon, ChevronDownIcon, SparklesIcon, ZapIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 

@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import { Check, Sparkles } from 'lucide-react';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../button';
 import { PromoCodeInput } from './promo-code-input';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@giulio-leone/lib-api/hooks';

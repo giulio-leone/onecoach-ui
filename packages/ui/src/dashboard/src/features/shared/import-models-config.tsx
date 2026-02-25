@@ -11,7 +11,8 @@ import {
   Coins,
   Timer,
 } from 'lucide-react';
-import { Input, Select } from '@giulio-leone/ui';
+import { Input } from '../../../../input';
+import { Select } from '../../../../select';
 import { useAuth } from '@giulio-leone/lib-api/hooks';
 import { useTranslations } from 'next-intl';
 

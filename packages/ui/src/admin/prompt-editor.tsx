@@ -3,7 +3,8 @@
 import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
-import { Button, Checkbox } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Checkbox } from '../checkbox';
 import { toast } from 'sonner';
 import { Save, X, Eye } from 'lucide-react';
 import dynamic from 'next/dynamic';

@@ -8,7 +8,9 @@ import { useTranslations } from 'next-intl';
  * Si affida alle API admin per la validazione ed il merge.
  */
 import { useState } from 'react';
-import { Button, Modal, ModalFooter, Checkbox } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
+import { Checkbox } from '../../checkbox';
 import { Upload, X, FileJson, AlertTriangle } from 'lucide-react';
 import { handleApiError } from '@giulio-leone/lib-shared';
 interface ExerciseImportModalProps {

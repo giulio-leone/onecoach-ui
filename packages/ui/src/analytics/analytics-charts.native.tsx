@@ -1,5 +1,5 @@
 import { View, Text, useColorScheme } from 'react-native';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../card';
 import { AlertTriangle } from 'lucide-react-native';
 
 export interface AnalyticsChartDataPoint {

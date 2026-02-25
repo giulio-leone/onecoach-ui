@@ -11,7 +11,8 @@
 import { useTranslations } from 'next-intl';
 import { useState, useCallback, useRef, useMemo, useEffect } from 'react';
 import Image from 'next/image';
-import { Button, Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Modal, ModalFooter } from '../dialog';
 import {
   Upload,
   X,

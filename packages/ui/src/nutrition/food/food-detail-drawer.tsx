@@ -8,8 +8,8 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import type { FoodItem } from '@giulio-leone/types/nutrition';
-import { Button } from '@giulio-leone/ui';
-import { Drawer } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Drawer } from '../../drawer';
 import {
   Edit3,
   Trash2,
@@ -24,7 +24,7 @@ import {
 import { logger } from '@giulio-leone/lib-shared';
 import type { Macros } from '@giulio-leone/types/nutrition';
 import { dialog } from '@giulio-leone/lib-stores';
-import { LoadingIndicator } from '@giulio-leone/ui';
+import { LoadingIndicator } from '../../loading-indicator';
 interface FoodDetailDrawerProps {
   isOpen: boolean;
   foodItemId?: string | null; // null per modalità create

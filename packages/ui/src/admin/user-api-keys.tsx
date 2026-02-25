@@ -8,7 +8,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { KeyRound, Trash2, Loader2, AlertCircle, CheckCircle2, XCircle } from 'lucide-react';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../button';
 import { useTranslations, useFormatter } from 'next-intl';
 
 interface ApiKey {

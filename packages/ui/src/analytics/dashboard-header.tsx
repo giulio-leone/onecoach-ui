@@ -1,6 +1,6 @@
 import type React from 'react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Heading, Text } from '@giulio-leone/ui';
+import { Heading, Text } from '../typography';
 import { KpiCard, type KpiCardProps } from './kpi-card';
 
 export interface DashboardHeaderProps {

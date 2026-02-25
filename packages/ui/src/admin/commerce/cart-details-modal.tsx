@@ -1,6 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { Badge, Button, Modal, ModalFooter, Select, Textarea } from '@giulio-leone/ui';
+import { Badge } from '../../badge';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
+import { Select } from '../../select';
+import { Textarea } from '../../textarea';
 import { toast } from 'sonner';
 import { Clock, TicketPercent, User } from 'lucide-react';
 import { logger, formatCurrency } from '@giulio-leone/lib-shared';

@@ -1,6 +1,9 @@
 'use client';
 
-import { Heading, Label, SelectionCard, Text, Textarea } from '@giulio-leone/ui';
+import { Heading, Text } from '../typography';
+import { Label } from '../label';
+import { SelectionCard } from '../selection-card';
+import { Textarea } from '../textarea';
 import {
   Sparkles,
   Calendar,

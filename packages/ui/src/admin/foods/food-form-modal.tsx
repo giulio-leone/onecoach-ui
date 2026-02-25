@@ -12,7 +12,9 @@
 'use client';
 import { useEffect, useMemo, useRef } from 'react';
 import { createFoodSchema } from '@giulio-leone/schemas';
-import { Button, Input, Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Input } from '../../input';
+import { Modal, ModalFooter } from '../../dialog';
 import { Save } from 'lucide-react';
 import { BrandCombobox } from './brand-combobox';
 import { CategoriesMultiselect } from './categories-multiselect';

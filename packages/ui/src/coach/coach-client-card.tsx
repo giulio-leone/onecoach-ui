@@ -4,7 +4,10 @@
  * Display card for a single client
  */
 'use client';
-import { Avatar, Badge, Card, Heading, Text } from '@giulio-leone/ui';
+import { Avatar } from '../avatar';
+import { Badge } from '../badge';
+import { Card } from '../card';
+import { Heading, Text } from '../typography';
 import { formatDistanceToNow } from 'date-fns';
 import type { Locale } from 'date-fns';
 import { it, enUS } from 'date-fns/locale';

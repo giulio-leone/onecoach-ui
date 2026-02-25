@@ -11,7 +11,7 @@ const getExercises = async (_query: string) => {
   return [] as Exercise[];
 };
 
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../../card';
 import { Search, X, Dumbbell, Plus } from 'lucide-react-native';
 // import { getExercises } from '@/app/actions/workouts';
 import { useTranslations } from 'next-intl';

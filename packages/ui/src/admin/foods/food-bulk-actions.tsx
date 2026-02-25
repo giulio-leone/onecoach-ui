@@ -8,7 +8,8 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useState } from 'react';
-import { Button, Checkbox } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Checkbox } from '../../checkbox';
 import { Trash2, Edit, X } from 'lucide-react';
 import { useBatchFoodOperations } from '@giulio-leone/features/food/hooks';
 

@@ -19,7 +19,7 @@ import {
 import { formatDistanceToNow } from 'date-fns';
 import { it, enUS } from 'date-fns/locale';
 import { toast } from 'sonner';
-import { Checkbox } from '@giulio-leone/ui';
+import { Checkbox } from '../../../../../checkbox';
 import { useTranslations, useLocale } from 'next-intl';
 
 interface Message {

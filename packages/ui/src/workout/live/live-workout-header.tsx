@@ -2,7 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 import { ArrowLeft, Pause, Play, Square } from 'lucide-react';
-import { Button, Heading, Text } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Heading, Text } from '../../typography';
 
 interface LiveWorkoutHeaderProps {
   programName?: string;

@@ -23,7 +23,8 @@ import {
   ShieldCheck,
 } from '@phosphor-icons/react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Button, Badge } from '@giulio-leone/ui';
+import { Button } from '../button';
+import { Badge } from '../badge';
 import type { FlightAnalysis, FlightRecommendation } from '@giulio-leone/types/flight';
 
 // Re-export types for consumers

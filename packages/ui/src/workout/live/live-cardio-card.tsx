@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Play, Pause, CheckCircle2, Timer, Gauge, MapPin, Heart } from 'lucide-react';
 import type { CardioExercise } from '@giulio-leone/schemas';
-import { Card } from '@giulio-leone/ui';
+import { Card } from '../../card';
 
 export interface LiveCardioCardProps {
   cardio: CardioExercise;

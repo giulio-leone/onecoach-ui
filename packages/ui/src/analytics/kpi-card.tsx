@@ -1,5 +1,5 @@
 import { cn } from '@giulio-leone/lib-design-system';
-import { Heading, Text } from '@giulio-leone/ui';
+import { Heading, Text } from '../typography';
 
 export interface KpiCardProps {
   label: string;

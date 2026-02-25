@@ -4,7 +4,7 @@ import { Check, Edit2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import type { ExerciseSet } from '@giulio-leone/schemas';
 import React from 'react';
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../../button';
 
 export interface LiveSetTrackerProps {
   set: ExerciseSet;

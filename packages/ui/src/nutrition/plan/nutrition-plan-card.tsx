@@ -8,7 +8,7 @@
 'use client';
 
 import { Apple, Calendar, Target, Eye, Edit, Trash2, Send, Copy } from 'lucide-react';
-import { ProgramCard, type ProgramCardAction } from '@giulio-leone/ui';
+import { ProgramCard, type ProgramCardAction } from '../../program-card';
 import type { NutritionPlan } from '@giulio-leone/types/nutrition';
 import { useTranslations } from 'next-intl';
 

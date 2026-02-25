@@ -1,6 +1,9 @@
 'use client';
 import { useState } from 'react';
-import { Button, CatalogGrid, ResourceCard, Slider } from '@giulio-leone/ui';
+import { Button } from '../../../../button';
+import { CatalogGrid } from '../../../../components/catalog/catalog-grid';
+import { ResourceCard } from '../../../../components/catalog/resource-card';
+import { Slider } from '../../../../slider';
 import { Power, PowerOff, Save } from 'lucide-react';
 import { toast } from 'sonner';
 import { logger } from '@giulio-leone/lib-shared';

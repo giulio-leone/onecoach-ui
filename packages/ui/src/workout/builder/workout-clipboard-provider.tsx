@@ -1,6 +1,6 @@
 'use client';
 
-import { createClipboardContext } from '@giulio-leone/ui';
+import { createClipboardContext } from '../../visual-builder';
 import type { Exercise } from '@giulio-leone/types/workout';
 
 const {

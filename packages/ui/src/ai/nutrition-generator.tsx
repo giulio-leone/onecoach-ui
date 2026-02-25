@@ -15,7 +15,9 @@ import { cn, darkModeClasses } from '@giulio-leone/lib-design-system';
 import { useProfile } from '@giulio-leone/lib-api/hooks';
 
 import { Scale, Dumbbell, Zap, Trophy, Leaf } from 'lucide-react';
-import { SelectionCard, WizardRadioGroup, WizardSlider } from '@giulio-leone/ui';
+import { SelectionCard } from '../selection-card';
+import { WizardRadioGroup } from '../wizard';
+import { WizardSlider } from '../wizard-slider';
 import {
   DietType as DietTypeConst,
   mapActivityLevel,

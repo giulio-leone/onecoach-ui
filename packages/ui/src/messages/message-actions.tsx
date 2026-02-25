@@ -6,7 +6,7 @@
 
 'use client';
 
-import { Button } from '@giulio-leone/ui';
+import { Button } from '../button';
 import {
   DropdownMenu,
   DropdownMenuContent,

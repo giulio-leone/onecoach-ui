@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Input } from '@giulio-leone/ui';
+import { Input } from '../input';
 import { Search } from 'lucide-react';
 
 export interface FilterBarProps {

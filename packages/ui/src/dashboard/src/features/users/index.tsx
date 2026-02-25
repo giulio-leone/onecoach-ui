@@ -7,14 +7,8 @@
  */
 'use client';
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import {
-  CatalogHeader,
-  type FilterOption,
-  AdminCard,
-  AdminTabs,
-  AdminTabPanel,
-  type AdminTab,
-} from '@giulio-leone/ui';
+import { CatalogHeader, type FilterOption } from '../../../../components/catalog/catalog-layout';
+import { AdminCard, AdminTabs, AdminTabPanel, type AdminTab } from '../../../../admin';
 import { CreateInvitationModal } from './components/invitations/create-invitation-modal';
 import { InvitationCard } from './components/invitations/invitation-card';
 import {
@@ -23,7 +17,10 @@ import {
   UserStatusModal,
   UserCard,
 } from './components';
-import { Button, Input, Select, Switch } from '@giulio-leone/ui';
+import { Button } from '../../../../button';
+import { Input } from '../../../../input';
+import { Select } from '../../../../select';
+import { Switch } from '../../../../switch';
 import { toast } from 'sonner';
 import {
   Loader2,

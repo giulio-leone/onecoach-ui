@@ -8,8 +8,8 @@
 'use client';
 
 import type React from 'react';
-import { Button } from '@giulio-leone/ui';
-import { Modal, ModalFooter } from '@giulio-leone/ui';
+import { Button } from '../../button';
+import { Modal, ModalFooter } from '../../dialog';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
 import type { WorkoutTemplateType } from '@giulio-leone/types/workout';

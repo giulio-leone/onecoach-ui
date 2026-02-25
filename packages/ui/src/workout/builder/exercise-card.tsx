@@ -17,12 +17,7 @@ import { useCopilotContextReporter } from '@giulio-leone/one-agent';
 import { SetGroupEditor } from '../editor/set-group-editor';
 import { ExerciseSelector } from './exercise-selector';
 import { useExerciseClipboard } from './workout-clipboard-provider';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@giulio-leone/ui';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../../dropdown-menu';
 import type { Exercise, SetGroup } from '@giulio-leone/types/workout';
 
 interface ExerciseCardProps {

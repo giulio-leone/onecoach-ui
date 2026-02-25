@@ -1,17 +1,14 @@
 'use client';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslations, useFormatter } from 'next-intl';
-import {
-  Badge,
-  Button,
-  Card,
-  Input,
-  Modal,
-  ModalFooter,
-  Select,
-  StatCard,
-  Switch,
-} from '@giulio-leone/ui';
+import { Badge } from '../../badge';
+import { Button } from '../../button';
+import { Card } from '../../card';
+import { Input } from '../../input';
+import { Modal, ModalFooter } from '../../dialog';
+import { Select } from '../../select';
+import { StatCard } from '..';
+import { Switch } from '../../switch';
 import { toast } from 'sonner';
 import { Activity, BarChart3, Check, Flame, Trash2 } from 'lucide-react';
 import { logger } from '@giulio-leone/lib-shared';
