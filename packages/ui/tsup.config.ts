@@ -1,4 +1,25 @@
 import { defineConfig } from 'tsup';
+import { readdir, readFile, writeFile } from 'fs/promises';
+import { join } from 'path';
+
+// All UI entries are client components — inject 'use client' directive
+// into entry files and chunks after build (tsup banner doesn't work with splitting)
+async function injectUseClientDirective() {
+  const distDir = join(import.meta.dirname, 'dist');
+  const files = await readdir(distDir);
+  const jsFiles = files.filter(f => f.endsWith('.js') || f.endsWith('.cjs'));
+
+  await Promise.all(
+    jsFiles.map(async (file) => {
+      const filePath = join(distDir, file);
+      const content = await readFile(filePath, 'utf-8');
+      if (!content.startsWith('"use client"') && !content.startsWith("'use client'")) {
+        await writeFile(filePath, `"use client";\n${content}`);
+      }
+    })
+  );
+  console.log(`✅ Injected "use client" into ${jsFiles.length} dist files`);
+}
 
 export default defineConfig({
   entry: {
@@ -55,6 +76,14 @@ export default defineConfig({
     'react-native', 'react-native-web', 'expo-image', 'expo-linear-gradient',
     /^expo-/,
     'tailwindcss',
-    /^app\//, /^hooks\//, /^@\//,
+    '@prisma/client', /^\.prisma\//,
+    /^@\//, // App-level imports (Next.js alias)
   ],
+  // Prefer .web.tsx/.web.ts variants for web build (React Native convention)
+  esbuildOptions(options) {
+    options.resolveExtensions = ['.web.tsx', '.web.ts', '.web.jsx', '.web.js', '.tsx', '.ts', '.jsx', '.js'];
+  },
+  async onSuccess() {
+    await injectUseClientDirective();
+  },
 });

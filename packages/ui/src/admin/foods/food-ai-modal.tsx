@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
  */
 
 import { useState } from 'react';
-import { useFoodGeneration } from 'hooks/use-food-generation';
+import { useFoodGeneration } from '@giulio-leone/hooks/use-food-generation';
 import { AiGenerationModal, type OptionConfig } from '../shared/ai-generation-modal';
 
 interface FoodAiGenerationModalProps {

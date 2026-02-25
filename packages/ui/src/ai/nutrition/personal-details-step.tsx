@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import { Sex } from '@giulio-leone/types/client';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
-import type { NutritionFormData } from 'app/features/nutrition';
+import type { NutritionFormData } from '@giulio-leone/features/nutrition';
 
 interface PersonalDetailsStepProps {
   formData: NutritionFormData;

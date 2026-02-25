@@ -2,9 +2,9 @@
 
 import { useTranslations } from 'next-intl';
 
-import { DietType } from 'app/features/nutrition';
+import { DietType } from '@giulio-leone/features/nutrition';
 import { darkModeClasses, cn } from '@giulio-leone/lib-design-system';
-import type { NutritionFormData } from 'app/features/nutrition';
+import type { NutritionFormData } from '@giulio-leone/features/nutrition';
 import { Leaf, Info, AlertCircle } from 'lucide-react';
 
 interface PreferencesStepProps {

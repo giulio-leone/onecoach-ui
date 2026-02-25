@@ -23,11 +23,11 @@ import {
   mapActivityLevel,
   mapDietType,
   mapGender,
-} from 'app/features/nutrition';
-import type { Goal } from 'app/features/nutrition';
+} from '@giulio-leone/features/nutrition';
+import type { Goal } from '@giulio-leone/features/nutrition';
 import { Sex, ActivityLevel } from '@giulio-leone/types/client';
 
-import type { DietType } from 'app/features/nutrition';
+import type { DietType } from '@giulio-leone/features/nutrition';
 
 import { logger } from '@giulio-leone/lib-shared';
 // Standard Mesh Wizard

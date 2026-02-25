@@ -16,7 +16,7 @@ interface StatCardProps {
   className?: string;
 }
 
-function StatCardComponent({
+export function StatCard({
   label,
   value,
   icon: Icon,
@@ -104,4 +104,3 @@ function StatCardComponent({
   );
 }
 
-export { StatCardComponent as StatCard };

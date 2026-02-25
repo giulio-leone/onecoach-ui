@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';
-import { Link } from 'app/navigation';
+import { Link } from '../layout/navigation';
 import { Button } from '../button';
 import { Checkbox } from '../checkbox';
 import { Input } from '../input';

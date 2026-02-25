@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
  * Form per la creazione iniziale dell'account admin
  */
 import { useState } from 'react';
-import { useRouter } from 'app/navigation';
+import { useRouter } from '../layout/navigation';
 import { Button } from '../button';
 import { Input } from '../input';
 import { useForm } from '@giulio-leone/hooks';

@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
-import type { NutritionFormData } from 'app/features/nutrition';
+import type { NutritionFormData } from '@giulio-leone/features/nutrition';
 import { Sex } from '@giulio-leone/types/client';
 import { cn } from '@giulio-leone/lib-design-system';
 import { Check, ArrowRight } from 'lucide-react';

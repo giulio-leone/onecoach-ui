@@ -6,7 +6,7 @@ import { signIn } from 'next-auth/react';
 import { Button } from '../button';
 import { Input } from '../input';
 import { Checkbox } from '../checkbox';
-import { useReferralTracking } from 'hooks/use-referral-tracking';
+import { useReferralTracking } from '@giulio-leone/hooks/use-referral-tracking';
 import { useFeatureFlag } from '@giulio-leone/hooks/useFeatureFlag';
 import { useForm } from '@giulio-leone/hooks';
 import { isValidEmail, validatePassword, passwordsMatch } from '@giulio-leone/lib-shared';
