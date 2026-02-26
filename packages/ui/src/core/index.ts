@@ -34,6 +34,7 @@ export * from './components/import-modal';
 // Providers
 export * from './realtime-provider';
 export { SupabaseProvider, useSupabaseContext } from './supabase-provider';
+export type { GetSupabaseToken, SupabaseContextType } from './supabase-provider';
 export { DialogRenderer } from './dialog-renderer';
 export { SessionProvider } from './session-provider';
 export { IntlProvider } from './intl-provider';
