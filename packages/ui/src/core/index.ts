@@ -1,5 +1,5 @@
 /**
- * Core UI primitives (merged from @onecoach/ui-core)
+ * Core UI primitives (merged from @giulio-leone/ui-core)
  *
  * Only exports components unique to core that are NOT already
  * provided by the root ui barrel (button, card, badge, dialog, etc.

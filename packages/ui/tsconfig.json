@@ -13,22 +13,22 @@
       "design-system/*": [
         "../design-system/src/*"
       ],
-      "@onecoach/constants": [
+      "@giulio-leone/constants": [
         "../../../onecoach-constants/src/index.ts"
       ],
-      "@onecoach/constants/*": [
+      "@giulio-leone/constants/*": [
         "../../../onecoach-constants/src/*"
       ],
-      "@onecoach/types": [
+      "@giulio-leone/types": [
         "../../../onecoach-types/src/index.ts"
       ],
-      "@onecoach/types/*": [
+      "@giulio-leone/types/*": [
         "../../../onecoach-types/src/*"
       ],
-      "@onecoach/schemas": [
+      "@giulio-leone/schemas": [
         "../../../onecoach-schemas/src/index.ts"
       ],
-      "@onecoach/schemas/*": [
+      "@giulio-leone/schemas/*": [
         "../../../onecoach-schemas/src/*"
       ],
       "types": [

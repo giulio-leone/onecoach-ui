@@ -82,7 +82,7 @@ export * from './visual-builder/components/base/EditorHeader';
 export * from './visual-builder/components/base/VersionHistory';
 export * from './visual-builder/contexts/clipboard-context';
 
-// Core (merged from @onecoach/ui-core) — selective re-exports to avoid conflicts
+// Core (merged from @giulio-leone/ui-core) — selective re-exports to avoid conflicts
 export {
   // DnD
   DndProvider, SortableItem, SortableList, ClientOnlyDndWrapper,

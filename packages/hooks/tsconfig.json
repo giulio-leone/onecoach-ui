@@ -13,16 +13,16 @@
       "lib/*": [
         "../lib/src/*"
       ],
-      "@onecoach/constants": [
+      "@giulio-leone/constants": [
         "../../../onecoach-constants/src/index.ts"
       ],
-      "@onecoach/constants/*": [
+      "@giulio-leone/constants/*": [
         "../../../onecoach-constants/src/*"
       ],
-      "@onecoach/types": [
+      "@giulio-leone/types": [
         "../../../onecoach-types/src/index.ts"
       ],
-      "@onecoach/types/*": [
+      "@giulio-leone/types/*": [
         "../../../onecoach-types/src/*"
       ],
       "@giulio-leone/types": [
@@ -34,16 +34,16 @@
       "@giulio-leone/types/core": [
         "../../../onecoach-types/src/auth.types.ts"
       ],
-      "@onecoach/schemas": [
+      "@giulio-leone/schemas": [
         "../../../onecoach-schemas/src/index.ts"
       ],
-      "@onecoach/schemas/*": [
+      "@giulio-leone/schemas/*": [
         "../../../onecoach-schemas/src/*"
       ],
-      "@onecoach/lib-stores": [
+      "@giulio-leone/lib-stores": [
         "../../../onecoach-backend/packages/lib-stores/src/index.ts"
       ],
-      "@onecoach/lib-stores/*": [
+      "@giulio-leone/lib-stores/*": [
         "../../../onecoach-backend/packages/lib-stores/src/*"
       ],
       "types": [

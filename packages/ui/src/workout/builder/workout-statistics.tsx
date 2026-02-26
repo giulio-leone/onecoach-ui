@@ -26,7 +26,7 @@ import type { NameType, Payload, ValueType } from 'recharts/types/component/Defa
 import { WorkoutStatisticsService } from '@giulio-leone/lib-workout';
 import { motion, type Variants } from 'framer-motion';
 import { designTokens } from '@giulio-leone/lib-design-system';
-import { useTheme } from '@giulio-leone/lib-shared';
+import { useTheme } from '@giulio-leone/lib-shared/theme';
 import { useTranslations } from 'next-intl';
 import type { WorkoutProgram } from '@giulio-leone/types/workout';
 

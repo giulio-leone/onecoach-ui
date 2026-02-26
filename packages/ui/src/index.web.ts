@@ -160,7 +160,7 @@ export * from './chat/chat-input-area';
 export * from './program-card';
 export * from './programs-page-layout';
 
-// Core (merged from @onecoach/ui-core) — selective re-exports to avoid conflicts
+// Core (merged from @giulio-leone/ui-core) — selective re-exports to avoid conflicts
 export {
   // DnD
   DndProvider, SortableItem, SortableList, ClientOnlyDndWrapper,
