@@ -197,6 +197,11 @@
       "import": "./dist/index.web.js",
       "default": "./dist/index.web.js",
       "react-native": "./src/card.tsx"
+    },
+    "./loading-indicator": {
+      "import": "./dist/loading-indicator.js",
+      "default": "./dist/loading-indicator.js",
+      "react-native": "./src/loading-indicator.tsx"
     }
   },
   "files": [

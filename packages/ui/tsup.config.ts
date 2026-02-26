@@ -55,6 +55,7 @@ export default defineConfig({
     'date-picker-with-presets.shared': 'src/date-picker-with-presets.shared.ts',
     'date-picker.shared': 'src/date-picker.shared.ts',
     'button.shared': 'src/button.shared.ts',
+    'loading-indicator': 'src/loading-indicator.tsx',
   },
   format: ['esm', 'cjs'],
   dts: false,
