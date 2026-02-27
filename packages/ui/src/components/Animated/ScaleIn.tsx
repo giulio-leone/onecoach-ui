@@ -19,8 +19,7 @@ interface ScaleInProps {
 export function ScaleIn({ children, delay, damping, stiffness, style }: ScaleInProps) {
   const config: AnimationConfig = { delay, damping, stiffness };
   const { animatedStyle } = useScaleIn(config);
-  const composedStyle = [animatedStyle, style].filter(Boolean) as unknown as StyleProp<ViewStyle>;
+  const composedStyle = [animatedStyle, style].filter(Boolean) as StyleProp<ViewStyle>;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <Animated.View style={composedStyle as any}>{children}</Animated.View>;
+  return <Animated.View style={composedStyle}>{children}</Animated.View>;
 }

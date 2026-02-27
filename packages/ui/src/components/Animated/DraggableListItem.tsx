@@ -90,12 +90,11 @@ export function DraggableListItem({
 
   const combinedStyle = [styles.container, animatedStyle, style].filter(
     Boolean
-  ) as unknown as StyleProp<ViewStyle>;
+  ) as StyleProp<ViewStyle>;
 
   return (
     <GestureDetector gesture={composedGesture}>
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      <Animated.View style={combinedStyle as any}>{children}</Animated.View>
+      <Animated.View style={combinedStyle}>{children}</Animated.View>
     </GestureDetector>
   );
 }

@@ -57,7 +57,7 @@ function normalizeProgressData(event: Record<string, unknown>): ProgressField | 
   if (event.type === 'data-progress' && event.data && typeof event.data === 'object') {
     const data = event.data as Record<string, unknown>;
     if (data.step && data.userMessage) {
-      return data as unknown as unknown as ProgressField;
+      return data as unknown as ProgressField;
     }
   }
 
@@ -68,7 +68,7 @@ function normalizeProgressData(event: Record<string, unknown>): ProgressField | 
     if (inner?.type === 'data-progress' && inner?.data) {
       const innerData = inner.data as Record<string, unknown>;
       if (innerData.step && innerData.userMessage) {
-        return innerData as unknown as unknown as ProgressField;
+        return innerData as unknown as ProgressField;
       }
     }
   }
@@ -83,7 +83,7 @@ function normalizeProgressData(event: Record<string, unknown>): ProgressField | 
   ) {
     const data = event.data as Record<string, unknown>;
     if (data.step && data.userMessage) {
-      return data as unknown as unknown as ProgressField;
+      return data as unknown as ProgressField;
     }
   }
 
@@ -156,7 +156,7 @@ export function useWorkoutGeneration(
 
               // Return result
               const result: WorkoutGenerationOutput = {
-                program: null as unknown as unknown as WorkoutGenerationOutput['program'],
+                program: null as unknown as WorkoutGenerationOutput['program'],
                 tokensUsed: 0,
                 costUSD: 0,
                 generatedAt: new Date(),

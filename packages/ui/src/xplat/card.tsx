@@ -39,7 +39,7 @@ export function XCard({ heading, description, ...props }: XCardProps) {
       return (
         <Card
           className="cursor-pointer"
-          onClick={onPress as unknown as React.MouseEventHandler<HTMLDivElement>}
+          onClick={onPress as React.MouseEventHandler<HTMLDivElement>}
         >
           {content}
         </Card>

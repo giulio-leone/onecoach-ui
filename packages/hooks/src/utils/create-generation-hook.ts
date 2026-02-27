@@ -169,7 +169,7 @@ export function createGenerationHook<TInput, TOutput>(
             'result' in response &&
             'success' in response
               ? (response as { success: boolean; result: TOutput }).result
-              : (response as unknown as TOutput);
+              : (response as TOutput);
 
           setState((prev) => ({
             ...prev,
@@ -294,7 +294,7 @@ export function createGenerationHook<TInput, TOutput>(
 
               if (plan.status === 'COMPLETED') {
                 isComplete = true;
-                finalResult = plan.result as unknown as TOutput;
+                finalResult = plan.result as TOutput;
                 setState((prev) => ({
                   ...prev,
                   isGenerating: false,

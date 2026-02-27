@@ -111,24 +111,23 @@ export function SwipeableListItem({
 
   const containerStyle = [styles.container, style].filter(
     Boolean
-  ) as unknown as StyleProp<ViewStyle>;
+  ) as StyleProp<ViewStyle>;
   const deleteBgStyle = [styles.deleteBackground, deleteBackgroundStyle].filter(
     Boolean
-  ) as unknown as StyleProp<ViewStyle>;
+  ) as StyleProp<ViewStyle>;
   const archiveBgStyle = [styles.archiveBackground, archiveBackgroundStyle].filter(
     Boolean
-  ) as unknown as StyleProp<ViewStyle>;
+  ) as StyleProp<ViewStyle>;
   const contentStyle = [styles.content, animatedStyle].filter(
     Boolean
-  ) as unknown as StyleProp<ViewStyle>;
+  ) as StyleProp<ViewStyle>;
 
   return (
     <View style={containerStyle}>
       {/* Delete Background (Left Swipe) */}
       {onDelete && (
         <Animated.View
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          style={deleteBgStyle as any}
+          style={deleteBgStyle}
         >
           <Text style={styles.deleteText}>🗑️ Delete</Text>
         </Animated.View>
@@ -137,8 +136,7 @@ export function SwipeableListItem({
       {/* Archive Background (Right Swipe) */}
       {onArchive && (
         <Animated.View
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          style={archiveBgStyle as any}
+          style={archiveBgStyle}
         >
           <Text style={styles.archiveText}>📦 Archive</Text>
         </Animated.View>
@@ -147,8 +145,7 @@ export function SwipeableListItem({
       {/* Swipeable Content */}
       <GestureDetector gesture={panGesture}>
         <Animated.View
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          style={contentStyle as any}
+          style={contentStyle}
         >
           {children}
         </Animated.View>

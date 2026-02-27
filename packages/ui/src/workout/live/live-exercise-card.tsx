@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Info } from 'lucide-react';
 import { getExerciseSets } from '@giulio-leone/one-workout';
-import type { Exercise as TypesExercise } from '@giulio-leone/types';
+import type { Exercise } from '@giulio-leone/types';
 import { LiveSetTracker } from './live-set-tracker';
 import { ExerciseInstructions } from './exercise-instructions';
 import { Button } from '../../button';
 import { Heading, Text } from '../../typography';
 import { Badge } from '../../badge';
-import type { Exercise, ExerciseSet } from '@giulio-leone/schemas';
+import type { ExerciseSet } from '@giulio-leone/schemas';
 
 export interface LiveExerciseCardProps {
   exercise: Exercise;
@@ -30,7 +30,7 @@ export function LiveExerciseCard({
   const t = useTranslations('workouts');
   const [showInfo, setShowInfo] = useState(false);
 
-  const sets = getExerciseSets(exercise as unknown as TypesExercise);
+  const sets = getExerciseSets(exercise);
   const activeSetIndex = sets.findIndex((set: ExerciseSet) => !set.done);
   const muscleGroups = exercise.muscleGroups || [];
 

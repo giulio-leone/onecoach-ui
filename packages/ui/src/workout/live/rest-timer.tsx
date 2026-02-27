@@ -57,8 +57,7 @@ export function RestTimer({
     try {
       const AudioContext =
         window.AudioContext ||
-        (window as unknown as { webkitAudioContext?: typeof window.AudioContext })
-          .webkitAudioContext;
+        (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
       if (!AudioContext) return;
       const ctx = new AudioContext();
       const osc = ctx.createOscillator();

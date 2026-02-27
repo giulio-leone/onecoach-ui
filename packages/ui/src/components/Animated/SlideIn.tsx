@@ -19,8 +19,7 @@ interface SlideInProps {
 export function SlideIn({ children, direction = 'left', duration, delay, style }: SlideInProps) {
   const config: AnimationConfig = { duration, delay };
   const { animatedStyle } = useSlideIn(direction, config);
-  const composedStyle = [animatedStyle, style].filter(Boolean) as unknown as StyleProp<ViewStyle>;
+  const composedStyle = [animatedStyle, style].filter(Boolean) as StyleProp<ViewStyle>;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <Animated.View style={composedStyle as any}>{children}</Animated.View>;
+  return <Animated.View style={composedStyle}>{children}</Animated.View>;
 }

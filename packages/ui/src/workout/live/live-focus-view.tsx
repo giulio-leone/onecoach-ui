@@ -7,8 +7,8 @@ import { EmptyState } from '../../empty-state';
 import { Heading, Text } from '../../typography';
 import { Button } from '../../button';
 import { getExerciseSets } from '@giulio-leone/one-workout';
-import type { Exercise, ExerciseSet } from '@giulio-leone/schemas';
-import type { Exercise as TypesExercise } from '@giulio-leone/types';
+import type { ExerciseSet } from '@giulio-leone/schemas';
+import type { Exercise } from '@giulio-leone/types';
 import type { WorkoutSession } from '@giulio-leone/types/workout';
 import { LiveWorkoutHeader } from './live-workout-header';
 import { LiveExerciseCard } from './live-exercise-card';
@@ -78,7 +78,7 @@ function SegmentedProgress({
 
 /** "Coming Up Next" preview card */
 function UpNextCard({ exercise, onClick }: { exercise: Exercise; onClick?: () => void }) {
-  const sets = getExerciseSets(exercise as unknown as TypesExercise);
+  const sets = getExerciseSets(exercise);
   const setCount = sets.length;
 
   return (
@@ -123,14 +123,14 @@ export function LiveFocusView({
   const [showCompleteModal, setShowCompleteModal] = useState(false);
 
   const exercises = useMemo(
-    () => (session.exercises as unknown as Exercise[]) || [],
+    () => session.exercises || [],
     [session.exercises]
   );
 
   // Find the first exercise with at least one incomplete set
   const findActiveExerciseIndex = useCallback(() => {
     for (let i = 0; i < exercises.length; i++) {
-      const sets = getExerciseSets(exercises[i] as unknown as TypesExercise);
+      const sets = getExerciseSets(exercises[i]);
       if (sets.some((s: ExerciseSet) => !s.done)) {
         return i;
       }
@@ -146,7 +146,7 @@ export function LiveFocusView({
   // Count completed exercises (all sets done)
   const completedExercisesCount = useMemo(() => {
     return exercises.filter((ex: Exercise) => {
-      const sets = getExerciseSets(ex as unknown as TypesExercise);
+      const sets = getExerciseSets(ex);
       return sets.length > 0 && sets.every((s: ExerciseSet) => s.done);
     }).length;
   }, [exercises]);
@@ -154,7 +154,7 @@ export function LiveFocusView({
   // Check if current exercise is fully complete
   const isCurrentExerciseComplete = useMemo(() => {
     if (!currentExercise) return false;
-    const sets = getExerciseSets(currentExercise as unknown as TypesExercise);
+    const sets = getExerciseSets(currentExercise);
     return sets.length > 0 && sets.every((s: ExerciseSet) => s.done);
   }, [currentExercise]);
 

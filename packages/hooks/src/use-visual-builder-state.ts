@@ -130,7 +130,7 @@ export function useVisualBuilderState<
     const newDay = createEmptyDay(newDayNumber);
 
     targetWeek.days = [...existingDays, newDay];
-    newWeeks[selectedWeekIndex] = targetWeek as unknown as TWeek;
+    newWeeks[selectedWeekIndex] = targetWeek as TWeek;
 
     onWeeksChange(newWeeks);
     setSelectedDayIndex(targetWeek.days.length - 1);
@@ -159,7 +159,7 @@ export function useVisualBuilderState<
       });
 
       targetWeek.days = newDays;
-      newWeeks[weekIndex] = targetWeek as unknown as TWeek;
+      newWeeks[weekIndex] = targetWeek as TWeek;
       onWeeksChange(newWeeks);
 
       // Adjust selection if needed
@@ -215,7 +215,7 @@ export function useVisualBuilderState<
       const newDays = [...(targetWeek.days ?? [])];
       newDays[selectedDayIndex] = updatedDay;
       targetWeek.days = newDays;
-      newWeeks[selectedWeekIndex] = targetWeek as unknown as TWeek;
+      newWeeks[selectedWeekIndex] = targetWeek as TWeek;
 
       onWeeksChange(newWeeks);
     },

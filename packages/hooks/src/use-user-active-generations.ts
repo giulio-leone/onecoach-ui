@@ -289,13 +289,13 @@ export function useUserActiveGenerations(options: UseUserActiveGenerationsOption
         },
         (payload: {
           eventType: string;
-          new: Record<string, unknown>;
-          old: Record<string, unknown>;
+          new: UserGeneration | null;
+          old: UserGeneration | null;
         }) => {
           handleRealtimeUpdate({
             eventType: payload.eventType as 'INSERT' | 'UPDATE' | 'DELETE',
-            new: payload.new as unknown as UserGeneration | null,
-            old: payload.old as unknown as UserGeneration | null,
+            new: payload.new,
+            old: payload.old,
           });
         }
       )

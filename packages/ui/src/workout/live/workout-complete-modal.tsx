@@ -6,8 +6,8 @@ import { X, Trophy, Clock, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-r
 import { getExerciseSets } from '@giulio-leone/one-workout';
 import { formatDuration } from '@giulio-leone/lib-shared';
 import type { WorkoutSession } from '@giulio-leone/types/workout';
-import { type Exercise, type ExerciseSet } from '@giulio-leone/schemas';
-import type { Exercise as TypesExercise } from '@giulio-leone/types';
+import { type ExerciseSet } from '@giulio-leone/schemas';
+import type { Exercise } from '@giulio-leone/types';
 import { Button } from '../../button';
 import { Heading, Text } from '../../typography';
 
@@ -31,7 +31,7 @@ export function WorkoutCompleteModal({
   // Calculate stats (SSOT: usa getExerciseSets)
   // Memoize exercises array to prevent recalculation on every render
   const exercises = useMemo(
-    () => (session.exercises as unknown as Exercise[]) || [],
+    () => session.exercises || [],
     [session.exercises]
   );
   const totalExercises = exercises.length;
@@ -42,7 +42,7 @@ export function WorkoutCompleteModal({
   const totalVolume = useMemo(() => {
     return exercises.reduce((acc, exercise) => {
       // getExerciseSets expects an Exercise from @giulio-leone/types which conflicts slightly with schemas
-      const sets = getExerciseSets(exercise as unknown as TypesExercise);
+      const sets = getExerciseSets(exercise);
       const exerciseVolume = sets.reduce((sAcc: number, set: ExerciseSet) => {
         // Safe access to numeric properties
         const weight = set.weight || 0;
@@ -56,14 +56,14 @@ export function WorkoutCompleteModal({
   // Memoize calculations to avoid impure function calls during render
   const { completedExercises, duration, totalSetsCompleted } = useMemo(() => {
     const completed = exercises.filter((ex: Exercise) => {
-      const sets = getExerciseSets(ex as unknown as TypesExercise);
+      const sets = getExerciseSets(ex);
       return sets.some((set: ExerciseSet) => set.done);
     }).length;
 
     // Calculate total volume
     let volume = 0;
     exercises.forEach((exercise) => {
-      const sets = getExerciseSets(exercise as unknown as TypesExercise);
+      const sets = getExerciseSets(exercise);
       sets.forEach((set: ExerciseSet) => {
         if (set.done) {
           const reps = set.repsDone || set.reps || 0;
@@ -90,7 +90,7 @@ export function WorkoutCompleteModal({
 
     // Count total sets
     const setsCompleted = exercises.reduce((sum, ex) => {
-      const sets = getExerciseSets(ex as unknown as TypesExercise);
+      const sets = getExerciseSets(ex);
       return sum + sets.filter((set: ExerciseSet) => set.done).length;
     }, 0);
 
