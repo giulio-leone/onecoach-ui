@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 import { AlertCircle, Loader2 } from 'lucide-react';
 import { Button } from '../button';
 import { Card } from '../card';
-import { GenerationLog, type GenerationLogEvent } from '@/components/ai-elements/generation-log';
-import { GenerationSuccess } from '@/components/ai-elements/generation-success';
+import { GenerationLog, type GenerationLogEvent } from './generation-log';
+import { GenerationSuccess } from './generation-success';
 
 // ----------------------------------------------------------------------------
 // Types
