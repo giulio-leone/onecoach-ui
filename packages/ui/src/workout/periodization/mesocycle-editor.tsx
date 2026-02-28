@@ -331,7 +331,7 @@ export function MesocycleEditor({
           </div>
 
           {/* Auto-deload */}
-          <div className="flex items-center justify-between rounded-xl border border-neutral-200/60 p-4 dark:border-neutral-800">
+          <div className="flex items-center justify-between rounded-xl border border-neutral-200/60 p-4 dark:border-white/[0.06]">
             <div className="flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
                 <RotateCcw className="h-4 w-4" />

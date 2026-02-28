@@ -381,7 +381,7 @@ export function AirportCombobox({
             )}
           >
             {/* Search Input */}
-            <div className="border-b border-neutral-100 p-3 dark:border-neutral-800">
+            <div className="border-b border-neutral-100 p-3 dark:border-white/[0.06]">
               <div className="relative">
                 <MagnifyingGlass className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-400" />
                 <input
@@ -413,7 +413,7 @@ export function AirportCombobox({
             </div>
 
             {/* Section Title */}
-            <div className="flex items-center gap-2 border-b border-neutral-100 px-4 py-2 dark:border-neutral-800">
+            <div className="flex items-center gap-2 border-b border-neutral-100 px-4 py-2 dark:border-white/[0.06]">
               <MapPin className="h-3.5 w-3.5 text-neutral-400" weight="fill" />
               <span className="text-xs font-semibold tracking-wide text-neutral-500 uppercase">
                 {sectionTitle}

@@ -185,7 +185,7 @@ const VerificationBadge = ({ status }: { status: string }) => {
     icon: Shield,
     label: 'Sconosciuto',
     className:
-      'bg-neutral-50 text-neutral-600 border-neutral-200/60 dark:bg-[#09090b] dark:text-neutral-400 dark:border-neutral-800',
+      'bg-neutral-50 text-neutral-600 border-neutral-200/60 dark:bg-[#09090b] dark:text-neutral-400 dark:border-white/[0.06]',
   };
 
   const Icon = config.icon;
@@ -512,7 +512,7 @@ export function CoachProfileForm({ initialProfile, isLoading }: CoachProfileForm
             <Avatar
               src={user?.profileImage || undefined}
               fallback={user?.name?.slice(0, 2).toUpperCase() || 'C'}
-              className="relative h-16 w-16 border-2 border-white shadow-lg sm:h-20 sm:w-20 dark:border-neutral-900"
+              className="relative h-16 w-16 border-2 border-white shadow-lg sm:h-20 sm:w-20 dark:border-white/[0.04]"
             />
           </div>
 

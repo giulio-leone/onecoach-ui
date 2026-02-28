@@ -727,7 +727,7 @@ function StepAiMode({
 function SummaryRow({ label, value }: { label: string; value: React.ReactNode }) {
   if (value == null || value === '' || (Array.isArray(value) && value.length === 0)) return null;
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-neutral-100 py-2 last:border-0 dark:border-neutral-800">
+    <div className="flex items-start justify-between gap-4 border-b border-neutral-100 py-2 last:border-0 dark:border-white/[0.06]">
       <span className="shrink-0 text-xs font-medium text-neutral-500 dark:text-neutral-400">{label}</span>
       <span className="text-right text-sm font-semibold text-neutral-800 dark:text-neutral-200">{value}</span>
     </div>
@@ -974,7 +974,7 @@ export function OnboardingWizard({ onComplete, onSkip, initialStep = 0 }: Onboar
       <div className="min-h-0 flex-1">{stepContent}</div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-between border-t border-neutral-100 pt-4 dark:border-neutral-800">
+      <div className="flex items-center justify-between border-t border-neutral-100 pt-4 dark:border-white/[0.06]">
         <button
           type="button"
           onClick={handleBack}

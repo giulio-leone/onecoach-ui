@@ -155,8 +155,8 @@ export function OperationsTab({ models }: OperationsTabProps) {
               'group relative overflow-hidden rounded-2xl border p-5 transition-all duration-300',
               'bg-white dark:bg-zinc-950',
               config.isActive
-                ? 'hover:border-primary-500/50 dark:hover:border-primary-500/50 border-neutral-200/60 dark:border-neutral-800'
-                : 'border-neutral-100 opacity-60 grayscale-[0.5] hover:opacity-100 hover:grayscale-0 dark:border-neutral-800'
+                ? 'hover:border-primary-500/50 dark:hover:border-primary-500/50 border-neutral-200/60 dark:border-white/[0.06]'
+                : 'border-neutral-100 opacity-60 grayscale-[0.5] hover:opacity-100 hover:grayscale-0 dark:border-white/[0.06]'
             )}
           >
             <div className="mb-4 flex items-start justify-between">

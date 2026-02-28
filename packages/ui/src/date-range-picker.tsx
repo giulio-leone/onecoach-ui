@@ -415,7 +415,7 @@ export function DateRangePicker({
 
         {/* Divider with duration */}
         {!isOneWay && (
-          <div className="flex flex-col items-center justify-center border-x border-neutral-100 px-3 dark:border-neutral-800">
+          <div className="flex flex-col items-center justify-center border-x border-neutral-100 px-3 dark:border-white/[0.06]">
             {tripDuration ? (
               <>
                 <span className="text-xs font-bold text-primary-600 dark:text-primary-400">
@@ -551,7 +551,7 @@ export function DateRangePicker({
 
           {/* Quick Duration Presets */}
           {showPresets && !isOneWay && departureDate && selectionMode === 'return' && (
-            <div className="mt-4 border-t border-neutral-100 pt-4 dark:border-neutral-800">
+            <div className="mt-4 border-t border-neutral-100 pt-4 dark:border-white/[0.06]">
               <div className="mb-2 flex items-center gap-1.5 text-xs font-medium text-neutral-500">
                 <Sparkles className="h-3 w-3" />
                 {t.duration}

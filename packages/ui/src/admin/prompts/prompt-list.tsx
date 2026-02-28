@@ -31,7 +31,7 @@ export function PromptList({
       )}
     >
       {/* Search Header */}
-      <div className="border-b border-neutral-200/60 p-4 dark:border-neutral-800">
+      <div className="border-b border-neutral-200/60 p-4 dark:border-white/[0.06]">
         <div className="relative">
           <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
           <input

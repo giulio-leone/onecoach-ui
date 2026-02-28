@@ -612,7 +612,7 @@ export function ModelsTab({
             mobileFullScreen={true}
           >
             <div className="flex h-full flex-col">
-              <div className="mb-6 space-y-4 border-b border-neutral-100 pb-6 dark:border-neutral-800">
+              <div className="mb-6 space-y-4 border-b border-neutral-100 pb-6 dark:border-white/[0.06]">
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">
                   {t('import.subtitle', {
                     provider:
@@ -800,7 +800,7 @@ export function ModelsTab({
               </div>
 
               {/* Footer Actions */}
-              <div className="mt-6 flex flex-col gap-3 border-t border-neutral-100 pt-6 sm:flex-row sm:items-center sm:justify-between dark:border-neutral-800">
+              <div className="mt-6 flex flex-col gap-3 border-t border-neutral-100 pt-6 sm:flex-row sm:items-center sm:justify-between dark:border-white/[0.06]">
                 <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
                   <span className="font-medium text-neutral-900 dark:text-white">
                     {selectedExternalModels.size}

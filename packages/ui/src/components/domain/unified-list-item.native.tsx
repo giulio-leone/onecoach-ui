@@ -47,7 +47,7 @@ export function UnifiedListItem({
         'group relative mb-3 flex-row items-center overflow-hidden rounded-xl border p-4',
         'bg-gradient-to-br from-white/50 to-white/20 backdrop-blur-xl dark:from-neutral-900/50 dark:to-neutral-900/20',
         'ring-1 ring-white/20 dark:ring-white/10',
-        'border-neutral-200/60 dark:border-neutral-800',
+        'border-neutral-200/60 dark:border-white/[0.06]',
         'web:transition-all web:duration-200 web:hover:shadow-lg web:hover:shadow-neutral-200/50 dark:web:hover:shadow-neutral-900/50',
         isCompleted && 'opacity-60',
         className

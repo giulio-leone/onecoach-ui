@@ -235,7 +235,7 @@ export function NotificationCenter({
             )}
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-neutral-100 px-4 py-3 dark:border-neutral-800">
+            <div className="flex items-center justify-between border-b border-neutral-100 px-4 py-3 dark:border-white/[0.06]">
               <span className="text-sm font-semibold text-neutral-900 dark:text-white">
                 Notifiche
               </span>

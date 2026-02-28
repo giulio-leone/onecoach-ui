@@ -42,7 +42,7 @@ export function FoodCard({
       className={cn(
         'flex items-center gap-3 p-4 transition-colors',
         'border-t first:border-t-0',
-        'border-neutral-200/60 dark:border-neutral-800',
+        'border-neutral-200/60 dark:border-white/[0.06]',
         'bg-white hover:bg-neutral-50 dark:bg-zinc-950 dark:hover:bg-white/[0.06]/60'
       )}
     >

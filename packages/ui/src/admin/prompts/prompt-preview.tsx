@@ -78,7 +78,7 @@ export function PromptPreview({ agentId, template, variables, className }: Promp
         className
       )}
     >
-      <div className="flex items-center justify-between border-b border-neutral-200/60 px-4 py-3 dark:border-neutral-800">
+      <div className="flex items-center justify-between border-b border-neutral-200/60 px-4 py-3 dark:border-white/[0.06]">
         <h3 className="font-semibold">Preview</h3>
         <div className="flex gap-2">
           <Button variant="outline" size="sm" onClick={generatePreview} disabled={loading}>

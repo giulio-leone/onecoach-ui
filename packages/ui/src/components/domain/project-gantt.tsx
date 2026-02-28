@@ -82,7 +82,7 @@ export function ProjectGantt({
                 <div
                   key={`grid-${day.toISOString()}`}
                   style={{ width: dayWidth }}
-                  className="h-full border-r border-neutral-100/50 dark:border-neutral-800/20"
+                  className="h-full border-r border-neutral-100/50 dark:border-white/[0.04]"
                 />
               ))}
             </div>

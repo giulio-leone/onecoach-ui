@@ -107,7 +107,7 @@ export function ModelSelectorModal({
             />
           </div>
 
-          <div className="max-h-[60vh] overflow-y-auto rounded-lg border border-neutral-200/60 dark:border-neutral-800">
+          <div className="max-h-[60vh] overflow-y-auto rounded-lg border border-neutral-200/60 dark:border-white/[0.06]">
             {isLoading ? (
               <div className="flex flex-col items-center justify-center p-8 text-neutral-500">
                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-neutral-300 border-t-primary-600" />

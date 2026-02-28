@@ -170,7 +170,7 @@ export function CartsPageClient() {
         </div>
       </div>
 
-      <div className="rounded-lg border border-neutral-200/60 dark:border-neutral-800">
+      <div className="rounded-lg border border-neutral-200/60 dark:border-white/[0.06]">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead className="bg-neutral-50 text-neutral-500 dark:bg-zinc-950 dark:text-neutral-400">

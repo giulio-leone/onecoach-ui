@@ -46,7 +46,7 @@ export function MilestoneItem({ title, progress, tasks, className }: MilestonePr
       </div>
 
       {isExpanded && (
-        <div className="border-t border-neutral-200/60 px-4 py-3 dark:border-neutral-800">
+        <div className="border-t border-neutral-200/60 px-4 py-3 dark:border-white/[0.06]">
           <TaskList tasks={tasks} />
         </div>
       )}

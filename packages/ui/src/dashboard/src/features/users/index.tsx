@@ -409,7 +409,7 @@ export function UsersPageClient({
               <Loader2 className="h-8 w-8 animate-spin text-neutral-500" />
             </div>
           ) : filteredUsers.length === 0 ? (
-            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-neutral-200/60 text-center dark:border-neutral-800">
+            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-neutral-200/60 text-center dark:border-white/[0.06]">
               <Users className="mb-4 h-12 w-12 text-neutral-300 dark:text-neutral-600" />
               <h3 className="text-lg font-medium text-neutral-900 dark:text-white">
                 {t('list.empty')}
@@ -620,11 +620,11 @@ export function UsersPageClient({
           </div>
           {/* Content */}
           {isLoadingInvitations && invitations.length === 0 ? (
-            <div className="flex h-64 items-center justify-center rounded-xl border border-dashed border-neutral-200/60 dark:border-neutral-800">
+            <div className="flex h-64 items-center justify-center rounded-xl border border-dashed border-neutral-200/60 dark:border-white/[0.06]">
               <Loader2 className="text-primary-500 h-8 w-8 animate-spin" />
             </div>
           ) : invitations.length === 0 ? (
-            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-neutral-200/60 text-center dark:border-neutral-800">
+            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-neutral-200/60 text-center dark:border-white/[0.06]">
               <Filter className="mb-4 h-10 w-10 text-neutral-300 dark:text-neutral-600" />
               <h3 className="text-lg font-medium text-neutral-900 dark:text-white">
                 {t('invitations.empty')}

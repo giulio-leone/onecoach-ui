@@ -441,7 +441,7 @@ export function CheckoutSettingsPageClient() {
           {offers.map((offer: any) => (
             <div
               key={offer.id}
-              className="rounded-lg border border-neutral-200/60 p-3 dark:border-neutral-800"
+              className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]"
             >
               <div className="flex items-start justify-between gap-2">
                 <div>
@@ -523,7 +523,7 @@ function ToggleRow({
   onChange: (checked: boolean) => void;
 }) {
   return (
-    <div className="flex items-center justify-between rounded-lg border border-neutral-200/60 px-3 py-2 dark:border-neutral-800">
+    <div className="flex items-center justify-between rounded-lg border border-neutral-200/60 px-3 py-2 dark:border-white/[0.06]">
       <p className="text-sm text-neutral-800 dark:text-neutral-200">{label}</p>
       <Switch checked={checked} onCheckedChange={onChange} />
     </div>

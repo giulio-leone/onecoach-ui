@@ -151,7 +151,7 @@ export function AdvancedFilters({
       </button>
 
       {/* ── Period presets (always visible) ─────────────────────────── */}
-      <div className="flex flex-wrap gap-2 border-t border-neutral-100 px-4 pb-4 pt-3 dark:border-neutral-800">
+      <div className="flex flex-wrap gap-2 border-t border-neutral-100 px-4 pb-4 pt-3 dark:border-white/[0.06]">
         {PERIOD_OPTIONS.map((opt) => (
           <button
             key={opt.value}
@@ -171,7 +171,7 @@ export function AdvancedFilters({
 
       {/* ── Custom date range (shown when period === 'custom') ────── */}
       {filters.period === 'custom' && (
-        <div className="flex flex-wrap items-center gap-3 border-t border-neutral-100 px-4 pb-4 pt-3 dark:border-neutral-800">
+        <div className="flex flex-wrap items-center gap-3 border-t border-neutral-100 px-4 pb-4 pt-3 dark:border-white/[0.06]">
           <Calendar className="h-4 w-4 text-neutral-400" />
           <input
             type="date"
@@ -195,7 +195,7 @@ export function AdvancedFilters({
 
       {/* ── Expanded filters ────────────────────────────────────────── */}
       {expanded && (
-        <div className="space-y-5 border-t border-neutral-100 px-4 pb-5 pt-4 dark:border-neutral-800">
+        <div className="space-y-5 border-t border-neutral-100 px-4 pb-5 pt-4 dark:border-white/[0.06]">
           {/* Muscle groups */}
           {availableMuscleGroups.length > 0 && (
             <div>

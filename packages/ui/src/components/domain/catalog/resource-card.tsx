@@ -168,7 +168,7 @@ export const ResourceCard = ({
 
         {/* Stats Grid */}
         {stats.length > 0 && (
-          <div className="mt-auto grid grid-cols-2 gap-2 border-t border-neutral-100 pt-3 dark:border-neutral-800">
+          <div className="mt-auto grid grid-cols-2 gap-2 border-t border-neutral-100 pt-3 dark:border-white/[0.06]">
             {stats.map((stat: { label: string; value: string | number }) => (
               <div key={stat.label} className="flex flex-col">
                 <span className="text-[10px] tracking-wider text-neutral-400 uppercase">

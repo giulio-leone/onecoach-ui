@@ -228,7 +228,7 @@ export function DatePicker({
         >
           {/* Quick Select Buttons */}
           {showQuickSelect && quickSelectOptions.length > 0 && (
-            <div className="mb-3 border-b border-neutral-100 pb-3 dark:border-neutral-800">
+            <div className="mb-3 border-b border-neutral-100 pb-3 dark:border-white/[0.06]">
               <div className="mb-2 flex items-center gap-1.5 text-xs font-medium text-neutral-500">
                 <Zap className="h-3 w-3" />
                 Quick Select
@@ -334,7 +334,7 @@ export function DatePicker({
 
           {/* Today button (only if today is in range) */}
           {isDateInRange(new Date(), minDate, maxDate) && (
-            <div className="mt-3 border-t border-neutral-100 pt-3 dark:border-neutral-800">
+            <div className="mt-3 border-t border-neutral-100 pt-3 dark:border-white/[0.06]">
               <button
                 type="button"
                 onClick={handleToday}

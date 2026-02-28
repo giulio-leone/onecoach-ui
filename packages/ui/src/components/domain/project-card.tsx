@@ -126,7 +126,7 @@ export function ProjectCard({
           <ProgressBar value={progress} size="sm" color={`bg-[${color}]`} />
         </div>
 
-        <div className="flex items-center justify-between border-t border-neutral-100 pt-4 dark:border-neutral-800">
+        <div className="flex items-center justify-between border-t border-neutral-100 pt-4 dark:border-white/[0.06]">
           {dueDate && (
             <div className="flex items-center gap-1.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">
               <Calendar className="h-3.5 w-3.5" />

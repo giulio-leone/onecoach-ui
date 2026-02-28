@@ -103,7 +103,7 @@ export const Combobox = ({
           sideOffset={5}
         >
           <Command className="w-full">
-            <div className="relative mb-2 border-b border-neutral-100 px-2 pt-2 pb-2 dark:border-neutral-800">
+            <div className="relative mb-2 border-b border-neutral-100 px-2 pt-2 pb-2 dark:border-white/[0.06]">
               <Search className="absolute top-1/2 left-4 h-4 w-4 -translate-y-[calc(50%+4px)] text-neutral-400" />
               <Command.Input
                 placeholder={searchPlaceholder}

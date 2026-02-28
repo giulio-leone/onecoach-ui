@@ -119,7 +119,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
         {loading && <p className="text-sm text-neutral-500">{tCommon('loading')}</p>}
         {!loading && cart && (
           <>
-            <div className="rounded-lg border border-neutral-200/60 p-3 dark:border-neutral-800">
+            <div className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
               <div className="flex flex-wrap items-center gap-3">
                 <Badge>{cart.status}</Badge>
                 <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
@@ -161,7 +161,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 </div>
               </div>
             </div>
-            <div className="space-y-2 rounded-lg border border-neutral-200/60 p-3 dark:border-neutral-800">
+            <div className="space-y-2 rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
                   {t('details.items')}
@@ -174,7 +174,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 {cart.cart_items.map((item: CartItem) => (
                   <div
                     key={item.id}
-                    className="rounded-lg border border-neutral-100 p-2 text-sm dark:border-neutral-800"
+                    className="rounded-lg border border-neutral-100 p-2 text-sm dark:border-white/[0.06]"
                   >
                     <div className="flex items-center justify-between">
                       <div>
@@ -222,7 +222,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 ))}
               </Select>
             </div>
-            <div className="space-y-2 rounded-lg border border-neutral-200/60 p-3 dark:border-neutral-800">
+            <div className="space-y-2 rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
               <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
                 {t('details.recentEvents')}
               </p>
@@ -230,7 +230,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 {events.map((event: any) => (
                   <div
                     key={event.id}
-                    className="rounded-md border border-neutral-100 p-2 text-xs dark:border-neutral-800"
+                    className="rounded-md border border-neutral-100 p-2 text-xs dark:border-white/[0.06]"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-semibold">{event.type}</span>

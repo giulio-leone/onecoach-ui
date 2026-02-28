@@ -26,7 +26,7 @@ export function WelcomeHeader({ userName, className, title, subtitle }: WelcomeH
       <Avatar
         fallback={userName?.[0] || 'U'}
         size="xl"
-        className="h-20 w-20 border-4 border-white shadow-xl dark:border-neutral-800"
+        className="h-20 w-20 border-4 border-white shadow-xl dark:border-white/[0.06]"
         bordered
       />
       <div className="flex flex-col gap-1">

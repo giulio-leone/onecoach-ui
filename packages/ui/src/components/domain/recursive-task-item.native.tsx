@@ -58,7 +58,7 @@ export function TaskItemContent({
       <div
         className={cn(
           'group flex flex-row items-center py-2 hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50',
-          level > 0 && 'ml-6 border-l border-neutral-200/60 pl-2 dark:border-neutral-800'
+          level > 0 && 'ml-6 border-l border-neutral-200/60 pl-2 dark:border-white/[0.06]'
         )}
       >
         {/* Drag Handle (Optional) */}
@@ -139,7 +139,7 @@ export function TaskItemContent({
     <View
       className={cn(
         'group flex-row items-center py-2 hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50',
-        level > 0 && 'ml-6 border-l border-neutral-200/60 pl-2 dark:border-neutral-800'
+        level > 0 && 'ml-6 border-l border-neutral-200/60 pl-2 dark:border-white/[0.06]'
       )}
     >
       {/* Drag Handle (Optional) */}
