@@ -120,7 +120,7 @@ export const ConversationEmptyState = ({
         {/* Suggestions */}
         {suggestions && suggestions.length > 0 && (
           <div className="mt-4 flex flex-wrap justify-center gap-2">
-            {suggestions.map((suggestion) => (
+            {suggestions.map((suggestion: any) => (
               <button
                 key={suggestion}
                 type="button"

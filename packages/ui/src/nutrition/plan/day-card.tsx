@@ -74,7 +74,7 @@ export function DayCard({
   // Memoize meal drag IDs
   // Memoize meal drag IDs
   const mealDragIds = useMemo(
-    () => day.meals.map((meal) => createMealDragId(day.dayNumber, meal.id)),
+    () => day.meals.map((meal: any) => createMealDragId(day.dayNumber, meal.id)),
     [day.meals, day.dayNumber]
   );
   
@@ -237,7 +237,7 @@ export function DayCard({
                 })}
               </SortableList>
             ) : (
-              day.meals.map((meal) => {
+              day.meals.map((meal: any) => {
                 const mealKey = `${day.dayNumber}-${meal.id}`;
                 return (
                   <MealCard

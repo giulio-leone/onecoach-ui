@@ -139,7 +139,7 @@ export function FoodFormModal({ isOpen, mode, foodId, onClose, onSuccess }: Food
       const categories = f.metadata?.categories as
         | Array<{ id: string; name: string; slug: string }>
         | undefined;
-      const categoryIds = categories?.map((c) => c.id) ?? [];
+      const categoryIds = categories?.map((c: any) => c.id) ?? [];
       // Extract description from first translation (if available)
       const firstTranslation = (f as FoodItem & { translations?: Array<{ description: string }> })
         .translations?.[0];

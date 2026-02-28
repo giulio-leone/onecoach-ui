@@ -47,7 +47,7 @@ interface ProgramFormProps {
   program: AffiliateProgramFormState | null;
 }
 function buildLevels(levels: AffiliateProgramFormState['levels'], maxLevels: number) {
-  const levelMap = new Map(levels.map((level) => [level.level, level]));
+  const levelMap = new Map(levels.map((level: any) => [level.level, level]));
   const normalized: AffiliateProgramFormState['levels'] = [];
   for (let i = 1; i <= Math.max(1, maxLevels); i += 1) {
     const existing = levelMap.get(i);

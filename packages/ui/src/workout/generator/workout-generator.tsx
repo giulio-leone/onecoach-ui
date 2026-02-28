@@ -93,7 +93,7 @@ export function WorkoutGenerator({
             {progress?.message || t('status.generating')}
           </p>
 
-          {progress?.data?.output && (
+          {!!progress?.data?.output && (
             <div className="rounded-xl border border-slate-800/50 bg-slate-900/50 p-4">
               <p className="font-mono text-sm text-slate-400">
                 {typeof progress.data.output === 'string'

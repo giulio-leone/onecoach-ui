@@ -231,10 +231,11 @@ export function ExerciseCombobox({
    * Follows KISS: Keep It Simple
    */
   const handleSelect = (exercise: LocalizedExercise) => {
+    const ex = exercise as any;
     if (mode === 'search') {
       // In modalità search, usa sempre lo slug per garantire ricerca affidabile
       // Lo slug è univoco e indipendente dalla lingua
-      const searchQuery = exercise.slug;
+      const searchQuery = ex.slug;
       if (onSearch) {
         onSearch(searchQuery);
       }
@@ -362,7 +363,7 @@ export function ExerciseCombobox({
           role="listbox"
           className="absolute z-50 mt-1 max-h-[320px] w-full overflow-x-hidden overflow-y-auto rounded-lg border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-900"
         >
-          {results.map((exercise, index) => (
+          {results.map((exercise: any, index) => (
             <button
               key={exercise.id}
               role="option"

@@ -183,7 +183,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
       },
       privacyConsent: (value: boolean) => (!value ? t('validation.privacyRequired') : null),
       termsConsent: (value: boolean) => (!value ? t('validation.termsRequired') : null),
-    },
+    } as any,
     validateOnBlur: true,
   });
 
@@ -449,7 +449,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
         <Checkbox
           id="privacyConsent"
           checked={form.values.privacyConsent}
-          onChange={(e) => form.setValue('privacyConsent', e.target.checked)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => form.setValue('privacyConsent', e.target.checked)}
           onBlur={form.handleBlur('privacyConsent')}
           disabled={form.isSubmitting}
           error={!!form.errors.privacyConsent && form.touched.privacyConsent}
@@ -477,7 +477,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
         <Checkbox
           id="termsConsent"
           checked={form.values.termsConsent}
-          onChange={(e) => form.setValue('termsConsent', e.target.checked)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => form.setValue('termsConsent', e.target.checked)}
           onBlur={form.handleBlur('termsConsent')}
           disabled={form.isSubmitting}
           error={!!form.errors.termsConsent && form.touched.termsConsent}

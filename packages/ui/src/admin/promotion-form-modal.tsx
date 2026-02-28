@@ -197,8 +197,8 @@ export function PromotionFormModal({ isOpen, promotion, onClose }: PromotionForm
             <RadioGroup
               label={t('admin.promotion_form_modal.tipo_promozione')}
               value={form.values.type}
-              onChange={(value) =>
-                form.setValue('type', value as 'STRIPE_COUPON' | 'BONUS_CREDITS')
+              onChange={(value: string) =>
+                form.setValue('type', value as unknown as 'STRIPE_COUPON' | 'BONUS_CREDITS')
               }
               orientation="horizontal"
               disabled={!!promotion || form.isSubmitting}
@@ -217,8 +217,8 @@ export function PromotionFormModal({ isOpen, promotion, onClose }: PromotionForm
                 <RadioGroup
                   label={t('admin.promotion_form_modal.tipo_sconto')}
                   value={form.values.discountType}
-                  onChange={(value) =>
-                    form.setValue('discountType', value as 'PERCENTAGE' | 'FIXED_AMOUNT')
+                  onChange={(value: string) =>
+                    form.setValue('discountType', value as unknown as 'PERCENTAGE' | 'FIXED_AMOUNT')
                   }
                   orientation="horizontal"
                   disabled={form.isSubmitting}
@@ -319,7 +319,7 @@ export function PromotionFormModal({ isOpen, promotion, onClose }: PromotionForm
               </label>
               <DatePicker
                 value={form.values.validFrom ? new Date(form.values.validFrom) : undefined}
-                onChange={(date) =>
+                onChange={(date: Date | undefined) =>
                   form.setValue('validFrom', date ? date.toISOString().substring(0, 10) : '')
                 }
                 translations={{
@@ -343,7 +343,7 @@ export function PromotionFormModal({ isOpen, promotion, onClose }: PromotionForm
               </label>
               <DatePicker
                 value={form.values.validUntil ? new Date(form.values.validUntil) : undefined}
-                onChange={(date) =>
+                onChange={(date: Date | undefined) =>
                   form.setValue('validUntil', date ? date.toISOString().substring(0, 10) : '')
                 }
                 translations={{

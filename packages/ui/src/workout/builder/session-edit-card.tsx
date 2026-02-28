@@ -332,7 +332,7 @@ export function SessionEditCard({
           <RangeInput
             fieldType="rest"
             value={baseSet.rest}
-            onChange={(min) => handleRangeChange('rest', min)}
+            onChange={(min: React.ChangeEvent<HTMLInputElement>) => handleRangeChange('rest', min)}
           />
         </FieldGroup>
       </div>

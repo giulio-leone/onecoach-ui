@@ -120,9 +120,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
   const t = useTranslations('workouts.builder.statistics');
   const { actualTheme } = useTheme();
   const isDark = actualTheme === 'dark';
-  const themeColors = designTokens.colors[
-    actualTheme as keyof typeof designTokens.colors
-  ] as typeof designTokens.colors.light;
+  const themeColors = designTokens.colors as any;
 
   // Dynamic Chart Colors based on Design System Tokens
   const chartColors = useMemo<ChartColors>(
@@ -133,11 +131,11 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
       secondaryDark: themeColors.secondary[600],
       accent: themeColors.primary[400],
       emerald: isDark
-        ? designTokens.colors.semantic.success.dark.border
-        : designTokens.colors.semantic.success.light.text,
+        ? (designTokens.colors.semantic.success.dark as any).border
+        : (designTokens.colors.semantic.success.light as any).text,
       emeraldDark: isDark
-        ? designTokens.colors.semantic.success.dark.bg
-        : designTokens.colors.semantic.success.light.bg,
+        ? (designTokens.colors.semantic.success.dark as any).bg
+        : (designTokens.colors.semantic.success.light as any).bg,
 
       blue: themeColors.primary[500],
       blueDark: themeColors.primary[600],
@@ -481,7 +479,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-200 dark:divide-white/5">
-                  {stats.exerciseStats.slice(0, 8).map((ex) => (
+                  {stats.exerciseStats.slice(0, 8).map((ex: any) => (
                     <tr
                       key={ex.name}
                       className="transition-colors hover:bg-neutral-50 dark:hover:bg-white/5"
@@ -564,7 +562,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-200 dark:divide-white/5">
-                  {stats.muscleChartData.map((m) => (
+                  {stats.muscleChartData.map((m: any) => (
                     <tr
                       key={m.name}
                       className="transition-colors hover:bg-neutral-50 dark:hover:bg-white/5"

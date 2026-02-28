@@ -173,7 +173,7 @@ export function FlightResults({
     // If the recommendation only has IDs, we need to look them up.
 
     // Helper to find flight by ID
-    const findFlight = (id: string, list: Flight[]) => list.find((f) => f.id === id);
+    const findFlight = (id: string, list: Flight[]) => list.find((f: any) => f.id === id);
 
     // Search in all results
     const outboundList =

@@ -53,7 +53,7 @@ export function WorkoutForm({
               <Input
                 label="Età"
                 value={formData.userProfile.age?.toString() || ''}
-                onChange={(e) => updateField('userProfile', { age: parseInt(e.target.value) || 0 })}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateField('userProfile', { age: parseInt(e.target.value) || 0 })}
                 type="number"
                 placeholder="Anni"
                 className="bg-neutral-50 dark:bg-neutral-800/50"
@@ -63,7 +63,7 @@ export function WorkoutForm({
               <Input
                 label="Peso (kg)"
                 value={formData.userProfile.weight?.toString() || ''}
-                onChange={(e) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   updateField('userProfile', { weight: parseFloat(e.target.value) || 0 })
                 }
                 type="number"
@@ -75,7 +75,7 @@ export function WorkoutForm({
               <Input
                 label="Altezza (cm)"
                 value={formData.userProfile.height?.toString() || ''}
-                onChange={(e) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   updateField('userProfile', { height: parseFloat(e.target.value) || 0 })
                 }
                 type="number"
@@ -283,7 +283,7 @@ export function WorkoutForm({
               <Input
                 label="Giorni/Settimana"
                 value={formData.goals.daysPerWeek.toString()}
-                onChange={(e) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   updateField('goals', { daysPerWeek: parseInt(e.target.value) || 0 })
                 }
                 type="number"
@@ -294,7 +294,7 @@ export function WorkoutForm({
               <Input
                 label="Durata (min)"
                 value={formData.goals.sessionDurationMinutes.toString()}
-                onChange={(e) =>
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   updateField('goals', { sessionDurationMinutes: parseInt(e.target.value) || 0 })
                 }
                 type="number"
@@ -308,7 +308,7 @@ export function WorkoutForm({
               Split Preferita
             </p>
             <div className="flex flex-row flex-wrap gap-3">
-              {SPLIT_OPTIONS.map((option) => (
+              {SPLIT_OPTIONS.map((option: any) => (
                 <SelectionCard
                   key={option.value}
                   title={option.label}
@@ -353,7 +353,7 @@ export function WorkoutForm({
           <Input
             label="Infortuni / Limitazioni"
             value={csvFromArray(formData.constraints.injuriesLimitations)}
-            onChange={(e) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateField('constraints', { injuriesLimitations: arrayFromCsv(e.target.value) })
             }
             placeholder="es. spalla dx, schiena..."
@@ -362,7 +362,7 @@ export function WorkoutForm({
           <Input
             label="Attrezzatura Disponibile"
             value={csvFromArray(formData.constraints.availableEquipment)}
-            onChange={(e) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateField('constraints', { availableEquipment: arrayFromCsv(e.target.value) })
             }
             placeholder="es. manubri, bilanciere, panca..."
@@ -371,7 +371,7 @@ export function WorkoutForm({
           <Input
             label="Esercizi Preferiti"
             value={csvFromArray(formData.constraints.preferredExercises)}
-            onChange={(e) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateField('constraints', { preferredExercises: arrayFromCsv(e.target.value) })
             }
             placeholder="es. panca piana, squat..."
@@ -380,7 +380,7 @@ export function WorkoutForm({
           <Input
             label="Note Aggiuntive"
             value={formData.additionalNotes}
-            onChange={(e) => updateAdditionalNotes(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateAdditionalNotes(e.target.value)}
             placeholder="Dettagli extra per il coach..."
             className="bg-neutral-50 dark:bg-neutral-800/50"
           />
@@ -406,7 +406,7 @@ export function WorkoutForm({
         </div>
 
         <div className="flex flex-row flex-wrap gap-3 p-5">
-          {TIER_OPTIONS.map((option) => (
+          {TIER_OPTIONS.map((option: any) => (
             <SelectionCard
               key={option.value}
               title={option.label}

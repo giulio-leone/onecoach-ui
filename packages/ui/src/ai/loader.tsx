@@ -116,7 +116,7 @@ export const DotsLoader = ({ className, ...props }: DotsLoaderProps) => (
     aria-label={useTranslations('common')('loading')}
     {...props}
   >
-    {[0, 1, 2].map((i) => (
+    {[0, 1, 2].map((i: any) => (
       <span
         key={i}
         className={cn(

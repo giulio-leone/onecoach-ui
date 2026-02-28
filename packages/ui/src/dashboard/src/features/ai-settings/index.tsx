@@ -346,10 +346,10 @@ export function AISettingsPageClient({
     setModelAccess(initialModelAccess);
   }, [initialModelAccess]);
 
-  const activeModels = models.filter((m) => m.isActive).length;
-  const activeFeatures = featureConfigs.filter((f) => f.isEnabled).length;
-  const enabledProviders = providerConfigs.filter((p) => p.hasKey).length;
-  const enabledFlags = featureFlagsData.flags.filter((f) => f.enabled).length;
+  const activeModels = models.filter((m: any) => m.isActive).length;
+  const activeFeatures = featureConfigs.filter((f: any) => f.isEnabled).length;
+  const enabledProviders = providerConfigs.filter((p: any) => p.hasKey).length;
+  const enabledFlags = featureFlagsData.flags.filter((f: any) => f.enabled).length;
 
   useEffect(() => {
     setHeaderActions(
@@ -386,11 +386,11 @@ export function AISettingsPageClient({
     async (modelId: string, role: string, canSelect: boolean) => {
       // Optimistic update
       setModelAccess((prev) => {
-        const existing = prev.find((a) => a.modelId === modelId && a.role === role);
+        const existing = prev.find((a: any) => a.modelId === modelId && a.role === role);
         if (existing) {
-          return prev.map((a) => (a.id === existing.id ? { ...a, canSelect } : a));
+          return prev.map((a: any) => (a.id === existing.id ? { ...a, canSelect } : a));
         }
-        const modelName = models.find((m) => m.id === modelId)?.displayName || '';
+        const modelName = models.find((m: any) => m.id === modelId)?.displayName || '';
         return [
           ...prev,
           { id: `temp-${Date.now()}`, modelId, role: role as UserRole, canSelect, modelName },
@@ -422,7 +422,7 @@ export function AISettingsPageClient({
     async (modelId: string, data: Partial<AIModel>) => {
       // Optimistic update
       setModels((prev) =>
-        prev.map((m) => {
+        prev.map((m: any) => {
           if (m.id === modelId) return { ...m, ...data };
           if (data.isDefault) return { ...m, isDefault: false }; // Unset default for others
           return m;
@@ -457,7 +457,7 @@ export function AISettingsPageClient({
   const handleUpdateFeature = useCallback(
     async (featureId: string, data: Partial<FeatureConfig>) => {
       // Optimistic update
-      setFeatureConfigs((prev) => prev.map((f) => (f.id === featureId ? { ...f, ...data } : f)));
+      setFeatureConfigs((prev) => prev.map((f: any) => (f.id === featureId ? { ...f, ...data } : f)));
 
       try {
         const response = await fetch('/api/admin/ai-settings', {
@@ -514,7 +514,7 @@ export function AISettingsPageClient({
     <div className="space-y-10 py-6">
       <div className="flex flex-col gap-3">
         <div className="hidden items-center gap-2 overflow-x-auto rounded-2xl border border-neutral-200/60 bg-white/70 p-2 shadow-sm ring-1 ring-neutral-200/60 backdrop-blur lg:flex dark:border-neutral-800/60 dark:bg-neutral-900/60 dark:ring-neutral-800/60">
-          {sections.map((section) => {
+          {sections.map((section: any) => {
             const Icon = section.icon;
             const isActive = activeSection === section.id;
             return (
@@ -545,7 +545,7 @@ export function AISettingsPageClient({
             }
             className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-800"
           >
-            {sections.map((section) => (
+            {sections.map((section: any) => (
               <option key={section.id} value={section.id}>
                 {section.label}
               </option>
@@ -562,7 +562,7 @@ export function AISettingsPageClient({
           animate={{ opacity: 1, y: 0 }}
           className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
         >
-          {statsCards.map((stat) => {
+          {statsCards.map((stat: any) => {
             const Icon = stat.icon;
             return (
               <div

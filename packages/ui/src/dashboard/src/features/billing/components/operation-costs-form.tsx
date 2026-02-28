@@ -38,16 +38,16 @@ export function OperationCostsForm({ configs, onUpdateCost }: OperationCostsForm
   const handleCostChange = (opType: OperationType, val: string) => {
     const num = parseInt(val) || 0;
     setLocalConfigs((prev) => {
-      const exists = prev.find((c) => c.operationType === opType);
+      const exists = prev.find((c: any) => c.operationType === opType);
       if (exists) {
-        return prev.map((c) => (c.operationType === opType ? { ...c, creditCost: num } : c));
+        return prev.map((c: any) => (c.operationType === opType ? { ...c, creditCost: num } : c));
       }
       return [...prev, { operationType: opType, creditCost: num }];
     });
   };
 
   const handleSave = async (opType: OperationType) => {
-    const config = localConfigs.find((c) => c.operationType === opType);
+    const config = localConfigs.find((c: any) => c.operationType === opType);
     if (!config) return;
 
     setIsSaving((prev) => ({ ...prev, [opType]: true }));
@@ -67,8 +67,8 @@ export function OperationCostsForm({ configs, onUpdateCost }: OperationCostsForm
 
   // Ensure all known operations are listed even if not in DB yet
   const allOps = Object.keys(OperationType) as OperationType[];
-  const displayConfigs = allOps.map((op) => {
-    const existing = localConfigs.find((c) => c.operationType === op);
+  const displayConfigs = allOps.map((op: any) => {
+    const existing = localConfigs.find((c: any) => c.operationType === op);
     return existing || { operationType: op, creditCost: 5 }; // Default 5
   });
 
@@ -80,7 +80,7 @@ export function OperationCostsForm({ configs, onUpdateCost }: OperationCostsForm
       padding="md"
     >
       <div className="space-y-4">
-        {displayConfigs.map((config) => (
+        {displayConfigs.map((config: any) => (
           <div
             key={config.operationType}
             className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-3 dark:border-white/10 dark:bg-white/5"
@@ -106,7 +106,7 @@ export function OperationCostsForm({ configs, onUpdateCost }: OperationCostsForm
                   type="number"
                   min="0"
                   value={config.creditCost}
-                  onChange={(e) => handleCostChange(config.operationType, e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleCostChange(config.operationType, e.target.value)}
                   className="w-20 rounded border border-neutral-300 bg-white px-2 py-1 text-right text-sm outline-none focus:ring-1 focus:ring-indigo-500 dark:border-white/10 dark:bg-black/20"
                 />
               </div>

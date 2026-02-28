@@ -263,7 +263,7 @@ const StepRoute = ({ data, update, initialAirports, searchAirports, t }: StepRou
 
           <AirportCombobox
             value={data.flyFrom}
-            onChange={(codes) => update({ flyFrom: codes })}
+            onChange={(codes: any) => update({ flyFrom: codes })}
             placeholder={t('wizard.placeholders.selectAirports')}
             searchPlaceholder={t('wizard.placeholders.searchDeparture')}
             hint={t('wizard.hints.multipleAirports')}
@@ -307,7 +307,7 @@ const StepRoute = ({ data, update, initialAirports, searchAirports, t }: StepRou
 
           <AirportCombobox
             value={data.flyTo}
-            onChange={(codes) => update({ flyTo: codes })}
+            onChange={(codes: any) => update({ flyTo: codes })}
             placeholder={t('wizard.placeholders.selectAirports')}
             searchPlaceholder={t('wizard.placeholders.searchDestination')}
             hint={t('wizard.hints.multipleDestinations')}
@@ -444,7 +444,7 @@ const StepDates = ({ data, update, t }: StepDatesProps) => {
             { id: 3, label: t('wizard.flexibility.plusMinus3') },
           ]}
           value={data.departureDateFlexRange}
-          onChange={(val) => update({ departureDateFlexRange: val, returnDateFlexRange: val })}
+          onChange={(val: string | number) => update({ departureDateFlexRange: val as number, returnDateFlexRange: val as number })}
           className="grid w-full grid-cols-2 gap-2 sm:grid-cols-4"
         />
       </div>
@@ -569,7 +569,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
             { id: 'W', label: 'Premium', icon: '✨' },
             { id: 'C', label: 'Business', icon: '💼' },
             { id: 'F', label: 'First', icon: '👑' },
-          ].map((cabin) => (
+          ].map((cabin: any) => (
             <motion.button
               key={cabin.id}
               type="button"
@@ -620,7 +620,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
           { id: 'quality', label: t('wizard.sort.quality') },
         ]}
         value={data.sort}
-        onChange={(val) => update({ sort: val as FlightSearchFormData['sort'] })}
+        onChange={(val: string | number) => update({ sort: val as unknown as FlightSearchFormData['sort'] })}
         className="grid w-full grid-cols-3 gap-2"
       />
     </div>

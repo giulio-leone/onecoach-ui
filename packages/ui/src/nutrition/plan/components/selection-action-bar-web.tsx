@@ -46,7 +46,7 @@ export function SelectionActionBarWeb({
         </span>
       </div>
       <div className="flex items-center gap-2">
-        {actions.map((action) => (
+        {actions.map((action: any) => (
           <Button
             key={action.id}
             variant={

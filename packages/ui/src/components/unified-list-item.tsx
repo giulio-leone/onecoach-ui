@@ -58,7 +58,7 @@ export function UnifiedListItem({
       {/* Left: Status Toggle */}
       <button
         type="button"
-        onClick={(e) => {
+        onClick={(e: React.MouseEvent<HTMLElement>) => {
           e.stopPropagation();
           onToggle?.();
         }}

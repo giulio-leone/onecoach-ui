@@ -83,7 +83,7 @@ interface TaskListProps {
 export function TaskList({ tasks, onToggleTask, className }: TaskListProps) {
   return (
     <div className={cn('space-y-2', className)}>
-      {tasks.map((task) => (
+      {tasks.map((task: any) => (
         <TaskItem key={task.id} {...task} onToggle={onToggleTask} />
       ))}
     </div>

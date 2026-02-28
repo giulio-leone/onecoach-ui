@@ -93,7 +93,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
   };
 
   const estimatedDuration =
-    exercises.reduce((sum, ex) => {
+    exercises.reduce((sum: any, ex: any) => {
       return sum + (ex.duration ?? (ex.reps ?? 10) * 3);
     }, 0) *
       rounds +
@@ -118,7 +118,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
           <div className="min-w-0 flex-1">
             <Input
               value={name}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setName(e.target.value);
                 emitChange({ name: e.target.value });
               }}
@@ -206,7 +206,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
 
               <Input
                 value={exercise.name}
-                onChange={(e) => handleExerciseChange(index, 'name', e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleExerciseChange(index, 'name', e.target.value)}
                 placeholder="Nome esercizio"
                 className="h-8 flex-1 text-sm"
               />
@@ -227,7 +227,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
                 <Input
                   type="number"
                   value={exercise.duration}
-                  onChange={(e) =>
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     handleExerciseChange(index, 'duration', parseInt(e.target.value) || 0)
                   }
                   className="h-8 w-16 text-center text-sm"
@@ -238,7 +238,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
                 <Input
                   type="number"
                   value={exercise.reps}
-                  onChange={(e) =>
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     handleExerciseChange(index, 'reps', parseInt(e.target.value) || 0)
                   }
                   className="h-8 w-16 text-center text-sm"
@@ -283,7 +283,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
             max={30}
             step={5}
             value={restBetweenExercises}
-            onChange={(e) => {
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               const val = parseInt(e.target.value);
               setRestBetweenEx(val);
               emitChange({ restBetweenExercises: val });
@@ -302,7 +302,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
             max={120}
             step={15}
             value={restBetweenRounds}
-            onChange={(e) => {
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               const val = parseInt(e.target.value);
               setRestBetweenRounds(val);
               emitChange({ restBetweenRounds: val });

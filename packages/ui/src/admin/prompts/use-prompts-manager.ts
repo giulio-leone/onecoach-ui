@@ -46,7 +46,7 @@ export function usePromptsManager() {
   }, [loadPrompts]);
 
   const togglePrompt = async (agentId: string, currentStatus: boolean) => {
-    const prompt = prompts.find((p) => p.agentId === agentId);
+    const prompt = prompts.find((p: any) => p.agentId === agentId);
     if (!prompt) return;
 
     const newStatus = !currentStatus;
@@ -66,7 +66,7 @@ export function usePromptsManager() {
       if (!response.ok) throw new Error('Failed to update prompt');
 
       setPrompts((prev) =>
-        prev.map((p) => (p.agentId === agentId ? { ...p, isActive: newStatus } : p))
+        prev.map((p: any) => (p.agentId === agentId ? { ...p, isActive: newStatus } : p))
       );
       toast.success(`Prompt ${newStatus ? 'enabled' : 'disabled'}`);
     } catch (error) {
@@ -90,7 +90,7 @@ export function usePromptsManager() {
       if (!response.ok) throw new Error('Failed to save prompt');
 
       setPrompts((prev) =>
-        prev.map((p) => (p.agentId === agentId ? { ...p, promptTemplate: template, isActive } : p))
+        prev.map((p: any) => (p.agentId === agentId ? { ...p, promptTemplate: template, isActive } : p))
       );
       toast.success('Prompt saved successfully');
     } catch (error) {
@@ -101,7 +101,7 @@ export function usePromptsManager() {
   };
 
   const filteredPrompts = useMemo(() => {
-    return prompts.filter((prompt) => {
+    return prompts.filter((prompt: any) => {
       const matchesCategory = selectedCategory === 'all' || prompt.category === selectedCategory;
       const matchesSearch =
         prompt.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -110,7 +110,7 @@ export function usePromptsManager() {
     });
   }, [prompts, selectedCategory, searchQuery]);
 
-  const selectedPrompt = prompts.find((p) => p.agentId === selectedPromptId) || null;
+  const selectedPrompt = prompts.find((p: any) => p.agentId === selectedPromptId) || null;
 
   return {
     prompts,

@@ -120,7 +120,7 @@ export function computeSemanticDiff(
 
     let name = 'Unknown';
     if (entityPath === 'root') {
-      name = snapshotToUse?.name || 'Program';
+      name = (snapshotToUse?.name as string) || 'Program';
     } else {
       name = resolveEntityName(snapshotToUse, entityPath, entityType);
     }
@@ -165,14 +165,14 @@ export function computeSemanticDiff(
     }
   };
 
-  diff.changed.forEach((c) => processPath(c.path, 'modified', { from: c.from, to: c.to }));
+  diff.changed.forEach((c: any) => processPath(c.path, 'modified', { from: c.from, to: c.to }));
   // For added/removed, we don't usually have "sub-field" details unless we traverse the object.
   // For now, if "Added" acts on 'self', we don't list details.
   // If "Modified" acts on fields, we list details.
   // What if "Added" path is weeks[0].days[0].exercises[2].setGroups[0] ?
   // If it's a deep add, we currently mark the Whole Entity as Modified, with a detail of "Added Set Group 1".
-  diff.added.forEach((path) => processPath(path, 'modified', { from: undefined, to: 'Added' })); // Treat deep adds as modifications to parent with "Added" value
-  diff.removed.forEach((path) => processPath(path, 'modified', { from: 'Removed', to: undefined }));
+  diff.added.forEach((path: any) => processPath(path, 'modified', { from: undefined, to: 'Added' })); // Treat deep adds as modifications to parent with "Added" value
+  diff.removed.forEach((path: any) => processPath(path, 'modified', { from: 'Removed', to: undefined }));
 
   // Post-processing: If an entry has "Added" or "Removed" action on 'self', clear details?
   // Actually, if we add an Exercise, we don't want 10 details saying "Added Set 1", "Added Weight", etc.

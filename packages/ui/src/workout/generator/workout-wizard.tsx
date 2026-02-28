@@ -91,7 +91,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
       isValid: !!formData.goal,
       component: (
         <div className="flex flex-wrap gap-3">
-          {GOALS.map((goal) => (
+          {GOALS.map((goal: any) => (
             <SelectionCard
               key={goal.id}
               title={goal.title}
@@ -113,7 +113,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
       isValid: !!formData.experience,
       component: (
         <div className="flex flex-wrap gap-3">
-          {EXPERIENCE_LEVELS.map((level) => (
+          {EXPERIENCE_LEVELS.map((level: any) => (
             <SelectionCard
               key={level.id}
               title={level.title}
@@ -140,7 +140,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
               Giorni a settimana: {formData.daysPerWeek}
             </p>
             <div className="flex gap-2">
-              {[2, 3, 4, 5, 6].map((days) => (
+              {[2, 3, 4, 5, 6].map((days: any) => (
                 <Button
                   key={days}
                   variant={formData.daysPerWeek === days ? 'primary' : 'outline'}
@@ -156,7 +156,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
           <Input
             label="Durata sessione (minuti)"
             value={formData.durationMinutes.toString()}
-            onChange={(e) => updateData('durationMinutes', parseInt(e.target.value) || 0)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateData('durationMinutes', parseInt(e.target.value) || 0)}
             type="number"
             className="bg-neutral-50 dark:bg-neutral-800/50"
           />
@@ -189,7 +189,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
               description: t('common.ui.noEquipment'),
               icon: <MapPin size={24} className="text-purple-500" />,
             },
-          ].map((loc) => (
+          ].map((loc: any) => (
             <SelectionCard
               key={loc.id}
               title={loc.title}

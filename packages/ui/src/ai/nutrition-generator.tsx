@@ -157,7 +157,7 @@ const StepOne = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
           </label>
           <WizardRadioGroup
             value={formData.gender}
-            onChange={(val) =>
+            onChange={(val: React.ChangeEvent<HTMLInputElement>) =>
               setFormData((prev: NutritionFormDataState) => ({ ...prev, gender: val }))
             }
             options={[
@@ -212,7 +212,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
               icon: Scale,
               desc: 'Perdere grasso e guadagnare muscolo simultaneamente',
             },
-          ].map((option) => (
+          ].map((option: any) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -250,7 +250,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
               label: 'Molto Attivo',
               desc: 'Esercizio molto intenso/lavoro fisico',
             },
-          ].map((option) => (
+          ].map((option: any) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -276,7 +276,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
           value={formData.mealsPerDay}
           min={3}
           max={6}
-          onChange={(value) => setFormData((prev) => ({ ...prev, mealsPerDay: value }))}
+          onChange={(value: React.ChangeEvent<HTMLInputElement>) => setFormData((prev) => ({ ...prev, mealsPerDay: value }))}
           valueLabel="pasti"
           minLabel="3 pasti"
           maxLabel="6 pasti"
@@ -286,7 +286,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
           value={formData.durationWeeks}
           min={1}
           max={4}
-          onChange={(value) => setFormData((prev) => ({ ...prev, durationWeeks: value }))}
+          onChange={(value: React.ChangeEvent<HTMLInputElement>) => setFormData((prev) => ({ ...prev, durationWeeks: value }))}
           valueLabel="sett."
           minLabel="1 sett"
           maxLabel="4 sett"
@@ -298,7 +298,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
         value={formData.patternsCount}
         min={1}
         max={3}
-        onChange={(value) => setFormData((prev) => ({ ...prev, patternsCount: value }))}
+        onChange={(value: React.ChangeEvent<HTMLInputElement>) => setFormData((prev) => ({ ...prev, patternsCount: value }))}
         valueLabel="pattern"
         minLabel="1 pattern"
         maxLabel="3 pattern"
@@ -353,7 +353,7 @@ const StepThree = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormD
               label: 'Mediterranea',
               desc: 'Equilibrata e tradizionale',
             },
-          ].map((option) => (
+          ].map((option: any) => (
             <SelectionCard
               key={option.id}
               role="radio"

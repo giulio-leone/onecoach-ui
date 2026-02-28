@@ -43,7 +43,7 @@ export function PreferencesStep({ formData, onChange, onNotesChange }: Preferenc
           {t('nutrition.preferences_step.tipo_di_dieta')}
         </label>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {dietTypes.map((type) => (
+          {dietTypes.map((type: any) => (
             <button
               key={type.id}
               type="button"

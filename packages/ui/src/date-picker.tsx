@@ -156,7 +156,7 @@ export function DatePicker({
 
   const handleQuickSelect = useCallback(
     (optionId: string) => {
-      const option = quickSelectOptions.find((o) => o.id === optionId);
+      const option = quickSelectOptions.find((o: any) => o.id === optionId);
       if (!option) return;
 
       const baseDate = minDate && minDate > new Date() ? minDate : new Date();
@@ -234,7 +234,7 @@ export function DatePicker({
                 Quick Select
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {quickSelectOptions.map((option) => (
+                {quickSelectOptions.map((option: any) => (
                   <button
                     key={option.id}
                     type="button"
@@ -283,7 +283,7 @@ export function DatePicker({
 
           {/* Weekday headers */}
           <div className="mb-1 grid grid-cols-7 gap-1">
-            {t.weekdays.short.map((day) => (
+            {t.weekdays.short.map((day: any) => (
               <div
                 key={day}
                 className="text-center text-xs font-medium text-neutral-500 dark:text-neutral-400"

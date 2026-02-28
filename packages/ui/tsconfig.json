@@ -37,6 +37,9 @@
       "types/*": [
         "../types/src/*"
       ],
+      "hooks/*": [
+        "../hooks/src/*"
+      ],
       "app/navigation": [
         "../app/src/navigation/index.ts"
       ],

@@ -129,7 +129,7 @@ export function cloneWithNewIds<T>(item: T, generateId: () => string): T {
   }
 
   if (Array.isArray(item)) {
-    return item.map((element) => cloneWithNewIds(element, generateId)) as T;
+    return item.map((element: any) => cloneWithNewIds(element, generateId)) as T;
   }
 
   const cloned = { ...item } as Record<string, unknown>;

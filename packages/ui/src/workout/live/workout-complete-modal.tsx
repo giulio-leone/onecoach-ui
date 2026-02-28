@@ -39,7 +39,7 @@ export function WorkoutCompleteModal({
   const fallbackEndTimeRef = useRef<number>(Date.now());
 
   const totalVolume = useMemo(() => {
-    return exercises.reduce((acc, exercise) => {
+    return exercises.reduce((acc: any, exercise: any) => {
       // getExerciseSets expects an Exercise from @giulio-leone/types which conflicts slightly with schemas
       const sets = getExerciseSets(exercise as unknown as TypesExercise);
       const exerciseVolume = sets.reduce((sAcc: number, set: ExerciseSet) => {
@@ -61,7 +61,7 @@ export function WorkoutCompleteModal({
 
     // Calculate total volume
     let volume = 0;
-    exercises.forEach((exercise) => {
+    exercises.forEach((exercise: any) => {
       const sets = getExerciseSets(exercise as unknown as TypesExercise);
       sets.forEach((set: ExerciseSet) => {
         if (set.done) {
@@ -88,7 +88,7 @@ export function WorkoutCompleteModal({
     const dur = Math.max(0, Math.floor((endTime - startTime) / 1000));
 
     // Count total sets
-    const setsCompleted = exercises.reduce((sum, ex) => {
+    const setsCompleted = exercises.reduce((sum: any, ex: any) => {
       const sets = getExerciseSets(ex as unknown as TypesExercise);
       return sum + sets.filter((set: ExerciseSet) => set.done).length;
     }, 0);

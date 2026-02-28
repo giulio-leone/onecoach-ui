@@ -110,7 +110,7 @@ export function DatePicker({
 
             {/* Weekday headers */}
             <View style={styles.weekdaysRow}>
-              {t.weekdays.short.map((day) => (
+              {t.weekdays.short.map((day: any) => (
                 <View key={day} style={styles.weekdayCell}>
                   <Text style={styles.weekdayText}>{day}</Text>
                 </View>

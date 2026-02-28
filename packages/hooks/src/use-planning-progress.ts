@@ -131,7 +131,7 @@ export function usePlanningProgress({
         setProgress({
           planId: data.planId,
           planStatus:
-            ((data as Record<string, unknown>).planStatus as PlanningProgress['planStatus']) ||
+            ((data as unknown as Record<string, unknown>).planStatus as PlanningProgress['planStatus']) ||
             progress?.planStatus,
           totalTasks: data.totalTasks,
           completedTasks: data.completedTasks,
@@ -145,7 +145,7 @@ export function usePlanningProgress({
                 weekNumber: data.currentTask.weekNumber,
                 status: (data.currentTask as Record<string, unknown>).status as string,
                 subTasks: [],
-              }
+              } as any as PlanningTask
             : undefined,
           currentSubTask: data.currentSubTask
             ? {
@@ -153,7 +153,7 @@ export function usePlanningProgress({
                 dayNumber: data.currentSubTask.dayNumber,
                 dayName: data.currentSubTask.dayName,
                 status: (data.currentSubTask as Record<string, unknown>).status as string,
-              }
+              } as any
             : undefined,
         });
         setError(null);

@@ -59,7 +59,7 @@ export function ChatHistoryModal({
   }, []);
 
   const toggleSelect = (id: string) => {
-    setSelectedIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+    setSelectedIds((prev) => (prev.includes(id) ? prev.filter((x: any) => x !== id) : [...prev, id]));
   };
 
   const clearSelection = () => {
@@ -71,8 +71,7 @@ export function ChatHistoryModal({
 
   // Filter and Group Conversations
   const groupedConversations = useMemo(() => {
-    const filtered = conversations.filter(
-      (c) =>
+    const filtered = conversations.filter((c: any) =>
         c.title.toLowerCase().includes(search.toLowerCase()) ||
         c.preview.toLowerCase().includes(search.toLowerCase())
     );
@@ -85,7 +84,7 @@ export function ChatHistoryModal({
       'Più vecchi': [],
     };
 
-    filtered.forEach((c) => {
+    filtered.forEach((c: any) => {
       const date = new Date(c.updatedAt);
       if (isToday(date)) groups['Oggi']!.push(c);
       else if (isYesterday(date)) groups['Ieri']!.push(c);
@@ -248,7 +247,7 @@ export function ChatHistoryModal({
                   <Calendar className="h-3 w-3" /> {label}
                 </h3>
                 <div className="space-y-2">
-                  {items.map((conv) => (
+                  {items.map((conv: any) => (
                     <div
                       key={conv.id}
                       onClick={() => {
@@ -270,7 +269,7 @@ export function ChatHistoryModal({
                             type="checkbox"
                             className="h-4 w-4 accent-indigo-500"
                             checked={selectedIds.includes(conv.id)}
-                            onChange={(e) => {
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                               e.stopPropagation();
                               toggleSelect(conv.id);
                             }}
@@ -301,14 +300,14 @@ export function ChatHistoryModal({
                                 }
                                 className="h-8 text-sm"
                                 autoFocus
-                                onClick={(e) => e.stopPropagation()}
+                                onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
                               />
                               <Button
                                 size="icon-sm"
                                 variant="ghost"
                                 className="h-8 w-8 text-green-600 hover:text-green-700"
                                 disabled={isSaving}
-                                onClick={(e) => confirmRename(e, conv.id)}
+                                onClick={(e: React.MouseEvent<HTMLElement>) => confirmRename(e, conv.id)}
                               >
                                 <Check className="h-4 w-4" />
                               </Button>
@@ -363,7 +362,7 @@ export function ChatHistoryModal({
                               size="icon-sm"
                               variant="danger"
                               className="h-6 w-6 rounded-md"
-                              onClick={(e) => {
+                              onClick={(e: React.MouseEvent<HTMLElement>) => {
                                 e.stopPropagation();
                                 confirmDelete();
                               }}
@@ -374,7 +373,7 @@ export function ChatHistoryModal({
                               size="icon-sm"
                               variant="ghost"
                               className="h-6 w-6 rounded-md"
-                              onClick={(e) => {
+                              onClick={(e: React.MouseEvent<HTMLElement>) => {
                                 e.stopPropagation();
                                 setDeleteId(null);
                               }}
@@ -389,7 +388,7 @@ export function ChatHistoryModal({
                                 size="icon-sm"
                                 variant="ghost"
                                 className="h-7 w-7 text-neutral-400 hover:text-indigo-500"
-                                onClick={(e) => startRename(e, conv.id, conv.title || '')}
+                                onClick={(e: React.MouseEvent<HTMLElement>) => startRename(e, conv.id, conv.title || '')}
                                 disabled={isSaving}
                               >
                                 <Pencil className="h-3.5 w-3.5" />
@@ -399,7 +398,7 @@ export function ChatHistoryModal({
                               size="icon-sm"
                               variant="ghost"
                               className="h-7 w-7 text-neutral-400 hover:bg-red-50 hover:text-red-500 dark:hover:bg-red-900/20"
-                              onClick={(e) => handleDelete(e, conv.id)}
+                              onClick={(e: React.MouseEvent<HTMLElement>) => handleDelete(e, conv.id)}
                             >
                               <Trash2 className="h-3.5 w-3.5" />
                             </Button>

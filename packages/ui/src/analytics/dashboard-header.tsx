@@ -36,7 +36,7 @@ export function DashboardHeader({
 
       {stats && stats.length > 0 && (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
+          {stats.map((stat: any) => (
             <KpiCard key={stat.label} {...stat} />
           ))}
         </div>

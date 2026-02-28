@@ -208,7 +208,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
               )}
             >
               <Calendar className="h-4 w-4" />
-              {PERIOD_OPTIONS.find((p) => p.value === period)?.label}
+              {PERIOD_OPTIONS.find((p: any) => p.value === period)?.label}
               <ChevronDown className="h-4 w-4" />
             </button>
             <AnimatePresence>
@@ -225,7 +225,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                     'shadow-xl'
                   )}
                 >
-                  {PERIOD_OPTIONS.map((option) => (
+                  {PERIOD_OPTIONS.map((option: any) => (
                     <button
                       key={option.value}
                       onClick={() => {
@@ -526,7 +526,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-100 dark:divide-neutral-700">
-              {modelStats.map((model) => (
+              {modelStats.map((model: any) => (
                 <tr key={model.modelId} className="group">
                   <td className="py-3">
                     <span className="font-medium text-neutral-900 dark:text-white">

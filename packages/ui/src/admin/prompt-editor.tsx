@@ -122,7 +122,7 @@ export function PromptEditor({ prompt, onSave, onCancel }: PromptEditorProps) {
           height="500px"
           language="markdown"
           value={template}
-          onChange={(value) => setTemplate(value ?? '')}
+          onChange={(value: any) => setTemplate(value ?? '')}
           theme="vs-dark"
           options={{
             minimap: { enabled: false },

@@ -51,7 +51,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
     return () => clearTimeout(debounce);
   }, [searchQuery, isOpen]);
 
-  const filteredExercises = exercises.filter((ex) => {
+  const filteredExercises = exercises.filter((ex: any) => {
     const matchesMuscle = selectedMuscle
       ? ex.muscleGroups?.includes(selectedMuscle as import('@giulio-leone/types').MuscleGroup)
       : true;
@@ -120,7 +120,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
             </View>
 
             <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-4 gap-2">
-              {['chest', 'back', 'legs', 'shoulders', 'arms', 'core'].map((muscle) => (
+              {['chest', 'back', 'legs', 'shoulders', 'arms', 'core'].map((muscle: any) => (
                 <Pressable
                   key={muscle}
                   onPress={() => setSelectedMuscle(selectedMuscle === muscle ? null : muscle)}
@@ -153,7 +153,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
             ) : (
               <ScrollView className="flex-1 p-4">
                 <View className="gap-3 pb-10">
-                  {filteredExercises.map((ex) => (
+                  {filteredExercises.map((ex: any) => (
                     <Pressable
                       key={ex.id}
                       onPress={() => handleSelect(ex)}

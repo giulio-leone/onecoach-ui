@@ -90,7 +90,7 @@ export function WeekCard({
 
   // Memoize day drag IDs
   const dayDragIds = useMemo(
-    () => week.days?.map((day) => createNutritionDayDragId(week.weekNumber, day.dayNumber)) || [],
+    () => week.days?.map((day: any) => createNutritionDayDragId(week.weekNumber, day.dayNumber)) || [],
     [week.days, week.weekNumber]
   );
 
@@ -264,7 +264,7 @@ export function WeekCard({
                 })}
               </SortableList>
             ) : (
-              week.days.map((day) => {
+              week.days.map((day: any) => {
                 const dayKey = `${week.weekNumber}-${day.dayNumber}`;
                 return (
                   <DayCard

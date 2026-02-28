@@ -117,7 +117,7 @@ export function OpenRouterModelsManager() {
   const handleSync = async () => {
     try {
       setIsSaving(true);
-      const modelsToSync = syncModels.filter((m) => selectedSyncModels.has(m.modelId));
+      const modelsToSync = syncModels.filter((m: any) => selectedSyncModels.has(m.modelId));
       const res = await fetch('/api/admin/config/openrouter-models/sync', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -229,8 +229,7 @@ export function OpenRouterModelsManager() {
     }
   };
 
-  const filteredSyncModels = syncModels.filter(
-    (m) =>
+  const filteredSyncModels = syncModels.filter((m: any) =>
       m.name.toLowerCase().includes(syncSearch.toLowerCase()) ||
       m.modelId.toLowerCase().includes(syncSearch.toLowerCase())
   );
@@ -296,7 +295,7 @@ export function OpenRouterModelsManager() {
                   </td>
                 </tr>
               ) : (
-                models.map((model) => (
+                models.map((model: any) => (
                   <tr key={model.id} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/30">
                     <td className="px-6 py-4 font-medium">{model.name}</td>
                     <td className="px-6 py-4 text-neutral-500">{model.modelId}</td>
@@ -395,7 +394,7 @@ export function OpenRouterModelsManager() {
             </div>
           ) : (
             <div className="divide-y divide-neutral-200 dark:divide-neutral-700">
-              {models.map((model) => (
+              {models.map((model: any) => (
                 <div key={model.id} className="space-y-3 p-4">
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0 flex-1">
@@ -532,7 +531,7 @@ export function OpenRouterModelsManager() {
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                           if (e.target.checked) {
                             setSelectedSyncModels(
-                              new Set(filteredSyncModels.map((m) => m.modelId))
+                              new Set(filteredSyncModels.map((m: any) => m.modelId))
                             );
                           } else {
                             setSelectedSyncModels(new Set());
@@ -546,7 +545,7 @@ export function OpenRouterModelsManager() {
                   </tr>
                 </thead>
                 <tbody>
-                  {filteredSyncModels.map((m) => (
+                  {filteredSyncModels.map((m: any) => (
                     <tr
                       key={m.modelId}
                       className="border-b border-neutral-100 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-800/30"

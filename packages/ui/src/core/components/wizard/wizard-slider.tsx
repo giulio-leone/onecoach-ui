@@ -50,7 +50,7 @@ export function WizardSlider({
           max={max}
           step={step}
           value={value}
-          onChange={(e) => onChange(Number(e.target.value))}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(Number(e.target.value))}
           className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-200 accent-blue-600 dark:bg-neutral-700 dark:accent-blue-500"
         />
       </div>

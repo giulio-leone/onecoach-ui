@@ -94,7 +94,7 @@ export function LiveFoodItemModern({
                     {variants.map((v, idx) => (
                        <button
                          key={idx}
-                         onClick={(e) => {
+                         onClick={(e: React.MouseEvent<HTMLElement>) => {
                             e.stopPropagation();
                             onSwap(v);
                             setShowMenu(false);

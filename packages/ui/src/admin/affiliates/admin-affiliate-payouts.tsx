@@ -62,7 +62,7 @@ export function AdminAffiliatePayouts({
     }
   };
 
-  const filteredRewards = rewards.filter((reward) => {
+  const filteredRewards = rewards.filter((reward: any) => {
     if (filter !== 'ALL' && reward.status !== filter) return false;
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
@@ -109,7 +109,7 @@ export function AdminAffiliatePayouts({
           </div>
         }
       >
-        {filteredRewards.map((reward) => {
+        {filteredRewards.map((reward: any) => {
           const stats = [];
           if (reward.amount > 0) {
             stats.push({ label: 'Importo', value: formatCurrency(reward.amount) });

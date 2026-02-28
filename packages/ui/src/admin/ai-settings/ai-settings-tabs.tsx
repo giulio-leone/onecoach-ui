@@ -89,7 +89,7 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const activeTabConfig = TABS.find((t) => t.id === activeTab) ?? TABS[0]!;
+  const activeTabConfig = TABS.find((t: any) => t.id === activeTab) ?? TABS[0]!;
 
   return (
     <>
@@ -151,7 +151,7 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
               'shadow-2xl shadow-neutral-900/20 dark:shadow-neutral-900/40'
             )}
           >
-            {TABS.map((tab) => {
+            {TABS.map((tab: any) => {
               const isActive = tab.id === activeTab;
               return (
                 <button
@@ -213,7 +213,7 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
             'scrollbar-hide overflow-x-auto'
           )}
         >
-          {TABS.map((tab) => {
+          {TABS.map((tab: any) => {
             const isActive = tab.id === activeTab;
             return (
               <button

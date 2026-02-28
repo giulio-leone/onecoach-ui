@@ -74,7 +74,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
 
       // Update local state with returned config (in case of ID creation etc)
       setConfigs((prev) =>
-        prev.map((c) => (c.operationType === config.operationType ? { ...c, ...data.config } : c))
+        prev.map((c: any) => (c.operationType === config.operationType ? { ...c, ...data.config } : c))
       );
 
       toast.success(t('saveSuccess'));
@@ -89,7 +89,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
   const updateField = (opType: OperationType, field: keyof OperationConfig, value: unknown) => {
     setConfigs((prev) => {
       // Check if config exists
-      const exists = prev.find((c) => c.operationType === opType);
+      const exists = prev.find((c: any) => c.operationType === opType);
       if (!exists) {
         // Create skeleton if not strictly existing in fetched list (should not happen if we list all enums, but robust)
         // Actually we might need to populate from ALL Enum values even if not in DB.
@@ -97,20 +97,20 @@ export function OperationsTab({ models }: OperationsTabProps) {
         // Ideally we should merge with all OperationType enum values.
         return prev;
       }
-      return prev.map((c) => (c.operationType === opType ? { ...c, [field]: value } : c));
+      return prev.map((c: any) => (c.operationType === opType ? { ...c, [field]: value } : c));
     });
   };
 
   // Generate complete list merging fetched configs with missing Enum definitions if any
   const allOperationTypes = [...OPERATION_TYPES];
-  const mergedConfigs = allOperationTypes.map((opType) => {
-    const existing = configs.find((c) => c.operationType === opType);
+  const mergedConfigs = allOperationTypes.map((opType: any) => {
+    const existing = configs.find((c: any) => c.operationType === opType);
     return (
       existing ||
       ({
         id: `temp-${opType}`,
         operationType: opType,
-        model: models.find((m) => m.isDefault)?.modelId || models[0]?.modelId || '',
+        model: models.find((m: any) => m.isDefault)?.modelId || models[0]?.modelId || '',
         creditCost: 1,
         maxTokens: 1000,
         thinkingBudget: 0,
@@ -136,7 +136,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
         </div>
       </div>
 
-      {mergedConfigs.map((config) => {
+      {mergedConfigs.map((config: any) => {
         const Icon = getIconForOp(config.operationType);
         const isSaving = savingOp === config.operationType;
 
@@ -181,7 +181,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                   onClick={() => {
                     // Optimistic update for isActive
                     const newActive = !config.isActive;
-                    if (configs.find((c) => c.operationType === config.operationType)) {
+                    if (configs.find((c: any) => c.operationType === config.operationType)) {
                       updateField(config.operationType, 'isActive', newActive);
                     } else {
                       // Handle temp config
@@ -213,9 +213,9 @@ export function OperationsTab({ models }: OperationsTabProps) {
                 </label>
                 <select
                   value={config.model}
-                  onChange={(e) => {
+                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                     const val = e.target.value;
-                    if (configs.find((c) => c.operationType === config.operationType)) {
+                    if (configs.find((c: any) => c.operationType === config.operationType)) {
                       updateField(config.operationType, 'model', val);
                     } else {
                       setConfigs((prev) => [...prev, { ...config, model: val }]);
@@ -223,7 +223,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                   }}
                   className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-800"
                 >
-                  {models.map((m) => (
+                  {models.map((m: any) => (
                     <option key={m.modelId} value={m.modelId}>
                       {m.displayName}
                     </option>
@@ -241,9 +241,9 @@ export function OperationsTab({ models }: OperationsTabProps) {
                     type="number"
                     min={0}
                     value={config.creditCost}
-                    onChange={(e) => {
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       const val = parseInt(e.target.value) || 0;
-                      if (configs.find((c) => c.operationType === config.operationType)) {
+                      if (configs.find((c: any) => c.operationType === config.operationType)) {
                         updateField(config.operationType, 'creditCost', val);
                       } else {
                         setConfigs((prev) => [...prev, { ...config, creditCost: val }]);
@@ -263,9 +263,9 @@ export function OperationsTab({ models }: OperationsTabProps) {
                     min={100}
                     step={100}
                     value={config.maxTokens}
-                    onChange={(e) => {
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       const val = parseInt(e.target.value) || 1000;
-                      if (configs.find((c) => c.operationType === config.operationType)) {
+                      if (configs.find((c: any) => c.operationType === config.operationType)) {
                         updateField(config.operationType, 'maxTokens', val);
                       } else {
                         setConfigs((prev) => [...prev, { ...config, maxTokens: val }]);

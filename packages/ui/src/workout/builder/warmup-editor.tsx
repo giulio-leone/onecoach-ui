@@ -109,7 +109,7 @@ export function WarmupEditor({ warmup, onChange, onRemove, className }: WarmupEd
           <div className="min-w-0 flex-1">
             <Input
               value={name}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setName(e.target.value);
                 emitChange(undefined, undefined, e.target.value);
               }}
@@ -133,7 +133,7 @@ export function WarmupEditor({ warmup, onChange, onRemove, className }: WarmupEd
             min={5}
             max={20}
             value={durationMinutes}
-            onChange={(e) => {
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               const val = parseInt(e.target.value);
               setDurationMinutes(val);
               emitChange(undefined, val);
@@ -162,7 +162,7 @@ export function WarmupEditor({ warmup, onChange, onRemove, className }: WarmupEd
 
               <Input
                 value={exercise.name}
-                onChange={(e) => handleExerciseChange(index, 'name', e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleExerciseChange(index, 'name', e.target.value)}
                 placeholder="Nome esercizio"
                 className="h-8 flex-1 text-sm"
               />
@@ -179,7 +179,7 @@ export function WarmupEditor({ warmup, onChange, onRemove, className }: WarmupEd
                   <Input
                     type="number"
                     value={exercise.duration}
-                    onChange={(e) =>
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       handleExerciseChange(index, 'duration', parseInt(e.target.value) || 0)
                     }
                     className="h-8 w-16 text-center text-sm"
@@ -191,7 +191,7 @@ export function WarmupEditor({ warmup, onChange, onRemove, className }: WarmupEd
                 <Input
                   type="number"
                   value={exercise.reps}
-                  onChange={(e) =>
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     handleExerciseChange(index, 'reps', parseInt(e.target.value) || 0)
                   }
                   className="h-8 w-16 text-center text-sm"

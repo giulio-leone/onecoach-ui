@@ -276,7 +276,7 @@ export function ProgramCard({
                   data-card-action="true"
                   className={baseClasses}
                   title={action.title}
-                  onClick={(e) => e.stopPropagation()}
+                  onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
                 >
                   {action.icon}
                 </Link>
@@ -286,7 +286,7 @@ export function ProgramCard({
             return (
               <button
                 key={index}
-                onClick={(e) => {
+                onClick={(e: React.MouseEvent<HTMLElement>) => {
                   e.stopPropagation();
                   action.onClick?.();
                 }}

@@ -40,7 +40,7 @@ export function InsightsTab({ projectId }: InsightsTabProps) {
     <div className="space-y-6">
       {/* Sub-tab navigation */}
       <div className="flex items-center gap-2">
-        {subTabs.map((tab) => {
+        {subTabs.map((tab: any) => {
           const Icon = tab.icon;
           const isActive = activeSubTab === tab.id;
           return (

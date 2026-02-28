@@ -140,10 +140,10 @@ export function UsersPageClient({
     [debouncedUserSearch, queryClient, roleFilter, statusFilter, userPage, userPageSize, tAdmin]
   );
   // Calculate stats
-  const activeUsers = useMemo(() => users.filter((u) => u.status === 'ACTIVE').length, [users]);
-  const adminUsers = useMemo(() => users.filter((u) => isAdminRole(u.role)).length, [users]);
+  const activeUsers = useMemo(() => users.filter((u: any) => u.status === 'ACTIVE').length, [users]);
+  const adminUsers = useMemo(() => users.filter((u: any) => isAdminRole(u.role)).length, [users]);
   const suspendedUsers = useMemo(
-    () => users.filter((u) => u.status === 'SUSPENDED').length,
+    () => users.filter((u: any) => u.status === 'SUSPENDED').length,
     [users]
   );
   const stats = [
@@ -157,18 +157,17 @@ export function UsersPageClient({
     let result = users;
     if (debouncedUserSearch) {
       const lower = debouncedUserSearch.toLowerCase();
-      result = result.filter(
-        (u) => u.name?.toLowerCase().includes(lower) || u.email.toLowerCase().includes(lower)
+      result = result.filter((u: any) => u.name?.toLowerCase().includes(lower) || u.email.toLowerCase().includes(lower)
       );
     }
     if (roleFilter !== 'ALL') {
       result =
         roleFilter === 'ADMIN_ALL'
-          ? result.filter((u) => isAdminRole(u.role))
-          : result.filter((u) => u.role === roleFilter);
+          ? result.filter((u: any) => isAdminRole(u.role))
+          : result.filter((u: any) => u.role === roleFilter);
     }
     if (statusFilter !== 'ALL') {
-      result = result.filter((u) => u.status === statusFilter);
+      result = result.filter((u: any) => u.status === statusFilter);
     }
     return result;
   }, [users, debouncedUserSearch, roleFilter, statusFilter]);
@@ -364,7 +363,7 @@ export function UsersPageClient({
                   }
                   className="h-10 text-sm"
                 >
-                  {roleFilterOptions.map((opt) => (
+                  {roleFilterOptions.map((opt: any) => (
                     <option key={opt.value} value={opt.value}>
                       {opt.label}
                     </option>
@@ -377,7 +376,7 @@ export function UsersPageClient({
                   }
                   className="h-10 text-sm"
                 >
-                  {statusFilterOptions.map((opt) => (
+                  {statusFilterOptions.map((opt: any) => (
                     <option key={opt.value} value={opt.value}>
                       {opt.label}
                     </option>
@@ -421,7 +420,7 @@ export function UsersPageClient({
             </div>
           ) : viewMode === 'grid' ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {filteredUsers.map((user) => (
+              {filteredUsers.map((user: any) => (
                 <UserCard
                   key={user.id}
                   user={user}
@@ -437,7 +436,7 @@ export function UsersPageClient({
           ) : (
             /* List View */
             <div className="space-y-2">
-              {filteredUsers.map((user) => (
+              {filteredUsers.map((user: any) => (
                 <div
                   key={user.id}
                   className="flex items-center gap-4 rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900/50"
@@ -494,7 +493,7 @@ export function UsersPageClient({
                 }}
                 className="h-10 text-sm"
               >
-                {[10, 20, 50, 100].map((size) => (
+                {[10, 20, 50, 100].map((size: any) => (
                   <option key={size} value={size}>
                     {t('pagination.perPage', { size })}
                   </option>
@@ -636,7 +635,7 @@ export function UsersPageClient({
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {invitations.map((invitation) => (
+              {invitations.map((invitation: any) => (
                 <InvitationCard
                   key={invitation.id}
                   invitation={invitation}

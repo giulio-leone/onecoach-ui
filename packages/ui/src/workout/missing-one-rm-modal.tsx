@@ -333,7 +333,7 @@ function OneRMEntry({
           <p className="mt-2 flex items-center gap-1.5 text-xs text-blue-600 dark:text-blue-400">
             <Check className="h-3 w-3" />
             <span>
-              {t('selected')}: {selectedExercise.translation?.name ?? selectedExercise.slug}
+              {t('selected')}: {(selectedExercise as any).translation?.name ?? (selectedExercise as any).slug}
             </span>
           </p>
         )}

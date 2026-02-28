@@ -52,7 +52,7 @@ export function AnalyticsHeader({
 
       <Card variant="glass" className="flex-row items-center justify-between p-2">
         <View className="flex-row items-center space-x-1 rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800">
-          {periods.map((p) => (
+          {periods.map((p: any) => (
             <TouchableOpacity
               key={p.value}
               onPress={() => onPeriodChange(p.value)}

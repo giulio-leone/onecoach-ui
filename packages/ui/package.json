@@ -1,6 +1,6 @@
 {
   "name": "@giulio-leone/ui",
-  "version": "0.14.0",
+  "version": "0.15.4",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -133,6 +133,44 @@
     "./dashboard": {
       "types": "./src/dashboard/index.ts",
       "default": "./src/dashboard/index.ts"
+    },
+    "./admin": {
+      "types": "./dist/admin/index.d.ts",
+      "import": "./dist/admin/index.js",
+      "default": "./src/admin/index.ts"
+    },
+    "./shared": {
+      "types": "./dist/shared/index.d.ts",
+      "import": "./dist/shared/index.js",
+      "default": "./src/shared/index.ts"
+    },
+    "./visual-builder": {
+      "types": "./dist/visual-builder/index.d.ts",
+      "import": "./dist/visual-builder/index.js",
+      "default": "./src/visual-builder/index.ts"
+    },
+    "./loading-indicator": {
+      "types": "./dist/loading-indicator.d.ts",
+      "import": "./dist/loading-indicator.js",
+      "default": "./src/loading-indicator.tsx"
+    },
+    "./dialog": {
+      "types": "./dist/dialog.d.ts",
+      "import": "./dist/dialog.js",
+      "default": "./src/dialog.tsx"
+    },
+    "./components/task-types": {
+      "types": "./dist/components/task-types.d.ts",
+      "import": "./dist/components/task-types.js",
+      "default": "./src/components/task-types.ts"
+    },
+    "./workout/live": {
+      "types": "./src/workout/live/index.ts",
+      "default": "./src/workout/live/index.ts"
+    },
+    "./card": {
+      "types": "./src/card.tsx",
+      "default": "./src/card.tsx"
     }
   },
   "files": [

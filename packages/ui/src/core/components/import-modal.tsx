@@ -152,7 +152,7 @@ export function ImportModal({
 
         {files.length > 0 && (
           <div className="rounded-md border border-dashed border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200">
-            {files.map((file) => (
+            {files.map((file: any) => (
               <div key={file.name} className="flex items-center justify-between py-1">
                 <span>{file.name}</span>
                 <span className="text-xs text-gray-500">

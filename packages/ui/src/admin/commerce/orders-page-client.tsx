@@ -172,7 +172,7 @@ export function OrdersPageClient() {
                 setFilters({ ...filters, status: e.target.value })
               }
             >
-              {STATUS_OPTIONS.map((opt) => (
+              {STATUS_OPTIONS.map((opt: any) => (
                 <option key={opt.value} value={opt.value}>
                   {t(`status.${opt.labelKey}`)}
                 </option>
@@ -187,7 +187,7 @@ export function OrdersPageClient() {
                 setFilters({ ...filters, type: e.target.value })
               }
             >
-              {TYPE_OPTIONS.map((opt) => (
+              {TYPE_OPTIONS.map((opt: any) => (
                 <option key={opt.value} value={opt.value}>
                   {t(`type.${opt.labelKey}`)}
                 </option>
@@ -198,7 +198,7 @@ export function OrdersPageClient() {
             <label className="text-xs font-medium text-neutral-500">{t('filters.from')}</label>
             <DatePicker
               value={filters.from ? new Date(filters.from) : undefined}
-              onChange={(date) =>
+              onChange={(date: Date | undefined) =>
                 setFilters({ ...filters, from: date ? date.toISOString().substring(0, 10) : '' })
               }
               translations={{
@@ -216,7 +216,7 @@ export function OrdersPageClient() {
             <label className="text-xs font-medium text-neutral-500">{t('filters.to')}</label>
             <DatePicker
               value={filters.to ? new Date(filters.to) : undefined}
-              onChange={(date) =>
+              onChange={(date: Date | undefined) =>
                 setFilters({ ...filters, to: date ? date.toISOString().substring(0, 10) : '' })
               }
               translations={{
@@ -265,7 +265,7 @@ export function OrdersPageClient() {
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200 dark:divide-neutral-800">
-              {orders.map((order) => (
+              {orders.map((order: any) => (
                 <tr
                   key={order.id}
                   className="group hover:bg-neutral-50 dark:hover:bg-neutral-900/50"

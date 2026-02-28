@@ -96,7 +96,7 @@ export function CoachAnalyticsCharts({ userId, period = '30d' }: CoachAnalyticsC
   if (loading) {
     return (
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {[1, 2, 3, 4].map((i) => (
+        {[1, 2, 3, 4].map((i: any) => (
           <div
             key={i}
             className="flex h-80 items-center justify-center rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900"

@@ -57,8 +57,7 @@ export function PromptList({
             </div>
           ) : (
             Object.entries(
-              prompts.reduce(
-                (acc, prompt) => {
+              prompts.reduce((acc: any, prompt: any) => {
                   const category = prompt.category || 'Other';
                   if (!acc[category]) acc[category] = [];
                   acc[category].push(prompt);
@@ -75,7 +74,7 @@ export function PromptList({
                   <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800" />
                 </div>
                 <div className="space-y-1">
-                  {categoryPrompts.map((prompt) => (
+                  {(categoryPrompts as any[]).map((prompt: any) => (
                     <motion.button
                       key={prompt.agentId}
                       layoutId={prompt.agentId}

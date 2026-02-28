@@ -24,8 +24,8 @@ export function NutritionDayDetail({
   onTrack,
 }: NutritionDayDetailProps) {
   // Find the specific day
-  const week = plan.weeks?.find((w) => w.weekNumber === weekNumber);
-  const day = week?.days?.find((d) => d.dayNumber === dayNumber);
+  const week = plan.weeks?.find((w: any) => w.weekNumber === weekNumber);
+  const day = week?.days?.find((d: any) => d.dayNumber === dayNumber);
 
   if (!day) {
     return (

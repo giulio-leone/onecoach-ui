@@ -80,7 +80,7 @@ export function DeployToClientsModal({
 
   const toggleUser = (userId: string) => {
     setSelectedUsers((prev) =>
-      prev.includes(userId) ? prev.filter((id) => id !== userId) : [...prev, userId]
+      prev.includes(userId) ? prev.filter((id: any) => id !== userId) : [...prev, userId]
     );
   };
 
@@ -169,7 +169,7 @@ export function DeployToClientsModal({
                 <Input
                   placeholder={t('coach.deploy_to_clients_modal.cerca_clienti')}
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
                   className="pl-10"
                 />
               </div>
@@ -239,7 +239,7 @@ export function DeployToClientsModal({
                   <Input
                     label={t('coach.deploy_to_clients_modal.arrotondamento_kg')}
                     value={roundingStep}
-                    onChange={(e) => setRoundingStep(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRoundingStep(e.target.value)}
                     type="number"
                     step="0.5"
                   />
@@ -287,7 +287,7 @@ export function DeployToClientsModal({
             /* Results view */
             <>
               <div className="max-h-64 space-y-2 overflow-y-auto">
-                {results.map((r) => {
+                {results.map((r: any) => {
                   const client = clientsData?.clients?.find((c: CoachClient) => c.id === r.userId);
                   return (
                     <div

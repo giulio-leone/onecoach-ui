@@ -80,18 +80,18 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
           setGroupedTrips(groups);
         }
       })
-      .catch((err) => console.error('Failed to load trips for user ' + userId, err))
+      .catch((err: unknown) => console.error('Failed to load trips for user ' + userId, err))
       .finally(() => setIsLoading(false));
   }, [userId, initialDestination]);
 
   if (isLoading) {
     return (
       <div className="space-y-8">
-        {[1, 2].map((i) => (
+        {[1, 2].map((i: any) => (
           <div key={i} className="space-y-4">
             <div className="h-8 w-48 animate-pulse rounded-lg bg-neutral-100 dark:bg-neutral-800" />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3].map((j) => (
+              {[1, 2, 3].map((j: any) => (
                 <div
                   key={j}
                   className="h-64 animate-pulse rounded-2xl bg-neutral-100 dark:bg-neutral-800"
@@ -116,7 +116,7 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
 
   return (
     <div className="space-y-12">
-      {groupedTrips.map((group) => (
+      {groupedTrips.map((group: any) => (
         <section key={group.destinationCityCode} className="space-y-6">
           <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div className="flex items-center gap-4">
@@ -250,7 +250,7 @@ function SavedTripCard({ trip }: { trip: SavedTrip }) {
                   {trip.totalPrice}€
                 </span>
                 {trip.priceHistory && trip.priceHistory.length > 0 && (
-                  <PriceTrendBadge history={trip.priceHistory[0]} />
+                  <PriceTrendBadge history={trip.priceHistory[0]!} />
                 )}
               </div>
             </div>

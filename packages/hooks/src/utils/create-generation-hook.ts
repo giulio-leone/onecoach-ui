@@ -259,14 +259,14 @@ export function createGenerationHook<TInput, TOutput>(
                     newEvents.push({
                       type: 'agent_start',
                       timestamp: new Date(),
-                      data: { role: currentRole, description: message },
+                      data: { role: currentRole as AgentRole, description: message },
                       message: `Starting ${currentRole}...`,
                     });
                   } else if (message && message !== prev.currentMessage) {
                     newEvents.push({
                       type: 'agent_progress',
                       timestamp: new Date(),
-                      data: { role: currentRole, message, progress },
+                      data: { role: currentRole as AgentRole, message, progress },
                       message: message,
                     });
                   }

@@ -207,7 +207,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
           <div className="min-w-0 flex-1">
             <Input
               value={name}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setName(e.target.value);
                 emitChange({ name: e.target.value });
               }}
@@ -253,7 +253,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
                 <div className="flex-1 space-y-2">
                   <Input
                     value={exercise.name}
-                    onChange={(e) => handleExerciseChange(index, 'name', e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleExerciseChange(index, 'name', e.target.value)}
                     placeholder="Nome esercizio"
                     className="h-9"
                   />
@@ -263,7 +263,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
                       <Input
                         type="number"
                         value={exercise.sets}
-                        onChange={(e) =>
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                           handleExerciseChange(index, 'sets', parseInt(e.target.value) || 0)
                         }
                         className="h-8 text-center"
@@ -276,7 +276,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
                       <Input
                         type="number"
                         value={exercise.reps}
-                        onChange={(e) =>
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                           handleExerciseChange(index, 'reps', parseInt(e.target.value) || 0)
                         }
                         className="h-8 text-center"
@@ -331,7 +331,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
               min={0}
               max={15}
               value={restBetween}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 const val = parseInt(e.target.value);
                 setRestBetween(val);
                 emitChange({ restBetweenExercises: val });
@@ -351,7 +351,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
               max={180}
               step={15}
               value={restAfter}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 const val = parseInt(e.target.value);
                 setRestAfter(val);
                 emitChange({ restAfterSuperset: val });

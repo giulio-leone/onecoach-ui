@@ -83,7 +83,7 @@ const FloatingDock = ({
   onTabChange: (id: string) => void;
 }) => (
   <div className="scrollbar-hide mx-auto flex max-w-[95vw] touch-pan-x items-center gap-0.5 overflow-x-auto rounded-2xl border border-white/40 bg-white/70 p-1 shadow-xl shadow-black/5 backdrop-blur-xl sm:max-w-fit sm:gap-1 sm:rounded-3xl sm:p-1.5 dark:border-white/5 dark:bg-black/60">
-    {items.map((item) => {
+    {items.map((item: any) => {
       const isActive = activeTab === item.id;
       const Icon = item.icon;
 
@@ -341,7 +341,7 @@ export function CoachProfileForm({ initialProfile, isLoading }: CoachProfileForm
         : initialProfile.credentials
           ? String(initialProfile.credentials)
               .split(',')
-              .map((c) => c.trim())
+              .map((c: any) => c.trim())
               .filter(Boolean)
           : [],
       coachingStyle: initialProfile.coachingStyle || '',

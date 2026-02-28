@@ -96,7 +96,7 @@ export function WizardSlider({
           max={max}
           step={step}
           value={value}
-          onChange={(e) => onChange(Number(e.target.value))}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(Number(e.target.value))}
           className={cn(
             'relative z-10 h-6 w-full cursor-pointer appearance-none bg-transparent',
             '[&::-webkit-slider-thumb]:appearance-none',

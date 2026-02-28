@@ -93,7 +93,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
 
   // Data Query
   const { data, isLoading, refetch } = useExercises(queryParams);
-  const exercises = (data?.data ?? initialData.data) as AdminExercise[];
+  const exercises = (data?.data ?? initialData.data) as unknown as AdminExercise[];
   const total = data?.total ?? initialData.total ?? 0;
 
   // Selection Logic
@@ -101,12 +101,12 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
     if (selectedIds.length === exercises.length) {
       setSelectedIds([]);
     } else {
-      setSelectedIds(exercises.map((e) => e.id));
+      setSelectedIds(exercises.map((e: any) => e.id));
     }
   };
 
   const handleSelectOne = (id: string) => {
-    setSelectedIds((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]));
+    setSelectedIds((prev) => (prev.includes(id) ? prev.filter((i: any) => i !== id) : [...prev, id]));
   };
 
   // Actions
@@ -117,7 +117,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
     try {
       await deleteExercise.mutateAsync(id);
       if (selectedIds.includes(id)) {
-        setSelectedIds((prev) => prev.filter((i) => i !== id));
+        setSelectedIds((prev) => prev.filter((i: any) => i !== id));
       }
       if (detailExerciseId === id) setDetailExerciseId(null);
       refetch(); // Refresh list
@@ -142,11 +142,11 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
       { label: t('stats.total'), value: total },
       {
         label: t('stats.approved'),
-        value: exercises.filter((i) => i.approvalStatus === 'APPROVED').length,
+        value: exercises.filter((i: any) => i.approvalStatus === 'APPROVED').length,
       },
       {
         label: t('stats.pending'),
-        value: exercises.filter((i) => i.approvalStatus === 'PENDING').length,
+        value: exercises.filter((i: any) => i.approvalStatus === 'PENDING').length,
       },
     ],
     [total, exercises, t]
@@ -173,7 +173,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
       cell: (item: AdminExercise) =>
         item.muscles
           ?.slice(0, 3)
-          .map((m) => m.name)
+          .map((m: any) => m.name)
           .join(', ') + (item.muscles && item.muscles.length > 3 ? '...' : '') || '-',
     },
     {
@@ -366,14 +366,14 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
             />
           ) : (
             <CatalogGrid>
-              {exercises.map((exercise) => (
+              {exercises.map((exercise: any) => (
                 <ResourceCard
                   key={exercise.id}
                   title={exercise.name}
                   subtitle={
                     exercise.muscles
                       ?.slice(0, 3)
-                      .map((m) => m.name)
+                      .map((m: any) => m.name)
                       .join(', ') || t('empty')
                   }
                   imageSrc={exercise.gifUrl || exercise.thumbnailUrl || undefined}
@@ -455,7 +455,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
       {detailExerciseId && (
         <ExerciseDetailDrawer
           isOpen={!!detailExerciseId}
-          exercise={exercises.find((e) => e.id === detailExerciseId) as LocalizedExercise}
+          exercise={exercises.find((e: any) => e.id === detailExerciseId) as AdminExercise}
           onClose={() => setDetailExerciseId(null)}
           onEdit={() => {
             setDetailExerciseId(null);

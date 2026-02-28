@@ -280,7 +280,7 @@ export function AgentSettingsPanel({
                       : 'focus:border-purple-500 focus:ring-purple-200 dark:focus:border-purple-400 dark:focus:ring-purple-900/50'
                 )}
               >
-                {PROVIDER_OPTIONS.map((option) => (
+                {PROVIDER_OPTIONS.map((option: any) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
@@ -307,7 +307,7 @@ export function AgentSettingsPanel({
                   } focus:ring-2 focus:outline-none`}
                 >
                   <option value="">{t('common.settings_panel.seleziona_un_modello')}</option>
-                  {openRouterModels.map((model) => (
+                  {openRouterModels.map((model: any) => (
                     <option key={model.id} value={model.modelId}>
                       {model.name}
                     </option>
@@ -332,7 +332,7 @@ export function AgentSettingsPanel({
                         : 'focus:border-purple-500 focus:ring-purple-200'
                   } focus:ring-2 focus:outline-none`}
                 >
-                  {(dbModels[selectedProvider as NonRouterProvider] || []).map((option) => (
+                  {(dbModels[selectedProvider as NonRouterProvider] || []).map((option: any) => (
                     <option key={option.value} value={option.value}>
                       {option.label}
                     </option>

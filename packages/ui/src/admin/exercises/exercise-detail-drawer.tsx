@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
  * Segue i principi KISS, SOLID, DRY.
  * Pattern coerente con FoodDetailDrawer per UX uniforme.
  */
-import type { LocalizedExercise } from '@giulio-leone/one-workout';
+import type { AdminExercise as LocalizedExercise } from './types';
 import { ExerciseApprovalStatus } from '@giulio-leone/types/client';
 import { Button, Drawer, LoadingIndicator } from '@giulio-leone/ui';
 import {
@@ -152,13 +152,13 @@ export function ExerciseDetailDrawer({
                   Muscoli
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                  {exercise.muscles
-                    .map((muscle) => ({
+                  {exercise.muscles!
+                    .map((muscle: any) => ({
                       slug: muscle.slug ?? '',
                       name: muscle.name ?? 'Muscolo',
                       role: (muscle.role ?? '').toLowerCase(),
                     }))
-                    .map((muscle) => (
+                    .map((muscle: any) => (
                       <span
                         key={`${exercise.id}-${muscle.slug}-${muscle.role}`}
                         className="rounded-full bg-emerald-50 px-2 py-1 text-emerald-700"
@@ -174,7 +174,7 @@ export function ExerciseDetailDrawer({
                   {t('admin.exercise_detail_drawer.parti_del_corpo')}
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                  {exercise.bodyParts.map((bodyPart) => {
+                  {exercise.bodyParts!.map((bodyPart: any) => {
                     const slug = bodyPart.slug ?? 'part';
                     const name = bodyPart.name ?? 'Body part';
                     return (
@@ -195,10 +195,10 @@ export function ExerciseDetailDrawer({
                 Attrezzature
               </h4>
               <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                {(exercise.equipments.length
-                  ? exercise.equipments
+                {((exercise.equipment ?? []).length
+                  ? (exercise.equipment ?? [])
                   : [{ name: 'Bodyweight', slug: 'bodyweight' }]
-                ).map((equipment) => {
+                ).map((equipment: any) => {
                   const slug = equipment.slug ?? 'equipment';
                   const name = equipment.name ?? 'Equipment';
                   return (
@@ -213,13 +213,13 @@ export function ExerciseDetailDrawer({
               </div>
             </section>
             {/* Keywords */}
-            {exercise.keywords.length > 0 && (
+            {exercise.keywords!.length > 0 && (
               <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Keywords
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                  {exercise.keywords.map((keyword: string) => (
+                  {(exercise.keywords! as string[]).map((keyword: string) => (
                     <span
                       key={`${exercise.id}-${keyword}`}
                       className="rounded-full bg-neutral-100 px-2 py-1 dark:bg-neutral-800"
@@ -231,28 +231,28 @@ export function ExerciseDetailDrawer({
               </section>
             )}
             {/* Instructions */}
-            {exercise.instructions.length > 0 && (
+            {(exercise.instructions?.length ?? 0) > 0 && (
               <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
                 <h4 className="mb-3 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   <ClipboardList className="h-3.5 w-3.5 text-indigo-500 sm:h-4 sm:w-4" />
                   Istruzioni
                 </h4>
                 <ol className="list-decimal space-y-2 pl-4 text-sm text-neutral-700 dark:text-neutral-300">
-                  {exercise.instructions.map((instruction: string, index: number) => (
+                  {exercise.instructions!.map((instruction: string, index: number) => (
                     <li key={`${exercise.id}-instruction-${index}`}>{instruction}</li>
                   ))}
                 </ol>
               </section>
             )}
             {/* Tips */}
-            {exercise.exerciseTips.length > 0 && (
+            {(exercise.exerciseTips?.length ?? 0) > 0 && (
               <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
                 <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   <Sparkles className="h-3.5 w-3.5 text-amber-500 sm:h-4 sm:w-4" />
                   {t('admin.exercise_detail_drawer.cue_consigli')}
                 </h4>
                 <ul className="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
-                  {exercise.exerciseTips.map((tip: string, index: number) => (
+                  {exercise.exerciseTips!.map((tip: string, index: number) => (
                     <li key={`${exercise.id}-tip-${index}`} className="flex items-start gap-2">
                       <CheckCircle2 className="mt-1 h-3.5 w-3.5 text-emerald-500 sm:h-4 sm:w-4" />
                       <span>{tip}</span>
@@ -262,13 +262,13 @@ export function ExerciseDetailDrawer({
               </section>
             )}
             {/* Variations */}
-            {exercise.variations.length > 0 && (
+            {(exercise.variations?.length ?? 0) > 0 && (
               <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Varianti
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                  {exercise.variations.map((variation: string, index: number) => (
+                  {(exercise.variations as unknown as string[])!.map((variation: string, index: number) => (
                     <span
                       key={`${exercise.id}-variation-${index}`}
                       className="rounded-lg bg-purple-50 px-2 py-1 text-purple-600"
@@ -280,13 +280,13 @@ export function ExerciseDetailDrawer({
               </section>
             )}
             {/* Relazioni */}
-            {exercise.related.length > 0 && (
+            {(exercise.related?.length ?? 0) > 0 && (
               <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Relazioni
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                  {exercise.related.map((relation) => {
+                  {(exercise.related ?? []).map((relation: any) => {
                     const relationId = relation.id ?? 'relation';
                     const relationType = relation.relation ?? 'related';
                     const relationSlug = relation.slug ?? '';

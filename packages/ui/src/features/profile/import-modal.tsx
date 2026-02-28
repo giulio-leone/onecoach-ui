@@ -40,11 +40,11 @@ export function MeasurementsImportModal() {
     if (selectedFiles.length === 0) return;
 
     const formData = new FormData();
-    selectedFiles.forEach((file) => formData.append('files', file));
+    selectedFiles.forEach((file: any) => formData.append('files', file));
 
     importFiles(formData, {
       onSuccess: (data) => {
-        const count = data?.imported?.length ?? 0;
+        const count = (data as any)?.imported?.length ?? 0;
         toast.success(`Importazione completata: ${count} misurazioni aggiunte`);
         setOpen(false);
         setSelectedFiles([]);
@@ -107,7 +107,7 @@ export function MeasurementsImportModal() {
                     <span className="truncate text-sm">{file.name}</span>
                   </div>
                   <button
-                    onClick={(e) => {
+                    onClick={(e: React.MouseEvent<HTMLElement>) => {
                       e.stopPropagation();
                       removeFile(i);
                     }}

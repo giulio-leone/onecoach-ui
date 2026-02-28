@@ -169,7 +169,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
               <input
                 type="number"
                 value={distanceDone || ''}
-                onChange={(e) => setDistanceDone(parseFloat(e.target.value) || 0)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setDistanceDone(parseFloat(e.target.value) || 0)}
                 placeholder="0"
                 disabled={isCompleted}
                 className="w-full bg-transparent text-2xl font-bold text-neutral-900 outline-none placeholder:text-neutral-300 dark:text-white"
@@ -193,7 +193,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
               <input
                 type="number"
                 value={avgHeartRate || ''}
-                onChange={(e) => setAvgHeartRate(parseInt(e.target.value) || undefined)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAvgHeartRate(parseInt(e.target.value) || undefined)}
                 placeholder="--"
                 disabled={isCompleted}
                 className="w-full bg-transparent text-2xl font-bold text-neutral-900 outline-none placeholder:text-neutral-300 dark:text-white"

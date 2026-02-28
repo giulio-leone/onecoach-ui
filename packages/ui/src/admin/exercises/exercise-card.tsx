@@ -9,7 +9,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import type { LocalizedExercise } from '@giulio-leone/one-workout';
+import type { AdminExercise as LocalizedExercise } from './types';
 import { ExerciseApprovalStatus } from '@giulio-leone/types/client';
 import { ExerciseTags } from './exercise-tags';
 import { ExerciseActionsMenu, type ExerciseAction } from './exercise-actions-menu';

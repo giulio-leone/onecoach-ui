@@ -147,7 +147,7 @@ export function MemoryViewer({ userId, initialDomain = 'workout', className }: M
         onValueChange={(nextValue) => setActiveDomain(nextValue as MemoryDomain)}
       >
         <TabsList className="w-full justify-start overflow-x-auto">
-          {domains.map((domain) => {
+          {domains.map((domain: any) => {
             const Icon = domain.icon;
             return (
               <TabsTrigger key={domain.id} value={domain.id} className="gap-2">
@@ -158,7 +158,7 @@ export function MemoryViewer({ userId, initialDomain = 'workout', className }: M
           })}
         </TabsList>
 
-        {domains.map((domain) => {
+        {domains.map((domain: any) => {
           const domainData = memory?.[domain.id];
           return (
             <TabsContent key={domain.id} value={domain.id} className="mt-4">

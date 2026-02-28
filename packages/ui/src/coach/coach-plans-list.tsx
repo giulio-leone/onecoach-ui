@@ -37,7 +37,7 @@ export function CoachPlansList({ plans }: CoachPlansListProps) {
         {t('coach.coach_plans_list.piani_pubblicati')}
       </h2>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {plans.map((plan) => (
+        {plans.map((plan: any) => (
           <MarketplacePlanCard key={plan.id} plan={plan} />
         ))}
       </div>

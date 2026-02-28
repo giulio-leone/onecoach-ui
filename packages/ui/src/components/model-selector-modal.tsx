@@ -59,7 +59,7 @@ export function ModelSelectorModal({
 
   // Filter models
   const filteredModels = useMemo(() => {
-    return models.filter((model) => {
+    return models.filter((model: any) => {
       const matchesSearch =
         model.name.toLowerCase().includes(search.toLowerCase()) ||
         model.id.toLowerCase().includes(search.toLowerCase());
@@ -71,7 +71,7 @@ export function ModelSelectorModal({
   }, [models, search]);
 
   const selectedModel =
-    models.find((m) => m.id === value) ||
+    models.find((m: any) => m.id === value) ||
     (value ? { id: value, name: value, provider: 'unknown' } : null);
 
   return (

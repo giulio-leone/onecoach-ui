@@ -54,9 +54,9 @@ export function MessageThread({ conversationId, currentUserId }: MessageThreadPr
     if (!conversationId || !messages.length) return;
 
     // Mark unread messages as read
-    const unreadMessages = messages.filter((msg) => msg.senderId !== currentUserId && !msg.isRead);
+    const unreadMessages = messages.filter((msg: any) => msg.senderId !== currentUserId && !msg.isRead);
 
-    unreadMessages.forEach((msg) => {
+    unreadMessages.forEach((msg: any) => {
       markAsRead.mutate({
         messageId: msg.id,
         conversationId,
@@ -100,7 +100,7 @@ export function MessageThread({ conversationId, currentUserId }: MessageThreadPr
   return (
     <div className="flex-1 overflow-y-auto p-4">
       <div className="space-y-4">
-        {messages.map((message) => {
+        {messages.map((message: any) => {
           const isOwn = message.senderId === currentUserId;
           const isImportant = message.isImportant;
 

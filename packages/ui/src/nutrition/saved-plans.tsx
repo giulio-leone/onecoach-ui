@@ -111,7 +111,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
     if (!confirmed) return;
 
     try {
-      await Promise.all(Array.from(selectedIds).map((id) => deletePlan.mutateAsync(id as string)));
+      await Promise.all(Array.from(selectedIds).map((id: any) => deletePlan.mutateAsync(id as string)));
       await refetch();
       setSelectedIds(new Set());
     } catch (err: unknown) {
@@ -148,7 +148,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
   if (isLoading) {
     return (
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {[1, 2, 3].map((i) => (
+        {[1, 2, 3].map((i: any) => (
           <div key={i} className="h-64 animate-pulse rounded-2xl bg-neutral-800" />
         ))}
       </div>
@@ -173,7 +173,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
         {/* Active AI Generations even with empty plans */}
         {isGenerating && (
           <div className="space-y-3">
-            {activeGenerations.map((gen) => (
+            {activeGenerations.map((gen: any) => (
               <NutritionGeneratingCard key={gen.run_id} generation={gen} />
             ))}
           </div>
@@ -201,7 +201,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
       {/* Active AI Generations (SDK 4.0 Durable Mode) */}
       {isGenerating && (
         <div className="space-y-3">
-          {activeGenerations.map((gen) => (
+          {activeGenerations.map((gen: any) => (
             <NutritionGeneratingCard key={gen.run_id} generation={gen} />
           ))}
         </div>

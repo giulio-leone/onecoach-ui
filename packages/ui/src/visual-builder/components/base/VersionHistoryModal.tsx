@@ -92,13 +92,13 @@ export function VersionHistoryModal<T>({
     const newerIdx = sorted[0] ?? 0;
     const olderIdx = sorted[1] ?? 0;
 
-    return computeSemanticDiff(diff, history[olderIdx]?.state, history[newerIdx]?.state);
+    return computeSemanticDiff(diff, history[olderIdx]?.state as Record<string, unknown>, history[newerIdx]?.state as Record<string, unknown>);
   }, [diff, selectedForCompare, history]);
 
   const toggleCompareSelection = (index: number) => {
     setSelectedForCompare((prev) => {
       if (prev.includes(index)) {
-        return prev.filter((i) => i !== index);
+        return prev.filter((i: any) => i !== index);
       }
       if (prev.length >= 2) {
         return [prev[1] ?? index, index];
@@ -198,7 +198,7 @@ export function VersionHistoryModal<T>({
                   <p className="text-center text-neutral-500">No differences found</p>
                 ) : (
                   <div className="space-y-3">
-                    {semanticDiff.map((change) => (
+                    {semanticDiff.map((change: any) => (
                       <div
                         key={change.id}
                         className="relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-neutral-800"
@@ -272,7 +272,7 @@ export function VersionHistoryModal<T>({
                               </div>
 
                               <div className="divide-y divide-neutral-100 dark:divide-white/5">
-                                {change.details.map((detail, idx) => (
+                                {change.details.map((detail: any, idx: any) => (
                                   <div
                                     key={idx}
                                     className="grid grid-cols-1 gap-1 py-2 sm:grid-cols-2 sm:gap-4"
@@ -367,7 +367,7 @@ export function VersionHistoryModal<T>({
 
                     <div className="flex items-center gap-1">
                       <button
-                        onClick={(e) => {
+                        onClick={(e: React.MouseEvent<HTMLElement>) => {
                           e.stopPropagation();
                           handleRestore(index);
                         }}

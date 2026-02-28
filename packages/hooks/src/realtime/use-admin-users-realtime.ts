@@ -75,7 +75,7 @@ export function useAdminUsersRealtime() {
           if (!old?.users) return old;
           return {
             ...old,
-            users: old.users.map((u) => (u.id === record.id ? record : u)),
+            users: old.users.map((u: any) => (u.id === record.id ? record : u)),
           };
         }
       );
@@ -101,7 +101,7 @@ export function useAdminUsersRealtime() {
           if (!old?.users) return old;
           return {
             ...old,
-            users: old.users.filter((u) => u.id !== record.id),
+            users: old.users.filter((u: any) => u.id !== record.id),
             total: old.total - 1,
           };
         }

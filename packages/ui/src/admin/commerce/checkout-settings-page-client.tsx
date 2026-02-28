@@ -252,7 +252,7 @@ export function CheckoutSettingsPageClient() {
       </div>
       {metricsCards && (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {metricsCards.map((stat) => (
+          {metricsCards.map((stat: any) => (
             <StatCard
               key={stat.id}
               label={stat.label}
@@ -438,7 +438,7 @@ export function CheckoutSettingsPageClient() {
           </Button>
         </div>
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-          {offers.map((offer) => (
+          {offers.map((offer: any) => (
             <div
               key={offer.id}
               className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800"

@@ -91,7 +91,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
           <div className="min-w-0 flex-1">
             <Input
               value={name}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setName(e.target.value);
                 emitChange({ name: e.target.value });
               }}
@@ -110,7 +110,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
       <div className="mb-4">
         <label className="text-muted-foreground mb-2 block text-sm">Macchina</label>
         <div className="grid grid-cols-4 gap-2 sm:grid-cols-7">
-          {MACHINE_OPTIONS.map((option) => (
+          {MACHINE_OPTIONS.map((option: any) => (
             <motion.button
               key={option.value}
               whileHover={{ scale: 1.05 }}
@@ -144,7 +144,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
           max={3600}
           step={60}
           value={duration}
-          onChange={(e) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const val = parseInt(e.target.value);
             setDuration(val);
             emitChange({ duration: val });
@@ -162,7 +162,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
       <div className="mb-4">
         <label className="text-muted-foreground mb-2 block text-sm">Intensità</label>
         <div className="grid grid-cols-4 gap-2">
-          {INTENSITY_OPTIONS.map((option) => (
+          {INTENSITY_OPTIONS.map((option: any) => (
             <motion.button
               key={option.value}
               whileHover={{ scale: 1.02 }}
@@ -211,7 +211,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
             <Input
               type="number"
               value={targetHR ?? ''}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 const val = e.target.value ? parseInt(e.target.value) : undefined;
                 setTargetHR(val);
                 emitChange({ targetHeartRate: val });
@@ -228,7 +228,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
             <Input
               type="number"
               value={distance ? distance / 1000 : ''}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 const val = e.target.value ? parseFloat(e.target.value) * 1000 : undefined;
                 setDistance(val);
                 emitChange({ distance: val });
@@ -244,7 +244,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
             <Input
               type="number"
               value={speed ?? ''}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 const val = e.target.value ? parseFloat(e.target.value) : undefined;
                 setSpeed(val);
                 emitChange({ speed: val });
@@ -261,7 +261,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
               <Input
                 type="number"
                 value={incline ?? ''}
-                onChange={(e) => {
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   const val = e.target.value ? parseFloat(e.target.value) : undefined;
                   setIncline(val);
                   emitChange({ incline: val });
@@ -279,7 +279,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
       <div className="mb-4">
         <Input
           value={notes}
-          onChange={(e) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setNotes(e.target.value);
             emitChange({ notes: e.target.value });
           }}

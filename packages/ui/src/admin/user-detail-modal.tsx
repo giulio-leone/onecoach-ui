@@ -164,7 +164,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
       onClose();
     },
     validate: {
-      reason: (value: string, allValues: UserFormValues) => {
+      reason: (value: string, allValues?: UserFormValues) => {
         if (
           allValues &&
           typeof allValues === 'object' &&

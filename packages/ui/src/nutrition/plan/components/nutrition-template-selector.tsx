@@ -116,7 +116,7 @@ export function NutritionTemplateSelector({
               <input
                 type="text"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
                 placeholder={t('searchPlaceholder')}
                 className={cn(
                   'w-full rounded-xl border py-2 pr-4 pl-9 text-sm transition-all outline-none focus:ring-2',
@@ -156,7 +156,7 @@ export function NutritionTemplateSelector({
                   {t('form.category')}
                 </h5>
                 <div className="flex flex-wrap gap-2">
-                  {['colazione', 'pranzo', 'cena', 'snack'].map((cat) => (
+                  {['colazione', 'pranzo', 'cena', 'snack'].map((cat: any) => (
                     <button
                       key={cat}
                       onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
@@ -184,7 +184,7 @@ export function NutritionTemplateSelector({
             <EmptyState
               title={t('empty.title')}
               description={t('empty.description')}
-              icon={TypeIcon}
+              icon={TypeIcon as any}
               action={<Button onClick={() => {}}>{t('empty.action')}</Button>}
             />
           ) : (
@@ -255,7 +255,7 @@ export function NutritionTemplateSelector({
                           </p>
                         )}
                         <div className="mt-3 flex flex-wrap gap-2 text-xs text-neutral-500">
-                          {template.tags.map((tag) => (
+                          {template.tags.map((tag: any) => (
                             <span
                               key={tag}
                               className="rounded bg-neutral-100 px-2 py-0.5 dark:bg-neutral-800"

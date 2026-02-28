@@ -120,8 +120,8 @@ export function NutritionPlanDashboard({
     const today = new Date();
     const weekDay = getWeekAndDayFromDate(plan, today); // Use shared helper
     if (weekDay && plan.weeks) {
-      const week = plan.weeks.find((w) => w.weekNumber === weekDay.weekNumber);
-      const day = week?.days?.find((d) => d.dayNumber === weekDay.dayNumber);
+      const week = plan.weeks.find((w: any) => w.weekNumber === weekDay.weekNumber);
+      const day = week?.days?.find((d: any) => d.dayNumber === weekDay.dayNumber);
       if (day) return { day, ...weekDay, isToday: true };
     }
     // Fallback
@@ -289,7 +289,7 @@ export function NutritionPlanDashboard({
               </Heading>
 
               <div className="space-y-8">
-                {(plan.weeks || []).map((week) => (
+                {(plan.weeks || []).map((week: any) => (
                   <div key={week.weekNumber} className="space-y-4">
                     {/* Week Header */}
                     <div className="flex items-center gap-4">
@@ -306,7 +306,7 @@ export function NutritionPlanDashboard({
 
                     {/* Days Grid */}
                     <div className="grid gap-4 sm:grid-cols-2">
-                      {(week.days || []).map((day) => (
+                      {(week.days || []).map((day: any) => (
                         <div
                           key={day.dayNumber}
                           onClick={() => handleDayClick(day, week.weekNumber)}

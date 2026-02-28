@@ -33,7 +33,7 @@ export function AIAgentsConfig({
   const t = useTranslations('admin.aiSettings.framework.agents');
   const [optimisticConfigs, setOptimisticConfigs] = useState(configs);
   const [retryCount, setRetryCount] = useState<number>(() => {
-    const retryConfig = configs.find((c) => c.feature === 'workout_generation_retry');
+    const retryConfig = configs.find((c: any) => c.feature === 'workout_generation_retry');
     if (retryConfig && typeof retryConfig.config === 'object' && retryConfig.config !== null) {
       return (retryConfig.config as { count?: number }).count ?? 3;
     }
@@ -44,7 +44,7 @@ export function AIAgentsConfig({
     const newStatus = !currentStatus;
     // Optimistic update
     setOptimisticConfigs((prev) =>
-      prev.map((c) => (c.feature === agentId ? { ...c, isEnabled: newStatus } : c))
+      prev.map((c: any) => (c.feature === agentId ? { ...c, isEnabled: newStatus } : c))
     );
 
     try {
@@ -63,7 +63,7 @@ export function AIAgentsConfig({
       toast.error(t('updateError'));
       // Revert optimistic update
       setOptimisticConfigs((prev) =>
-        prev.map((c) => (c.feature === agentId ? { ...c, isEnabled: currentStatus } : c))
+        prev.map((c: any) => (c.feature === agentId ? { ...c, isEnabled: currentStatus } : c))
       );
     }
   };
@@ -87,7 +87,7 @@ export function AIAgentsConfig({
   return (
     <div className="space-y-6">
       <CatalogGrid emptyState={<p className="text-center text-neutral-500">{t('empty')}</p>}>
-        {optimisticConfigs.map((config) => {
+        {optimisticConfigs.map((config: any) => {
           if (config.feature === 'workout_generation_retry') {
             return (
               <ResourceCard

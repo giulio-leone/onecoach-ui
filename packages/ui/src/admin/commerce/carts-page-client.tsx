@@ -118,7 +118,7 @@ export function CartsPageClient() {
                 setFilters({ ...filters, status: e.target.value })
               }
             >
-              {STATUS_OPTIONS.map((opt) => (
+              {STATUS_OPTIONS.map((opt: any) => (
                 <option key={opt.value} value={opt.value}>
                   {t(`status.${opt.labelKey}`)}
                 </option>
@@ -129,7 +129,7 @@ export function CartsPageClient() {
             <label className="text-xs font-medium text-neutral-500">{t('filters.from')}</label>
             <DatePicker
               value={filters.from ? new Date(filters.from) : undefined}
-              onChange={(date) =>
+              onChange={(date: Date | undefined) =>
                 setFilters({ ...filters, from: date ? date.toISOString().substring(0, 10) : '' })
               }
               translations={{
@@ -147,7 +147,7 @@ export function CartsPageClient() {
             <label className="text-xs font-medium text-neutral-500">{t('filters.to')}</label>
             <DatePicker
               value={filters.to ? new Date(filters.to) : undefined}
-              onChange={(date) =>
+              onChange={(date: Date | undefined) =>
                 setFilters({ ...filters, to: date ? date.toISOString().substring(0, 10) : '' })
               }
               translations={{
@@ -184,7 +184,7 @@ export function CartsPageClient() {
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200 dark:divide-neutral-800">
-              {carts.map((cart) => (
+              {carts.map((cart: any) => (
                 <tr
                   key={cart.id}
                   className="group hover:bg-neutral-50 dark:hover:bg-neutral-900/50"

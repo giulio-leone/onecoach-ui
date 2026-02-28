@@ -66,7 +66,7 @@ export function AIConfigTab({
     <div className="space-y-6">
       {/* Sub-tab navigation - card style */}
       <div className="grid gap-3 sm:grid-cols-3">
-        {subTabs.map((tab) => {
+        {subTabs.map((tab: any) => {
           const Icon = tab.icon;
           const isActive = activeSubTab === tab.id;
           return (

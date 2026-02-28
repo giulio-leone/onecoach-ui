@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 
 import { useState, useMemo } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import type { LocalizedExercise } from '@giulio-leone/one-workout';
+import type { AdminExercise as LocalizedExercise } from './types';
 import { cn } from '@giulio-leone/lib-design-system';
 
 interface ExerciseTagsProps {
@@ -34,12 +34,12 @@ export function ExerciseTags({ exercise, maxVisible = 8, className = '' }: Exerc
     }> = [];
 
     // Body parts (max 3)
-    exercise.bodyParts
+    exercise.bodyParts!
       .slice(0, 3)
-      .forEach((bodyPart: { id: string; name: string; slug: string }) => {
+      .forEach((bodyPart: { id: string; name?: string; slug?: string }) => {
         result.push({
-          id: `body-${bodyPart.slug}`,
-          label: bodyPart.name,
+          id: `body-${bodyPart.slug ?? bodyPart.id}`,
+          label: bodyPart.name ?? '',
           type: 'bodyPart',
           color: cn(
             'bg-emerald-50 dark:bg-emerald-900/40',
@@ -50,10 +50,10 @@ export function ExerciseTags({ exercise, maxVisible = 8, className = '' }: Exerc
       });
 
     // Muscles (max 4)
-    exercise.muscles.slice(0, 4).forEach((muscle: { slug: string; role: string; name: string }) => {
+    exercise.muscles!.slice(0, 4).forEach((muscle) => {
       result.push({
-        id: `muscle-${muscle.slug}-${muscle.role}`,
-        label: `${muscle.name} · ${muscle.role.toLowerCase()}`,
+        id: `muscle-${muscle.slug ?? muscle.id}-${muscle.role}`,
+        label: `${muscle.name} · ${muscle.role?.toLowerCase() ?? ''}`,
         type: 'muscle',
         color: cn(
           'bg-purple-50 dark:bg-purple-900/40',
@@ -64,14 +64,14 @@ export function ExerciseTags({ exercise, maxVisible = 8, className = '' }: Exerc
     });
 
     // Equipments (max 3, o Bodyweight se vuoto)
-    const equipments = exercise.equipments.length
-      ? exercise.equipments.slice(0, 3)
+    const equipments = exercise.equipment!.length
+      ? exercise.equipment!.slice(0, 3)
       : [{ name: 'Bodyweight', slug: 'bodyweight' }];
 
-    equipments.forEach((equipment: { name: string; slug: string }) => {
+    equipments.forEach((equipment) => {
       result.push({
         id: `equipment-${equipment.slug}`,
-        label: equipment.name,
+        label: equipment.name ?? '',
         type: 'equipment',
         color: cn(
           'bg-neutral-100 dark:bg-neutral-800',
@@ -102,7 +102,7 @@ export function ExerciseTags({ exercise, maxVisible = 8, className = '' }: Exerc
   return (
     <div className={cn('space-y-2', className)}>
       <div className="flex flex-wrap items-center gap-2">
-        {visibleTags.map((tag) => (
+        {visibleTags.map((tag: any) => (
           <span
             key={tag.id}
             className={cn(

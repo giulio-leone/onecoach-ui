@@ -180,7 +180,7 @@ export function PlansConfigForm({ plans, creditPacks }: PlansConfigFormProps) {
         padding="md"
       >
         <div className="space-y-3">
-          {creditPacks.map((pack) => (
+          {creditPacks.map((pack: any) => (
             <div
               key={pack.id}
               className={cn(

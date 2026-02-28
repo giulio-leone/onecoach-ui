@@ -33,3 +33,5 @@ export * from './chat/conversation-list';
 
 // AI Generation
 export * from './ai-generation-view';
+
+export type { FilterOption } from './catalog/catalog-layout';

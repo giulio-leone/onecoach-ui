@@ -134,7 +134,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
           {t('common.marketplace_filters.minimum_rating')}
         </label>
         <div className="flex gap-1">
-          {[1, 2, 3, 4, 5].map((rating) => (
+          {[1, 2, 3, 4, 5].map((rating: any) => (
             <button
               key={rating}
               onClick={() =>

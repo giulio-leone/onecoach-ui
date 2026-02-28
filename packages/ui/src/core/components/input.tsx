@@ -13,10 +13,32 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   error?: string;
   helperText?: string;
   fullWidth?: boolean;
+  /** Cross-platform prop (React Native). Ignored on web. */
+  icon?: React.ReactNode;
+  /** Cross-platform prop (React Native). Ignored on web. */
+  onChangeText?: (text: string) => void;
+  /** Cross-platform prop (React Native). Ignored on web. */
+  multiline?: boolean;
+  /** Cross-platform prop (React Native). Ignored on web. */
+  textAlignVertical?: string;
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, helperText, className = '', fullWidth = true, ...props }, ref) => {
+  (
+    {
+      label,
+      error,
+      helperText,
+      className = '',
+      fullWidth = true,
+      icon: _icon,
+      onChangeText: _onChangeText,
+      multiline: _multiline,
+      textAlignVertical: _textAlignVertical,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <div className={cn('flex flex-col gap-2', fullWidth && 'w-full')}>
         {label && (

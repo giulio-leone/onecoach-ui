@@ -62,7 +62,7 @@ export function ConversationList({
   }
   return (
     <div className="flex-1 overflow-y-auto">
-      {conversations.map((conversation) => {
+      {conversations.map((conversation: any) => {
         const otherUser = getOtherUser(conversation);
         const isSelected = conversation.id === selectedConversationId;
         const unreadCount = conversation.unreadCount || 0;

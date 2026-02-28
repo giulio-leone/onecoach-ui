@@ -76,8 +76,8 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
     <form onSubmit={form.handleSubmit} className="mt-8 space-y-6" noValidate>
       {disabled && (
         <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3 text-sm text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-400">
-          <p className="font-semibold">{t('auth.setup_form.form_disabilitato')}</p>
-          <p className="mt-1">{t('auth.setup_form.il_form_e_disabilitato_perche_le_credenz')}</p>
+          <p className="font-semibold">{t('setup_form.form_disabilitato')}</p>
+          <p className="mt-1">{t('setup_form.il_form_e_disabilitato_perche_le_credenz')}</p>
         </div>
       )}
       {/* Error message */}
@@ -96,12 +96,12 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
           htmlFor="name"
           className="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300"
         >
-          {t('auth.setup_form.nome_completo')}
+          {t('setup_form.nome_completo')}
         </label>
         <Input
           id="name"
           type="text"
-          placeholder={t('auth.setup_form.mario_rossi')}
+          placeholder={t('setup_form.mario_rossi')}
           value={form.values.name}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             form.setValue('name', e.target.value)
@@ -132,7 +132,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
         <Input
           id="email"
           type="email"
-          placeholder={t('auth.setup_form.admin_example_com')}
+          placeholder={t('setup_form.admin_example_com')}
           value={form.values.email}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             form.setValue('email', e.target.value)
@@ -163,7 +163,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
           <Input
             id="password"
             type={showPassword ? 'text' : 'password'}
-            placeholder={t('auth.setup_form.minimo_8_caratteri')}
+            placeholder={t('setup_form.minimo_8_caratteri')}
             value={form.values.password}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               form.setValue('password', e.target.value)
@@ -198,13 +198,13 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
           htmlFor="confirmPassword"
           className="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300"
         >
-          {t('auth.setup_form.conferma_password')}
+          {t('setup_form.conferma_password')}
         </label>
         <div className="relative">
           <Input
             id="confirmPassword"
             type={showConfirmPassword ? 'text' : 'password'}
-            placeholder={t('auth.setup_form.ripeti_la_password')}
+            placeholder={t('setup_form.ripeti_la_password')}
             value={form.values.confirmPassword}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               form.setValue('confirmPassword', e.target.value)
@@ -235,8 +235,8 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
       </div>
       {/* Info */}
       <div className="rounded-lg bg-blue-50 p-3 text-xs text-blue-800 dark:bg-blue-900/20 dark:text-blue-400">
-        <p className="font-semibold">{t('auth.setup_form.informazioni')}</p>
-        <p className="mt-1">{t('auth.setup_form.questo_account_avra_privilegi_amministra')}</p>
+        <p className="font-semibold">{t('setup_form.informazioni')}</p>
+        <p className="mt-1">{t('setup_form.questo_account_avra_privilegi_amministra')}</p>
       </div>
       {/* Submit button */}
       <Button

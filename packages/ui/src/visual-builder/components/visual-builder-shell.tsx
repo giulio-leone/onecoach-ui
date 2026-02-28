@@ -212,7 +212,7 @@ export function VisualBuilderShell({
 
               {/* View Mode Switcher */}
               <div className="flex items-center rounded-full bg-neutral-100/50 p-1 ring-1 ring-neutral-200 dark:bg-neutral-900/50 dark:ring-white/10">
-                {viewModes.map((mode) => (
+                {viewModes.map((mode: any) => (
                   <button
                     key={mode.id}
                     onClick={() => onViewModeChange(mode.id)}
@@ -301,7 +301,7 @@ export function VisualBuilderShell({
                   {headerLeftStart}
                   <input
                     value={title}
-                    onChange={(e) => onTitleChange(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => onTitleChange(e.target.value)}
                     placeholder={l.programNamePlaceholder}
                     className={cn(
                       'w-full bg-transparent text-xl font-bold tracking-tight outline-none sm:text-4xl',
@@ -386,7 +386,7 @@ export function VisualBuilderShell({
 
                       {days.length > 1 && currentDayIndex === index && (
                         <span
-                          onClick={(e) => {
+                          onClick={(e: React.MouseEvent<HTMLElement>) => {
                             e.stopPropagation();
                             onRemoveDay(currentWeekIndex, index);
                           }}

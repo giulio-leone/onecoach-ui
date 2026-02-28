@@ -79,10 +79,10 @@ export function SortableTaskItem({
         <div>
           {hasSubTasks && task.subTasks && (
             <SortableContext
-              items={task.subTasks.map((t) => t.id)}
+              items={task.subTasks.map((t: any) => t.id)}
               strategy={verticalListSortingStrategy}
             >
-              {task.subTasks.map((subTask) => (
+              {task.subTasks.map((subTask: any) => (
                 <SortableTaskItem
                   key={subTask.id}
                   task={subTask}

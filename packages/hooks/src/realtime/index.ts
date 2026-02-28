@@ -35,7 +35,6 @@ export {
   useNutritionDayLogRealtime,
   useNutritionAdherenceRealtime,
   useAllNutritionRealtime,
-  nutritionKeys,
 } from './use-nutrition-realtime';
 
 // Chat

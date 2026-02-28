@@ -162,7 +162,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
     setConfig((prev) => ({
       ...prev,
       enabledContextBuilders: prev.enabledContextBuilders.includes(builderId)
-        ? prev.enabledContextBuilders.filter((id) => id !== builderId)
+        ? prev.enabledContextBuilders.filter((id: any) => id !== builderId)
         : [...prev.enabledContextBuilders, builderId],
     }));
   }, []);
@@ -172,7 +172,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
     setConfig((prev) => ({
       ...prev,
       disabledScreens: prev.disabledScreens.includes(screenId)
-        ? prev.disabledScreens.filter((id) => id !== screenId)
+        ? prev.disabledScreens.filter((id: any) => id !== screenId)
         : [...prev.disabledScreens, screenId],
     }));
   }, []);
@@ -433,7 +433,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
             </span>
           </div>
           <div className="space-y-2">
-            {contextBuilders.map((builder) => {
+            {contextBuilders.map((builder: any) => {
               const isEnabled = config.enabledContextBuilders.includes(builder.id);
               return (
                 <div
@@ -479,7 +479,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
             </span>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            {screens.map((screen) => {
+            {screens.map((screen: any) => {
               const isEnabled = !config.disabledScreens.includes(screen.id);
               return (
                 <button

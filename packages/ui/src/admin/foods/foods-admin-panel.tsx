@@ -302,7 +302,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
         <Combobox
           options={macroOptions}
           value={macroDominant}
-          onChange={(val) => {
+          onChange={(val: string | string[]) => {
             const nextValue =
               typeof val === 'string' ? (val as FoodListParams['macroDominant'] | '') : '';
             setMacroDominant(nextValue);
@@ -314,7 +314,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
           <Combobox
             options={sortOptions}
             value={sortOrder}
-            onChange={(val) => {
+            onChange={(val: string | string[]) => {
               if (typeof val === 'string') {
                 setSortOrder(val as 'asc' | 'desc');
               }

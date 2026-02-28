@@ -215,7 +215,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 value={status}
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setStatus(e.target.value)}
               >
-                {STATUS_OPTIONS.map((opt) => (
+                {STATUS_OPTIONS.map((opt: any) => (
                   <option key={opt} value={opt}>
                     {opt}
                   </option>
@@ -227,7 +227,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 {t('details.recentEvents')}
               </p>
               <div className="space-y-2">
-                {events.map((event) => (
+                {events.map((event: any) => (
                   <div
                     key={event.id}
                     className="rounded-md border border-neutral-100 p-2 text-xs dark:border-neutral-800"

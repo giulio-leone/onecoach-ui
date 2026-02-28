@@ -211,8 +211,8 @@ const StepOne = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
           </label>
           <WizardRadioGroup
             value={formData.gender}
-            onChange={(val: Sex) =>
-              setFormData((prev: NutritionFormDataState) => ({ ...prev, gender: val }))
+            onChange={(val: string | number) =>
+              setFormData((prev: NutritionFormDataState) => ({ ...prev, gender: val as Sex }))
             }
             options={[
               { id: Sex.MALE, label: 'Uomo' },
@@ -266,7 +266,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
               icon: Scale,
               desc: 'Perdere grasso e guadagnare muscolo simultaneamente',
             },
-          ].map((option) => (
+          ].map((option: any) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -304,7 +304,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
               label: 'Molto Attivo',
               desc: 'Esercizio molto intenso/lavoro fisico',
             },
-          ].map((option) => (
+          ].map((option: any) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -330,7 +330,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
           value={formData.mealsPerDay}
           min={3}
           max={6}
-          onChange={(value) => setFormData((prev) => ({ ...prev, mealsPerDay: value }))}
+          onChange={(value: number) => setFormData((prev) => ({ ...prev, mealsPerDay: value }))}
           valueLabel="pasti"
           minLabel="3 pasti"
           maxLabel="6 pasti"
@@ -340,7 +340,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
           value={formData.durationWeeks}
           min={1}
           max={4}
-          onChange={(value) => setFormData((prev) => ({ ...prev, durationWeeks: value }))}
+          onChange={(value: number) => setFormData((prev) => ({ ...prev, durationWeeks: value }))}
           valueLabel="sett."
           minLabel="1 sett"
           maxLabel="4 sett"
@@ -352,7 +352,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
         value={formData.patternsCount}
         min={1}
         max={3}
-        onChange={(value) => setFormData((prev) => ({ ...prev, patternsCount: value }))}
+        onChange={(value: number) => setFormData((prev) => ({ ...prev, patternsCount: value }))}
         valueLabel="pattern"
         minLabel="1 pattern"
         maxLabel="3 pattern"
@@ -407,7 +407,7 @@ const StepThree = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormD
               label: 'Mediterranea',
               desc: 'Equilibrata e tradizionale',
             },
-          ].map((option) => (
+          ].map((option: any) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -704,8 +704,8 @@ export function NutritionGenerator() {
             const dayPatterns = r?.dayPatterns as unknown[] | undefined;
             return dayPatterns
               ? [
-                  { label: 'Pattern', value: dayPatterns.length },
-                  { label: 'Settimane', value: (r?.weeks as unknown[] | undefined)?.length || 0 },
+                  { label: 'Pattern', value: String(dayPatterns.length) },
+                  { label: 'Settimane', value: String((r?.weeks as unknown[] | undefined)?.length || 0) },
                   { label: 'Obiettivo', value: (r?.goals as string[] | undefined)?.[0] || 'N/A' },
                 ]
               : [];

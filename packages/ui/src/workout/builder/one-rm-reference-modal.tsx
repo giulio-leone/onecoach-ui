@@ -49,7 +49,7 @@ export function OneRmReferenceModal({
     return arr.findIndex((e) => e.catalogExerciseId === ex.catalogExerciseId) === index;
   });
 
-  const filteredExercises = uniqueExercises.filter((ex) =>
+  const filteredExercises = uniqueExercises.filter((ex: any) =>
     ex.name.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -83,7 +83,7 @@ export function OneRmReferenceModal({
               </span>
             </div>
           ) : (
-            filteredExercises.map((exercise) => (
+            filteredExercises.map((exercise: any) => (
               <div
                 key={exercise.catalogExerciseId}
                 className={cn(

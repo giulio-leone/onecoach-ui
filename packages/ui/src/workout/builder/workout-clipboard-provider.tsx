@@ -14,10 +14,10 @@ export { ExerciseClipboardProvider, useExerciseClipboard, ExerciseClipboardConte
 // Helper for deep cloning exercises with new IDs (used in drag-and-drop/duplication)
 export const cloneExerciseWithNewIds = (exercise: Exercise): Exercise => {
   const newSetGroups =
-    exercise.setGroups?.map((sg) => ({
+    exercise.setGroups?.map((sg: any) => ({
       ...sg,
       id: Math.random().toString(36).substr(2, 9),
-      sets: sg.sets?.map((s) => ({ ...s })) || [],
+      sets: sg.sets?.map((s: any) => ({ ...s })) || [],
     })) || [];
 
   return {

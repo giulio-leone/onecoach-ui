@@ -523,7 +523,7 @@ export function NutritionPlanEditor({
       {/* Version History */}
       {showVersions && (
         <VersionHistory
-          versions={versions.map((v: { id: string; version: number; createdAt: string }) => ({
+          versions={(versions as unknown[]).map((v: any) => ({
             id: v.id,
             version: v.version,
             createdAt: v.createdAt,

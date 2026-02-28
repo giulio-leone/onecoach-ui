@@ -88,7 +88,7 @@ const StepOne = ({ formData, setFormData }: MeshWizardStepProps<OneAgendaFormDat
           {t('focus.question')}
         </Heading>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {options.map((option) => (
+          {options.map((option: any) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -128,7 +128,7 @@ const StepOne = ({ formData, setFormData }: MeshWizardStepProps<OneAgendaFormDat
               'focus:border-blue-500 focus:ring-blue-200 dark:focus:border-blue-400 dark:focus:ring-blue-900/50'
             )}
             value={formData.description}
-            onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
           />
           <Sparkles className="absolute right-3 bottom-3 h-4 w-4 text-blue-500/50" />
         </div>
@@ -175,7 +175,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<OneAgendaFormDat
           {t('horizon.title')}
         </Heading>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {horizonOptions.map((option) => (
+          {horizonOptions.map((option: any) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -201,7 +201,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<OneAgendaFormDat
           {t('intensity.title')}
         </Heading>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {intensityOptions.map((option) => (
+          {intensityOptions.map((option: any) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -269,7 +269,7 @@ export function OneAgendaGenerator({ variant = 'page', onComplete }: OneAgendaGe
         status={error ? 'error' : result ? 'success' : isGenerating ? 'generating' : 'idle'}
         progress={progress}
         currentMessage={currentMessage}
-        logs={logs}
+        logs={logs as any}
         result={result}
         error={error}
         onReset={reset}

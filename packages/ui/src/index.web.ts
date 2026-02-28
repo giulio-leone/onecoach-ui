@@ -78,6 +78,7 @@ export * from './components/Animated/index.web';
 // Skeleton Loaders
 export * from './components/SkeletonLoader';
 export * from './skeleton';
+export { Skeleton } from './skeleton';
 
 // Animation Hooks (web versions)
 export * from './hooks/useAnimations.web';
@@ -102,6 +103,7 @@ export * from './visual-builder';
 // New Generation Components
 
 export * from './stat-card';
+export { StatCard } from './stat-card';
 
 export * from './selection-card';
 export * from './stepper';

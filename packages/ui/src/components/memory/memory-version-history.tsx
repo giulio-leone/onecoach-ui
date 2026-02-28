@@ -104,7 +104,7 @@ export function MemoryVersionHistory({
         </h3>
       </div>
       <div className="space-y-2">
-        {versions.map((version) => (
+        {versions.map((version: any) => (
           <div
             key={version.id}
             className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50/50 p-3 dark:border-neutral-700 dark:bg-neutral-800/50"

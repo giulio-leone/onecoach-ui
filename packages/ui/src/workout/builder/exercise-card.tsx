@@ -161,7 +161,7 @@ export function ExerciseCard({
             'relative flex items-center gap-4 px-4 py-4 transition-colors',
             !isExpanded && 'cursor-pointer'
           )}
-          onClick={(e) => {
+          onClick={(e: React.MouseEvent<HTMLElement>) => {
             // Toggle expand on row click if not targeting interactive elements
             if (!(e.target as HTMLElement).closest('button, [role="button"]')) {
               handleToggleExpand();
@@ -225,7 +225,7 @@ export function ExerciseCard({
           {/* Actions */}
           <div className="flex items-center gap-1 opacity-0 transition-opacity group-hover/card:opacity-100 focus-within:opacity-100">
             <button
-              onClick={(e) => {
+              onClick={(e: React.MouseEvent<HTMLElement>) => {
                 e.stopPropagation();
                 handleToggleExpand();
               }}
@@ -242,7 +242,7 @@ export function ExerciseCard({
                 <button
                   className="flex h-8 w-8 items-center justify-center rounded-md text-neutral-400 transition-all hover:bg-neutral-100 hover:text-neutral-700 dark:text-neutral-500 dark:hover:bg-white/5 dark:hover:text-white"
                   aria-label="Options"
-                  onClick={(e) => e.stopPropagation()}
+                  onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
                 >
                   <MoreVertical size={16} />
                 </button>
@@ -299,7 +299,7 @@ export function ExerciseCard({
                   exerciseId={exercise.catalogExerciseId}
                   onGroupChange={(updatedGroup) => {
                     const newGroups = [...(exercise.setGroups || [])];
-                    newGroups[groupIndex] = toDomainSetGroup(updatedGroup);
+                    newGroups[groupIndex] = toDomainSetGroup(updatedGroup as any);
                     handleSetGroupsChange(newGroups);
                   }}
                   onGroupDelete={() => {

@@ -123,7 +123,7 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
     try {
       // Using Promise.all for bulk delete as a simple implementation if no bulk API exists
       // Or use deleteWorkout.mutateAsync in parallel
-      const deletePromises = Array.from(selectedIds).map((id) => deleteWorkout.mutateAsync(id));
+      const deletePromises = Array.from(selectedIds).map((id: any) => deleteWorkout.mutateAsync(id));
       await Promise.all(deletePromises);
 
       const { toast } = await import('sonner');
@@ -142,7 +142,7 @@ export const SavedWorkoutPrograms = forwardRef<SavedWorkoutProgramsRef>((_props,
           <h2 className="text-lg font-semibold text-white sm:text-xl">{t('title')}</h2>
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3].map((i) => (
+          {[1, 2, 3].map((i: any) => (
             <div key={i} className="h-64 animate-pulse rounded-2xl bg-neutral-800" />
           ))}
         </div>

@@ -27,7 +27,7 @@ export function FoodAiModal({ isOpen, onClose, onSuccess }: FoodAiGenerationModa
     onProgress: () => {
       // Progress handled by UI components
     },
-    onComplete: async (output) => {
+    onComplete: async (output: any) => {
       if (output) {
         const created = output.createResult?.created ?? 0;
         const updated = output.createResult?.updated ?? 0;
@@ -60,13 +60,13 @@ export function FoodAiModal({ isOpen, onClose, onSuccess }: FoodAiGenerationModa
       placeholder={t('food_ai_modal.esempio_genera_10_alimenti_ricchi_di_pro')}
       useGenerationHook={() => generation}
       options={options}
-      buildSuccessMessage={(result) => {
+      buildSuccessMessage={(result: any) => {
         const created = result.createResult?.created ?? 0;
         const updated = result.createResult?.updated ?? 0;
         const skipped = result.createResult?.skipped ?? 0;
         return `Nuovi alimenti: ${created} (saltati: ${skipped}) · Aggiornati: ${updated}`;
       }}
-      buildResultDisplay={(result) => (
+      buildResultDisplay={(result: any) => (
         <div className="mt-2 grid gap-1 text-xs text-emerald-800 sm:grid-cols-2 dark:text-emerald-200">
           <div>
             {t('food_ai_modal.nuovi_alimenti')}

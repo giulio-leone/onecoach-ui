@@ -8,7 +8,7 @@
  * Usage:
  * ```tsx
  * <SortableList items={['id1', 'id2', 'id3']} strategy="vertical">
- *   {items.map((item) => (
+ *   {items.map((item: any) => (
  *     <SortableItem key={item.id} id={item.id}>
  *       {(props) => <div {...props}>Content</div>}
  *     </SortableItem>

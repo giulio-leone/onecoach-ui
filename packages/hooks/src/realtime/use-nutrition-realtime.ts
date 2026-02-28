@@ -119,7 +119,7 @@ export function useNutritionPlansRealtime() {
         (oldData) => {
           if (!oldData) return { plans: [record] };
           return {
-            plans: oldData.plans.map((item) => (item.id === record.id ? record : item)),
+            plans: oldData.plans.map((item: any) => (item.id === record.id ? record : item)),
           };
         }
       );
@@ -135,7 +135,7 @@ export function useNutritionPlansRealtime() {
         nutritionKeys.lists(),
         (oldData) => {
           if (!oldData) return { plans: [] };
-          return { plans: oldData.plans.filter((item) => item.id !== record.id) };
+          return { plans: oldData.plans.filter((item: any) => item.id !== record.id) };
         }
       );
     },

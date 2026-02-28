@@ -227,7 +227,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
     []
   );
 
-  const activeModels = useMemo(() => models.filter((m) => m.isActive), [models]);
+  const activeModels = useMemo(() => models.filter((m: any) => m.isActive), [models]);
   const toOption = useCallback(
     (model: ModelOption): SelectOption => ({
       value: model.modelId,
@@ -249,7 +249,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
   );
 
   const visionOptions = useMemo(
-    () => activeModels.filter((m) => m.supportsVision).map(toOption),
+    () => activeModels.filter((m: any) => m.supportsVision).map(toOption),
     [activeModels, toOption]
   );
   const allOptions = useMemo(() => activeModels.map(toOption), [activeModels, toOption]);

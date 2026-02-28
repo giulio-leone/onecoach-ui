@@ -115,7 +115,7 @@ export function MetadataTranslationManager() {
       }
       // Check for errors
       if (failedUpdates.length > 0) {
-        const errorMsg = failedUpdates.map((f) => `${f.entityId}: ${f.error}`).join(', ');
+        const errorMsg = failedUpdates.map((f: any) => `${f.entityId}: ${f.error}`).join(', ');
         throw new Error(`Failed to save: ${errorMsg}`);
       }
       setSuccess('Translations saved successfully!');
@@ -153,7 +153,7 @@ export function MetadataTranslationManager() {
     if (editedTranslations[key] !== undefined) {
       return editedTranslations[key];
     }
-    const translation = entity.translations?.find((t) => t.locale === selectedLocale);
+    const translation = entity.translations?.find((t: any) => t.locale === selectedLocale);
     return translation?.name || '';
   };
   const getCurrentEntities = (): MetadataEntity[] => {
@@ -260,7 +260,7 @@ export function MetadataTranslationManager() {
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedLocale(e.target.value)}
           className="mt-2 w-full max-w-xs rounded-lg border border-neutral-300 px-3 py-2 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none dark:border-neutral-600"
         >
-          {LOCALES.filter((l) => l.code !== 'en').map((locale) => (
+          {LOCALES.filter((l: any) => l.code !== 'en').map((locale: any) => (
             <option key={locale.code} value={locale.code}>
               {locale.label}
             </option>
@@ -278,7 +278,7 @@ export function MetadataTranslationManager() {
           </p>
         </div>
         <div className="space-y-4">
-          {entities.map((entity) => {
+          {entities.map((entity: any) => {
             return (
               <div
                 key={entity.id}
@@ -294,14 +294,14 @@ export function MetadataTranslationManager() {
                 </div>
                 <div>
                   <label className="mb-1 block text-xs font-semibold text-neutral-500 uppercase dark:text-neutral-500">
-                    {LOCALES.find((l) => l.code === selectedLocale)?.label} Translation
+                    {LOCALES.find((l: any) => l.code === selectedLocale)?.label} Translation
                   </label>
                   <Input
                     value={getTranslationValue(entity)}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       handleTranslationChange(entity.id, e.target.value)
                     }
-                    placeholder={`Add ${LOCALES.find((l) => l.code === selectedLocale)?.label} translation`}
+                    placeholder={`Add ${LOCALES.find((l: any) => l.code === selectedLocale)?.label} translation`}
                   />
                 </div>
               </div>

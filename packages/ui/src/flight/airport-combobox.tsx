@@ -151,7 +151,7 @@ function SelectedChips({
 
   return (
     <div className="flex flex-wrap gap-1.5 pt-2">
-      {selectedAirports.map((airport) => (
+      {selectedAirports.map((airport: any) => (
         <span
           key={airport.code}
           className="group flex items-center gap-1.5 rounded-full bg-blue-100 py-1 pr-1 pl-2.5 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-200 dark:bg-blue-500/20 dark:text-blue-300 dark:hover:bg-blue-500/30"
@@ -162,7 +162,7 @@ function SelectedChips({
           </span>
           <button
             type="button"
-            onClick={(e) => {
+            onClick={(e: React.MouseEvent<HTMLElement>) => {
               e.stopPropagation();
               onRemove(airport.code);
             }}
@@ -237,8 +237,8 @@ export function AirportCombobox({
   // Selected airports with full data
   const selectedAirports = useMemo(() => {
     const allAirports = [...initialAirports, ...searchResults];
-    const airportMap = new Map(allAirports.map((a) => [a.code, a]));
-    return value.map((code) => airportMap.get(code)).filter((a): a is Airport => a !== undefined);
+    const airportMap = new Map(allAirports.map((a: any) => [a.code, a]));
+    return value.map((code: any) => airportMap.get(code)).filter((a): a is Airport => a !== undefined);
   }, [value, initialAirports, searchResults]);
 
   // Search effect
@@ -289,7 +289,7 @@ export function AirportCombobox({
     (code: string) => {
       if (selectedCodesSet.has(code)) {
         // Remove
-        onChange(value.filter((c) => c !== code));
+        onChange(value.filter((c: any) => c !== code));
       } else {
         // Add (check max limit)
         if (maxSelections > 0 && value.length >= maxSelections) {
@@ -307,7 +307,7 @@ export function AirportCombobox({
 
   const handleRemove = useCallback(
     (code: string) => {
-      onChange(value.filter((c) => c !== code));
+      onChange(value.filter((c: any) => c !== code));
     },
     [value, onChange]
   );
@@ -388,7 +388,7 @@ export function AirportCombobox({
                   ref={inputRef}
                   type="text"
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
                   placeholder={searchPlaceholder}
                   className={cn(
                     'w-full rounded-xl border border-neutral-200 bg-white py-2.5 pr-10 pl-10 text-sm transition-colors',
@@ -446,7 +446,7 @@ export function AirportCombobox({
                 </div>
               ) : (
                 <div className="flex flex-col gap-0.5">
-                  {displayList.map((airport) => (
+                  {displayList.map((airport: any) => (
                     <AirportItem
                       key={airport.code}
                       airport={airport}

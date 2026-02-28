@@ -79,10 +79,10 @@ export function ExerciseFormModal({
       isUserGenerated: false,
       autoApprove: false,
       exerciseTypeId: '',
-      primaryMuscles: [],
-      secondaryMuscles: [],
-      bodyParts: [],
-      equipments: [],
+      primaryMuscles: [] as string[],
+      secondaryMuscles: [] as string[],
+      bodyParts: [] as string[],
+      equipments: [] as string[],
     },
     onSubmit: async (values: ExerciseFormValues) => {
       // Manual Validation
@@ -94,7 +94,7 @@ export function ExerciseFormModal({
         translations: [
           { language: 'en', name: values.englishName, description: '' },
           { language: 'it', name: values.italianName, description: '' },
-        ].filter((t) => t.name),
+        ].filter((t: any) => t.name),
         exerciseTypeId: values.exerciseTypeId,
         videoUrl: values.videoUrl || undefined,
         imageUrl: values.imageUrl || undefined,
@@ -123,14 +123,14 @@ export function ExerciseFormModal({
 
   useEffect(() => {
     if (mode === 'edit' && exercise) {
-      const e = exercise as AdminExercise;
+      const e = exercise as unknown as AdminExercise;
 
       if (hasPrefilledRef.current === e.id) return;
       hasPrefilledRef.current = e.id;
 
       // Use 'locale' not 'language' based on ExerciseTranslationView interface
-      const en = e.translations?.find((t) => t.locale === 'en')?.name || e.name || '';
-      const it = e.translations?.find((t) => t.locale === 'it')?.name || '';
+      const en = e.translations?.find((t: any) => t.locale === 'en')?.name || e.name || '';
+      const it = e.translations?.find((t: any) => t.locale === 'it')?.name || '';
 
       form.setValues({
         slug: e.slug || '',
@@ -142,10 +142,10 @@ export function ExerciseFormModal({
         isUserGenerated: e.metadata?.isUserGenerated || false,
         autoApprove: e.metadata?.autoApprove || false,
         exerciseTypeId: e.exerciseTypeId || '',
-        primaryMuscles: e.muscles?.filter((m) => m.role === 'PRIMARY').map((m) => m.id) || [],
-        secondaryMuscles: e.muscles?.filter((m) => m.role === 'SECONDARY').map((m) => m.id) || [],
-        bodyParts: e.bodyParts?.map((b: { id: string }) => b.id) || [],
-        equipments: e.equipments?.map((eq) => eq.id) || [],
+        primaryMuscles: e.muscles?.filter((m: any) => m.role === 'PRIMARY').map((m: any) => m.id) || ([] as string[]),
+        secondaryMuscles: e.muscles?.filter((m: any) => m.role === 'SECONDARY').map((m: any) => m.id) || ([] as string[]),
+        bodyParts: e.bodyParts?.map((b: { id: string }) => b.id) || ([] as string[]),
+        equipments: e.equipments?.map((eq: any) => eq.id) || ([] as string[]),
       });
     } else if (mode === 'create') {
       hasPrefilledRef.current = null;
@@ -219,7 +219,7 @@ export function ExerciseFormModal({
             </label>
             <ExerciseTypeCombobox
               value={form.values.exerciseTypeId}
-              onChange={(id) => form.setValue('exerciseTypeId', id || undefined)}
+              onChange={(id?: string) => form.setValue('exerciseTypeId', id ?? '')}
             />
           </div>
 
@@ -254,8 +254,8 @@ export function ExerciseFormModal({
               primary={form.values.primaryMuscles}
               secondary={form.values.secondaryMuscles}
               onChange={({ primary, secondary }) => {
-                form.setValue('primaryMuscles', primary);
-                form.setValue('secondaryMuscles', secondary);
+                form.setValue('primaryMuscles', primary as string[]);
+                form.setValue('secondaryMuscles', secondary as string[]);
               }}
             />
           </div>
@@ -266,7 +266,7 @@ export function ExerciseFormModal({
             </label>
             <BodyPartsMultiselect
               values={form.values.bodyParts}
-              onChange={(ids) => form.setValue('bodyParts', ids)}
+              onChange={(ids: string[]) => form.setValue('bodyParts', ids)}
             />
           </div>
 
@@ -276,7 +276,7 @@ export function ExerciseFormModal({
             </label>
             <EquipmentsMultiselect
               values={form.values.equipments}
-              onChange={(ids) => form.setValue('equipments', ids)}
+              onChange={(ids: string[]) => form.setValue('equipments', ids)}
             />
           </div>
 

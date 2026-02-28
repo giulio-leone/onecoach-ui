@@ -212,7 +212,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
               height="100%"
               language="markdown"
               value={template}
-              onChange={(value) => setTemplate(value ?? '')}
+              onChange={(value: any) => setTemplate(value ?? '')}
               onMount={handleEditorDidMount}
               theme="vs-dark"
               options={{
