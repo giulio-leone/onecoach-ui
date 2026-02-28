@@ -43,7 +43,7 @@ export * from './dialog';
 export * from './drawer';
 
 // Feature Components
-export * from './components/model-selector';
+export * from './components/core/model-selector';
 export { ModelSelector as LegacyModelSelector } from './legacy-model-selector';
 export * from './theme-toggle';
 export * from './date-picker-with-presets';
@@ -73,10 +73,10 @@ export * from './transaction-item';
 export * from './image';
 
 // Animation Components (web versions only)
-export * from './components/Animated/index.web';
+export * from './components/core/Animated/index.web';
 
 // Skeleton Loaders
-export * from './components/SkeletonLoader';
+export * from './components/core/SkeletonLoader';
 export * from './skeleton';
 export { Skeleton } from './skeleton';
 
@@ -118,30 +118,30 @@ export * from './wizard-slider';
 export * from './program-viewer';
 
 // Project Management Components
-export * from './components/progress-bar';
-export * from './components/project-card';
-export * from './components/project-gantt';
-export * from './components/task-list';
-export * from './components/milestone-list';
-export * from './components/habit-card';
+export * from './components/core/progress-bar';
+export * from './components/domain/project-card';
+export * from './components/domain/project-gantt';
+export * from './components/domain/task-list';
+export * from './components/domain/milestone-list';
+export * from './components/domain/habit-card';
 // Native-only - excluded from web
-// export * from './components/habit-list';
-// export * from './components/unified-list-item';
+// export * from './components/domain/habit-list';
+// export * from './components/domain/unified-list-item';
 
 // Chat Components
-export * from './components/chat/conversation-list';
-export * from './components/chat/chat-history-modal'; // Added
+export * from './components/domain/chat/conversation-list';
+export * from './components/domain/chat/chat-history-modal'; // Added
 
 // AI Elements Components (AI SDK v6 native)
-export * from './components/ai-elements';
+export * from './components/domain/ai-elements';
 
 // AI Generation Components
-export * from './components/ai-generation-view';
+export * from './components/domain/ai-generation-view';
 
 // Catalog Components
-export * from './components/catalog/resource-card';
-export * from './components/catalog/catalog-grid';
-export * from './components/catalog/catalog-layout';
+export * from './components/domain/catalog/resource-card';
+export * from './components/domain/catalog/catalog-grid';
+export * from './components/domain/catalog/catalog-layout';
 export * from './tabs/hash-tabs';
 
 // Slider Component

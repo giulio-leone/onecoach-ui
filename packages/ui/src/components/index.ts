@@ -6,32 +6,33 @@ export type { ErrorStateProps } from '../error-state';
 export { EmptyState } from '../empty-state';
 export type { EmptyStateProps } from '../empty-state';
 
-// Re-export all components for convenience
-export * from './Animated';
-export * from './habit-card';
-export * from './habit-list';
-export * from './milestone-list';
-export * from './progress-bar';
-export * from './project-card';
+// ── Core (primitives & utilities) ──────────────────────────
+export * from './core/Animated';
+export * from './core/progress-bar';
+export * from './core/SkeletonLoader';
+export * from './core/model-selector-modal';
+export * from './core/model-selector';
+
+// ── Domain (business-specific) ─────────────────────────────
+export * from './domain/habit-card';
+export * from './domain/habit-list';
+export * from './domain/milestone-list';
+export * from './domain/project-card';
 // Native-only components (excluded from web type-check)
-// export * from './recursive-task-item';
-export * from './SkeletonLoader';
-// export * from './sortable-task-item'; // Native-only
-export * from './task-list';
-export * from './task-types';
-export * from './unified-list-item';
-export * from './model-selector-modal';
-export * from './model-selector';
-export * from './project-gantt';
+// export * from './domain/recursive-task-item';
+export * from './domain/task-list';
+export * from './domain/task-types';
+export * from './domain/unified-list-item';
+export * from './domain/project-gantt';
 
-// AI Elements components
-export * from './ai-elements';
+// ── AI Elements (domain) ────────────────────────────────────
+export * from './domain/ai-elements';
 
-// Chat components
-export * from './chat/chat-history-modal';
-export * from './chat/conversation-list';
+// ── Chat (domain) ───────────────────────────────────────────
+export * from './domain/chat/chat-history-modal';
+export * from './domain/chat/conversation-list';
 
-// AI Generation
-export * from './ai-generation-view';
+// ── AI Generation (domain) ──────────────────────────────────
+export * from './domain/ai-generation-view';
 
-export type { FilterOption } from './catalog/catalog-layout';
+export type { FilterOption } from './domain/catalog/catalog-layout';

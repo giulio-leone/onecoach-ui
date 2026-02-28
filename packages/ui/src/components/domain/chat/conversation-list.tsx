@@ -3,8 +3,8 @@
 import React from 'react';
 import { cn } from '@giulio-leone/lib-design-system';
 import { Plus, MessageSquare, Search, Trash2, X, Check } from 'lucide-react';
-import { Button } from '../../button';
-import { Input } from '../../input';
+import { Button } from '../../../button';
+import { Input } from '../../../input';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export interface ConversationListItem {

@@ -8,10 +8,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card } from '../../card';
-import { Button } from '../../button';
-import { Input } from '../../input';
-import { Textarea } from '../../textarea';
+import { Card } from '../../../card';
+import { Button } from '../../../button';
+import { Input } from '../../../input';
+import { Textarea } from '../../../textarea';
 import { MemoryTimeline } from './memory-timeline';
 import { Plus } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';

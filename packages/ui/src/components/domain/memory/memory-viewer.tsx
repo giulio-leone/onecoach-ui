@@ -10,8 +10,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ComponentType } from 'react';
-import { Card } from '../../card';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../tabs';
+import { Card } from '../../../card';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../../tabs';
 import { MemoryInsightsCard } from './memory-insights-card';
 import type { UserMemory, MemoryDomain } from '@giulio-leone/lib-core/user-memory/types';
 import { cn } from '@giulio-leone/lib-design-system';

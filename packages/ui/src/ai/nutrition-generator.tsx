@@ -34,7 +34,7 @@ import {
   type MeshWizardStep,
   type MeshWizardStepProps,
 } from '@/components/agent/mesh-wizard';
-import type { GenerationLogEvent } from '@/components/ai-elements/generation-log';
+import type { GenerationLogEvent } from '@/components/domain/ai-elements/generation-log';
 
 // ----------------------------------------------------------------------------
 // Types

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Search, LayoutGrid, List as ListIcon, Plus } from 'lucide-react';
-import { Button } from '../../button';
+import { Button } from '../../../button';
 import { cn } from '@giulio-leone/lib-design-system';
 
 export interface CatalogHeaderProps {

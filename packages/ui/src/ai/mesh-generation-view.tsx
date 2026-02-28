@@ -5,8 +5,8 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { AlertCircle, Loader2 } from 'lucide-react';
 import { Button, Card } from '@giulio-leone/ui';
-import { GenerationLog, type GenerationLogEvent } from '@/components/ai-elements/generation-log';
-import { GenerationSuccess } from '@/components/ai-elements/generation-success';
+import { GenerationLog, type GenerationLogEvent } from '@/components/domain/ai-elements/generation-log';
+import { GenerationSuccess } from '@/components/domain/ai-elements/generation-success';
 
 // ----------------------------------------------------------------------------
 // Types

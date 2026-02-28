@@ -1,7 +1,7 @@
 'use client';
 
-import { Card } from '../card';
-import { ProgressBar } from './progress-bar';
+import { Card } from '../../card';
+import { ProgressBar } from '../core/progress-bar';
 import { cn } from '@giulio-leone/lib-design-system';
 import { Calendar, MoreVertical, ArrowRight, Edit, Copy, Trash2 } from 'lucide-react';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '../dropdown-menu';
+} from '../../dropdown-menu';
 
 interface ProjectCardProps {
   id: string;

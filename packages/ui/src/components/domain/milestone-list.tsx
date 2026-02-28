@@ -5,7 +5,7 @@ import { ChevronDown, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { TaskList } from './task-list';
 import type { TaskItemProps } from './task-list';
-import { ProgressBar } from './progress-bar';
+import { ProgressBar } from '../core/progress-bar';
 
 export interface MilestoneProps {
   id: string;

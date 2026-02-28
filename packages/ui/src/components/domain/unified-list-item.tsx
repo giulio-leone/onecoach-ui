@@ -6,7 +6,7 @@
  */
 
 import { cn } from '@giulio-leone/lib-design-system/dark-mode-classes';
-import { Badge } from '../badge';
+import { Badge } from '../../badge';
 import { CheckCircle2, Clock, Repeat, Circle } from 'lucide-react';
 
 export interface UnifiedListItemProps {

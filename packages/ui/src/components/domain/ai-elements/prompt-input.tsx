@@ -29,8 +29,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '../../dropdown-menu';
-import { Button } from '../../button';
+} from '../../../dropdown-menu';
+import { Button } from '../../../button';
 
 // ============================================================================
 // PromptInput Container - DIV not FORM (parent controls form submission)

@@ -8,7 +8,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Card } from '../../card';
+import { Card } from '../../../card';
 import type {
   TimelineEvent,
   TimelineEventType,

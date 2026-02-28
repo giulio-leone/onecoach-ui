@@ -12,34 +12,34 @@ export const designTokens = {
    * Following a structured approach with primary, secondary, neutral, and semantic colors
    */
   colors: {
-    // Primary brand colors (Emerald/Teal gradient)
+    // Primary brand colors — Blue/Indigo (matches globals.css)
     primary: {
-      50: '#ecfdf5',
-      100: '#d1fae5',
-      200: '#a7f3d0',
-      300: '#6ee7b7',
-      400: '#34d399',
-      500: '#10b981', // Main primary
-      600: '#059669',
-      700: '#047857',
-      800: '#065f46',
-      900: '#064e3b',
-      950: '#022c22',
-    },
-
-    // Secondary brand colors (Blue/Indigo)
-    secondary: {
-      50: '#eff6ff',
+      50: '#eff4ff',
       100: '#dbeafe',
       200: '#bfdbfe',
       300: '#93c5fd',
       400: '#60a5fa',
-      500: '#3b82f6', // Main secondary
+      500: '#3b82f6', // Main primary
       600: '#2563eb',
       700: '#1d4ed8',
       800: '#1e40af',
       900: '#1e3a8a',
       950: '#172554',
+    },
+
+    // Secondary brand colors — Fuchsia/Purple (matches globals.css)
+    secondary: {
+      50: '#fdf4ff',
+      100: '#fae8ff',
+      200: '#f5d0fe',
+      300: '#f0abfc',
+      400: '#e879f9',
+      500: '#d946ef', // Main secondary
+      600: '#c026d3',
+      700: '#a21caf',
+      800: '#86198f',
+      900: '#701a75',
+      950: '#4a044e',
     },
 
     // Neutral colors (Slate) - for text, backgrounds, borders
@@ -128,19 +128,19 @@ export const designTokens = {
       dark: 'rgba(15, 23, 42, 0.7)',
       darkSubtle: 'rgba(15, 23, 42, 0.5)',
       darkStrong: 'rgba(15, 23, 42, 0.85)',
-      primary: 'rgba(16, 185, 129, 0.1)',
-      secondary: 'rgba(59, 130, 246, 0.1)',
+      primary: 'rgba(59, 130, 246, 0.1)',
+      secondary: 'rgba(217, 70, 239, 0.1)',
     },
     border: {
       light: 'rgba(255, 255, 255, 0.2)',
       dark: 'rgba(255, 255, 255, 0.1)',
-      accent: 'rgba(16, 185, 129, 0.3)',
+      accent: 'rgba(59, 130, 246, 0.3)',
     },
     shadow: {
       light: '0 8px 32px rgba(0, 0, 0, 0.08)',
       dark: '0 8px 32px rgba(0, 0, 0, 0.32)',
-      glow: '0 0 20px rgba(16, 185, 129, 0.2)',
-      glowStrong: '0 0 40px rgba(16, 185, 129, 0.3)',
+      glow: '0 0 20px rgba(59, 130, 246, 0.2)',
+      glowStrong: '0 0 40px rgba(59, 130, 246, 0.3)',
     },
   },
 
@@ -150,10 +150,10 @@ export const designTokens = {
   chat: {
     message: {
       user: {
-        bg: 'rgba(16, 185, 129, 0.1)',
-        bgHover: 'rgba(16, 185, 129, 0.15)',
-        border: 'rgba(16, 185, 129, 0.2)',
-        text: '#047857',
+        bg: 'rgba(59, 130, 246, 0.1)',
+        bgHover: 'rgba(59, 130, 246, 0.15)',
+        border: 'rgba(59, 130, 246, 0.2)',
+        text: '#1d4ed8',
       },
       assistant: {
         bg: 'rgba(255, 255, 255, 0.6)',
@@ -167,13 +167,13 @@ export const designTokens = {
       bgDark: 'rgba(30, 41, 59, 0.8)',
       border: 'rgba(226, 232, 240, 0.6)',
       borderDark: 'rgba(71, 85, 105, 0.4)',
-      focusRing: 'rgba(16, 185, 129, 0.4)',
+      focusRing: 'rgba(59, 130, 246, 0.4)',
     },
     sidebar: {
       bg: 'rgba(248, 250, 252, 0.9)',
       bgDark: 'rgba(15, 23, 42, 0.9)',
-      itemHover: 'rgba(16, 185, 129, 0.08)',
-      itemActive: 'rgba(16, 185, 129, 0.12)',
+      itemHover: 'rgba(59, 130, 246, 0.08)',
+      itemActive: 'rgba(59, 130, 246, 0.12)',
     },
   },
 
@@ -377,8 +377,8 @@ export const designTokens = {
     // Glass shadows
     glass: '0 8px 32px rgba(0, 0, 0, 0.08)',
     glassDark: '0 8px 32px rgba(0, 0, 0, 0.32)',
-    glow: '0 0 20px rgba(16, 185, 129, 0.2)',
-    glowStrong: '0 0 40px rgba(16, 185, 129, 0.3)',
+    glow: '0 0 20px rgba(59, 130, 246, 0.2)',
+    glowStrong: '0 0 40px rgba(59, 130, 246, 0.3)',
   },
 
   /**

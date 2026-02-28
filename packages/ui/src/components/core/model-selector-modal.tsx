@@ -3,8 +3,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Search, Check, ChevronsUpDown, Box } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Modal } from '../dialog';
-import { Input } from '../input';
+import { Modal } from '../../dialog';
+import { Input } from '../../input';
 
 export interface ModelOption {
   id: string;

@@ -3,12 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Card } from '../../card';
-import { Badge } from '../../badge';
-import { Button } from '../../button';
+import { Card } from '../../../card';
+import { Badge } from '../../../badge';
+import { Button } from '../../../button';
 import { MoreHorizontal } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
-import { Image } from '../../image';
+import { Image } from '../../../image';
 
 export interface ResourceAction {
   label: string;

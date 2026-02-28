@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@giulio-leone/lib-design-system';
 import { Sparkles, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
-import { Button } from '../button';
+import { Button } from '../../button';
 
 // ----------------------------------------------------------------------------
 // Types & Props
