@@ -300,7 +300,7 @@ export function BodyMeasurementsTracker({
       </div>
 
       {/* ── Weight quick entry ── */}
-      <div className="rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-neutral-800/50 dark:bg-neutral-900/80">
+      <div className="rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-neutral-900/80">
         <div className="mb-3 flex items-center gap-2">
           <Scale className="h-4 w-4 text-primary-500" />
           <span className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
@@ -315,7 +315,7 @@ export function BodyMeasurementsTracker({
       </div>
 
       {/* ── Body composition ── */}
-      <div className="rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-neutral-800/50 dark:bg-neutral-900/80">
+      <div className="rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-neutral-900/80">
         <p className="mb-4 text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
           Composizione corporea
         </p>
@@ -350,7 +350,7 @@ export function BodyMeasurementsTracker({
       </div>
 
       {/* ── Circumferences ── */}
-      <div className="rounded-xl border border-neutral-200/50 bg-white/80 shadow-sm backdrop-blur-sm dark:border-neutral-800/50 dark:bg-neutral-900/80">
+      <div className="rounded-xl border border-neutral-200/50 bg-white/80 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-neutral-900/80">
         <button
           type="button"
           onClick={() => setCircumOpen((o) => !o)}
@@ -369,7 +369,7 @@ export function BodyMeasurementsTracker({
           )}
         </button>
         {circumOpen && (
-          <div className="grid grid-cols-2 gap-3 border-t border-neutral-100 px-5 pb-5 pt-3 dark:border-neutral-800 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 border-t border-neutral-100 px-5 pb-5 pt-3 dark:border-white/[0.08] sm:grid-cols-3">
             {CIRCUMFERENCE_FIELDS.map((f) => {
               const histValues = last10
                 .filter((m) => m.circumferences?.[f.key as keyof NonNullable<BodyMeasurement['circumferences']>] != null)
@@ -429,10 +429,10 @@ export function BodyMeasurementsTracker({
           <p className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
             Ultime misurazioni
           </p>
-          <div className="overflow-x-auto rounded-xl border border-neutral-200/50 dark:border-neutral-800/50">
+          <div className="overflow-x-auto rounded-xl border border-neutral-200/50 dark:border-white/[0.06]">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-neutral-100 bg-neutral-50/80 dark:border-neutral-800 dark:bg-neutral-900/50">
+                <tr className="border-b border-neutral-100 bg-neutral-50/80 dark:border-white/[0.08] dark:bg-neutral-900/50">
                   <th className="px-3 py-2 font-semibold text-neutral-500 dark:text-neutral-400">Data</th>
                   <th className="px-3 py-2 font-semibold text-neutral-500 dark:text-neutral-400">Peso</th>
                   <th className="px-3 py-2 font-semibold text-neutral-500 dark:text-neutral-400">BF%</th>
@@ -448,7 +448,7 @@ export function BodyMeasurementsTracker({
                   return (
                     <tr
                       key={m.id}
-                      className="border-b border-neutral-50 last:border-0 dark:border-neutral-800/50"
+                      className="border-b border-neutral-50 last:border-0 dark:border-white/[0.06]"
                     >
                       <td className="whitespace-nowrap px-3 py-2 text-neutral-900 dark:text-white">
                         {formatDate(m.date)}

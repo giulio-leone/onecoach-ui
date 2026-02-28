@@ -102,7 +102,7 @@ export function AISettingsTabs({
             'flex w-full items-center justify-between gap-3 rounded-2xl p-4',
             'bg-white/80 dark:bg-neutral-800/80',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50',
+            'border border-neutral-200/50 dark:border-white/[0.08]',
             'shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20',
             'transition-transform active:scale-[0.98]'
           )}
@@ -148,7 +148,7 @@ export function AISettingsTabs({
               'rounded-2xl p-2',
               'bg-white/95 dark:bg-neutral-800/95',
               'backdrop-blur-xl',
-              'border border-neutral-200/50 dark:border-neutral-700/50',
+              'border border-neutral-200/50 dark:border-white/[0.08]',
               'shadow-2xl shadow-neutral-900/20 dark:shadow-neutral-900/40'
             )}
           >
@@ -209,7 +209,7 @@ export function AISettingsTabs({
             'flex gap-1 rounded-2xl p-1.5',
             'bg-white/60 dark:bg-neutral-800/60',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50',
+            'border border-neutral-200/50 dark:border-white/[0.08]',
             'shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20',
             'scrollbar-hide overflow-x-auto'
           )}

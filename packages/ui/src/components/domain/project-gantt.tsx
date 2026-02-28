@@ -45,20 +45,20 @@ export function ProjectGantt({
       className={cn(
         'flex w-full flex-col overflow-hidden rounded-2xl',
         'bg-white/80 dark:bg-neutral-900/80',
-        'border border-neutral-200/50 dark:border-neutral-800/50',
+        'border border-neutral-200/50 dark:border-white/[0.06]',
         'shadow-sm dark:shadow-lg dark:shadow-black/20',
         'backdrop-blur-sm',
         className
       )}
     >
-      <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-6 py-4 dark:border-neutral-800/50 dark:bg-neutral-800/30">
+      <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-6 py-4 dark:border-white/[0.06] dark:bg-neutral-800/30">
         <h3 className="font-bold text-neutral-900 dark:text-white">{project.title}</h3>
       </div>
 
       <div className="no-scrollbar relative flex-1 overflow-x-auto p-6">
         <div style={{ width: totalDays * dayWidth }}>
           {/* Header Days */}
-          <div className="mb-6 flex border-b border-neutral-200/30 pb-3 dark:border-neutral-700/30">
+          <div className="mb-6 flex border-b border-neutral-200/30 pb-3 dark:border-white/[0.06]">
             {days.map((day: any) => (
               <div
                 key={day.toISOString()}

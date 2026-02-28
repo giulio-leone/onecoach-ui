@@ -47,7 +47,7 @@ export function UnifiedListItem({
       className={cn(
         'group relative mb-3 flex cursor-pointer flex-row items-center overflow-hidden rounded-2xl border p-4',
         'bg-white/90 dark:bg-neutral-900/95',
-        'border-neutral-200/40 dark:border-neutral-700/40',
+        'border-neutral-200/40 dark:border-white/[0.08]',
         'shadow-sm dark:shadow-lg dark:shadow-black/20',
         'transition-all duration-200',
         'hover:border-neutral-300/50 hover:shadow-lg dark:hover:border-neutral-600/50 dark:hover:shadow-xl dark:hover:shadow-black/30',

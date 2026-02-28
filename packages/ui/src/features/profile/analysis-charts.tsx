@@ -33,7 +33,7 @@ export function BodyAnalysisCharts() {
 
   return (
     <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-      <Card className="h-[300px] border-neutral-200 bg-white/50 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-black/50">
+      <Card className="h-[300px] border-neutral-200 bg-white/50 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-black/50">
         <h3 className="mb-4 text-sm font-semibold tracking-wider text-neutral-500 uppercase">
           {t('profile.analysis_charts.peso_corporeo_kg')}
         </h3>
@@ -74,7 +74,7 @@ export function BodyAnalysisCharts() {
         </ResponsiveContainer>
       </Card>
 
-      <Card className="h-[300px] border-neutral-200 bg-white/50 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-black/50">
+      <Card className="h-[300px] border-neutral-200 bg-white/50 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-black/50">
         <h3 className="mb-4 text-sm font-semibold tracking-wider text-neutral-500 uppercase">
           {t('profile.analysis_charts.massa_grassa')}
         </h3>

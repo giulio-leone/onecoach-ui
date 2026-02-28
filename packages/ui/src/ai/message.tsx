@@ -64,7 +64,7 @@ export const MessageContent = ({ children, className, ...props }: MessageContent
       'group-[.is-assistant]:bg-white/70 group-[.is-assistant]:dark:bg-neutral-800/70',
       'group-[.is-assistant]:backdrop-blur-sm',
       'group-[.is-assistant]:border group-[.is-assistant]:border-neutral-200/50',
-      'group-[.is-assistant]:dark:border-neutral-700/50',
+      'group-[.is-assistant]:dark:border-white/[0.08]',
       'group-[.is-assistant]:px-4 group-[.is-assistant]:py-3',
       'group-[.is-assistant]:text-neutral-900 group-[.is-assistant]:dark:text-neutral-100',
       'group-[.is-assistant]:shadow-md group-[.is-assistant]:shadow-neutral-900/5',
@@ -300,7 +300,7 @@ export const MessageResponse = memo(
         'dark:prose-invert',
         // Code blocks
         'prose-pre:bg-neutral-100 prose-pre:dark:bg-neutral-900',
-        'prose-pre:border prose-pre:border-neutral-200/50 prose-pre:dark:border-neutral-700/50',
+        'prose-pre:border prose-pre:border-neutral-200/50 prose-pre:dark:border-white/[0.08]',
         'prose-pre:rounded-lg',
         // Links
         'prose-a:text-primary-600 prose-a:dark:text-primary-400',

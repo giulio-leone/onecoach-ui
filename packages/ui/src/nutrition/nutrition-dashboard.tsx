@@ -47,7 +47,7 @@ export function NutritionDashboard() {
               className={cn(
                 'group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold shadow-sm transition-all duration-200',
                 'border border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50',
-                'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800'
+                'dark:border-white/[0.08] dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800'
               )}
             >
               <Plus className="h-4 w-4 text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200" />

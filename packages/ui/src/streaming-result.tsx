@@ -168,7 +168,7 @@ export function StreamingResult({
 
       {/* Events Log */}
       <Card variant="glass" className="flex max-h-80 flex-col overflow-hidden p-0">
-        <div className="flex-shrink-0 border-b border-neutral-100 bg-neutral-50/80 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800/50">
+        <div className="flex-shrink-0 border-b border-neutral-100 bg-neutral-50/80 px-4 py-3 dark:border-white/[0.08] dark:bg-neutral-800/50">
           <div className="flex items-center gap-2">
             <Sparkles className="h-4 w-4 text-primary-500" />
             <span className="font-semibold text-neutral-900 dark:text-neutral-100">

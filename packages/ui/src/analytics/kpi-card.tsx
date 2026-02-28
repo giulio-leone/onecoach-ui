@@ -27,7 +27,7 @@ export function KpiCard({
   color = 'neutral',
 }: KpiCardProps) {
   return (
-    <div className="flex h-full flex-col justify-between rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-neutral-800/50 dark:bg-neutral-900/80">
+    <div className="flex h-full flex-col justify-between rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-neutral-900/80">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0 flex-1">
           <Text size="xs" weight="medium" className="truncate tracking-wide text-neutral-500 uppercase dark:text-neutral-400">

@@ -181,7 +181,7 @@ function SavedTripCard({ trip }: { trip: SavedTrip }) {
     >
       <Card
         variant="glass-premium"
-        className="group relative h-full overflow-hidden border-white/10 bg-white/5 p-0 transition-all hover:border-primary-500/30 hover:bg-white/10 dark:border-neutral-800 dark:bg-neutral-900"
+        className="group relative h-full overflow-hidden border-white/10 bg-white/5 p-0 transition-all hover:border-primary-500/30 hover:bg-white/10 dark:border-white/[0.08] dark:bg-neutral-900"
       >
         {/* Header Image / Pattern */}
         <div className="absolute inset-0 z-0 h-32 bg-gradient-to-b from-primary-500/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />

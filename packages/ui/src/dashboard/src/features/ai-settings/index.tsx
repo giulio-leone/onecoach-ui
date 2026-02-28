@@ -209,7 +209,7 @@ function SectionCard({
           'rounded-2xl',
           'bg-white/60 dark:bg-neutral-800/60',
           'backdrop-blur-xl',
-          'border border-neutral-200/50 dark:border-neutral-700/50',
+          'border border-neutral-200/50 dark:border-white/[0.08]',
           'shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20',
           'overflow-hidden'
         )}
@@ -513,7 +513,7 @@ export function AISettingsPageClient({
   return (
     <div className="space-y-10 py-6">
       <div className="flex flex-col gap-3">
-        <div className="hidden items-center gap-2 overflow-x-auto rounded-2xl border border-neutral-200/60 bg-white/70 p-2 shadow-sm ring-1 ring-neutral-200/60 backdrop-blur lg:flex dark:border-neutral-800/60 dark:bg-neutral-900/60 dark:ring-neutral-800/60">
+        <div className="hidden items-center gap-2 overflow-x-auto rounded-2xl border border-neutral-200/60 bg-white/70 p-2 shadow-sm ring-1 ring-neutral-200/60 backdrop-blur lg:flex dark:border-white/[0.06] dark:bg-neutral-900/60 dark:ring-neutral-800/60">
           {sections.map((section: any) => {
             const Icon = section.icon;
             const isActive = activeSection === section.id;
@@ -568,7 +568,7 @@ export function AISettingsPageClient({
               <div
                 key={stat.label}
                 className={cn(
-                  'rounded-2xl border border-neutral-200/60 bg-white/80 p-4 shadow-sm backdrop-blur-xl dark:border-neutral-800/60 dark:bg-neutral-900/70',
+                  'rounded-2xl border border-neutral-200/60 bg-white/80 p-4 shadow-sm backdrop-blur-xl dark:border-white/[0.06] dark:bg-neutral-900/70',
                   'flex items-center gap-3'
                 )}
               >
@@ -613,7 +613,7 @@ export function AISettingsPageClient({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-neutral-800/60 dark:bg-neutral-800/60"
+                      className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-white/[0.06] dark:bg-neutral-800/60"
                     >
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-neutral-700/70">
                         <Icon className="text-primary-500 h-5 w-5" />
@@ -654,7 +654,7 @@ export function AISettingsPageClient({
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-neutral-800/60 dark:bg-neutral-800/60"
+                      className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-white/[0.06] dark:bg-neutral-800/60"
                     >
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-neutral-700/70">
                         <Icon className="text-primary-500 h-5 w-5" />
@@ -853,7 +853,7 @@ export function AISettingsPageClient({
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-neutral-800/60 dark:bg-neutral-800/60"
+                      className="rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-white/[0.06] dark:bg-neutral-800/60"
                     >
                       <div className="flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-neutral-700/70">
@@ -910,7 +910,7 @@ export function AISettingsPageClient({
                     'border',
                     flag.enabled
                       ? 'border-emerald-200 bg-emerald-50/50 dark:border-emerald-800 dark:bg-emerald-900/20'
-                      : 'border-neutral-200/50 bg-neutral-50/50 dark:border-neutral-700/50 dark:bg-neutral-800/50'
+                      : 'border-neutral-200/50 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-800/50'
                   )}
                 >
                   <div className="flex items-start justify-between gap-3">

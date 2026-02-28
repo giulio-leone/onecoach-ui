@@ -189,7 +189,7 @@ function SignalList({ signals }: { signals: AdaptationSignal[] }) {
           {signals.map((signal, i) => (
             <div
               key={`${signal.type}-${i}`}
-              className="flex items-start gap-3 rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-neutral-700/40 dark:bg-neutral-800/30"
+              className="flex items-start gap-3 rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/30"
             >
               <Badge variant={priorityBadgeVariant[signal.priority]} size="sm">
                 {signal.priority}
@@ -229,7 +229,7 @@ function SuggestedChangesList({ changes }: { changes: SuggestedChange[] }) {
           {changes.map((change, i) => (
             <div
               key={`${change.type}-${i}`}
-              className="rounded-lg border border-neutral-200/60 p-3 dark:border-neutral-700/40"
+              className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.08]"
             >
               <div className="mb-2 flex items-center gap-2">
                 <Badge variant="default" size="sm">

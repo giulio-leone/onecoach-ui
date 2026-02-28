@@ -30,7 +30,7 @@ export function WizardSlider({
   return (
     <div
       className={cn(
-        'space-y-4 rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-900/50',
+        'space-y-4 rounded-xl border border-neutral-200 bg-white p-5 dark:border-white/[0.08] dark:bg-neutral-900/50',
         className
       )}
     >
@@ -61,7 +61,7 @@ export function WizardSlider({
       </div>
 
       {description && (
-        <p className="mt-1 border-t border-neutral-100 pt-3 text-xs leading-relaxed text-neutral-500 dark:border-neutral-800 dark:text-neutral-400">
+        <p className="mt-1 border-t border-neutral-100 pt-3 text-xs leading-relaxed text-neutral-500 dark:border-white/[0.08] dark:text-neutral-400">
           {description}
         </p>
       )}

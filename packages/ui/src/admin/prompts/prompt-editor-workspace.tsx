@@ -226,7 +226,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
           </div>
 
           {/* Variables Helper */}
-          <div className="border-t border-neutral-200 bg-neutral-50 p-2 text-xs dark:border-neutral-800 dark:bg-neutral-900">
+          <div className="border-t border-neutral-200 bg-neutral-50 p-2 text-xs dark:border-white/[0.08] dark:bg-neutral-900">
             <span className="mr-2 font-semibold">{t('variables')}</span>
             {Object.keys(prompt.variables || {}).map((v: string) => (
               <button

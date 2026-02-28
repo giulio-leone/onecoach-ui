@@ -121,7 +121,7 @@ export function AIConfigTab({
           'rounded-2xl',
           'bg-white/60 dark:bg-neutral-800/60',
           'backdrop-blur-xl',
-          'border border-neutral-200/50 dark:border-neutral-700/50',
+          'border border-neutral-200/50 dark:border-white/[0.08]',
           'p-6'
         )}
       >

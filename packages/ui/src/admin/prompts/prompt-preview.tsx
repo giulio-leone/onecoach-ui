@@ -74,7 +74,7 @@ export function PromptPreview({ agentId, template, variables, className }: Promp
   return (
     <div
       className={cn(
-        'flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950',
+        'flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-neutral-950',
         className
       )}
     >

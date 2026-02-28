@@ -44,7 +44,7 @@ export function ThemeToggle() {
           <div className="fixed inset-0 z-10" onClick={() => setShowMenu(false)} />
 
           {/* Menu */}
-          <div className="animate-slide-down absolute right-0 z-20 mt-2 w-48 rounded-lg border border-neutral-200/50 bg-white/70 py-1 shadow-lg backdrop-blur-2xl dark:border-neutral-800/50 dark:bg-[#020408]/70">
+          <div className="animate-slide-down absolute right-0 z-20 mt-2 w-48 rounded-lg border border-neutral-200/50 bg-white/70 py-1 shadow-lg backdrop-blur-2xl dark:border-white/[0.06] dark:bg-[#020408]/70">
             {themes.map(({ value, label, icon: Icon }) => (
               <button
                 key={value}

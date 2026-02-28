@@ -21,7 +21,7 @@ export function HabitList({ habits, onToggleHabit, className }: HabitListProps) 
           className={cn(
             'group relative rounded-2xl border p-4 transition-all',
             'bg-white/50 shadow-sm backdrop-blur-sm',
-            'dark:border-neutral-800 dark:bg-neutral-900/50',
+            'dark:border-white/[0.08] dark:bg-neutral-900/50',
             'hover:border-indigo-200 hover:shadow-md dark:hover:border-indigo-800'
           )}
         >

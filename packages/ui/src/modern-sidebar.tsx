@@ -276,7 +276,7 @@ export function ModernSidebar({
         (isMobile ? (
           <>
             {/* Mobile Quick Actions - Sits below nav */}
-            <div className="border-t border-neutral-200/50 px-4 py-3 dark:border-neutral-800/50">
+            <div className="border-t border-neutral-200/50 px-4 py-3 dark:border-white/[0.06]">
               <div className="grid grid-cols-2 gap-2">
                 <Link href="/chat" onClick={onCloseMobile}>
                   <Button
@@ -316,7 +316,7 @@ export function ModernSidebar({
             </Drawer>
           </>
         ) : (
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden border-t border-neutral-200/50 dark:border-neutral-800/50">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden border-t border-neutral-200/50 dark:border-white/[0.06]">
             <div className="scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-200 dark:scrollbar-thumb-neutral-700 hover:scrollbar-thumb-neutral-300 dark:hover:scrollbar-thumb-neutral-600 flex-1 overflow-y-auto">
               {extraContent}
             </div>
@@ -450,7 +450,7 @@ export function ModernSidebar({
     return (
       <div
         className={cn(
-          'h-full w-full border-r border-neutral-200/50 bg-white/80 backdrop-blur-xl dark:border-neutral-800/50 dark:bg-neutral-950/80',
+          'h-full w-full border-r border-neutral-200/50 bg-white/80 backdrop-blur-xl dark:border-white/[0.06] dark:bg-neutral-950/80',
           className
         )}
       >

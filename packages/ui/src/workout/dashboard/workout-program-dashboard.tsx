@@ -193,7 +193,7 @@ export function WorkoutProgramDashboard({
           <div className="flex gap-3">
             <button
               onClick={onDelete}
-              className="flex h-10 items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 text-sm font-semibold text-rose-600 shadow-sm transition-all hover:border-rose-200 hover:bg-rose-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-rose-500 dark:hover:bg-rose-900/20"
+              className="flex h-10 items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 text-sm font-semibold text-rose-600 shadow-sm transition-all hover:border-rose-200 hover:bg-rose-50 dark:border-white/[0.08] dark:bg-neutral-900 dark:text-rose-500 dark:hover:bg-rose-900/20"
             >
               Elimina
             </button>

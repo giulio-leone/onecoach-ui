@@ -35,7 +35,7 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
               className={cn(
                 'group relative flex h-full flex-row items-center gap-4 p-4 transition-all duration-300',
                 'hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/10',
-                'border-neutral-200/50 dark:border-neutral-800/50'
+                'border-neutral-200/50 dark:border-white/[0.06]'
               )}
             >
               <View

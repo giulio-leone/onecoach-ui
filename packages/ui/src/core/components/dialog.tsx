@@ -445,7 +445,7 @@ const SimpleDialog = ({
                 // Glass Input Styling
                 'bg-white/60 dark:bg-neutral-800/60',
                 'backdrop-blur-sm',
-                'border border-neutral-200/50 dark:border-neutral-700/50',
+                'border border-neutral-200/50 dark:border-white/[0.08]',
                 'text-neutral-900 dark:text-white',
                 'placeholder:text-neutral-400 dark:placeholder:text-neutral-500',
                 // Focus States
@@ -466,7 +466,7 @@ const SimpleDialog = ({
             'items-stretch sm:items-center',
             'justify-end gap-3',
             'px-6 py-5',
-            'border-t border-neutral-200/30 dark:border-neutral-700/30',
+            'border-t border-neutral-200/30 dark:border-white/[0.06]',
             'bg-neutral-50/50 dark:bg-neutral-900/50',
             'flex-shrink-0'
           )}

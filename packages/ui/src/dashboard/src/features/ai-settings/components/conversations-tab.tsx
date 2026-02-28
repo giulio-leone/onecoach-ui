@@ -506,7 +506,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
             'rounded-2xl lg:col-span-2',
             'bg-white/80 dark:bg-neutral-800/80',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50',
+            'border border-neutral-200/50 dark:border-white/[0.08]',
             'overflow-hidden'
           )}
         >
@@ -669,7 +669,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
             'rounded-2xl lg:col-span-3',
             'bg-white/80 dark:bg-neutral-800/80',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50',
+            'border border-neutral-200/50 dark:border-white/[0.08]',
             'overflow-hidden'
           )}
         >

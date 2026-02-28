@@ -299,7 +299,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
   return (
     <div className="space-y-8">
       {/* Dashboard Hero */}
-      <div className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-neutral-950">
+      <div className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white p-8 dark:border-white/[0.08] dark:bg-neutral-950">
         <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
@@ -316,7 +316,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
             </p>
           </div>
           <div className="flex gap-4">
-            <div className="rounded-2xl border border-neutral-100 bg-white/50 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900">
+            <div className="rounded-2xl border border-neutral-100 bg-white/50 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-neutral-900">
               <p className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
                 {t('provider_api_keys.provider_attivi')}
               </p>
@@ -327,7 +327,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
                 </span>
               </p>
             </div>
-            <div className="rounded-2xl border border-neutral-100 bg-white/50 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900">
+            <div className="rounded-2xl border border-neutral-100 bg-white/50 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-neutral-900">
               <p className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
                 {t('provider_api_keys.stato_sistema')}
               </p>
@@ -412,7 +412,7 @@ function ProviderCard({
         state.isExpanded ? 'row-span-2' : '',
         state.isEnabled
           ? 'border-neutral-200 bg-white/80 shadow-xl dark:border-neutral-700 dark:bg-neutral-800'
-          : 'border-neutral-200 bg-neutral-50/50 dark:border-neutral-800 dark:bg-neutral-900'
+          : 'border-neutral-200 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-900'
       )}
     >
       {/* Active Glow Effect - Reduced opacity for elegance */}

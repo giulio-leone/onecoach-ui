@@ -312,7 +312,7 @@ export function UsersPageClient({
       <AdminTabPanel activeTab={activeTab} tabId="users">
         <div className="space-y-4 sm:space-y-6">
           {/* Filters Bar */}
-          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-800 dark:bg-neutral-900/50">
+          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-neutral-900/50">
             {/* Search + View Toggle (Mobile: full width) */}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <div className="relative flex-1">
@@ -439,7 +439,7 @@ export function UsersPageClient({
               {filteredUsers.map((user: any) => (
                 <div
                   key={user.id}
-                  className="flex items-center gap-4 rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900/50"
+                  className="flex items-center gap-4 rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-neutral-900/50"
                 >
                   {/* Avatar */}
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-neutral-400 to-neutral-600 text-sm font-bold text-white">
@@ -474,7 +474,7 @@ export function UsersPageClient({
             </div>
           )}
           {/* Pagination */}
-          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between dark:border-neutral-800 dark:bg-neutral-900/50">
+          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between dark:border-white/[0.08] dark:bg-neutral-900/50">
             <div className="text-sm text-neutral-600 dark:text-neutral-400">
               {t('pagination.total')}: {usersTotal} •{' '}
               {t('pagination.page', {
@@ -570,7 +570,7 @@ export function UsersPageClient({
             <CreateInvitationModal onSuccess={fetchInvitations} />
           </div>
           {/* Filters & Search */}
-          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-800 dark:bg-neutral-900/50">
+          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-neutral-900/50">
             <div className="relative flex-1">
               <Search className="absolute top-3 left-3 h-5 w-5 text-neutral-400" />
               <Input

@@ -233,7 +233,7 @@ export function DayEditorShell({
               className={cn(
                 'group flex w-full flex-col items-center justify-center rounded-3xl border-2 border-dashed py-16 transition-all duration-300',
                 'border-neutral-300 bg-neutral-50/50',
-                'dark:border-neutral-700/50 dark:bg-neutral-900/20',
+                'dark:border-white/[0.08] dark:bg-neutral-900/20',
                 colors.emptyBorder
               )}
               type="button"

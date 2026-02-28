@@ -220,7 +220,7 @@ export function FrameworkTab({
                 'border',
                 config.isEnabled
                   ? 'border-primary-200 dark:border-primary-800 bg-white dark:bg-neutral-800'
-                  : 'border-neutral-200/50 bg-neutral-50/50 dark:border-neutral-700/50 dark:bg-neutral-800/50'
+                  : 'border-neutral-200/50 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-800/50'
               )}
             >
               {/* Header */}
@@ -278,7 +278,7 @@ export function FrameworkTab({
                     exit={{ opacity: 0, height: 0 }}
                     className="overflow-hidden"
                   >
-                    <div className="border-t border-neutral-100 p-4 dark:border-neutral-700/50">
+                    <div className="border-t border-neutral-100 p-4 dark:border-white/[0.08]">
                       <ConfigForm
                         feature={config.feature}
                         config={config.config || {}}

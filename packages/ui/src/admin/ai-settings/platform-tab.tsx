@@ -141,7 +141,7 @@ export function PlatformTab({
                 'rounded-2xl p-6',
                 'bg-white/60 dark:bg-neutral-800/60',
                 'backdrop-blur-xl',
-                'border border-neutral-200/50 dark:border-neutral-700/50'
+                'border border-neutral-200/50 dark:border-white/[0.08]'
               )}
             >
               <h3 className="mb-4 font-semibold text-neutral-900 dark:text-white">
@@ -187,7 +187,7 @@ export function PlatformTab({
                 'rounded-2xl p-6',
                 'bg-white/60 dark:bg-neutral-800/60',
                 'backdrop-blur-xl',
-                'border border-neutral-200/50 dark:border-neutral-700/50'
+                'border border-neutral-200/50 dark:border-white/[0.08]'
               )}
             >
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -202,7 +202,7 @@ export function PlatformTab({
                       'border',
                       flag.enabled
                         ? 'border-emerald-200 bg-emerald-50/50 dark:border-emerald-800 dark:bg-emerald-900/20'
-                        : 'border-neutral-200/50 bg-neutral-50/50 dark:border-neutral-700/50 dark:bg-neutral-800/50'
+                        : 'border-neutral-200/50 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-800/50'
                     )}
                   >
                     <div className="flex items-start justify-between gap-3">

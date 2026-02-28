@@ -127,7 +127,7 @@ export function AdvancedFilters({
     (filters.period !== '30d' ? 1 : 0);
 
   return (
-    <div className="rounded-2xl border border-neutral-200 bg-white/70 shadow-sm backdrop-blur dark:border-neutral-800 dark:bg-neutral-900/60">
+    <div className="rounded-2xl border border-neutral-200 bg-white/70 shadow-sm backdrop-blur dark:border-white/[0.08] dark:bg-neutral-900/60">
       {/* ── Compact header ──────────────────────────────────────────── */}
       <button
         type="button"

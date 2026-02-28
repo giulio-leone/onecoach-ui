@@ -75,7 +75,7 @@ export function MeasurementsImportModal() {
 
         <div className="space-y-4 py-4">
           <div
-            className="cursor-pointer rounded-xl border-2 border-dashed border-neutral-200 p-8 text-center transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
+            className="cursor-pointer rounded-xl border-2 border-dashed border-neutral-200 p-8 text-center transition-colors hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:bg-neutral-900"
             onDragOver={(e) => e.preventDefault()}
             onDrop={handleDrop}
             onClick={() => document.getElementById('file-upload')?.click()}

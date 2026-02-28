@@ -426,7 +426,7 @@ export function ModelsTab({
                 'rounded-2xl p-4 sm:p-6',
                 'bg-white/80 dark:bg-neutral-800/80',
                 'backdrop-blur-xl',
-                'border border-neutral-200/50 dark:border-neutral-700/50',
+                'border border-neutral-200/50 dark:border-white/[0.08]',
                 'overflow-x-auto'
               )}
             >
@@ -750,7 +750,7 @@ export function ModelsTab({
                           'group flex cursor-pointer items-start gap-3 rounded-xl border p-3 transition-all',
                           selectedExternalModels.has(model.id)
                             ? 'border-primary-500 bg-primary-50/50 dark:border-primary-500/50 dark:bg-primary-900/10'
-                            : 'border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-700 dark:hover:bg-neutral-800/50'
+                            : 'border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:border-neutral-700 dark:hover:bg-neutral-800/50'
                         )}
                       >
                         <div className="pointer-events-none mt-0.5">
@@ -772,7 +772,7 @@ export function ModelsTab({
                           </p>
                           <div className="mt-1.5 flex flex-wrap gap-1.5">
                             {model.contextLength && model.contextLength > 0 && (
-                              <span className="inline-flex items-center rounded border border-neutral-100 bg-white px-1.5 py-0.5 text-[10px] font-medium text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400">
+                              <span className="inline-flex items-center rounded border border-neutral-100 bg-white px-1.5 py-0.5 text-[10px] font-medium text-neutral-600 dark:border-white/[0.08] dark:bg-neutral-900 dark:text-neutral-400">
                                 {Math.round(model.contextLength / 1024)}k
                               </span>
                             )}
@@ -872,7 +872,7 @@ function ModelCard({
         'border',
         model.isActive
           ? 'border-primary-200 dark:border-primary-800 bg-white dark:bg-neutral-800'
-          : 'border-neutral-200/50 bg-neutral-50/50 opacity-60 dark:border-neutral-700/50 dark:bg-neutral-800/50',
+          : 'border-neutral-200/50 bg-neutral-50/50 opacity-60 dark:border-white/[0.08] dark:bg-neutral-800/50',
         model.isDefault && 'ring-primary-500 ring-2 ring-offset-2 dark:ring-offset-neutral-900'
       )}
     >
@@ -994,7 +994,7 @@ function ModelCard({
             exit={{ opacity: 0, height: 0 }}
             className="overflow-hidden"
           >
-            <div className="mt-3 space-y-3 border-t border-neutral-100 pt-3 dark:border-neutral-700/50">
+            <div className="mt-3 space-y-3 border-t border-neutral-100 pt-3 dark:border-white/[0.08]">
               {/* Stats */}
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <div>
@@ -1134,7 +1134,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
         )}
       >
         {/* Header */}
-        <div className="flex shrink-0 items-center justify-between border-b border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900">
+        <div className="flex shrink-0 items-center justify-between border-b border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-neutral-900">
           <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
             {model ? t('editModel') : t('newModel')}
           </h2>
@@ -1418,7 +1418,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
         </div>
 
         {/* Footer */}
-        <div className="flex shrink-0 gap-3 border-t border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900">
+        <div className="flex shrink-0 gap-3 border-t border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-neutral-900">
           <button
             onClick={onClose}
             className={cn(

@@ -53,7 +53,7 @@ const COLOR_VARIANTS = {
   },
   neutral: {
     gradient: 'from-neutral-100 to-neutral-50 dark:from-neutral-800 dark:to-neutral-800/50',
-    border: 'border-neutral-200/50 dark:border-neutral-700/50',
+    border: 'border-neutral-200/50 dark:border-white/[0.08]',
     icon: 'text-neutral-600 dark:text-neutral-400',
   },
 };
@@ -169,7 +169,7 @@ export function CompactStat({ icon: Icon, value, label, color = 'blue' }: Compac
         'rounded-xl p-4',
         'bg-white/80 dark:bg-neutral-800/80',
         'backdrop-blur-xl',
-        'border border-neutral-200/50 dark:border-neutral-700/50'
+        'border border-neutral-200/50 dark:border-white/[0.08]'
       )}
     >
       <div className="flex items-center gap-2">

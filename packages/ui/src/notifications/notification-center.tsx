@@ -230,7 +230,7 @@ export function NotificationCenter({
 
           <div
             className={cn(
-              'absolute right-0 z-50 mt-2 w-[360px] overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-xl dark:border-neutral-800 dark:bg-neutral-900',
+              'absolute right-0 z-50 mt-2 w-[360px] overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-xl dark:border-white/[0.08] dark:bg-neutral-900',
               'max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:mt-0 max-sm:w-full max-sm:rounded-b-none max-sm:rounded-t-2xl',
             )}
           >

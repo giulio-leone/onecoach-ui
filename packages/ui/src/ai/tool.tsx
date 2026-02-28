@@ -32,7 +32,7 @@ export const Tool = ({ className, ...props }: ToolProps) => (
       // Glassmorphism
       'bg-white/60 dark:bg-neutral-800/60',
       'backdrop-blur-sm',
-      'border border-neutral-200/50 dark:border-neutral-700/50',
+      'border border-neutral-200/50 dark:border-white/[0.08]',
       // Shadow
       'shadow-sm',
       // Transition
@@ -151,7 +151,7 @@ export const ToolContent = ({ className, ...props }: ToolContentProps) => (
       'data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2',
       'outline-none',
       // Border top
-      'border-t border-neutral-200/50 dark:border-neutral-700/50',
+      'border-t border-neutral-200/50 dark:border-white/[0.08]',
       className
     )}
     {...props}
@@ -193,7 +193,7 @@ export const ToolOutput = ({ className, output, errorText, ...props }: ToolOutpu
     <div
       className={cn(
         'space-y-3 p-4',
-        'border-t border-neutral-200/50 dark:border-neutral-700/50',
+        'border-t border-neutral-200/50 dark:border-white/[0.08]',
         className
       )}
       {...props}

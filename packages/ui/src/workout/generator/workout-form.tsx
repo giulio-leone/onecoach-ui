@@ -30,7 +30,7 @@ export function WorkoutForm({
   return (
     <div className="space-y-8">
       {/* Parametri Personali */}
-      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
         <div className="border-b border-neutral-200 bg-primary-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-primary-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30">
@@ -124,7 +124,7 @@ export function WorkoutForm({
       </Card>
 
       {/* Livello Esperienza */}
-      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
         <div className="border-b border-neutral-200 bg-secondary-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-secondary-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-100 dark:bg-secondary-900/30">
@@ -206,7 +206,7 @@ export function WorkoutForm({
       </Card>
 
       {/* Obiettivi */}
-      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
         <div className="border-b border-neutral-200 bg-red-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-red-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30">
@@ -332,7 +332,7 @@ export function WorkoutForm({
       </Card>
 
       {/* Preferenze & Limitazioni */}
-      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
         <div className="border-b border-neutral-200 bg-orange-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-orange-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
@@ -388,7 +388,7 @@ export function WorkoutForm({
       </Card>
 
       {/* AI Settings */}
-      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
         <div className="border-b border-neutral-200 bg-gray-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-gray-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">

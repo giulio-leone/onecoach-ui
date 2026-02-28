@@ -183,7 +183,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
           className={cn(
             'w-full rounded-xl border border-neutral-200 bg-white py-2.5 pl-10 pr-4 text-sm outline-none transition-colors',
             'placeholder:text-neutral-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20',
-            'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:border-primary-500'
+            'dark:border-white/[0.08] dark:bg-neutral-900 dark:text-neutral-100 dark:focus:border-primary-500'
           )}
         />
         {search && (
@@ -215,7 +215,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
                     'relative flex flex-col items-start gap-1 rounded-xl border p-3 text-left transition-all duration-200',
                     isSelected
                       ? 'border-emerald-400 bg-emerald-50 dark:border-emerald-600 dark:bg-emerald-950/40'
-                      : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700'
+                      : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-neutral-900 dark:hover:border-neutral-700'
                   )}
                 >
                   {isSelected && (
@@ -258,7 +258,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
                 className={cn(
                   'flex items-center justify-between rounded-xl border border-neutral-200 bg-white px-4 py-3 text-left transition-all duration-200',
                   'hover:border-primary-300 hover:bg-emerald-50/50',
-                  'dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-700 dark:hover:bg-emerald-950/30'
+                  'dark:border-white/[0.08] dark:bg-neutral-900 dark:hover:border-primary-700 dark:hover:bg-emerald-950/30'
                 )}
               >
                 <div>
@@ -294,7 +294,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
           Quick Add Calories
         </button>
       ) : (
-        <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900">
+        <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-neutral-900">
           <div className="mb-3 flex items-center justify-between">
             <h3 className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">Quick Add</h3>
             <button type="button" onClick={() => setShowQuickAdd(false)} className="text-neutral-400 hover:text-neutral-600">
@@ -360,7 +360,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
 
       {/* ── Running Total ────────────────────────────────────────────────── */}
       {selected.size > 0 && (
-        <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 dark:border-neutral-800 dark:bg-neutral-900">
+        <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 dark:border-white/[0.08] dark:bg-neutral-900">
           <div className="flex items-center justify-between gap-4 text-xs font-semibold">
             <div className="flex items-center gap-1 text-orange-600 dark:text-orange-400">
               <Flame className="h-3.5 w-3.5" />

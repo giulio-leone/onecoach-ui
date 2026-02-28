@@ -56,7 +56,7 @@ export const Suggestion = ({
         // Glassmorphism
         'bg-white/70 dark:bg-neutral-800/70',
         'backdrop-blur-sm',
-        'border border-neutral-200/50 dark:border-neutral-700/50',
+        'border border-neutral-200/50 dark:border-white/[0.08]',
         // Text
         'text-neutral-700 dark:text-neutral-300',
         // Hover

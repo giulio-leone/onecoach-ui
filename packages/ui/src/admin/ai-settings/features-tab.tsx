@@ -201,7 +201,7 @@ function StatCard({ label, value, total, color }: StatCardProps) {
         'rounded-xl p-4',
         'bg-white/80 dark:bg-neutral-800/80',
         'backdrop-blur-xl',
-        'border border-neutral-200/50 dark:border-neutral-700/50'
+        'border border-neutral-200/50 dark:border-white/[0.08]'
       )}
     >
       <div className="flex items-center justify-between">
@@ -254,7 +254,7 @@ function FeatureCard({ config, index, onToggleEnabled, onToggleRole }: FeatureCa
         'border',
         config.isEnabled
           ? 'border-primary-200 dark:border-primary-800 bg-white dark:bg-neutral-800'
-          : 'border-neutral-200/50 bg-neutral-50/50 dark:border-neutral-700/50 dark:bg-neutral-800/50'
+          : 'border-neutral-200/50 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-800/50'
       )}
     >
       {/* Header */}

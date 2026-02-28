@@ -194,7 +194,7 @@ export function WorkoutTemplateSelector({
         onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200/50 bg-white/80 px-4 py-5 backdrop-blur-md sm:px-6 dark:border-neutral-700/50 dark:bg-neutral-900/80">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200/50 bg-white/80 px-4 py-5 backdrop-blur-md sm:px-6 dark:border-white/[0.08] dark:bg-neutral-900/80">
           <h3
             id="template-selector-title"
             className="text-xl font-bold text-neutral-900 sm:text-2xl dark:text-neutral-100"
@@ -212,7 +212,7 @@ export function WorkoutTemplateSelector({
         </div>
 
         {/* Search and Filters */}
-        <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-4 py-4 backdrop-blur-sm sm:px-6 dark:border-neutral-700/50 dark:bg-neutral-900/30">
+        <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-4 py-4 backdrop-blur-sm sm:px-6 dark:border-white/[0.08] dark:bg-neutral-900/30">
           <div className="mb-3 flex items-center gap-2">
             <div className="relative flex-1">
               <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-400" />
@@ -435,7 +435,7 @@ export function WorkoutTemplateSelector({
         </div>
 
         {/* Footer hint */}
-        <div className="border-t border-neutral-200/50 bg-neutral-50/50 px-4 py-3 text-center text-xs font-medium text-neutral-500 backdrop-blur-sm sm:px-6 dark:border-neutral-700/50 dark:bg-neutral-900/30 dark:text-neutral-400">
+        <div className="border-t border-neutral-200/50 bg-neutral-50/50 px-4 py-3 text-center text-xs font-medium text-neutral-500 backdrop-blur-sm sm:px-6 dark:border-white/[0.08] dark:bg-neutral-900/30 dark:text-neutral-400">
           <span className="hidden sm:inline">Usa ↑↓ per navigare, </span>
           <span>Invio per selezionare, Esc per chiudere</span>
         </div>

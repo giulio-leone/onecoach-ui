@@ -102,7 +102,7 @@ function DeltaBadge({
 
 function MetricRow({ m }: { m: MetricDef }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-neutral-100 bg-white/60 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-900/50">
+    <div className="flex items-center gap-3 rounded-xl border border-neutral-100 bg-white/60 px-4 py-3 dark:border-white/[0.08] dark:bg-neutral-900/50">
       <m.icon className="h-4 w-4 shrink-0 text-neutral-400" />
       <div className="min-w-0 flex-1">
         <p className="truncate text-xs font-medium text-neutral-500 dark:text-neutral-400">

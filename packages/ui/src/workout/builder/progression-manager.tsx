@@ -961,7 +961,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                           ? isOverridden
                             ? 'border-secondary-200 bg-secondary-50/50 dark:border-secondary-900/50 dark:bg-secondary-900/10'
                             : 'border-primary-200 bg-primary-50/50 dark:border-primary-900/50 dark:bg-primary-900/10'
-                          : 'border-neutral-200 bg-white opacity-60 hover:opacity-100 dark:border-neutral-800 dark:bg-neutral-900'
+                          : 'border-neutral-200 bg-white opacity-60 hover:opacity-100 dark:border-white/[0.08] dark:bg-neutral-900'
                       }`}
                       onClick={() => toggleSelection(idx)}
                     >
@@ -1088,7 +1088,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
             </div>
           </div>
 
-          <div className="border-t border-neutral-200 bg-white/80 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/80">
+          <div className="border-t border-neutral-200 bg-white/80 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-neutral-900/80">
             <Button
               variant="gradient-primary"
               icon={<Play size={18} className="fill-white text-white" />}

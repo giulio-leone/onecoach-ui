@@ -343,7 +343,7 @@ export function ExerciseCard({
                 className={cn(
                   'group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl border border-dashed py-4 transition-all',
                   'hover:border-primary-300 hover:text-primary-600 border-neutral-200 bg-neutral-50/50 text-neutral-500',
-                  'dark:hover:border-primary-500/30 dark:hover:text-primary-400 dark:border-neutral-800 dark:bg-transparent dark:text-neutral-500'
+                  'dark:hover:border-primary-500/30 dark:hover:text-primary-400 dark:border-white/[0.08] dark:bg-transparent dark:text-neutral-500'
                 )}
                 type="button"
               >

@@ -548,7 +548,7 @@ export function OpenRouterModelsManager() {
                   {filteredSyncModels.map((m: any) => (
                     <tr
                       key={m.modelId}
-                      className="border-b border-neutral-100 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-800/30"
+                      className="border-b border-neutral-100 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:bg-neutral-800/30"
                     >
                       <td className="px-4 py-2">
                         <Checkbox

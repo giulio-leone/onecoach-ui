@@ -180,7 +180,7 @@ export function HydrationTracker({
             className={cn(
               'flex flex-col items-center gap-1 rounded-xl border border-neutral-200 bg-white px-3 py-3 transition-all duration-200',
               'hover:border-sky-300 hover:bg-sky-50/50 active:scale-95',
-              'dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-sky-700 dark:hover:bg-sky-950/30'
+              'dark:border-white/[0.08] dark:bg-neutral-900 dark:hover:border-sky-700 dark:hover:bg-sky-950/30'
             )}
           >
             <Droplets className="h-5 w-5 text-sky-500" />
@@ -217,7 +217,7 @@ export function HydrationTracker({
               className={cn(
                 'w-full rounded-xl border border-neutral-200 bg-white py-2.5 pl-3 pr-12 text-sm outline-none transition-colors',
                 'focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20',
-                'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:border-sky-500'
+                'dark:border-white/[0.08] dark:bg-neutral-900 dark:text-neutral-100 dark:focus:border-sky-500'
               )}
             />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-neutral-400">ml</span>
@@ -256,7 +256,7 @@ export function HydrationTracker({
                 key={idx}
                 className={cn(
                   'group flex items-center justify-between rounded-xl border border-neutral-200 bg-white px-3 py-2.5 transition-colors',
-                  'dark:border-neutral-800 dark:bg-neutral-900'
+                  'dark:border-white/[0.08] dark:bg-neutral-900'
                 )}
               >
                 <div className="flex items-center gap-3">

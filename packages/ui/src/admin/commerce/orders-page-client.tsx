@@ -162,7 +162,7 @@ export function OrdersPageClient() {
         </div>
       )}
 
-      <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900">
+      <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-neutral-900">
         <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
           <div className="space-y-2">
             <label className="text-xs font-medium text-neutral-500">{t('filters.status')}</label>

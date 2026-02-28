@@ -175,7 +175,7 @@ export const ConversationScrollButton = ({
         // Glassmorphism
         'bg-white/80 dark:bg-neutral-900/80',
         'backdrop-blur-lg',
-        'border border-neutral-200/50 dark:border-neutral-700/50',
+        'border border-neutral-200/50 dark:border-white/[0.08]',
         // Shadow
         'shadow-lg shadow-neutral-900/10 dark:shadow-neutral-900/30',
         // Hover

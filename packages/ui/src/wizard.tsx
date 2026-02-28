@@ -40,7 +40,7 @@ export const WizardStepper = ({
                       ? 'scale-110 border-transparent bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-[0_0_30px_rgba(79,70,229,0.4)]'
                       : isCompleted
                         ? 'border-primary-500/40 bg-primary-500/10 text-primary-500 shadow-[0_0_15px_rgba(79,70,229,0.1)] dark:bg-primary-500/20'
-                        : 'border-neutral-200/50 bg-white/40 text-neutral-400 backdrop-blur-md dark:border-neutral-800/50 dark:bg-neutral-900/40'
+                        : 'border-neutral-200/50 bg-white/40 text-neutral-400 backdrop-blur-md dark:border-white/[0.06] dark:bg-neutral-900/40'
                   )}
                 >
                   {isCompleted ? (

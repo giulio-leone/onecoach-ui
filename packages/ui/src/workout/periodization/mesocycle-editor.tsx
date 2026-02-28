@@ -210,7 +210,7 @@ export function MesocycleEditor({
                   'flex items-start gap-3 rounded-xl border p-4 text-left transition-all',
                   isSelected
                     ? 'border-indigo-500/50 bg-indigo-500/10 ring-2 ring-indigo-500/30 dark:bg-indigo-500/20'
-                    : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700'
+                    : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-neutral-900 dark:hover:border-neutral-700'
                 )}
               >
                 <div
