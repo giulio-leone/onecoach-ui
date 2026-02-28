@@ -86,7 +86,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
               radioSizeStyles[size],
               disabled
                 ? 'cursor-not-allowed border-neutral-300 bg-neutral-100 dark:border-white/[0.08] dark:bg-white/[0.04]'
-                : 'border-neutral-300 bg-white hover:border-neutral-400 dark:border-white/[0.1] dark:bg-white/[0.04] dark:hover:border-neutral-500',
+                : 'border-neutral-300 bg-white hover:border-neutral-400 dark:border-white/[0.1] dark:bg-white/[0.04] dark:hover:border-white/[0.2]',
               !disabled && radioVariantStyles[variant],
               'peer-focus-visible:ring-primary-500 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2 dark:peer-focus-visible:ring-offset-[#09090b]'
             )}

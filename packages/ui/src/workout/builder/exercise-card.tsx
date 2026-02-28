@@ -260,7 +260,7 @@ export function ExerciseCard({
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => exerciseClipboard.copy(exercise, exercise.id)}
-                  className="flex cursor-pointer items-center gap-2 rounded-md text-neutral-700 focus:bg-neutral-100 focus:text-neutral-900 dark:text-neutral-300 dark:focus:bg-neutral-500/10 dark:focus:text-white"
+                  className="flex cursor-pointer items-center gap-2 rounded-md text-neutral-700 focus:bg-neutral-100 focus:text-neutral-900 dark:text-neutral-300 dark:focus:bg-white/[0.04] dark:focus:text-white"
                 >
                   <Copy size={16} />
                   <span>{t('copy')}</span>

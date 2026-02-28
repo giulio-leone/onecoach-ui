@@ -257,7 +257,7 @@ function SavedTripCard({ trip }: { trip: SavedTrip }) {
 
             <Button
               size="sm"
-              className="bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
+              className="bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-white/[0.04]"
               onClick={() => window.open(trip.combinedDeepLink || trip.outboundDeepLink, '_blank')}
             >
               Prenota

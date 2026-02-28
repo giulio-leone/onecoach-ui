@@ -641,7 +641,7 @@ function ProviderCard({
                 </div>
                 <Button
                   variant="primary"
-                  className="bg-neutral-900 text-white shadow-lg shadow-neutral-500/20 hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+                  className="bg-neutral-900 text-white shadow-lg shadow-neutral-500/20 hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-white/[0.06]"
                   size="sm"
                   disabled={state.isSaving || state.isDeleting}
                   onClick={() => onSave(state.provider)}

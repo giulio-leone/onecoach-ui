@@ -210,7 +210,7 @@ export function MesocycleEditor({
                   'flex items-start gap-3 rounded-xl border p-4 text-left transition-all',
                   isSelected
                     ? 'border-indigo-500/50 bg-indigo-500/10 ring-2 ring-indigo-500/30 dark:bg-indigo-500/20'
-                    : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-700'
+                    : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-white/[0.12]'
                 )}
               >
                 <div
@@ -292,7 +292,7 @@ export function MesocycleEditor({
                       'flex items-center gap-2 rounded-lg border px-3 py-2 text-xs font-semibold capitalize transition-all',
                       isSelected
                         ? 'border-indigo-500/50 bg-indigo-500/10 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300'
-                        : 'border-neutral-200/60 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-neutral-600'
+                        : 'border-neutral-200/60 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-white/[0.15]'
                     )}
                   >
                     <Icon className="h-3.5 w-3.5" />
@@ -320,7 +320,7 @@ export function MesocycleEditor({
                       'rounded-lg border px-3 py-2 text-xs font-semibold capitalize transition-all',
                       isSelected
                         ? 'border-indigo-500/50 bg-indigo-500/10 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300'
-                        : 'border-neutral-200/60 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-neutral-600'
+                        : 'border-neutral-200/60 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-white/[0.15]'
                     )}
                   >
                     {level}

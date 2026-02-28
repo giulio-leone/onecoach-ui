@@ -116,7 +116,7 @@ export function AdminTabs({ tabs, defaultTab, onTabChange, className }: AdminTab
                 'focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none',
                 isDisabled
                   ? 'cursor-not-allowed opacity-50'
-                  : 'cursor-pointer hover:border-neutral-300 dark:hover:border-neutral-600',
+                  : 'cursor-pointer hover:border-neutral-300 dark:hover:border-white/[0.15]',
                 isActive
                   ? 'border-primary-600 text-primary-600 dark:border-primary-400 dark:text-primary-400'
                   : 'border-transparent text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300'

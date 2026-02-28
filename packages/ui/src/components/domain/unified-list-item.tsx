@@ -50,7 +50,7 @@ export function UnifiedListItem({
         'border-neutral-200/40 dark:border-white/[0.08]',
         'shadow-sm dark:shadow-lg dark:shadow-black/20',
         'transition-all duration-200',
-        'hover:border-neutral-300/50 hover:shadow-lg dark:hover:border-neutral-600/50 dark:hover:shadow-xl dark:hover:shadow-black/30',
+        'hover:border-neutral-300/50 hover:shadow-lg dark:hover:border-white/[0.1] dark:hover:shadow-xl dark:hover:shadow-black/30',
         isCompleted && 'opacity-60',
         className
       )}

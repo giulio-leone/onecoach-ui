@@ -89,7 +89,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             'border-neutral-300 dark:border-white/[0.1]',
 
             // Hover states for better interactivity
-            'hover:border-neutral-400 dark:hover:border-neutral-500',
+            'hover:border-neutral-400 dark:hover:border-white/[0.2]',
             'hover:bg-neutral-50 dark:hover:bg-white/[0.08]/30',
 
             // Focus states with high contrast
@@ -98,7 +98,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
               : cn(
                   'focus:border-primary-500 dark:focus:border-primary-400',
                   'focus:ring-primary-500/20 dark:focus:ring-primary-400/30 focus:ring-2',
-                  'focus:bg-white dark:focus:bg-neutral-800'
+                  'focus:bg-white dark:focus:bg-white/[0.06]'
                 ),
 
             // Disabled state

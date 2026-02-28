@@ -358,7 +358,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
             'flex items-center gap-2 rounded-xl px-4 py-2.5',
             'bg-neutral-100 dark:bg-white/[0.08]',
             'text-neutral-600 dark:text-neutral-300',
-            'hover:bg-neutral-200 dark:hover:bg-neutral-600'
+            'hover:bg-neutral-200 dark:hover:bg-white/[0.1]'
           )}
         >
           <RefreshCw className={cn('h-4 w-4', isLoading && 'animate-spin')} />
@@ -417,7 +417,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
               'flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
               selectionMode
                 ? 'bg-primary-50 text-primary-700 dark:bg-primary-500/10 dark:text-primary-200'
-                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.08] dark:text-neutral-300 dark:hover:bg-neutral-600'
+                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.08] dark:text-neutral-300 dark:hover:bg-white/[0.1]'
             )}
           >
             {selectionMode ? t('selection.cancel') : t('selection.multi')}
@@ -598,7 +598,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                         }}
                         className={cn(
                           'rounded-lg p-1.5',
-                          'hover:bg-neutral-100 dark:hover:bg-neutral-600',
+                          'hover:bg-neutral-100 dark:hover:bg-white/[0.1]',
                           'text-neutral-400 hover:text-neutral-600'
                         )}
                       >

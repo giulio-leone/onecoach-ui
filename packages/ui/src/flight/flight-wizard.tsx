@@ -500,7 +500,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
               'border-2 border-neutral-200/60 bg-white text-neutral-700',
               'hover:border-neutral-300 hover:bg-neutral-50',
               'dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-white',
-              'dark:hover:border-neutral-500 dark:hover:bg-neutral-600'
+              'dark:hover:border-white/[0.2] dark:hover:bg-white/[0.1]'
             )}
           >
             -
@@ -532,7 +532,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
               'border-2 border-neutral-200/60 bg-white text-neutral-700',
               'hover:border-neutral-300 hover:bg-neutral-50',
               'dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-white',
-              'dark:hover:border-neutral-500 dark:hover:bg-neutral-600'
+              'dark:hover:border-white/[0.2] dark:hover:bg-white/[0.1]'
             )}
           >
             +

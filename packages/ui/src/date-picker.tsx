@@ -46,7 +46,7 @@ const triggerVariants = cva(
           'hover:border-neutral-300 hover:bg-neutral-50',
           'focus-visible:ring-primary-500',
           'dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-200',
-          'dark:hover:border-neutral-600 dark:hover:bg-white/[0.06]',
+          'dark:hover:border-white/[0.15] dark:hover:bg-white/[0.06]',
         ],
         outline: [
           'border-neutral-300 bg-transparent text-neutral-700',

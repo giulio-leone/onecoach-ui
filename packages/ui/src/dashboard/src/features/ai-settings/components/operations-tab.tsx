@@ -282,7 +282,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                 disabled={isSaving}
                 className={cn(
                   'flex w-full items-center justify-center gap-2 rounded-lg py-2 text-sm font-medium transition-all duration-200',
-                  'bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200',
+                  'bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-white/[0.06]',
                   isSaving && 'cursor-not-allowed opacity-70'
                 )}
               >

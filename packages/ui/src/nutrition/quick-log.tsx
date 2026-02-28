@@ -215,7 +215,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
                     'relative flex flex-col items-start gap-1 rounded-xl border p-3 text-left transition-all duration-200',
                     isSelected
                       ? 'border-emerald-400 bg-emerald-50 dark:border-emerald-600 dark:bg-emerald-950/40'
-                      : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-700'
+                      : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-white/[0.12]'
                   )}
                 >
                   {isSelected && (

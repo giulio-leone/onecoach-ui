@@ -385,7 +385,7 @@ export function SmartAnalysisPanel({
                               className={cn(
                                 'flex items-center justify-between rounded-xl border p-3 transition-colors',
                                 'border-neutral-200/60 bg-white hover:border-neutral-300',
-                                'dark:border-white/[0.08] dark:bg-white/[0.05] dark:hover:border-neutral-600'
+                                'dark:border-white/[0.08] dark:bg-white/[0.05] dark:hover:border-white/[0.15]'
                               )}
                             >
                               <div className="flex items-center gap-3">

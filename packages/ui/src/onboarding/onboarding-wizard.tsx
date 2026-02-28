@@ -158,7 +158,7 @@ function RadioCard({
         'focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 outline-none',
         selected
           ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
-          : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-600',
+          : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-white/[0.15]',
         className
       )}
     >
@@ -347,7 +347,7 @@ function StepBasicInfo({
                 'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                 profile.primaryGoal === g.id
                   ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
-                  : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-600'
+                  : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-white/[0.15]'
               )}
             >
               <g.icon
@@ -547,7 +547,7 @@ function StepTraining({
                 'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                 profile.preferredDuration === opt.value
                   ? 'border-primary-500 bg-primary-50 text-primary-700 dark:border-primary-400 dark:bg-primary-950/30 dark:text-primary-300'
-                  : 'border-neutral-200/60 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-neutral-600'
+                  : 'border-neutral-200/60 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-white/[0.15]'
               )}
             >
               <Clock className="mr-1.5 inline h-3.5 w-3.5" />
@@ -573,7 +573,7 @@ function StepTraining({
                   'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                   selected
                     ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
-                    : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-600'
+                    : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-white/[0.15]'
                 )}
               >
                 <eq.icon

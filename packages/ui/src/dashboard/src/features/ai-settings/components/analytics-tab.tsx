@@ -256,7 +256,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
               'flex items-center gap-2 rounded-xl px-3 py-2.5',
               'bg-neutral-100 dark:bg-white/[0.08]',
               'text-neutral-600 dark:text-neutral-300',
-              'hover:bg-neutral-200 dark:hover:bg-neutral-600',
+              'hover:bg-neutral-200 dark:hover:bg-white/[0.1]',
               'disabled:opacity-50'
             )}
           >

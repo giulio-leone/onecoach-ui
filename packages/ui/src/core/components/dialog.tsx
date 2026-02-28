@@ -452,7 +452,7 @@ const SimpleDialog = ({
                 'focus:outline-none',
                 'focus:ring-2 focus:ring-primary-500/30 dark:focus:ring-primary-400/30',
                 'focus:border-primary-500/50 dark:focus:border-primary-400/50',
-                'focus:bg-white/80 dark:focus:bg-neutral-800/80',
+                'focus:bg-white/80 dark:focus:bg-white/[0.06]',
                 'transition-all duration-200'
               )}
             />

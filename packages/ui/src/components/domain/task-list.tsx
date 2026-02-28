@@ -31,7 +31,7 @@ export function TaskItem({
   return (
     <div
       className={cn(
-        'group flex items-center gap-3 rounded-xl border border-transparent bg-white p-3 shadow-sm transition-all hover:border-neutral-200/60 hover:shadow-md dark:bg-zinc-950 dark:hover:border-neutral-700',
+        'group flex items-center gap-3 rounded-xl border border-transparent bg-white p-3 shadow-sm transition-all hover:border-neutral-200/60 hover:shadow-md dark:bg-zinc-950 dark:hover:border-white/[0.12]',
         status === 'DONE' && 'opacity-60',
         className
       )}

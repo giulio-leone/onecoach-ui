@@ -397,7 +397,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
                 'border',
                 config.defaultSuggestionMode === mode
                   ? 'border-primary-500 bg-primary-50 dark:border-primary-400 dark:bg-primary-500/10'
-                  : 'border-neutral-200/60 hover:border-neutral-300 dark:border-white/[0.08] dark:hover:border-neutral-600'
+                  : 'border-neutral-200/60 hover:border-neutral-300 dark:border-white/[0.08] dark:hover:border-white/[0.15]'
               )}
             >
               <Icon
