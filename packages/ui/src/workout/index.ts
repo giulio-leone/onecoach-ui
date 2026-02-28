@@ -29,3 +29,6 @@ export * from './exercise';
 
 // Periodization
 export * from './periodization';
+
+// Adaptation
+export * from './adaptation';
