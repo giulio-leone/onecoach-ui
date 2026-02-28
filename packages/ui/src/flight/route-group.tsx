@@ -69,7 +69,7 @@ export function RouteGroup({
           </div>
           <div
             className={cn(
-              'rounded-full bg-neutral-100 p-2 transition-transform dark:bg-neutral-800',
+              'rounded-full bg-neutral-100 p-2 transition-transform dark:bg-white/[0.04]',
               isExpanded && 'rotate-180'
             )}
           >

@@ -348,7 +348,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
       {/* Content */}
       <Suspense
         fallback={
-          <div className="h-64 animate-pulse rounded-xl bg-neutral-100 dark:bg-neutral-800" />
+          <div className="h-64 animate-pulse rounded-xl bg-neutral-100 dark:bg-white/[0.04]" />
         }
       >
         <div className="relative min-h-[400px]">

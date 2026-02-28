@@ -78,7 +78,7 @@ export function AIConfigTab({
                 'border',
                 isActive
                   ? 'border-primary-500 bg-primary-50 dark:border-primary-400 dark:bg-primary-500/10'
-                  : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600'
+                  : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-white/[0.04] dark:hover:border-neutral-600'
               )}
             >
               <div

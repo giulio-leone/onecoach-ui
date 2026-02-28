@@ -166,7 +166,7 @@ export function AIThinking({
     <div
       className={cn(
         'flex items-center gap-3 rounded-xl px-4 py-3',
-        'bg-neutral-100 dark:bg-neutral-800',
+        'bg-neutral-100 dark:bg-white/[0.04]',
         'text-neutral-600 dark:text-neutral-300',
         className
       )}

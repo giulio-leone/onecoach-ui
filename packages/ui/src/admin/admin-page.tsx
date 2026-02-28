@@ -21,7 +21,7 @@ export function AdminPage({
   padding = 'md',
 }: AdminPageProps) {
   return (
-    <div className={cn('min-h-screen bg-neutral-50/50 dark:bg-neutral-950', className)}>
+    <div className={cn('min-h-screen bg-neutral-50/50 dark:bg-[#09090b]', className)}>
       {gradient && (
         <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
           <div className="absolute -top-[20%] -left-[10%] h-[50%] w-[50%] rounded-full bg-indigo-500/10 blur-[120px] dark:bg-indigo-500/5" />

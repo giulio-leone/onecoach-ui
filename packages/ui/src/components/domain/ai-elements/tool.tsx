@@ -128,7 +128,7 @@ export const ToolHeader = forwardRef<HTMLButtonElement, ToolHeaderProps>(
         className={cn(
           'flex w-full items-center justify-between px-3 py-2',
           'text-left transition-colors',
-          'hover:bg-neutral-100 dark:hover:bg-neutral-700/50',
+          'hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50',
           className
         )}
         {...props}
@@ -194,7 +194,7 @@ export const ToolInputDisplay = forwardRef<HTMLDivElement, ToolInputDisplayProps
   ({ input, className, ...props }, ref) => (
     <div ref={ref} className={cn('mb-2', className)} {...props}>
       <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">Input:</span>
-      <pre className="mt-1 overflow-x-auto rounded bg-neutral-100 p-2 text-xs text-neutral-700 dark:bg-neutral-900 dark:text-neutral-300">
+      <pre className="mt-1 overflow-x-auto rounded bg-neutral-100 p-2 text-xs text-neutral-700 dark:bg-zinc-950 dark:text-neutral-300">
         {JSON.stringify(input, null, 2)}
       </pre>
     </div>
@@ -285,7 +285,7 @@ export function ToolBubble({ toolName, state, args, result }: ToolBubbleProps) {
     <div className="rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/50">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700/50"
+        className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50"
       >
         <div className="flex items-center gap-2">
           <Wrench className="h-4 w-4 text-indigo-500" />

@@ -37,7 +37,7 @@ export function ProgressBar({
       )}
       <div
         className={cn(
-          'w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800',
+          'w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.04]',
           heights[size]
         )}
       >

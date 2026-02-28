@@ -57,7 +57,7 @@ export function TaskItemContent({
     return (
       <div
         className={cn(
-          'group flex flex-row items-center py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800/50',
+          'group flex flex-row items-center py-2 hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50',
           level > 0 && 'ml-6 border-l border-neutral-200 pl-2 dark:border-neutral-800'
         )}
       >
@@ -72,7 +72,7 @@ export function TaskItemContent({
         <button
           onClick={onToggleExpand}
           className={cn(
-            'mr-1 flex h-6 w-6 items-center justify-center rounded hover:bg-neutral-200 dark:hover:bg-neutral-700',
+            'mr-1 flex h-6 w-6 items-center justify-center rounded hover:bg-neutral-200 dark:hover:bg-white/[0.08]',
             !hasSubTasks && 'opacity-0'
           )}
           disabled={!hasSubTasks}
@@ -122,11 +122,11 @@ export function TaskItemContent({
         <div className="flex flex-row items-center opacity-0 group-hover:opacity-100">
           <button
             onClick={onAddSubTask}
-            className="mr-1 rounded p-1 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+            className="mr-1 rounded p-1 hover:bg-neutral-200 dark:hover:bg-white/[0.08]"
           >
             <Plus size={14} className="text-neutral-500" />
           </button>
-          <button className="rounded p-1 hover:bg-neutral-200 dark:hover:bg-neutral-700">
+          <button className="rounded p-1 hover:bg-neutral-200 dark:hover:bg-white/[0.08]">
             <MoreHorizontal size={14} className="text-neutral-500" />
           </button>
         </div>
@@ -138,7 +138,7 @@ export function TaskItemContent({
   return (
     <View
       className={cn(
-        'group flex-row items-center py-2 hover:bg-neutral-50 dark:hover:bg-neutral-800/50',
+        'group flex-row items-center py-2 hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50',
         level > 0 && 'ml-6 border-l border-neutral-200 pl-2 dark:border-neutral-800'
       )}
     >
@@ -153,7 +153,7 @@ export function TaskItemContent({
       <TouchableOpacity
         onPress={onToggleExpand}
         className={cn(
-          'mr-1 h-6 w-6 items-center justify-center rounded hover:bg-neutral-200 dark:hover:bg-neutral-700',
+          'mr-1 h-6 w-6 items-center justify-center rounded hover:bg-neutral-200 dark:hover:bg-white/[0.08]',
           !hasSubTasks && 'opacity-0'
         )}
         disabled={!hasSubTasks}
@@ -203,11 +203,11 @@ export function TaskItemContent({
       <View className="flex-row items-center opacity-0 group-hover:opacity-100">
         <TouchableOpacity
           onPress={onAddSubTask}
-          className="mr-1 rounded p-1 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+          className="mr-1 rounded p-1 hover:bg-neutral-200 dark:hover:bg-white/[0.08]"
         >
           <Plus size={14} className="text-neutral-500" />
         </TouchableOpacity>
-        <TouchableOpacity className="rounded p-1 hover:bg-neutral-200 dark:hover:bg-neutral-700">
+        <TouchableOpacity className="rounded p-1 hover:bg-neutral-200 dark:hover:bg-white/[0.08]">
           <MoreHorizontal size={14} className="text-neutral-500" />
         </TouchableOpacity>
       </View>
@@ -288,7 +288,7 @@ export function RecursiveTaskItem({
                 </div>
                 <input
                   type="text"
-                  className="flex-1 rounded border border-neutral-200 bg-white px-2 py-1 text-sm dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"
+                  className="flex-1 rounded border border-neutral-200 bg-white px-2 py-1 text-sm dark:border-neutral-700 dark:bg-zinc-950 dark:text-white"
                   placeholder="Sub-task title..."
                   value={newSubTaskTitle}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -349,7 +349,7 @@ export function RecursiveTaskItem({
                 <View className="h-1.5 w-1.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
               </View>
               <TextInput
-                className="flex-1 rounded border border-neutral-200 bg-white px-2 py-1 text-sm dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"
+                className="flex-1 rounded border border-neutral-200 bg-white px-2 py-1 text-sm dark:border-neutral-700 dark:bg-zinc-950 dark:text-white"
                 placeholder="Sub-task title..."
                 value={newSubTaskTitle}
                 onChangeText={setNewSubTaskTitle}

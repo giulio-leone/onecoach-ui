@@ -84,13 +84,13 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             'touch-manipulation', // Optimize for touch
 
             // Background and text with improved dark mode contrast
-            'bg-white dark:bg-neutral-800',
+            'bg-white dark:bg-white/[0.04]',
             'text-neutral-900 dark:text-neutral-100',
             'border-neutral-300 dark:border-neutral-600',
 
             // Hover states for better interactivity
             'hover:border-neutral-400 dark:hover:border-neutral-500',
-            'hover:bg-neutral-50 dark:hover:bg-neutral-700/30',
+            'hover:bg-neutral-50 dark:hover:bg-white/[0.08]/30',
 
             // Focus states with high contrast
             error

@@ -159,7 +159,7 @@ export function ChatHistoryModal({
                 placeholder="Cerca nelle conversazioni..."
                 value={search}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
-                className="border-neutral-200 bg-white pl-10 focus:ring-indigo-500 dark:border-white/10 dark:bg-neutral-900"
+                className="border-neutral-200 bg-white pl-10 focus:ring-indigo-500 dark:border-white/10 dark:bg-zinc-950"
                 autoFocus
               />
             </div>

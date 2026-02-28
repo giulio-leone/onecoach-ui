@@ -155,7 +155,7 @@ export function ModernSidebar({
               onClick={() => toggleGroup(key)}
               className={cn(
                 'group relative flex w-full items-center gap-3 rounded-xl py-2.5 pr-3 text-left transition-all duration-200',
-                'hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50',
+                'hover:bg-neutral-100/50 dark:hover:bg-white/[0.06]/50',
                 (isActive || hasActiveChild || isGroupOpen) &&
                   'bg-primary-50/80 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400',
                 isCollapsed && 'justify-center px-2'
@@ -298,7 +298,7 @@ export function ModernSidebar({
                     // Do NOT close mobile sidebar here, otherwise the local state is lost and modal never opens
                     // onCloseMobile?.();
                   }}
-                  className="border-transparent bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700"
+                  className="border-transparent bg-neutral-100 hover:bg-neutral-200 dark:bg-white/[0.04] dark:hover:bg-white/[0.08]"
                 >
                   Storico
                 </Button>
@@ -367,7 +367,7 @@ export function ModernSidebar({
             )}
 
             {/* User Info */}
-            <div className="relative rounded-xl border border-transparent bg-transparent transition-colors hover:border-neutral-200 hover:bg-white hover:shadow-sm dark:hover:border-neutral-700 dark:hover:bg-neutral-800">
+            <div className="relative rounded-xl border border-transparent bg-transparent transition-colors hover:border-neutral-200 hover:bg-white hover:shadow-sm dark:hover:border-neutral-700 dark:hover:bg-white/[0.06]">
               <button
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
                 className="flex w-full items-center gap-3 px-2 py-2"

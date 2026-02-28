@@ -518,7 +518,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           <span className="w-full border-t border-neutral-300 dark:border-neutral-700" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-white px-2 text-neutral-500 dark:bg-neutral-900">
+          <span className="bg-white px-2 text-neutral-500 dark:bg-zinc-950">
             {t('register_form.oppure')}
           </span>
         </div>
@@ -530,7 +530,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           type="button"
           variant="outline"
           size="md"
-          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-white/[0.06]"
           disabled
           aria-disabled="true"
         >
@@ -564,7 +564,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           type="button"
           variant="outline"
           size="md"
-          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-white/[0.06]"
           disabled
           aria-disabled="true"
         >

@@ -193,7 +193,7 @@ export function WorkoutProgramDashboard({
           <div className="flex gap-3">
             <button
               onClick={onDelete}
-              className="flex h-10 items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 text-sm font-semibold text-rose-600 shadow-sm transition-all hover:border-rose-200 hover:bg-rose-50 dark:border-white/[0.08] dark:bg-neutral-900 dark:text-rose-500 dark:hover:bg-rose-900/20"
+              className="flex h-10 items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 text-sm font-semibold text-rose-600 shadow-sm transition-all hover:border-rose-200 hover:bg-rose-50 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-rose-500 dark:hover:bg-rose-900/20"
             >
               Elimina
             </button>
@@ -311,7 +311,7 @@ export function WorkoutProgramDashboard({
                   <div key={week.weekNumber} className="space-y-4">
                     {/* Week Header */}
                     <div className="flex items-center gap-4">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-200 text-sm font-bold text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-200 text-sm font-bold text-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300">
                         {week.weekNumber}
                       </div>
                       <div>
@@ -324,7 +324,7 @@ export function WorkoutProgramDashboard({
                           </p>
                         )}
                       </div>
-                      <div className="h-px flex-1 bg-neutral-200 dark:bg-neutral-800" />
+                      <div className="h-px flex-1 bg-neutral-200 dark:bg-white/[0.04]" />
                     </div>
 
                     {/* Days Grid */}

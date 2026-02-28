@@ -154,7 +154,7 @@ export function DeployToClientsModal({
 
         <div className="space-y-4">
           {/* Template info */}
-          <div className="rounded-lg bg-neutral-100 p-3 dark:bg-neutral-800">
+          <div className="rounded-lg bg-neutral-100 p-3 dark:bg-white/[0.04]">
             <div className="text-xs text-neutral-500 uppercase">
               {type === 'workout' ? 'Programma' : 'Piano Nutrizionale'}
             </div>
@@ -216,7 +216,7 @@ export function DeployToClientsModal({
                       className={`flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors ${
                         selectedUsers.includes(client.id)
                           ? 'bg-primary-50 dark:bg-primary-900/30'
-                          : 'hover:bg-neutral-50 dark:hover:bg-neutral-800'
+                          : 'hover:bg-neutral-50 dark:hover:bg-white/[0.06]'
                       }`}
                     >
                       <Checkbox

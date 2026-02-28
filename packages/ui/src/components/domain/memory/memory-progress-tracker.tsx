@@ -90,7 +90,7 @@ export function MemoryProgressTracker({ userId, className }: MemoryProgressTrack
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                   setEventType(e.target.value as TimelineEventType)
                 }
-                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-900"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm dark:border-neutral-700 dark:bg-zinc-950"
               >
                 <option value="progress">Progresso</option>
                 <option value="injury">Infortunio</option>

@@ -89,7 +89,7 @@ export function ProtectedHeader({ user }: ProtectedHeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+    <header className="sticky top-0 z-40 border-b border-neutral-200/60 bg-white/80 shadow-sm backdrop-blur-xl dark:border-white/[0.06] dark:bg-[#09090b]/80 dark:shadow-[0_1px_3px_rgba(0,0,0,0.4)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Left Section: Logo & Injected Actions */}
@@ -123,7 +123,7 @@ export function ProtectedHeader({ user }: ProtectedHeaderProps) {
                   className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActive
                       ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-400'
-                      : 'text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-800'
+                      : 'text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-white/[0.06]'
                   }`}
                 >
                   <item.icon className="h-4 w-4" />

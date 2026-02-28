@@ -126,7 +126,7 @@ export function MessageThread({ conversationId, currentUserId }: MessageThreadPr
                   className={`rounded-lg px-4 py-2 ${
                     isOwn
                       ? 'bg-primary-500 text-white'
-                      : 'bg-neutral-100 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100'
+                      : 'bg-neutral-100 text-neutral-900 dark:bg-white/[0.04] dark:text-neutral-100'
                   } ${isImportant ? 'ring-2 ring-yellow-500' : ''}`}
                 >
                   <div className="flex items-center gap-2">

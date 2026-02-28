@@ -107,7 +107,7 @@ export const Combobox = ({
               <Search className="absolute top-1/2 left-4 h-4 w-4 -translate-y-[calc(50%+4px)] text-neutral-400" />
               <Command.Input
                 placeholder={searchPlaceholder}
-                className="w-full rounded-lg border border-neutral-200 bg-white/50 px-8 py-1.5 text-sm transition-colors outline-none placeholder:text-neutral-400 focus:border-primary-500/50 focus:bg-white dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:focus:border-primary-500/50"
+                className="w-full rounded-lg border border-neutral-200 bg-white/50 px-8 py-1.5 text-sm transition-colors outline-none placeholder:text-neutral-400 focus:border-primary-500/50 focus:bg-white dark:border-neutral-700 dark:bg-white/[0.04] dark:text-white dark:focus:border-primary-500/50"
               />
             </div>
 

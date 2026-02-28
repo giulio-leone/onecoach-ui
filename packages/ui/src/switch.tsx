@@ -112,7 +112,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
         >
           <span
             className={cn(
-              'absolute top-1/2 left-0.5 -translate-y-1/2 rounded-full bg-white shadow-md transition-transform duration-200 dark:bg-neutral-900',
+              'absolute top-1/2 left-0.5 -translate-y-1/2 rounded-full bg-white shadow-md transition-transform duration-200 dark:bg-zinc-950',
               switchSizeStyles[size].thumb,
               switchSizeStyles[size].translate
             )}

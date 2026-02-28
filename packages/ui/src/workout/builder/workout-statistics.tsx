@@ -207,7 +207,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
           <motion.div key={idx} variants={itemVariants}>
             <div
               className={cn(
-                'flex flex-row items-center gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-4 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-neutral-900/60'
+                'flex flex-row items-center gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-4 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
               )}
             >
               <div
@@ -239,7 +239,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
         <motion.div variants={itemVariants} className="h-full">
           <div
             className={cn(
-              'flex h-full flex-col rounded-2xl border border-neutral-200 bg-neutral-50 p-6 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-neutral-900/60'
+              'flex h-full flex-col rounded-2xl border border-neutral-200 bg-neutral-50 p-6 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
             )}
           >
             <div className="mb-6 flex items-center gap-2">
@@ -307,7 +307,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
         <motion.div variants={itemVariants} className="h-full">
           <div
             className={cn(
-              'flex h-full flex-col rounded-2xl border border-neutral-200 bg-neutral-50 p-6 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-neutral-900/60'
+              'flex h-full flex-col rounded-2xl border border-neutral-200 bg-neutral-50 p-6 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
             )}
           >
             <div className="mb-6 flex items-center gap-2">
@@ -348,7 +348,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
       <motion.div variants={itemVariants}>
         <div
           className={cn(
-            'rounded-2xl border border-neutral-200 bg-neutral-50 p-6 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-neutral-900/60'
+            'rounded-2xl border border-neutral-200 bg-neutral-50 p-6 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
           )}
         >
           <div className="mb-6 flex items-center gap-2">
@@ -436,7 +436,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
         <motion.div variants={itemVariants}>
           <div
             className={cn(
-              'flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-neutral-900/60'
+              'flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
             )}
           >
             <div className="border-b border-neutral-200 bg-neutral-100/50 px-6 py-4 dark:border-white/5 dark:bg-white/5">
@@ -522,7 +522,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
         <motion.div variants={itemVariants}>
           <div
             className={cn(
-              'flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-neutral-900/60'
+              'flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
             )}
           >
             <div className="border-b border-neutral-200 bg-neutral-100/50 px-6 py-4 dark:border-white/5 dark:bg-white/5">

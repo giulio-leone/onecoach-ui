@@ -69,7 +69,7 @@ export function StreamingOutputPanel({
   };
 
   return (
-    <div className="flex h-full min-h-[400px] flex-col overflow-x-hidden rounded-2xl border-2 border-neutral-200 bg-white shadow-lg sm:min-h-[500px] dark:border-neutral-700 dark:bg-neutral-900">
+    <div className="flex h-full min-h-[400px] flex-col overflow-x-hidden rounded-2xl border-2 border-neutral-200 bg-white shadow-lg sm:min-h-[500px] dark:border-neutral-700 dark:bg-zinc-950">
       {/* Header */}
       <div className="flex items-center justify-between border-b-2 border-neutral-200 p-3 sm:p-4 dark:border-neutral-700">
         <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
@@ -93,7 +93,7 @@ export function StreamingOutputPanel({
           {content && (
             <button
               onClick={handleCopy}
-              className="rounded-lg border border-neutral-300 p-2 text-neutral-600 transition-colors active:bg-neutral-100 sm:hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+              className="rounded-lg border border-neutral-300 p-2 text-neutral-600 transition-colors active:bg-neutral-100 sm:hover:bg-neutral-100 dark:border-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400"
               title="Copia"
               aria-label="Copia contenuto"
             >
@@ -106,7 +106,7 @@ export function StreamingOutputPanel({
           )}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="rounded-lg border border-neutral-300 p-2 text-neutral-600 transition-colors active:bg-neutral-100 sm:hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+            className="rounded-lg border border-neutral-300 p-2 text-neutral-600 transition-colors active:bg-neutral-100 sm:hover:bg-neutral-100 dark:border-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400"
             aria-label={isExpanded ? 'Comprimi' : 'Espandi'}
           >
             {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}

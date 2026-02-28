@@ -170,7 +170,7 @@ export function SessionEditCard({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="rounded-xl border border-primary-500 bg-white p-4 shadow-lg dark:border-primary-500 dark:bg-neutral-800"
+      className="rounded-xl border border-primary-500 bg-white p-4 shadow-lg dark:border-primary-500 dark:bg-white/[0.04]"
     >
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
@@ -382,7 +382,7 @@ function CounterButton({ onClick, children }: CounterButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="flex h-8 w-8 items-center justify-center rounded-md border border-neutral-200 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700"
+      className="flex h-8 w-8 items-center justify-center rounded-md border border-neutral-200 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-white dark:hover:bg-white/[0.08]"
     >
       {children}
     </button>

@@ -102,7 +102,7 @@ export function AppShellHeader({
         <div className="flex min-w-0 flex-1 items-center gap-2 lg:gap-4">
           <button
             onClick={toggleMobileMenu}
-            className="rounded-lg p-2 text-neutral-500 hover:bg-neutral-100 lg:hidden dark:text-neutral-400 dark:hover:bg-neutral-800"
+            className="rounded-lg p-2 text-neutral-500 hover:bg-neutral-100 lg:hidden dark:text-neutral-400 dark:hover:bg-white/[0.06]"
             aria-label={labels.openMenu}
           >
             <Menu className="h-6 w-6" />
@@ -142,7 +142,7 @@ export function AppShellHeader({
           <button
             onClick={toggleCopilotEnabled}
             className={cn(
-              'rounded-md p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800',
+              'rounded-md p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.06]',
               user?.copilotEnabled
                 ? 'text-primary-600 dark:text-primary-400'
                 : 'text-neutral-500 dark:text-neutral-400'

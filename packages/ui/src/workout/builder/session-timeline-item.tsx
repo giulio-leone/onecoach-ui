@@ -127,7 +127,7 @@ function SelectionIndicator({ isSelected }: { isSelected: boolean }) {
 
 function WeekBadge({ weekNumber }: { weekNumber: number }) {
   return (
-    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 font-mono text-xs font-bold text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 font-mono text-xs font-bold text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
       W{weekNumber}
     </div>
   );
@@ -214,8 +214,8 @@ function DynamicValueBadge({ value, isSelected }: DynamicValueBadgeProps) {
       animate={{ scale: 1 }}
       className={`hidden min-w-[80px] rounded-lg px-3 py-1.5 text-center font-mono font-bold transition-colors sm:block ${
         isSelected
-          ? 'bg-white text-primary-600 shadow-sm dark:bg-neutral-800 dark:text-primary-400'
-          : 'bg-neutral-100 text-neutral-400 dark:bg-neutral-800 dark:text-neutral-600'
+          ? 'bg-white text-primary-600 shadow-sm dark:bg-white/[0.04] dark:text-primary-400'
+          : 'bg-neutral-100 text-neutral-400 dark:bg-white/[0.04] dark:text-neutral-600'
       }`}
     >
       {value}
@@ -229,7 +229,7 @@ function DynamicValueBadge({ value, isSelected }: DynamicValueBadgeProps) {
 
 function getCardClassName(isSelected: boolean, isOverridden: boolean): string {
   if (!isSelected) {
-    return 'border-neutral-200 bg-white opacity-60 hover:opacity-100 dark:border-white/[0.08] dark:bg-neutral-900';
+    return 'border-neutral-200 bg-white opacity-60 hover:opacity-100 dark:border-white/[0.08] dark:bg-zinc-950';
   }
 
   if (isOverridden) {

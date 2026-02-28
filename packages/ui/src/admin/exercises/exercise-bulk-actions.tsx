@@ -36,7 +36,7 @@ export function ExerciseBulkActions({
       className={cn(
         'flex flex-wrap items-center justify-between gap-3',
         'rounded-xl border p-4',
-        'border-neutral-200 bg-white shadow-sm dark:border-white/[0.08] dark:bg-neutral-900'
+        'border-neutral-200 bg-white shadow-sm dark:border-white/[0.08] dark:bg-zinc-950'
       )}
     >
       {/* Selezione */}

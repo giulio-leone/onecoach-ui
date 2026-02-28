@@ -219,7 +219,7 @@ export function FrameworkTab({
                 'rounded-2xl transition-all duration-200',
                 'border',
                 config.isEnabled
-                  ? 'border-primary-200 dark:border-primary-800 bg-white dark:bg-neutral-800'
+                  ? 'border-primary-200 dark:border-primary-800 bg-white dark:bg-white/[0.04]'
                   : 'border-neutral-200/50 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-800/50'
               )}
             >
@@ -250,7 +250,7 @@ export function FrameworkTab({
                     onClick={() => setExpandedFeature(isExpanded ? null : config.feature)}
                     className={cn(
                       'rounded-lg p-2 transition-colors',
-                      'hover:bg-neutral-100 dark:hover:bg-neutral-700'
+                      'hover:bg-neutral-100 dark:hover:bg-white/[0.08]'
                     )}
                   >
                     {isExpanded ? (
@@ -396,7 +396,7 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                 className={cn(
                   'w-full rounded-xl border px-4 py-2.5',
                   'border-neutral-200 dark:border-neutral-700',
-                  'bg-white dark:bg-neutral-800',
+                  'bg-white dark:bg-white/[0.04]',
                   'text-neutral-900 dark:text-white',
                   'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2',
                   'disabled:cursor-not-allowed disabled:opacity-50'
@@ -415,7 +415,7 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                 className={cn(
                   'w-full rounded-xl border px-4 py-2.5',
                   'border-neutral-200 dark:border-neutral-700',
-                  'bg-white dark:bg-neutral-800',
+                  'bg-white dark:bg-white/[0.04]',
                   'text-neutral-900 dark:text-white',
                   'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2',
                   'disabled:cursor-not-allowed disabled:opacity-50'

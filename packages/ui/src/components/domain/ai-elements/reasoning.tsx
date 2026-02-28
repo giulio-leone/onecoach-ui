@@ -58,7 +58,7 @@ export const ReasoningTrigger = forwardRef<HTMLButtonElement, ReasoningTriggerPr
         className={cn(
           'flex w-full items-center justify-between px-3 py-2',
           'text-left transition-colors',
-          'hover:bg-neutral-100 dark:hover:bg-neutral-700/50',
+          'hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50',
           className
         )}
         data-state={isOpen ? 'open' : 'closed'}
@@ -130,7 +130,7 @@ export function ReasoningBubble({ text, isStreaming }: ReasoningBubbleProps) {
     <div className="mb-3 rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/30">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700/50"
+        className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50"
       >
         <div className="flex items-center gap-2">
           <Brain className={cn('h-4 w-4 text-secondary-500', isStreaming && 'animate-pulse')} />

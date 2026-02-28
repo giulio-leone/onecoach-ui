@@ -132,7 +132,7 @@ export function AdminTabs({ tabs, defaultTab, onTabChange, className }: AdminTab
                       'sm:px-2',
                       isActive
                         ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300'
-                        : 'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400'
+                        : 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400'
                     )}
                   >
                     {tab.count}

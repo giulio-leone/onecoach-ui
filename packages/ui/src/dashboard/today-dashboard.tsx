@@ -107,7 +107,7 @@ export function TodayDashboard({
         <button
           type="button"
           onClick={() => onDateChange?.(shiftDate(date, -1))}
-          className="rounded-lg p-2 text-neutral-500 transition hover:bg-neutral-100 dark:hover:bg-neutral-800"
+          className="rounded-lg p-2 text-neutral-500 transition hover:bg-neutral-100 dark:hover:bg-white/[0.06]"
           aria-label="Previous day"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -125,7 +125,7 @@ export function TodayDashboard({
         <button
           type="button"
           onClick={() => onDateChange?.(shiftDate(date, 1))}
-          className="rounded-lg p-2 text-neutral-500 transition hover:bg-neutral-100 dark:hover:bg-neutral-800"
+          className="rounded-lg p-2 text-neutral-500 transition hover:bg-neutral-100 dark:hover:bg-white/[0.06]"
           aria-label="Next day"
         >
           <ChevronRight className="h-5 w-5" />
@@ -133,7 +133,7 @@ export function TodayDashboard({
       </div>
 
       {/* ── Workout card ── */}
-      <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+      <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-zinc-950">
         <div className="mb-4 flex items-center gap-2">
           <Dumbbell className="h-5 w-5 text-violet-500" />
           <h3 className="text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
@@ -211,7 +211,7 @@ export function TodayDashboard({
 
       {/* ── Nutrition card ── */}
       {nutrition && (
-        <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+        <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-zinc-950">
           <div className="mb-4 flex items-center gap-2">
             <Utensils className="h-5 w-5 text-emerald-500" />
             <h3 className="text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">

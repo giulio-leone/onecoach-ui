@@ -131,8 +131,8 @@ function NotificationItem({
         className={cn(
           'flex h-8 w-8 shrink-0 items-center justify-center rounded-full',
           notification.read
-            ? 'bg-neutral-100 dark:bg-neutral-800'
-            : 'bg-white shadow-sm dark:bg-neutral-800',
+            ? 'bg-neutral-100 dark:bg-white/[0.04]'
+            : 'bg-white shadow-sm dark:bg-white/[0.04]',
         )}
       >
         <Icon className={cn('h-4 w-4', config.color)} />
@@ -209,7 +209,7 @@ export function NotificationCenter({
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+        className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]"
       >
         <Bell className="h-5 w-5" />
         {unreadCount > 0 && (
@@ -230,7 +230,7 @@ export function NotificationCenter({
 
           <div
             className={cn(
-              'absolute right-0 z-50 mt-2 w-[360px] overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-xl dark:border-white/[0.08] dark:bg-neutral-900',
+              'absolute right-0 z-50 mt-2 w-[360px] overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-xl dark:border-white/[0.08] dark:bg-zinc-950',
               'max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:top-auto max-sm:mt-0 max-sm:w-full max-sm:rounded-b-none max-sm:rounded-t-2xl',
             )}
           >
@@ -264,7 +264,7 @@ export function NotificationCenter({
             <div className="max-h-[400px] overflow-y-auto max-sm:max-h-[60vh]">
               {notifications.length === 0 ? (
                 <div className="flex flex-col items-center justify-center px-6 py-12 text-center">
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-800">
+                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100 dark:bg-white/[0.04]">
                     <Inbox className="h-6 w-6 text-neutral-400" />
                   </div>
                   <p className="text-sm font-medium text-neutral-600 dark:text-neutral-300">

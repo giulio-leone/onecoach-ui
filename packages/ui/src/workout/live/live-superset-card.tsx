@@ -91,7 +91,7 @@ export function LiveSupersetCard({
                     ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400'
                     : expandedExercise === idx
                       ? 'bg-secondary-100 text-secondary-700 dark:bg-secondary-500/20 dark:text-secondary-400'
-                      : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
+                      : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-400'
                 }`}
               >
                 {ex.name}
@@ -119,7 +119,7 @@ export function LiveSupersetCard({
                 className={`flex w-full items-center justify-between px-5 py-3 transition-colors ${
                   isDone
                     ? 'bg-emerald-50 dark:bg-emerald-500/5'
-                    : 'hover:bg-neutral-50 dark:hover:bg-neutral-800/50'
+                    : 'hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50'
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -148,7 +148,7 @@ export function LiveSupersetCard({
                 <div className="bg-neutral-50 px-5 py-4 dark:bg-neutral-900/30">
                   <div className="mb-3 grid grid-cols-3 gap-3 text-center">
                     {sets.slice(0, 3).map((set, setIdx) => (
-                      <div key={setIdx} className="rounded-lg bg-white p-3 dark:bg-neutral-800">
+                      <div key={setIdx} className="rounded-lg bg-white p-3 dark:bg-white/[0.04]">
                         <p className="text-xs text-neutral-500">Set {setIdx + 1}</p>
                         <p className="font-bold text-neutral-900 dark:text-white">
                           {set.reps ?? '-'} rep

@@ -536,7 +536,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
                 'border-neutral-200 dark:border-neutral-700',
-                'bg-white dark:bg-neutral-800',
+                'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}
@@ -561,7 +561,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
                 'border-neutral-200 dark:border-neutral-700',
-                'bg-white dark:bg-neutral-800',
+                'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}
@@ -583,7 +583,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
                 'border-neutral-200 dark:border-neutral-700',
-                'bg-white dark:bg-neutral-800',
+                'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}
@@ -606,7 +606,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
                 'border-neutral-200 dark:border-neutral-700',
-                'bg-white dark:bg-neutral-800',
+                'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}

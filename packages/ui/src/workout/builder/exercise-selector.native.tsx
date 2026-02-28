@@ -95,7 +95,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
       <View className="flex-1 justify-end bg-black/50 sm:justify-center">
         <Card
           variant="glass"
-          className="h-[90%] w-full overflow-hidden rounded-t-3xl bg-white p-0 sm:h-[80%] sm:w-[600px] sm:self-center sm:rounded-3xl dark:bg-neutral-900"
+          className="h-[90%] w-full overflow-hidden rounded-t-3xl bg-white p-0 sm:h-[80%] sm:w-[600px] sm:self-center sm:rounded-3xl dark:bg-zinc-950"
         >
           {/* Header */}
           <View className="border-b border-neutral-200 p-4 dark:border-neutral-700">
@@ -108,7 +108,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
               </Pressable>
             </View>
 
-            <View className="flex-row items-center gap-2 rounded-xl bg-neutral-100 p-2 dark:bg-neutral-800">
+            <View className="flex-row items-center gap-2 rounded-xl bg-neutral-100 p-2 dark:bg-white/[0.04]">
               <Search size={20} className="ml-2 text-neutral-500" />
               <TextInput
                 value={searchQuery}
@@ -157,7 +157,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                     <Pressable
                       key={ex.id}
                       onPress={() => handleSelect(ex)}
-                      className="flex-row items-center gap-4 rounded-xl border border-neutral-200 bg-white p-4 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/50 dark:hover:bg-neutral-800"
+                      className="flex-row items-center gap-4 rounded-xl border border-neutral-200 bg-white p-4 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/50 dark:hover:bg-white/[0.06]"
                     >
                       <View className="h-12 w-12 items-center justify-center rounded-full bg-primary-50 dark:bg-primary-900/20">
                         <Dumbbell size={24} className="text-primary-600 dark:text-primary-400" />

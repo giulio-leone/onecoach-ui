@@ -41,7 +41,7 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
               <View
                 className={cn(
                   'flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300',
-                  'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400',
+                  'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400',
                   'group-hover:bg-indigo-500 group-hover:text-white'
                 )}
               >

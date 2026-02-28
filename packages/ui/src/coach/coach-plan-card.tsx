@@ -64,7 +64,7 @@ export function CoachPlanCard({
   return (
     <Card variant="hover" className="overflow-hidden">
       {/* Cover Image */}
-      <div className="relative h-48 w-full bg-neutral-100 dark:bg-neutral-800">
+      <div className="relative h-48 w-full bg-neutral-100 dark:bg-white/[0.04]">
         {coverImage ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={coverImage} alt={title} className="h-full w-full object-cover" />

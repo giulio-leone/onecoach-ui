@@ -89,12 +89,12 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
       <div className="space-y-8">
         {[1, 2].map((i: any) => (
           <div key={i} className="space-y-4">
-            <div className="h-8 w-48 animate-pulse rounded-lg bg-neutral-100 dark:bg-neutral-800" />
+            <div className="h-8 w-48 animate-pulse rounded-lg bg-neutral-100 dark:bg-white/[0.04]" />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {[1, 2, 3].map((j: any) => (
                 <div
                   key={j}
-                  className="h-64 animate-pulse rounded-2xl bg-neutral-100 dark:bg-neutral-800"
+                  className="h-64 animate-pulse rounded-2xl bg-neutral-100 dark:bg-white/[0.04]"
                 />
               ))}
             </div>
@@ -181,7 +181,7 @@ function SavedTripCard({ trip }: { trip: SavedTrip }) {
     >
       <Card
         variant="glass-premium"
-        className="group relative h-full overflow-hidden border-white/10 bg-white/5 p-0 transition-all hover:border-primary-500/30 hover:bg-white/10 dark:border-white/[0.08] dark:bg-neutral-900"
+        className="group relative h-full overflow-hidden border-white/10 bg-white/5 p-0 transition-all hover:border-primary-500/30 hover:bg-white/10 dark:border-white/[0.08] dark:bg-zinc-950"
       >
         {/* Header Image / Pattern */}
         <div className="absolute inset-0 z-0 h-32 bg-gradient-to-b from-primary-500/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />

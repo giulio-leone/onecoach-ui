@@ -65,7 +65,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
     const styles = {
       PUBLISHED: 'bg-green-100 text-green-800',
       DRAFT: 'bg-yellow-100 text-yellow-800',
-      ARCHIVED: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200',
+      ARCHIVED: 'bg-neutral-100 dark:bg-white/[0.04] text-neutral-800 dark:text-neutral-200',
     };
 
     const labels = {
@@ -85,9 +85,9 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
 
   return (
     <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black p-4">
-      <div className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-2xl bg-white shadow-xl dark:bg-neutral-900">
+      <div className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-2xl bg-white shadow-xl dark:bg-zinc-950">
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white px-6 py-4 dark:border-neutral-700 dark:bg-neutral-900">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white px-6 py-4 dark:border-neutral-700 dark:bg-zinc-950">
           <div className="flex items-center gap-3">
             <div className="rounded-lg bg-secondary-100 p-2">
               <History className="h-5 w-5 text-secondary-600" />
@@ -103,7 +103,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
           </div>
           <button
             onClick={onClose}
-            className="rounded-lg p-2 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400 dark:text-neutral-600"
+            className="rounded-lg p-2 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400 dark:text-neutral-600"
           >
             <X className="h-5 w-5" />
           </button>
@@ -136,7 +136,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
               {history.map((item: PolicyHistory) => (
                 <div
                   key={item.id}
-                  className="rounded-lg border border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-600 dark:border-neutral-700 dark:bg-neutral-900"
+                  className="rounded-lg border border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-600 dark:border-neutral-700 dark:bg-zinc-950"
                 >
                   {/* Version Header */}
                   <div
@@ -226,7 +226,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
         </div>
 
         {/* Footer */}
-        <div className="sticky bottom-0 border-t border-neutral-200 bg-white px-6 py-4 dark:border-neutral-700 dark:bg-neutral-900">
+        <div className="sticky bottom-0 border-t border-neutral-200 bg-white px-6 py-4 dark:border-neutral-700 dark:bg-zinc-950">
           <div className="flex justify-end">
             <Button onClick={onClose} variant="secondary">
               Chiudi

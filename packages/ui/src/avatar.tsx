@@ -47,7 +47,7 @@ export function Avatar({
           onError={() => setImageError(true)}
         />
       ) : (
-        <div className="flex h-full w-full items-center justify-center bg-neutral-100 font-medium text-neutral-600 uppercase dark:bg-neutral-800 dark:text-neutral-300">
+        <div className="flex h-full w-full items-center justify-center bg-neutral-100 font-medium text-neutral-600 uppercase dark:bg-white/[0.04] dark:text-neutral-300">
           {fallback.slice(0, 2)}
         </div>
       )}

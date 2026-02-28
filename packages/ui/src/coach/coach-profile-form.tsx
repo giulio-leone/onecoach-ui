@@ -185,7 +185,7 @@ const VerificationBadge = ({ status }: { status: string }) => {
     icon: Shield,
     label: 'Sconosciuto',
     className:
-      'bg-neutral-50 text-neutral-600 border-neutral-200 dark:bg-neutral-950 dark:text-neutral-400 dark:border-neutral-800',
+      'bg-neutral-50 text-neutral-600 border-neutral-200 dark:bg-[#09090b] dark:text-neutral-400 dark:border-neutral-800',
   };
 
   const Icon = config.icon;
@@ -766,7 +766,7 @@ export function CoachProfileForm({ initialProfile, isLoading }: CoachProfileForm
                           'rounded-xl p-3 transition-colors',
                           formData.isPubliclyVisible
                             ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400'
-                            : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
+                            : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-400'
                         )}
                       >
                         {formData.isPubliclyVisible ? <Eye size={24} /> : <EyeOff size={24} />}

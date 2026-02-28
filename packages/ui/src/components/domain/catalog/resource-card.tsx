@@ -81,13 +81,13 @@ export const ResourceCard = ({
             type="checkbox"
             checked={isSelected || false}
             onChange={handleSelectChange}
-            className="h-5 w-5 cursor-pointer rounded border-2 border-neutral-300 bg-white text-primary-600 transition-colors focus:ring-2 focus:ring-primary-500 dark:border-neutral-600 dark:bg-neutral-800 dark:checked:border-primary-500 dark:checked:bg-primary-500"
+            className="h-5 w-5 cursor-pointer rounded border-2 border-neutral-300 bg-white text-primary-600 transition-colors focus:ring-2 focus:ring-primary-500 dark:border-neutral-600 dark:bg-white/[0.04] dark:checked:border-primary-500 dark:checked:bg-primary-500"
           />
         </div>
       )}
 
       {/* Image Section */}
-      <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+      <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 dark:bg-white/[0.04]">
         {imageSrc ? (
           <Image
             src={imageSrc}
@@ -153,13 +153,13 @@ export const ResourceCard = ({
             {badges.slice(0, 3).map((badge: string) => (
               <span
                 key={badge}
-                className="inline-flex items-center rounded-md bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
+                className="inline-flex items-center rounded-md bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-300"
               >
                 {badge}
               </span>
             ))}
             {badges.length > 3 && (
-              <span className="inline-flex items-center rounded-md bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-500 dark:bg-neutral-800">
+              <span className="inline-flex items-center rounded-md bg-neutral-100 px-2 py-1 text-xs font-medium text-neutral-500 dark:bg-white/[0.04]">
                 +{badges.length - 3}
               </span>
             )}

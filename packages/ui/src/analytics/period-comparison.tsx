@@ -84,7 +84,7 @@ function DeltaBadge({
     <span
       className={cn(
         'inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-xs font-semibold',
-        isNeutral && 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400',
+        isNeutral && 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-400',
         !isNeutral &&
           isImproved &&
           'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400',
@@ -184,7 +184,7 @@ function ComparisonBar({
     <div className="space-y-1">
       <p className="text-xs font-medium text-neutral-500 dark:text-neutral-400">{label}</p>
       <div className="flex items-center gap-2">
-        <div className="h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
+        <div className="h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.04]">
           <div
             className="h-full rounded-full bg-primary-500 transition-all"
             style={{ width: `${curW}%` }}
@@ -195,7 +195,7 @@ function ComparisonBar({
         </span>
       </div>
       <div className="flex items-center gap-2">
-        <div className="h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
+        <div className="h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.04]">
           <div
             className="h-full rounded-full bg-neutral-400 transition-all dark:bg-neutral-600"
             style={{ width: `${prevW}%` }}
@@ -258,7 +258,7 @@ export function PeriodComparison({
           {curLabel}
         </span>
         <span className="text-neutral-400">vs</span>
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-1 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-1 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
           <span className="h-2 w-2 rounded-full bg-neutral-400 dark:bg-neutral-600" />
           {prevLabel}
         </span>

@@ -30,7 +30,7 @@ const badgeStyles: Record<BadgeVariant, string> = {
   'role-user': 'bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-400',
   'status-active': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400',
   'status-suspended': 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400',
-  'status-deleted': 'bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200',
+  'status-deleted': 'bg-neutral-100 text-neutral-800 dark:bg-white/[0.04] dark:text-neutral-200',
 };
 
 const defaultIcons: Partial<Record<BadgeVariant, React.ReactNode>> = {

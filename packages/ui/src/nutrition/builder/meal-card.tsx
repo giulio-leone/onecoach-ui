@@ -229,7 +229,7 @@ export function SimpleMealCard({
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       handleUpdateFoodQuantity(foodIndex, parseFloat(e.target.value) || 0)
                     }
-                    className="h-8 w-20 px-2 py-1 text-sm bg-white dark:bg-neutral-800"
+                    className="h-8 w-20 px-2 py-1 text-sm bg-white dark:bg-white/[0.04]"
                     min={0}
                     step={1}
                   />
@@ -255,7 +255,7 @@ export function SimpleMealCard({
           <Button
             variant="outline"
             onClick={onAddFood}
-            className="flex w-full items-center justify-center gap-2 border-dashed border-neutral-300 py-3 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+            className="flex w-full items-center justify-center gap-2 border-dashed border-neutral-300 py-3 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-white/[0.06]"
           >
             <Plus size={16} className="text-neutral-500 dark:text-neutral-400" />
             <span className="font-medium text-neutral-600 dark:text-neutral-400">

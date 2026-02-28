@@ -83,7 +83,7 @@ export function CoachClientCard({ client }: CoachClientCardProps) {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
+              <div className="rounded-lg bg-neutral-50 p-3 dark:bg-zinc-950">
                 <div className="flex items-center gap-2 text-xs font-medium text-neutral-500">
                   <Dumbbell className="h-3.5 w-3.5" />
                   <span>{t('programs')}</span>
@@ -92,7 +92,7 @@ export function CoachClientCard({ client }: CoachClientCardProps) {
                   {client.programsPurchased}
                 </div>
               </div>
-              <div className="rounded-lg bg-neutral-50 p-3 dark:bg-neutral-900">
+              <div className="rounded-lg bg-neutral-50 p-3 dark:bg-zinc-950">
                 <div className="flex items-center gap-2 text-xs font-medium text-neutral-500">
                   <CreditCard className="h-3.5 w-3.5" />
                   <span>{t('spent')}</span>

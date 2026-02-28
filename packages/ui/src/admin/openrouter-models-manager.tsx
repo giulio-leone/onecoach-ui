@@ -296,7 +296,7 @@ export function OpenRouterModelsManager() {
                 </tr>
               ) : (
                 models.map((model: any) => (
-                  <tr key={model.id} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/30">
+                  <tr key={model.id} className="hover:bg-neutral-50 dark:hover:bg-white/[0.06]/30">
                     <td className="px-6 py-4 font-medium">{model.name}</td>
                     <td className="px-6 py-4 text-neutral-500">{model.modelId}</td>
                     <td className="px-6 py-4">
@@ -524,7 +524,7 @@ export function OpenRouterModelsManager() {
               </div>
             ) : (
               <table className="w-full text-left text-sm">
-                <thead className="sticky top-0 z-10 bg-neutral-50 dark:bg-neutral-800">
+                <thead className="sticky top-0 z-10 bg-neutral-50 dark:bg-white/[0.04]">
                   <tr>
                     <th className="w-10 px-4 py-2">
                       <Checkbox
@@ -548,7 +548,7 @@ export function OpenRouterModelsManager() {
                   {filteredSyncModels.map((m: any) => (
                     <tr
                       key={m.modelId}
-                      className="border-b border-neutral-100 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:bg-neutral-800/30"
+                      className="border-b border-neutral-100 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:bg-white/[0.06]/30"
                     >
                       <td className="px-4 py-2">
                         <Checkbox
@@ -698,7 +698,7 @@ export function OpenRouterModelsManager() {
 
           <div className="space-y-4">
             {testResult ? (
-              <div className="rounded bg-neutral-100 p-4 font-mono text-sm whitespace-pre-wrap dark:bg-neutral-900">
+              <div className="rounded bg-neutral-100 p-4 font-mono text-sm whitespace-pre-wrap dark:bg-zinc-950">
                 {testResult}
               </div>
             ) : (

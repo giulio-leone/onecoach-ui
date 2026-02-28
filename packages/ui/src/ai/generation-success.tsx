@@ -28,7 +28,7 @@ export function GenerationSuccess({
       transition={{ duration: 0.4, type: 'spring' }}
       className="mx-auto max-w-lg"
     >
-      <Card className="border-emerald-100 bg-white p-8 shadow-xl shadow-emerald-500/5 dark:border-emerald-900/30 dark:bg-neutral-900">
+      <Card className="border-emerald-100 bg-white p-8 shadow-xl shadow-emerald-500/5 dark:border-emerald-900/30 dark:bg-zinc-950">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ scale: 0 }}

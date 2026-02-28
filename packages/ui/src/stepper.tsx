@@ -23,7 +23,7 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
                     isCompleted
                       ? 'border-primary-600 bg-primary-600 dark:border-primary-500 dark:bg-primary-500'
                       : isCurrent
-                        ? 'border-primary-600 bg-white dark:border-primary-500 dark:bg-neutral-900'
+                        ? 'border-primary-600 bg-white dark:border-primary-500 dark:bg-zinc-950'
                         : 'border-neutral-300 bg-transparent dark:border-neutral-700'
                   )}
                 >
@@ -55,7 +55,7 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
               </div>
 
               {index < steps.length - 1 && (
-                <div className="h-[2px] flex-1 bg-neutral-200 dark:bg-neutral-800">
+                <div className="h-[2px] flex-1 bg-neutral-200 dark:bg-white/[0.04]">
                   <div
                     className={cn(
                       'h-full bg-primary-600 transition-all duration-500 dark:bg-primary-500',

@@ -53,7 +53,7 @@ export function MarketplacePlanCard({ plan }: { plan: MarketplacePlanCardProps }
     <Link href={`/marketplace/plans/${plan.id}`}>
       <Card className="h-full cursor-pointer overflow-hidden transition-shadow duration-200 hover:shadow-lg">
         {/* Cover Image */}
-        <div className="relative h-48 w-full bg-neutral-100 dark:bg-neutral-800">
+        <div className="relative h-48 w-full bg-neutral-100 dark:bg-white/[0.04]">
           {plan.coverImage ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={plan.coverImage} alt={plan.title} className="h-full w-full object-cover" />

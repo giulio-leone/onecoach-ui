@@ -28,7 +28,7 @@ export const ModelSelector = ({
   const isHaiku = model === AI_MODELS.HAIKU_4_5;
 
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white p-4 shadow-md dark:bg-neutral-900">
+    <div className="rounded-xl border border-neutral-200 bg-white p-4 shadow-md dark:bg-zinc-950">
       <div className="mb-3 flex items-center gap-2">
         <Settings size={18} className="text-neutral-600" />
         <h3 className="font-semibold text-neutral-900">Configurazione AI</h3>

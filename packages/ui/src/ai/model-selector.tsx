@@ -281,7 +281,7 @@ export const ModelSelectorLogo = ({ provider, className, ...props }: ModelSelect
     alt={`${provider} logo`}
     className={cn(
       'size-5 rounded-md p-0.5',
-      'bg-white dark:bg-neutral-800',
+      'bg-white dark:bg-white/[0.04]',
       'ring-1 ring-neutral-200/50 dark:ring-neutral-700/50',
       className
     )}

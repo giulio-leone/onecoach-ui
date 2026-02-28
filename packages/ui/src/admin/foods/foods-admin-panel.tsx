@@ -180,7 +180,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
         const sanitizedUrl = item.imageUrl ? sanitizeImageUrl(item.imageUrl) : null;
         return (
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-800">
+            <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-neutral-100 dark:bg-white/[0.04]">
               {sanitizedUrl && (
                 <Image
                   src={sanitizedUrl}
@@ -233,7 +233,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
           {item.categories?.map((c: { id: string; name: string }) => (
             <span
               key={c.id}
-              className="inline-flex rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+              className="inline-flex rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400"
             >
               {c.name}
             </span>
@@ -251,7 +251,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
               e.stopPropagation();
               setEditFoodId(item.id);
             }}
-            className="rounded p-1 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-white"
+            className="rounded p-1 text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-white/[0.06] dark:hover:text-white"
           >
             <Edit size={16} />
           </button>

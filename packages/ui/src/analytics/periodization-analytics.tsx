@@ -97,7 +97,7 @@ function MesocycleProgressBar({ progress }: { progress: number }) {
         </span>
         <span className="font-bold text-neutral-900 dark:text-white">{clamped}%</span>
       </div>
-      <div className="h-2.5 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
+      <div className="h-2.5 overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.04]">
         <div
           className="h-full rounded-full bg-gradient-to-r from-primary-500 to-violet-500 transition-all"
           style={{ width: `${clamped}%` }}
@@ -134,7 +134,7 @@ function PhaseTimeline({
       <p className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
         Timeline fasi
       </p>
-      <div className="relative flex h-10 gap-0.5 overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800">
+      <div className="relative flex h-10 gap-0.5 overflow-hidden rounded-xl bg-neutral-100 dark:bg-white/[0.04]">
         {phases.map((phase, i) => {
           const start = new Date(phase.startDate).getTime();
           const end = new Date(phase.endDate).getTime();
@@ -210,7 +210,7 @@ function PhaseDetailCard({ phase }: { phase: PhaseAnalytics }) {
             'rounded-full px-2 py-0.5 text-[10px] font-semibold',
             phase.status === 'completed' && 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400',
             phase.status === 'active' && 'bg-primary-100 text-primary-700 dark:bg-primary-500/10 dark:text-primary-400',
-            phase.status === 'upcoming' && 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
+            phase.status === 'upcoming' && 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-400'
           )}
         >
           {phase.status === 'completed' ? 'Completata' : phase.status === 'active' ? 'Attiva' : 'In arrivo'}
@@ -237,7 +237,7 @@ function PhaseDetailCard({ phase }: { phase: PhaseAnalytics }) {
 
       {/* Completion bar */}
       <div className="mt-3">
-        <div className="h-1.5 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
+        <div className="h-1.5 overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.04]">
           <div
             className={cn('h-full rounded-full transition-all', colors.bar)}
             style={{ width: `${rate}%` }}
@@ -377,7 +377,7 @@ export function PeriodizationAnalytics({
                 'flex w-full items-center gap-3 rounded-lg border px-3 py-2 text-left transition-colors',
                 selectedPhase === i
                   ? 'border-primary-200 bg-primary-50/50 dark:border-primary-500/30 dark:bg-primary-500/5'
-                  : 'border-neutral-100 bg-white/60 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-neutral-900/40 dark:hover:bg-neutral-800/60'
+                  : 'border-neutral-100 bg-white/60 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-neutral-900/40 dark:hover:bg-white/[0.06]/60'
               )}
             >
               <span className={cn('h-2 w-2 shrink-0 rounded-full', colors.bar)} />

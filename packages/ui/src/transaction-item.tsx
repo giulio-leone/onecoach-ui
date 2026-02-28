@@ -45,7 +45,7 @@ export function TransactionItem({
     <div
       className={cn(
         'flex items-center gap-3 p-3 transition-colors sm:gap-4 sm:p-4',
-        'hover:bg-neutral-50 dark:hover:bg-neutral-800/50',
+        'hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50',
         onClick && 'cursor-pointer',
         className
       )}

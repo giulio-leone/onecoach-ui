@@ -165,7 +165,7 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
                     'transition-all duration-200',
                     isActive
                       ? 'bg-primary-50 dark:bg-primary-500/10'
-                      : 'hover:bg-neutral-100 dark:hover:bg-neutral-700/50'
+                      : 'hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50'
                   )}
                 >
                   <div
@@ -225,7 +225,7 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
                   'transition-all duration-200',
                   isActive
                     ? 'text-white'
-                    : 'text-neutral-600 hover:bg-neutral-100/50 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-700/50 dark:hover:text-white'
+                    : 'text-neutral-600 hover:bg-neutral-100/50 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-white/[0.08]/50 dark:hover:text-white'
                 )}
               >
                 {isActive && (

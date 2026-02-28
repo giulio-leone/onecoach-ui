@@ -80,7 +80,7 @@ export function FlightCard({
             'absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full transition-all',
             isFavorite
               ? 'bg-red-500/10 text-red-500 hover:bg-red-500/20'
-              : 'bg-white/50 text-neutral-400 hover:bg-white/80 hover:text-red-500 dark:bg-neutral-800/50 dark:hover:bg-neutral-700',
+              : 'bg-white/50 text-neutral-400 hover:bg-white/80 hover:text-red-500 dark:bg-neutral-800/50 dark:hover:bg-white/[0.08]',
             isTogglingFavorite && 'animate-pulse'
           )}
           aria-label={

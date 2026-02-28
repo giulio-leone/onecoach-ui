@@ -56,8 +56,8 @@ export const GlassToolbar = ({
       {/* View Toggle */}
       {viewMode && onViewModeChange && (
         <>
-          <div className="hidden h-8 w-px bg-neutral-200 sm:block dark:bg-neutral-800" />
-          <div className="flex rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800">
+          <div className="hidden h-8 w-px bg-neutral-200 sm:block dark:bg-white/[0.04]" />
+          <div className="flex rounded-lg bg-neutral-100 p-1 dark:bg-white/[0.04]">
             <button
               type="button"
               onClick={() => onViewModeChange('grid')}

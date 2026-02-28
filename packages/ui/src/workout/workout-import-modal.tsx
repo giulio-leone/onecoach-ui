@@ -447,7 +447,7 @@ export function WorkoutImportModal({
               'flex flex-1 items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors',
               mode === 'auto'
                 ? 'bg-emerald-500 text-white shadow-sm'
-                : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800'
+                : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-white/[0.06]'
             )}
           >
             <Zap className="h-4 w-4" />
@@ -460,7 +460,7 @@ export function WorkoutImportModal({
               'flex flex-1 items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors',
               mode === 'review'
                 ? 'bg-emerald-500 text-white shadow-sm'
-                : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800'
+                : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-white/[0.06]'
             )}
           >
             <Eye className="h-4 w-4" />
@@ -527,7 +527,7 @@ export function WorkoutImportModal({
                       'flex items-center gap-3 rounded-lg border p-3',
                       file.error
                         ? 'border-rose-200 bg-rose-50 dark:border-rose-800 dark:bg-rose-900/20'
-                        : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800'
+                        : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-white/[0.04]'
                     )}
                   >
                     {file.preview ? (
@@ -624,7 +624,7 @@ export function WorkoutImportModal({
         )}
         {/* Progress */}
         {progress && isUploading && (
-          <div className="space-y-2 rounded-lg bg-neutral-100 p-4 dark:bg-neutral-800">
+          <div className="space-y-2 rounded-lg bg-neutral-100 p-4 dark:bg-white/[0.04]">
             <div className="flex items-center justify-between text-sm">
               <span className="font-medium text-neutral-700 dark:text-neutral-300">
                 {progress.message}

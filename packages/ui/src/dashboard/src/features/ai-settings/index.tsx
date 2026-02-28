@@ -525,7 +525,7 @@ export function AISettingsPageClient({
                   'flex min-w-[180px] items-center gap-3 rounded-xl px-3 py-2 text-left text-sm transition-all',
                   isActive
                     ? 'from-primary-500 bg-gradient-to-r to-violet-600 text-white shadow-lg shadow-violet-500/20'
-                    : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800'
+                    : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.06]'
                 )}
               >
                 <Icon className="h-4 w-4" />
@@ -543,7 +543,7 @@ export function AISettingsPageClient({
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
               handleSectionChange(e.target.value as SectionId)
             }
-            className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-800"
+            className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm dark:border-neutral-700 dark:bg-white/[0.04]"
           >
             {sections.map((section: any) => (
               <option key={section.id} value={section.id}>
@@ -572,7 +572,7 @@ export function AISettingsPageClient({
                   'flex items-center gap-3'
                 )}
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-100 dark:bg-white/[0.04]">
                   <Icon className="text-primary-500 h-5 w-5" />
                 </div>
                 <div>
@@ -728,7 +728,7 @@ export function AISettingsPageClient({
             <Link
               href="/admin/prompts"
               aria-label="System Prompts"
-              className="group relative flex items-center gap-3 overflow-visible rounded-xl py-2.5 pr-3 text-neutral-600 transition-all duration-200 hover:bg-neutral-100/50 dark:text-neutral-400 dark:hover:bg-neutral-800/50"
+              className="group relative flex items-center gap-3 overflow-visible rounded-xl py-2.5 pr-3 text-neutral-600 transition-all duration-200 hover:bg-neutral-100/50 dark:text-neutral-400 dark:hover:bg-white/[0.06]/50"
               style={{ paddingLeft: 24 }}
             >
               <div className="bg-primary-50 text-primary-700 ring-primary-100 dark:bg-primary-900/40 dark:text-primary-200 dark:ring-primary-900/60 flex h-9 w-9 items-center justify-center rounded-lg ring-1">

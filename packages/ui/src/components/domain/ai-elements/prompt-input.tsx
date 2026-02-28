@@ -274,7 +274,7 @@ export const PromptInputSubmit = forwardRef<HTMLButtonElement, PromptInputSubmit
           // Disabled state
           isDisabled && [
             'cursor-not-allowed bg-neutral-100 text-neutral-400',
-            'dark:bg-neutral-800 dark:text-neutral-600',
+            'dark:bg-white/[0.04] dark:text-neutral-600',
           ],
           // Streaming/Stop state
           isBusy && [

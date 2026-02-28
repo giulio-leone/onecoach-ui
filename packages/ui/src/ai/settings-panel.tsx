@@ -298,7 +298,7 @@ export function AgentSettingsPanel({
                   onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                     onModelChange(e.target.value)
                   }
-                  className={`w-full rounded-lg border-2 bg-white px-3 py-2 text-sm font-medium dark:bg-neutral-900 ${theme.border} ${
+                  className={`w-full rounded-lg border-2 bg-white px-3 py-2 text-sm font-medium dark:bg-zinc-950 ${theme.border} ${
                     colorTheme === 'nutrition'
                       ? 'focus:border-green-500 focus:ring-green-200'
                       : colorTheme === 'workout'
@@ -324,7 +324,7 @@ export function AgentSettingsPanel({
                   onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                     onModelChange(e.target.value)
                   }
-                  className={`w-full rounded-lg border-2 bg-white px-3 py-2 text-sm font-medium dark:bg-neutral-900 ${theme.border} ${
+                  className={`w-full rounded-lg border-2 bg-white px-3 py-2 text-sm font-medium dark:bg-zinc-950 ${theme.border} ${
                     colorTheme === 'nutrition'
                       ? 'focus:border-green-500 focus:ring-green-200'
                       : colorTheme === 'workout'

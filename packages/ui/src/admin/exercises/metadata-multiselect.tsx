@@ -259,7 +259,7 @@ export function MetadataMultiSelect({
           {required && <span className="ml-1 text-rose-500">*</span>}
         </label>
 
-        <div className="rounded-xl border border-neutral-200 bg-white p-3 dark:border-neutral-700 dark:bg-neutral-800 dark:bg-neutral-900">
+        <div className="rounded-xl border border-neutral-200 bg-white p-3 dark:border-neutral-700 dark:bg-white/[0.04] dark:bg-zinc-950">
           {isLoading ? (
             <p className="px-1 py-2 text-sm text-neutral-500 dark:text-neutral-400">
               {t('loading')}
@@ -315,7 +315,7 @@ export function MetadataMultiSelect({
         onMouseDown={(e: React.MouseEvent) => {
           if (isOpen) e.preventDefault();
         }}
-        className={`relative flex min-h-[42px] w-full items-center gap-2 rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm transition-all dark:border-neutral-600 dark:bg-neutral-800 dark:bg-neutral-900 ${
+        className={`relative flex min-h-[42px] w-full items-center gap-2 rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm transition-all dark:border-neutral-600 dark:bg-white/[0.04] dark:bg-zinc-950 ${
           isLoading
             ? 'cursor-wait opacity-60'
             : options.length === 0 && !error
@@ -377,7 +377,7 @@ export function MetadataMultiSelect({
             onMouseDown={(e: React.MouseEvent) => e.preventDefault()}
           />
           <div
-            className="absolute z-[101] mt-1 w-full rounded-lg border border-neutral-200 bg-white shadow-xl dark:border-neutral-700 dark:bg-neutral-800 dark:bg-neutral-900"
+            className="absolute z-[101] mt-1 w-full rounded-lg border border-neutral-200 bg-white shadow-xl dark:border-neutral-700 dark:bg-white/[0.04] dark:bg-zinc-950"
             onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
           >
             {enableSearch && (
@@ -392,7 +392,7 @@ export function MetadataMultiSelect({
                       setSearchQuery(e.target.value)
                     }
                     onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
-                    className="w-full rounded-lg border border-neutral-300 bg-white px-9 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder-neutral-500 dark:focus:border-primary-400 dark:focus:ring-primary-800"
+                    className="w-full rounded-lg border border-neutral-300 bg-white px-9 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-white/[0.04] dark:bg-zinc-950 dark:text-neutral-100 dark:placeholder-neutral-500 dark:focus:border-primary-400 dark:focus:ring-primary-800"
                     autoFocus
                   />
                 </div>
@@ -438,7 +438,7 @@ export function MetadataMultiSelect({
                       className={`flex w-full items-center justify-between px-4 py-2.5 text-left text-sm transition-colors ${
                         isSelected
                           ? 'bg-emerald-50 font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300'
-                          : 'text-neutral-900 hover:bg-neutral-50 dark:text-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-700'
+                          : 'text-neutral-900 hover:bg-neutral-50 dark:text-neutral-100 dark:text-neutral-200 dark:hover:bg-white/[0.08]'
                       }`}
                     >
                       <span>{option.localizedName}</span>

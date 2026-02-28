@@ -203,7 +203,7 @@ export function WorkoutTemplateSelector({
           </h3>
           <button
             onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-neutral-500 transition-colors hover:bg-neutral-200 hover:text-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-200"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-neutral-500 transition-colors hover:bg-neutral-200 hover:text-neutral-700 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08] dark:hover:text-neutral-200"
             aria-label="Chiudi"
             type="button"
           >
@@ -224,7 +224,7 @@ export function WorkoutTemplateSelector({
                   setSearchQuery(e.target.value)
                 }
                 placeholder={placeholder}
-                className="h-11 w-full rounded-xl border border-neutral-200 bg-white py-2.5 pr-4 pl-10 text-sm text-neutral-900 shadow-sm transition-all placeholder:text-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:focus:border-primary-400 dark:focus:ring-primary-500/30"
+                className="h-11 w-full rounded-xl border border-neutral-200 bg-white py-2.5 pr-4 pl-10 text-sm text-neutral-900 shadow-sm transition-all placeholder:text-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-100 dark:focus:border-primary-400 dark:focus:ring-primary-500/30"
                 autoFocus
               />
             </div>
@@ -240,7 +240,7 @@ export function WorkoutTemplateSelector({
                   'h-9 flex-shrink-0 rounded-full px-4 text-xs font-semibold transition-all',
                   selectedType === 'all'
                     ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
-                    : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                    : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                 )}
                 type="button"
               >
@@ -254,7 +254,7 @@ export function WorkoutTemplateSelector({
                     'flex h-9 flex-shrink-0 items-center gap-1.5 rounded-full px-4 text-xs font-semibold transition-all',
                     selectedType === t
                       ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
-                      : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                      : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                   )}
                   type="button"
                 >
@@ -273,7 +273,7 @@ export function WorkoutTemplateSelector({
                 'h-9 flex-shrink-0 rounded-full px-4 text-xs font-semibold transition-all',
                 selectedCategory === 'all'
                   ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
-                  : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                  : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
               )}
               type="button"
             >
@@ -287,7 +287,7 @@ export function WorkoutTemplateSelector({
                   'h-9 flex-shrink-0 rounded-full px-4 text-xs font-semibold transition-all',
                   selectedCategory === cat
                     ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
-                    : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                    : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                 )}
                 type="button"
               >
@@ -312,7 +312,7 @@ export function WorkoutTemplateSelector({
             </div>
           ) : templates.length === 0 ? (
             <div className="py-16 text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-800">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-neutral-100 dark:bg-white/[0.04]">
                 <Bookmark className="h-8 w-8 text-neutral-400 dark:text-neutral-500" />
               </div>
               <p className="mt-3 text-sm font-medium text-neutral-500 dark:text-neutral-400">
@@ -354,7 +354,7 @@ export function WorkoutTemplateSelector({
                       'group cursor-pointer rounded-xl border p-4 transition-all duration-200',
                       isSelected
                         ? 'border-primary-500 bg-primary-50/50 shadow-md dark:border-primary-500 dark:bg-primary-900/20'
-                        : 'border-neutral-200 bg-white hover:border-primary-400 hover:bg-primary-50/30 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-primary-500 dark:hover:bg-primary-900/10'
+                        : 'border-neutral-200 bg-white hover:border-primary-400 hover:bg-primary-50/30 dark:border-neutral-700 dark:bg-white/[0.04] dark:hover:border-primary-500 dark:hover:bg-primary-900/10'
                     )}
                     role="button"
                     tabIndex={0}
@@ -382,7 +382,7 @@ export function WorkoutTemplateSelector({
                           <h4 className="text-base font-bold text-neutral-900 dark:text-neutral-100">
                             {template.name}
                           </h4>
-                          <span className="flex-shrink-0 rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-semibold text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+                          <span className="flex-shrink-0 rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-semibold text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
                             {TYPE_LABELS[template.type as keyof typeof TYPE_LABELS]}
                           </span>
                         </div>
@@ -398,13 +398,13 @@ export function WorkoutTemplateSelector({
                             </span>
                           )}
                           {template.usageCount > 0 && (
-                            <span className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-2.5 py-1 font-medium dark:bg-neutral-800">
+                            <span className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-2.5 py-1 font-medium dark:bg-white/[0.04]">
                               <Clock className="h-3 w-3" />
                               {template.usageCount} usi
                             </span>
                           )}
                           {template.lastUsedAt && (
-                            <span className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-2.5 py-1 font-medium dark:bg-neutral-800">
+                            <span className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-2.5 py-1 font-medium dark:bg-white/[0.04]">
                               <Clock className="h-3 w-3" />
                               {new Date(template.lastUsedAt).toLocaleDateString('it-IT', {
                                 day: 'numeric',
@@ -418,7 +418,7 @@ export function WorkoutTemplateSelector({
                             {template.tags.slice(0, 3).map((tag: any) => (
                               <span
                                 key={tag}
-                                className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+                                className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400"
                               >
                                 #{tag}
                               </span>

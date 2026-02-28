@@ -379,7 +379,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
             className={cn(
               'w-full rounded-xl border py-2.5 pr-4 pl-10',
               'border-neutral-200 dark:border-neutral-700',
-              'bg-white dark:bg-neutral-800',
+              'bg-white dark:bg-white/[0.04]',
               'text-neutral-900 placeholder:text-neutral-400 dark:text-white',
               'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
             )}
@@ -439,7 +439,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                 'rounded-lg px-3 py-1.5',
                 'border border-neutral-200 text-neutral-700 hover:bg-neutral-100',
                 'disabled:cursor-not-allowed disabled:opacity-50',
-                'dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700'
+                'dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-white/[0.08]'
               )}
             >
               {t('selection.all', { count: filteredConversations.length })}
@@ -451,7 +451,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                 'flex items-center gap-2 rounded-lg px-3 py-1.5',
                 'border border-neutral-200 text-neutral-700 hover:bg-neutral-100',
                 'disabled:cursor-not-allowed disabled:opacity-50',
-                'dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700'
+                'dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-white/[0.08]'
               )}
             >
               <Archive className="h-4 w-4" />
@@ -489,7 +489,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                 className={cn(
                   'rounded-lg px-3 py-1.5',
                   'border border-neutral-200 text-neutral-600 hover:bg-neutral-100',
-                  'dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                  'dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-white/[0.08]'
                 )}
               >
                 {t('selection.cancel')}
@@ -531,7 +531,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                       ? 'bg-primary-50 dark:bg-primary-500/10'
                       : selectionMode && selectedIds.has(conversation.id)
                         ? 'bg-primary-50/60 dark:bg-primary-500/10'
-                        : 'hover:bg-neutral-50 dark:hover:bg-neutral-700/50'
+                        : 'hover:bg-neutral-50 dark:hover:bg-white/[0.08]/50'
                   )}
                   onClick={() => {
                     if (selectionMode) {
@@ -614,7 +614,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                             className={cn(
                               'absolute top-full right-0 z-50 mt-1',
                               'min-w-[140px] rounded-lg p-1',
-                              'bg-white dark:bg-neutral-800',
+                              'bg-white dark:bg-white/[0.04]',
                               'border border-neutral-200 dark:border-neutral-700',
                               'shadow-xl'
                             )}
@@ -625,7 +625,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                               className={cn(
                                 'flex w-full items-center gap-2 rounded-md px-3 py-2',
                                 'text-sm text-neutral-700 dark:text-neutral-300',
-                                'hover:bg-neutral-100 dark:hover:bg-neutral-700'
+                                'hover:bg-neutral-100 dark:hover:bg-white/[0.08]'
                               )}
                             >
                               <Archive className="h-4 w-4" />
@@ -696,7 +696,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                     setSelectedConversation(null);
                     setMessages([]);
                   }}
-                  className="rounded-lg p-2 hover:bg-neutral-100 lg:hidden dark:hover:bg-neutral-700"
+                  className="rounded-lg p-2 hover:bg-neutral-100 lg:hidden dark:hover:bg-white/[0.08]"
                 >
                   <X className="h-5 w-5" />
                 </button>

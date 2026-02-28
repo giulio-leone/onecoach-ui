@@ -190,7 +190,7 @@ export const Drawer = ({
                   'min-h-[2.75rem] min-w-[2.75rem]',
                   'rounded-lg p-2',
                   'transition-colors duration-200',
-                  'hover:bg-neutral-100 dark:hover:bg-neutral-700',
+                  'hover:bg-neutral-100 dark:hover:bg-white/[0.08]',
                   'active:bg-neutral-200 dark:active:bg-neutral-600',
                   'focus-visible:ring-2 focus-visible:outline-none',
                   'focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400',

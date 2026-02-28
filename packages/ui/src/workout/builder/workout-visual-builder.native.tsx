@@ -179,7 +179,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave }: WorkoutVisualBu
   };
 
   return (
-    <View className="flex-1 bg-neutral-50 dark:bg-neutral-900">
+    <View className="flex-1 bg-neutral-50 dark:bg-zinc-950">
       {/* Header */}
       <Card variant="glass" className="z-10 rounded-none border-x-0 border-t-0 px-4 py-4 pb-6">
         <View className="mb-6 flex-row items-center justify-between">
@@ -215,7 +215,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave }: WorkoutVisualBu
                   setSelectedDayIndex(0);
                 }}
                 className={`mr-2 rounded-full px-4 py-2 ${
-                  selectedWeekIndex === index ? 'bg-primary-600' : 'bg-neutral-200 dark:bg-neutral-800'
+                  selectedWeekIndex === index ? 'bg-primary-600' : 'bg-neutral-200 dark:bg-white/[0.04]'
                 }`}
               >
                 <Text
@@ -231,7 +231,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave }: WorkoutVisualBu
             ))}
             <Pressable
               onPress={addWeek}
-              className="items-center justify-center rounded-full bg-neutral-200 px-4 py-2 dark:bg-neutral-800"
+              className="items-center justify-center rounded-full bg-neutral-200 px-4 py-2 dark:bg-white/[0.04]"
             >
               <Plus size={16} className="text-neutral-700 dark:text-neutral-300" />
             </Pressable>
@@ -254,7 +254,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave }: WorkoutVisualBu
                 className={`flex-row items-center gap-2 rounded-full border px-4 py-2 ${
                   selectedDayIndex === index
                     ? 'border-primary-600 bg-primary-600'
-                    : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800'
+                    : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-white/[0.04]'
                 } `}
               >
                 <Text

@@ -201,10 +201,10 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
               onClick={() => setShowPeriodDropdown(!showPeriodDropdown)}
               className={cn(
                 'flex items-center gap-2 rounded-xl px-4 py-2.5',
-                'bg-white dark:bg-neutral-800',
+                'bg-white dark:bg-white/[0.04]',
                 'border border-neutral-200 dark:border-neutral-700',
                 'text-sm font-medium text-neutral-700 dark:text-neutral-300',
-                'hover:bg-neutral-50 dark:hover:bg-neutral-700'
+                'hover:bg-neutral-50 dark:hover:bg-white/[0.08]'
               )}
             >
               <Calendar className="h-4 w-4" />
@@ -220,7 +220,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                   className={cn(
                     'absolute top-full right-0 z-50 mt-2',
                     'min-w-[180px] rounded-xl p-1',
-                    'bg-white dark:bg-neutral-800',
+                    'bg-white dark:bg-white/[0.04]',
                     'border border-neutral-200 dark:border-neutral-700',
                     'shadow-xl'
                   )}
@@ -237,7 +237,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                         'transition-colors',
                         period === option.value
                           ? 'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400'
-                          : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                          : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.08]'
                       )}
                     >
                       {option.label}

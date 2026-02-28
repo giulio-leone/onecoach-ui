@@ -101,7 +101,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
 
           {/* Timer Display */}
           <div className="flex items-center gap-2">
-            <div className="flex items-center gap-2 rounded-xl bg-neutral-100 px-4 py-2 dark:bg-neutral-800">
+            <div className="flex items-center gap-2 rounded-xl bg-neutral-100 px-4 py-2 dark:bg-white/[0.04]">
               <Timer className="h-4 w-4 text-amber-600 dark:text-amber-400" />
               <span className="font-mono text-xl font-bold text-neutral-900 dark:text-white">
                 {formatTime(timeRemaining)}
@@ -137,7 +137,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
               className={`flex w-full items-center gap-4 px-5 py-3 text-left transition-colors ${
                 isDone
                   ? 'bg-emerald-50 dark:bg-emerald-500/10'
-                  : 'hover:bg-neutral-50 dark:hover:bg-neutral-800/50'
+                  : 'hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50'
               } ${isCompleted ? 'cursor-default opacity-60' : ''}`}
             >
               <div
@@ -174,7 +174,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
         <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
           <button
             onClick={handleSkip}
-            className="w-full rounded-lg bg-neutral-100 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
+            className="w-full rounded-lg bg-neutral-100 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]"
           >
             Salta riscaldamento
           </button>

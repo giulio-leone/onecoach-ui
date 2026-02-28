@@ -134,7 +134,7 @@ function TripTypeCard({ selected, onSelect, icon, title, description }: TripType
             : [
                 'bg-neutral-100 text-neutral-500',
                 'group-hover:bg-neutral-200 group-hover:text-neutral-700',
-                'dark:bg-neutral-800 dark:text-neutral-400',
+                'dark:bg-white/[0.04] dark:text-neutral-400',
                 'dark:group-hover:bg-neutral-700 dark:group-hover:text-neutral-300',
               ]
         )}
@@ -781,7 +781,7 @@ export function FlightWizard({
   }
 
   return (
-    <div className="relative flex h-full w-full flex-1 flex-col overflow-hidden bg-neutral-50 px-4 py-6 dark:bg-neutral-950">
+    <div className="relative flex h-full w-full flex-1 flex-col overflow-hidden bg-neutral-50 px-4 py-6 dark:bg-[#09090b]">
       {/* Premium Background Effects */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         {/* Gradient orbs - enhanced for dark mode */}

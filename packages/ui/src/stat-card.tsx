@@ -71,7 +71,7 @@ function StatCardComponent({
               'flex h-12 w-12 items-center justify-center rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-110',
               gradientClass
                 ? `bg-gradient-to-br ${gradientClass} text-white shadow-lg shadow-${gradientClass.split('-')[1]}-500/20`
-                : 'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300'
+                : 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-300'
             )}
           >
             <Icon className="h-6 w-6" />

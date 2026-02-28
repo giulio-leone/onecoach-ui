@@ -148,13 +148,13 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 </p>
                 <div className="mt-2 flex flex-wrap gap-2 text-xs text-neutral-500">
                   {cart.promoCode && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-1 dark:bg-neutral-800">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-1 dark:bg-white/[0.04]">
                       <TicketPercent className="h-3 w-3" />
                       Promo {cart.promoCode}
                     </span>
                   )}
                   {cart.referralCode && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-1 dark:bg-neutral-800">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-1 dark:bg-white/[0.04]">
                       Referral {cart.referralCode}
                     </span>
                   )}

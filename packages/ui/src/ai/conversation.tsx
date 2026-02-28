@@ -130,7 +130,7 @@ export const ConversationEmptyState = ({
                   'rounded-full px-4 py-2 text-sm font-medium',
                   // Colors
                   'bg-neutral-100 text-neutral-700',
-                  'dark:bg-neutral-800 dark:text-neutral-300',
+                  'dark:bg-white/[0.04] dark:text-neutral-300',
                   // Hover
                   'hover:bg-primary-50 hover:text-primary-700',
                   'dark:hover:bg-primary-900/30 dark:hover:text-primary-300',
@@ -180,7 +180,7 @@ export const ConversationScrollButton = ({
         'shadow-lg shadow-neutral-900/10 dark:shadow-neutral-900/30',
         // Hover
         'hover:bg-white hover:shadow-xl',
-        'dark:hover:bg-neutral-800',
+        'dark:hover:bg-white/[0.06]',
         // Animation
         'animate-in fade-in-0 slide-in-from-bottom-4 duration-300',
         'transition-all',

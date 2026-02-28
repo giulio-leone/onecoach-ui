@@ -335,7 +335,7 @@ export function UsersPageClient({
                     'rounded-md p-2 transition-colors',
                     viewMode === 'grid'
                       ? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-700 dark:text-white'
-                      : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-neutral-800'
+                      : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-white/[0.06]'
                   )}
                 >
                   <Grid3X3 className="h-4 w-4" />
@@ -346,7 +346,7 @@ export function UsersPageClient({
                     'rounded-md p-2 transition-colors',
                     viewMode === 'list'
                       ? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-700 dark:text-white'
-                      : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-neutral-800'
+                      : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-white/[0.06]'
                   )}
                 >
                   <List className="h-4 w-4" />
@@ -453,7 +453,7 @@ export function UsersPageClient({
                     <p className="truncate text-sm text-neutral-500">{user.email}</p>
                   </div>
                   {/* Role Badge */}
-                  <span className="hidden rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-700 sm:inline-flex dark:bg-neutral-800 dark:text-neutral-300">
+                  <span className="hidden rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-700 sm:inline-flex dark:bg-white/[0.04] dark:text-neutral-300">
                     {user.role}
                   </span>
                   {/* Credits */}

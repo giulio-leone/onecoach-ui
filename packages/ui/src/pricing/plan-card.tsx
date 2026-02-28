@@ -60,7 +60,7 @@ export function PlanCard({ plan, referralCode }: PlanCardProps) {
       className={`relative rounded-2xl border-2 p-8 ${
         plan.popular
           ? 'border-primary-500 bg-gradient-to-br from-primary-50 to-secondary-50 shadow-xl'
-          : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900'
+          : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-zinc-950'
       }`}
     >
       {/* Popular badge */}
@@ -143,7 +143,7 @@ export function PlanCard({ plan, referralCode }: PlanCardProps) {
         {plan.features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
             <div
-              className={`mt-0.5 rounded-full p-1 ${plan.popular ? 'bg-primary-100' : 'bg-neutral-100 dark:bg-neutral-800'}`}
+              className={`mt-0.5 rounded-full p-1 ${plan.popular ? 'bg-primary-100' : 'bg-neutral-100 dark:bg-white/[0.04]'}`}
             >
               <Check
                 className={`h-4 w-4 ${plan.popular ? 'text-primary-600' : 'text-neutral-600 dark:text-neutral-400'}`}

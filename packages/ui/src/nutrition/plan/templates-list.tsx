@@ -205,7 +205,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
             className={`min-h-[32px] flex-shrink-0 touch-manipulation rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
               selectedType === 'all'
                 ? 'bg-green-600 text-white'
-                : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+                : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-white/[0.04] dark:bg-zinc-950 dark:text-neutral-300'
             }`}
             type="button"
           >
@@ -218,7 +218,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
               className={`flex min-h-[32px] flex-shrink-0 touch-manipulation items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
                 selectedType === type
                   ? 'bg-green-600 text-white'
-                  : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+                  : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-white/[0.04] dark:bg-zinc-950 dark:text-neutral-300'
               }`}
               type="button"
             >
@@ -235,7 +235,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
             className={`min-h-[32px] flex-shrink-0 touch-manipulation rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
               selectedCategory === 'all'
                 ? 'bg-primary-600 text-white'
-                : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+                : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-white/[0.04] dark:bg-zinc-950 dark:text-neutral-300'
             }`}
             type="button"
           >
@@ -248,7 +248,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
               className={`min-h-[32px] flex-shrink-0 touch-manipulation rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
                 selectedCategory === cat
                   ? 'bg-primary-600 text-white'
-                  : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+                  : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-white/[0.04] dark:bg-zinc-950 dark:text-neutral-300'
               }`}
               type="button"
             >
@@ -327,7 +327,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
                           {template.name}
                         </h3>
                         <div className="mt-1 flex items-center gap-2">
-                          <span className="flex-shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+                          <span className="flex-shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
                             {t(`type.${template.type}`)}
                           </span>
                           {template.category && (
@@ -407,7 +407,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
                         {template.tags.map((tag: any) => (
                           <span
                             key={tag}
-                            className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+                            className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400"
                           >
                             #{tag}
                           </span>

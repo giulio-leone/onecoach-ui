@@ -184,7 +184,7 @@ export function FoodCombobox({
           ref={listRef}
           id="food-listbox"
           role="listbox"
-          className="absolute z-50 mt-1 max-h-80 w-full overflow-auto rounded-lg border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-900"
+          className="absolute z-50 mt-1 max-h-80 w-full overflow-auto rounded-lg border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-zinc-950"
         >
           {results.map((food, index) => (
             <button
@@ -237,7 +237,7 @@ export function FoodCombobox({
       )}
 
       {isOpen && debouncedQuery.length >= 2 && results.length === 0 && !isLoading && (
-        <div className="absolute z-50 mt-1 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-500 shadow-lg dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-500">
+        <div className="absolute z-50 mt-1 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-500 shadow-lg dark:border-neutral-700 dark:bg-zinc-950 dark:text-neutral-500">
           {noResultsMessage}
         </div>
       )}

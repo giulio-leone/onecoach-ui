@@ -99,7 +99,7 @@ export function CoachAnalyticsCharts({ userId, period = '30d' }: CoachAnalyticsC
         {[1, 2, 3, 4].map((i: any) => (
           <div
             key={i}
-            className="flex h-80 items-center justify-center rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900"
+            className="flex h-80 items-center justify-center rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-zinc-950"
           >
             <LoadingIndicator />
           </div>

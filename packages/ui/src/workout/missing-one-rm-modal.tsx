@@ -346,7 +346,7 @@ function OneRMEntry({
             onClick={() => setInputMode('estimate')}
             className={`flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all ${
               inputMode === 'estimate'
-                ? 'bg-white text-primary-600 shadow-sm dark:bg-neutral-800 dark:text-primary-400'
+                ? 'bg-white text-primary-600 shadow-sm dark:bg-white/[0.04] dark:text-primary-400'
                 : 'text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'
             }`}
           >
@@ -357,7 +357,7 @@ function OneRMEntry({
             onClick={() => setInputMode('direct')}
             className={`flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all ${
               inputMode === 'direct'
-                ? 'bg-white text-primary-600 shadow-sm dark:bg-neutral-800 dark:text-primary-400'
+                ? 'bg-white text-primary-600 shadow-sm dark:bg-white/[0.04] dark:text-primary-400'
                 : 'text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'
             }`}
           >

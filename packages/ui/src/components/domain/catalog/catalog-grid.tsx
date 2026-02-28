@@ -25,7 +25,7 @@ export const CatalogGrid = ({
           {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className="h-24 w-full animate-pulse rounded-2xl bg-neutral-100 dark:bg-neutral-800"
+              className="h-24 w-full animate-pulse rounded-2xl bg-neutral-100 dark:bg-white/[0.04]"
             />
           ))}
         </div>
@@ -41,7 +41,7 @@ export const CatalogGrid = ({
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="aspect-[4/5] w-full animate-pulse rounded-2xl bg-neutral-100 dark:bg-neutral-800"
+            className="aspect-[4/5] w-full animate-pulse rounded-2xl bg-neutral-100 dark:bg-white/[0.04]"
           />
         ))}
       </div>

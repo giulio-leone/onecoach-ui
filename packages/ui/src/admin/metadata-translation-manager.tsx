@@ -194,7 +194,7 @@ export function MetadataTranslationManager() {
   }
   const entities = getCurrentEntities();
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+    <div className="rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-zinc-950">
       <div className="border-b border-neutral-200 p-6 dark:border-neutral-700">
         <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           {t('admin.metadata_translation_manager.metadata_translations')}
@@ -288,7 +288,7 @@ export function MetadataTranslationManager() {
                   <label className="mb-1 block text-xs font-semibold text-neutral-500 uppercase dark:text-neutral-500">
                     {t('admin.metadata_translation_manager.english_name')}
                   </label>
-                  <div className="rounded-lg bg-white px-3 py-2 text-sm font-medium text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
+                  <div className="rounded-lg bg-white px-3 py-2 text-sm font-medium text-neutral-900 dark:bg-zinc-950 dark:text-neutral-100">
                     {entity.name}
                   </div>
                 </div>

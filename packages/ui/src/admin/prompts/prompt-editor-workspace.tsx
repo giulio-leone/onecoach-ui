@@ -141,14 +141,14 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
 
   return (
     <div
-      className={cn('flex h-full flex-col overflow-hidden bg-white dark:bg-neutral-950', className)}
+      className={cn('flex h-full flex-col overflow-hidden bg-white dark:bg-[#09090b]', className)}
     >
       {/* Toolbar */}
       <div className="flex items-center justify-between border-b border-neutral-200 px-4 py-2 dark:border-neutral-800">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <h2 className="text-lg font-bold">{prompt.name}</h2>
-            <span className="rounded bg-neutral-100 px-2 py-0.5 font-mono text-xs text-neutral-500 dark:bg-neutral-800">
+            <span className="rounded bg-neutral-100 px-2 py-0.5 font-mono text-xs text-neutral-500 dark:bg-white/[0.04]">
               {prompt.agentId}
             </span>
           </div>
@@ -226,13 +226,13 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
           </div>
 
           {/* Variables Helper */}
-          <div className="border-t border-neutral-200 bg-neutral-50 p-2 text-xs dark:border-white/[0.08] dark:bg-neutral-900">
+          <div className="border-t border-neutral-200 bg-neutral-50 p-2 text-xs dark:border-white/[0.08] dark:bg-zinc-950">
             <span className="mr-2 font-semibold">{t('variables')}</span>
             {Object.keys(prompt.variables || {}).map((v: string) => (
               <button
                 key={v}
                 onClick={() => insertVariable(v)}
-                className="mr-2 mb-1 inline-block cursor-pointer rounded bg-neutral-200 px-1 py-0.5 text-neutral-700 transition-colors hover:bg-neutral-300 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                className="mr-2 mb-1 inline-block cursor-pointer rounded bg-neutral-200 px-1 py-0.5 text-neutral-700 transition-colors hover:bg-neutral-300 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]"
                 title={prompt.variables?.[v]?.description}
               >
                 {`{${v}}`}

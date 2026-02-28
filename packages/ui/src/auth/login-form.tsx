@@ -160,7 +160,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
               'absolute inset-y-0 right-0 flex items-center justify-center',
               'w-10 rounded-r-md transition-all duration-200',
               'text-neutral-500 hover:bg-neutral-50 hover:text-neutral-700',
-              'dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200',
+              'dark:text-neutral-400 dark:hover:bg-white/[0.06]/50 dark:hover:text-neutral-200',
               'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
               'disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent',
               'touch-manipulation'
@@ -214,7 +214,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
           <span className="w-full border-t border-neutral-300 dark:border-neutral-700" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-white px-2 text-neutral-500 dark:bg-neutral-900">oppure</span>
+          <span className="bg-white px-2 text-neutral-500 dark:bg-zinc-950">oppure</span>
         </div>
       </div>
       {/* Social login */}
@@ -225,7 +225,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
             type="button"
             variant="outline"
             size="md"
-            className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+            className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-white/[0.06]"
             disabled={form.isSubmitting}
             onClick={() => signIn('google', { callbackUrl: from })}
             aria-label="Continua con Google"
@@ -261,7 +261,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
           type="button"
           variant="outline"
           size="md"
-          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-white/[0.06]"
           disabled={form.isSubmitting}
           onClick={() => signIn('apple', { callbackUrl: from })}
           aria-label="Continua con Apple"

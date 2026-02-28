@@ -108,7 +108,7 @@ export function CartsPageClient() {
         </div>
       )}
 
-      <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-neutral-900">
+      <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-5">
           <div className="space-y-2">
             <label className="text-xs font-medium text-neutral-500">{t('filters.status')}</label>
@@ -173,7 +173,7 @@ export function CartsPageClient() {
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-800">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-500 dark:bg-neutral-900 dark:text-neutral-400">
+            <thead className="bg-neutral-50 text-neutral-500 dark:bg-zinc-950 dark:text-neutral-400">
               <tr>
                 <th className="px-4 py-3 font-medium">{t('table.user')}</th>
                 <th className="px-4 py-3 font-medium">{t('table.total')}</th>
@@ -187,7 +187,7 @@ export function CartsPageClient() {
               {carts.map((cart: any) => (
                 <tr
                   key={cart.id}
-                  className="group hover:bg-neutral-50 dark:hover:bg-neutral-900/50"
+                  className="group hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50"
                 >
                   <td className="px-4 py-3">
                     <div className="font-medium text-neutral-900 dark:text-neutral-100">

@@ -158,7 +158,7 @@ function RadioCard({
         'focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 outline-none',
         selected
           ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
-          : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600',
+          : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-zinc-950 dark:hover:border-neutral-600',
         className
       )}
     >
@@ -167,7 +167,7 @@ function RadioCard({
           'flex shrink-0 items-center justify-center rounded-lg p-2 transition-colors',
           selected
             ? 'bg-primary-500 text-white'
-            : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
+            : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-400'
         )}
       >
         <Icon className="h-4 w-4" />
@@ -232,7 +232,7 @@ function TextInput({
         'w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 transition-all',
         'placeholder:text-neutral-400',
         'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
-        'dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder:text-neutral-500',
+        'dark:border-neutral-600 dark:bg-white/[0.04] dark:text-neutral-100 dark:placeholder:text-neutral-500',
         'dark:focus:border-primary-400 dark:focus:ring-primary-400/30',
         className
       )}
@@ -265,7 +265,7 @@ function AllergyTagInput({
   };
 
   return (
-    <div className="rounded-lg border border-neutral-300 bg-white p-2 dark:border-neutral-600 dark:bg-neutral-800">
+    <div className="rounded-lg border border-neutral-300 bg-white p-2 dark:border-neutral-600 dark:bg-white/[0.04]">
       <div className="flex flex-wrap gap-1.5">
         {tags.map((tag) => (
           <span
@@ -347,7 +347,7 @@ function StepBasicInfo({
                 'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                 profile.primaryGoal === g.id
                   ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
-                  : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600'
+                  : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-zinc-950 dark:hover:border-neutral-600'
               )}
             >
               <g.icon
@@ -397,7 +397,7 @@ function StepBodyMetrics({
             'rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
             !useImperial
               ? 'bg-primary-600 text-white'
-              : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400'
+              : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-400'
           )}
         >
           Metric
@@ -409,7 +409,7 @@ function StepBodyMetrics({
             'rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
             useImperial
               ? 'bg-primary-600 text-white'
-              : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400'
+              : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-400'
           )}
         >
           Imperial
@@ -461,7 +461,7 @@ function StepBodyMetrics({
             className={cn(
               'w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 transition-all',
               'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
-              'dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100'
+              'dark:border-neutral-600 dark:bg-white/[0.04] dark:text-neutral-100'
             )}
           >
             <option value="">Select…</option>
@@ -573,7 +573,7 @@ function StepTraining({
                   'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                   selected
                     ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
-                    : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600'
+                    : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-zinc-950 dark:hover:border-neutral-600'
                 )}
               >
                 <eq.icon
@@ -604,7 +604,7 @@ function StepTraining({
             'w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 transition-all',
             'placeholder:text-neutral-400',
             'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
-            'dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder:text-neutral-500'
+            'dark:border-neutral-600 dark:bg-white/[0.04] dark:text-neutral-100 dark:placeholder:text-neutral-500'
           )}
         />
       </div>
@@ -746,14 +746,14 @@ function Summary({ profile }: { profile: OnboardingProfile }) {
         Review your selections before finishing setup.
       </p>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900">
+      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">Basic Info</h4>
         <SummaryRow label="Name" value={profile.displayName} />
         <SummaryRow label="Level" value={fitnessLabel} />
         <SummaryRow label="Goal" value={goalLabel} />
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900">
+      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">Body Metrics</h4>
         <SummaryRow label="Weight" value={profile.weight != null ? `${profile.weight}` : undefined} />
         <SummaryRow label="Height" value={profile.height != null ? `${profile.height}` : undefined} />
@@ -762,7 +762,7 @@ function Summary({ profile }: { profile: OnboardingProfile }) {
         <SummaryRow label="Body Fat" value={profile.bodyFatPercent != null ? `${profile.bodyFatPercent}%` : undefined} />
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900">
+      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">Training</h4>
         <SummaryRow label="Days/week" value={profile.daysPerWeek} />
         <SummaryRow label="Duration" value={`${profile.preferredDuration} min`} />
@@ -770,7 +770,7 @@ function Summary({ profile }: { profile: OnboardingProfile }) {
         <SummaryRow label="Limitations" value={profile.injuriesOrLimitations} />
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900">
+      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">Nutrition</h4>
         <SummaryRow label="Diet" value={dietLabel} />
         <SummaryRow label="Meals/day" value={profile.mealsPerDay} />
@@ -778,7 +778,7 @@ function Summary({ profile }: { profile: OnboardingProfile }) {
         <SummaryRow label="Calories" value={profile.calorieTarget != null ? `${profile.calorieTarget} kcal` : undefined} />
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900">
+      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">AI Mode</h4>
         <SummaryRow label="Mode" value={aiLabel} />
       </div>
@@ -981,7 +981,7 @@ export function OnboardingWizard({ onComplete, onSkip, initialStep = 0 }: Onboar
           disabled={step === 0}
           className={cn(
             'flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-semibold text-neutral-600 transition-all',
-            'hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800',
+            'hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-white/[0.06]',
             'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
             step === 0 && 'pointer-events-none opacity-0'
           )}

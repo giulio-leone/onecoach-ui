@@ -31,7 +31,7 @@ const STATUS_OPTIONS: { value: NutritionStatus; label: string }[] = [
 export function PlanMetadataForm({ plan, onPlanChange, className = '' }: PlanMetadataFormProps) {
   return (
     <div
-      className={`grid gap-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl sm:grid-cols-2 lg:grid-cols-3 dark:border-neutral-700 dark:bg-neutral-900 ${className}`}
+      className={`grid gap-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl sm:grid-cols-2 lg:grid-cols-3 dark:border-neutral-700 dark:bg-zinc-950 ${className}`}
     >
       <div>
         <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300">
@@ -45,7 +45,7 @@ export function PlanMetadataForm({ plan, onPlanChange, className = '' }: PlanMet
               goals: e.target.value ? [e.target.value] : [],
             })
           }
-          className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900"
+          className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-zinc-950"
         >
           <option value="">Seleziona obiettivo</option>
           {GOAL_OPTIONS.map((option: any) => (
@@ -65,7 +65,7 @@ export function PlanMetadataForm({ plan, onPlanChange, className = '' }: PlanMet
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             onPlanChange({ ...plan, durationWeeks: Number(e.target.value || 0) })
           }
-          className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900"
+          className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-zinc-950"
           min="1"
         />
       </div>
@@ -81,7 +81,7 @@ export function PlanMetadataForm({ plan, onPlanChange, className = '' }: PlanMet
               status: e.target.value as NutritionStatus,
             })
           }
-          className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-neutral-900"
+          className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-neutral-600 dark:bg-zinc-950"
         >
           {STATUS_OPTIONS.map((option: any) => (
             <option key={option.value} value={option.value}>

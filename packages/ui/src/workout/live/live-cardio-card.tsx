@@ -131,7 +131,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
         </div>
 
         {/* Timer Display */}
-        <div className="flex items-center justify-center gap-4 rounded-xl bg-neutral-100 px-6 py-4 dark:bg-neutral-800">
+        <div className="flex items-center justify-center gap-4 rounded-xl bg-neutral-100 px-6 py-4 dark:bg-white/[0.04]">
           <button
             onClick={() => setIsActive(!isActive)}
             disabled={isCompleted}

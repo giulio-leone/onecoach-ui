@@ -55,7 +55,7 @@ function EventCard({ event }: { event: StreamEvent }) {
         'w-full rounded-xl border border-neutral-200/60 bg-white/50 text-left dark:border-neutral-700/60 dark:bg-neutral-800/50',
         'px-3 py-2.5 transition-colors',
         hasData &&
-          'hover:bg-neutral-50 active:bg-neutral-100 dark:hover:bg-neutral-700/30 dark:active:bg-neutral-700/50',
+          'hover:bg-neutral-50 active:bg-neutral-100 dark:hover:bg-white/[0.08]/30 dark:active:bg-neutral-700/50',
         !hasData && 'cursor-default'
       )}
       type="button"
@@ -158,7 +158,7 @@ export function StreamingResult({
           </span>
         </div>
         {/* Gradient Progress Bar */}
-        <div className="h-2.5 w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
+        <div className="h-2.5 w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.04]">
           <div
             className="h-full rounded-full bg-gradient-to-r from-primary-500 via-emerald-500 to-emerald-400 transition-all duration-300 ease-out"
             style={{ width: `${progress}%` }}

@@ -95,7 +95,7 @@ export function ExerciseCard({
         isSelected
           ? cn('bg-primary-50/50 dark:bg-primary-900/10', 'border-primary-200 dark:border-primary-800/50')
           : cn(
-              'border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-neutral-900',
+              'border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-zinc-950',
               'hover:shadow-md dark:hover:shadow-lg dark:hover:shadow-neutral-950/30'
             )
       )}

@@ -46,7 +46,7 @@ export function SelectionCard({
                 !isWeb && 'shadow-md', // Only use Native shadow classes on Native
                 compact && 'shadow-none' // Disable large shadow if compact (web handles it via style or lighter class)
               )
-            : 'hover:bg-white/50 dark:hover:bg-neutral-800/50',
+            : 'hover:bg-white/50 dark:hover:bg-white/[0.06]/50',
           className
         )}
         style={webShadowStyle}
@@ -74,7 +74,7 @@ export function SelectionCard({
                       compact ? 'mr-2 rounded-lg p-1.5' : 'mb-3 self-start rounded-xl p-2.5',
                       selected
                         ? 'bg-primary-500 text-white'
-                        : 'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400'
+                        : 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400'
                     )}
                   >
                     {/* Render icon children if possible, adjusting size if needed for compact */}

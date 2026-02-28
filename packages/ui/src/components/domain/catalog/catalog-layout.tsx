@@ -118,7 +118,7 @@ export const CatalogToolbar = ({
                   'rounded-lg px-4 py-2 text-sm font-medium whitespace-nowrap transition-all',
                   isActive
                     ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900'
-                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                 )}
               >
                 {option.label}
@@ -127,10 +127,10 @@ export const CatalogToolbar = ({
           })}
         </div>
 
-        <div className="h-8 w-px bg-neutral-200 dark:bg-neutral-800" />
+        <div className="h-8 w-px bg-neutral-200 dark:bg-white/[0.04]" />
 
         {/* View Toggle */}
-        <div className="flex rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800">
+        <div className="flex rounded-lg bg-neutral-100 p-1 dark:bg-white/[0.04]">
           <button
             type="button"
             onClick={() => onViewModeChange?.('grid')}

@@ -169,7 +169,7 @@ export function VisualBuilderShell({
   return (
     <div
       className={cn(
-        'relative min-h-[100dvh] w-full bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50',
+        'relative min-h-[100dvh] w-full bg-neutral-50 text-neutral-900 dark:bg-[#09090b] dark:text-neutral-50',
         themeConfig.selection
       )}
     >

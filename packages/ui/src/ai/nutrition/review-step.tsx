@@ -78,7 +78,7 @@ export function ReviewStep({ formData, onGenerate, isGenerating }: ReviewStepPro
         </dl>
       </div>
 
-      <div className="rounded-xl bg-neutral-50 p-4 dark:bg-neutral-900">
+      <div className="rounded-xl bg-neutral-50 p-4 dark:bg-zinc-950">
         <div className="flex items-start gap-3">
           <div className="rounded-full bg-green-100 p-1 dark:bg-green-900/30">
             <Check className="h-4 w-4 text-green-600 dark:text-green-400" />

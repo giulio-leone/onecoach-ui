@@ -213,7 +213,7 @@ export function StreamEventCard({ event, isAdmin = false, index = 0 }: StreamEve
         onClick={toggle}
         className={cn(
           'flex w-full items-start gap-4 p-4 text-left transition-colors',
-          shouldShowData && 'cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800/50',
+          shouldShowData && 'cursor-pointer hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50',
           !shouldShowData && 'cursor-default'
         )}
         disabled={!shouldShowData}
@@ -223,7 +223,7 @@ export function StreamEventCard({ event, isAdmin = false, index = 0 }: StreamEve
           <div
             className={cn(
               'flex h-10 w-10 items-center justify-center rounded-lg',
-              'bg-neutral-100 dark:bg-neutral-800',
+              'bg-neutral-100 dark:bg-white/[0.04]',
               'transition-colors group-hover:bg-neutral-200 dark:group-hover:bg-neutral-700'
             )}
           >
@@ -253,7 +253,7 @@ export function StreamEventCard({ event, isAdmin = false, index = 0 }: StreamEve
               const data = event.data as Record<string, unknown>;
               if ('role' in data && data.role) {
                 return (
-                  <span className="rounded-full bg-neutral-200 px-2 py-0.5 font-mono text-[10px] text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+                  <span className="rounded-full bg-neutral-200 px-2 py-0.5 font-mono text-[10px] text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-300">
                     {String(data.role)}
                   </span>
                 );

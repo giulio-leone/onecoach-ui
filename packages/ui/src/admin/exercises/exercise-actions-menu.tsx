@@ -49,7 +49,7 @@ export function ExerciseActionsMenu({ actions, className = '' }: ExerciseActions
         'rounded-lg border p-2 transition-colors',
         'min-h-[2.75rem] min-w-[2.75rem] touch-manipulation',
         'border-neutral-200 bg-white text-neutral-600 hover:bg-neutral-50',
-        'dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700'
+        'dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-200 dark:hover:bg-white/[0.08]'
       )}
       aria-label="Azioni"
     >

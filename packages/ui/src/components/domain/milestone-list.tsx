@@ -27,7 +27,7 @@ export function MilestoneItem({ title, progress, tasks, className }: MilestonePr
       )}
     >
       <div
-        className="flex cursor-pointer items-center gap-3 p-4 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50"
+        className="flex cursor-pointer items-center gap-3 p-4 hover:bg-neutral-100/50 dark:hover:bg-white/[0.06]/50"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <button className="text-neutral-400 transition-transform duration-200">

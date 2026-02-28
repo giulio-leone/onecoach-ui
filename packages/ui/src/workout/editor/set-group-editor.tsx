@@ -200,7 +200,7 @@ export function SetGroupEditor({
   const isUniform = isUniformGroup(group as unknown as TypesSetGroup);
 
   return (
-    <div className="rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900">
+    <div className="rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-zinc-950">
       {/* Header compatta */}
       <div className="flex items-center justify-between p-3">
         <div className="flex flex-1 items-center gap-2">
@@ -227,7 +227,7 @@ export function SetGroupEditor({
         <div className="flex items-center gap-1">
           <button
             onClick={() => setIsEditing(!isEditing)}
-            className="rounded p-1.5 transition-colors hover:bg-neutral-100 dark:bg-neutral-800"
+            className="rounded p-1.5 transition-colors hover:bg-neutral-100 dark:bg-white/[0.04]"
             title="Modifica gruppo"
           >
             <Pen className="h-4 w-4 text-neutral-600 dark:text-neutral-400" />
@@ -235,7 +235,7 @@ export function SetGroupEditor({
           {onGroupDuplicate && (
             <button
               onClick={onGroupDuplicate}
-              className="rounded p-1.5 transition-colors hover:bg-neutral-100 dark:bg-neutral-800"
+              className="rounded p-1.5 transition-colors hover:bg-neutral-100 dark:bg-white/[0.04]"
               title="Duplica gruppo"
             >
               <Copy className="h-4 w-4 text-neutral-600 dark:text-neutral-400" />
@@ -244,7 +244,7 @@ export function SetGroupEditor({
           {onGroupSplit && (
             <button
               onClick={onGroupSplit}
-              className="rounded p-1.5 transition-colors hover:bg-neutral-100 dark:bg-neutral-800"
+              className="rounded p-1.5 transition-colors hover:bg-neutral-100 dark:bg-white/[0.04]"
               title="Separa in serie individuali"
             >
               <X className="h-4 w-4 text-neutral-600 dark:text-neutral-400" />
@@ -273,7 +273,7 @@ export function SetGroupEditor({
               className={`rounded px-3 py-1 transition-colors ${
                 editMode === 'block'
                   ? 'bg-primary-100 font-medium text-primary-700'
-                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-neutral-800 dark:text-neutral-400'
+                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04] dark:text-neutral-400'
               }`}
             >
               Blocco
@@ -283,7 +283,7 @@ export function SetGroupEditor({
               className={`rounded px-3 py-1 transition-colors ${
                 editMode === 'individual'
                   ? 'bg-primary-100 font-medium text-primary-700'
-                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-neutral-800 dark:text-neutral-400'
+                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04] dark:text-neutral-400'
               }`}
             >
               Singole

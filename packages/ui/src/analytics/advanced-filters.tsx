@@ -161,7 +161,7 @@ export function AdvancedFilters({
               'rounded-lg px-3 py-1.5 text-xs font-medium transition-colors',
               filters.period === opt.value
                 ? 'bg-primary-600 text-white shadow-sm'
-                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]'
             )}
           >
             {opt.label}
@@ -212,7 +212,7 @@ export function AdvancedFilters({
                       'rounded-lg px-3 py-1.5 text-xs font-medium transition-colors',
                       filters.muscleGroups.includes(mg)
                         ? 'bg-violet-600 text-white'
-                        : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                        : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]'
                     )}
                   >
                     {mg}
@@ -248,7 +248,7 @@ export function AdvancedFilters({
                       'inline-flex items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors',
                       filters.exercises.includes(ex.id)
                         ? 'bg-emerald-600 text-white'
-                        : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                        : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]'
                     )}
                   >
                     {ex.name}
@@ -274,7 +274,7 @@ export function AdvancedFilters({
                     'rounded-full px-3 py-1 text-xs font-medium transition-colors',
                     filters.metrics.includes(m.value)
                       ? 'bg-amber-500 text-white'
-                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]'
                   )}
                 >
                   {m.label}
@@ -298,7 +298,7 @@ export function AdvancedFilters({
                     'rounded-lg px-3 py-1.5 text-xs font-medium transition-colors',
                     filters.groupBy === g.value
                       ? 'bg-primary-600 text-white'
-                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]'
                   )}
                 >
                   {g.label}

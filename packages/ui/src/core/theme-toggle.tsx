@@ -24,7 +24,7 @@ export function ThemeToggle() {
     <div className="relative">
       <button
         onClick={() => setShowMenu(!showMenu)}
-        className="rounded-lg p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
+        className="rounded-lg p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.06]"
         aria-label="Toggle theme"
         suppressHydrationWarning
       >

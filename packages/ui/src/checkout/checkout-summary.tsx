@@ -59,7 +59,7 @@ export function CheckoutSummary({
   }
 
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+    <div className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-white/[0.04]">
       <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
         Riepilogo Ordine
       </h3>

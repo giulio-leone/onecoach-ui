@@ -243,7 +243,7 @@ export function MealCard({
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       handleUpdateFoodQuantity(foodIndex, parseFloat(e.target.value) || 0)
                     }
-                    className="w-20 rounded border border-neutral-300 bg-white px-2 py-1 text-sm text-neutral-900 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100"
+                    className="w-20 rounded border border-neutral-300 bg-white px-2 py-1 text-sm text-neutral-900 dark:border-neutral-600 dark:bg-white/[0.04] dark:text-neutral-100"
                     min="0"
                     step="1"
                   />
@@ -266,7 +266,7 @@ export function MealCard({
           {/* Add Food Button */}
           <button
             onClick={onAddFood}
-            className="flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 py-3 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 py-3 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-white/[0.06]"
             type="button"
           >
             <Plus size={16} className="text-neutral-500 dark:text-neutral-400" />

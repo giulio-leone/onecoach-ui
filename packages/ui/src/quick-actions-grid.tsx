@@ -65,7 +65,7 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
                 <div
                   className={cn(
                     'flex h-8 w-8 items-center justify-center rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100',
-                    'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400'
+                    'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400'
                   )}
                 >
                   <ArrowUpRight className="h-4 w-4" />

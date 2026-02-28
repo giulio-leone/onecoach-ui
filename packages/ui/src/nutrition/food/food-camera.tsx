@@ -209,11 +209,11 @@ export function FoodCamera({ mode, onCapture, onClose, className = '' }: FoodCam
             <img
               src={capturedImage}
               alt="Captured"
-              className="h-auto max-h-96 w-full bg-neutral-100 object-contain dark:bg-neutral-800"
+              className="h-auto max-h-96 w-full bg-neutral-100 object-contain dark:bg-white/[0.04]"
             />
             {success && (
               <div className="absolute inset-0 flex items-center justify-center bg-green-500/20">
-                <div className="rounded-full bg-white p-3 dark:bg-neutral-900">
+                <div className="rounded-full bg-white p-3 dark:bg-zinc-950">
                   <CheckCircle2 className="h-8 w-8 text-green-600" />
                 </div>
               </div>

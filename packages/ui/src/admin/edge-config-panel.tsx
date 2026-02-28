@@ -227,7 +227,7 @@ export function EdgeConfigPanel() {
       )}
 
       {/* Add New Key */}
-      <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-800">
+      <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-white/[0.04]">
         <h4 className="mb-3 text-sm font-semibold text-neutral-900 dark:text-neutral-100">
           {t('addNew')}
         </h4>
@@ -262,7 +262,7 @@ export function EdgeConfigPanel() {
       </div>
 
       {/* Existing Values */}
-      <div className="rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800">
+      <div className="rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-white/[0.04]">
         <div className="border-b border-neutral-200 p-4 dark:border-neutral-700">
           <h4 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
             {t('existingValues')} ({Object.keys(values).length})
@@ -286,7 +286,7 @@ export function EdgeConfigPanel() {
                         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                           setEditingValue(e.target.value)
                         }
-                        className="mt-1 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm dark:border-neutral-600 dark:bg-neutral-900"
+                        className="mt-1 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm dark:border-neutral-600 dark:bg-zinc-950"
                         rows={4}
                         disabled={saving}
                       />

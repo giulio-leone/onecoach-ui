@@ -222,7 +222,7 @@ function CalendarMonth({
                     !isSelected &&
                       !inRange &&
                       !isTodayDate &&
-                      'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800',
+                      'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.06]',
                     // Disabled
                     isDisabled && 'cursor-not-allowed opacity-30 hover:bg-transparent'
                   )}
@@ -474,7 +474,7 @@ export function DateRangePicker({
                   'flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-all',
                   selectionMode === 'departure'
                     ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/25'
-                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                    : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                 )}
               >
                 <PlaneTakeoff className="h-4 w-4" />
@@ -490,7 +490,7 @@ export function DateRangePicker({
                     'flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-all',
                     selectionMode === 'return'
                       ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/25'
-                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700',
+                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]',
                     !departureDate && 'cursor-not-allowed opacity-50'
                   )}
                 >
@@ -507,7 +507,7 @@ export function DateRangePicker({
                 onClick={handlePreviousMonth}
                 disabled={!canGoPrevious}
                 className={cn(
-                  'rounded-lg p-2 text-neutral-500 transition hover:bg-neutral-100 dark:hover:bg-neutral-800',
+                  'rounded-lg p-2 text-neutral-500 transition hover:bg-neutral-100 dark:hover:bg-white/[0.06]',
                   !canGoPrevious && 'cursor-not-allowed opacity-30'
                 )}
               >
@@ -516,7 +516,7 @@ export function DateRangePicker({
               <button
                 type="button"
                 onClick={handleNextMonth}
-                className="rounded-lg p-2 text-neutral-500 transition hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                className="rounded-lg p-2 text-neutral-500 transition hover:bg-neutral-100 dark:hover:bg-white/[0.06]"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -570,7 +570,7 @@ export function DateRangePicker({
                     className={cn(
                       'rounded-lg px-3 py-1.5 text-xs font-medium transition-all',
                       'bg-neutral-100 text-neutral-700 hover:bg-primary-100 hover:text-primary-700',
-                      'dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-primary-900/40 dark:hover:text-primary-300'
+                      'dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-primary-900/40 dark:hover:text-primary-300'
                     )}
                   >
                     {label}

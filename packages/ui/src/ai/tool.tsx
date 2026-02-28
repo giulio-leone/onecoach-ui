@@ -52,7 +52,7 @@ export type ToolHeaderProps = {
 const statusConfigs: Record<ToolUIPart['state'], { icon: ReactNode; variant: string }> = {
   'input-streaming': {
     icon: <CircleIcon className="size-3" />,
-    variant: 'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400',
+    variant: 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400',
   },
   'input-available': {
     icon: <ClockIcon className="size-3 animate-spin" />,
@@ -114,7 +114,7 @@ export const ToolHeader = ({ className, title, type, state, ...props }: ToolHead
         // Layout
         'group flex w-full items-center justify-between gap-4 px-4 py-3',
         // Hover
-        'hover:bg-neutral-50/50 dark:hover:bg-neutral-700/30',
+        'hover:bg-neutral-50/50 dark:hover:bg-white/[0.08]/30',
         // Focus
         'focus-visible:ring-primary-500/50 focus-visible:ring-2 focus-visible:outline-none',
         // Transition

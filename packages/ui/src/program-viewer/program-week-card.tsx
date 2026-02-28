@@ -21,7 +21,7 @@ export function ProgramWeekCard({
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl dark:border-neutral-700 dark:bg-neutral-900',
+        'overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl dark:border-neutral-700 dark:bg-zinc-950',
         className
       )}
     >

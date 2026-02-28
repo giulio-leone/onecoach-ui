@@ -113,7 +113,7 @@ export const MessageAction = ({
         // Size
         'size-7',
         // Hover effects
-        'hover:bg-neutral-100 dark:hover:bg-neutral-800',
+        'hover:bg-neutral-100 dark:hover:bg-white/[0.06]',
         // Focus
         'focus-visible:ring-primary-500 focus-visible:ring-2',
         className
@@ -299,7 +299,7 @@ export const MessageResponse = memo(
         'prose prose-sm max-w-none',
         'dark:prose-invert',
         // Code blocks
-        'prose-pre:bg-neutral-100 prose-pre:dark:bg-neutral-900',
+        'prose-pre:bg-neutral-100 prose-pre:dark:bg-zinc-950',
         'prose-pre:border prose-pre:border-neutral-200/50 prose-pre:dark:border-white/[0.08]',
         'prose-pre:rounded-lg',
         // Links
@@ -372,7 +372,7 @@ export function MessageAttachment({
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <div className="flex size-full items-center justify-center bg-neutral-100 dark:bg-neutral-800">
+              <div className="flex size-full items-center justify-center bg-neutral-100 dark:bg-white/[0.04]">
                 <PaperclipIcon className="size-5 text-neutral-500" />
               </div>
             </TooltipTrigger>

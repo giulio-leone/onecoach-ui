@@ -210,7 +210,7 @@ export function MesocycleEditor({
                   'flex items-start gap-3 rounded-xl border p-4 text-left transition-all',
                   isSelected
                     ? 'border-indigo-500/50 bg-indigo-500/10 ring-2 ring-indigo-500/30 dark:bg-indigo-500/20'
-                    : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-neutral-900 dark:hover:border-neutral-700'
+                    : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-700'
                 )}
               >
                 <div
@@ -218,7 +218,7 @@ export function MesocycleEditor({
                     'flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg',
                     isSelected
                       ? 'bg-indigo-500 text-white'
-                      : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
+                      : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-400'
                   )}
                 >
                   <Icon className="h-4 w-4" />
@@ -380,7 +380,7 @@ export function MesocycleEditor({
                   onChange={(e) =>
                     setDeloadFrequency(Math.min(8, Math.max(2, Number(e.target.value))))
                   }
-                  className="w-20 rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"
+                  className="w-20 rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-zinc-950 dark:text-white"
                 />
                 <span className="text-sm text-neutral-500 dark:text-neutral-400">
                   {tf('weeks', 'weeks')}
@@ -404,7 +404,7 @@ export function MesocycleEditor({
                 key={preset.id}
                 type="button"
                 onClick={() => handleApplyPreset(preset)}
-                className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2 text-xs font-semibold text-neutral-700 transition-all hover:border-indigo-500/50 hover:bg-indigo-500/5 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-indigo-500/50"
+                className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-2 text-xs font-semibold text-neutral-700 transition-all hover:border-indigo-500/50 hover:bg-indigo-500/5 dark:border-neutral-700 dark:bg-zinc-950 dark:text-neutral-300 dark:hover:border-indigo-500/50"
               >
                 <Sparkles className="h-3.5 w-3.5 text-indigo-500" />
                 {preset.name}

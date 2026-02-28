@@ -43,7 +43,7 @@ export function FoodCard({
         'flex items-center gap-3 p-4 transition-colors',
         'border-t first:border-t-0',
         'border-neutral-200 dark:border-neutral-800',
-        'bg-white hover:bg-neutral-50 dark:bg-neutral-900 dark:hover:bg-neutral-800/60'
+        'bg-white hover:bg-neutral-50 dark:bg-zinc-950 dark:hover:bg-white/[0.06]/60'
       )}
     >
       {/* Checkbox */}
@@ -61,7 +61,7 @@ export function FoodCard({
         <div
           className={cn(
             'flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg',
-            'bg-neutral-100 dark:bg-neutral-800'
+            'bg-neutral-100 dark:bg-white/[0.04]'
           )}
         >
           <UtensilsCrossed className="h-6 w-6 text-neutral-400 dark:text-neutral-500" />
@@ -104,7 +104,7 @@ export function FoodCard({
               className={cn(
                 'h-auto min-h-[2.75rem] min-w-[2.75rem] rounded-lg p-2',
                 'touch-manipulation bg-white text-neutral-600 hover:bg-neutral-50',
-                'dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700'
+                'dark:bg-white/[0.04] dark:text-neutral-200 dark:hover:bg-white/[0.08]'
               )}
               aria-label="Azioni"
             >

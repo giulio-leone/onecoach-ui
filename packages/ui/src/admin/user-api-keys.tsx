@@ -105,7 +105,7 @@ export function UserApiKeys({ userId }: UserApiKeysProps) {
         icon: XCircle,
       },
       EXPIRED: {
-        bg: 'bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-400',
+        bg: 'bg-neutral-100 text-neutral-800 dark:bg-white/[0.04] dark:text-neutral-400',
         icon: AlertCircle,
       },
     };
@@ -159,7 +159,7 @@ export function UserApiKeys({ userId }: UserApiKeysProps) {
           {apiKeys.map((key: any) => (
             <div
               key={key.id}
-              className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900"
+              className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-zinc-950"
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1 space-y-2">

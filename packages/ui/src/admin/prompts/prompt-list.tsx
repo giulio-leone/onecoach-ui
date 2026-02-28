@@ -71,7 +71,7 @@ export function PromptList({
                   <span className="text-xs font-bold tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
                     {category}
                   </span>
-                  <div className="h-px flex-1 bg-neutral-200 dark:bg-neutral-800" />
+                  <div className="h-px flex-1 bg-neutral-200 dark:bg-white/[0.04]" />
                 </div>
                 <div className="space-y-1">
                   {(categoryPrompts as any[]).map((prompt: any) => (
@@ -80,7 +80,7 @@ export function PromptList({
                       layoutId={prompt.agentId}
                       onClick={() => onSelectPrompt(prompt.agentId)}
                       className={cn(
-                        'group relative flex w-full flex-col items-start gap-1 rounded-xl p-3 text-left transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800/50',
+                        'group relative flex w-full flex-col items-start gap-1 rounded-xl p-3 text-left transition-all hover:bg-neutral-100 dark:hover:bg-white/[0.06]/50',
                         selectedPromptId === prompt.agentId
                           ? 'bg-primary-50/80 ring-1 ring-primary-200 dark:bg-primary-900/20 dark:ring-primary-800'
                           : 'bg-transparent'

@@ -110,7 +110,7 @@ const AirportItem = React.memo(function AirportItem({
       {/* Airport Info */}
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex items-center gap-2">
-          <span className="shrink-0 rounded-md bg-neutral-100 px-2 py-0.5 font-mono text-xs font-bold text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+          <span className="shrink-0 rounded-md bg-neutral-100 px-2 py-0.5 font-mono text-xs font-bold text-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300">
             {airport.code}
           </span>
           <span className="truncate text-sm font-medium text-neutral-900 dark:text-white">
@@ -176,7 +176,7 @@ function SelectedChips({
         <button
           type="button"
           onClick={onClearAll}
-          className="flex items-center gap-1 rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700"
+          className="flex items-center gap-1 rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]"
         >
           <X size={10} weight="bold" />
           {translations.clearAll}
@@ -394,7 +394,7 @@ export function AirportCombobox({
                     'w-full rounded-xl border border-neutral-200 bg-white py-2.5 pr-10 pl-10 text-sm transition-colors',
                     'placeholder:text-neutral-400',
                     'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
-                    'dark:border-neutral-700 dark:bg-neutral-800 dark:text-white'
+                    'dark:border-neutral-700 dark:bg-white/[0.04] dark:text-white'
                   )}
                 />
                 {isSearching && (
@@ -404,7 +404,7 @@ export function AirportCombobox({
                   <button
                     type="button"
                     onClick={() => setSearchQuery('')}
-                    className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-0.5 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600 dark:hover:bg-neutral-700"
+                    className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-0.5 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600 dark:hover:bg-white/[0.08]"
                   >
                     <X size={14} weight="bold" />
                   </button>
@@ -418,7 +418,7 @@ export function AirportCombobox({
               <span className="text-xs font-semibold tracking-wide text-neutral-500 uppercase">
                 {sectionTitle}
               </span>
-              <span className="ml-auto rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+              <span className="ml-auto rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
                 {displayList.length}
               </span>
             </div>

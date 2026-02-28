@@ -135,7 +135,7 @@ export function VersionHistoryModal<T>({
         className={cn(
           'relative z-10 w-full max-w-lg overflow-hidden rounded-2xl',
           'border border-neutral-200 bg-white shadow-2xl',
-          'dark:border-white/10 dark:bg-neutral-900',
+          'dark:border-white/10 dark:bg-zinc-950',
           'animate-in zoom-in-95 fade-in duration-200'
         )}
       >
@@ -201,7 +201,7 @@ export function VersionHistoryModal<T>({
                     {semanticDiff.map((change: any) => (
                       <div
                         key={change.id}
-                        className="relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-neutral-800"
+                        className="relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-white/[0.04]"
                       >
                         {/* Status Bar */}
                         <div

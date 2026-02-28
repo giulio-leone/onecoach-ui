@@ -153,7 +153,7 @@ function WeightInput({
       <button
         type="button"
         onClick={() => adjust(-0.1)}
-        className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-white text-neutral-600 transition-colors hover:bg-neutral-50 active:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+        className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-white text-neutral-600 transition-colors hover:bg-neutral-50 active:bg-neutral-100 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]"
       >
         <Minus className="h-4 w-4" />
       </button>
@@ -164,7 +164,7 @@ function WeightInput({
           min="0"
           value={value}
           onChange={(e) => onChange(Math.max(0, parseFloat(e.target.value) || 0))}
-          className="h-14 w-28 rounded-xl border border-neutral-200 bg-white text-center text-2xl font-bold text-neutral-900 outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500/20"
+          className="h-14 w-28 rounded-xl border border-neutral-200 bg-white text-center text-2xl font-bold text-neutral-900 outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500/20"
         />
         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-neutral-400">
           kg
@@ -173,7 +173,7 @@ function WeightInput({
       <button
         type="button"
         onClick={() => adjust(0.1)}
-        className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-white text-neutral-600 transition-colors hover:bg-neutral-50 active:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+        className="flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 bg-white text-neutral-600 transition-colors hover:bg-neutral-50 active:bg-neutral-100 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]"
       >
         <Plus className="h-4 w-4" />
       </button>
@@ -295,7 +295,7 @@ export function BodyMeasurementsTracker({
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-900 outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+          className="rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-900 outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-white"
         />
       </div>
 
@@ -392,7 +392,7 @@ export function BodyMeasurementsTracker({
                       placeholder="—"
                       value={circumferences[f.key] ?? ''}
                       onChange={(e) => handleCircumChange(f.key, e.target.value)}
-                      className="h-8 w-full rounded-lg border border-neutral-200 bg-white px-2 pr-7 text-sm text-neutral-900 outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                      className="h-8 w-full rounded-lg border border-neutral-200 bg-white px-2 pr-7 text-sm text-neutral-900 outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-white"
                     />
                     <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-neutral-400">
                       cm
@@ -411,7 +411,7 @@ export function BodyMeasurementsTracker({
         onChange={(e) => setNotes(e.target.value)}
         placeholder="Note aggiuntive..."
         rows={2}
-        className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+        className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 focus:border-primary-400 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-white"
       />
 
       {/* ── Save button ── */}

@@ -28,7 +28,7 @@ export function OneDashboardLayout({
   labels,
 }: OneDashboardLayoutProps) {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-neutral-50 dark:bg-neutral-900">
+    <div className="min-h-screen overflow-x-hidden bg-neutral-50 dark:bg-[#09090b]">
       <AppShellSidebar user={user} navigation={navigation} />
       <AppShellMainContent className="p-0">
         <AppShellHeader labels={labels.header} />

@@ -20,13 +20,13 @@ export function FoodScanModal({ isOpen, onClose, onAdded }: FoodAiModalProps) {
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <button
-            className={`rounded px-3 py-1 text-sm ${mode === 'label' ? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900' : 'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300'}`}
+            className={`rounded px-3 py-1 text-sm ${mode === 'label' ? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900' : 'bg-neutral-100 text-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300'}`}
             onClick={() => setMode('label')}
           >
             Etichetta
           </button>
           <button
-            className={`rounded px-3 py-1 text-sm ${mode === 'dish' ? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900' : 'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300'}`}
+            className={`rounded px-3 py-1 text-sm ${mode === 'dish' ? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900' : 'bg-neutral-100 text-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300'}`}
             onClick={() => setMode('dish')}
           >
             Piatto
