@@ -188,4 +188,5 @@ export * from './agenda';
 export * from './marketplace';
 export * from './layout';
 export * from './auth';
+export * from './onboarding';
 export * from './pricing';

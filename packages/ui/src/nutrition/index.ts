@@ -19,3 +19,11 @@ export * from './live';
 
 // Plan
 export * from './plan';
+
+// Quick Log (M6-I2)
+export { QuickLog } from './quick-log';
+export type { QuickLogProps, QuickLogEntry, QuickLogFood, QuickLogPreset } from './quick-log';
+
+// Hydration Tracker (M6-I4)
+export { HydrationTracker } from './hydration-tracker';
+export type { HydrationTrackerProps, HydrationEntry } from './hydration-tracker';
