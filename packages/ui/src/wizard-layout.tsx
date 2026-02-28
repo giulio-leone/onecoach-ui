@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
     borderTopWidth: 1,
-    borderColor: '#e2e8f0', // border-neutral-200
+    borderColor: '#e2e8f0', // border-neutral-200/60
     padding: 16,
     // Shadow for iOS and Web
     boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.05)',

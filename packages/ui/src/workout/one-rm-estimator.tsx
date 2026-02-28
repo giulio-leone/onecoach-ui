@@ -115,7 +115,7 @@ export function OneRMEstimator({
 
   return (
     <div
-      className={`rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-white/[0.04] ${className}`}
+      className={`rounded-lg border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-white/[0.04] ${className}`}
     >
       <div className="mb-3 flex items-center gap-2">
         <Calculator className="h-4 w-4 text-primary-600 dark:text-primary-400" />

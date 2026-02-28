@@ -33,7 +33,7 @@ export function SelectionActionBarWeb({
     // Client-only portal might be needed if generic, but here inline is fine or use Portal from radix
     <div
       className={cn(
-        'fixed bottom-8 left-1/2 z-50 flex w-[90%] max-w-2xl -translate-x-1/2 items-center justify-between rounded-xl border border-neutral-200 bg-white p-3 shadow-xl dark:border-white/[0.08] dark:bg-white/[0.04]',
+        'fixed bottom-8 left-1/2 z-50 flex w-[90%] max-w-2xl -translate-x-1/2 items-center justify-between rounded-xl border border-neutral-200/60 bg-white p-3 shadow-xl dark:border-white/[0.08] dark:bg-white/[0.04]',
         className
       )}
     >

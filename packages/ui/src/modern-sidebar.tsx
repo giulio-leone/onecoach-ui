@@ -367,7 +367,7 @@ export function ModernSidebar({
             )}
 
             {/* User Info */}
-            <div className="relative rounded-xl border border-transparent bg-transparent transition-colors hover:border-neutral-200 hover:bg-white hover:shadow-sm dark:hover:border-neutral-700 dark:hover:bg-white/[0.06]">
+            <div className="relative rounded-xl border border-transparent bg-transparent transition-colors hover:border-neutral-200/60 hover:bg-white hover:shadow-sm dark:hover:border-neutral-700 dark:hover:bg-white/[0.06]">
               <button
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
                 className="flex w-full items-center gap-3 px-2 py-2"

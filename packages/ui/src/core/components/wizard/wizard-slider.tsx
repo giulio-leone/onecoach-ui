@@ -30,7 +30,7 @@ export function WizardSlider({
   return (
     <div
       className={cn(
-        'space-y-4 rounded-xl border border-neutral-200 bg-white p-5 dark:border-white/[0.08] dark:bg-neutral-900/50',
+        'space-y-4 rounded-xl border border-neutral-200/60 bg-white p-5 dark:border-white/[0.08] dark:bg-neutral-900/50',
         className
       )}
     >

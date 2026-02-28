@@ -23,7 +23,7 @@ export function CoachDashboardStats({ stats, isLoading }: CoachDashboardStatsPro
         {[1, 2, 3, 4].map((i: any) => (
           <div
             key={i}
-            className="flex h-32 items-center justify-center rounded-xl border border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-zinc-950"
+            className="flex h-32 items-center justify-center rounded-xl border border-neutral-200/60 bg-white dark:border-white/[0.08] dark:bg-zinc-950"
           >
             <LoadingIndicator />
           </div>

@@ -178,7 +178,7 @@ export function HydrationTracker({
             type="button"
             onClick={() => onAddWater(ml, drinkType)}
             className={cn(
-              'flex flex-col items-center gap-1 rounded-xl border border-neutral-200 bg-white px-3 py-3 transition-all duration-200',
+              'flex flex-col items-center gap-1 rounded-xl border border-neutral-200/60 bg-white px-3 py-3 transition-all duration-200',
               'hover:border-sky-300 hover:bg-sky-50/50 active:scale-95',
               'dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-sky-700 dark:hover:bg-sky-950/30'
             )}
@@ -215,7 +215,7 @@ export function HydrationTracker({
               onChange={(e) => setCustomAmount(e.target.value)}
               placeholder="Amount (ml)"
               className={cn(
-                'w-full rounded-xl border border-neutral-200 bg-white py-2.5 pl-3 pr-12 text-sm outline-none transition-colors',
+                'w-full rounded-xl border border-neutral-200/60 bg-white py-2.5 pl-3 pr-12 text-sm outline-none transition-colors',
                 'focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20',
                 'dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-100 dark:focus:border-sky-500'
               )}
@@ -255,7 +255,7 @@ export function HydrationTracker({
               <div
                 key={idx}
                 className={cn(
-                  'group flex items-center justify-between rounded-xl border border-neutral-200 bg-white px-3 py-2.5 transition-colors',
+                  'group flex items-center justify-between rounded-xl border border-neutral-200/60 bg-white px-3 py-2.5 transition-colors',
                   'dark:border-white/[0.08] dark:bg-zinc-950'
                 )}
               >

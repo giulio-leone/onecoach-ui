@@ -307,7 +307,7 @@ export function SmartAnalysisPanel({
                         <Button
                           variant="outline"
                           size="sm"
-                          className="rounded-xl border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-200 dark:hover:bg-white/[0.08]"
+                          className="rounded-xl border-neutral-200/60 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-200 dark:hover:bg-white/[0.08]"
                           onClick={() => onSelectRecommendation(recommendation)}
                         >
                           <CheckCircle className="mr-1.5 h-4 w-4" weight="bold" />
@@ -384,7 +384,7 @@ export function SmartAnalysisPanel({
                               transition={{ delay: idx * 0.05 }}
                               className={cn(
                                 'flex items-center justify-between rounded-xl border p-3 transition-colors',
-                                'border-neutral-200 bg-white hover:border-neutral-300',
+                                'border-neutral-200/60 bg-white hover:border-neutral-300',
                                 'dark:border-white/[0.08] dark:bg-neutral-800/50 dark:hover:border-neutral-600'
                               )}
                             >

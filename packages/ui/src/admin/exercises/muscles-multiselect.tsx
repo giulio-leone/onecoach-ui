@@ -55,7 +55,7 @@ export function MusclesMultiselect({ primary, secondary, onChange }: MusclesMult
           : 'Seleziona muscoli'}
       </button>
       {open && (
-        <div className="absolute z-50 mt-1 max-h-96 w-full overflow-auto rounded-md border border-neutral-200 bg-white p-2 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950">
+        <div className="absolute z-50 mt-1 max-h-96 w-full overflow-auto rounded-md border border-neutral-200/60 bg-white p-2 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950">
           <input
             className="mb-2 w-full rounded border border-neutral-300 px-2 py-1 text-sm dark:border-white/[0.1]"
             placeholder="Cerca..."

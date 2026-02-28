@@ -173,7 +173,7 @@ export function LiveSupersetCard({
       </div>
 
       {/* Rest Info */}
-      <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
+      <div className="border-t border-neutral-200/60 px-5 py-3 dark:border-white/[0.08]">
         <p className="text-xs text-neutral-500 dark:text-neutral-400">
           💡 Riposo tra esercizi: {superset.restBetweenExercises}s • Dopo superset:{' '}
           {superset.restAfterSuperset}s
@@ -182,7 +182,7 @@ export function LiveSupersetCard({
 
       {/* Notes */}
       {superset.notes && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
+        <div className="border-t border-neutral-200/60 px-5 py-3 dark:border-white/[0.08]">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{superset.notes}</p>
         </div>
       )}

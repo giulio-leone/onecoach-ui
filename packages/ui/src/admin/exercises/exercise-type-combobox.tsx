@@ -48,7 +48,7 @@ export function ExerciseTypeCombobox({
         {selectedName || 'Tipo esercizio'}
       </button>
       {open && (
-        <div className="absolute z-50 mt-1 max-h-64 w-full overflow-auto rounded-md border border-neutral-200 bg-white p-2 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950">
+        <div className="absolute z-50 mt-1 max-h-64 w-full overflow-auto rounded-md border border-neutral-200/60 bg-white p-2 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950">
           <Input
             placeholder="Cerca..."
             value={query}

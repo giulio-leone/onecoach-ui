@@ -325,7 +325,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
             </AdminSelect>
           </div>
           {/* Credits */}
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
             <h4 className="mb-4 font-semibold text-neutral-900 dark:text-neutral-100">
               {t('admin.user_detail_modal.gestione_crediti')}
             </h4>
@@ -455,7 +455,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
             </div>
           </div>
           {/* Activity stats */}
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
             <h4 className="mb-3 font-semibold text-neutral-900 dark:text-neutral-100">
               {t('admin.user_detail_modal.statistiche_attivita')}
             </h4>
@@ -479,7 +479,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
             </div>
           </div>
           {/* API Keys */}
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
             <UserApiKeys userId={user.id} />
           </div>
         </div>

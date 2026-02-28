@@ -144,7 +144,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
       className={cn('flex h-full flex-col overflow-hidden bg-white dark:bg-[#09090b]', className)}
     >
       {/* Toolbar */}
-      <div className="flex items-center justify-between border-b border-neutral-200 px-4 py-2 dark:border-neutral-800">
+      <div className="flex items-center justify-between border-b border-neutral-200/60 px-4 py-2 dark:border-neutral-800">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <h2 className="text-lg font-bold">{prompt.name}</h2>
@@ -204,7 +204,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
         <div
           className={cn(
             'flex flex-col transition-all duration-300',
-            showPreview ? 'w-1/2 border-r border-neutral-200 dark:border-neutral-800' : 'w-full'
+            showPreview ? 'w-1/2 border-r border-neutral-200/60 dark:border-neutral-800' : 'w-full'
           )}
         >
           <div className="flex-1 overflow-hidden">
@@ -226,7 +226,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
           </div>
 
           {/* Variables Helper */}
-          <div className="border-t border-neutral-200 bg-neutral-50 p-2 text-xs dark:border-white/[0.08] dark:bg-zinc-950">
+          <div className="border-t border-neutral-200/60 bg-neutral-50 p-2 text-xs dark:border-white/[0.08] dark:bg-zinc-950">
             <span className="mr-2 font-semibold">{t('variables')}</span>
             {Object.keys(prompt.variables || {}).map((v: string) => (
               <button

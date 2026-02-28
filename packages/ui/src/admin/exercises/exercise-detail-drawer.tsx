@@ -98,7 +98,7 @@ export function ExerciseDetailDrawer({
             </div>
             {/* Overview */}
             {exercise.overview && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   <Sparkles className="h-3.5 w-3.5 text-emerald-500 sm:h-4 sm:w-4" />
                   Overview
@@ -112,7 +112,7 @@ export function ExerciseDetailDrawer({
             {(exercise.videoUrl || exercise.imageUrl) && (
               <section className="grid gap-3 sm:grid-cols-2">
                 {exercise.videoUrl && (
-                  <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+                  <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
                     <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                       <PlayCircle className="h-3.5 w-3.5 text-primary-500 sm:h-4 sm:w-4" />
                       Video
@@ -128,7 +128,7 @@ export function ExerciseDetailDrawer({
                   </div>
                 )}
                 {exercise.imageUrl && (
-                  <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+                  <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
                     <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                       <Camera className="h-3.5 w-3.5 text-secondary-500 sm:h-4 sm:w-4" />
                       Immagine
@@ -147,7 +147,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Muscoli e body parts */}
             <section className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <div className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Muscoli
                 </h4>
@@ -169,7 +169,7 @@ export function ExerciseDetailDrawer({
                     ))}
                 </div>
               </div>
-              <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <div className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   {t('admin.exercise_detail_drawer.parti_del_corpo')}
                 </h4>
@@ -190,7 +190,7 @@ export function ExerciseDetailDrawer({
               </div>
             </section>
             {/* Equipments */}
-            <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+            <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
               <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                 Attrezzature
               </h4>
@@ -214,7 +214,7 @@ export function ExerciseDetailDrawer({
             </section>
             {/* Keywords */}
             {exercise.keywords!.length > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Keywords
                 </h4>
@@ -232,7 +232,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Instructions */}
             {(exercise.instructions?.length ?? 0) > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-3 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   <ClipboardList className="h-3.5 w-3.5 text-indigo-500 sm:h-4 sm:w-4" />
                   Istruzioni
@@ -246,7 +246,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Tips */}
             {(exercise.exerciseTips?.length ?? 0) > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   <Sparkles className="h-3.5 w-3.5 text-amber-500 sm:h-4 sm:w-4" />
                   {t('admin.exercise_detail_drawer.cue_consigli')}
@@ -263,7 +263,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Variations */}
             {(exercise.variations?.length ?? 0) > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Varianti
                 </h4>
@@ -281,7 +281,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Relazioni */}
             {(exercise.related?.length ?? 0) > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Relazioni
                 </h4>

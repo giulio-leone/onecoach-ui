@@ -571,7 +571,7 @@ export function FlightResults({
                     variant="ghost"
                     disabled={!canBook || isSaving}
                     onClick={handleSaveSelectedTrip}
-                    className="h-auto rounded-xl border border-neutral-200 px-6 py-3 text-sm font-bold text-neutral-600 hover:bg-neutral-50 dark:border-white/[0.08] dark:text-neutral-300 dark:hover:bg-white/[0.06]"
+                    className="h-auto rounded-xl border border-neutral-200/60 px-6 py-3 text-sm font-bold text-neutral-600 hover:bg-neutral-50 dark:border-white/[0.08] dark:text-neutral-300 dark:hover:bg-white/[0.06]"
                   >
                     <Heart className={cn('mr-2 h-4 w-4', isSaving && 'animate-pulse')} />
                     {t('results.saveTrip') || 'Save'}

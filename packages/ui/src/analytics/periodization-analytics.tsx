@@ -192,7 +192,7 @@ function PhaseDetailCard({ phase }: { phase: PhaseAnalytics }) {
     <div
       className={cn(
         'rounded-xl border p-4',
-        'border-neutral-200 bg-white/80 dark:border-white/[0.08] dark:bg-neutral-900/80'
+        'border-neutral-200/60 bg-white/80 dark:border-white/[0.08] dark:bg-neutral-900/80'
       )}
     >
       {/* Header */}

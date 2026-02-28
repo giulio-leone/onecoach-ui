@@ -378,7 +378,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
             className={cn(
               'w-full rounded-xl border py-2.5 pr-4 pl-10',
-              'border-neutral-200 dark:border-white/[0.08]',
+              'border-neutral-200/60 dark:border-white/[0.08]',
               'bg-white dark:bg-white/[0.04]',
               'text-neutral-900 placeholder:text-neutral-400 dark:text-white',
               'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -427,7 +427,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
       </div>
 
       {(selectionMode || hasSelection) && (
-        <div className="flex flex-wrap items-center gap-2 rounded-xl border border-neutral-200 bg-white/80 p-3 text-sm dark:border-white/[0.08] dark:bg-neutral-800/80">
+        <div className="flex flex-wrap items-center gap-2 rounded-xl border border-neutral-200/60 bg-white/80 p-3 text-sm dark:border-white/[0.08] dark:bg-neutral-800/80">
           <span className="text-neutral-600 dark:text-neutral-300">
             {hasSelection ? t('selection.count', { count: selectedIds.size }) : t('selection.none')}
           </span>
@@ -437,7 +437,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
               disabled={!filteredConversations.length}
               className={cn(
                 'rounded-lg px-3 py-1.5',
-                'border border-neutral-200 text-neutral-700 hover:bg-neutral-100',
+                'border border-neutral-200/60 text-neutral-700 hover:bg-neutral-100',
                 'disabled:cursor-not-allowed disabled:opacity-50',
                 'dark:border-white/[0.08] dark:text-neutral-200 dark:hover:bg-white/[0.08]'
               )}
@@ -449,7 +449,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
               disabled={!hasSelection || isBatchLoading}
               className={cn(
                 'flex items-center gap-2 rounded-lg px-3 py-1.5',
-                'border border-neutral-200 text-neutral-700 hover:bg-neutral-100',
+                'border border-neutral-200/60 text-neutral-700 hover:bg-neutral-100',
                 'disabled:cursor-not-allowed disabled:opacity-50',
                 'dark:border-white/[0.08] dark:text-neutral-200 dark:hover:bg-white/[0.08]'
               )}
@@ -488,7 +488,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                 onClick={clearSelection}
                 className={cn(
                   'rounded-lg px-3 py-1.5',
-                  'border border-neutral-200 text-neutral-600 hover:bg-neutral-100',
+                  'border border-neutral-200/60 text-neutral-600 hover:bg-neutral-100',
                   'dark:border-white/[0.08] dark:text-neutral-300 dark:hover:bg-white/[0.08]'
                 )}
               >
@@ -615,7 +615,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                               'absolute top-full right-0 z-50 mt-1',
                               'min-w-[140px] rounded-lg p-1',
                               'bg-white dark:bg-white/[0.04]',
-                              'border border-neutral-200 dark:border-white/[0.08]',
+                              'border border-neutral-200/60 dark:border-white/[0.08]',
                               'shadow-xl'
                             )}
                             onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}

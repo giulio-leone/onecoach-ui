@@ -163,7 +163,7 @@ export function FoodSelector({
       {isOpen && (
         <div
           ref={resultsRef}
-          className="absolute z-50 mt-2 max-h-64 w-full overflow-y-auto rounded-xl border border-neutral-200 bg-white shadow-lg dark:border-white/[0.08] dark:bg-zinc-950"
+          className="absolute z-50 mt-2 max-h-64 w-full overflow-y-auto rounded-xl border border-neutral-200/60 bg-white shadow-lg dark:border-white/[0.08] dark:bg-zinc-950"
         >
           {isLoading ? (
             <div className="flex items-center justify-center py-8">

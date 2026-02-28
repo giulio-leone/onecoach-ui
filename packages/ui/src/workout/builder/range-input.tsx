@@ -179,7 +179,7 @@ export function RangeInput({
           className={`w-full rounded-md border bg-transparent px-2 py-1.5 text-sm transition-colors duration-150 focus:ring-1 focus:outline-none ${
             disabled
               ? 'cursor-not-allowed opacity-50'
-              : 'border-neutral-200 dark:border-white/[0.1]'
+              : 'border-neutral-200/60 dark:border-white/[0.1]'
           } ${isFocused ? 'border-primary-500 ring-primary-500' : ''} text-neutral-900 placeholder:text-neutral-400 dark:text-white dark:placeholder:text-neutral-500`}
           aria-label={`${fieldType} range input`}
         />

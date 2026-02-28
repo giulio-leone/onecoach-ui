@@ -33,7 +33,7 @@ export function ProgramDayCard({
   return (
     <div
       className={cn(
-        'rounded-xl border border-neutral-200 bg-neutral-50 p-5 shadow-sm transition-all duration-200 hover:shadow-md dark:border-white/[0.08] dark:bg-neutral-800/50',
+        'rounded-xl border border-neutral-200/60 bg-neutral-50 p-5 shadow-sm transition-all duration-200 hover:shadow-md dark:border-white/[0.08] dark:bg-neutral-800/50',
         className
       )}
     >

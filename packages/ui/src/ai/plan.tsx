@@ -45,7 +45,7 @@ export const Plan = ({
             'overflow-hidden transition-all duration-300',
             // Default: Solid card
             variant === 'default' &&
-              'rounded-xl border border-neutral-200 bg-white/80 shadow-sm dark:border-white/[0.08] dark:bg-neutral-900/80',
+              'rounded-xl border border-neutral-200/60 bg-white/80 shadow-sm dark:border-white/[0.08] dark:bg-neutral-900/80',
             // Glass: Heavily blurred, meant to stand alone
             variant === 'glass' &&
               'rounded-xl border border-white/20 bg-white/10 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-black/20',

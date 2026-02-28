@@ -295,7 +295,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
   return (
     <div className="space-y-8">
       {/* Dashboard Hero */}
-      <div className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white p-8 dark:border-white/[0.08] dark:bg-[#09090b]">
+      <div className="relative overflow-hidden rounded-3xl border border-neutral-200/60 bg-white p-8 dark:border-white/[0.08] dark:bg-[#09090b]">
         <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
@@ -407,8 +407,8 @@ function ProviderCard({
         'group relative flex flex-col overflow-hidden rounded-3xl border backdrop-blur-2xl transition-all duration-500',
         state.isExpanded ? 'row-span-2' : '',
         state.isEnabled
-          ? 'border-neutral-200 bg-white/80 shadow-xl dark:border-white/[0.08] dark:bg-white/[0.04]'
-          : 'border-neutral-200 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-zinc-950'
+          ? 'border-neutral-200/60 bg-white/80 shadow-xl dark:border-white/[0.08] dark:bg-white/[0.04]'
+          : 'border-neutral-200/60 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-zinc-950'
       )}
     >
       {/* Active Glow Effect - Reduced opacity for elegance */}
@@ -613,7 +613,7 @@ function ProviderCard({
                     animate={{ opacity: 1, height: 'auto' }}
                     className="space-y-4 pt-2"
                   >
-                    <div className="rounded-lg border border-dashed border-neutral-200 p-3 text-xs text-neutral-600 dark:border-white/[0.08] dark:text-neutral-400">
+                    <div className="rounded-lg border border-dashed border-neutral-200/60 p-3 text-xs text-neutral-600 dark:border-white/[0.08] dark:text-neutral-400">
                       {t('provider_api_keys.il_modello_predefinito_openrouter_si_con')}
                     </div>
                   </motion.div>

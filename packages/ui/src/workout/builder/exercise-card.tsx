@@ -150,7 +150,7 @@ export function ExerciseCard({
           'group/card relative mb-4 rounded-2xl border transition-all duration-300',
           isExpanded
             ? 'glass border-primary-500/30 shadow-primary-500/5 dark:glass-strong shadow-lg dark:border-white/10 dark:shadow-black/20'
-            : 'hover:border-primary-500/30 dark:hover:glass border-neutral-200 bg-white hover:shadow-md dark:border-white/[0.06] dark:bg-neutral-900/40 dark:hover:border-white/20',
+            : 'hover:border-primary-500/30 dark:hover:glass border-neutral-200/60 bg-white hover:shadow-md dark:border-white/[0.06] dark:bg-neutral-900/40 dark:hover:border-white/20',
           isDragging &&
             'shadow-glow ring-primary-500/50 z-50 scale-[1.02] bg-white ring-2 backdrop-blur-xl dark:bg-neutral-900/95'
         )}
@@ -249,7 +249,7 @@ export function ExerciseCard({
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="w-48 border-neutral-200 bg-white p-1 shadow-xl dark:border-white/10 dark:bg-neutral-950/95 dark:text-white dark:backdrop-blur-xl"
+                className="w-48 border-neutral-200/60 bg-white p-1 shadow-xl dark:border-white/10 dark:bg-neutral-950/95 dark:text-white dark:backdrop-blur-xl"
               >
                 <DropdownMenuItem
                   onClick={() => setIsSelectorOpen(true)}
@@ -342,7 +342,7 @@ export function ExerciseCard({
                 }}
                 className={cn(
                   'group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl border border-dashed py-4 transition-all',
-                  'hover:border-primary-300 hover:text-primary-600 border-neutral-200 bg-neutral-50/50 text-neutral-500',
+                  'hover:border-primary-300 hover:text-primary-600 border-neutral-200/60 bg-neutral-50/50 text-neutral-500',
                   'dark:hover:border-primary-500/30 dark:hover:text-primary-400 dark:border-white/[0.08] dark:bg-transparent dark:text-neutral-500'
                 )}
                 type="button"

@@ -361,7 +361,7 @@ export function ExerciseCombobox({
           ref={listRef}
           id="exercise-listbox"
           role="listbox"
-          className="absolute z-50 mt-1 max-h-[320px] w-full overflow-x-hidden overflow-y-auto rounded-lg border border-neutral-200 bg-white shadow-lg dark:border-white/[0.08] dark:bg-zinc-950"
+          className="absolute z-50 mt-1 max-h-[320px] w-full overflow-x-hidden overflow-y-auto rounded-lg border border-neutral-200/60 bg-white shadow-lg dark:border-white/[0.08] dark:bg-zinc-950"
         >
           {results.map((exercise: any, index) => (
             <button
@@ -414,7 +414,7 @@ export function ExerciseCombobox({
       )}
 
       {isOpen && debouncedQuery.length >= 2 && results.length === 0 && !isLoading && (
-        <div className="absolute z-50 mt-1 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-500 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-500">
+        <div className="absolute z-50 mt-1 w-full rounded-lg border border-neutral-200/60 bg-white px-4 py-3 text-sm text-neutral-500 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-500">
           {effectiveNoResults}
         </div>
       )}

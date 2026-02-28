@@ -185,7 +185,7 @@ const VerificationBadge = ({ status }: { status: string }) => {
     icon: Shield,
     label: 'Sconosciuto',
     className:
-      'bg-neutral-50 text-neutral-600 border-neutral-200 dark:bg-[#09090b] dark:text-neutral-400 dark:border-neutral-800',
+      'bg-neutral-50 text-neutral-600 border-neutral-200/60 dark:bg-[#09090b] dark:text-neutral-400 dark:border-neutral-800',
   };
 
   const Icon = config.icon;

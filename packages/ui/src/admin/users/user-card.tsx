@@ -168,7 +168,7 @@ export function UserCard({
                 {showActions && (
                   <>
                     <div className="fixed inset-0 z-40" onClick={() => setShowActions(false)} />
-                    <div className="absolute top-full right-0 z-50 mt-1 w-48 rounded-lg border border-neutral-200 bg-white p-1 shadow-lg dark:border-white/[0.08] dark:bg-white/[0.04]">
+                    <div className="absolute top-full right-0 z-50 mt-1 w-48 rounded-lg border border-neutral-200/60 bg-white p-1 shadow-lg dark:border-white/[0.08] dark:bg-white/[0.04]">
                       <button
                         onClick={() => {
                           onEdit(user);
@@ -190,7 +190,7 @@ export function UserCard({
                         {t('actions.manageCredits')}
                       </button>
 
-                      <div className="my-1 border-t border-neutral-200 dark:border-white/[0.08]" />
+                      <div className="my-1 border-t border-neutral-200/60 dark:border-white/[0.08]" />
 
                       {isActive ? (
                         <button
@@ -268,7 +268,7 @@ export function UserCard({
             </p>
             <p className="text-[10px] text-neutral-500 sm:text-xs">{t('list.credits')}</p>
           </div>
-          <div className="border-x border-neutral-200 text-center dark:border-white/[0.08]">
+          <div className="border-x border-neutral-200/60 text-center dark:border-white/[0.08]">
             <div className="flex items-center justify-center gap-1 text-neutral-500 dark:text-neutral-400">
               <Dumbbell className="h-3.5 w-3.5" />
             </div>

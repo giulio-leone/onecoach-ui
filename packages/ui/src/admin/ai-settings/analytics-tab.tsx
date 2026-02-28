@@ -202,7 +202,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
               className={cn(
                 'flex items-center gap-2 rounded-xl px-4 py-2.5',
                 'bg-white dark:bg-white/[0.04]',
-                'border border-neutral-200 dark:border-white/[0.08]',
+                'border border-neutral-200/60 dark:border-white/[0.08]',
                 'text-sm font-medium text-neutral-700 dark:text-neutral-300',
                 'hover:bg-neutral-50 dark:hover:bg-white/[0.08]'
               )}
@@ -221,7 +221,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                     'absolute top-full right-0 z-50 mt-2',
                     'min-w-[180px] rounded-xl p-1',
                     'bg-white dark:bg-white/[0.04]',
-                    'border border-neutral-200 dark:border-white/[0.08]',
+                    'border border-neutral-200/60 dark:border-white/[0.08]',
                     'shadow-xl'
                   )}
                 >

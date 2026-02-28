@@ -123,7 +123,7 @@ export function ConversationList({
             placeholder="Cerca conversazioni..."
             value={searchQuery}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
-            className="h-11 w-full rounded-xl border-neutral-200 bg-neutral-50 pl-10 text-sm transition-all focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-neutral-500 dark:focus:border-indigo-500"
+            className="h-11 w-full rounded-xl border-neutral-200/60 bg-neutral-50 pl-10 text-sm transition-all focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-neutral-500 dark:focus:border-indigo-500"
           />
         </div>
 

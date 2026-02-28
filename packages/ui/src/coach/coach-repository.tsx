@@ -114,7 +114,7 @@ export function CoachRepository({
   return (
     <div className="space-y-4">
       {/* Filters */}
-      <div className="flex flex-wrap items-center gap-4 rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="flex flex-wrap items-center gap-4 rounded-lg border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <div className="flex items-center gap-2">
           <Filter className="h-5 w-5 text-neutral-500 dark:text-neutral-500" />
           <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">

@@ -102,7 +102,7 @@ export function PersonalDetailsStep({ formData, onChange }: PersonalDetailsStepP
                   'flex items-center justify-center rounded-xl border-2 p-3 transition-all',
                   formData.userProfile?.gender === option.value
                     ? 'border-green-500 bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400'
-                    : 'border-neutral-200 hover:border-green-200 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:border-green-800 dark:hover:bg-white/[0.06]'
+                    : 'border-neutral-200/60 hover:border-green-200 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:border-green-800 dark:hover:bg-white/[0.06]'
                 )}
               >
                 <span className="font-medium">{option.label}</span>

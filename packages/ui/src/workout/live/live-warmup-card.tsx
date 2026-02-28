@@ -171,7 +171,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
 
       {/* Skip Button */}
       {!isCompleted && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
+        <div className="border-t border-neutral-200/60 px-5 py-3 dark:border-white/[0.08]">
           <button
             onClick={handleSkip}
             className="w-full rounded-lg bg-neutral-100 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]"
@@ -183,7 +183,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
 
       {/* Notes */}
       {warmup.notes && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
+        <div className="border-t border-neutral-200/60 px-5 py-3 dark:border-white/[0.08]">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{warmup.notes}</p>
         </div>
       )}

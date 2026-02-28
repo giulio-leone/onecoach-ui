@@ -21,7 +21,7 @@ const darkModeClasses = {
     tertiary: 'text-neutral-500 dark:text-neutral-400',
   },
   border: {
-    base: 'border-neutral-200 dark:border-white/[0.08]',
+    base: 'border-neutral-200/60 dark:border-white/[0.08]',
   },
   card: {
     elevated: 'shadow-lg dark:shadow-none',

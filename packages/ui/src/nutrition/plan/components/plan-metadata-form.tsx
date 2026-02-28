@@ -31,7 +31,7 @@ const STATUS_OPTIONS: { value: NutritionStatus; label: string }[] = [
 export function PlanMetadataForm({ plan, onPlanChange, className = '' }: PlanMetadataFormProps) {
   return (
     <div
-      className={`grid gap-4 overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl sm:grid-cols-2 lg:grid-cols-3 dark:border-white/[0.08] dark:bg-zinc-950 ${className}`}
+      className={`grid gap-4 overflow-hidden rounded-2xl border border-neutral-200/60 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl sm:grid-cols-2 lg:grid-cols-3 dark:border-white/[0.08] dark:bg-zinc-950 ${className}`}
     >
       <div>
         <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300">

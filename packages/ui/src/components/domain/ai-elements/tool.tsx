@@ -44,7 +44,7 @@ export const Tool = forwardRef<HTMLDivElement, ToolProps>(
       <div
         ref={ref}
         className={cn(
-          'rounded-lg border border-neutral-200 bg-neutral-50',
+          'rounded-lg border border-neutral-200/60 bg-neutral-50',
           'dark:border-white/[0.08] dark:bg-neutral-800/50',
           'overflow-hidden',
           className
@@ -173,7 +173,7 @@ export const ToolContent = forwardRef<HTMLDivElement, ToolContentProps>(
       {...props}
     >
       <div className="overflow-hidden">
-        <div className="border-t border-neutral-200 px-3 py-2 dark:border-white/[0.08]">
+        <div className="border-t border-neutral-200/60 px-3 py-2 dark:border-white/[0.08]">
           {children}
         </div>
       </div>
@@ -282,7 +282,7 @@ export function ToolBubble({ toolName, state, args, result }: ToolBubbleProps) {
     .replace(/^oneagenda /, '📅 ');
 
   return (
-    <div className="rounded-lg border border-neutral-200 bg-neutral-50 dark:border-white/[0.08] dark:bg-neutral-800/50">
+    <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 dark:border-white/[0.08] dark:bg-neutral-800/50">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50"
@@ -315,7 +315,7 @@ export function ToolBubble({ toolName, state, args, result }: ToolBubbleProps) {
         )}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-neutral-200 px-3 py-2 dark:border-white/[0.08]">
+          <div className="border-t border-neutral-200/60 px-3 py-2 dark:border-white/[0.08]">
             {args && Object.keys(args).length > 0 && <ToolInputDisplay input={args} />}
             {(mappedState === 'output-available' || mappedState === 'output-error') && (
               <ToolOutputDisplay

@@ -24,7 +24,7 @@ export function ProgramGoalsSection({
   return (
     <div
       className={cn(
-        'mb-8 rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl dark:border-white/[0.08] dark:bg-zinc-950',
+        'mb-8 rounded-2xl border border-neutral-200/60 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl dark:border-white/[0.08] dark:bg-zinc-950',
         className
       )}
     >

@@ -83,7 +83,7 @@ export function OperationCostsForm({ configs, onUpdateCost }: OperationCostsForm
         {displayConfigs.map((config: any) => (
           <div
             key={config.operationType}
-            className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 p-3 dark:border-white/10 dark:bg-white/5"
+            className="flex items-center justify-between rounded-lg border border-neutral-200/60 bg-neutral-50 p-3 dark:border-white/10 dark:bg-white/5"
           >
             <div className="flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-500/10 text-indigo-500">

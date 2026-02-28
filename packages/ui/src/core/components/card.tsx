@@ -64,7 +64,7 @@ export const Card = ({
     bordered: cn(
       'bg-white dark:bg-neutral-900/80',
       'rounded-xl shadow-sm dark:shadow-lg dark:shadow-black/20',
-      'border border-neutral-200 dark:border-white/[0.08]'
+      'border border-neutral-200/60 dark:border-white/[0.08]'
     ),
     interactive: cn(
       'bg-white dark:bg-neutral-900/80',

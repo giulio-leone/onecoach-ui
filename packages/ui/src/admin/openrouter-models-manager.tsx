@@ -573,7 +573,7 @@ export function OpenRouterModelsManager() {
             )}
           </div>
 
-          <div className="flex items-center justify-between border-t border-neutral-200 pt-4 dark:border-white/[0.08]">
+          <div className="flex items-center justify-between border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
             <div className="text-sm text-neutral-500">
               {t('openrouter_models_manager.selected')}
               {selectedSyncModels.size}
@@ -673,7 +673,7 @@ export function OpenRouterModelsManager() {
               />
             </div>
           </div>
-          <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-white/[0.08]">
+          <div className="flex justify-end gap-2 border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
             <Button variant="outline" onClick={() => setIsEditDialogOpen(false)}>
               Cancel
             </Button>
@@ -708,7 +708,7 @@ export function OpenRouterModelsManager() {
             )}
           </div>
 
-          <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-white/[0.08]">
+          <div className="flex justify-end gap-2 border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
             <Button variant="outline" onClick={() => setIsTestDialogOpen(false)}>
               Close
             </Button>

@@ -198,7 +198,7 @@ export function LiveCircuitCard({ circuit, onComplete, className = '' }: LiveCir
       )}
 
       {/* Exercises List (Overview) */}
-      <div className="border-t border-neutral-200 dark:border-white/[0.08]">
+      <div className="border-t border-neutral-200/60 dark:border-white/[0.08]">
         <div className="px-5 py-2">
           <span className="text-xs font-medium text-neutral-500 uppercase">
             Esercizi nel circuito
@@ -231,7 +231,7 @@ export function LiveCircuitCard({ circuit, onComplete, className = '' }: LiveCir
 
       {/* Notes */}
       {circuit.notes && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
+        <div className="border-t border-neutral-200/60 px-5 py-3 dark:border-white/[0.08]">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{circuit.notes}</p>
         </div>
       )}

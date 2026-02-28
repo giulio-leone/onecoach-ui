@@ -114,7 +114,7 @@ export function ModelSelector({
             placeholder="Search model..."
             value={search}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
-            className="h-9 border-neutral-200 bg-neutral-50 pl-8 dark:border-white/10 dark:bg-white/5"
+            className="h-9 border-neutral-200/60 bg-neutral-50 pl-8 dark:border-white/10 dark:bg-white/5"
             autoFocus={!isMobile}
           />
         </div>
@@ -124,7 +124,7 @@ export function ModelSelector({
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
               setProviderFilter(e.target.value)
             }
-            className="h-9 border-neutral-200 bg-neutral-50 text-xs dark:border-white/10 dark:bg-white/5"
+            className="h-9 border-neutral-200/60 bg-neutral-50 text-xs dark:border-white/10 dark:bg-white/5"
           >
             <option value="all">All</option>
             {providers.map((p: any) => (

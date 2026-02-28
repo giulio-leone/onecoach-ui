@@ -397,7 +397,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
                 'border',
                 config.defaultSuggestionMode === mode
                   ? 'border-primary-500 bg-primary-50 dark:border-primary-400 dark:bg-primary-500/10'
-                  : 'border-neutral-200 hover:border-neutral-300 dark:border-white/[0.08] dark:hover:border-neutral-600'
+                  : 'border-neutral-200/60 hover:border-neutral-300 dark:border-white/[0.08] dark:hover:border-neutral-600'
               )}
             >
               <Icon
@@ -535,7 +535,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               }
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
-                'border-neutral-200 dark:border-white/[0.08]',
+                'border-neutral-200/60 dark:border-white/[0.08]',
                 'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -560,7 +560,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               }
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
-                'border-neutral-200 dark:border-white/[0.08]',
+                'border-neutral-200/60 dark:border-white/[0.08]',
                 'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -582,7 +582,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               }
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
-                'border-neutral-200 dark:border-white/[0.08]',
+                'border-neutral-200/60 dark:border-white/[0.08]',
                 'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -605,7 +605,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               }
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
-                'border-neutral-200 dark:border-white/[0.08]',
+                'border-neutral-200/60 dark:border-white/[0.08]',
                 'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'

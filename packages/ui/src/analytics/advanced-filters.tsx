@@ -127,7 +127,7 @@ export function AdvancedFilters({
     (filters.period !== '30d' ? 1 : 0);
 
   return (
-    <div className="rounded-2xl border border-neutral-200 bg-white/70 shadow-sm backdrop-blur dark:border-white/[0.08] dark:bg-neutral-900/60">
+    <div className="rounded-2xl border border-neutral-200/60 bg-white/70 shadow-sm backdrop-blur dark:border-white/[0.08] dark:bg-neutral-900/60">
       {/* ── Compact header ──────────────────────────────────────────── */}
       <button
         type="button"
@@ -179,7 +179,7 @@ export function AdvancedFilters({
             onChange={(e) =>
               update({ dateRange: { ...filters.dateRange, start: e.target.value } })
             }
-            className="rounded-lg border border-neutral-200 bg-transparent px-3 py-1.5 text-xs text-neutral-700 dark:border-white/[0.08] dark:text-neutral-300"
+            className="rounded-lg border border-neutral-200/60 bg-transparent px-3 py-1.5 text-xs text-neutral-700 dark:border-white/[0.08] dark:text-neutral-300"
           />
           <span className="text-xs text-neutral-400">—</span>
           <input
@@ -188,7 +188,7 @@ export function AdvancedFilters({
             onChange={(e) =>
               update({ dateRange: { ...filters.dateRange, end: e.target.value } })
             }
-            className="rounded-lg border border-neutral-200 bg-transparent px-3 py-1.5 text-xs text-neutral-700 dark:border-white/[0.08] dark:text-neutral-300"
+            className="rounded-lg border border-neutral-200/60 bg-transparent px-3 py-1.5 text-xs text-neutral-700 dark:border-white/[0.08] dark:text-neutral-300"
           />
         </div>
       )}
@@ -235,7 +235,7 @@ export function AdvancedFilters({
                   value={exerciseSearch}
                   onChange={(e) => setExerciseSearch(e.target.value)}
                   placeholder="Cerca esercizio…"
-                  className="w-full rounded-lg border border-neutral-200 bg-transparent py-1.5 pl-8 pr-3 text-xs text-neutral-700 placeholder:text-neutral-400 dark:border-white/[0.08] dark:text-neutral-300"
+                  className="w-full rounded-lg border border-neutral-200/60 bg-transparent py-1.5 pl-8 pr-3 text-xs text-neutral-700 placeholder:text-neutral-400 dark:border-white/[0.08] dark:text-neutral-300"
                 />
               </div>
               <div className="flex max-h-36 flex-wrap gap-2 overflow-y-auto">

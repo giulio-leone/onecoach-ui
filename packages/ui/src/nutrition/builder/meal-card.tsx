@@ -123,7 +123,7 @@ export function SimpleMealCard({
   return (
     <Card variant="glass" className="overflow-hidden p-0">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-neutral-200 bg-white/50 p-4 dark:border-white/[0.08] dark:bg-neutral-900/30">
+      <div className="flex items-center justify-between border-b border-neutral-200/60 bg-white/50 p-4 dark:border-white/[0.08] dark:bg-neutral-900/30">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="flex flex-1 items-center gap-3 text-left focus:outline-none"
@@ -207,7 +207,7 @@ export function SimpleMealCard({
             {meal.foods?.map((food: Food, foodIndex: number) => (
               <div
                 key={food.id || foodIndex}
-                className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/30"
+                className="flex items-center justify-between rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/30"
               >
                 <div className="flex-1">
                   <div className="font-medium text-neutral-900 dark:text-neutral-100">

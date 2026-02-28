@@ -52,7 +52,7 @@ export function BodyPartsMultiselect({
         {values.length > 0 ? `${values.length} parti del corpo` : 'Seleziona parti del corpo'}
       </button>
       {open && (
-        <div className="absolute z-50 mt-1 max-h-72 w-full overflow-auto rounded-md border border-neutral-200 bg-white p-2 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950">
+        <div className="absolute z-50 mt-1 max-h-72 w-full overflow-auto rounded-md border border-neutral-200/60 bg-white p-2 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950">
           <input
             className="mb-2 w-full rounded border border-neutral-300 px-2 py-1 text-sm dark:border-white/[0.1]"
             placeholder="Cerca..."

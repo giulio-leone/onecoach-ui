@@ -28,7 +28,7 @@ export const ModelSelector = ({
   const isHaiku = model === AI_MODELS.HAIKU_4_5;
 
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white p-4 shadow-md dark:bg-zinc-950">
+    <div className="rounded-xl border border-neutral-200/60 bg-white p-4 shadow-md dark:bg-zinc-950">
       <div className="mb-3 flex items-center gap-2">
         <Settings size={18} className="text-neutral-600" />
         <h3 className="font-semibold text-neutral-900">Configurazione AI</h3>
@@ -45,7 +45,7 @@ export const ModelSelector = ({
               className={`rounded-lg p-3 text-sm font-medium transition-all ${
                 isSonnet
                   ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md'
-                  : 'border border-neutral-200 bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
+                  : 'border border-neutral-200/60 bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
               } `}
             >
               <Sparkles size={16} className="mr-1 inline" />
@@ -56,7 +56,7 @@ export const ModelSelector = ({
               className={`rounded-lg p-3 text-sm font-medium transition-all ${
                 isHaiku
                   ? 'bg-gradient-to-r from-primary-500 to-indigo-500 text-white shadow-md'
-                  : 'border border-neutral-200 bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
+                  : 'border border-neutral-200/60 bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
               } `}
             >
               <Zap size={16} className="mr-1 inline" />
@@ -65,7 +65,7 @@ export const ModelSelector = ({
           </div>
         </div>
 
-        <div className="border-t border-neutral-200 pt-3">
+        <div className="border-t border-neutral-200/60 pt-3">
           <label className="flex cursor-pointer items-center gap-2">
             <input
               type="checkbox"

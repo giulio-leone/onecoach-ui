@@ -134,7 +134,7 @@ export function AppShellHeader({
         {/* Sezione destra: azioni e tema */}
         <div className="ml-auto flex flex-shrink-0 items-center gap-2 sm:gap-4">
           {headerActions && (
-            <div className="flex items-center gap-2 border-r border-neutral-200 pr-2 sm:pr-4 dark:border-neutral-800">
+            <div className="flex items-center gap-2 border-r border-neutral-200/60 pr-2 sm:pr-4 dark:border-neutral-800">
               {headerActions}
             </div>
           )}

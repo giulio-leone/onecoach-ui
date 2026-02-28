@@ -85,7 +85,7 @@ function TripTypeCard({ selected, onSelect, icon, title, description }: TripType
               'dark:shadow-primary-500/20',
             ]
           : [
-              'border-neutral-200 hover:border-neutral-300',
+              'border-neutral-200/60 hover:border-neutral-300',
               // Light mode
               'bg-white hover:bg-neutral-50 hover:shadow-xl',
               // Dark mode
@@ -426,7 +426,7 @@ const StepDates = ({ data, update, t }: StepDatesProps) => {
       <div
         className={cn(
           'rounded-2xl border p-6',
-          'border-neutral-200 bg-neutral-50',
+          'border-neutral-200/60 bg-neutral-50',
           'dark:border-white/10 dark:bg-white/5'
         )}
       >
@@ -466,7 +466,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
       <div
         className={cn(
           'rounded-2xl border p-6',
-          'border-neutral-200 bg-white',
+          'border-neutral-200/60 bg-white',
           'dark:border-white/10 dark:bg-white/5'
         )}
       >
@@ -497,7 +497,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
             }
             className={cn(
               'flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-bold transition-colors',
-              'border-2 border-neutral-200 bg-white text-neutral-700',
+              'border-2 border-neutral-200/60 bg-white text-neutral-700',
               'hover:border-neutral-300 hover:bg-neutral-50',
               'dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-white',
               'dark:hover:border-neutral-500 dark:hover:bg-neutral-600'
@@ -529,7 +529,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
             }
             className={cn(
               'flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-bold transition-colors',
-              'border-2 border-neutral-200 bg-white text-neutral-700',
+              'border-2 border-neutral-200/60 bg-white text-neutral-700',
               'hover:border-neutral-300 hover:bg-neutral-50',
               'dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-white',
               'dark:hover:border-neutral-500 dark:hover:bg-neutral-600'
@@ -544,7 +544,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
       <div
         className={cn(
           'rounded-2xl border p-6',
-          'border-neutral-200 bg-white',
+          'border-neutral-200/60 bg-white',
           'dark:border-white/10 dark:bg-white/5'
         )}
       >
@@ -584,7 +584,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
                       'shadow-lg shadow-primary-500/30',
                     ]
                   : [
-                      'border border-neutral-200 bg-neutral-50 text-neutral-700',
+                      'border border-neutral-200/60 bg-neutral-50 text-neutral-700',
                       'hover:border-neutral-300 hover:bg-neutral-100',
                       'dark:border-white/10 dark:bg-white/5 dark:text-neutral-200',
                       'dark:hover:bg-white/10',
@@ -603,7 +603,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
     <div
       className={cn(
         'rounded-2xl border p-6',
-        'border-neutral-200 bg-neutral-50',
+        'border-neutral-200/60 bg-neutral-50',
         'dark:border-white/10 dark:bg-white/5'
       )}
     >

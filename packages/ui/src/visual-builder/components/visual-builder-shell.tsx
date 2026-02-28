@@ -250,7 +250,7 @@ export function VisualBuilderShell({
               <div className="sm:hidden">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <button className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
+                    <button className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200/60 bg-neutral-50 text-neutral-600 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
                       <MoreVertical size={16} />
                     </button>
                   </DropdownMenuTrigger>
@@ -268,7 +268,7 @@ export function VisualBuilderShell({
               </div>
 
               {/* Centralized Save Button Section */}
-              <div className="ml-2 flex items-center gap-2 border-l border-neutral-200 pl-4 dark:border-white/10">
+              <div className="ml-2 flex items-center gap-2 border-l border-neutral-200/60 pl-4 dark:border-white/10">
                 {isEditMode && (
                   <AutosaveIndicator
                     isSaving={isSaving}
@@ -283,7 +283,7 @@ export function VisualBuilderShell({
                   onPress={onSave}
                   className={cn(
                     'h-9 px-3 text-sm font-medium transition-all duration-300 sm:px-5',
-                    'border border-neutral-200 bg-neutral-50 text-neutral-900 shadow-sm hover:bg-neutral-100',
+                    'border border-neutral-200/60 bg-neutral-50 text-neutral-900 shadow-sm hover:bg-neutral-100',
                     'dark:border-white/20 dark:bg-transparent dark:text-white dark:hover:bg-white/10'
                   )}
                 >

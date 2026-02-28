@@ -58,7 +58,7 @@ export function TaskItemContent({
       <div
         className={cn(
           'group flex flex-row items-center py-2 hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50',
-          level > 0 && 'ml-6 border-l border-neutral-200 pl-2 dark:border-neutral-800'
+          level > 0 && 'ml-6 border-l border-neutral-200/60 pl-2 dark:border-neutral-800'
         )}
       >
         {/* Drag Handle (Optional) */}
@@ -139,7 +139,7 @@ export function TaskItemContent({
     <View
       className={cn(
         'group flex-row items-center py-2 hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50',
-        level > 0 && 'ml-6 border-l border-neutral-200 pl-2 dark:border-neutral-800'
+        level > 0 && 'ml-6 border-l border-neutral-200/60 pl-2 dark:border-neutral-800'
       )}
     >
       {/* Drag Handle (Optional) */}
@@ -288,7 +288,7 @@ export function RecursiveTaskItem({
                 </div>
                 <input
                   type="text"
-                  className="flex-1 rounded border border-neutral-200 bg-white px-2 py-1 text-sm dark:border-white/[0.08] dark:bg-zinc-950 dark:text-white"
+                  className="flex-1 rounded border border-neutral-200/60 bg-white px-2 py-1 text-sm dark:border-white/[0.08] dark:bg-zinc-950 dark:text-white"
                   placeholder="Sub-task title..."
                   value={newSubTaskTitle}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -349,7 +349,7 @@ export function RecursiveTaskItem({
                 <View className="h-1.5 w-1.5 rounded-full bg-neutral-300 dark:bg-white/[0.08]" />
               </View>
               <TextInput
-                className="flex-1 rounded border border-neutral-200 bg-white px-2 py-1 text-sm dark:border-white/[0.08] dark:bg-zinc-950 dark:text-white"
+                className="flex-1 rounded border border-neutral-200/60 bg-white px-2 py-1 text-sm dark:border-white/[0.08] dark:bg-zinc-950 dark:text-white"
                 placeholder="Sub-task title..."
                 value={newSubTaskTitle}
                 onChangeText={setNewSubTaskTitle}

@@ -376,7 +376,7 @@ export function PromotionFormModal({ isOpen, promotion, onClose }: PromotionForm
             />
           </div>
           {/* Preview */}
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
             <h4 className="mb-2 font-semibold text-neutral-900 dark:text-neutral-100">Anteprima</h4>
             <div className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
               <p>

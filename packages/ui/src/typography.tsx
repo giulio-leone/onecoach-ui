@@ -415,7 +415,7 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>(
           className={cn(
             'overflow-x-auto rounded-lg p-4',
             'bg-neutral-100 dark:bg-white/[0.04]',
-            'border border-neutral-200 dark:border-white/[0.08]',
+            'border border-neutral-200/60 dark:border-white/[0.08]',
             'font-mono text-sm',
             'text-neutral-900 dark:text-neutral-100',
             className
@@ -433,7 +433,7 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>(
         className={cn(
           'rounded px-1.5 py-0.5',
           'bg-neutral-100 dark:bg-white/[0.04]',
-          'border border-neutral-200 dark:border-white/[0.08]',
+          'border border-neutral-200/60 dark:border-white/[0.08]',
           'font-mono text-sm',
           'text-neutral-900 dark:text-neutral-100',
           className

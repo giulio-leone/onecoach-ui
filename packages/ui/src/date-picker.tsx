@@ -42,7 +42,7 @@ const triggerVariants = cva(
     variants: {
       variant: {
         default: [
-          'border-neutral-200 bg-white text-neutral-700 shadow-sm',
+          'border-neutral-200/60 bg-white text-neutral-700 shadow-sm',
           'hover:border-neutral-300 hover:bg-neutral-50',
           'focus-visible:ring-primary-500',
           'dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-200',
@@ -221,7 +221,7 @@ export function DatePicker({
           align="start"
           sideOffset={8}
           className={cn(
-            'z-50 w-[300px] max-w-[94vw] rounded-xl border border-neutral-200 bg-white p-3 shadow-xl',
+            'z-50 w-[300px] max-w-[94vw] rounded-xl border border-neutral-200/60 bg-white p-3 shadow-xl',
             'animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
             'dark:border-white/[0.08] dark:bg-zinc-950'
           )}

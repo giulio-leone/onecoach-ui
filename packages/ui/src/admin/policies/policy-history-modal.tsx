@@ -87,7 +87,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
     <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black p-4">
       <div className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-2xl bg-white shadow-xl dark:bg-zinc-950">
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white px-6 py-4 dark:border-white/[0.08] dark:bg-zinc-950">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200/60 bg-white px-6 py-4 dark:border-white/[0.08] dark:bg-zinc-950">
           <div className="flex items-center gap-3">
             <div className="rounded-lg bg-secondary-100 p-2">
               <History className="h-5 w-5 text-secondary-600" />
@@ -136,7 +136,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
               {history.map((item: PolicyHistory) => (
                 <div
                   key={item.id}
-                  className="rounded-lg border border-neutral-200 bg-white hover:border-neutral-300 dark:border-white/[0.1] dark:border-white/[0.08] dark:bg-zinc-950"
+                  className="rounded-lg border border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.1] dark:border-white/[0.08] dark:bg-zinc-950"
                 >
                   {/* Version Header */}
                   <div
@@ -185,7 +185,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
 
                   {/* Expanded Content */}
                   {expandedId === item.id && (
-                    <div className="space-y-4 border-t border-neutral-200 p-4 dark:border-white/[0.08]">
+                    <div className="space-y-4 border-t border-neutral-200/60 p-4 dark:border-white/[0.08]">
                       <div>
                         <label className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
                           {t('admin.policy_history_modal.slug')}
@@ -226,7 +226,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
         </div>
 
         {/* Footer */}
-        <div className="sticky bottom-0 border-t border-neutral-200 bg-white px-6 py-4 dark:border-white/[0.08] dark:bg-zinc-950">
+        <div className="sticky bottom-0 border-t border-neutral-200/60 bg-white px-6 py-4 dark:border-white/[0.08] dark:bg-zinc-950">
           <div className="flex justify-end">
             <Button onClick={onClose} variant="secondary">
               Chiudi

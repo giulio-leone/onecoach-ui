@@ -119,7 +119,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
         {loading && <p className="text-sm text-neutral-500">{tCommon('loading')}</p>}
         {!loading && cart && (
           <>
-            <div className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+            <div className="rounded-lg border border-neutral-200/60 p-3 dark:border-neutral-800">
               <div className="flex flex-wrap items-center gap-3">
                 <Badge>{cart.status}</Badge>
                 <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
@@ -161,7 +161,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 </div>
               </div>
             </div>
-            <div className="space-y-2 rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+            <div className="space-y-2 rounded-lg border border-neutral-200/60 p-3 dark:border-neutral-800">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
                   {t('details.items')}
@@ -222,7 +222,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 ))}
               </Select>
             </div>
-            <div className="space-y-2 rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+            <div className="space-y-2 rounded-lg border border-neutral-200/60 p-3 dark:border-neutral-800">
               <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
                 {t('details.recentEvents')}
               </p>

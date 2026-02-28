@@ -31,7 +31,7 @@ export function DatePickerWithPresets({ date, onDateChange, presets }: DatePicke
 
   return (
     <div className="flex items-center gap-2">
-      <label className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm shadow-sm dark:border-white/[0.08] dark:bg-zinc-950">
+      <label className="flex items-center gap-2 rounded-xl border border-neutral-200/60 bg-white px-3 py-2 text-sm shadow-sm dark:border-white/[0.08] dark:bg-zinc-950">
         <Calendar className="h-4 w-4 text-primary-500" />
         <input
           type="date"

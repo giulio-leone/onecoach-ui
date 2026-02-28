@@ -187,7 +187,7 @@ export function ProgramsPageLayout({
               href={createLink}
               className={cn(
                 'group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold shadow-sm transition-all duration-200',
-                'border border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50',
+                'border border-neutral-200/60 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50',
                 'dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-200 dark:hover:bg-white/[0.06]'
               )}
             >

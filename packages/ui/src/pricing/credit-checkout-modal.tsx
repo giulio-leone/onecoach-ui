@@ -208,7 +208,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
         className={`rounded-xl border px-4 py-3 text-sm font-semibold transition-all ${
           mode === 'login'
             ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm'
-            : 'border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-400'
+            : 'border-neutral-200/60 bg-white text-neutral-600 hover:border-primary-200 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-400'
         }`}
       >
         {t('common.credit_checkout_modal.ho_gia_un_account')}
@@ -219,7 +219,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
         className={`rounded-xl border px-4 py-3 text-sm font-semibold transition-all ${
           mode === 'register'
             ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm'
-            : 'border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-400'
+            : 'border-neutral-200/60 bg-white text-neutral-600 hover:border-primary-200 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-400'
         }`}
       >
         {t('common.credit_checkout_modal.registrami_ora')}
@@ -230,7 +230,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
         className={`rounded-xl border px-4 py-3 text-sm font-semibold transition-all ${
           mode === 'express'
             ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm'
-            : 'border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-400'
+            : 'border-neutral-200/60 bg-white text-neutral-600 hover:border-primary-200 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-400'
         }`}
       >
         {t('common.credit_checkout_modal.checkout_rapido')}

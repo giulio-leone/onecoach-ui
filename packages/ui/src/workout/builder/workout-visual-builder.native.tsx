@@ -254,7 +254,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave }: WorkoutVisualBu
                 className={`flex-row items-center gap-2 rounded-full border px-4 py-2 ${
                   selectedDayIndex === index
                     ? 'border-primary-600 bg-primary-600'
-                    : 'border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
+                    : 'border-neutral-200/60 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
                 } `}
               >
                 <Text

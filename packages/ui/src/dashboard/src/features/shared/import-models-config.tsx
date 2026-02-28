@@ -460,7 +460,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
           return (
             <div
               key={field.key}
-              className="rounded-lg border border-neutral-200 bg-white p-5 dark:border-white/[0.08] dark:bg-zinc-950"
+              className="rounded-lg border border-neutral-200/60 bg-white p-5 dark:border-white/[0.08] dark:bg-zinc-950"
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className={`rounded-lg p-2 ${colors.bg}`}>
@@ -500,7 +500,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
         })}
       </div>
 
-      <div className="space-y-3 rounded-lg border border-neutral-200 bg-white p-5 dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="space-y-3 rounded-lg border border-neutral-200/60 bg-white p-5 dark:border-white/[0.08] dark:bg-zinc-950">
         <div className="flex items-center gap-3">
           <div className="rounded-lg bg-amber-100 p-2 dark:bg-amber-900/30">
             <Coins className="h-5 w-5 text-amber-600 dark:text-amber-300" />
@@ -521,7 +521,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
             return (
               <div
                 key={field.key}
-                className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-[#09090b]"
+                className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-[#09090b]"
               >
                 <div className="mb-3 flex items-center gap-2">
                   <div className={`rounded-lg p-2 ${colors.bg}`}>
@@ -549,7 +549,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
         </div>
       </div>
 
-      <div className="space-y-3 rounded-lg border border-neutral-200 bg-white p-5 dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="space-y-3 rounded-lg border border-neutral-200/60 bg-white p-5 dark:border-white/[0.08] dark:bg-zinc-950">
         <div className="flex items-center gap-3">
           <div className="rounded-lg bg-primary-100 p-2 dark:bg-primary-900/30">
             <Timer className="h-5 w-5 text-primary-600 dark:text-primary-300" />

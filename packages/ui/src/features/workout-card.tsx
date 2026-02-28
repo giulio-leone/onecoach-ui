@@ -69,7 +69,7 @@ export const WorkoutCard = ({ program, onView, onDelete }: WorkoutCardProps) => 
       </div>
 
       {program.weeks && program.weeks[0] && (
-        <div className="mt-4 border-t border-neutral-200 pt-4">
+        <div className="mt-4 border-t border-neutral-200/60 pt-4">
           <p className="mb-2 text-xs font-semibold tracking-wide text-emerald-700 uppercase">
             {t('common.workout_card.anteprima_settimana_1')}
           </p>

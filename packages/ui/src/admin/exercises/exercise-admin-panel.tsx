@@ -296,7 +296,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
                   approvalStatus: e.target.value as FilterStatus,
                 }))
               }
-              className="h-9 w-[150px] rounded-lg border-neutral-200 bg-white/50 text-sm backdrop-blur-sm dark:border-white/[0.08] dark:bg-black/50"
+              className="h-9 w-[150px] rounded-lg border-neutral-200/60 bg-white/50 text-sm backdrop-blur-sm dark:border-white/[0.08] dark:bg-black/50"
             >
               <option value="ALL">{t('status.ALL')}</option>
               <option value="APPROVED">{t('status.APPROVED')}</option>
@@ -408,7 +408,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
 
           {/* Empty State */}
           {!isLoading && exercises.length === 0 && (
-            <div className="flex h-64 flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-200 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-900/50">
+            <div className="flex h-64 flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-200/60 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-900/50">
               <p className="text-neutral-500">{t('empty')}</p>
               {isActive && (
                 <Button variant="ghost" onClick={reset}>

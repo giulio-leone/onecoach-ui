@@ -320,7 +320,7 @@ export function StreamEventCard({ event, isAdmin = false, index = 0 }: StreamEve
       {isExpanded && shouldShowData && isAdmin && (
         <div
           className={cn(
-            'border-t border-neutral-200 bg-neutral-50 px-4 py-3 dark:border-white/[0.08] dark:bg-neutral-900/70',
+            'border-t border-neutral-200/60 bg-neutral-50 px-4 py-3 dark:border-white/[0.08] dark:bg-neutral-900/70',
             animations.slideDown
           )}
         >

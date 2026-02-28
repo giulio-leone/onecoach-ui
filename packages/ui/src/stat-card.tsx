@@ -43,7 +43,7 @@ function StatCardComponent({
         'group relative overflow-hidden transition-all duration-300 hover:-translate-y-1',
         'bg-gradient-to-br from-white/50 to-white/20 backdrop-blur-xl dark:from-neutral-900/50 dark:to-neutral-900/20',
         'ring-1 ring-white/20 dark:ring-white/10',
-        'border-neutral-200 dark:border-neutral-800',
+        'border-neutral-200/60 dark:border-neutral-800',
         'hover:shadow-lg hover:shadow-neutral-200/50 dark:hover:shadow-neutral-900/50',
         className
       )}

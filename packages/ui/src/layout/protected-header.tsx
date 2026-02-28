@@ -103,7 +103,7 @@ export function ProtectedHeader({ user }: ProtectedHeaderProps) {
 
             {/* Injected Actions (e.g. Sidebar Toggles, Back Buttons) */}
             {actions && (
-              <div className="flex items-center gap-2 border-l border-neutral-200 pl-4 dark:border-neutral-800">
+              <div className="flex items-center gap-2 border-l border-neutral-200/60 pl-4 dark:border-neutral-800">
                 {actions}
               </div>
             )}

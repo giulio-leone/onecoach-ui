@@ -27,7 +27,7 @@ export function HabitCard({
   return (
     <div
       className={cn(
-        'group relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 transition-all hover:shadow-md dark:border-white/[0.08] dark:bg-zinc-950',
+        'group relative overflow-hidden rounded-2xl border border-neutral-200/60 bg-white p-4 transition-all hover:shadow-md dark:border-white/[0.08] dark:bg-zinc-950',
         completedToday &&
           'border-green-500/50 bg-green-50/50 dark:border-green-500/30 dark:bg-green-900/10',
         className

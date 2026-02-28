@@ -209,7 +209,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
 
       {/* Complete Button */}
       {!isCompleted && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
+        <div className="border-t border-neutral-200/60 px-5 py-3 dark:border-white/[0.08]">
           <button
             onClick={handleComplete}
             className="w-full rounded-xl bg-gradient-to-r from-primary-500 to-cyan-500 py-3 text-sm font-bold text-white transition-all hover:shadow-lg hover:shadow-primary-500/30"
@@ -221,7 +221,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
 
       {/* Notes */}
       {cardio.notes && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
+        <div className="border-t border-neutral-200/60 px-5 py-3 dark:border-white/[0.08]">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{cardio.notes}</p>
         </div>
       )}

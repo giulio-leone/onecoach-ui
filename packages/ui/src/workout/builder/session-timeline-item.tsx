@@ -229,7 +229,7 @@ function DynamicValueBadge({ value, isSelected }: DynamicValueBadgeProps) {
 
 function getCardClassName(isSelected: boolean, isOverridden: boolean): string {
   if (!isSelected) {
-    return 'border-neutral-200 bg-white opacity-60 hover:opacity-100 dark:border-white/[0.08] dark:bg-zinc-950';
+    return 'border-neutral-200/60 bg-white opacity-60 hover:opacity-100 dark:border-white/[0.08] dark:bg-zinc-950';
   }
 
   if (isOverridden) {

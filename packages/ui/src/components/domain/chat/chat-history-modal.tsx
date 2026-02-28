@@ -159,7 +159,7 @@ export function ChatHistoryModal({
                 placeholder="Cerca nelle conversazioni..."
                 value={search}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
-                className="border-neutral-200 bg-white pl-10 focus:ring-indigo-500 dark:border-white/10 dark:bg-zinc-950"
+                className="border-neutral-200/60 bg-white pl-10 focus:ring-indigo-500 dark:border-white/10 dark:bg-zinc-950"
                 autoFocus
               />
             </div>
@@ -259,7 +259,7 @@ export function ChatHistoryModal({
                         'group relative flex cursor-pointer items-start gap-3 rounded-2xl border p-3 transition-all duration-200 sm:p-3.5',
                         activeId === conv.id
                           ? 'border-indigo-200 bg-indigo-50/70 shadow-md shadow-indigo-500/10 dark:border-indigo-500/30 dark:bg-indigo-500/10'
-                          : 'border-white/40 bg-white/70 hover:border-neutral-200 hover:bg-white/90 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10'
+                          : 'border-white/40 bg-white/70 hover:border-neutral-200/60 hover:bg-white/90 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10'
                       )}
                     >
                       {/* Checkbox: only show in selection mode on mobile, always on desktop */}

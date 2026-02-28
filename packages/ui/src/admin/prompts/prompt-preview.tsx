@@ -74,11 +74,11 @@ export function PromptPreview({ agentId, template, variables, className }: Promp
   return (
     <div
       className={cn(
-        'flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-[#09090b]',
+        'flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200/60 bg-white dark:border-white/[0.08] dark:bg-[#09090b]',
         className
       )}
     >
-      <div className="flex items-center justify-between border-b border-neutral-200 px-4 py-3 dark:border-neutral-800">
+      <div className="flex items-center justify-between border-b border-neutral-200/60 px-4 py-3 dark:border-neutral-800">
         <h3 className="font-semibold">Preview</h3>
         <div className="flex gap-2">
           <Button variant="outline" size="sm" onClick={generatePreview} disabled={loading}>

@@ -34,7 +34,7 @@ export function TargetMacrosForm({
 
   return (
     <div
-      className={`overflow-hidden rounded-2xl border border-neutral-200 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl dark:border-white/[0.08] dark:bg-zinc-950 ${className}`}
+      className={`overflow-hidden rounded-2xl border border-neutral-200/60 bg-white p-6 shadow-lg transition-all duration-200 hover:shadow-xl dark:border-white/[0.08] dark:bg-zinc-950 ${className}`}
     >
       <h3 className="mb-6 text-xl font-bold text-neutral-900 dark:text-neutral-100">
         Macro Giornalieri Target

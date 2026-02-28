@@ -158,7 +158,7 @@ export const MessageResponse = forwardRef<HTMLDivElement, MessageResponseProps>(
                 }
 
                 return (
-                  <div className="relative my-3 overflow-hidden rounded-xl border border-neutral-200 dark:border-white/10">
+                  <div className="relative my-3 overflow-hidden rounded-xl border border-neutral-200/60 dark:border-white/10">
                     <div className="flex items-center justify-between bg-neutral-100 px-3 py-2 text-[10px] text-neutral-500 dark:bg-[#121418] dark:text-neutral-400">
                       <span className="font-mono font-medium uppercase">{match[1]}</span>
                       <div className="flex gap-1.5">

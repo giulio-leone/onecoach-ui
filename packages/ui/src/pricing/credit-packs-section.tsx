@@ -95,7 +95,7 @@ export function CreditPacksSection() {
             className={`relative rounded-xl border-2 p-6 shadow-sm transition-shadow hover:shadow-lg sm:p-6 ${
               pack.popular
                 ? 'border-primary-500 bg-primary-50 shadow-lg dark:border-primary-400 dark:bg-primary-900/20'
-                : 'border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
+                : 'border-neutral-200/60 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
             }`}
           >
             {pack.popular && (

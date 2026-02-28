@@ -349,7 +349,7 @@ export function FoodDetailDrawer({
         </div>
       )}
       {/* Macros Section */}
-      <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+      <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:mb-3 sm:text-sm dark:text-neutral-500">
           <UtensilsCrossed className="h-3.5 w-3.5 text-emerald-500 sm:h-4 sm:w-4" />
           {t('food.macros')}
@@ -499,7 +499,7 @@ export function FoodDetailDrawer({
       </section>
       {/* Serving Size */}
       {(foodItem?.servingSize || isEditMode) && (
-        <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+        <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
           <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
             <Package className="h-3.5 w-3.5 text-primary-500 sm:h-4 sm:w-4" />
             {t('food.portion')}
@@ -635,7 +635,7 @@ export function FoodDetailDrawer({
         ) : (
           <>
             {foodItem?.metadata?.brand && (
-              <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <div className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   {t('food.brand')}
                 </h4>
@@ -645,7 +645,7 @@ export function FoodDetailDrawer({
               </div>
             )}
             {foodItem?.metadata?.category && (
-              <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+              <div className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   {t('food.category')}
                 </h4>
@@ -659,7 +659,7 @@ export function FoodDetailDrawer({
       </section>
       {/* Barcode */}
       {!isEditMode && foodItem?.barcode && (
-        <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+        <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
           <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
             <Barcode className="h-3.5 w-3.5 text-neutral-500 sm:h-4 sm:w-4 dark:text-neutral-500" />
             {t('food.barcode')}
@@ -671,7 +671,7 @@ export function FoodDetailDrawer({
       )}
       {/* Image */}
       {foodItem?.imageUrl && (
-        <section className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+        <section className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
           <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:mb-3 sm:text-sm dark:text-neutral-500">
             <Camera className="h-3.5 w-3.5 text-secondary-500 sm:h-4 sm:w-4" />
             {t('food.image')}
@@ -680,7 +680,7 @@ export function FoodDetailDrawer({
             href={foodItem.imageUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block overflow-hidden rounded-lg border border-neutral-200 bg-white transition-transform hover:scale-105 active:scale-100 dark:border-white/[0.08] dark:bg-zinc-950"
+            className="block overflow-hidden rounded-lg border border-neutral-200/60 bg-white transition-transform hover:scale-105 active:scale-100 dark:border-white/[0.08] dark:bg-zinc-950"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -702,7 +702,7 @@ export function FoodDetailDrawer({
       )}
       {/* Timestamps - Solo per admin e non in modalità create */}
       {isAdmin && !isCreateMode && foodItem && (
-        <section className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-xs text-neutral-500 sm:p-4 sm:text-sm dark:border-white/[0.08] dark:bg-neutral-800/50 dark:text-neutral-500">
+        <section className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 text-xs text-neutral-500 sm:p-4 sm:text-sm dark:border-white/[0.08] dark:bg-neutral-800/50 dark:text-neutral-500">
           <div className="flex flex-col gap-1 sm:flex-row sm:justify-between">
             <div>
               <span className="font-medium">{t('food.created')}:</span>{' '}

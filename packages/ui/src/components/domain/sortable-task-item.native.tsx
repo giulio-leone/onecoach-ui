@@ -104,7 +104,7 @@ export function SortableTaskItem({
               </div>
               <input
                 type="text"
-                className="flex-1 rounded border border-neutral-200 bg-white px-2 py-1 text-sm dark:border-white/[0.08] dark:bg-zinc-950 dark:text-white"
+                className="flex-1 rounded border border-neutral-200/60 bg-white px-2 py-1 text-sm dark:border-white/[0.08] dark:bg-zinc-950 dark:text-white"
                 placeholder="Sub-task title..."
                 value={newSubTaskTitle}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>

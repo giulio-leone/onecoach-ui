@@ -69,7 +69,7 @@ export function PaymentForm({ clientSecret, onSuccess, onError }: PaymentFormPro
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-white/[0.04]">
+      <div className="rounded-lg border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-white/[0.04]">
         <div className="mb-2 flex items-center gap-2">
           <CreditCard className="h-5 w-5 text-neutral-600 dark:text-neutral-400" />
           <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300">

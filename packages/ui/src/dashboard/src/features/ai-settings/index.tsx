@@ -543,7 +543,7 @@ export function AISettingsPageClient({
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
               handleSectionChange(e.target.value as SectionId)
             }
-            className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
+            className="w-full rounded-xl border border-neutral-200/60 bg-white px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
           >
             {sections.map((section: any) => (
               <option key={section.id} value={section.id}>

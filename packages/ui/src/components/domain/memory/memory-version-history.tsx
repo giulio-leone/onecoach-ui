@@ -79,7 +79,7 @@ export function MemoryVersionHistory({
     return (
       <Card variant="glass" padding="md" className={className}>
         <div className="flex items-center justify-center py-8">
-          <div className="border-t-primary-500 h-6 w-6 animate-spin rounded-full border-2 border-neutral-200 dark:border-white/[0.08]" />
+          <div className="border-t-primary-500 h-6 w-6 animate-spin rounded-full border-2 border-neutral-200/60 dark:border-white/[0.08]" />
         </div>
       </Card>
     );
@@ -107,7 +107,7 @@ export function MemoryVersionHistory({
         {versions.map((version: any) => (
           <div
             key={version.id}
-            className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/50"
+            className="flex items-center justify-between rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/50"
           >
             <div className="flex-1">
               <div className="flex items-center gap-2">

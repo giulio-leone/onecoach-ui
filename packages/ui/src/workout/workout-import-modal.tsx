@@ -439,7 +439,7 @@ export function WorkoutImportModal({
           </div>
         )}
         {/* Mode selector */}
-        <div className="flex items-center gap-3 rounded-lg border border-neutral-200 p-2 dark:border-white/[0.08]">
+        <div className="flex items-center gap-3 rounded-lg border border-neutral-200/60 p-2 dark:border-white/[0.08]">
           <button
             type="button"
             onClick={() => setMode('auto')}
@@ -527,7 +527,7 @@ export function WorkoutImportModal({
                       'flex items-center gap-3 rounded-lg border p-3',
                       file.error
                         ? 'border-rose-200 bg-rose-50 dark:border-rose-800 dark:bg-rose-900/20'
-                        : 'border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
+                        : 'border-neutral-200/60 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
                     )}
                   >
                     {file.preview ? (

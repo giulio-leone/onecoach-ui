@@ -201,7 +201,7 @@ export function DeployToClientsModal({
               </div>
 
               {/* Clients list */}
-              <div className="max-h-48 space-y-1 overflow-y-auto rounded-lg border border-neutral-200 p-2 dark:border-white/[0.08]">
+              <div className="max-h-48 space-y-1 overflow-y-auto rounded-lg border border-neutral-200/60 p-2 dark:border-white/[0.08]">
                 {clientsLoading ? (
                   <LoadingState message={t('common.loadingClients')} size="sm" />
                 ) : filteredClients.length === 0 ? (
@@ -266,7 +266,7 @@ export function DeployToClientsModal({
               </div>
 
               {/* Actions */}
-              <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-white/[0.08]">
+              <div className="flex justify-end gap-2 border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
                 <Button variant="secondary" onClick={onClose}>
                   Annulla
                 </Button>
@@ -312,7 +312,7 @@ export function DeployToClientsModal({
                 })}
               </div>
 
-              <div className="flex justify-end border-t border-neutral-200 pt-4 dark:border-white/[0.08]">
+              <div className="flex justify-end border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
                 <Button onClick={onClose}>Chiudi</Button>
               </div>
             </>

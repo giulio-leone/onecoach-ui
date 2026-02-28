@@ -158,7 +158,7 @@ function RadioCard({
         'focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 outline-none',
         selected
           ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
-          : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-600',
+          : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-600',
         className
       )}
     >
@@ -347,7 +347,7 @@ function StepBasicInfo({
                 'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                 profile.primaryGoal === g.id
                   ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
-                  : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-600'
+                  : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-600'
               )}
             >
               <g.icon
@@ -547,7 +547,7 @@ function StepTraining({
                 'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                 profile.preferredDuration === opt.value
                   ? 'border-primary-500 bg-primary-50 text-primary-700 dark:border-primary-400 dark:bg-primary-950/30 dark:text-primary-300'
-                  : 'border-neutral-200 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-neutral-600'
+                  : 'border-neutral-200/60 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-neutral-600'
               )}
             >
               <Clock className="mr-1.5 inline h-3.5 w-3.5" />
@@ -573,7 +573,7 @@ function StepTraining({
                   'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                   selected
                     ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
-                    : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-600'
+                    : 'border-neutral-200/60 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-zinc-950 dark:hover:border-neutral-600'
                 )}
               >
                 <eq.icon
@@ -655,7 +655,7 @@ function StepNutrition({
                 'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                 profile.mealsPerDay === n
                   ? 'border-primary-500 bg-primary-600 text-white'
-                  : 'border-neutral-200 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400'
+                  : 'border-neutral-200/60 text-neutral-600 hover:border-neutral-300 dark:border-white/[0.08] dark:text-neutral-400'
               )}
             >
               {n}
@@ -746,14 +746,14 @@ function Summary({ profile }: { profile: OnboardingProfile }) {
         Review your selections before finishing setup.
       </p>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="rounded-xl border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">Basic Info</h4>
         <SummaryRow label="Name" value={profile.displayName} />
         <SummaryRow label="Level" value={fitnessLabel} />
         <SummaryRow label="Goal" value={goalLabel} />
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="rounded-xl border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">Body Metrics</h4>
         <SummaryRow label="Weight" value={profile.weight != null ? `${profile.weight}` : undefined} />
         <SummaryRow label="Height" value={profile.height != null ? `${profile.height}` : undefined} />
@@ -762,7 +762,7 @@ function Summary({ profile }: { profile: OnboardingProfile }) {
         <SummaryRow label="Body Fat" value={profile.bodyFatPercent != null ? `${profile.bodyFatPercent}%` : undefined} />
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="rounded-xl border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">Training</h4>
         <SummaryRow label="Days/week" value={profile.daysPerWeek} />
         <SummaryRow label="Duration" value={`${profile.preferredDuration} min`} />
@@ -770,7 +770,7 @@ function Summary({ profile }: { profile: OnboardingProfile }) {
         <SummaryRow label="Limitations" value={profile.injuriesOrLimitations} />
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="rounded-xl border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">Nutrition</h4>
         <SummaryRow label="Diet" value={dietLabel} />
         <SummaryRow label="Meals/day" value={profile.mealsPerDay} />
@@ -778,7 +778,7 @@ function Summary({ profile }: { profile: OnboardingProfile }) {
         <SummaryRow label="Calories" value={profile.calorieTarget != null ? `${profile.calorieTarget} kcal` : undefined} />
       </div>
 
-      <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="rounded-xl border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <h4 className="mb-2 text-xs font-bold tracking-wider text-neutral-400 uppercase">AI Mode</h4>
         <SummaryRow label="Mode" value={aiLabel} />
       </div>
@@ -822,7 +822,7 @@ function ProgressBar({
                     ? 'border-primary-500 bg-primary-600 text-white shadow-lg shadow-primary-500/30'
                     : isCompleted
                       ? 'cursor-pointer border-primary-400/50 bg-primary-50 text-primary-600 hover:bg-primary-100 dark:bg-primary-950/40 dark:text-primary-400'
-                      : 'border-neutral-200 text-neutral-400 dark:border-white/[0.08] dark:text-neutral-500'
+                      : 'border-neutral-200/60 text-neutral-400 dark:border-white/[0.08] dark:text-neutral-500'
                 )}
               >
                 {isCompleted && !isActive ? (

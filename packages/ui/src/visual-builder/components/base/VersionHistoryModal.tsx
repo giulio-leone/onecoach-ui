@@ -134,13 +134,13 @@ export function VersionHistoryModal<T>({
       <div
         className={cn(
           'relative z-10 w-full max-w-lg overflow-hidden rounded-2xl',
-          'border border-neutral-200 bg-white shadow-2xl',
+          'border border-neutral-200/60 bg-white shadow-2xl',
           'dark:border-white/10 dark:bg-zinc-950',
           'animate-in zoom-in-95 fade-in duration-200'
         )}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4 dark:border-white/10">
+        <div className="flex items-center justify-between border-b border-neutral-200/60 px-6 py-4 dark:border-white/10">
           <h2 className="flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-white">
             <Clock size={20} className={accentClass} />
             {labels.title ?? 'Version History'}
@@ -193,7 +193,7 @@ export function VersionHistoryModal<T>({
                 </button>
               </div>
 
-              <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-white/10 dark:bg-neutral-800/50">
+              <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/10 dark:bg-neutral-800/50">
                 {!semanticDiff || semanticDiff.length === 0 ? (
                   <p className="text-center text-neutral-500">No differences found</p>
                 ) : (
@@ -201,7 +201,7 @@ export function VersionHistoryModal<T>({
                     {semanticDiff.map((change: any) => (
                       <div
                         key={change.id}
-                        className="relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-white/[0.04]"
+                        className="relative overflow-hidden rounded-lg border border-neutral-200/60 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-white/[0.04]"
                       >
                         {/* Status Bar */}
                         <div
@@ -385,7 +385,7 @@ export function VersionHistoryModal<T>({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between border-t border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-white/10 dark:bg-neutral-900/50">
+        <div className="flex items-center justify-between border-t border-neutral-200/60 bg-neutral-50 px-6 py-4 dark:border-white/10 dark:bg-neutral-900/50">
           <div className="text-sm text-neutral-500 dark:text-neutral-400">
             {selectedForCompare.length === 2
               ? '2 versions selected'

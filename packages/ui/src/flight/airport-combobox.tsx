@@ -375,7 +375,7 @@ export function AirportCombobox({
             align="start"
             sideOffset={8}
             className={cn(
-              'z-[9999] w-[var(--radix-popover-trigger-width)] max-w-[480px] min-w-[320px] overflow-hidden rounded-2xl border border-neutral-200 bg-white/95 shadow-2xl backdrop-blur-xl',
+              'z-[9999] w-[var(--radix-popover-trigger-width)] max-w-[480px] min-w-[320px] overflow-hidden rounded-2xl border border-neutral-200/60 bg-white/95 shadow-2xl backdrop-blur-xl',
               'animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
               'dark:border-white/[0.08] dark:bg-neutral-900/95'
             )}
@@ -391,7 +391,7 @@ export function AirportCombobox({
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
                   placeholder={searchPlaceholder}
                   className={cn(
-                    'w-full rounded-xl border border-neutral-200 bg-white py-2.5 pr-10 pl-10 text-sm transition-colors',
+                    'w-full rounded-xl border border-neutral-200/60 bg-white py-2.5 pr-10 pl-10 text-sm transition-colors',
                     'placeholder:text-neutral-400',
                     'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
                     'dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-white'

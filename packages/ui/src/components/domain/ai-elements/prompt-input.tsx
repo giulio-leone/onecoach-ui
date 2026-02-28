@@ -570,7 +570,7 @@ export const PromptInputAttachments = ({
 export const PromptInputAttachment = ({ data }: { data: PromptAttachment }) => {
   const { removeAttachment } = usePromptInput();
   return (
-    <div className="group relative flex items-center gap-2 rounded-lg border border-neutral-200 bg-white/80 px-3 py-2 text-sm shadow-sm backdrop-blur dark:border-white/[0.08] dark:bg-neutral-900/80">
+    <div className="group relative flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white/80 px-3 py-2 text-sm shadow-sm backdrop-blur dark:border-white/[0.08] dark:bg-neutral-900/80">
       <span className="truncate">{data.filename}</span>
       <button
         type="button"

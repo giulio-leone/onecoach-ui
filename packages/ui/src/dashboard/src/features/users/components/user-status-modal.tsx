@@ -168,7 +168,7 @@ export function UserStatusModal({
         </div>
 
         {/* User Summary */}
-        <div className="rounded-lg border border-neutral-200 p-4 dark:border-white/[0.08]">
+        <div className="rounded-lg border border-neutral-200/60 p-4 dark:border-white/[0.08]">
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div>
               <span className="text-neutral-500">{t('edit.emailLabel')}:</span>

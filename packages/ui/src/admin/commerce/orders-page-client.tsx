@@ -162,7 +162,7 @@ export function OrdersPageClient() {
         </div>
       )}
 
-      <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="rounded-lg border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
           <div className="space-y-2">
             <label className="text-xs font-medium text-neutral-500">{t('filters.status')}</label>
@@ -250,7 +250,7 @@ export function OrdersPageClient() {
         </div>
       </div>
 
-      <div className="rounded-lg border border-neutral-200 dark:border-neutral-800">
+      <div className="rounded-lg border border-neutral-200/60 dark:border-neutral-800">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead className="bg-neutral-50 text-neutral-500 dark:bg-zinc-950 dark:text-neutral-400">

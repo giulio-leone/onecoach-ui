@@ -166,7 +166,7 @@ export function MealTemplateSelector({
         onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white px-4 py-4 sm:px-6 dark:border-white/[0.08] dark:bg-zinc-950">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200/60 bg-white px-4 py-4 sm:px-6 dark:border-white/[0.08] dark:bg-zinc-950">
           <div className="flex items-center gap-3">
             <Bookmark className="h-5 w-5 text-green-600 sm:h-6 sm:w-6" />
             <h3 className="text-lg font-semibold text-neutral-900 sm:text-xl dark:text-neutral-100">
@@ -178,7 +178,7 @@ export function MealTemplateSelector({
               setIsOpen(false);
               onClose?.();
             }}
-            className="flex min-h-[44px] min-w-[44px] flex-shrink-0 touch-manipulation items-center justify-center rounded-full border border-neutral-200 p-2 text-neutral-500 transition-all duration-200 hover:scale-105 hover:bg-neutral-100 active:scale-95 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-500"
+            className="flex min-h-[44px] min-w-[44px] flex-shrink-0 touch-manipulation items-center justify-center rounded-full border border-neutral-200/60 p-2 text-neutral-500 transition-all duration-200 hover:scale-105 hover:bg-neutral-100 active:scale-95 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-500"
             aria-label={tCommon('actions.close')}
             type="button"
           >
@@ -187,7 +187,7 @@ export function MealTemplateSelector({
         </div>
 
         {/* Search */}
-        <div className="border-b border-neutral-200 px-4 py-3 sm:px-6 dark:border-white/[0.08]">
+        <div className="border-b border-neutral-200/60 px-4 py-3 sm:px-6 dark:border-white/[0.08]">
           <div className="relative">
             <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-400 dark:text-neutral-600" />
             <input
@@ -240,7 +240,7 @@ export function MealTemplateSelector({
                   className={`w-full touch-manipulation rounded-lg border-2 p-4 text-left transition-all duration-200 ${
                     index === selectedIndex
                       ? 'border-green-500 bg-green-50 shadow-md'
-                      : 'border-neutral-200 bg-white hover:border-green-300 hover:bg-green-50/30 hover:shadow-sm active:scale-[0.98] dark:border-white/[0.08] dark:bg-zinc-950'
+                      : 'border-neutral-200/60 bg-white hover:border-green-300 hover:bg-green-50/30 hover:shadow-sm active:scale-[0.98] dark:border-white/[0.08] dark:bg-zinc-950'
                   }`}
                   type="button"
                 >

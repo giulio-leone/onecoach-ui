@@ -79,7 +79,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         default:
           'relative overflow-hidden border border-white/10 bg-neutral-900 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:bg-white dark:text-neutral-900',
         outline:
-          'border border-neutral-200 bg-transparent text-neutral-900 hover:bg-neutral-50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:border-white/[0.08] dark:text-neutral-100 dark:hover:bg-white/[0.06]',
+          'border border-neutral-200/60 bg-transparent text-neutral-900 hover:bg-neutral-50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:border-white/[0.08] dark:text-neutral-100 dark:hover:bg-white/[0.06]',
         success:
           'bg-gradient-to-r from-success-dark to-success text-white shadow-lg hover:shadow-success-DEFAULT/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
         info: 'bg-gradient-to-r from-info-dark to-info text-white shadow-lg hover:shadow-info-DEFAULT/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',

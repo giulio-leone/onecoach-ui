@@ -227,7 +227,7 @@ export function EdgeConfigPanel() {
       )}
 
       {/* Add New Key */}
-      <div className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-white/[0.04]">
+      <div className="rounded-lg border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-white/[0.04]">
         <h4 className="mb-3 text-sm font-semibold text-neutral-900 dark:text-neutral-100">
           {t('addNew')}
         </h4>
@@ -262,8 +262,8 @@ export function EdgeConfigPanel() {
       </div>
 
       {/* Existing Values */}
-      <div className="rounded-lg border border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]">
-        <div className="border-b border-neutral-200 p-4 dark:border-white/[0.08]">
+      <div className="rounded-lg border border-neutral-200/60 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]">
+        <div className="border-b border-neutral-200/60 p-4 dark:border-white/[0.08]">
           <h4 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
             {t('existingValues')} ({Object.keys(values).length})
           </h4>

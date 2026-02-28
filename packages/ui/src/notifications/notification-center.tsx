@@ -209,7 +209,7 @@ export function NotificationCenter({
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]"
+        className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200/60 bg-white text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]"
       >
         <Bell className="h-5 w-5" />
         {unreadCount > 0 && (

@@ -526,10 +526,10 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
       {/* Sidebar: Exercise List */}
       <div
         className={cn(
-          'flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 lg:h-full lg:w-80 lg:shrink-0 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
+          'flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-neutral-200/60 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 lg:h-full lg:w-80 lg:shrink-0 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
         )}
       >
-        <div className="border-b border-neutral-200 bg-neutral-100/50 px-4 py-3 dark:border-white/5 dark:bg-white/5">
+        <div className="border-b border-neutral-200/60 bg-neutral-100/50 px-4 py-3 dark:border-white/5 dark:bg-white/5">
           <div className="flex items-center gap-2">
             <LayoutList size={18} className="text-neutral-500 dark:text-neutral-400" />
             <h3 className="font-semibold text-neutral-900 dark:text-white">{t('exercises')}</h3>
@@ -581,7 +581,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
         <motion.div variants={containerVariants} initial="hidden" animate="visible">
           <div
             className={cn(
-              'rounded-2xl border border-neutral-200 bg-neutral-50 p-4 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 sm:p-6 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
+              'rounded-2xl border border-neutral-200/60 bg-neutral-50 p-4 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 sm:p-6 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
             )}
           >
             <div className="mb-4 flex flex-col gap-4 sm:gap-3">
@@ -598,12 +598,12 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <button
                     onClick={() => setShowTemplates(!showTemplates)}
-                    className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/5 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10"
+                    className="flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/5 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10"
                   >
                     <Download size={14} />
                     <span className="hidden sm:inline">{t('load')}</span>
                   </button>
-                  <button className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/5 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10">
+                  <button className="flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/5 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10">
                     <Save size={14} />
                     <span className="hidden sm:inline">{t('save')}</span>
                   </button>
@@ -611,7 +611,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
               </div>
 
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                <div className="flex flex-col gap-2 rounded-lg border border-neutral-200 bg-white p-3 dark:border-white/5 dark:bg-neutral-900/50">
+                <div className="flex flex-col gap-2 rounded-lg border border-neutral-200/60 bg-white p-3 dark:border-white/5 dark:bg-neutral-900/50">
                   <div className="flex items-center gap-2">
                     <Scale size={16} className="text-neutral-500" />
                     <div className="leading-tight">
@@ -633,7 +633,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                     )}
                   </div>
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-                    <div className="flex flex-1 items-center gap-2 rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 ring-1 ring-transparent focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
+                    <div className="flex flex-1 items-center gap-2 rounded-md border border-neutral-200/60 bg-neutral-50 px-3 py-2 ring-1 ring-transparent focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
                       <input
                         type="number"
                         inputMode="decimal"
@@ -700,7 +700,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                   exit={{ height: 0, opacity: 0 }}
                   className="overflow-hidden"
                 >
-                  <div className="mb-6 rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-white/5 dark:bg-white/5">
+                  <div className="mb-6 rounded-xl border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/5 dark:bg-white/5">
                     <h4 className="mb-3 text-xs font-semibold tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
                       {t('savedTemplates')}
                     </h4>
@@ -712,7 +712,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                       ].map((item: any) => (
                         <button
                           key={item.id}
-                          className="group rounded-lg border border-neutral-200 bg-white p-3 text-left transition-all hover:border-primary-500/50 hover:bg-neutral-50 dark:border-white/5 dark:bg-neutral-900/50 dark:hover:bg-white/[0.06]"
+                          className="group rounded-lg border border-neutral-200/60 bg-white p-3 text-left transition-all hover:border-primary-500/50 hover:bg-neutral-50 dark:border-white/5 dark:bg-neutral-900/50 dark:hover:bg-white/[0.06]"
                         >
                           <div className="font-medium text-neutral-900 group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-400">
                             {item.label}
@@ -742,7 +742,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                         'flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium transition-all',
                         params.type === typeOption.id
                           ? 'border-primary-500/50 bg-primary-500/10 text-primary-600 dark:text-primary-400'
-                          : 'border-neutral-200 bg-white text-neutral-500 hover:bg-neutral-50 dark:border-white/5 dark:bg-transparent dark:text-neutral-400 dark:hover:bg-white/5'
+                          : 'border-neutral-200/60 bg-white text-neutral-500 hover:bg-neutral-50 dark:border-white/5 dark:bg-transparent dark:text-neutral-400 dark:hover:bg-white/5'
                       )}
                     >
                       <typeOption.icon size={16} /> {typeOption.label}
@@ -755,7 +755,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                 <label className="text-xs font-medium text-neutral-500 uppercase">
                   {t('labels.start')}
                 </label>
-                <div className="flex items-center rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
+                <div className="flex items-center rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
                   <input
                     type="number"
                     value={params.startValue}
@@ -774,7 +774,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                 <label className="text-xs font-medium text-neutral-500 uppercase">
                   {t('labels.step')}
                 </label>
-                <div className="relative flex items-center rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
+                <div className="relative flex items-center rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
                   <div className="pointer-events-none absolute inset-y-0 left-3 flex items-center">
                     <span className="text-sm font-bold text-neutral-500">+</span>
                   </div>
@@ -796,7 +796,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                 <label className="text-xs font-medium text-neutral-500 uppercase">
                   {t('labels.freq')}
                 </label>
-                <div className="flex items-center rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
+                <div className="flex items-center rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
                   <select
                     value={params.frequency}
                     onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
@@ -823,9 +823,9 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60"
+          className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-neutral-200/60 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60"
         >
-          <div className="flex items-center justify-between border-b border-neutral-200 bg-neutral-100/50 px-6 py-4 dark:border-white/5 dark:bg-white/5">
+          <div className="flex items-center justify-between border-b border-neutral-200/60 bg-neutral-100/50 px-6 py-4 dark:border-white/5 dark:bg-white/5">
             <div className="flex items-center gap-2">
               <h3 className="font-semibold text-neutral-900 dark:text-white">{t('timeline')}</h3>
               {oneRepMax && (
@@ -840,7 +840,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                   'ml-4 flex items-center gap-1.5 rounded-md border px-2 py-1 text-xs font-medium transition-colors',
                   editingIndex !== null
                     ? 'border-emerald-500/20 bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20 dark:text-emerald-400'
-                    : 'cursor-not-allowed border-neutral-200 bg-transparent text-neutral-400 dark:border-white/5 dark:text-neutral-600'
+                    : 'cursor-not-allowed border-neutral-200/60 bg-transparent text-neutral-400 dark:border-white/5 dark:text-neutral-600'
                 )}
               >
                 <Plus size={12} />
@@ -961,7 +961,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                           ? isOverridden
                             ? 'border-secondary-200 bg-secondary-50/50 dark:border-secondary-900/50 dark:bg-secondary-900/10'
                             : 'border-primary-200 bg-primary-50/50 dark:border-primary-900/50 dark:bg-primary-900/10'
-                          : 'border-neutral-200 bg-white opacity-60 hover:opacity-100 dark:border-white/[0.08] dark:bg-zinc-950'
+                          : 'border-neutral-200/60 bg-white opacity-60 hover:opacity-100 dark:border-white/[0.08] dark:bg-zinc-950'
                       }`}
                       onClick={() => toggleSelection(idx)}
                     >
@@ -1088,7 +1088,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
             </div>
           </div>
 
-          <div className="border-t border-neutral-200 bg-white/80 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-neutral-900/80">
+          <div className="border-t border-neutral-200/60 bg-white/80 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-neutral-900/80">
             <Button
               variant="gradient-primary"
               icon={<Play size={18} className="fill-white text-white" />}

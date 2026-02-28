@@ -78,7 +78,7 @@ export function ModelSelectorModal({
     <>
       <div
         className={cn(
-          'flex w-full cursor-pointer items-center justify-between rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm ring-offset-white transition-all hover:bg-neutral-50 focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:bg-black/40 dark:text-white dark:ring-offset-neutral-950 dark:hover:bg-white/5 dark:focus:ring-neutral-300',
+          'flex w-full cursor-pointer items-center justify-between rounded-md border border-neutral-200/60 bg-white px-3 py-2 text-sm ring-offset-white transition-all hover:bg-neutral-50 focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/10 dark:bg-black/40 dark:text-white dark:ring-offset-neutral-950 dark:hover:bg-white/5 dark:focus:ring-neutral-300',
           className
         )}
         onClick={() => setIsOpen(true)}
@@ -107,7 +107,7 @@ export function ModelSelectorModal({
             />
           </div>
 
-          <div className="max-h-[60vh] overflow-y-auto rounded-lg border border-neutral-200 dark:border-neutral-800">
+          <div className="max-h-[60vh] overflow-y-auto rounded-lg border border-neutral-200/60 dark:border-neutral-800">
             {isLoading ? (
               <div className="flex flex-col items-center justify-center p-8 text-neutral-500">
                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-neutral-300 border-t-primary-600" />

@@ -155,7 +155,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
               'group relative overflow-hidden rounded-2xl border p-5 transition-all duration-300',
               'bg-white dark:bg-zinc-950',
               config.isActive
-                ? 'hover:border-primary-500/50 dark:hover:border-primary-500/50 border-neutral-200 dark:border-neutral-800'
+                ? 'hover:border-primary-500/50 dark:hover:border-primary-500/50 border-neutral-200/60 dark:border-neutral-800'
                 : 'border-neutral-100 opacity-60 grayscale-[0.5] hover:opacity-100 hover:grayscale-0 dark:border-neutral-800'
             )}
           >
@@ -221,7 +221,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                       setConfigs((prev) => [...prev, { ...config, model: val }]);
                     }
                   }}
-                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
+                  className="w-full rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
                 >
                   {models.map((m: any) => (
                     <option key={m.modelId} value={m.modelId}>
@@ -249,7 +249,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                         setConfigs((prev) => [...prev, { ...config, creditCost: val }]);
                       }
                     }}
-                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
+                    className="w-full rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
                   />
                 </div>
 
@@ -271,7 +271,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                         setConfigs((prev) => [...prev, { ...config, maxTokens: val }]);
                       }
                     }}
-                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
+                    className="w-full rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
                   />
                 </div>
               </div>

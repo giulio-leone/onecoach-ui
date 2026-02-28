@@ -224,7 +224,7 @@ export function WorkoutTemplateSelector({
                   setSearchQuery(e.target.value)
                 }
                 placeholder={placeholder}
-                className="h-11 w-full rounded-xl border border-neutral-200 bg-white py-2.5 pr-4 pl-10 text-sm text-neutral-900 shadow-sm transition-all placeholder:text-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-100 dark:focus:border-primary-400 dark:focus:ring-primary-500/30"
+                className="h-11 w-full rounded-xl border border-neutral-200/60 bg-white py-2.5 pr-4 pl-10 text-sm text-neutral-900 shadow-sm transition-all placeholder:text-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-100 dark:focus:border-primary-400 dark:focus:ring-primary-500/30"
                 autoFocus
               />
             </div>
@@ -354,7 +354,7 @@ export function WorkoutTemplateSelector({
                       'group cursor-pointer rounded-xl border p-4 transition-all duration-200',
                       isSelected
                         ? 'border-primary-500 bg-primary-50/50 shadow-md dark:border-primary-500 dark:bg-primary-900/20'
-                        : 'border-neutral-200 bg-white hover:border-primary-400 hover:bg-primary-50/30 dark:border-white/[0.08] dark:bg-white/[0.04] dark:hover:border-primary-500 dark:hover:bg-primary-900/10'
+                        : 'border-neutral-200/60 bg-white hover:border-primary-400 hover:bg-primary-50/30 dark:border-white/[0.08] dark:bg-white/[0.04] dark:hover:border-primary-500 dark:hover:bg-primary-900/10'
                     )}
                     role="button"
                     tabIndex={0}

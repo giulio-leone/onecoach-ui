@@ -55,7 +55,7 @@ export const Badge = ({
     outline: cn(
       'bg-transparent',
       'text-neutral-700 dark:text-neutral-300',
-      'border border-neutral-200 dark:border-white/[0.1]'
+      'border border-neutral-200/60 dark:border-white/[0.1]'
     ),
     glass: cn(
       'bg-white/60 dark:bg-white/[0.06]',

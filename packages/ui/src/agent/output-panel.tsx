@@ -69,9 +69,9 @@ export function StreamingOutputPanel({
   };
 
   return (
-    <div className="flex h-full min-h-[400px] flex-col overflow-x-hidden rounded-2xl border-2 border-neutral-200 bg-white shadow-lg sm:min-h-[500px] dark:border-white/[0.08] dark:bg-zinc-950">
+    <div className="flex h-full min-h-[400px] flex-col overflow-x-hidden rounded-2xl border-2 border-neutral-200/60 bg-white shadow-lg sm:min-h-[500px] dark:border-white/[0.08] dark:bg-zinc-950">
       {/* Header */}
-      <div className="flex items-center justify-between border-b-2 border-neutral-200 p-3 sm:p-4 dark:border-white/[0.08]">
+      <div className="flex items-center justify-between border-b-2 border-neutral-200/60 p-3 sm:p-4 dark:border-white/[0.08]">
         <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
           <div className={`rounded-lg ${theme.bg} flex-shrink-0 p-2`}>
             <Code className={`h-4 w-4 ${theme.icon} sm:h-5 sm:w-5`} />
@@ -134,7 +134,7 @@ export function StreamingOutputPanel({
                 )}
               </div>
               {isExpanded && (
-                <pre className="overflow-x-auto rounded-xl border-2 border-neutral-200 bg-neutral-50 p-3 font-mono text-xs break-words whitespace-pre-wrap text-neutral-700 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50 dark:text-neutral-300">
+                <pre className="overflow-x-auto rounded-xl border-2 border-neutral-200/60 bg-neutral-50 p-3 font-mono text-xs break-words whitespace-pre-wrap text-neutral-700 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50 dark:text-neutral-300">
                   {JSON.stringify(parsedData, null, 2)}
                 </pre>
               )}
@@ -157,7 +157,7 @@ export function StreamingOutputPanel({
 
       {/* Actions */}
       {parsedData && onSave && !savedId && (
-        <div className="border-t-2 border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+        <div className="border-t-2 border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
           <button
             onClick={onSave}
             className={`min-h-[48px] w-full rounded-xl bg-gradient-to-r px-6 py-3 text-base font-bold text-white shadow-lg transition-all active:scale-95 sm:hover:scale-105 ${
