@@ -17,7 +17,7 @@ interface SkeletonProps {
 export function Skeleton({ className }: SkeletonProps) {
   return (
     <div
-      className={cn('animate-pulse rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60', className)}
+      className={cn('animate-pulse rounded-xl bg-neutral-200/50 dark:bg-white/[0.06]', className)}
     />
   );
 }

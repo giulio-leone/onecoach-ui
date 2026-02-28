@@ -55,7 +55,7 @@ export function ThemeToggle() {
                 className={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
                   theme === value
                     ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
-                    : 'text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                    : 'text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-white/[0.06]'
                 }`}
               >
                 <Icon className="h-4 w-4" />

@@ -84,7 +84,7 @@ export function AdminTabs({ tabs, defaultTab, onTabChange, className }: AdminTab
   };
 
   return (
-    <div className={cn('border-b border-neutral-200 dark:border-neutral-800', className)}>
+    <div className={cn('border-b border-neutral-200/60 dark:border-white/[0.06]', className)}>
       <nav
         className={cn(
           '-mb-px flex overflow-x-auto',
