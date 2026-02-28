@@ -1,8 +1,8 @@
 import React from 'react';
 import Animated from 'react-native-reanimated';
 import type { ViewStyle, StyleProp } from 'react-native';
-import { useFadeIn } from '../../hooks/useAnimations';
-import type { AnimationConfig } from '../../hooks/useAnimations';
+import { useFadeIn } from '../../../hooks/useAnimations';
+import type { AnimationConfig } from '../../../hooks/useAnimations';
 
 interface FadeInProps {
   children: React.ReactNode;

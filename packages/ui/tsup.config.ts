@@ -4,7 +4,7 @@ export default defineConfig({
   entry: {
     index: 'src/index.ts',
     components: 'src/components/index.ts',
-    memory: 'src/components/memory/index.ts',
+    memory: 'src/components/domain/memory/index.ts',
     'visual-builder': 'src/visual-builder/index.ts',
   },
   format: ['esm', 'cjs'],
