@@ -168,7 +168,7 @@ export function ManageCreditsModal({ user, isOpen, onClose, onSuccess }: ManageC
 
         {/* Preview */}
         {amount && parseInt(amount) > 0 && (
-          <div className="rounded-lg border border-neutral-200 p-4 dark:border-neutral-700">
+          <div className="rounded-lg border border-neutral-200 p-4 dark:border-white/[0.08]">
             <div className="flex items-center justify-between">
               <span className="text-sm text-neutral-600 dark:text-neutral-400">
                 {t('manageCredits.newBalance')}

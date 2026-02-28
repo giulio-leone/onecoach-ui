@@ -59,7 +59,7 @@ export function AnalyticsHeader({
               className={cn(
                 'rounded-md px-3 py-1.5 transition-all',
                 period === p.value
-                  ? 'bg-white shadow-sm dark:bg-neutral-700'
+                  ? 'bg-white shadow-sm dark:bg-white/[0.08]'
                   : 'hover:bg-neutral-200 dark:hover:bg-white/[0.08]'
               )}
             >

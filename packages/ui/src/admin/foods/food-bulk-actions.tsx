@@ -156,7 +156,7 @@ function FoodBulkUpdateModal({ selectedCount, onUpdate, onClose }: FoodBulkUpdat
             </label>
             <input
               type="text"
-              className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-neutral-700 dark:bg-white/[0.04]"
+              className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-white/[0.08] dark:bg-white/[0.04]"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setFormData((prev) => ({ ...prev, brand: e.target.value || undefined }))
               }
@@ -169,7 +169,7 @@ function FoodBulkUpdateModal({ selectedCount, onUpdate, onClose }: FoodBulkUpdat
             </label>
             <input
               type="text"
-              className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-neutral-700 dark:bg-white/[0.04]"
+              className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-white/[0.08] dark:bg-white/[0.04]"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setFormData((prev) => ({
                   ...prev,

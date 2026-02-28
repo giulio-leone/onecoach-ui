@@ -169,7 +169,7 @@ export function ExerciseCard({
           </div>
 
           {/* Actions */}
-          <div className="mt-4 flex items-center justify-end border-t pt-4 dark:border-neutral-700">
+          <div className="mt-4 flex items-center justify-end border-t pt-4 dark:border-white/[0.08]">
             <ExerciseActionsMenu actions={actions} />
           </div>
         </div>

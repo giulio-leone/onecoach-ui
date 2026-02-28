@@ -101,7 +101,7 @@ const AirportItem = React.memo(function AirportItem({
           'flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 transition-colors',
           isSelected
             ? 'border-primary-500 bg-primary-500 text-white'
-            : 'border-neutral-300 dark:border-neutral-600'
+            : 'border-neutral-300 dark:border-white/[0.1]'
         )}
       >
         {isSelected && <Check size={12} weight="bold" />}
@@ -377,7 +377,7 @@ export function AirportCombobox({
             className={cn(
               'z-[9999] w-[var(--radix-popover-trigger-width)] max-w-[480px] min-w-[320px] overflow-hidden rounded-2xl border border-neutral-200 bg-white/95 shadow-2xl backdrop-blur-xl',
               'animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
-              'dark:border-neutral-700 dark:bg-neutral-900/95'
+              'dark:border-white/[0.08] dark:bg-neutral-900/95'
             )}
           >
             {/* Search Input */}
@@ -394,7 +394,7 @@ export function AirportCombobox({
                     'w-full rounded-xl border border-neutral-200 bg-white py-2.5 pr-10 pl-10 text-sm transition-colors',
                     'placeholder:text-neutral-400',
                     'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
-                    'dark:border-neutral-700 dark:bg-white/[0.04] dark:text-white'
+                    'dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-white'
                   )}
                 />
                 {isSearching && (

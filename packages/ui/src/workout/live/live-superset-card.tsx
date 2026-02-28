@@ -105,7 +105,7 @@ export function LiveSupersetCard({
       </div>
 
       {/* Exercises (Accordion) */}
-      <div className="divide-y divide-neutral-200 dark:divide-neutral-700">
+      <div className="divide-y divide-neutral-200 dark:divide-white/[0.08]">
         {superset.exercises.map((exercise, exerciseIdx) => {
           const isExpanded = expandedExercise === exerciseIdx;
           const isDone = completedExercises.has(exerciseIdx);
@@ -123,7 +123,7 @@ export function LiveSupersetCard({
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs font-bold text-neutral-700 dark:bg-neutral-700 dark:text-neutral-300">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs font-bold text-neutral-700 dark:bg-white/[0.08] dark:text-neutral-300">
                     {exerciseIdx + 1}
                   </span>
                   <div className="text-left">
@@ -173,7 +173,7 @@ export function LiveSupersetCard({
       </div>
 
       {/* Rest Info */}
-      <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
+      <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
         <p className="text-xs text-neutral-500 dark:text-neutral-400">
           💡 Riposo tra esercizi: {superset.restBetweenExercises}s • Dopo superset:{' '}
           {superset.restAfterSuperset}s
@@ -182,7 +182,7 @@ export function LiveSupersetCard({
 
       {/* Notes */}
       {superset.notes && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{superset.notes}</p>
         </div>
       )}

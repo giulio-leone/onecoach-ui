@@ -202,7 +202,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
               className={cn(
                 'flex items-center gap-2 rounded-xl px-4 py-2.5',
                 'bg-white dark:bg-white/[0.04]',
-                'border border-neutral-200 dark:border-neutral-700',
+                'border border-neutral-200 dark:border-white/[0.08]',
                 'text-sm font-medium text-neutral-700 dark:text-neutral-300',
                 'hover:bg-neutral-50 dark:hover:bg-white/[0.08]'
               )}
@@ -221,7 +221,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                     'absolute top-full right-0 z-50 mt-2',
                     'min-w-[180px] rounded-xl p-1',
                     'bg-white dark:bg-white/[0.04]',
-                    'border border-neutral-200 dark:border-neutral-700',
+                    'border border-neutral-200 dark:border-white/[0.08]',
                     'shadow-xl'
                   )}
                 >
@@ -254,7 +254,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
             disabled={isRefreshing}
             className={cn(
               'flex items-center gap-2 rounded-xl px-3 py-2.5',
-              'bg-neutral-100 dark:bg-neutral-700',
+              'bg-neutral-100 dark:bg-white/[0.08]',
               'text-neutral-600 dark:text-neutral-300',
               'hover:bg-neutral-200 dark:hover:bg-neutral-600',
               'disabled:opacity-50'
@@ -487,7 +487,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                       {provider.cost.toFixed(2)}
                     </span>
                   </div>
-                  <div className="h-3 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-700">
+                  <div className="h-3 overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.08]">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${percentage}%` }}
@@ -525,7 +525,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                 <th className="pb-3 text-right font-medium">{t('table.latency')}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-100 dark:divide-neutral-700">
+            <tbody className="divide-y divide-neutral-100 dark:divide-white/[0.08]">
               {modelStats.map((model: any) => (
                 <tr key={model.modelId} className="group">
                   <td className="py-3">

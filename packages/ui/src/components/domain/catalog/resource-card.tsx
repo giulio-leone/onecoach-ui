@@ -81,7 +81,7 @@ export const ResourceCard = ({
             type="checkbox"
             checked={isSelected || false}
             onChange={handleSelectChange}
-            className="h-5 w-5 cursor-pointer rounded border-2 border-neutral-300 bg-white text-primary-600 transition-colors focus:ring-2 focus:ring-primary-500 dark:border-neutral-600 dark:bg-white/[0.04] dark:checked:border-primary-500 dark:checked:bg-primary-500"
+            className="h-5 w-5 cursor-pointer rounded border-2 border-neutral-300 bg-white text-primary-600 transition-colors focus:ring-2 focus:ring-primary-500 dark:border-white/[0.1] dark:bg-white/[0.04] dark:checked:border-primary-500 dark:checked:bg-primary-500"
           />
         </div>
       )}

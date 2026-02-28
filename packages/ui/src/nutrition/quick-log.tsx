@@ -287,7 +287,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
           className={cn(
             'flex items-center justify-center gap-2 rounded-xl border border-dashed border-neutral-300 px-4 py-3 text-sm font-medium text-neutral-500 transition-colors',
             'hover:border-primary-400 hover:text-emerald-600',
-            'dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-primary-600 dark:hover:text-emerald-400'
+            'dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-primary-600 dark:hover:text-emerald-400'
           )}
         >
           <Plus className="h-4 w-4" />
@@ -308,7 +308,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickLabel}
               onChange={(e) => setQuickLabel(e.target.value)}
               placeholder="Label (optional)"
-              className="col-span-2 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-100"
+              className="col-span-2 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-100"
             />
             <input
               type="number"
@@ -316,7 +316,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickCal}
               onChange={(e) => setQuickCal(e.target.value)}
               placeholder="Calories *"
-              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-100"
+              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-100"
             />
             <input
               type="number"
@@ -324,7 +324,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickProtein}
               onChange={(e) => setQuickProtein(e.target.value)}
               placeholder="Protein (g)"
-              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-100"
+              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-100"
             />
             <input
               type="number"
@@ -332,7 +332,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickCarbs}
               onChange={(e) => setQuickCarbs(e.target.value)}
               placeholder="Carbs (g)"
-              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-100"
+              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-100"
             />
             <input
               type="number"
@@ -340,7 +340,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickFats}
               onChange={(e) => setQuickFats(e.target.value)}
               placeholder="Fats (g)"
-              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-100"
+              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-100"
             />
           </div>
           <button

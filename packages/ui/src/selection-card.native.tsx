@@ -129,7 +129,7 @@ export function SelectionCard({
                 compact ? 'h-4 w-4' : 'h-6 w-6',
                 selected
                   ? 'border-primary-500 bg-primary-500'
-                  : 'border-neutral-300 bg-transparent dark:border-neutral-600'
+                  : 'border-neutral-300 bg-transparent dark:border-white/[0.1]'
               )}
             >
               {selected && (

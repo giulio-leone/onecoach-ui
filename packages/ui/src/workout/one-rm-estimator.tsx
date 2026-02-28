@@ -115,7 +115,7 @@ export function OneRMEstimator({
 
   return (
     <div
-      className={`rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-white/[0.04] ${className}`}
+      className={`rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-white/[0.04] ${className}`}
     >
       <div className="mb-3 flex items-center gap-2">
         <Calculator className="h-4 w-4 text-primary-600 dark:text-primary-400" />
@@ -147,7 +147,7 @@ export function OneRMEstimator({
             value={weight}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setWeight(e.target.value)}
             placeholder={weightUnit === 'LBS' ? '176' : '80'}
-            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100"
+            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-neutral-100"
           />
         </div>
 
@@ -163,7 +163,7 @@ export function OneRMEstimator({
             value={reps}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setReps(e.target.value)}
             placeholder="8"
-            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100"
+            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-neutral-100"
           />
         </div>
 
@@ -177,7 +177,7 @@ export function OneRMEstimator({
           </label>
           <select
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setRpe(e.target.value)}
-            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100"
+            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-neutral-100"
           >
             <option value="10">{t('workouts.one_rm_estimator.10_max')}</option>
             <option value="9.5">9.5</option>

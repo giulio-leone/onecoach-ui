@@ -77,7 +77,7 @@ export function BrandCombobox({
         onFocus={() => setOpen(true)}
       />
       {open && (
-        <div className="absolute z-20 mt-1 max-h-64 w-full overflow-auto rounded-md border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-zinc-950">
+        <div className="absolute z-20 mt-1 max-h-64 w-full overflow-auto rounded-md border border-neutral-200 bg-white shadow-lg dark:border-white/[0.08] dark:bg-zinc-950">
           {options.length === 0 && !query && (
             <div className="px-3 py-2 text-sm text-neutral-500 dark:text-neutral-500">
               {t('admin.brand_combobox.digita_per_cercare_brand')}

@@ -114,7 +114,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
                 className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
                   isActive
                     ? 'bg-amber-500 text-white hover:bg-amber-600'
-                    : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-200'
+                    : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300 dark:bg-white/[0.08] dark:text-neutral-200'
                 }`}
               >
                 {isActive ? <Pause className="h-5 w-5" /> : <Play className="ml-0.5 h-5 w-5" />}
@@ -125,7 +125,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
       </div>
 
       {/* Exercises List */}
-      <div className="divide-y divide-neutral-200 dark:divide-neutral-700">
+      <div className="divide-y divide-neutral-200 dark:divide-white/[0.08]">
         {warmup.exercises.map((exercise, index) => {
           const isDone = completedExercises.has(index);
 
@@ -144,7 +144,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
                 className={`flex h-6 w-6 items-center justify-center rounded-full border-2 transition-colors ${
                   isDone
                     ? 'border-emerald-500 bg-emerald-500 text-white'
-                    : 'border-neutral-300 dark:border-neutral-600'
+                    : 'border-neutral-300 dark:border-white/[0.1]'
                 }`}
               >
                 {isDone && <CheckCircle2 className="h-4 w-4" />}
@@ -171,7 +171,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
 
       {/* Skip Button */}
       {!isCompleted && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
           <button
             onClick={handleSkip}
             className="w-full rounded-lg bg-neutral-100 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]"
@@ -183,7 +183,7 @@ export function LiveWarmupCard({ warmup, onComplete, className = '' }: LiveWarmu
 
       {/* Notes */}
       {warmup.notes && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{warmup.notes}</p>
         </div>
       )}

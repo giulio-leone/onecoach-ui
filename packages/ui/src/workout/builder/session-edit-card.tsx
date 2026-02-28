@@ -382,7 +382,7 @@ function CounterButton({ onClick, children }: CounterButtonProps) {
   return (
     <button
       onClick={onClick}
-      className="flex h-8 w-8 items-center justify-center rounded-md border border-neutral-200 transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:text-white dark:hover:bg-white/[0.08]"
+      className="flex h-8 w-8 items-center justify-center rounded-md border border-neutral-200 transition-colors hover:bg-neutral-100 dark:border-white/[0.08] dark:text-white dark:hover:bg-white/[0.08]"
     >
       {children}
     </button>

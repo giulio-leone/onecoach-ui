@@ -78,7 +78,7 @@ export function AIConfigTab({
                 'border',
                 isActive
                   ? 'border-primary-500 bg-primary-50 dark:border-primary-400 dark:bg-primary-500/10'
-                  : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-white/[0.04] dark:hover:border-neutral-600'
+                  : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-white/[0.08] dark:bg-white/[0.04] dark:hover:border-neutral-600'
               )}
             >
               <div
@@ -86,7 +86,7 @@ export function AIConfigTab({
                   'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl',
                   isActive
                     ? 'bg-primary-500 text-white'
-                    : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-700 dark:text-neutral-400'
+                    : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.08] dark:text-neutral-400'
                 )}
               >
                 <Icon className="h-5 w-5" />

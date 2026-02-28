@@ -499,7 +499,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
               'flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-bold transition-colors',
               'border-2 border-neutral-200 bg-white text-neutral-700',
               'hover:border-neutral-300 hover:bg-neutral-50',
-              'dark:border-neutral-600 dark:bg-neutral-700 dark:text-white',
+              'dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-white',
               'dark:hover:border-neutral-500 dark:hover:bg-neutral-600'
             )}
           >
@@ -531,7 +531,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
               'flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-bold transition-colors',
               'border-2 border-neutral-200 bg-white text-neutral-700',
               'hover:border-neutral-300 hover:bg-neutral-50',
-              'dark:border-neutral-600 dark:bg-neutral-700 dark:text-white',
+              'dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-white',
               'dark:hover:border-neutral-500 dark:hover:bg-neutral-600'
             )}
           >
@@ -867,7 +867,7 @@ export function FlightWizard({
                     'h-0.5 w-8 rounded-full transition-colors',
                     index < currentStep
                       ? 'bg-primary-400 dark:bg-primary-500/60'
-                      : 'bg-neutral-200 dark:bg-neutral-700'
+                      : 'bg-neutral-200 dark:bg-white/[0.08]'
                   )}
                 />
               )}
@@ -883,7 +883,7 @@ export function FlightWizard({
           className={cn(
             'rounded-3xl border p-8 backdrop-blur-xl',
             'border-neutral-200/80 bg-white/90 shadow-2xl shadow-neutral-500/5',
-            'dark:border-neutral-700/60 dark:bg-neutral-900/95 dark:shadow-black/20'
+            'dark:border-white/[0.08]/60 dark:bg-neutral-900/95 dark:shadow-black/20'
           )}
         >
           {/* Step Header */}

@@ -99,7 +99,7 @@ export function MemoryEditor({ userId, domain, onSave, className }: MemoryEditor
     return (
       <Card variant="glass" padding="md" className={className}>
         <div className="flex items-center justify-center py-8">
-          <div className="border-t-primary-500 h-6 w-6 animate-spin rounded-full border-2 border-neutral-200 dark:border-neutral-700" />
+          <div className="border-t-primary-500 h-6 w-6 animate-spin rounded-full border-2 border-neutral-200 dark:border-white/[0.08]" />
         </div>
       </Card>
     );

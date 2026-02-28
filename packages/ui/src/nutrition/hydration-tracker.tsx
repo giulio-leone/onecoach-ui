@@ -199,7 +199,7 @@ export function HydrationTracker({
           className={cn(
             'flex items-center justify-center gap-2 rounded-xl border border-dashed border-neutral-300 px-4 py-2.5 text-sm font-medium text-neutral-500 transition-colors',
             'hover:border-sky-400 hover:text-sky-600',
-            'dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-sky-600 dark:hover:text-sky-400'
+            'dark:border-white/[0.08] dark:text-neutral-400 dark:hover:border-sky-600 dark:hover:text-sky-400'
           )}
         >
           <Plus className="h-4 w-4" />

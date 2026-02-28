@@ -40,7 +40,7 @@ export function ProgramInfoCard({
   return (
     <div
       className={cn(
-        'mb-8 overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br p-6 shadow-lg transition-all duration-200 hover:shadow-xl dark:border-neutral-700 dark:shadow-2xl dark:shadow-neutral-950/50 dark:hover:shadow-neutral-950/70',
+        'mb-8 overflow-hidden rounded-2xl border border-neutral-200 bg-gradient-to-br p-6 shadow-lg transition-all duration-200 hover:shadow-xl dark:border-white/[0.08] dark:shadow-2xl dark:shadow-neutral-950/50 dark:hover:shadow-neutral-950/70',
         gradientFrom,
         'via-white to-white dark:from-neutral-800 dark:via-neutral-800 dark:to-neutral-800/90',
         className
@@ -69,7 +69,7 @@ export function ProgramInfoCard({
                 return (
                   <div
                     key={idx}
-                    className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 shadow-sm backdrop-blur-sm dark:border-neutral-600 dark:bg-neutral-700/80"
+                    className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 shadow-sm backdrop-blur-sm dark:border-white/[0.1] dark:bg-neutral-700/80"
                   >
                     {MetaIcon && <MetaIcon className={cn('h-5 w-5', iconColor)} />}
                     <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">

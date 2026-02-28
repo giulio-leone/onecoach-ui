@@ -344,7 +344,7 @@ export function VersionHistoryModal<T>({
                           <Check size={12} />
                         </div>
                       ) : (
-                        <div className="h-5 w-5 rounded-full border-2 border-neutral-300 group-hover:border-neutral-400 dark:border-neutral-600" />
+                        <div className="h-5 w-5 rounded-full border-2 border-neutral-300 group-hover:border-neutral-400 dark:border-white/[0.1]" />
                       )}
                     </div>
 

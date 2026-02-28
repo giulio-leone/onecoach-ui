@@ -86,7 +86,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             // Background and text with improved dark mode contrast
             'bg-white dark:bg-white/[0.04]',
             'text-neutral-900 dark:text-neutral-100',
-            'border-neutral-300 dark:border-neutral-600',
+            'border-neutral-300 dark:border-white/[0.1]',
 
             // Hover states for better interactivity
             'hover:border-neutral-400 dark:hover:border-neutral-500',

@@ -117,7 +117,7 @@ export function AiGenerationModal<TOutput>({
                 Prompt
               </label>
               <textarea
-                className="h-44 w-full rounded-xl border border-neutral-300 px-4 py-3 text-sm text-neutral-800 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:text-neutral-200"
+                className="h-44 w-full rounded-xl border border-neutral-300 px-4 py-3 text-sm text-neutral-800 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-white/[0.1] dark:text-neutral-200"
                 placeholder={placeholder}
                 value={prompt}
                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>

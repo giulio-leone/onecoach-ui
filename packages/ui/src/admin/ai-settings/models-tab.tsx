@@ -375,7 +375,7 @@ export function ModelsTab({
               'border transition-all',
               showAccessMatrix
                 ? 'border-primary-500 bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400'
-                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-white/[0.06]'
+                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50 dark:border-white/[0.08] dark:text-neutral-400 dark:hover:bg-white/[0.06]'
             )}
           >
             <Eye className="h-4 w-4" />
@@ -452,7 +452,7 @@ export function ModelsTab({
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-neutral-100 dark:divide-neutral-700/50">
+                <tbody className="divide-y divide-neutral-100 dark:divide-white/[0.08]/50">
                   {models
                     .filter((m: any) => m.isActive)
                     .map((model: any) => (
@@ -665,7 +665,7 @@ export function ModelsTab({
                           }
                           className={cn(
                             'w-full rounded-xl border px-3 py-2',
-                            'border-neutral-200 dark:border-neutral-700',
+                            'border-neutral-200 dark:border-white/[0.08]',
                             'bg-white dark:bg-white/[0.04]',
                             'text-sm text-neutral-900 dark:text-white',
                             'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -690,7 +690,7 @@ export function ModelsTab({
                           className={cn(
                             'w-full rounded-xl border py-2 pr-4 pl-9',
                             'text-sm',
-                            'border-neutral-200 dark:border-neutral-700',
+                            'border-neutral-200 dark:border-white/[0.08]',
                             'bg-white dark:bg-white/[0.04]',
                             'text-neutral-900 dark:text-white',
                             'placeholder:text-neutral-400',
@@ -705,7 +705,7 @@ export function ModelsTab({
                           'flex shrink-0 items-center justify-center gap-2 rounded-xl px-4 py-2',
                           'text-sm font-medium',
                           'border border-neutral-200 bg-white text-neutral-600',
-                          'dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-400',
+                          'dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-400',
                           'transition-colors hover:bg-neutral-50 dark:hover:bg-white/[0.08]',
                           'disabled:opacity-50'
                         )}
@@ -1075,7 +1075,7 @@ function ModelCard({
                   className={cn(
                     'flex flex-1 items-center justify-center gap-1 rounded-lg py-2',
                     'text-xs font-medium',
-                    'bg-neutral-100 text-neutral-600 dark:bg-neutral-700 dark:text-neutral-300',
+                    'bg-neutral-100 text-neutral-600 dark:bg-white/[0.08] dark:text-neutral-300',
                     'hover:bg-neutral-200 dark:hover:bg-neutral-600',
                     'transition-colors'
                   )}
@@ -1187,7 +1187,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
               }
               className={cn(
                 'w-full rounded-xl border px-4 py-3',
-                'border-neutral-200 dark:border-neutral-700',
+                'border-neutral-200 dark:border-white/[0.08]',
                 'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -1215,7 +1215,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
               placeholder={t('modelIdPlaceholder')}
               className={cn(
                 'w-full rounded-xl border px-4 py-3',
-                'border-neutral-200 dark:border-neutral-700',
+                'border-neutral-200 dark:border-white/[0.08]',
                 'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'placeholder:text-neutral-400',
@@ -1238,7 +1238,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
               placeholder={t('displayNamePlaceholder')}
               className={cn(
                 'w-full rounded-xl border px-4 py-3',
-                'border-neutral-200 dark:border-neutral-700',
+                'border-neutral-200 dark:border-white/[0.08]',
                 'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'placeholder:text-neutral-400',
@@ -1261,7 +1261,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
               placeholder={t('endpointPlaceholder')}
               className={cn(
                 'w-full rounded-xl border px-4 py-3',
-                'border-neutral-200 dark:border-neutral-700',
+                'border-neutral-200 dark:border-white/[0.08]',
                 'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'placeholder:text-neutral-400',
@@ -1284,7 +1284,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
                 }
                 className={cn(
                   'w-full rounded-xl border px-4 py-3',
-                  'border-neutral-200 dark:border-neutral-700',
+                  'border-neutral-200 dark:border-white/[0.08]',
                   'bg-white dark:bg-white/[0.04]',
                   'text-neutral-900 dark:text-white',
                   'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -1316,7 +1316,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
                 }}
                 className={cn(
                   'w-full rounded-xl border px-4 py-3',
-                  'border-neutral-200 dark:border-neutral-700',
+                  'border-neutral-200 dark:border-white/[0.08]',
                   'bg-white dark:bg-white/[0.04]',
                   'text-neutral-900 dark:text-white',
                   'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -1339,7 +1339,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
                 }}
                 className={cn(
                   'w-full rounded-xl border px-4 py-3',
-                  'border-neutral-200 dark:border-neutral-700',
+                  'border-neutral-200 dark:border-white/[0.08]',
                   'bg-white dark:bg-white/[0.04]',
                   'text-neutral-900 dark:text-white',
                   'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -1368,7 +1368,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
                   }
                   className={cn(
                     'w-full rounded-xl border py-3 pr-4 pl-9',
-                    'border-neutral-200 dark:border-neutral-700',
+                    'border-neutral-200 dark:border-white/[0.08]',
                     'bg-white dark:bg-white/[0.04]',
                     'text-neutral-900 dark:text-white',
                     'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
@@ -1395,7 +1395,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
                   }
                   className={cn(
                     'w-full rounded-xl border py-3 pr-4 pl-9',
-                    'border-neutral-200 dark:border-neutral-700',
+                    'border-neutral-200 dark:border-white/[0.08]',
                     'bg-white dark:bg-white/[0.04]',
                     'text-neutral-900 dark:text-white',
                     'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'

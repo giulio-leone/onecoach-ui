@@ -207,7 +207,7 @@ export function ConversationList({
                         'absolute top-4 left-4 flex h-5 w-5 items-center justify-center rounded-full border-2 transition-colors',
                         selectedIds.has(conv.id)
                           ? 'border-red-500 bg-red-500'
-                          : 'border-neutral-300 dark:border-neutral-600'
+                          : 'border-neutral-300 dark:border-white/[0.1]'
                       )}
                     >
                       {selectedIds.has(conv.id) && <Check size={12} className="text-white" />}

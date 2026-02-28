@@ -52,7 +52,7 @@ function EventCard({ event }: { event: StreamEvent }) {
     <button
       onClick={() => hasData && setIsExpanded((prev) => !prev)}
       className={cn(
-        'w-full rounded-xl border border-neutral-200/60 bg-white/50 text-left dark:border-neutral-700/60 dark:bg-neutral-800/50',
+        'w-full rounded-xl border border-neutral-200/60 bg-white/50 text-left dark:border-white/[0.08]/60 dark:bg-neutral-800/50',
         'px-3 py-2.5 transition-colors',
         hasData &&
           'hover:bg-neutral-50 active:bg-neutral-100 dark:hover:bg-white/[0.08]/30 dark:active:bg-neutral-700/50',

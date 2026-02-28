@@ -59,7 +59,7 @@ export function CheckoutSummary({
   }
 
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-white/[0.04]">
+    <div className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-white/[0.08] dark:bg-white/[0.04]">
       <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
         Riepilogo Ordine
       </h3>
@@ -73,7 +73,7 @@ export function CheckoutSummary({
         </div>
 
         {items && items.length > 0 && (
-          <div className="space-y-2 rounded-md border border-neutral-200 bg-neutral-50 p-3 dark:border-neutral-700 dark:bg-neutral-800/60">
+          <div className="space-y-2 rounded-md border border-neutral-200 bg-neutral-50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/60">
             {items.map((item, idx) => (
               <div key={`${item.title}-${idx}`} className="flex items-center justify-between">
                 <div className="text-xs text-neutral-600 dark:text-neutral-300">
@@ -118,7 +118,7 @@ export function CheckoutSummary({
           </div>
         )}
 
-        <div className="border-t border-neutral-200 pt-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200 pt-3 dark:border-white/[0.08]">
           <div className="flex items-center justify-between">
             <span className="text-sm text-neutral-600 dark:text-neutral-400">Subtotale</span>
             <span className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
@@ -144,7 +144,7 @@ export function CheckoutSummary({
             </div>
           )}
 
-          <div className="mt-3 flex items-center justify-between border-t border-neutral-200 pt-3 dark:border-neutral-700">
+          <div className="mt-3 flex items-center justify-between border-t border-neutral-200 pt-3 dark:border-white/[0.08]">
             <span className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
               Totale
             </span>

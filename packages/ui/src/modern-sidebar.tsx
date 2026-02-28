@@ -415,7 +415,7 @@ export function ModernSidebar({
                       <div className="px-3 py-2">
                         <ThemeToggle />
                       </div>
-                      <div className="my-1 h-px bg-neutral-100 dark:bg-neutral-700" />
+                      <div className="my-1 h-px bg-neutral-100 dark:bg-white/[0.08]" />
                       <button
                         onClick={onSignOut}
                         className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-red-600 transition-colors hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20"

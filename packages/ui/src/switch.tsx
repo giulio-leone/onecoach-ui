@@ -104,7 +104,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
             'relative inline-block cursor-pointer rounded-full transition-colors duration-200',
             switchSizeStyles[size].track,
             disabled
-              ? 'cursor-not-allowed bg-neutral-200 dark:bg-neutral-700'
+              ? 'cursor-not-allowed bg-neutral-200 dark:bg-white/[0.08]'
               : 'bg-neutral-300 dark:bg-neutral-600',
             !disabled && switchVariantStyles[variant],
             'peer-focus-visible:ring-primary-500 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2 dark:peer-focus-visible:ring-offset-neutral-900'

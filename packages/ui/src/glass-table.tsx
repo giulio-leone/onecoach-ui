@@ -76,7 +76,7 @@ export function GlassTable<T>({
                     type="checkbox"
                     checked={isAllSelected}
                     onChange={onSelectAll}
-                    className="h-4 w-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:border-neutral-600 dark:bg-neutral-700"
+                    className="h-4 w-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:border-white/[0.1] dark:bg-white/[0.08]"
                   />
                 </th>
               )}
@@ -118,7 +118,7 @@ export function GlassTable<T>({
                           e.stopPropagation();
                           onSelectRow(id);
                         }}
-                        className="h-4 w-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:border-neutral-600 dark:bg-neutral-700"
+                        className="h-4 w-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:border-white/[0.1] dark:bg-white/[0.08]"
                       />
                     </td>
                   )}

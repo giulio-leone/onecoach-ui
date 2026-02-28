@@ -24,7 +24,7 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
                       ? 'border-primary-600 bg-primary-600 dark:border-primary-500 dark:bg-primary-500'
                       : isCurrent
                         ? 'border-primary-600 bg-white dark:border-primary-500 dark:bg-zinc-950'
-                        : 'border-neutral-300 bg-transparent dark:border-neutral-700'
+                        : 'border-neutral-300 bg-transparent dark:border-white/[0.08]'
                   )}
                 >
                   {isCompleted ? (

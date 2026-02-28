@@ -439,7 +439,7 @@ export function WorkoutImportModal({
           </div>
         )}
         {/* Mode selector */}
-        <div className="flex items-center gap-3 rounded-lg border border-neutral-200 p-2 dark:border-neutral-700">
+        <div className="flex items-center gap-3 rounded-lg border border-neutral-200 p-2 dark:border-white/[0.08]">
           <button
             type="button"
             onClick={() => setMode('auto')}
@@ -482,7 +482,7 @@ export function WorkoutImportModal({
             'relative rounded-xl border-2 border-dashed p-6 transition-colors',
             isDragging
               ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20'
-              : 'border-neutral-300 bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-800/50',
+              : 'border-neutral-300 bg-neutral-50 dark:border-white/[0.1] dark:bg-neutral-800/50',
             files.length > 0 && 'pb-4'
           )}
         >
@@ -527,7 +527,7 @@ export function WorkoutImportModal({
                       'flex items-center gap-3 rounded-lg border p-3',
                       file.error
                         ? 'border-rose-200 bg-rose-50 dark:border-rose-800 dark:bg-rose-900/20'
-                        : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-white/[0.04]'
+                        : 'border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
                     )}
                   >
                     {file.preview ? (
@@ -575,7 +575,7 @@ export function WorkoutImportModal({
               })}
               {/* Add more files */}
               {files.length < 10 && (
-                <label className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 p-3 text-sm text-neutral-500 hover:border-primary-500 hover:text-emerald-600 dark:border-neutral-600 dark:hover:border-primary-500">
+                <label className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 p-3 text-sm text-neutral-500 hover:border-primary-500 hover:text-emerald-600 dark:border-white/[0.1] dark:hover:border-primary-500">
                   <Upload className="h-4 w-4" />
                   {t('workouts.workout_import_modal.aggiungi_altri_file')}
                   <input
@@ -633,7 +633,7 @@ export function WorkoutImportModal({
                 {progress.stepNumber}/{progress.totalSteps}
               </span>
             </div>
-            <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+            <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-white/[0.08]">
               <div
                 className="h-full rounded-full bg-emerald-500 transition-all duration-300"
                 style={{ width: `${progress.progress}%` }}

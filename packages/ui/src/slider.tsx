@@ -29,7 +29,7 @@ export function Slider({ value, min, max, step, onValueChange, disabled, classNa
         onChange={handleChange}
         disabled={disabled}
         className={cn(
-          'h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-200 dark:bg-neutral-700',
+          'h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-200 dark:bg-white/[0.08]',
           'accent-primary focus:ring-primary/20 focus:ring-2 focus:outline-none',
           disabled && 'cursor-not-allowed opacity-50'
         )}

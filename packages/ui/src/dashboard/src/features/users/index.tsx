@@ -328,13 +328,13 @@ export function UsersPageClient({
                 />
               </div>
               {/* View Toggle - Hidden on mobile */}
-              <div className="hidden items-center gap-1 rounded-lg border border-neutral-200 p-1 sm:flex dark:border-neutral-700">
+              <div className="hidden items-center gap-1 rounded-lg border border-neutral-200 p-1 sm:flex dark:border-white/[0.08]">
                 <button
                   onClick={() => setViewMode('grid')}
                   className={cn(
                     'rounded-md p-2 transition-colors',
                     viewMode === 'grid'
-                      ? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-700 dark:text-white'
+                      ? 'bg-neutral-100 text-neutral-900 dark:bg-white/[0.08] dark:text-white'
                       : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-white/[0.06]'
                   )}
                 >
@@ -345,7 +345,7 @@ export function UsersPageClient({
                   className={cn(
                     'rounded-md p-2 transition-colors',
                     viewMode === 'list'
-                      ? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-700 dark:text-white'
+                      ? 'bg-neutral-100 text-neutral-900 dark:bg-white/[0.08] dark:text-white'
                       : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-white/[0.06]'
                   )}
                 >

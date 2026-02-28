@@ -118,7 +118,7 @@ export function ModelSelectorModal({
                 No models found matching "{search}"
               </div>
             ) : (
-              <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
+              <div className="divide-y divide-neutral-100 dark:divide-white/[0.06]">
                 {filteredModels.map((model: ModelOption) => (
                   <button
                     key={model.id}

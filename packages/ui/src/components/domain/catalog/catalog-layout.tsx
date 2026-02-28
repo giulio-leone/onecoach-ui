@@ -137,7 +137,7 @@ export const CatalogToolbar = ({
             className={cn(
               'rounded-md p-2 transition-all',
               viewMode === 'grid'
-                ? 'bg-white text-neutral-900 shadow-sm dark:bg-neutral-700 dark:text-white'
+                ? 'bg-white text-neutral-900 shadow-sm dark:bg-white/[0.08] dark:text-white'
                 : 'text-neutral-400 hover:text-neutral-600 dark:text-neutral-500'
             )}
           >
@@ -149,7 +149,7 @@ export const CatalogToolbar = ({
             className={cn(
               'rounded-md p-2 transition-all',
               viewMode === 'list'
-                ? 'bg-white text-neutral-900 shadow-sm dark:bg-neutral-700 dark:text-white'
+                ? 'bg-white text-neutral-900 shadow-sm dark:bg-white/[0.08] dark:text-white'
                 : 'text-neutral-400 hover:text-neutral-600 dark:text-neutral-500'
             )}
           >

@@ -128,7 +128,7 @@ export function LiveCircuitCard({ circuit, onComplete, className = '' }: LiveCir
               {completedCount}/{totalCount} esercizi
             </span>
           </div>
-          <div className="h-2 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+          <div className="h-2 overflow-hidden rounded-full bg-neutral-200 dark:bg-white/[0.08]">
             <div
               className="h-full rounded-full bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-500"
               style={{ width: `${progressPercent}%` }}
@@ -198,7 +198,7 @@ export function LiveCircuitCard({ circuit, onComplete, className = '' }: LiveCir
       )}
 
       {/* Exercises List (Overview) */}
-      <div className="border-t border-neutral-200 dark:border-neutral-700">
+      <div className="border-t border-neutral-200 dark:border-white/[0.08]">
         <div className="px-5 py-2">
           <span className="text-xs font-medium text-neutral-500 uppercase">
             Esercizi nel circuito
@@ -231,7 +231,7 @@ export function LiveCircuitCard({ circuit, onComplete, className = '' }: LiveCir
 
       {/* Notes */}
       {circuit.notes && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{circuit.notes}</p>
         </div>
       )}

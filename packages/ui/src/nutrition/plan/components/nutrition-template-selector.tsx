@@ -164,7 +164,7 @@ export function NutritionTemplateSelector({
                         'rounded-full border px-3 py-1 text-xs font-medium transition-colors',
                         selectedCategory === cat
                           ? 'border-green-200 bg-green-100 text-green-700 dark:border-green-800 dark:bg-green-900/30 dark:text-green-400'
-                          : 'border-neutral-200 bg-white text-neutral-600 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
+                          : 'border-neutral-200 bg-white text-neutral-600 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                       )}
                     >
                       {cat}
@@ -208,7 +208,7 @@ export function NutritionTemplateSelector({
                         ? selectionMode
                           ? 'border-primary-500 bg-primary-50/50 shadow-md dark:border-primary-500 dark:bg-primary-900/20'
                           : 'border-green-500 bg-green-50/50 shadow-md dark:border-green-500 dark:bg-green-900/20'
-                        : 'border-neutral-200 hover:border-green-400 hover:bg-green-50/30 dark:border-neutral-700 dark:hover:border-green-500 dark:hover:bg-green-900/10',
+                        : 'border-neutral-200 hover:border-green-400 hover:bg-green-50/30 dark:border-white/[0.08] dark:hover:border-green-500 dark:hover:bg-green-900/10',
                       darkModeClasses.interactive.button
                     )}
                     role="button"

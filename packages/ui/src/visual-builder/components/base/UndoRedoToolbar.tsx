@@ -51,7 +51,7 @@ const VARIANT_STYLES = {
   neutral: {
     active: 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.06]',
     disabled: 'text-neutral-300 dark:text-neutral-600',
-    badge: 'bg-neutral-200 text-neutral-600 dark:bg-neutral-700 dark:text-neutral-300',
+    badge: 'bg-neutral-200 text-neutral-600 dark:bg-white/[0.08] dark:text-neutral-300',
   },
 } as const;
 

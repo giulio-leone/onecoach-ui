@@ -79,7 +79,7 @@ function MacroBar({ label, consumed, target, color }: { label: string; consumed:
           {consumed}g / {target}g
         </span>
       </div>
-      <div className="h-2 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+      <div className="h-2 overflow-hidden rounded-full bg-neutral-200/60 dark:bg-white/[0.06]">
         <div className={cn('h-full rounded-full transition-all', color)} style={{ width: `${pct}%` }} />
       </div>
     </div>
@@ -133,7 +133,7 @@ export function TodayDashboard({
       </div>
 
       {/* ── Workout card ── */}
-      <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-zinc-950">
+      <section className="rounded-2xl border border-neutral-200/60 bg-white/80 p-5 shadow-sm backdrop-blur-xl dark:border-white/[0.08] dark:bg-white/[0.03]">
         <div className="mb-4 flex items-center gap-2">
           <Dumbbell className="h-5 w-5 text-violet-500" />
           <h3 className="text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
@@ -189,7 +189,7 @@ export function TodayDashboard({
               <button
                 type="button"
                 onClick={onStartWorkout}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-violet-700"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 px-4 py-2.5 text-sm font-medium text-white shadow-lg shadow-indigo-500/25 transition hover:from-indigo-600 hover:to-violet-600"
               >
                 <Play className="h-4 w-4" />
                 {workout.status === 'in_progress' ? 'Continue Workout' : 'Start Workout'}
@@ -211,7 +211,7 @@ export function TodayDashboard({
 
       {/* ── Nutrition card ── */}
       {nutrition && (
-        <section className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-zinc-950">
+        <section className="rounded-2xl border border-neutral-200/60 bg-white/80 p-5 shadow-sm backdrop-blur-xl dark:border-white/[0.08] dark:bg-white/[0.03]">
           <div className="mb-4 flex items-center gap-2">
             <Utensils className="h-5 w-5 text-emerald-500" />
             <h3 className="text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">

@@ -117,7 +117,7 @@ function SelectionIndicator({ isSelected }: { isSelected: boolean }) {
       className={`flex h-6 w-6 items-center justify-center rounded-full border transition-colors ${
         isSelected
           ? 'border-primary-500 bg-primary-500 text-white'
-          : 'border-neutral-300 bg-transparent text-transparent dark:border-neutral-600'
+          : 'border-neutral-300 bg-transparent text-transparent dark:border-white/[0.1]'
       }`}
     >
       <CheckCircle2 size={14} />
@@ -198,7 +198,7 @@ function SetSummary({ setGroup, showRanges }: SetSummaryProps) {
 }
 
 function Divider() {
-  return <div className="h-3 w-px bg-neutral-300 dark:bg-neutral-700" />;
+  return <div className="h-3 w-px bg-neutral-300 dark:bg-white/[0.08]" />;
 }
 
 interface DynamicValueBadgeProps {

@@ -980,7 +980,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                         className={`flex h-6 w-6 items-center justify-center rounded-full border transition-colors ${
                           isSelected
                             ? 'border-primary-500 bg-primary-500 text-white'
-                            : 'border-neutral-300 bg-transparent text-transparent dark:border-neutral-600'
+                            : 'border-neutral-300 bg-transparent text-transparent dark:border-white/[0.1]'
                         }`}
                       >
                         <CheckCircle2 size={14} />
@@ -1021,7 +1021,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                             </span>
                           </div>
 
-                          <div className="h-3 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+                          <div className="h-3 w-px bg-neutral-300 dark:bg-white/[0.08]"></div>
 
                           {(setGroup?.baseSet.weight || setGroup?.baseSet.intensityPercent) && (
                             <div className="font-medium">
@@ -1037,7 +1037,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
 
                           {setGroup?.baseSet.rpe && (
                             <>
-                              <div className="h-3 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+                              <div className="h-3 w-px bg-neutral-300 dark:bg-white/[0.08]"></div>
                               <div className="text-xs">
                                 <span className="font-medium text-neutral-500 dark:text-neutral-400">
                                   RPE
@@ -1049,7 +1049,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
 
                           {setGroup?.baseSet.rest && (
                             <>
-                              <div className="h-3 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+                              <div className="h-3 w-px bg-neutral-300 dark:bg-white/[0.08]"></div>
                               <div className="text-xs text-neutral-400">
                                 {setGroup.baseSet.rest}s
                               </div>

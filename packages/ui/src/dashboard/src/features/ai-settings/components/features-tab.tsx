@@ -217,7 +217,7 @@ function StatCard({ label, value, total, color }: StatCardProps) {
         </div>
       </div>
       <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">{label}</p>
-      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-700">
+      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.08]">
         <div
           className={cn('h-full rounded-full bg-gradient-to-r', colors[color])}
           style={{ width: `${percentage}%` }}
@@ -265,7 +265,7 @@ function FeatureCard({ config, index, onToggleEnabled, onToggleRole }: FeatureCa
               'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl',
               config.isEnabled
                 ? 'from-primary-500 shadow-primary-500/25 bg-gradient-to-br to-violet-600 text-white shadow-lg'
-                : 'bg-neutral-100 text-neutral-400 dark:bg-neutral-700'
+                : 'bg-neutral-100 text-neutral-400 dark:bg-white/[0.08]'
             )}
           >
             <IconComponent className="h-5 w-5" />
@@ -301,7 +301,7 @@ function FeatureCard({ config, index, onToggleEnabled, onToggleRole }: FeatureCa
                 'rounded-lg px-2.5 py-1 text-xs font-medium transition-all',
                 isAllowed
                   ? 'bg-primary-500 text-white shadow-sm'
-                  : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-700 dark:text-neutral-400',
+                  : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.08] dark:text-neutral-400',
                 config.isEnabled
                   ? 'hover:opacity-80 active:scale-95'
                   : 'cursor-not-allowed opacity-50'

@@ -192,7 +192,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                   }}
                   className={cn(
                     'relative h-6 w-10 rounded-full transition-colors',
-                    config.isActive ? 'bg-primary-500' : 'bg-neutral-200 dark:bg-neutral-700'
+                    config.isActive ? 'bg-primary-500' : 'bg-neutral-200 dark:bg-white/[0.08]'
                   )}
                 >
                   <span
@@ -221,7 +221,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                       setConfigs((prev) => [...prev, { ...config, model: val }]);
                     }
                   }}
-                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-white/[0.04]"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
                 >
                   {models.map((m: any) => (
                     <option key={m.modelId} value={m.modelId}>
@@ -249,7 +249,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                         setConfigs((prev) => [...prev, { ...config, creditCost: val }]);
                       }
                     }}
-                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-white/[0.04]"
+                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
                   />
                 </div>
 
@@ -271,7 +271,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                         setConfigs((prev) => [...prev, { ...config, maxTokens: val }]);
                       }
                     }}
-                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-white/[0.04]"
+                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
                   />
                 </div>
               </div>

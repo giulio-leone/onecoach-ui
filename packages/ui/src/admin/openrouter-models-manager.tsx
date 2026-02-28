@@ -281,7 +281,7 @@ export function OpenRouterModelsManager() {
                 <th className="px-6 py-3 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
+            <tbody className="divide-y divide-neutral-200 dark:divide-white/[0.08]">
               {isLoading ? (
                 <tr>
                   <td colSpan={7} className="p-8 text-center">
@@ -393,7 +393,7 @@ export function OpenRouterModelsManager() {
               {t('openrouter_models_manager.no_models_found_sync_or_add_one')}
             </div>
           ) : (
-            <div className="divide-y divide-neutral-200 dark:divide-neutral-700">
+            <div className="divide-y divide-neutral-200 dark:divide-white/[0.08]">
               {models.map((model: any) => (
                 <div key={model.id} className="space-y-3 p-4">
                   <div className="flex items-start justify-between gap-2">
@@ -573,7 +573,7 @@ export function OpenRouterModelsManager() {
             )}
           </div>
 
-          <div className="flex items-center justify-between border-t border-neutral-200 pt-4 dark:border-neutral-700">
+          <div className="flex items-center justify-between border-t border-neutral-200 pt-4 dark:border-white/[0.08]">
             <div className="text-sm text-neutral-500">
               {t('openrouter_models_manager.selected')}
               {selectedSyncModels.size}
@@ -673,7 +673,7 @@ export function OpenRouterModelsManager() {
               />
             </div>
           </div>
-          <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-neutral-700">
+          <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-white/[0.08]">
             <Button variant="outline" onClick={() => setIsEditDialogOpen(false)}>
               Cancel
             </Button>
@@ -708,7 +708,7 @@ export function OpenRouterModelsManager() {
             )}
           </div>
 
-          <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-neutral-700">
+          <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-white/[0.08]">
             <Button variant="outline" onClick={() => setIsTestDialogOpen(false)}>
               Close
             </Button>

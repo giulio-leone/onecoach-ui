@@ -26,7 +26,7 @@ export const Reasoning = forwardRef<HTMLDivElement, ReasoningProps>(
       ref={ref}
       className={cn(
         'w-full rounded-lg border border-neutral-200 bg-neutral-50',
-        'dark:border-neutral-700 dark:bg-neutral-800/30',
+        'dark:border-white/[0.08] dark:bg-neutral-800/30',
         className
       )}
       data-streaming={isStreaming}
@@ -103,7 +103,7 @@ export const ReasoningContent = forwardRef<HTMLDivElement, ReasoningContentProps
       {...props}
     >
       <div className="overflow-hidden">
-        <div className="border-t border-neutral-200 px-3 py-2 dark:border-neutral-700">
+        <div className="border-t border-neutral-200 px-3 py-2 dark:border-white/[0.08]">
           <p className="text-xs leading-relaxed text-neutral-600 italic dark:text-neutral-300">
             {children}
           </p>
@@ -127,7 +127,7 @@ export function ReasoningBubble({ text, isStreaming }: ReasoningBubbleProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="mb-3 rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/30">
+    <div className="mb-3 rounded-lg border border-neutral-200 bg-neutral-50 dark:border-white/[0.08] dark:bg-neutral-800/30">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50"
@@ -153,7 +153,7 @@ export function ReasoningBubble({ text, isStreaming }: ReasoningBubbleProps) {
         )}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-neutral-200 dark:border-neutral-700">
+          <div className="border-t border-neutral-200 dark:border-white/[0.08]">
             <p className="px-3 py-2 text-xs leading-relaxed text-neutral-600 italic dark:text-neutral-300">
               {text}
             </p>

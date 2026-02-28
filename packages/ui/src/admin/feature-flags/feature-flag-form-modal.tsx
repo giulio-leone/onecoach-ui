@@ -122,7 +122,7 @@ export function FeatureFlagFormModal({ flag, onClose, onSuccess }: FeatureFlagFo
               }
               disabled={!!flag}
               required
-              className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm disabled:bg-neutral-100 dark:border-neutral-700 dark:bg-white/[0.04] dark:disabled:bg-neutral-700"
+              className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm disabled:bg-neutral-100 dark:border-white/[0.08] dark:bg-white/[0.04] dark:disabled:bg-neutral-700"
             />
           </div>
 
@@ -135,7 +135,7 @@ export function FeatureFlagFormModal({ flag, onClose, onSuccess }: FeatureFlagFo
                 setFormData({ ...formData, name: e.target.value })
               }
               required
-              className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-white/[0.04]"
+              className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
             />
           </div>
 
@@ -147,7 +147,7 @@ export function FeatureFlagFormModal({ flag, onClose, onSuccess }: FeatureFlagFo
                 setFormData({ ...formData, description: e.target.value })
               }
               rows={2}
-              className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-white/[0.04]"
+              className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
             />
           </div>
 
@@ -160,7 +160,7 @@ export function FeatureFlagFormModal({ flag, onClose, onSuccess }: FeatureFlagFo
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                 setFormData({ ...formData, strategy: e.target.value })
               }
-              className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-white/[0.04]"
+              className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
             >
               <option value="ALL">{t('feature_flag_form_modal.all_users')}</option>
               <option value="ROLE_BASED">{t('feature_flag_form_modal.role_based')}</option>
@@ -185,7 +185,7 @@ export function FeatureFlagFormModal({ flag, onClose, onSuccess }: FeatureFlagFo
                 setFormData({ ...formData, config: e.target.value })
               }
               rows={4}
-              className="w-full rounded-lg border border-neutral-300 px-3 py-2 font-mono text-xs dark:border-neutral-700 dark:bg-white/[0.04]"
+              className="w-full rounded-lg border border-neutral-300 px-3 py-2 font-mono text-xs dark:border-white/[0.08] dark:bg-white/[0.04]"
             />
           </div>
 
@@ -205,7 +205,7 @@ export function FeatureFlagFormModal({ flag, onClose, onSuccess }: FeatureFlagFo
             <button
               type="button"
               onClick={onClose}
-              className="rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-white/[0.06]"
+              className="rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:bg-white/[0.06]"
             >
               Cancel
             </button>

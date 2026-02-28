@@ -208,7 +208,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
         className={`rounded-xl border px-4 py-3 text-sm font-semibold transition-all ${
           mode === 'login'
             ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm'
-            : 'border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 dark:border-neutral-700 dark:bg-zinc-950 dark:text-neutral-400'
+            : 'border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-400'
         }`}
       >
         {t('common.credit_checkout_modal.ho_gia_un_account')}
@@ -219,7 +219,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
         className={`rounded-xl border px-4 py-3 text-sm font-semibold transition-all ${
           mode === 'register'
             ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm'
-            : 'border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 dark:border-neutral-700 dark:bg-zinc-950 dark:text-neutral-400'
+            : 'border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-400'
         }`}
       >
         {t('common.credit_checkout_modal.registrami_ora')}
@@ -230,7 +230,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
         className={`rounded-xl border px-4 py-3 text-sm font-semibold transition-all ${
           mode === 'express'
             ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm'
-            : 'border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 dark:border-neutral-700 dark:bg-zinc-950 dark:text-neutral-400'
+            : 'border-neutral-200 bg-white text-neutral-600 hover:border-primary-200 dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-400'
         }`}
       >
         {t('common.credit_checkout_modal.checkout_rapido')}
@@ -540,7 +540,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 rounded-full bg-neutral-100 p-2 text-neutral-500 transition hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04] dark:text-neutral-500"
+          className="absolute top-4 right-4 rounded-full bg-neutral-100 p-2 text-neutral-500 transition hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-500"
         >
           <X className="h-4 w-4" />
         </button>

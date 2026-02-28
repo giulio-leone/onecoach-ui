@@ -194,8 +194,8 @@ export function MetadataTranslationManager() {
   }
   const entities = getCurrentEntities();
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-zinc-950">
-      <div className="border-b border-neutral-200 p-6 dark:border-neutral-700">
+    <div className="rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-white/[0.08] dark:bg-zinc-950">
+      <div className="border-b border-neutral-200 p-6 dark:border-white/[0.08]">
         <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
           {t('admin.metadata_translation_manager.metadata_translations')}
         </h2>
@@ -204,7 +204,7 @@ export function MetadataTranslationManager() {
         </p>
       </div>
       {/* Tab Navigation */}
-      <div className="flex border-b border-neutral-200 dark:border-neutral-700">
+      <div className="flex border-b border-neutral-200 dark:border-white/[0.08]">
         <button
           onClick={() => setActiveTab('types')}
           className={`px-6 py-3 text-sm font-medium transition-colors ${
@@ -251,14 +251,14 @@ export function MetadataTranslationManager() {
         </button>
       </div>
       {/* Locale Selector */}
-      <div className="border-b border-neutral-200 bg-neutral-50 px-6 py-3 dark:border-neutral-700 dark:bg-neutral-800/50">
+      <div className="border-b border-neutral-200 bg-neutral-50 px-6 py-3 dark:border-white/[0.08] dark:bg-neutral-800/50">
         <label className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-500">
           {t('admin.metadata_translation_manager.target_language')}
         </label>
         <select
           value={selectedLocale}
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedLocale(e.target.value)}
-          className="mt-2 w-full max-w-xs rounded-lg border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600"
+          className="mt-2 w-full max-w-xs rounded-lg border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-white/[0.1]"
         >
           {LOCALES.filter((l: any) => l.code !== 'en').map((locale: any) => (
             <option key={locale.code} value={locale.code}>
@@ -282,7 +282,7 @@ export function MetadataTranslationManager() {
             return (
               <div
                 key={entity.id}
-                className="grid grid-cols-2 gap-4 rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800/50"
+                className="grid grid-cols-2 gap-4 rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50"
               >
                 <div>
                   <label className="mb-1 block text-xs font-semibold text-neutral-500 uppercase dark:text-neutral-500">
@@ -327,7 +327,7 @@ export function MetadataTranslationManager() {
         </div>
       )}
       {/* Actions */}
-      <div className="border-t border-neutral-200 px-6 py-4 dark:border-neutral-700">
+      <div className="border-t border-neutral-200 px-6 py-4 dark:border-white/[0.08]">
         <div className="flex items-center justify-between">
           <p className="text-xs text-neutral-500 dark:text-neutral-500">
             {t('admin.metadata_translation_manager.changes_are_saved_automatically_to_the_d')}

@@ -34,7 +34,7 @@ export function HabitList({ habits, onToggleHabit, className }: HabitListProps) 
                 'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 transition-colors',
                 habit.completedToday
                   ? 'border-emerald-500 bg-emerald-500 text-white'
-                  : 'border-neutral-300 hover:border-indigo-500 dark:border-neutral-600'
+                  : 'border-neutral-300 hover:border-indigo-500 dark:border-white/[0.1]'
               )}
             >
               {habit.completedToday && (

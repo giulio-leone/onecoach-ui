@@ -150,7 +150,7 @@ export function UserApiKeys({ userId }: UserApiKeysProps) {
       )}
 
       {apiKeys.length === 0 ? (
-        <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-6 text-center dark:border-neutral-700 dark:bg-neutral-800/50">
+        <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-6 text-center dark:border-white/[0.08] dark:bg-neutral-800/50">
           <KeyRound className="mx-auto h-12 w-12 text-neutral-400" />
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">{t('noKeys')}</p>
         </div>
@@ -159,7 +159,7 @@ export function UserApiKeys({ userId }: UserApiKeysProps) {
           {apiKeys.map((key: any) => (
             <div
               key={key.id}
-              className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-zinc-950"
+              className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950"
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1 space-y-2">

@@ -153,7 +153,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
             </span>
           </div>
 
-          <div className="h-4 w-px bg-neutral-200 dark:bg-neutral-700" />
+          <div className="h-4 w-px bg-neutral-200 dark:bg-white/[0.08]" />
 
           <Checkbox
             label={tAdmin('customActive')}

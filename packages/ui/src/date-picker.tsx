@@ -45,13 +45,13 @@ const triggerVariants = cva(
           'border-neutral-200 bg-white text-neutral-700 shadow-sm',
           'hover:border-neutral-300 hover:bg-neutral-50',
           'focus-visible:ring-primary-500',
-          'dark:border-neutral-700 dark:bg-zinc-950 dark:text-neutral-200',
+          'dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-200',
           'dark:hover:border-neutral-600 dark:hover:bg-white/[0.06]',
         ],
         outline: [
           'border-neutral-300 bg-transparent text-neutral-700',
           'hover:bg-neutral-100',
-          'dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-white/[0.06]',
+          'dark:border-white/[0.1] dark:text-neutral-300 dark:hover:bg-white/[0.06]',
         ],
         ghost: [
           'border-transparent bg-transparent text-neutral-700',
@@ -223,7 +223,7 @@ export function DatePicker({
           className={cn(
             'z-50 w-[300px] max-w-[94vw] rounded-xl border border-neutral-200 bg-white p-3 shadow-xl',
             'animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
-            'dark:border-neutral-700 dark:bg-zinc-950'
+            'dark:border-white/[0.08] dark:bg-zinc-950'
           )}
         >
           {/* Quick Select Buttons */}

@@ -226,7 +226,7 @@ export function SmartAnalysisPanel({
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="h-1.5 w-20 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+                          <div className="h-1.5 w-20 overflow-hidden rounded-full bg-neutral-200 dark:bg-white/[0.08]">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: `${recommendation.confidence * 100}%` }}
@@ -307,7 +307,7 @@ export function SmartAnalysisPanel({
                         <Button
                           variant="outline"
                           size="sm"
-                          className="rounded-xl border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-white/[0.04] dark:text-neutral-200 dark:hover:bg-white/[0.08]"
+                          className="rounded-xl border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-200 dark:hover:bg-white/[0.08]"
                           onClick={() => onSelectRecommendation(recommendation)}
                         >
                           <CheckCircle className="mr-1.5 h-4 w-4" weight="bold" />
@@ -385,7 +385,7 @@ export function SmartAnalysisPanel({
                               className={cn(
                                 'flex items-center justify-between rounded-xl border p-3 transition-colors',
                                 'border-neutral-200 bg-white hover:border-neutral-300',
-                                'dark:border-neutral-700 dark:bg-neutral-800/50 dark:hover:border-neutral-600'
+                                'dark:border-white/[0.08] dark:bg-neutral-800/50 dark:hover:border-neutral-600'
                               )}
                             >
                               <div className="flex items-center gap-3">

@@ -95,7 +95,7 @@ export function CreditPacksSection() {
             className={`relative rounded-xl border-2 p-6 shadow-sm transition-shadow hover:shadow-lg sm:p-6 ${
               pack.popular
                 ? 'border-primary-500 bg-primary-50 shadow-lg dark:border-primary-400 dark:bg-primary-900/20'
-                : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-white/[0.04]'
+                : 'border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
             }`}
           >
             {pack.popular && (
@@ -115,7 +115,7 @@ export function CreditPacksSection() {
             )}
 
             <div className="text-center">
-              <div className="inline-flex rounded-full bg-neutral-100 p-3 dark:bg-neutral-700 dark:bg-white/[0.04]">
+              <div className="inline-flex rounded-full bg-neutral-100 p-3 dark:bg-white/[0.08] dark:bg-white/[0.04]">
                 <Coins className="h-8 w-8 text-neutral-600 dark:text-neutral-400" />
               </div>
               <p className="mt-4 text-3xl font-bold text-neutral-900 dark:text-neutral-100">

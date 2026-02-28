@@ -6,12 +6,12 @@ const typographyVariants = cva('text-neutral-900 dark:text-neutral-100', {
   variants: {
     variant: {
       h1: 'scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',
-      h2: 'scroll-m-20 border-b border-neutral-200 pb-2 text-3xl font-semibold tracking-tight first:mt-0 dark:border-neutral-700',
+      h2: 'scroll-m-20 border-b border-neutral-200 pb-2 text-3xl font-semibold tracking-tight first:mt-0 dark:border-white/[0.08]',
       h3: 'scroll-m-20 text-2xl font-semibold tracking-tight',
       h4: 'scroll-m-20 text-xl font-semibold tracking-tight',
       p: 'leading-7 [&:not(:first-child)]:mt-6',
       blockquote:
-        'mt-6 border-l-2 border-neutral-300 pl-6 italic text-neutral-800 dark:border-neutral-600 dark:text-neutral-200',
+        'mt-6 border-l-2 border-neutral-300 pl-6 italic text-neutral-800 dark:border-white/[0.1] dark:text-neutral-200',
       list: 'my-6 ml-6 list-disc [&>li]:mt-2',
       lead: 'text-xl text-neutral-600 dark:text-neutral-400',
       large: 'text-lg font-semibold text-neutral-900 dark:text-neutral-100',

@@ -90,8 +90,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
               'relative flex cursor-pointer items-center justify-center rounded border-2 transition-all duration-200',
               checkboxSizeStyles[size],
               disabled
-                ? 'cursor-not-allowed border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-white/[0.04]'
-                : 'border-neutral-300 bg-white hover:border-neutral-400 dark:border-neutral-600 dark:bg-white/[0.04] dark:hover:border-neutral-500',
+                ? 'cursor-not-allowed border-neutral-300 bg-neutral-100 dark:border-white/[0.08] dark:bg-white/[0.04]'
+                : 'border-neutral-300 bg-white hover:border-neutral-400 dark:border-white/[0.1] dark:bg-white/[0.04] dark:hover:border-neutral-500',
               !disabled && checkboxVariantStyles[variant],
               error && !disabled && 'border-red-600 dark:border-red-500',
               'peer-focus-visible:ring-primary-500 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2 dark:peer-focus-visible:ring-offset-neutral-900'

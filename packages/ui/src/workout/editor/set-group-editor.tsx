@@ -200,7 +200,7 @@ export function SetGroupEditor({
   const isUniform = isUniformGroup(group as unknown as TypesSetGroup);
 
   return (
-    <div className="rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-zinc-950">
+    <div className="rounded-lg border border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-zinc-950">
       {/* Header compatta */}
       <div className="flex items-center justify-between p-3">
         <div className="flex flex-1 items-center gap-2">
@@ -264,7 +264,7 @@ export function SetGroupEditor({
 
       {/* Contenuto espanso */}
       {isExpanded && (
-        <div className="space-y-4 border-t border-neutral-200 p-4 dark:border-neutral-700">
+        <div className="space-y-4 border-t border-neutral-200 p-4 dark:border-white/[0.08]">
           {/* Modalità modifica */}
           <div className="flex items-center gap-2 text-xs">
             <span className="text-neutral-600 dark:text-neutral-400">Modifica:</span>
@@ -273,7 +273,7 @@ export function SetGroupEditor({
               className={`rounded px-3 py-1 transition-colors ${
                 editMode === 'block'
                   ? 'bg-primary-100 font-medium text-primary-700'
-                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04] dark:text-neutral-400'
+                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-400'
               }`}
             >
               Blocco
@@ -283,7 +283,7 @@ export function SetGroupEditor({
               className={`rounded px-3 py-1 transition-colors ${
                 editMode === 'individual'
                   ? 'bg-primary-100 font-medium text-primary-700'
-                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04] dark:text-neutral-400'
+                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-400'
               }`}
             >
               Singole
@@ -310,7 +310,7 @@ export function SetGroupEditor({
                   onBlur={(e: React.ChangeEvent<HTMLInputElement>) =>
                     handleCountChange(e.target.value)
                   }
-                  className="w-20 rounded border border-neutral-300 px-2 py-1 text-sm dark:border-neutral-600"
+                  className="w-20 rounded border border-neutral-300 px-2 py-1 text-sm dark:border-white/[0.1]"
                 />
               </div>
               <SetEditor
@@ -353,7 +353,7 @@ export function SetGroupEditor({
                       type: e.target.value as 'linear' | 'percentage' | 'rpe',
                     })
                   }
-                  className="w-full rounded border border-neutral-300 px-2 py-1 text-sm dark:border-neutral-600"
+                  className="w-full rounded border border-neutral-300 px-2 py-1 text-sm dark:border-white/[0.1]"
                 >
                   <option value="linear">Lineare (kg/peso)</option>
                   <option value="percentage">Percentuale 1RM</option>
@@ -375,7 +375,7 @@ export function SetGroupEditor({
                           steps: newSteps,
                         });
                       }}
-                      className="w-24 rounded border border-neutral-300 px-2 py-1 text-sm dark:border-neutral-600"
+                      className="w-24 rounded border border-neutral-300 px-2 py-1 text-sm dark:border-white/[0.1]"
                       placeholder="Aggiustamento"
                     />
                     <span className="text-neutral-500 dark:text-neutral-500">
@@ -400,7 +400,7 @@ export function SetGroupEditor({
               {displaySets.map((set, idx) => (
                 <div
                   key={idx}
-                  className="rounded-lg border border-neutral-200 p-2 dark:border-neutral-700"
+                  className="rounded-lg border border-neutral-200 p-2 dark:border-white/[0.08]"
                 >
                   <div className="mb-2 flex items-center gap-2">
                     <span className="text-xs font-medium text-neutral-600 dark:text-neutral-400">

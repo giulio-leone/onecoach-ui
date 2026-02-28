@@ -81,7 +81,7 @@ export function MemoryTimeline({
     return (
       <Card variant="glass" padding="md" className={className}>
         <div className="flex items-center justify-center py-8">
-          <div className="border-t-primary-500 h-6 w-6 animate-spin rounded-full border-2 border-neutral-200 dark:border-neutral-700" />
+          <div className="border-t-primary-500 h-6 w-6 animate-spin rounded-full border-2 border-neutral-200 dark:border-white/[0.08]" />
         </div>
       </Card>
     );
@@ -108,7 +108,7 @@ export function MemoryTimeline({
           return (
             <div
               key={event.id}
-              className="flex gap-4 rounded-lg border border-neutral-200 bg-neutral-50/50 p-4 dark:border-neutral-700 dark:bg-neutral-800/50"
+              className="flex gap-4 rounded-lg border border-neutral-200 bg-neutral-50/50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50"
             >
               <div className={cn('flex-shrink-0', colorClass)}>
                 <Icon className="h-5 w-5" />
@@ -126,7 +126,7 @@ export function MemoryTimeline({
                   </p>
                 )}
                 {event.domain && (
-                  <span className="inline-block rounded-full bg-neutral-200 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-700 dark:text-neutral-400">
+                  <span className="inline-block rounded-full bg-neutral-200 px-2 py-0.5 text-xs text-neutral-600 dark:bg-white/[0.08] dark:text-neutral-400">
                     {event.domain}
                   </span>
                 )}

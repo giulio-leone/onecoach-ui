@@ -66,7 +66,7 @@ export function UnifiedListItem({
           'mr-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-xl border-2 transition-all duration-200',
           isCompleted
             ? 'border-emerald-500 bg-emerald-500 shadow-lg shadow-emerald-500/30 dark:border-emerald-400 dark:bg-emerald-500'
-            : 'border-neutral-300 hover:border-sky-400 hover:shadow-md dark:border-neutral-600 dark:hover:border-sky-400'
+            : 'border-neutral-300 hover:border-sky-400 hover:shadow-md dark:border-white/[0.1] dark:hover:border-sky-400'
         )}
       >
         {isCompleted ? (

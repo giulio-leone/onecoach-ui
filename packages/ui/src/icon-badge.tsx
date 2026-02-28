@@ -38,7 +38,7 @@ const variantClasses = {
     'bg-amber-100 dark:bg-amber-900/40 border border-amber-200 dark:border-amber-800 text-amber-600 dark:text-amber-400',
   info: 'bg-primary-100 dark:bg-primary-900/40 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400',
   neutral:
-    'bg-neutral-100 dark:bg-neutral-700/50 border border-neutral-200 dark:border-neutral-600 text-neutral-600 dark:text-neutral-400',
+    'bg-neutral-100 dark:bg-neutral-700/50 border border-neutral-200 dark:border-white/[0.1] text-neutral-600 dark:text-neutral-400',
   purple:
     'bg-secondary-100 dark:bg-secondary-900/40 border border-secondary-200 dark:border-secondary-800 text-secondary-600 dark:text-secondary-400',
 };

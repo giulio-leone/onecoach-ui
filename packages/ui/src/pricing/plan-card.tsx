@@ -60,7 +60,7 @@ export function PlanCard({ plan, referralCode }: PlanCardProps) {
       className={`relative rounded-2xl border-2 p-8 ${
         plan.popular
           ? 'border-primary-500 bg-gradient-to-br from-primary-50 to-secondary-50 shadow-xl'
-          : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-zinc-950'
+          : 'border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-zinc-950'
       }`}
     >
       {/* Popular badge */}

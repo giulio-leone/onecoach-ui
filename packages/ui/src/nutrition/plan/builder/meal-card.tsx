@@ -122,7 +122,7 @@ export function MealCard({
   return (
     <Card variant="glass" className="overflow-hidden p-0">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-neutral-200 bg-white/50 p-4 dark:border-neutral-700 dark:bg-neutral-900/30">
+      <div className="flex items-center justify-between border-b border-neutral-200 bg-white/50 p-4 dark:border-white/[0.08] dark:bg-neutral-900/30">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="flex flex-1 items-center gap-3 text-left"
@@ -221,7 +221,7 @@ export function MealCard({
             {meal.foods?.map((food, foodIndex) => (
               <div
                 key={food.id || foodIndex}
-                className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50/50 p-3 dark:border-neutral-700 dark:bg-neutral-800/30"
+                className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/30"
               >
                 <div className="flex-1">
                   <div className="font-medium text-neutral-900 dark:text-neutral-100">
@@ -243,7 +243,7 @@ export function MealCard({
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       handleUpdateFoodQuantity(foodIndex, parseFloat(e.target.value) || 0)
                     }
-                    className="w-20 rounded border border-neutral-300 bg-white px-2 py-1 text-sm text-neutral-900 dark:border-neutral-600 dark:bg-white/[0.04] dark:text-neutral-100"
+                    className="w-20 rounded border border-neutral-300 bg-white px-2 py-1 text-sm text-neutral-900 dark:border-white/[0.1] dark:bg-white/[0.04] dark:text-neutral-100"
                     min="0"
                     step="1"
                   />
@@ -266,7 +266,7 @@ export function MealCard({
           {/* Add Food Button */}
           <button
             onClick={onAddFood}
-            className="flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 py-3 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-white/[0.06]"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 py-3 transition-colors hover:bg-neutral-50 dark:border-white/[0.1] dark:hover:bg-white/[0.06]"
             type="button"
           >
             <Plus size={16} className="text-neutral-500 dark:text-neutral-400" />

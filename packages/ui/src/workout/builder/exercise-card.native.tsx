@@ -60,7 +60,7 @@ export function ExerciseCard({
   return (
     <Card variant="glass" className="overflow-hidden p-0">
       {/* Header */}
-      <View className="flex-row items-center justify-between border-b border-neutral-200 bg-white/50 p-4 dark:border-neutral-700 dark:bg-neutral-900/30">
+      <View className="flex-row items-center justify-between border-b border-neutral-200 bg-white/50 p-4 dark:border-white/[0.08] dark:bg-neutral-900/30">
         <Pressable
           onPress={() => setIsExpanded(!isExpanded)}
           className="flex-1 flex-row items-center gap-3"
@@ -174,7 +174,7 @@ export function ExerciseCard({
               };
               handleSetGroupsChange([...(exercise.setGroups || []), newGroup]);
             }}
-            className="flex-row items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 py-3 dark:border-neutral-600"
+            className="flex-row items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 py-3 dark:border-white/[0.1]"
           >
             <Text className="font-medium text-neutral-600 dark:text-neutral-400">
               + Aggiungi Gruppo Serie

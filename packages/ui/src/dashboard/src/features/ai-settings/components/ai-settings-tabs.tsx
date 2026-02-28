@@ -174,7 +174,7 @@ export function AISettingsTabs({
                       'flex h-9 w-9 items-center justify-center rounded-lg',
                       isActive
                         ? 'from-primary-500 shadow-primary-500/25 bg-gradient-to-br to-violet-600 text-white shadow-lg'
-                        : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-700 dark:text-neutral-400'
+                        : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.08] dark:text-neutral-400'
                     )}
                   >
                     <tab.icon className="h-4 w-4" />

@@ -116,7 +116,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                   form.setValue('type', e.target.value as PolicyType)
                 }
-                className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-neutral-600"
+                className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-white/[0.1]"
                 required
               >
                 <option value="PRIVACY">{t('admin.policy_form_modal.privacy_policy')}</option>
@@ -138,7 +138,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
                 form.setValue('title', e.target.value)
               }
               onBlur={form.handleBlur('title')}
-              className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-neutral-600"
+              className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-white/[0.1]"
               placeholder={t('admin.policy_form_modal.es_privacy_policy')}
               required
             />
@@ -149,7 +149,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
               {t('admin.policy_form_modal.slug_url')}
             </label>
             <div className="flex items-center">
-              <span className="rounded-l-lg border border-r-0 border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-500 dark:border-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-500">
+              <span className="rounded-l-lg border border-r-0 border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-500 dark:border-white/[0.1] dark:bg-neutral-800/50 dark:text-neutral-500">
                 /
               </span>
               <input
@@ -159,7 +159,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
                   form.setValue('slug', e.target.value)
                 }
                 onBlur={form.handleBlur('slug')}
-                className="flex-1 rounded-r-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-neutral-600"
+                className="flex-1 rounded-r-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-white/[0.1]"
                 placeholder={t('admin.policy_form_modal.privacy_policy')}
                 pattern="[a-z0-9-]+"
                 title={t('admin.policy_form_modal.solo_lettere_minuscole_numeri_e_trattini')}
@@ -181,7 +181,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
                 form.setValue('metaDescription', e.target.value)
               }
               onBlur={form.handleBlur('metaDescription')}
-              className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-neutral-600"
+              className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-white/[0.1]"
               rows={2}
               maxLength={500}
               placeholder={t('admin.policy_form_modal.breve_descrizione_per_i_motori_di_ricerc')}
@@ -202,7 +202,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
                 form.setValue('content', e.target.value)
               }
               onBlur={form.handleBlur('content')}
-              className="w-full rounded-lg border border-neutral-300 px-4 py-2 font-mono text-sm focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-neutral-600"
+              className="w-full rounded-lg border border-neutral-300 px-4 py-2 font-mono text-sm focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-white/[0.1]"
               rows={15}
               placeholder={t('admin.policy_form_modal.inserisci_il_contenuto_della_policy_in_h')}
               required
@@ -221,7 +221,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                 form.setValue('status', e.target.value as PolicyStatus)
               }
-              className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-neutral-600"
+              className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-white/[0.1]"
               required
             >
               <option value="DRAFT">Bozza</option>
@@ -242,7 +242,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
                   form.setValue('changeReason', e.target.value)
                 }
                 onBlur={form.handleBlur('changeReason')}
-                className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-neutral-600"
+                className="w-full rounded-lg border border-neutral-300 px-4 py-2 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-white/[0.1]"
                 placeholder={t('admin.policy_form_modal.es_aggiornamento_normativa_gdpr')}
               />
             </div>

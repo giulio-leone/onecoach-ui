@@ -59,7 +59,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
               !filters.planType
                 ? 'bg-orange-600 text-white'
-                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04]'
+                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]'
             }`}
           >
             All
@@ -74,7 +74,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
               filters.planType === 'WORKOUT'
                 ? 'bg-orange-600 text-white'
-                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04]'
+                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]'
             }`}
           >
             {t('common.marketplace_filters.workout')}
@@ -89,7 +89,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
               filters.planType === 'NUTRITION'
                 ? 'bg-orange-600 text-white'
-                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04]'
+                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]'
             }`}
           >
             {t('common.marketplace_filters.nutrition')}
@@ -146,7 +146,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
               className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                 filters.minRating === rating
                   ? 'bg-yellow-400 text-white'
-                  : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04]'
+                  : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]'
               }`}
             >
               {rating}★
@@ -189,7 +189,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
             sortOrder: undefined,
           })
         }
-        className="w-full rounded-lg bg-neutral-100 px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-white/[0.04]"
+        className="w-full rounded-lg bg-neutral-100 px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]"
       >
         {t('common.marketplace_filters.clear_filters')}
       </button>

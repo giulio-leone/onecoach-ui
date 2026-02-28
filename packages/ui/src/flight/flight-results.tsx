@@ -571,7 +571,7 @@ export function FlightResults({
                     variant="ghost"
                     disabled={!canBook || isSaving}
                     onClick={handleSaveSelectedTrip}
-                    className="h-auto rounded-xl border border-neutral-200 px-6 py-3 text-sm font-bold text-neutral-600 hover:bg-neutral-50 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-white/[0.06]"
+                    className="h-auto rounded-xl border border-neutral-200 px-6 py-3 text-sm font-bold text-neutral-600 hover:bg-neutral-50 dark:border-white/[0.08] dark:text-neutral-300 dark:hover:bg-white/[0.06]"
                   >
                     <Heart className={cn('mr-2 h-4 w-4', isSaving && 'animate-pulse')} />
                     {t('results.saveTrip') || 'Save'}
@@ -620,7 +620,7 @@ function TabButton({ active, onClick, icon, label, count, hasSelection }: TabBut
       className={cn(
         'relative flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition-all',
         active
-          ? 'bg-white text-primary-600 shadow-lg dark:bg-neutral-700 dark:text-primary-400'
+          ? 'bg-white text-primary-600 shadow-lg dark:bg-white/[0.08] dark:text-primary-400'
           : 'text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300'
       )}
     >
@@ -631,7 +631,7 @@ function TabButton({ active, onClick, icon, label, count, hasSelection }: TabBut
           'rounded-full px-2 py-0.5 text-xs font-bold',
           active
             ? 'bg-primary-500/10 text-primary-600 dark:text-primary-400'
-            : 'bg-neutral-200 text-neutral-500 dark:bg-neutral-700'
+            : 'bg-neutral-200 text-neutral-500 dark:bg-white/[0.08]'
         )}
       >
         {count}
@@ -653,7 +653,7 @@ interface SelectionCardProps {
 function SelectionCard({ label, flight, onClear }: SelectionCardProps) {
   if (!flight)
     return (
-      <div className="flex items-center justify-center rounded-xl border-2 border-dashed border-neutral-300 p-4 dark:border-neutral-700">
+      <div className="flex items-center justify-center rounded-xl border-2 border-dashed border-neutral-300 p-4 dark:border-white/[0.08]">
         <p className="text-sm text-neutral-400">{label}</p>
       </div>
     );

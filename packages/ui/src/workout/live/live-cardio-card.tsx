@@ -122,7 +122,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
             <span>Progresso</span>
             <span>{Math.round(progressPercent)}%</span>
           </div>
-          <div className="h-2 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+          <div className="h-2 overflow-hidden rounded-full bg-neutral-200 dark:bg-white/[0.08]">
             <div
               className="h-full rounded-full bg-gradient-to-r from-primary-500 to-cyan-500 transition-all duration-500"
               style={{ width: `${progressPercent}%` }}
@@ -140,7 +140,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
                 ? 'cursor-not-allowed bg-neutral-300 text-neutral-500 dark:bg-neutral-600'
                 : isActive
                   ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30 hover:bg-primary-600'
-                  : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-200'
+                  : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300 dark:bg-white/[0.08] dark:text-neutral-200'
             }`}
           >
             {isActive ? <Pause className="h-6 w-6" /> : <Play className="ml-0.5 h-6 w-6" />}
@@ -209,7 +209,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
 
       {/* Complete Button */}
       {!isCompleted && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
           <button
             onClick={handleComplete}
             className="w-full rounded-xl bg-gradient-to-r from-primary-500 to-cyan-500 py-3 text-sm font-bold text-white transition-all hover:shadow-lg hover:shadow-primary-500/30"
@@ -221,7 +221,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
 
       {/* Notes */}
       {cardio.notes && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200 px-5 py-3 dark:border-white/[0.08]">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{cardio.notes}</p>
         </div>
       )}

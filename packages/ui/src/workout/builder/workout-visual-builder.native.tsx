@@ -254,7 +254,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave }: WorkoutVisualBu
                 className={`flex-row items-center gap-2 rounded-full border px-4 py-2 ${
                   selectedDayIndex === index
                     ? 'border-primary-600 bg-primary-600'
-                    : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-white/[0.04]'
+                    : 'border-neutral-200 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
                 } `}
               >
                 <Text
@@ -271,7 +271,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave }: WorkoutVisualBu
             ))}
             <Pressable
               onPress={addDay}
-              className="flex-row items-center gap-2 rounded-full border border-dashed border-neutral-300 bg-transparent px-4 py-2 dark:border-neutral-600"
+              className="flex-row items-center gap-2 rounded-full border border-dashed border-neutral-300 bg-transparent px-4 py-2 dark:border-white/[0.1]"
             >
               <Plus size={16} className="text-neutral-500 dark:text-neutral-400" />
               <Text className="font-medium text-neutral-500 dark:text-neutral-400">

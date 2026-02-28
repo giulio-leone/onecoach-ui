@@ -39,12 +39,12 @@ export function Radio({
           'items-center justify-center rounded-full border-2 transition-all',
           styles.outer,
           disabled
-            ? 'border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-white/[0.04]'
+            ? 'border-neutral-300 bg-neutral-100 dark:border-white/[0.08] dark:bg-white/[0.04]'
             : checked
               ? variant === 'primary'
                 ? 'border-primary-600 dark:border-primary-500'
                 : 'border-secondary-600 dark:border-secondary-500'
-              : 'border-neutral-300 bg-white dark:border-neutral-600 dark:bg-white/[0.04]'
+              : 'border-neutral-300 bg-white dark:border-white/[0.1] dark:bg-white/[0.04]'
         )}
       >
         {checked && (

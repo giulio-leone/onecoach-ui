@@ -80,7 +80,7 @@ export function MemoryProgressTracker({ userId, className }: MemoryProgressTrack
         </div>
 
         {showAddForm && (
-          <div className="space-y-4 rounded-lg border border-neutral-200 bg-neutral-50/50 p-4 dark:border-neutral-700 dark:bg-neutral-800/50">
+          <div className="space-y-4 rounded-lg border border-neutral-200 bg-neutral-50/50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
             <div>
               <label className="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">
                 Tipo Evento
@@ -90,7 +90,7 @@ export function MemoryProgressTracker({ userId, className }: MemoryProgressTrack
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                   setEventType(e.target.value as TimelineEventType)
                 }
-                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm dark:border-neutral-700 dark:bg-zinc-950"
+                className="w-full rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-zinc-950"
               >
                 <option value="progress">Progresso</option>
                 <option value="injury">Infortunio</option>

@@ -93,7 +93,7 @@ export const MessageLoader = forwardRef<HTMLDivElement, MessageLoaderProps>(
         <div
           key={i}
           className={cn(
-            'h-4 rounded bg-neutral-200 dark:bg-neutral-700',
+            'h-4 rounded bg-neutral-200 dark:bg-white/[0.08]',
             i === lines - 1 && 'w-3/4'
           )}
         />

@@ -94,7 +94,7 @@ export function MarketplacePlanCard({ plan }: { plan: MarketplacePlanCardProps }
                   className="rounded-full"
                 />
               ) : (
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs dark:bg-neutral-700">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs dark:bg-white/[0.08]">
                   {plan.coach.name?.charAt(0) || 'C'}
                 </div>
               )}
@@ -114,7 +114,7 @@ export function MarketplacePlanCard({ plan }: { plan: MarketplacePlanCardProps }
                   className="rounded-full"
                 />
               ) : (
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs dark:bg-neutral-700">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs dark:bg-white/[0.08]">
                   {plan.coach.name?.charAt(0) || 'C'}
                 </div>
               )}

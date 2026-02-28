@@ -183,7 +183,7 @@ export function CartsPageClient() {
                 <th className="px-4 py-3 text-right font-medium">{t('table.actions')}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-800">
+            <tbody className="divide-y divide-neutral-200 dark:divide-white/[0.06]">
               {carts.map((cart: any) => (
                 <tr
                   key={cart.id}

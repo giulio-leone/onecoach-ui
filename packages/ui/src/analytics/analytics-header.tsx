@@ -66,7 +66,7 @@ export function AnalyticsHeader({
               className={cn(
                 'rounded-md px-3 py-1.5 text-sm font-medium transition-all h-auto',
                 period === p.value
-                  ? 'bg-white text-neutral-900 shadow-sm dark:bg-neutral-700 dark:text-white'
+                  ? 'bg-white text-neutral-900 shadow-sm dark:bg-white/[0.08] dark:text-white'
                   : 'text-neutral-500 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-white/[0.08]'
               )}
             >

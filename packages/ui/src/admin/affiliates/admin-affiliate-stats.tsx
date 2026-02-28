@@ -138,7 +138,7 @@ export function AdminAffiliateStats({ stats, program }: AdminAffiliateStatsProps
           {mainMetrics.map((metric: MainMetric) => (
             <div
               key={metric.title}
-              className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm transition-all hover:shadow-md dark:border-neutral-700 dark:bg-zinc-950"
+              className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm transition-all hover:shadow-md dark:border-white/[0.08] dark:bg-zinc-950"
             >
               <div className="flex items-center justify-between">
                 <div className={`rounded-lg p-2 ${metric.bgColor}`}>
@@ -167,7 +167,7 @@ export function AdminAffiliateStats({ stats, program }: AdminAffiliateStatsProps
           {secondaryMetrics.map((metric: SecondaryMetric) => (
             <div
               key={metric.title}
-              className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-zinc-950"
+              className="rounded-lg border border-neutral-200 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950"
             >
               <div className="flex items-center gap-3">
                 <div className="rounded-lg bg-neutral-50 p-2 dark:bg-neutral-800/50">
@@ -194,7 +194,7 @@ export function AdminAffiliateStats({ stats, program }: AdminAffiliateStatsProps
       {programInfo.length > 0 && (
         <section
           aria-label="Informazioni programma"
-          className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-zinc-950"
+          className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-white/[0.08] dark:bg-zinc-950"
         >
           <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
             {t('admin.admin_affiliate_stats.impostazioni_programma_attuale')}

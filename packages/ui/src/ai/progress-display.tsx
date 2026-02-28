@@ -101,7 +101,7 @@ export function ProgressDisplay({
           </div>
 
           {/* Animated Progress Bar */}
-          <div className="relative h-3 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+          <div className="relative h-3 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-white/[0.08]">
             <div
               className={cn(
                 'h-full rounded-full bg-gradient-to-r from-green-500 via-emerald-500 to-green-600',
