@@ -26,3 +26,6 @@ export type { SavedWorkoutProgramsRef } from './saved-programs';
 export { WorkoutCard } from './workout-card';
 export { WorkoutImportModal } from './workout-import-modal';
 export * from './exercise';
+
+// Periodization
+export * from './periodization';
