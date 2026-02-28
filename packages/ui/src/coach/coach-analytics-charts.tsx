@@ -117,7 +117,7 @@ export function CoachAnalyticsCharts({ userId, period = '30d' }: CoachAnalyticsC
         title={t('coach.coach_analytics_charts.vendite_nel_tempo')}
         xLabel="Data"
         yLabel="Vendite"
-        datasets={[{ label: 'Vendite', dataKey: 'vendite', color: '#3b82f6' }]}
+        datasets={[{ label: 'Vendite', dataKey: 'vendite', color: '#6366f1' }]}
       />
 
       {/* Revenue Chart */}

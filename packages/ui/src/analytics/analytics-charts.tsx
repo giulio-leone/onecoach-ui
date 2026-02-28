@@ -39,7 +39,7 @@ export interface AnalyticsChartProps {
   height?: number;
 }
 
-const defaultColors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+const defaultColors = ['#6366f1', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
 
 type TooltipEntry = {
   color?: string;

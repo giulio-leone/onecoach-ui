@@ -184,10 +184,10 @@ const styles = StyleSheet.create({
     borderRadius: 2,
   },
   progressBarCompleted: {
-    backgroundColor: '#2563eb', // bg-primary-600
+    backgroundColor: '#4f46e5', // bg-primary-600
   },
   progressBarActive: {
-    backgroundColor: '#bfdbfe', // bg-primary-200
+    backgroundColor: '#c7d2fe', // bg-primary-200
   },
   progressBarInactive: {
     backgroundColor: '#e2e8f0', // bg-neutral-200
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
     top: 12,
     fontSize: 12,
     fontWeight: '700',
-    color: '#2563eb', // text-primary-600
+    color: '#4f46e5', // text-primary-600
   },
   content: {
     flex: 1,

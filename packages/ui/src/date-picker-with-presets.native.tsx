@@ -68,7 +68,7 @@ export function DatePickerWithPresets({ date, onDateChange, presets }: DatePicke
           onPress={openDatePicker}
           activeOpacity={0.7}
         >
-          <Calendar size={16} color="#3b82f6" />
+          <Calendar size={16} color="#6366f1" />
           <TextInput
             style={[styles.input, error && styles.inputError]}
             value={inputValue}
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
   },
   closeButtonText: {
     fontSize: 16,
-    color: '#3b82f6',
+    color: '#6366f1',
     fontWeight: '600',
   },
   modalInput: {
