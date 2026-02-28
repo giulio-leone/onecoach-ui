@@ -42,8 +42,8 @@ export function Radio({
             ? 'border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800'
             : checked
               ? variant === 'primary'
-                ? 'border-blue-600 dark:border-blue-500'
-                : 'border-pink-600 dark:border-pink-500'
+                ? 'border-primary-600 dark:border-primary-500'
+                : 'border-secondary-600 dark:border-secondary-500'
               : 'border-neutral-300 bg-white dark:border-neutral-600 dark:bg-neutral-800'
         )}
       >
@@ -55,8 +55,8 @@ export function Radio({
               disabled
                 ? 'bg-neutral-400'
                 : variant === 'primary'
-                  ? 'bg-blue-600 dark:bg-blue-500'
-                  : 'bg-pink-600 dark:bg-pink-500'
+                  ? 'bg-primary-600 dark:bg-primary-500'
+                  : 'bg-secondary-600 dark:bg-secondary-500'
             )}
           />
         )}

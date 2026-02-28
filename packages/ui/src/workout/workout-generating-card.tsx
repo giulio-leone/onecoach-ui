@@ -76,7 +76,7 @@ export function WorkoutGeneratingCard({
       case 'failed':
         return 'text-red-600 dark:text-red-400';
       default:
-        return 'text-blue-600 dark:text-blue-400';
+        return 'text-primary-600 dark:text-primary-400';
     }
   }, [status]);
 
@@ -91,7 +91,7 @@ export function WorkoutGeneratingCard({
         <Card
           className={cn(
             'relative overflow-hidden border transition-all duration-300',
-            'bg-blue-50 dark:bg-blue-950',
+            'bg-primary-50 dark:bg-primary-950',
             onClick && 'cursor-pointer hover:shadow-md',
             compact ? 'p-3' : 'p-4',
             className
@@ -130,7 +130,7 @@ export function WorkoutGeneratingCard({
                 >
                   <Dumbbell
                     className={cn(
-                      'text-blue-600 dark:text-blue-400',
+                      'text-primary-600 dark:text-primary-400',
                       compact ? 'h-4 w-4' : 'h-5 w-5'
                     )}
                   />

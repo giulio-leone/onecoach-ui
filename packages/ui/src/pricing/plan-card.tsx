@@ -59,14 +59,14 @@ export function PlanCard({ plan, referralCode }: PlanCardProps) {
     <div
       className={`relative rounded-2xl border-2 p-8 ${
         plan.popular
-          ? 'border-blue-500 bg-gradient-to-br from-blue-50 to-purple-50 shadow-xl'
+          ? 'border-primary-500 bg-gradient-to-br from-primary-50 to-secondary-50 shadow-xl'
           : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900'
       }`}
     >
       {/* Popular badge */}
       {plan.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <div className="flex items-center gap-1 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-1 text-sm font-semibold text-white shadow-lg">
+          <div className="flex items-center gap-1 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 px-4 py-1 text-sm font-semibold text-white shadow-lg">
             <Sparkles className="h-4 w-4" />
             {t('common.plan_card.piu_popolare')}
           </div>
@@ -143,10 +143,10 @@ export function PlanCard({ plan, referralCode }: PlanCardProps) {
         {plan.features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
             <div
-              className={`mt-0.5 rounded-full p-1 ${plan.popular ? 'bg-blue-100' : 'bg-neutral-100 dark:bg-neutral-800'}`}
+              className={`mt-0.5 rounded-full p-1 ${plan.popular ? 'bg-primary-100' : 'bg-neutral-100 dark:bg-neutral-800'}`}
             >
               <Check
-                className={`h-4 w-4 ${plan.popular ? 'text-blue-600' : 'text-neutral-600 dark:text-neutral-400'}`}
+                className={`h-4 w-4 ${plan.popular ? 'text-primary-600' : 'text-neutral-600 dark:text-neutral-400'}`}
               />
             </div>
             <span className="text-neutral-700 dark:text-neutral-300">{feature}</span>

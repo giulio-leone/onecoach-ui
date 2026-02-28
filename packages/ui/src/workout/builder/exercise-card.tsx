@@ -182,7 +182,7 @@ export function ExerciseCard({
               className={cn(
                 'flex h-7 w-7 items-center justify-center rounded-lg font-mono text-sm font-bold tabular-nums transition-colors',
                 isExpanded
-                  ? 'bg-primary-50 text-primary-600 ring-primary-500/20 dark:bg-primary-500/20 dark:text-primary-400 shadow-sm ring-1 dark:shadow-[0_0_10px_rgba(37,99,235,0.2)]'
+                  ? 'bg-primary-50 text-primary-600 ring-primary-500/20 dark:bg-primary-500/20 dark:text-primary-400 shadow-sm ring-1 dark:shadow-[0_0_10px_rgba(79,70,229,0.2)]'
                   : 'group-hover/card:bg-primary-50 group-hover/card:text-primary-600 dark:group-hover/card:bg-primary-500/10 dark:group-hover/card:text-primary-400 bg-neutral-100 text-neutral-500 dark:bg-neutral-800/50 dark:text-neutral-500'
               )}
             >
@@ -253,7 +253,7 @@ export function ExerciseCard({
               >
                 <DropdownMenuItem
                   onClick={() => setIsSelectorOpen(true)}
-                  className="flex cursor-pointer items-center gap-2 rounded-md text-neutral-700 focus:bg-blue-50 focus:text-blue-700 dark:text-blue-400 dark:focus:bg-blue-500/10 dark:focus:text-blue-300"
+                  className="flex cursor-pointer items-center gap-2 rounded-md text-neutral-700 focus:bg-primary-50 focus:text-primary-700 dark:text-primary-400 dark:focus:bg-primary-500/10 dark:focus:text-primary-300"
                 >
                   <RefreshCw size={16} />
                   <span>{t('swap')}</span>

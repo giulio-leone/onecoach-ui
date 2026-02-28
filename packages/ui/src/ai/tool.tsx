@@ -56,7 +56,7 @@ const statusConfigs: Record<ToolUIPart['state'], { icon: ReactNode; variant: str
   },
   'input-available': {
     icon: <ClockIcon className="size-3 animate-spin" />,
-    variant: 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400',
+    variant: 'bg-primary-50 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400',
   },
   'approval-requested': {
     icon: <ShieldAlertIcon className="size-3" />,

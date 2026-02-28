@@ -164,8 +164,8 @@ export function VisionModelsConfig() {
         {/* Label Extraction Model */}
         <div className="rounded-lg border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-900">
           <div className="mb-4 flex items-center gap-3">
-            <div className="rounded-lg bg-blue-100 p-2">
-              <Scan className="h-5 w-5 text-blue-600" />
+            <div className="rounded-lg bg-primary-100 p-2">
+              <Scan className="h-5 w-5 text-primary-600" />
             </div>
             <div>
               <h4 className="font-semibold text-neutral-900 dark:text-neutral-100">

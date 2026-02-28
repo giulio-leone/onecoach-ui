@@ -75,7 +75,7 @@ export function SelectionCard({
       aria-disabled={disabled}
       {...ariaProps}
       className={cn(
-        'w-full cursor-pointer touch-pan-y rounded-xl text-left transition-all duration-300 outline-none select-none focus-visible:ring-2 focus-visible:ring-blue-500',
+        'w-full cursor-pointer touch-pan-y rounded-xl text-left transition-all duration-300 outline-none select-none focus-visible:ring-2 focus-visible:ring-primary-500',
         selected ? 'scale-[1.02]' : 'hover:scale-[1.01]',
         disabled && 'pointer-events-none cursor-not-allowed opacity-50',
         className
@@ -90,17 +90,17 @@ export function SelectionCard({
           compact && 'rounded-xl',
           selected
             ? cn(
-                'ring-2 ring-blue-500/60 dark:ring-blue-500/80',
+                'ring-2 ring-primary-500/60 dark:ring-primary-500/80',
                 compact
-                  ? 'shadow-[0_0_20px_rgba(59,130,246,0.2)]'
-                  : 'scale-[1.01] shadow-[0_0_30px_rgba(59,130,246,0.25)]'
+                  ? 'shadow-[0_0_20px_rgba(99,102,241,0.2)]'
+                  : 'scale-[1.01] shadow-[0_0_30px_rgba(99,102,241,0.25)]'
               )
             : 'ring-1 ring-white/15 hover:bg-white/50 dark:bg-neutral-900/40 dark:ring-white/10 dark:hover:bg-white/5'
         )}
       >
         {/* Selection Glow Effect - More subtle */}
         {selected && (
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-500/10 via-transparent to-blue-400/5" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-500/10 via-transparent to-primary-400/5" />
         )}
         {image && (
           <div className={cn('relative w-full overflow-hidden', compact ? 'h-16 lg:h-20' : 'h-32')}>
@@ -123,7 +123,7 @@ export function SelectionCard({
                     'inline-flex shrink-0 items-center justify-center transition-all',
                     compact ? 'rounded-md p-1' : 'mb-2.5 self-start rounded-xl p-2',
                     selected
-                      ? 'bg-blue-500 text-white shadow-md shadow-blue-500/25'
+                      ? 'bg-primary-500 text-white shadow-md shadow-primary-500/25'
                       : 'bg-neutral-100/80 text-neutral-500 dark:bg-neutral-800/80 dark:text-neutral-400'
                   )}
                 >
@@ -145,14 +145,14 @@ export function SelectionCard({
                       'truncate leading-tight font-semibold transition-colors',
                       compact ? 'text-xs sm:text-sm' : 'text-sm sm:text-base',
                       selected
-                        ? 'text-blue-700 dark:text-blue-100'
+                        ? 'text-primary-700 dark:text-primary-100'
                         : 'text-neutral-800 dark:text-neutral-100'
                     )}
                   >
                     {title}
                   </span>
                   {badge && (
-                    <span className="shrink-0 rounded-full bg-blue-100/80 px-1.5 py-0.5 text-[7px] font-bold text-blue-700 uppercase dark:bg-blue-900/50 dark:text-blue-200">
+                    <span className="shrink-0 rounded-full bg-primary-100/80 px-1.5 py-0.5 text-[7px] font-bold text-primary-700 uppercase dark:bg-primary-900/50 dark:text-primary-200">
                       {badge}
                     </span>
                   )}
@@ -165,7 +165,7 @@ export function SelectionCard({
                       compact
                         ? 'text-[10px] text-neutral-500 sm:text-[11px] dark:text-neutral-400'
                         : 'mt-1 text-[11px] text-neutral-500 sm:text-xs dark:text-neutral-400',
-                      selected && 'text-blue-600/80 dark:text-blue-200/70'
+                      selected && 'text-primary-600/80 dark:text-primary-200/70'
                     )}
                   >
                     {description}
@@ -179,7 +179,7 @@ export function SelectionCard({
                 'flex shrink-0 items-center justify-center rounded-full border-2 transition-all duration-200',
                 compact ? 'h-3.5 w-3.5' : 'h-5 w-5',
                 selected
-                  ? 'border-blue-500 bg-blue-500 dark:border-blue-400 dark:bg-blue-400'
+                  ? 'border-primary-500 bg-primary-500 dark:border-primary-400 dark:bg-primary-400'
                   : 'border-neutral-300 bg-transparent dark:border-neutral-600'
               )}
             >

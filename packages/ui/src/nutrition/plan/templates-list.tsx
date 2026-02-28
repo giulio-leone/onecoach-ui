@@ -234,7 +234,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
             onClick={() => setSelectedCategory('all')}
             className={`min-h-[32px] flex-shrink-0 touch-manipulation rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
               selectedCategory === 'all'
-                ? 'bg-blue-600 text-white'
+                ? 'bg-primary-600 text-white'
                 : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
             }`}
             type="button"
@@ -247,7 +247,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
               onClick={() => setSelectedCategory(cat)}
               className={`min-h-[32px] flex-shrink-0 touch-manipulation rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
                 selectedCategory === cat
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-primary-600 text-white'
                   : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
               }`}
               type="button"
@@ -331,7 +331,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
                             {t(`type.${template.type}`)}
                           </span>
                           {template.category && (
-                            <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs text-blue-700">
+                            <span className="rounded-full bg-primary-100 px-2 py-0.5 text-xs text-primary-700">
                               {template.category}
                             </span>
                           )}
@@ -351,7 +351,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
                         {onEdit && (
                           <button
                             onClick={() => onEdit(template)}
-                            className="flex min-h-[44px] min-w-[44px] touch-manipulation items-center justify-center rounded-lg p-2 text-blue-600 hover:bg-blue-50"
+                            className="flex min-h-[44px] min-w-[44px] touch-manipulation items-center justify-center rounded-lg p-2 text-primary-600 hover:bg-primary-50"
                             title={tCommon('actions.edit')}
                             type="button"
                           >

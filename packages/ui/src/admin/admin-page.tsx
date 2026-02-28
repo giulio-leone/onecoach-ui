@@ -25,7 +25,7 @@ export function AdminPage({
       {gradient && (
         <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
           <div className="absolute -top-[20%] -left-[10%] h-[50%] w-[50%] rounded-full bg-indigo-500/10 blur-[120px] dark:bg-indigo-500/5" />
-          <div className="absolute top-[10%] -right-[10%] h-[40%] w-[40%] rounded-full bg-purple-500/10 blur-[100px] dark:bg-purple-500/5" />
+          <div className="absolute top-[10%] -right-[10%] h-[40%] w-[40%] rounded-full bg-secondary-500/10 blur-[100px] dark:bg-secondary-500/5" />
         </div>
       )}
       <div className="relative z-10">

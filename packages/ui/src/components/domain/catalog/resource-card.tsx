@@ -66,7 +66,7 @@ export const ResourceCard = ({
       variant="glass"
       className={cn(
         'group hover:shadow-primary/5 relative h-full cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-xl',
-        isSelected && 'ring-2 ring-blue-500 dark:ring-blue-400',
+        isSelected && 'ring-2 ring-primary-500 dark:ring-primary-400',
         className
       )}
       onClick={href ? undefined : handleClick}
@@ -81,7 +81,7 @@ export const ResourceCard = ({
             type="checkbox"
             checked={isSelected || false}
             onChange={handleSelectChange}
-            className="h-5 w-5 cursor-pointer rounded border-2 border-neutral-300 bg-white text-blue-600 transition-colors focus:ring-2 focus:ring-blue-500 dark:border-neutral-600 dark:bg-neutral-800 dark:checked:border-blue-500 dark:checked:bg-blue-500"
+            className="h-5 w-5 cursor-pointer rounded border-2 border-neutral-300 bg-white text-primary-600 transition-colors focus:ring-2 focus:ring-primary-500 dark:border-neutral-600 dark:bg-neutral-800 dark:checked:border-primary-500 dark:checked:bg-primary-500"
           />
         </div>
       )}

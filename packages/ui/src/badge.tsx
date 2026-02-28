@@ -43,9 +43,9 @@ export const Badge = ({
       'border border-red-200 dark:border-red-800'
     ),
     info: cn(
-      'bg-blue-100 dark:bg-blue-900/30',
-      'text-blue-700 dark:text-blue-300',
-      'border border-blue-200 dark:border-blue-800'
+      'bg-primary-100 dark:bg-primary-900/30',
+      'text-primary-700 dark:text-primary-300',
+      'border border-primary-200 dark:border-primary-800'
     ),
     neutral: cn(
       'bg-zinc-100 dark:bg-zinc-800',

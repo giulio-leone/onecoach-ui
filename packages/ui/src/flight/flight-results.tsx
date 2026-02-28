@@ -209,7 +209,7 @@ export function FlightResults({
               fill="none"
               stroke="currentColor"
               strokeWidth="6"
-              className="text-blue-500/20 dark:text-blue-400/20"
+              className="text-primary-500/20 dark:text-primary-400/20"
             />
             {/* Progress circle */}
             <circle
@@ -222,15 +222,15 @@ export function FlightResults({
               strokeLinecap="round"
               strokeDasharray={264}
               strokeDashoffset={264 - (264 * progress) / 100}
-              className="text-blue-500 transition-all duration-300 ease-out dark:text-blue-400"
+              className="text-primary-500 transition-all duration-300 ease-out dark:text-primary-400"
             />
           </svg>
-          <Plane className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 animate-pulse text-blue-500 dark:text-blue-400" />
+          <Plane className="absolute top-1/2 left-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 animate-pulse text-primary-500 dark:text-primary-400" />
         </div>
 
         {/* Progress percentage */}
         <div className="text-center">
-          <span className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+          <span className="text-3xl font-bold text-primary-600 dark:text-primary-400">
             {Math.round(progress)}%
           </span>
         </div>
@@ -306,7 +306,7 @@ export function FlightResults({
               {t('results.flightsFound', { count: flights.length })}
             </p>
           </div>
-          <Button variant="ghost" onClick={onReset} className="font-bold text-blue-500">
+          <Button variant="ghost" onClick={onReset} className="font-bold text-primary-500">
             {t('results.modifySearch')}
           </Button>
         </div>
@@ -346,7 +346,7 @@ export function FlightResults({
           </div>
         )}
 
-        <div className="mt-4 rounded-2xl border border-blue-500/10 bg-blue-500/5 p-4 text-center">
+        <div className="mt-4 rounded-2xl border border-primary-500/10 bg-primary-500/5 p-4 text-center">
           <p className="text-xs text-neutral-500 dark:text-neutral-400">
             * {t('results.disclaimer')}
           </p>
@@ -411,7 +411,7 @@ export function FlightResults({
             {t('results.flightsFound', { count: totalFlights })}
           </p>
         </div>
-        <Button variant="ghost" onClick={onReset} className="font-bold text-blue-500">
+        <Button variant="ghost" onClick={onReset} className="font-bold text-primary-500">
           {t('results.modifySearch')}
         </Button>
       </div>
@@ -489,7 +489,7 @@ export function FlightResults({
                       className={cn(
                         'cursor-pointer transition-all duration-200',
                         isSelected &&
-                          'ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-neutral-900'
+                          'ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-neutral-900'
                       )}
                       onClick={() => handleFlightSelect(flight)}
                       onKeyDown={(e) => e.key === 'Enter' && handleFlightSelect(flight)}
@@ -498,7 +498,7 @@ export function FlightResults({
                     >
                       <FlightCard
                         flight={flight}
-                        className={cn(isSelected && 'border-blue-500')}
+                        className={cn(isSelected && 'border-primary-500')}
                         showDirectionBadge
                         direction={activeTab}
                         showFavoriteButton={false}
@@ -508,7 +508,7 @@ export function FlightResults({
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        className="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg"
+                        className="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary-500 text-white shadow-lg"
                       >
                         <Check className="h-4 w-4" />
                       </motion.div>
@@ -540,7 +540,7 @@ export function FlightResults({
           >
             <Card
               variant="glass-premium"
-              className="mt-4 border-2 border-blue-500/20 bg-gradient-to-r from-blue-500/5 to-purple-500/5 p-6"
+              className="mt-4 border-2 border-primary-500/20 bg-gradient-to-r from-primary-500/5 to-secondary-500/5 p-6"
             >
               <h3 className="mb-4 text-lg font-black text-neutral-900 dark:text-white">
                 {t('results.selectedFlights')}
@@ -562,7 +562,7 @@ export function FlightResults({
                   <p className="text-xs font-bold tracking-wider text-neutral-500 uppercase">
                     {t('results.totalPrice')}
                   </p>
-                  <p className="text-3xl font-black text-blue-600 dark:text-blue-400">
+                  <p className="text-3xl font-black text-primary-600 dark:text-primary-400">
                     €{totalPrice}
                   </p>
                 </div>
@@ -582,7 +582,7 @@ export function FlightResults({
                     className={cn(
                       'rounded-xl px-8 py-3 text-sm font-black tracking-widest uppercase transition-all',
                       canBook
-                        ? 'bg-blue-600 text-white shadow-lg hover:-translate-y-0.5 hover:bg-blue-500'
+                        ? 'bg-primary-600 text-white shadow-lg hover:-translate-y-0.5 hover:bg-primary-500'
                         : 'cursor-not-allowed bg-neutral-300 text-neutral-500'
                     )}
                   >
@@ -595,7 +595,7 @@ export function FlightResults({
         )}
       </AnimatePresence>
 
-      <div className="mt-4 rounded-2xl border border-blue-500/10 bg-blue-500/5 p-4 text-center">
+      <div className="mt-4 rounded-2xl border border-primary-500/10 bg-primary-500/5 p-4 text-center">
         <p className="text-xs text-neutral-500 dark:text-neutral-400">
           * {t('results.disclaimer')}
         </p>
@@ -620,7 +620,7 @@ function TabButton({ active, onClick, icon, label, count, hasSelection }: TabBut
       className={cn(
         'relative flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition-all',
         active
-          ? 'bg-white text-blue-600 shadow-lg dark:bg-neutral-700 dark:text-blue-400'
+          ? 'bg-white text-primary-600 shadow-lg dark:bg-neutral-700 dark:text-primary-400'
           : 'text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300'
       )}
     >
@@ -630,7 +630,7 @@ function TabButton({ active, onClick, icon, label, count, hasSelection }: TabBut
         className={cn(
           'rounded-full px-2 py-0.5 text-xs font-bold',
           active
-            ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
+            ? 'bg-primary-500/10 text-primary-600 dark:text-primary-400'
             : 'bg-neutral-200 text-neutral-500 dark:bg-neutral-700'
         )}
       >
@@ -666,7 +666,7 @@ function SelectionCard({ label, flight, onClear }: SelectionCardProps) {
       >
         ×
       </button>
-      <p className="mb-2 text-[10px] font-bold tracking-wider text-blue-500 uppercase">{label}</p>
+      <p className="mb-2 text-[10px] font-bold tracking-wider text-primary-500 uppercase">{label}</p>
       <div className="flex items-center gap-2">
         <span className="font-bold text-neutral-900 dark:text-white">{flight.cityFrom}</span>
         <ArrowRight className="h-4 w-4 text-neutral-400" />
@@ -676,7 +676,7 @@ function SelectionCard({ label, flight, onClear }: SelectionCardProps) {
         <span className="text-sm text-neutral-500">
           {new Date(flight.departure.local).toLocaleDateString()}
         </span>
-        <span className="text-lg font-black text-blue-600 dark:text-blue-400">€{flight.price}</span>
+        <span className="text-lg font-black text-primary-600 dark:text-primary-400">€{flight.price}</span>
       </div>
     </div>
   );

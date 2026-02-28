@@ -188,8 +188,8 @@ interface StatCardProps {
 function StatCard({ label, value, total, color }: StatCardProps) {
   const colors = {
     emerald: 'from-emerald-500 to-teal-500',
-    purple: 'from-purple-500 to-pink-500',
-    blue: 'from-blue-500 to-cyan-500',
+    purple: 'from-secondary-500 to-secondary-500',
+    blue: 'from-primary-500 to-cyan-500',
     amber: 'from-amber-500 to-orange-500',
   };
 

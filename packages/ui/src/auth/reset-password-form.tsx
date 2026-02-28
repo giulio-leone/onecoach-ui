@@ -114,7 +114,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
             disabled={form.isSubmitting}
             autoComplete="new-password"
             autoFocus
-            className="pr-12 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            className="pr-12 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
             aria-invalid={!!form.errors.password}
             aria-describedby={form.errors.password ? 'password-error' : undefined}
           />
@@ -157,7 +157,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
           required
           disabled={form.isSubmitting}
           autoComplete="new-password"
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
           aria-invalid={!!form.errors.confirmPassword}
           aria-describedby={form.errors.confirmPassword ? 'confirmPassword-error' : undefined}
         />
@@ -172,7 +172,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
         type="submit"
         variant="primary"
         disabled={form.isSubmitting || !form.isValid}
-        className="w-full focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+        className="w-full focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
       >
         {form.isSubmitting ? t('updating') : tReset('submit')}
       </Button>

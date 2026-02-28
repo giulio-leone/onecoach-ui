@@ -33,7 +33,7 @@ export const Alert = ({
       'bg-warning-light dark:bg-yellow-900/30 border-warning dark:border-yellow-700 text-warning-dark dark:text-yellow-300',
     error:
       'bg-error-light dark:bg-red-900/30 border-error dark:border-red-700 text-error-dark dark:text-red-300',
-    info: 'bg-info-light dark:bg-blue-900/30 border-info dark:border-blue-700 text-info-dark dark:text-blue-300',
+    info: 'bg-info-light dark:bg-primary-900/30 border-info dark:border-primary-700 text-info-dark dark:text-primary-300',
   };
 
   const icons = {

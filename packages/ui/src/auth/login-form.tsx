@@ -117,7 +117,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
           required
           disabled={form.isSubmitting}
           autoComplete="email"
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
           aria-invalid={!!form.errors.email}
           aria-describedby={form.errors.email ? 'email-error' : undefined}
         />
@@ -148,7 +148,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
             required
             disabled={form.isSubmitting}
             autoComplete="current-password"
-            className="pr-11 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+            className="pr-11 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
             aria-invalid={!!form.errors.password}
             aria-describedby={form.errors.password ? 'password-error' : undefined}
           />
@@ -193,7 +193,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
         />
         <Link
           href="/forgot-password"
-          className="text-sm font-medium text-blue-600 hover:text-blue-700"
+          className="text-sm font-medium text-primary-600 hover:text-primary-700"
           prefetch={false}
         >
           {t('login_form.hai_dimenticato_la_password')}
@@ -204,7 +204,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
         type="submit"
         variant="primary"
         disabled={form.isSubmitting || !form.isValid}
-        className="w-full focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+        className="w-full focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
       >
         {form.isSubmitting ? 'Accesso in corso…' : 'Accedi'}
       </Button>

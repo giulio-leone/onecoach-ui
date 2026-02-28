@@ -54,7 +54,7 @@ export const Plan = ({
 
             isStreaming &&
               variant !== 'ghost' &&
-              'border-blue-200/50 ring-1 ring-blue-500/30 dark:border-blue-500/30',
+              'border-primary-200/50 ring-1 ring-primary-500/30 dark:border-primary-500/30',
             className
           )}
         >
@@ -85,7 +85,7 @@ export const PlanTitle = ({ children, className, ...props }: PlanTitleProps) => 
       )}
       {...props}
     >
-      {isStreaming && <Sparkles className="h-4 w-4 animate-pulse text-blue-500" />}
+      {isStreaming && <Sparkles className="h-4 w-4 animate-pulse text-primary-500" />}
       {children}
     </h3>
   );

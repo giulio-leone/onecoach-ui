@@ -67,10 +67,10 @@ const STRATEGY_CONFIG: Record<
   cheapest: {
     icon: TrendDown,
     label: 'Cheapest',
-    colorClass: 'text-blue-600 dark:text-blue-400',
-    bgClass: 'bg-blue-500',
-    borderClass: 'border-blue-500/30',
-    gradientFrom: 'from-blue-500',
+    colorClass: 'text-primary-600 dark:text-primary-400',
+    bgClass: 'bg-primary-500',
+    borderClass: 'border-primary-500/30',
+    gradientFrom: 'from-primary-500',
     gradientTo: 'to-cyan-500',
   },
   fastest: {
@@ -85,11 +85,11 @@ const STRATEGY_CONFIG: Record<
   most_convenient: {
     icon: Target,
     label: 'Most Convenient',
-    colorClass: 'text-purple-600 dark:text-purple-400',
-    bgClass: 'bg-purple-500',
-    borderClass: 'border-purple-500/30',
-    gradientFrom: 'from-purple-500',
-    gradientTo: 'to-pink-500',
+    colorClass: 'text-secondary-600 dark:text-secondary-400',
+    bgClass: 'bg-secondary-500',
+    borderClass: 'border-secondary-500/30',
+    gradientFrom: 'from-secondary-500',
+    gradientTo: 'to-secondary-500',
   },
   flexible_combo: {
     icon: Sparkle,
@@ -125,16 +125,16 @@ export function SmartAnalysisPanel({
       className={cn(
         'relative overflow-hidden rounded-3xl',
         'border-2 border-indigo-500/20 dark:border-indigo-400/20',
-        'bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/30',
-        'dark:from-neutral-900 dark:via-indigo-950/20 dark:to-purple-950/20',
+        'bg-gradient-to-br from-white via-indigo-50/30 to-secondary-50/30',
+        'dark:from-neutral-900 dark:via-indigo-950/20 dark:to-secondary-950/20',
         'shadow-xl shadow-indigo-500/5',
         className
       )}
     >
       {/* Decorative Background Pattern */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-gradient-to-br from-indigo-500/10 to-pink-500/10 blur-3xl" />
+        <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-to-br from-primary-500/10 to-secondary-500/10 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-gradient-to-br from-indigo-500/10 to-secondary-500/10 blur-3xl" />
       </div>
 
       {/* Header */}
@@ -146,8 +146,8 @@ export function SmartAnalysisPanel({
         <div className="flex items-center gap-4">
           {/* AI Icon with Glow */}
           <div className="relative">
-            <div className="absolute inset-0 animate-pulse rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 opacity-30 blur-md" />
-            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 shadow-xl shadow-purple-500/30">
+            <div className="absolute inset-0 animate-pulse rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-500 opacity-30 blur-md" />
+            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-600 shadow-xl shadow-secondary-500/30">
               <Brain className="h-7 w-7 text-white" weight="duotone" />
             </div>
           </div>
@@ -159,7 +159,7 @@ export function SmartAnalysisPanel({
               </h3>
               <Badge
                 variant="outline"
-                className="border-purple-500/30 bg-purple-500/10 text-purple-600 dark:text-purple-400"
+                className="border-secondary-500/30 bg-secondary-500/10 text-secondary-600 dark:text-secondary-400"
               >
                 <Sparkle className="mr-1 h-3 w-3" weight="fill" />
                 OneAgent
@@ -479,7 +479,7 @@ export function SmartAnalysisPanel({
                       className="flex items-start gap-2 rounded-xl bg-white/60 p-3 dark:bg-neutral-800"
                     >
                       <CheckCircle
-                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-500"
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-500"
                         weight="fill"
                       />
                       <span className="text-sm text-neutral-600 dark:text-neutral-300">

@@ -41,7 +41,7 @@ export const Input = React.forwardRef<TextInput, InputProps>(
             'flex-row items-center rounded-2xl border bg-neutral-50 px-4 py-3 transition-colors dark:bg-neutral-800/50',
             error
               ? 'border-red-300 bg-red-50 dark:border-red-800 dark:bg-red-900/10'
-              : 'border-neutral-200 focus:border-blue-500 dark:border-neutral-700 dark:focus:border-blue-400',
+              : 'border-neutral-200 focus:border-primary-500 dark:border-neutral-700 dark:focus:border-primary-400',
             contentContainerClassName
           )}
         >

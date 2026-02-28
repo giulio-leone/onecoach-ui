@@ -59,7 +59,7 @@ export function TargetMacrosForm({
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateTargetMacros({ calories: Number(e.target.value) })
             }
-            className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-neutral-600 dark:bg-neutral-900"
+            className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-neutral-600 dark:bg-neutral-900"
           />
         </div>
         <div>
@@ -72,7 +72,7 @@ export function TargetMacrosForm({
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateTargetMacros({ protein: Number(e.target.value) })
             }
-            className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 dark:border-neutral-600 dark:bg-neutral-900"
+            className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-secondary-500 focus:ring-2 focus:ring-secondary-500/20 dark:border-neutral-600 dark:bg-neutral-900"
           />
         </div>
         <div>

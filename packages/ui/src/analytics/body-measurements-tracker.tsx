@@ -114,7 +114,7 @@ function Sparkline({ data, className }: { data: number[]; className?: string }) 
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-blue-500"
+        className="text-primary-500"
       />
     </svg>
   );
@@ -164,7 +164,7 @@ function WeightInput({
           min="0"
           value={value}
           onChange={(e) => onChange(Math.max(0, parseFloat(e.target.value) || 0))}
-          className="h-14 w-28 rounded-xl border border-neutral-200 bg-white text-center text-2xl font-bold text-neutral-900 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:focus:border-blue-500 dark:focus:ring-blue-500/20"
+          className="h-14 w-28 rounded-xl border border-neutral-200 bg-white text-center text-2xl font-bold text-neutral-900 outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:focus:border-primary-500 dark:focus:ring-primary-500/20"
         />
         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-neutral-400">
           kg
@@ -218,7 +218,7 @@ function PercentSlider({
         step={step}
         value={value ?? min}
         onChange={(e) => onChange(parseFloat(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-200 accent-blue-500 dark:bg-neutral-700"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-200 accent-primary-500 dark:bg-neutral-700"
       />
     </div>
   );
@@ -295,14 +295,14 @@ export function BodyMeasurementsTracker({
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-900 outline-none focus:border-blue-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+          className="rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm text-neutral-900 outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
         />
       </div>
 
       {/* ── Weight quick entry ── */}
       <div className="rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-neutral-800/50 dark:bg-neutral-900/80">
         <div className="mb-3 flex items-center gap-2">
-          <Scale className="h-4 w-4 text-blue-500" />
+          <Scale className="h-4 w-4 text-primary-500" />
           <span className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
             Peso corporeo
           </span>
@@ -392,7 +392,7 @@ export function BodyMeasurementsTracker({
                       placeholder="—"
                       value={circumferences[f.key] ?? ''}
                       onChange={(e) => handleCircumChange(f.key, e.target.value)}
-                      className="h-8 w-full rounded-lg border border-neutral-200 bg-white px-2 pr-7 text-sm text-neutral-900 outline-none focus:border-blue-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                      className="h-8 w-full rounded-lg border border-neutral-200 bg-white px-2 pr-7 text-sm text-neutral-900 outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
                     />
                     <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-neutral-400">
                       cm
@@ -411,14 +411,14 @@ export function BodyMeasurementsTracker({
         onChange={(e) => setNotes(e.target.value)}
         placeholder="Note aggiuntive..."
         rows={2}
-        className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 focus:border-blue-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+        className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
       />
 
       {/* ── Save button ── */}
       <button
         type="button"
         onClick={handleSave}
-        className="w-full rounded-xl bg-blue-500 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-600 active:bg-blue-700"
+        className="w-full rounded-xl bg-primary-500 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-600 active:bg-primary-700"
       >
         Salva misurazione
       </button>

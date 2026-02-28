@@ -146,16 +146,16 @@ export function AgentSettingsPanel({
       icon: 'text-green-600',
     },
     workout: {
-      border: 'border-blue-200',
-      bg: 'bg-blue-50',
-      text: 'text-blue-800',
-      icon: 'text-blue-600',
+      border: 'border-primary-200',
+      bg: 'bg-primary-50',
+      text: 'text-primary-800',
+      icon: 'text-primary-600',
     },
     chat: {
-      border: 'border-purple-200 dark:border-purple-800/50',
-      bg: 'bg-purple-50 dark:bg-purple-900/40',
-      text: 'text-purple-800 dark:text-purple-200',
-      icon: 'text-purple-600 dark:text-purple-400',
+      border: 'border-secondary-200 dark:border-secondary-800/50',
+      bg: 'bg-secondary-50 dark:bg-secondary-900/40',
+      text: 'text-secondary-800 dark:text-secondary-200',
+      icon: 'text-secondary-600 dark:text-secondary-400',
     },
   };
 
@@ -193,8 +193,8 @@ export function AgentSettingsPanel({
               colorTheme === 'nutrition'
                 ? 'focus:border-green-500 focus:ring-green-200 dark:focus:border-green-400 dark:focus:ring-green-900/50'
                 : colorTheme === 'workout'
-                  ? 'focus:border-blue-500 focus:ring-blue-200 dark:focus:border-blue-400 dark:focus:ring-blue-900/50'
-                  : 'focus:border-purple-500 focus:ring-purple-200 dark:focus:border-purple-400 dark:focus:ring-purple-900/50'
+                  ? 'focus:border-primary-500 focus:ring-primary-200 dark:focus:border-primary-400 dark:focus:ring-primary-900/50'
+                  : 'focus:border-secondary-500 focus:ring-secondary-200 dark:focus:border-secondary-400 dark:focus:ring-secondary-900/50'
             )}
           >
             <option value="fast">{t('common.settings_panel.fast_gemini_2_5_flash')}</option>
@@ -276,8 +276,8 @@ export function AgentSettingsPanel({
                   colorTheme === 'nutrition'
                     ? 'focus:border-green-500 focus:ring-green-200 dark:focus:border-green-400 dark:focus:ring-green-900/50'
                     : colorTheme === 'workout'
-                      ? 'focus:border-blue-500 focus:ring-blue-200 dark:focus:border-blue-400 dark:focus:ring-blue-900/50'
-                      : 'focus:border-purple-500 focus:ring-purple-200 dark:focus:border-purple-400 dark:focus:ring-purple-900/50'
+                      ? 'focus:border-primary-500 focus:ring-primary-200 dark:focus:border-primary-400 dark:focus:ring-primary-900/50'
+                      : 'focus:border-secondary-500 focus:ring-secondary-200 dark:focus:border-secondary-400 dark:focus:ring-secondary-900/50'
                 )}
               >
                 {PROVIDER_OPTIONS.map((option: any) => (
@@ -302,8 +302,8 @@ export function AgentSettingsPanel({
                     colorTheme === 'nutrition'
                       ? 'focus:border-green-500 focus:ring-green-200'
                       : colorTheme === 'workout'
-                        ? 'focus:border-blue-500 focus:ring-blue-200'
-                        : 'focus:border-purple-500 focus:ring-purple-200'
+                        ? 'focus:border-primary-500 focus:ring-primary-200'
+                        : 'focus:border-secondary-500 focus:ring-secondary-200'
                   } focus:ring-2 focus:outline-none`}
                 >
                   <option value="">{t('common.settings_panel.seleziona_un_modello')}</option>
@@ -328,8 +328,8 @@ export function AgentSettingsPanel({
                     colorTheme === 'nutrition'
                       ? 'focus:border-green-500 focus:ring-green-200'
                       : colorTheme === 'workout'
-                        ? 'focus:border-blue-500 focus:ring-blue-200'
-                        : 'focus:border-purple-500 focus:ring-purple-200'
+                        ? 'focus:border-primary-500 focus:ring-primary-200'
+                        : 'focus:border-secondary-500 focus:ring-secondary-200'
                   } focus:ring-2 focus:outline-none`}
                 >
                   {(dbModels[selectedProvider as NonRouterProvider] || []).map((option: any) => (
@@ -387,8 +387,8 @@ export function AgentSettingsPanel({
                         colorTheme === 'nutrition'
                           ? 'focus:border-green-500 focus:ring-green-200 dark:focus:border-green-400 dark:focus:ring-green-900/50'
                           : colorTheme === 'workout'
-                            ? 'focus:border-blue-500 focus:ring-blue-200 dark:focus:border-blue-400 dark:focus:ring-blue-900/50'
-                            : 'focus:border-purple-500 focus:ring-purple-200 dark:focus:border-purple-400 dark:focus:ring-purple-900/50'
+                            ? 'focus:border-primary-500 focus:ring-primary-200 dark:focus:border-primary-400 dark:focus:ring-primary-900/50'
+                            : 'focus:border-secondary-500 focus:ring-secondary-200 dark:focus:border-secondary-400 dark:focus:ring-secondary-900/50'
                       )}
                     >
                       <option value="low">{t('common.settings_panel.low_veloce')}</option>

@@ -38,9 +38,9 @@ export interface UndoRedoToolbarProps {
 
 const VARIANT_STYLES = {
   primary: {
-    active: 'text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-500/10',
+    active: 'text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-primary-500/10',
     disabled: 'text-neutral-300 dark:text-neutral-600',
-    badge: 'bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400',
+    badge: 'bg-primary-100 text-primary-600 dark:bg-primary-500/20 dark:text-primary-400',
   },
   emerald: {
     active:
@@ -72,7 +72,7 @@ export function UndoRedoToolbar({
     'flex items-center justify-center rounded-lg transition-all duration-200',
     'min-h-[2.5rem] min-w-[2.5rem] p-2',
     'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-    'focus-visible:ring-blue-500 dark:focus-visible:ring-offset-neutral-900'
+    'focus-visible:ring-primary-500 dark:focus-visible:ring-offset-neutral-900'
   );
 
   return (

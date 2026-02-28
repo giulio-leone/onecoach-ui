@@ -255,7 +255,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
           )}
         >
           <div className="flex items-center gap-2">
-            <Users className="h-5 w-5 text-blue-500" />
+            <Users className="h-5 w-5 text-primary-500" />
             <span className="text-2xl font-bold text-neutral-900 dark:text-white">
               {userStats.totalUsers}
             </span>

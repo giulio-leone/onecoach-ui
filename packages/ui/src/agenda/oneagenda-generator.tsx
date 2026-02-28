@@ -125,12 +125,12 @@ const StepOne = ({ formData, setFormData }: MeshWizardStepProps<OneAgendaFormDat
             className={cn(
               'w-full resize-none rounded-xl border-2 px-4 py-3 text-sm font-medium shadow-sm transition-all focus:ring-2 focus:outline-none',
               darkModeClasses.input.base,
-              'focus:border-blue-500 focus:ring-blue-200 dark:focus:border-blue-400 dark:focus:ring-blue-900/50'
+              'focus:border-primary-500 focus:ring-primary-200 dark:focus:border-primary-400 dark:focus:ring-primary-900/50'
             )}
             value={formData.description}
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
           />
-          <Sparkles className="absolute right-3 bottom-3 h-4 w-4 text-blue-500/50" />
+          <Sparkles className="absolute right-3 bottom-3 h-4 w-4 text-primary-500/50" />
         </div>
       </div>
     </div>

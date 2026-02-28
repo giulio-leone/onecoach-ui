@@ -126,7 +126,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                   onPress={() => setSelectedMuscle(selectedMuscle === muscle ? null : muscle)}
                   className={`rounded-full border px-3 py-1 ${
                     selectedMuscle === muscle
-                      ? 'border-blue-600 bg-blue-600'
+                      ? 'border-primary-600 bg-primary-600'
                       : 'border-neutral-300 bg-transparent dark:border-neutral-600'
                   }`}
                 >
@@ -159,8 +159,8 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                       onPress={() => handleSelect(ex)}
                       className="flex-row items-center gap-4 rounded-xl border border-neutral-200 bg-white p-4 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/50 dark:hover:bg-neutral-800"
                     >
-                      <View className="h-12 w-12 items-center justify-center rounded-full bg-blue-50 dark:bg-blue-900/20">
-                        <Dumbbell size={24} className="text-blue-600 dark:text-blue-400" />
+                      <View className="h-12 w-12 items-center justify-center rounded-full bg-primary-50 dark:bg-primary-900/20">
+                        <Dumbbell size={24} className="text-primary-600 dark:text-primary-400" />
                       </View>
                       <View className="flex-1">
                         <Text className="font-bold text-neutral-900 dark:text-neutral-100">
@@ -170,7 +170,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                           {ex.muscleGroups?.join(', ')}
                         </Text>
                       </View>
-                      <Plus size={20} className="text-blue-600 dark:text-blue-400" />
+                      <Plus size={20} className="text-primary-600 dark:text-primary-400" />
                     </Pressable>
                   ))}
                   {filteredExercises.length === 0 && (

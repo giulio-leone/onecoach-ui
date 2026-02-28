@@ -182,8 +182,8 @@ export function LiveFocusView({
       {/* Ambient Background Glows */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute -top-[30%] left-1/2 h-[60%] w-[80%] -translate-x-1/2 rounded-full bg-indigo-600/10 blur-[150px]" />
-        <div className="absolute top-[40%] -left-[20%] h-[50%] w-[50%] rounded-full bg-purple-600/10 blur-[120px]" />
-        <div className="absolute right-[10%] -bottom-[20%] h-[40%] w-[40%] rounded-full bg-pink-600/5 blur-[100px]" />
+        <div className="absolute top-[40%] -left-[20%] h-[50%] w-[50%] rounded-full bg-secondary-600/10 blur-[120px]" />
+        <div className="absolute right-[10%] -bottom-[20%] h-[40%] w-[40%] rounded-full bg-secondary-600/5 blur-[100px]" />
       </div>
 
       {/* Header - Fixed */}

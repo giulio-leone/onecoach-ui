@@ -45,9 +45,9 @@ export function SelectionToolbar({
 
   const themeClasses = {
     blue: {
-      bg: 'from-blue-600 to-indigo-700',
-      ring: 'ring-blue-400/30',
-      accent: 'bg-blue-500/20 hover:bg-blue-500/30',
+      bg: 'from-primary-600 to-indigo-700',
+      ring: 'ring-primary-400/30',
+      accent: 'bg-primary-500/20 hover:bg-primary-500/30',
     },
     emerald: {
       bg: 'from-emerald-600 to-teal-700',
@@ -55,7 +55,7 @@ export function SelectionToolbar({
       accent: 'bg-emerald-500/20 hover:bg-emerald-500/30',
     },
     indigo: {
-      bg: 'from-indigo-600 to-purple-700',
+      bg: 'from-indigo-600 to-secondary-700',
       ring: 'ring-indigo-400/30',
       accent: 'bg-indigo-500/20 hover:bg-indigo-500/30',
     },

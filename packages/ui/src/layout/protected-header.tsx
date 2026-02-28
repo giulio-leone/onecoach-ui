@@ -122,7 +122,7 @@ export function ProtectedHeader({ user }: ProtectedHeaderProps) {
                   href={item.href}
                   className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400'
+                      ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-400'
                       : 'text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-800'
                   }`}
                 >
@@ -142,7 +142,7 @@ export function ProtectedHeader({ user }: ProtectedHeaderProps) {
                 onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                 className="group flex items-center gap-3 rounded-2xl border border-white/40 bg-white/70 px-4 py-2.5 shadow-lg shadow-black/5 backdrop-blur-xl transition-all duration-300 hover:bg-white hover:shadow-xl dark:border-white/10 dark:bg-black/40 dark:hover:bg-black/60"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-sm font-bold text-white shadow-md">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-secondary-600 text-sm font-bold text-white shadow-md">
                   {user.name?.charAt(0).toUpperCase() || 'U'}
                 </div>
                 <div className="hidden text-left sm:block">
@@ -171,9 +171,9 @@ export function ProtectedHeader({ user }: ProtectedHeaderProps) {
                       className="absolute top-full right-0 z-50 mt-3 w-64 origin-top-right overflow-hidden rounded-2xl border border-white/40 bg-white/80 shadow-2xl shadow-black/10 backdrop-blur-xl dark:border-white/10 dark:bg-black/70"
                     >
                       {/* User Info Header */}
-                      <div className="border-b border-neutral-200/50 bg-gradient-to-br from-indigo-50/50 to-purple-50/50 p-4 dark:border-white/5 dark:from-indigo-900/20 dark:to-purple-900/20">
+                      <div className="border-b border-neutral-200/50 bg-gradient-to-br from-indigo-50/50 to-secondary-50/50 p-4 dark:border-white/5 dark:from-indigo-900/20 dark:to-secondary-900/20">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-lg font-bold text-white shadow-lg">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-secondary-600 text-lg font-bold text-white shadow-lg">
                             {user.name?.charAt(0).toUpperCase() || 'U'}
                           </div>
                           <div className="min-w-0 flex-1">
@@ -190,7 +190,7 @@ export function ProtectedHeader({ user }: ProtectedHeaderProps) {
                             className={`mt-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold ${
                               isSuperAdmin
                                 ? 'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300'
-                                : 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300'
+                                : 'bg-secondary-100 text-secondary-700 dark:bg-secondary-900/40 dark:text-secondary-300'
                             }`}
                           >
                             <Shield className="h-3 w-3" />
@@ -215,10 +215,10 @@ export function ProtectedHeader({ user }: ProtectedHeaderProps) {
                         {showAdminMenu && (
                           <Link
                             href="/admin"
-                            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-purple-50 dark:text-neutral-300 dark:hover:bg-white/10"
+                            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-secondary-50 dark:text-neutral-300 dark:hover:bg-white/10"
                             onClick={() => setIsUserMenuOpen(false)}
                           >
-                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary-100 text-secondary-600 dark:bg-secondary-900/30 dark:text-secondary-400">
                               <Shield className="h-4 w-4" />
                             </div>
                             {t('user_menu.admin')}

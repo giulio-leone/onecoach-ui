@@ -85,17 +85,17 @@ export function WorkoutGenerator({
     return (
       <div className="animate-in fade-in zoom-in-95 flex flex-col items-center justify-center space-y-6 p-8 duration-300">
         <div className="relative">
-          <div className="h-16 w-16 animate-spin rounded-full border-4 border-slate-700/30 border-t-indigo-500" />
+          <div className="h-16 w-16 animate-spin rounded-full border-4 border-neutral-700/30 border-t-indigo-500" />
         </div>
 
         <div className="max-w-sm space-y-2 text-center">
-          <p className="text-lg font-medium text-slate-100">
+          <p className="text-lg font-medium text-neutral-100">
             {progress?.message || t('status.generating')}
           </p>
 
           {!!progress?.data?.output && (
-            <div className="rounded-xl border border-slate-800/50 bg-slate-900/50 p-4">
-              <p className="font-mono text-sm text-slate-400">
+            <div className="rounded-xl border border-neutral-800/50 bg-neutral-900/50 p-4">
+              <p className="font-mono text-sm text-neutral-400">
                 {typeof progress.data.output === 'string'
                   ? progress.data.output
                   : JSON.stringify(progress.data.output).slice(0, 100) + '...'}
@@ -116,7 +116,7 @@ export function WorkoutGenerator({
 
         <div className="max-w-sm space-y-2 text-center">
           <p className="text-lg font-medium text-red-400">{t('status.error')}</p>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-neutral-400">
             {error instanceof Error ? error.message : String(error)}
           </p>
         </div>
@@ -126,7 +126,7 @@ export function WorkoutGenerator({
             reset?.();
             // window.location.reload() - avoids full reload
           }}
-          className="rounded-lg bg-slate-800 px-6 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-700"
+          className="rounded-lg bg-neutral-800 px-6 py-2 text-sm font-medium text-neutral-200 transition-colors hover:bg-neutral-700"
         >
           {t('actions.tryAgain')}
         </button>
@@ -143,7 +143,7 @@ export function WorkoutGenerator({
 
         <div className="space-y-2 text-center">
           <p className="text-xl font-medium text-emerald-400">{t('status.success')}</p>
-          <p className="text-sm text-slate-400">{t('status.redirecting')}</p>
+          <p className="text-sm text-neutral-400">{t('status.redirecting')}</p>
         </div>
 
         <Link

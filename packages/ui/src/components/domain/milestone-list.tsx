@@ -22,22 +22,22 @@ export function MilestoneItem({ title, progress, tasks, className }: MilestonePr
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/50 dark:border-slate-800 dark:bg-slate-900/50',
+        'overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50/50 dark:border-neutral-800 dark:bg-neutral-900/50',
         className
       )}
     >
       <div
-        className="flex cursor-pointer items-center gap-3 p-4 hover:bg-slate-100/50 dark:hover:bg-slate-800/50"
+        className="flex cursor-pointer items-center gap-3 p-4 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <button className="text-slate-400 transition-transform duration-200">
+        <button className="text-neutral-400 transition-transform duration-200">
           {isExpanded ? <ChevronDown className="h-5 w-5" /> : <ChevronRight className="h-5 w-5" />}
         </button>
 
         <div className="flex-1">
           <div className="flex items-center justify-between">
-            <h4 className="font-semibold text-slate-900 dark:text-white">{title}</h4>
-            <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+            <h4 className="font-semibold text-neutral-900 dark:text-white">{title}</h4>
+            <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
               {Math.round(progress)}%
             </span>
           </div>
@@ -46,7 +46,7 @@ export function MilestoneItem({ title, progress, tasks, className }: MilestonePr
       </div>
 
       {isExpanded && (
-        <div className="border-t border-slate-200 px-4 py-3 dark:border-slate-800">
+        <div className="border-t border-neutral-200 px-4 py-3 dark:border-neutral-800">
           <TaskList tasks={tasks} />
         </div>
       )}

@@ -110,7 +110,7 @@ export function ModelSelectorModal({
           <div className="max-h-[60vh] overflow-y-auto rounded-lg border border-neutral-200 dark:border-neutral-800">
             {isLoading ? (
               <div className="flex flex-col items-center justify-center p-8 text-neutral-500">
-                <div className="h-6 w-6 animate-spin rounded-full border-2 border-neutral-300 border-t-blue-600" />
+                <div className="h-6 w-6 animate-spin rounded-full border-2 border-neutral-300 border-t-primary-600" />
                 <span className="mt-2 text-xs">Loading models...</span>
               </div>
             ) : filteredModels.length === 0 ? (
@@ -124,7 +124,7 @@ export function ModelSelectorModal({
                     key={model.id}
                     className={cn(
                       'flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-900',
-                      value === model.id && 'bg-blue-50 dark:bg-blue-900/10'
+                      value === model.id && 'bg-primary-50 dark:bg-primary-900/10'
                     )}
                     onClick={() => {
                       onChange(model.id);
@@ -136,7 +136,7 @@ export function ModelSelectorModal({
                         className={cn(
                           'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg',
                           value === model.id
-                            ? 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400'
+                            ? 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400'
                             : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
                         )}
                       >
@@ -147,7 +147,7 @@ export function ModelSelectorModal({
                           className={cn(
                             'truncate text-sm font-medium',
                             value === model.id
-                              ? 'text-blue-700 dark:text-blue-300'
+                              ? 'text-primary-700 dark:text-primary-300'
                               : 'text-neutral-900 dark:text-neutral-200'
                           )}
                         >
@@ -159,7 +159,7 @@ export function ModelSelectorModal({
                       </div>
                     </div>
                     {value === model.id && (
-                      <Check className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                      <Check className="h-4 w-4 text-primary-600 dark:text-primary-400" />
                     )}
                   </button>
                 ))}

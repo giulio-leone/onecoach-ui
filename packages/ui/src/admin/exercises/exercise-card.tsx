@@ -93,7 +93,7 @@ export function ExerciseCard({
         'group relative overflow-hidden transition-all duration-200',
         'border-t first:border-t-0',
         isSelected
-          ? cn('bg-blue-50/50 dark:bg-blue-900/10', 'border-blue-200 dark:border-blue-800/50')
+          ? cn('bg-primary-50/50 dark:bg-primary-900/10', 'border-primary-200 dark:border-primary-800/50')
           : cn(
               'border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900',
               'hover:shadow-md dark:hover:shadow-lg dark:hover:shadow-neutral-950/30'
@@ -118,10 +118,10 @@ export function ExerciseCard({
             <div
               className={cn(
                 'flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl',
-                'bg-gradient-to-br from-blue-500 to-indigo-600',
-                'dark:from-blue-600 dark:to-indigo-700',
-                'shadow-md dark:shadow-lg dark:shadow-blue-950/30',
-                'border border-blue-400/20 dark:border-blue-500/30'
+                'bg-gradient-to-br from-primary-500 to-indigo-600',
+                'dark:from-primary-600 dark:to-indigo-700',
+                'shadow-md dark:shadow-lg dark:shadow-primary-950/30',
+                'border border-primary-400/20 dark:border-primary-500/30'
               )}
             >
               <Dumbbell className="h-7 w-7 text-white" />
@@ -190,10 +190,10 @@ export function ExerciseCard({
         <div
           className={cn(
             'flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-xl',
-            'bg-gradient-to-br from-blue-500 to-indigo-600',
-            'dark:from-blue-600 dark:to-indigo-700',
-            'shadow-md dark:shadow-lg dark:shadow-blue-950/30',
-            'border border-blue-400/20 dark:border-blue-500/30',
+            'bg-gradient-to-br from-primary-500 to-indigo-600',
+            'dark:from-primary-600 dark:to-indigo-700',
+            'shadow-md dark:shadow-lg dark:shadow-primary-950/30',
+            'border border-primary-400/20 dark:border-primary-500/30',
             'transition-transform group-hover:scale-105'
           )}
         >

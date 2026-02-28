@@ -802,12 +802,12 @@ export function ModelsTab({
                                   </span>
                                 )}
                                 {model.supportsImages && (
-                                  <span className="inline-flex items-center gap-1 rounded bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-600 dark:bg-blue-900/20 dark:text-blue-400">
+                                  <span className="inline-flex items-center gap-1 rounded bg-primary-50 px-1.5 py-0.5 text-[10px] font-medium text-primary-600 dark:bg-primary-900/20 dark:text-primary-400">
                                     <Eye className="h-3 w-3" /> Vision
                                   </span>
                                 )}
                                 {model.supportsReasoning && (
-                                  <span className="inline-flex items-center gap-1 rounded bg-purple-50 px-1.5 py-0.5 text-[10px] font-medium text-purple-600 dark:bg-purple-900/20 dark:text-purple-400">
+                                  <span className="inline-flex items-center gap-1 rounded bg-secondary-50 px-1.5 py-0.5 text-[10px] font-medium text-secondary-600 dark:bg-secondary-900/20 dark:text-secondary-400">
                                     <Bot className="h-3 w-3" /> Reasoning
                                   </span>
                                 )}
@@ -930,7 +930,7 @@ function ModelCard({
             className={cn(
               'inline-flex items-center gap-1 rounded-md px-2 py-0.5',
               'text-xs font-medium',
-              'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400'
+              'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400'
             )}
           >
             <Eye className="h-3 w-3" />
@@ -966,7 +966,7 @@ function ModelCard({
             className={cn(
               'inline-flex items-center gap-1 rounded-md px-2 py-0.5',
               'text-xs font-medium',
-              'bg-purple-50 text-purple-600 dark:bg-purple-500/10 dark:text-purple-400'
+              'bg-secondary-50 text-secondary-600 dark:bg-secondary-500/10 dark:text-secondary-400'
             )}
           >
             <Bot className="h-3 w-3" />

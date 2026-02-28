@@ -457,12 +457,12 @@ export const EXTERNAL_PROVIDER_LABELS: Record<string, string> = {
 };
 
 export const EXTERNAL_PROVIDER_COLORS: Record<string, string> = {
-  openrouter: 'from-rose-500 to-pink-500',
+  openrouter: 'from-rose-500 to-secondary-500',
   openai: 'from-green-500 to-emerald-500',
   anthropic: 'from-orange-500 to-amber-500',
-  xai: 'from-blue-500 to-indigo-500',
-  'google-ai-studio': 'from-blue-500 to-yellow-500',
-  'google-vertex': 'from-blue-600 to-red-500',
+  xai: 'from-primary-500 to-indigo-500',
+  'google-ai-studio': 'from-primary-500 to-yellow-500',
+  'google-vertex': 'from-primary-600 to-red-500',
 };
 
 export const PROVIDER_LABELS: Record<string, string> = {
@@ -476,11 +476,11 @@ export const PROVIDER_LABELS: Record<string, string> = {
 };
 
 export const PROVIDER_COLORS: Record<string, string> = {
-  GOOGLE: 'from-blue-500 to-green-500',
+  GOOGLE: 'from-primary-500 to-green-500',
   ANTHROPIC: 'from-orange-500 to-amber-500',
   OPENAI: 'from-emerald-500 to-teal-500',
-  XAI: 'from-purple-500 to-pink-500',
-  OPENROUTER: 'from-indigo-500 to-blue-500',
+  XAI: 'from-secondary-500 to-secondary-500',
+  OPENROUTER: 'from-indigo-500 to-primary-500',
   MINIMAX: 'from-red-500 to-rose-500',
   GEMINI_CLI: 'from-cyan-500 to-sky-500',
 };

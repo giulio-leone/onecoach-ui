@@ -37,10 +37,10 @@ const PHASE_STYLES: Record<
   { bg: string; border: string; text: string; indicator: string; badgeVariant: 'info' | 'warning' | 'error' | 'success' }
 > = {
   accumulation: {
-    bg: 'bg-blue-500/10 dark:bg-blue-500/20',
-    border: 'border-blue-500/30',
-    text: 'text-blue-700 dark:text-blue-300',
-    indicator: 'bg-blue-500',
+    bg: 'bg-primary-500/10 dark:bg-primary-500/20',
+    border: 'border-primary-500/30',
+    text: 'text-primary-700 dark:text-primary-300',
+    indicator: 'bg-primary-500',
     badgeVariant: 'info',
   },
   intensification: {
@@ -138,7 +138,7 @@ export function PhaseTimeline({ mesocycle, currentWeek, className }: PhaseTimeli
                     style.bg,
                     style.border,
                     isCurrent && 'ring-2 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950',
-                    isCurrent && phase.phase === 'accumulation' && 'ring-blue-500',
+                    isCurrent && phase.phase === 'accumulation' && 'ring-primary-500',
                     isCurrent && phase.phase === 'intensification' && 'ring-orange-500',
                     isCurrent && phase.phase === 'realization' && 'ring-red-500',
                     isCurrent && phase.phase === 'deload' && 'ring-emerald-500'
@@ -209,7 +209,7 @@ export function PhaseTimeline({ mesocycle, currentWeek, className }: PhaseTimeli
                 style.bg,
                 style.border,
                 isCurrent && 'ring-2 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950',
-                isCurrent && phase.phase === 'accumulation' && 'ring-blue-500',
+                isCurrent && phase.phase === 'accumulation' && 'ring-primary-500',
                 isCurrent && phase.phase === 'intensification' && 'ring-orange-500',
                 isCurrent && phase.phase === 'realization' && 'ring-red-500',
                 isCurrent && phase.phase === 'deload' && 'ring-emerald-500'

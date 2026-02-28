@@ -307,7 +307,7 @@ export function OpenRouterModelsManager() {
                       {model.supportsImages && (
                         <span
                           title="Images"
-                          className="rounded bg-blue-100 px-1.5 py-0.5 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                          className="rounded bg-primary-100 px-1.5 py-0.5 text-xs text-primary-800 dark:bg-primary-900 dark:text-primary-200"
                         >
                           IMG
                         </span>
@@ -315,7 +315,7 @@ export function OpenRouterModelsManager() {
                       {model.supportsReasoning && (
                         <span
                           title="Reasoning"
-                          className="rounded bg-purple-100 px-1.5 py-0.5 text-xs text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                          className="rounded bg-secondary-100 px-1.5 py-0.5 text-xs text-secondary-800 dark:bg-secondary-900 dark:text-secondary-200"
                         >
                           THK
                         </span>
@@ -437,12 +437,12 @@ export function OpenRouterModelsManager() {
                   <div className="flex items-center justify-between pt-1">
                     <div className="flex gap-1">
                       {model.supportsImages && (
-                        <span className="rounded bg-blue-100 px-1.5 py-0.5 text-[10px] text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                        <span className="rounded bg-primary-100 px-1.5 py-0.5 text-[10px] text-primary-800 dark:bg-primary-900 dark:text-primary-200">
                           IMG
                         </span>
                       )}
                       {model.supportsReasoning && (
-                        <span className="rounded bg-purple-100 px-1.5 py-0.5 text-[10px] text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+                        <span className="rounded bg-secondary-100 px-1.5 py-0.5 text-[10px] text-secondary-800 dark:bg-secondary-900 dark:text-secondary-200">
                           THK
                         </span>
                       )}

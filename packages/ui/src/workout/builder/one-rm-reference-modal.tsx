@@ -59,14 +59,14 @@ export function OneRmReferenceModal({
         <p className="text-sm leading-relaxed text-neutral-400">{t('description')}</p>
 
         <div className="group relative">
-          <Search className="absolute top-2.5 left-3 h-4 w-4 text-neutral-500 transition-colors group-focus-within:text-blue-500" />
+          <Search className="absolute top-2.5 left-3 h-4 w-4 text-neutral-500 transition-colors group-focus-within:text-primary-500" />
           <input
             placeholder={t('searchPlaceholder')}
             value={search}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
             className={cn(
               'w-full rounded-xl border bg-neutral-900/50 py-2.5 pr-4 pl-10 text-sm transition-all outline-none',
-              'border-neutral-800 focus:border-blue-500/50 focus:bg-neutral-900 focus:ring-2 focus:ring-blue-500/10',
+              'border-neutral-800 focus:border-primary-500/50 focus:bg-neutral-900 focus:ring-2 focus:ring-primary-500/10',
               'text-white placeholder:text-neutral-600'
             )}
           />
@@ -94,7 +94,7 @@ export function OneRmReferenceModal({
                 <span className="mr-4 line-clamp-1 flex-1 text-sm font-medium text-neutral-300">
                   {exercise.name}
                 </span>
-                <div className="flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-950/50 p-1 transition-all focus-within:border-blue-500/50 focus-within:ring-1 focus-within:ring-blue-500/20">
+                <div className="flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-950/50 p-1 transition-all focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/20">
                   <input
                     type="number"
                     value={localMaxes[exercise.catalogExerciseId] || ''}

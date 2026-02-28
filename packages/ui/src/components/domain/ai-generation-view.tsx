@@ -72,13 +72,13 @@ export function AIGenerationView({
       {/* Header / Status */}
       <div className="absolute top-0 right-0 left-0 z-20 flex items-center justify-between border-b border-white/5 bg-neutral-950/80 px-6 py-4 backdrop-blur-md">
         <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/10">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-500/10">
             {isSuccess ? (
               <CheckCircle2 className="h-5 w-5 text-green-500" />
             ) : error ? (
               <AlertCircle className="h-5 w-5 text-red-500" />
             ) : (
-              <Sparkles className="h-5 w-5 animate-pulse text-blue-500" />
+              <Sparkles className="h-5 w-5 animate-pulse text-primary-500" />
             )}
           </div>
           <div>
@@ -201,8 +201,8 @@ export function AIGenerationView({
             </motion.div>
           ))}
           {isGenerating && !isSuccess && !error && (
-            <div className="flex items-center gap-2 px-2 py-1 text-blue-400">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-400" />
+            <div className="flex items-center gap-2 px-2 py-1 text-primary-400">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-400" />
               <span className="animate-pulse">Thinking...</span>
             </div>
           )}

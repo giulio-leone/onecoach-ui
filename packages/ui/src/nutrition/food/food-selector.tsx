@@ -144,7 +144,7 @@ export function FoodSelector({
             setTimeout(() => setIsOpen(false), 200);
           }}
           placeholder={placeholder || t('food.searchPlaceholder')}
-          className="w-full rounded-xl border border-neutral-300 bg-white py-3 pr-10 pl-10 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus:outline-none dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-100 dark:text-neutral-600"
+          className="w-full rounded-xl border border-neutral-300 bg-white py-3 pr-10 pl-10 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 focus:outline-none dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-100 dark:text-neutral-600"
         />
         {query && (
           <button
@@ -181,7 +181,7 @@ export function FoodSelector({
                   onClick={() => handleSelect(food)}
                   className={`w-full px-4 py-3 text-left transition-colors ${
                     index === selectedIndex
-                      ? 'bg-blue-50'
+                      ? 'bg-primary-50'
                       : 'hover:bg-neutral-50 dark:bg-neutral-800/50'
                   }`}
                 >
@@ -199,7 +199,7 @@ export function FoodSelector({
                         {food.macrosPer100g.fats}g
                       </div>
                     </div>
-                    {index === selectedIndex && <Check className="h-5 w-5 text-blue-600" />}
+                    {index === selectedIndex && <Check className="h-5 w-5 text-primary-600" />}
                   </div>
                 </button>
               ))}

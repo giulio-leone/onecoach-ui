@@ -62,9 +62,9 @@ export function CollapsibleSection({
           )}
         >
           {isExpanded ? (
-            <ChevronDown className="h-5 w-5 flex-shrink-0 text-blue-600 transition-transform duration-200 dark:text-blue-400" />
+            <ChevronDown className="h-5 w-5 flex-shrink-0 text-primary-600 transition-transform duration-200 dark:text-primary-400" />
           ) : (
-            <ChevronRight className="h-5 w-5 flex-shrink-0 text-blue-600 transition-transform duration-200 dark:text-blue-400" />
+            <ChevronRight className="h-5 w-5 flex-shrink-0 text-primary-600 transition-transform duration-200 dark:text-primary-400" />
           )}
           <span className="text-base font-semibold sm:text-lg">{title}</span>
         </button>

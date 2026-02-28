@@ -217,7 +217,7 @@ export function SetGroupEditor({
               {Number.isNaN(group.count) ? 0 : group.count}x {summary}
             </span>
             {!isUniform && group.progression && (
-              <span className="rounded bg-blue-100 px-1.5 py-0.5 text-xs font-medium text-blue-700">
+              <span className="rounded bg-primary-100 px-1.5 py-0.5 text-xs font-medium text-primary-700">
                 Progressione {group.progression.type}
               </span>
             )}
@@ -272,7 +272,7 @@ export function SetGroupEditor({
               onClick={() => handleEditModeChange('block')}
               className={`rounded px-3 py-1 transition-colors ${
                 editMode === 'block'
-                  ? 'bg-blue-100 font-medium text-blue-700'
+                  ? 'bg-primary-100 font-medium text-primary-700'
                   : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-neutral-800 dark:text-neutral-400'
               }`}
             >
@@ -282,7 +282,7 @@ export function SetGroupEditor({
               onClick={() => handleEditModeChange('individual')}
               className={`rounded px-3 py-1 transition-colors ${
                 editMode === 'individual'
-                  ? 'bg-blue-100 font-medium text-blue-700'
+                  ? 'bg-primary-100 font-medium text-primary-700'
                   : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-neutral-800 dark:text-neutral-400'
               }`}
             >
@@ -328,15 +328,15 @@ export function SetGroupEditor({
           {!group.progression ? (
             <button
               onClick={handleAddProgression}
-              className="flex items-center gap-2 text-xs font-medium text-blue-600 hover:text-blue-700"
+              className="flex items-center gap-2 text-xs font-medium text-primary-600 hover:text-primary-700"
             >
               <Plus className="h-3 w-3" />
               Aggiungi progressione
             </button>
           ) : (
-            <div className="space-y-2 rounded-lg bg-blue-50 p-3">
+            <div className="space-y-2 rounded-lg bg-primary-50 p-3">
               <div className="flex items-center justify-between">
-                <label className="text-xs font-semibold text-blue-700">Progressione</label>
+                <label className="text-xs font-semibold text-primary-700">Progressione</label>
                 <button
                   onClick={handleRemoveProgression}
                   className="text-xs text-red-600 hover:text-red-700"
@@ -407,7 +407,7 @@ export function SetGroupEditor({
                       Serie {idx + 1}/{displaySets.length}
                     </span>
                     {!isUniform && (
-                      <span className="text-xs text-blue-600">(Progressione applicata)</span>
+                      <span className="text-xs text-primary-600">(Progressione applicata)</span>
                     )}
                   </div>
                   <SetEditor

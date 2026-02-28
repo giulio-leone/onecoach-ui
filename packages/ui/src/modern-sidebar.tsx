@@ -155,9 +155,9 @@ export function ModernSidebar({
               onClick={() => toggleGroup(key)}
               className={cn(
                 'group relative flex w-full items-center gap-3 rounded-xl py-2.5 pr-3 text-left transition-all duration-200',
-                'hover:bg-slate-100/50 dark:hover:bg-slate-800/50',
+                'hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50',
                 (isActive || hasActiveChild || isGroupOpen) &&
-                  'bg-blue-50/80 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400',
+                  'bg-primary-50/80 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400',
                 isCollapsed && 'justify-center px-2'
               )}
               style={isCollapsed ? undefined : { paddingLeft: 12 + depth * 12 }}
@@ -167,22 +167,22 @@ export function ModernSidebar({
                   className={cn(
                     'h-5 w-5 shrink-0 transition-colors',
                     isActive || hasActiveChild || isGroupOpen
-                      ? 'text-blue-600 dark:text-blue-400'
-                      : 'text-slate-500 group-hover:text-slate-700 dark:text-slate-500 dark:group-hover:text-slate-300'
+                      ? 'text-primary-600 dark:text-primary-400'
+                      : 'text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-500 dark:group-hover:text-neutral-300'
                   )}
                 />
                 {!isCollapsed && <span className="font-medium tracking-tight">{item.name}</span>}
               </div>
 
               {!isCollapsed && item.badge && (
-                <span className="ml-auto rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-bold text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+                <span className="ml-auto rounded-full bg-primary-100 px-2 py-0.5 text-[10px] font-bold text-primary-600 dark:bg-primary-900/30 dark:text-primary-400">
                   {item.badge}
                 </span>
               )}
 
               <ChevronDown
                 className={cn(
-                  'ml-auto h-4 w-4 shrink-0 text-slate-400 transition-transform duration-200',
+                  'ml-auto h-4 w-4 shrink-0 text-neutral-400 transition-transform duration-200',
                   isGroupOpen && 'rotate-180',
                   isCollapsed && 'hidden'
                 )}
@@ -236,7 +236,7 @@ export function ModernSidebar({
       {/* Header */}
       <div className="flex h-24 items-center justify-between px-6">
         <Link href="/dashboard" className="group flex items-center gap-3 overflow-hidden">
-          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-2xl text-white shadow-lg shadow-blue-500/20 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
+          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-600 to-indigo-600 text-2xl text-white shadow-lg shadow-primary-500/20 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
             <Sparkles className="h-6 w-6" />
             <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 transition-opacity group-hover:opacity-100" />
           </div>
@@ -247,11 +247,11 @@ export function ModernSidebar({
               exit={{ opacity: 0, x: -10 }}
               className="flex flex-col justify-center"
             >
-              <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              <span className="text-xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
                 onecoach
               </span>
               {!isMobile && (
-                <span className="text-xs font-semibold tracking-wider text-blue-600 uppercase dark:text-blue-400">
+                <span className="text-xs font-semibold tracking-wider text-primary-600 uppercase dark:text-primary-400">
                   Admin Panel
                 </span>
               )}
@@ -263,7 +263,7 @@ export function ModernSidebar({
       {/* Navigation */}
       <div
         className={cn(
-          'scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700 overflow-y-auto px-4 py-2',
+          'scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-200 dark:scrollbar-thumb-neutral-700 overflow-y-auto px-4 py-2',
           isMobile ? 'flex-1' : extraContent ? 'max-h-[35vh] flex-none' : 'flex-1'
         )}
       >
@@ -276,7 +276,7 @@ export function ModernSidebar({
         (isMobile ? (
           <>
             {/* Mobile Quick Actions - Sits below nav */}
-            <div className="border-t border-slate-200/50 px-4 py-3 dark:border-slate-800/50">
+            <div className="border-t border-neutral-200/50 px-4 py-3 dark:border-neutral-800/50">
               <div className="grid grid-cols-2 gap-2">
                 <Link href="/chat" onClick={onCloseMobile}>
                   <Button
@@ -284,7 +284,7 @@ export function ModernSidebar({
                     size="sm"
                     fullWidth
                     icon={MessageSquare}
-                    className="shadow-lg shadow-blue-500/20"
+                    className="shadow-lg shadow-primary-500/20"
                   >
                     Nuova Chat
                   </Button>
@@ -298,7 +298,7 @@ export function ModernSidebar({
                     // Do NOT close mobile sidebar here, otherwise the local state is lost and modal never opens
                     // onCloseMobile?.();
                   }}
-                  className="border-transparent bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700"
+                  className="border-transparent bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700"
                 >
                   Storico
                 </Button>
@@ -316,22 +316,22 @@ export function ModernSidebar({
             </Drawer>
           </>
         ) : (
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden border-t border-slate-200/50 dark:border-slate-800/50">
-            <div className="scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-200 dark:scrollbar-thumb-slate-700 hover:scrollbar-thumb-slate-300 dark:hover:scrollbar-thumb-slate-600 flex-1 overflow-y-auto">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden border-t border-neutral-200/50 dark:border-neutral-800/50">
+            <div className="scrollbar-thin scrollbar-track-transparent scrollbar-thumb-neutral-200 dark:scrollbar-thumb-neutral-700 hover:scrollbar-thumb-neutral-300 dark:hover:scrollbar-thumb-neutral-600 flex-1 overflow-y-auto">
               {extraContent}
             </div>
           </div>
         ))}
 
       {/* Footer / User Profile - Sticky at bottom */}
-      <div className="mt-auto border-t border-slate-200 bg-slate-50/50 p-4 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/50">
+      <div className="mt-auto border-t border-neutral-200 bg-neutral-50/50 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/50">
         {!isCollapsed ? (
           <div className="space-y-4">
             {/* Credits Card */}
             {user?.credits !== undefined && (
               <div
                 className={cn(
-                  'relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl dark:from-blue-600 dark:to-indigo-600',
+                  'relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-800 text-white shadow-xl dark:from-primary-600 dark:to-indigo-600',
                   isMobile ? 'p-3' : 'p-5'
                 )}
               >
@@ -339,7 +339,7 @@ export function ModernSidebar({
                 <div className="flex items-center justify-between">
                   <span
                     className={cn(
-                      'font-medium text-slate-300 dark:text-blue-100',
+                      'font-medium text-neutral-300 dark:text-primary-100',
                       isMobile ? 'text-[10px]' : 'text-xs'
                     )}
                   >
@@ -353,7 +353,7 @@ export function ModernSidebar({
                   <span className={cn('font-bold', isMobile ? 'text-xl' : 'text-3xl')}>
                     {user.credits}
                   </span>
-                  <span className="text-xs text-slate-400 dark:text-blue-200">CR</span>
+                  <span className="text-xs text-neutral-400 dark:text-primary-200">CR</span>
                 </div>
                 {!isMobile && (
                   <Link
@@ -367,30 +367,30 @@ export function ModernSidebar({
             )}
 
             {/* User Info */}
-            <div className="relative rounded-xl border border-transparent bg-transparent transition-colors hover:border-slate-200 hover:bg-white hover:shadow-sm dark:hover:border-slate-700 dark:hover:bg-slate-800">
+            <div className="relative rounded-xl border border-transparent bg-transparent transition-colors hover:border-neutral-200 hover:bg-white hover:shadow-sm dark:hover:border-neutral-700 dark:hover:bg-neutral-800">
               <button
                 onClick={() => setIsProfileOpen(!isProfileOpen)}
                 className="flex w-full items-center gap-3 px-2 py-2"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-500 text-sm font-bold text-white shadow-md">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 text-sm font-bold text-white shadow-md">
                   {user?.name?.[0]?.toUpperCase() || 'U'}
                 </div>
                 <div className="flex flex-1 flex-col items-start overflow-hidden">
-                  <span className="truncate text-sm font-semibold text-slate-900 dark:text-white">
+                  <span className="truncate text-sm font-semibold text-neutral-900 dark:text-white">
                     {user?.name || 'User'}
                   </span>
-                  <span className="truncate text-xs text-slate-500 dark:text-slate-400">
+                  <span className="truncate text-xs text-neutral-500 dark:text-neutral-400">
                     {user?.email}
                   </span>
                 </div>
-                <MoreVertical className="h-4 w-4 text-slate-400" />
+                <MoreVertical className="h-4 w-4 text-neutral-400" />
               </button>
 
               {/* Badges */}
               {(isAdmin || isCoach) && (
                 <div className="flex flex-wrap gap-2 px-2 pb-2">
                   {isAdmin && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-purple-100 px-2 py-0.5 text-[10px] font-bold text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-secondary-100 px-2 py-0.5 text-[10px] font-bold text-secondary-700 dark:bg-secondary-900/30 dark:text-secondary-300">
                       <Shield className="h-3 w-3" /> ADMIN
                     </span>
                   )}
@@ -409,13 +409,13 @@ export function ModernSidebar({
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute bottom-full left-0 mb-2 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl dark:border-slate-700 dark:bg-slate-800"
+                    className="absolute bottom-full left-0 mb-2 w-full overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-xl dark:border-neutral-700 dark:bg-neutral-800"
                   >
                     <div className="p-1">
                       <div className="px-3 py-2">
                         <ThemeToggle />
                       </div>
-                      <div className="my-1 h-px bg-slate-100 dark:bg-slate-700" />
+                      <div className="my-1 h-px bg-neutral-100 dark:bg-neutral-700" />
                       <button
                         onClick={onSignOut}
                         className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-red-600 transition-colors hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20"
@@ -431,12 +431,12 @@ export function ModernSidebar({
           </div>
         ) : (
           <div className="flex flex-col items-center gap-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-500 text-sm font-bold text-white shadow-md">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 text-sm font-bold text-white shadow-md">
               {user?.name?.[0]?.toUpperCase() || 'U'}
             </div>
             <button
               onClick={onSignOut}
-              className="rounded-xl p-2 text-slate-500 hover:bg-red-50 hover:text-red-600 dark:text-slate-400 dark:hover:bg-red-900/20 dark:hover:text-red-400"
+              className="rounded-xl p-2 text-neutral-500 hover:bg-red-50 hover:text-red-600 dark:text-neutral-400 dark:hover:bg-red-900/20 dark:hover:text-red-400"
             >
               <LogOut className="h-5 w-5" />
             </button>
@@ -450,7 +450,7 @@ export function ModernSidebar({
     return (
       <div
         className={cn(
-          'h-full w-full border-r border-slate-200/50 bg-white/80 backdrop-blur-xl dark:border-slate-800/50 dark:bg-slate-950/80',
+          'h-full w-full border-r border-neutral-200/50 bg-white/80 backdrop-blur-xl dark:border-neutral-800/50 dark:bg-neutral-950/80',
           className
         )}
       >
@@ -466,7 +466,7 @@ export function ModernSidebar({
         animate={isCollapsed ? 'collapsed' : 'expanded'}
         variants={sidebarVariants}
         className={cn(
-          'relative hidden h-screen overflow-visible border-r border-slate-200 bg-white/90 backdrop-blur-xl transition-all duration-300 lg:block dark:border-slate-800 dark:bg-slate-950/90',
+          'relative hidden h-screen overflow-visible border-r border-neutral-200 bg-white/90 backdrop-blur-xl transition-all duration-300 lg:block dark:border-neutral-800 dark:bg-neutral-950/90',
           className
         )}
         aria-expanded={!isCollapsed}
@@ -477,7 +477,7 @@ export function ModernSidebar({
         {/* Collapse Toggle */}
         <button
           onClick={handleToggleCollapse}
-          className="absolute top-28 -right-3 z-50 flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition-all hover:scale-110 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:text-blue-400"
+          className="absolute top-28 -right-3 z-50 flex h-6 w-6 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-500 shadow-sm transition-all hover:scale-110 hover:text-primary-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-primary-400"
         >
           {isCollapsed ? <ChevronRight className="h-3 w-3" /> : <ChevronLeft className="h-3 w-3" />}
         </button>

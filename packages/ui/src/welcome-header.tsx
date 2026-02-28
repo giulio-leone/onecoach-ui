@@ -18,7 +18,7 @@ export function WelcomeHeader({ userName, className, title, subtitle }: WelcomeH
       glassIntensity="light"
       className={cn(
         'flex items-center gap-6 p-8',
-        'bg-gradient-to-r from-indigo-500/10 to-purple-500/10',
+        'bg-gradient-to-r from-indigo-500/10 to-secondary-500/10',
         'border-white/20 dark:border-white/10',
         className
       )}

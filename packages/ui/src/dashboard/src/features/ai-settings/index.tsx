@@ -728,7 +728,7 @@ export function AISettingsPageClient({
             <Link
               href="/admin/prompts"
               aria-label="System Prompts"
-              className="group relative flex items-center gap-3 overflow-visible rounded-xl py-2.5 pr-3 text-slate-600 transition-all duration-200 hover:bg-slate-100/50 dark:text-slate-400 dark:hover:bg-slate-800/50"
+              className="group relative flex items-center gap-3 overflow-visible rounded-xl py-2.5 pr-3 text-neutral-600 transition-all duration-200 hover:bg-neutral-100/50 dark:text-neutral-400 dark:hover:bg-neutral-800/50"
               style={{ paddingLeft: 24 }}
             >
               <div className="bg-primary-50 text-primary-700 ring-primary-100 dark:bg-primary-900/40 dark:text-primary-200 dark:ring-primary-900/60 flex h-9 w-9 items-center justify-center rounded-lg ring-1">

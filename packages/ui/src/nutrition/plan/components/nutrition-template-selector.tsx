@@ -206,7 +206,7 @@ export function NutritionTemplateSelector({
                       darkModeClasses.card.base,
                       isSelected
                         ? selectionMode
-                          ? 'border-blue-500 bg-blue-50/50 shadow-md dark:border-blue-500 dark:bg-blue-900/20'
+                          ? 'border-primary-500 bg-primary-50/50 shadow-md dark:border-primary-500 dark:bg-primary-900/20'
                           : 'border-green-500 bg-green-50/50 shadow-md dark:border-green-500 dark:bg-green-900/20'
                         : 'border-neutral-200 hover:border-green-400 hover:bg-green-50/30 dark:border-neutral-700 dark:hover:border-green-500 dark:hover:bg-green-900/10',
                       darkModeClasses.interactive.button

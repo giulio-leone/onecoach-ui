@@ -138,7 +138,7 @@ export function AdvancedFilters({
           <Filter className="h-4 w-4" />
           <span>Filtri</span>
           {activeCount > 0 && (
-            <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">
+            <span className="rounded-full bg-primary-100 px-2 py-0.5 text-xs font-semibold text-primary-700 dark:bg-primary-500/20 dark:text-primary-300">
               {activeCount}
             </span>
           )}
@@ -160,7 +160,7 @@ export function AdvancedFilters({
             className={cn(
               'rounded-lg px-3 py-1.5 text-xs font-medium transition-colors',
               filters.period === opt.value
-                ? 'bg-blue-600 text-white shadow-sm'
+                ? 'bg-primary-600 text-white shadow-sm'
                 : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
             )}
           >
@@ -297,7 +297,7 @@ export function AdvancedFilters({
                   className={cn(
                     'rounded-lg px-3 py-1.5 text-xs font-medium transition-colors',
                     filters.groupBy === g.value
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-primary-600 text-white'
                       : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
                   )}
                 >

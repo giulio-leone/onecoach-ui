@@ -211,7 +211,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
       header: 'Macros',
       cell: (item: Food) => (
         <div className="flex gap-2 text-xs text-neutral-500">
-          <span className="text-blue-600 dark:text-blue-400">
+          <span className="text-primary-600 dark:text-primary-400">
             {t('admin.foods_admin_panel.p')}
             {item.macrosPer100g?.protein}g
           </span>
@@ -261,7 +261,7 @@ export function FoodsAdminPanel({ initialData = null }: FoodsAdminPanelProps) {
               setAiEditFoodId(item.id);
               setShowAiEditModal(true);
             }}
-            className="rounded p-1 text-purple-500 hover:bg-purple-50 hover:text-purple-700 dark:hover:bg-purple-900/30"
+            className="rounded p-1 text-secondary-500 hover:bg-secondary-50 hover:text-secondary-700 dark:hover:bg-secondary-900/30"
           >
             <Sparkles size={16} />
           </button>

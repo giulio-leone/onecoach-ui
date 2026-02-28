@@ -94,13 +94,13 @@ export function CreditPacksSection() {
             key={pack.id}
             className={`relative rounded-xl border-2 p-6 shadow-sm transition-shadow hover:shadow-lg sm:p-6 ${
               pack.popular
-                ? 'border-blue-500 bg-blue-50 shadow-lg dark:border-blue-400 dark:bg-blue-900/20'
+                ? 'border-primary-500 bg-primary-50 shadow-lg dark:border-primary-400 dark:bg-primary-900/20'
                 : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800'
             }`}
           >
             {pack.popular && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white dark:bg-blue-500">
+                <span className="rounded-full bg-primary-600 px-3 py-1 text-xs font-semibold text-white dark:bg-primary-500">
                   {t('credit_packs_section.piu_conveniente')}
                 </span>
               </div>

@@ -95,7 +95,7 @@ export function ConversationEmptyState({
       animate={{ opacity: 1, y: 0 }}
       className={cn('flex flex-col items-center justify-center py-20 text-center', className)}
     >
-      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-xl shadow-indigo-500/20">
+      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-500 to-secondary-600 shadow-xl shadow-indigo-500/20">
         {icon || <MessageSquare className="h-10 w-10 text-white" />}
       </div>
       <h2 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-white">{title}</h2>

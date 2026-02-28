@@ -49,7 +49,7 @@ const TYPE_CONFIG: Record<
   { icon: React.ComponentType<{ className?: string }>; emoji: string; color: string }
 > = {
   adaptation_ready: { icon: Zap, emoji: '⚡', color: 'text-amber-500' },
-  workout_reminder: { icon: Dumbbell, emoji: '🏋️', color: 'text-blue-500' },
+  workout_reminder: { icon: Dumbbell, emoji: '🏋️', color: 'text-primary-500' },
   nutrition_alert: { icon: Flame, emoji: '🍎', color: 'text-emerald-500' },
   pr_achieved: { icon: Trophy, emoji: '🏆', color: 'text-yellow-500' },
   deload_suggested: { icon: Check, emoji: '🔄', color: 'text-violet-500' },
@@ -123,7 +123,7 @@ function NotificationItem({
         PRIORITY_BORDER[notification.priority],
         notification.read
           ? 'bg-transparent'
-          : 'bg-blue-50/50 dark:bg-blue-500/5',
+          : 'bg-primary-50/50 dark:bg-primary-500/5',
       )}
     >
       {/* Icon */}
@@ -168,7 +168,7 @@ function NotificationItem({
             <button
               type="button"
               onClick={() => onAction(notification.id, notification.action!.value)}
-              className="rounded-md bg-blue-500/10 px-2 py-0.5 text-[10px] font-semibold text-blue-600 transition-colors hover:bg-blue-500/20 dark:text-blue-400"
+              className="rounded-md bg-primary-500/10 px-2 py-0.5 text-[10px] font-semibold text-primary-600 transition-colors hover:bg-primary-500/20 dark:text-primary-400"
             >
               {notification.action.label}
             </button>
@@ -178,7 +178,7 @@ function NotificationItem({
 
       {/* Unread dot */}
       {!notification.read && (
-        <span className="absolute right-3 top-3 h-2 w-2 rounded-full bg-blue-500" />
+        <span className="absolute right-3 top-3 h-2 w-2 rounded-full bg-primary-500" />
       )}
     </div>
   );
@@ -244,7 +244,7 @@ export function NotificationCenter({
                   <button
                     type="button"
                     onClick={onMarkAllRead}
-                    className="flex items-center gap-1 rounded-lg px-2 py-1 text-[10px] font-semibold text-blue-600 transition-colors hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-500/10"
+                    className="flex items-center gap-1 rounded-lg px-2 py-1 text-[10px] font-semibold text-primary-600 transition-colors hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-primary-500/10"
                   >
                     <CheckCheck className="h-3 w-3" />
                     Segna tutto come letto

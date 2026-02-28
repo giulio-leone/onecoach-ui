@@ -243,8 +243,8 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
             )}
           >
             <div className="mb-6 flex items-center gap-2">
-              <div className="rounded-md bg-blue-500/10 p-1.5 ring-1 ring-blue-500/20">
-                <Layers size={18} className="text-blue-600 dark:text-blue-400" />
+              <div className="rounded-md bg-primary-500/10 p-1.5 ring-1 ring-primary-500/20">
+                <Layers size={18} className="text-primary-600 dark:text-primary-400" />
               </div>
               <Heading
                 level={3}
@@ -311,8 +311,8 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
             )}
           >
             <div className="mb-6 flex items-center gap-2">
-              <div className="rounded-md bg-purple-500/10 p-1.5 ring-1 ring-purple-500/20">
-                <Activity size={18} className="text-purple-600 dark:text-purple-400" />
+              <div className="rounded-md bg-secondary-500/10 p-1.5 ring-1 ring-secondary-500/20">
+                <Activity size={18} className="text-secondary-600 dark:text-secondary-400" />
               </div>
               <Heading
                 level={3}
@@ -527,8 +527,8 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
           >
             <div className="border-b border-neutral-200 bg-neutral-100/50 px-6 py-4 dark:border-white/5 dark:bg-white/5">
               <div className="flex items-center gap-2">
-                <div className="rounded-md bg-pink-500/10 p-1.5 ring-1 ring-pink-500/20">
-                  <Dumbbell size={18} className="text-pink-600 dark:text-pink-400" />
+                <div className="rounded-md bg-secondary-500/10 p-1.5 ring-1 ring-secondary-500/20">
+                  <Dumbbell size={18} className="text-secondary-600 dark:text-secondary-400" />
                 </div>
                 <Heading
                   level={3}

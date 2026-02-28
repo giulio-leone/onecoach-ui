@@ -88,7 +88,7 @@ const stateConfig: Record<ToolState, { label: string; icon: ReactNode; color: st
   'approval-responded': {
     label: 'Risposto',
     icon: <CheckCircle className="h-4 w-4" />,
-    color: 'text-blue-600',
+    color: 'text-primary-600',
   },
   'output-available': {
     label: 'Completato',

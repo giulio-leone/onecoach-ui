@@ -102,7 +102,7 @@ export function FoodAiEditModal({
     >
       <form onSubmit={handleSubmit} className="space-y-4">
         {currentFoodName && (
-          <div className="rounded-md bg-blue-50 p-3 text-sm text-blue-800 dark:bg-blue-900/20 dark:text-blue-300">
+          <div className="rounded-md bg-primary-50 p-3 text-sm text-primary-800 dark:bg-primary-900/20 dark:text-primary-300">
             <strong>{t('food_ai_edit_modal.alimento_corrente')}</strong> {currentFoodName}
           </div>
         )}
@@ -124,9 +124,9 @@ export function FoodAiEditModal({
             className={cn(
               'w-full rounded-md border px-3 py-2 text-sm',
               'border-gray-300 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100',
-              'focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none',
+              'focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none',
               'disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500',
-              'dark:focus:border-blue-400 dark:focus:ring-blue-400 dark:disabled:bg-gray-900'
+              'dark:focus:border-primary-400 dark:focus:ring-primary-400 dark:disabled:bg-gray-900'
             )}
           />
           <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
@@ -163,9 +163,9 @@ export function FoodAiEditModal({
               className={cn(
                 'w-full rounded-md border px-3 py-2 font-mono text-xs',
                 'border-gray-300 bg-white text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100',
-                'focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none',
+                'focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none',
                 'disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500',
-                'dark:focus:border-blue-400 dark:focus:ring-blue-400 dark:disabled:bg-gray-900'
+                'dark:focus:border-primary-400 dark:focus:ring-primary-400 dark:disabled:bg-gray-900'
               )}
             />
             <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">

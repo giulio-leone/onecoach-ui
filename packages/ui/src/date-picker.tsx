@@ -44,7 +44,7 @@ const triggerVariants = cva(
         default: [
           'border-neutral-200 bg-white text-neutral-700 shadow-sm',
           'hover:border-neutral-300 hover:bg-neutral-50',
-          'focus-visible:ring-blue-500',
+          'focus-visible:ring-primary-500',
           'dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200',
           'dark:hover:border-neutral-600 dark:hover:bg-neutral-800',
         ],
@@ -210,7 +210,7 @@ export function DatePicker({
           className
         )}
       >
-        <Calendar className="h-4 w-4 text-blue-500" />
+        <Calendar className="h-4 w-4 text-primary-500" />
         <span className={cn(!value && 'text-neutral-400 dark:text-neutral-500')}>
           {displayValue}
         </span>
@@ -241,8 +241,8 @@ export function DatePicker({
                     onClick={() => handleQuickSelect(option.id)}
                     className={cn(
                       'rounded-lg px-2.5 py-1 text-xs font-medium transition-colors',
-                      'bg-neutral-100 text-neutral-700 hover:bg-blue-100 hover:text-blue-700',
-                      'dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-blue-900/40 dark:hover:text-blue-300'
+                      'bg-neutral-100 text-neutral-700 hover:bg-primary-100 hover:text-primary-700',
+                      'dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-primary-900/40 dark:hover:text-primary-300'
                     )}
                   >
                     {option.label}
@@ -315,11 +315,11 @@ export function DatePicker({
                       disabled={isDisabled}
                       className={cn(
                         'flex h-8 w-8 items-center justify-center rounded-lg text-sm font-medium transition-all duration-150',
-                        'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
+                        'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500',
                         isSelected
-                          ? 'bg-blue-600 text-white shadow-sm'
+                          ? 'bg-primary-600 text-white shadow-sm'
                           : isTodayDate
-                            ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300'
+                            ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300'
                             : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800',
                         isDisabled && 'cursor-not-allowed opacity-30 hover:bg-transparent'
                       )}
@@ -338,7 +338,7 @@ export function DatePicker({
               <button
                 type="button"
                 onClick={handleToday}
-                className="w-full rounded-lg py-1.5 text-sm font-medium text-blue-600 transition hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/20"
+                className="w-full rounded-lg py-1.5 text-sm font-medium text-primary-600 transition hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-primary-900/20"
               >
                 {t.today}
               </button>

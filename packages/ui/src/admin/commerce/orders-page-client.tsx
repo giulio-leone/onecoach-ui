@@ -157,7 +157,7 @@ export function OrdersPageClient() {
             label={t('stats.refunded')}
             value={stats.refunded}
             icon={AlertCircle}
-            color="text-purple-600 dark:text-purple-400"
+            color="text-secondary-600 dark:text-secondary-400"
           />
         </div>
       )}

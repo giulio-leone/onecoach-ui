@@ -311,7 +311,7 @@ function OneRMEntry({
       {/* Shimmer overlay during save */}
       {isSaving && (
         <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white/50 backdrop-blur-[2px] dark:bg-neutral-900/50">
-          <div className="flex items-center gap-2 rounded-lg bg-blue-500/10 px-3 py-2 text-blue-600 backdrop-blur-md">
+          <div className="flex items-center gap-2 rounded-lg bg-primary-500/10 px-3 py-2 text-primary-600 backdrop-blur-md">
             <Loader2 className="h-4 w-4 animate-spin" />
             <span className="text-sm font-medium">{t('saving')}</span>
           </div>
@@ -326,11 +326,11 @@ function OneRMEntry({
           <ExerciseCombobox
             onSelect={handleExerciseSelect}
             placeholder={t('changeExercise')}
-            className="w-full border-white/20 bg-white/50 backdrop-blur-sm focus:ring-blue-500/30 dark:border-white/10 dark:bg-black/20"
+            className="w-full border-white/20 bg-white/50 backdrop-blur-sm focus:ring-primary-500/30 dark:border-white/10 dark:bg-black/20"
           />
         </div>
         {selectedExercise && (
-          <p className="mt-2 flex items-center gap-1.5 text-xs text-blue-600 dark:text-blue-400">
+          <p className="mt-2 flex items-center gap-1.5 text-xs text-primary-600 dark:text-primary-400">
             <Check className="h-3 w-3" />
             <span>
               {t('selected')}: {(selectedExercise as any).translation?.name ?? (selectedExercise as any).slug}
@@ -346,7 +346,7 @@ function OneRMEntry({
             onClick={() => setInputMode('estimate')}
             className={`flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all ${
               inputMode === 'estimate'
-                ? 'bg-white text-blue-600 shadow-sm dark:bg-neutral-800 dark:text-blue-400'
+                ? 'bg-white text-primary-600 shadow-sm dark:bg-neutral-800 dark:text-primary-400'
                 : 'text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'
             }`}
           >
@@ -357,7 +357,7 @@ function OneRMEntry({
             onClick={() => setInputMode('direct')}
             className={`flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all ${
               inputMode === 'direct'
-                ? 'bg-white text-blue-600 shadow-sm dark:bg-neutral-800 dark:text-blue-400'
+                ? 'bg-white text-primary-600 shadow-sm dark:bg-neutral-800 dark:text-primary-400'
                 : 'text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200'
             }`}
           >
@@ -371,7 +371,7 @@ function OneRMEntry({
         {inputMode === 'estimate' ? (
           /* Estimate Mode */
           <div className="animate-in fade-in slide-in-from-top-2 duration-200">
-            <div className="mb-4 rounded-lg border border-blue-500/10 bg-blue-500/5 p-3 text-xs text-blue-700 dark:text-blue-300">
+            <div className="mb-4 rounded-lg border border-primary-500/10 bg-primary-500/5 p-3 text-xs text-primary-700 dark:text-primary-300">
               {t('estimateInfo')}
             </div>
 
@@ -390,7 +390,7 @@ function OneRMEntry({
                       setEstWeight(e.target.value)
                     }
                     placeholder={weightUnit === 'LBS' ? '176' : '80'}
-                    className="w-full rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-sm font-medium transition-all placeholder:text-neutral-400 focus:border-blue-500/50 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
+                    className="w-full rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-sm font-medium transition-all placeholder:text-neutral-400 focus:border-primary-500/50 focus:bg-white focus:ring-4 focus:ring-primary-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
                     disabled={isSaving}
                   />
                   <span className="absolute top-2.5 right-3 text-xs font-medium text-neutral-400">
@@ -410,7 +410,7 @@ function OneRMEntry({
                   value={estReps}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEstReps(e.target.value)}
                   placeholder="8"
-                  className="w-full rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-sm font-medium transition-all placeholder:text-neutral-400 focus:border-blue-500/50 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
+                  className="w-full rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-sm font-medium transition-all placeholder:text-neutral-400 focus:border-primary-500/50 focus:bg-white focus:ring-4 focus:ring-primary-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
                   disabled={isSaving}
                 />
               </div>
@@ -429,7 +429,7 @@ function OneRMEntry({
                 <select
                   value={estRpe}
                   onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setEstRpe(e.target.value)}
-                  className="w-full appearance-none rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-sm font-medium transition-all focus:border-blue-500/50 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
+                  className="w-full appearance-none rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-sm font-medium transition-all focus:border-primary-500/50 focus:bg-white focus:ring-4 focus:ring-primary-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
                   disabled={isSaving}
                 >
                   <option value="10">{t('rpe10')}</option>
@@ -445,9 +445,9 @@ function OneRMEntry({
             </div>
 
             {calculatedOneRM !== null && (
-              <div className="mt-4 flex items-center justify-between rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 p-4 text-white shadow-lg ring-1 shadow-blue-500/20 ring-white/20">
+              <div className="mt-4 flex items-center justify-between rounded-lg bg-gradient-to-r from-primary-600 to-indigo-600 p-4 text-white shadow-lg ring-1 shadow-primary-500/20 ring-white/20">
                 <div>
-                  <p className="text-xs font-medium text-blue-100">{t('estimated')}</p>
+                  <p className="text-xs font-medium text-primary-100">{t('estimated')}</p>
                   <p className="text-2xl font-bold tracking-tight text-white drop-shadow-sm">
                     {displayCalculatedOneRM}{' '}
                     <span className="text-sm font-normal opacity-80">
@@ -468,7 +468,7 @@ function OneRMEntry({
         ) : (
           /* Direct Input Mode */
           <div className="animate-in fade-in slide-in-from-top-2 duration-200">
-            <div className="mb-4 rounded-lg border border-blue-500/10 bg-blue-500/5 p-3 text-xs text-blue-700 dark:text-blue-300">
+            <div className="mb-4 rounded-lg border border-primary-500/10 bg-primary-500/5 p-3 text-xs text-primary-700 dark:text-primary-300">
               {t('directInfo')}
             </div>
             <label
@@ -488,7 +488,7 @@ function OneRMEntry({
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setOneRepMax(e.target.value)}
                 onBlur={handleDirectInputBlur}
                 placeholder={t('placeholderEx', { value: weightUnit === 'LBS' ? '225' : '100' })}
-                className="w-full rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-lg font-medium transition-all placeholder:text-neutral-400 focus:border-blue-500/50 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
+                className="w-full rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-lg font-medium transition-all placeholder:text-neutral-400 focus:border-primary-500/50 focus:bg-white focus:ring-4 focus:ring-primary-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
                 disabled={isSaving}
               />
               <span className="absolute top-3 right-3 text-sm font-medium text-neutral-400">
@@ -511,7 +511,7 @@ function OneRMEntry({
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setNotes(e.target.value)}
             placeholder={t('notesPlaceholder')}
             rows={2}
-            className="w-full resize-none rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-sm transition-all placeholder:text-neutral-400 focus:border-blue-500/50 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
+            className="w-full resize-none rounded-lg border border-white/20 bg-white/50 px-3 py-2.5 text-sm transition-all placeholder:text-neutral-400 focus:border-primary-500/50 focus:bg-white focus:ring-4 focus:ring-primary-500/10 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:focus:bg-black/40"
             disabled={isSaving}
           />
         </div>

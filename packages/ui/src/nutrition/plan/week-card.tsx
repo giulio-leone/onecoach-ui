@@ -103,17 +103,17 @@ export function WeekCard({
         style={dragProps?.style}
         className={cn(
           'overflow-hidden rounded-3xl border transition-all duration-300',
-          'bg-slate-900/30 backdrop-blur-sm',
-          'border-slate-800/50',
-          'hover:border-slate-700 hover:bg-slate-900/40',
+          'bg-neutral-900/30 backdrop-blur-sm',
+          'border-neutral-800/50',
+          'hover:border-neutral-700 hover:bg-neutral-900/40',
           isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-emerald-500/30' : ''
         )}
       >
         <div
           className={cn(
             'flex flex-col gap-4 border-b p-6 sm:flex-row sm:items-center sm:justify-between',
-            'border-slate-800/50',
-            'bg-slate-900/50'
+            'border-neutral-800/50',
+            'bg-neutral-900/50'
           )}
         >
           <div className="flex items-center gap-4">
@@ -123,7 +123,7 @@ export function WeekCard({
                 {...(dragProps?.listeners || {})}
                 className={cn(
                   '-ml-2 flex min-h-[44px] min-w-[44px] flex-shrink-0 cursor-grab touch-manipulation items-center justify-center rounded-lg transition-all duration-200 active:cursor-grabbing',
-                  'text-slate-600 hover:text-slate-400 hover:bg-slate-800'
+                  'text-neutral-600 hover:text-neutral-400 hover:bg-neutral-800'
                 )}
                 aria-label={t('ariaLabels.dragWeek')}
               >
@@ -140,7 +140,7 @@ export function WeekCard({
               )}
             >
               <div className="flex flex-col items-start">
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-widest group-hover:text-emerald-400 transition-colors">{t('viewer.labels.week')}</span>
+                <span className="text-xs font-bold text-neutral-500 uppercase tracking-widest group-hover:text-emerald-400 transition-colors">{t('viewer.labels.week')}</span>
                 <span className="text-3xl font-black text-white">{week.weekNumber}</span>
               </div>
             </Button>
@@ -164,7 +164,7 @@ export function WeekCard({
                 size="sm"
                 onClick={onAddDayFromTemplate}
                 className={cn(
-                  'min-h-[40px] px-5 py-2 text-xs font-bold text-slate-400 bg-slate-800 border-slate-700 hover:border-slate-600 hover:text-white hover:bg-slate-700'
+                  'min-h-[40px] px-5 py-2 text-xs font-bold text-neutral-400 bg-neutral-800 border-neutral-700 hover:border-neutral-600 hover:text-white hover:bg-neutral-700'
                 )}
                 title={t('templates.title')}
               >
@@ -181,7 +181,7 @@ export function WeekCard({
                   onSaveWeekAsTemplate();
                 }}
                 className={cn(
-                  'min-h-[40px] w-10 text-slate-400 bg-slate-800 border-slate-700 hover:border-slate-600 hover:text-white hover:bg-slate-700'
+                  'min-h-[40px] w-10 text-neutral-400 bg-neutral-800 border-neutral-700 hover:border-neutral-600 hover:text-white hover:bg-neutral-700'
                 )}
                 title={t('saveAsTemplate.week')}
               >
@@ -193,7 +193,7 @@ export function WeekCard({
               size="icon"
               onClick={onRemoveWeek}
               className={cn(
-                'min-h-[40px] min-w-[40px] text-slate-600 hover:text-red-400 hover:bg-red-500/10'
+                'min-h-[40px] min-w-[40px] text-neutral-600 hover:text-red-400 hover:bg-red-500/10'
               )}
               aria-label={t('ariaLabels.removeWeek')}
             >
@@ -205,8 +205,8 @@ export function WeekCard({
         {isExpanded && (
           <div className={cn('animate-in fade-in slide-in-from-top-2 space-y-3 p-4 duration-200')}>
             {!week.days || week.days.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-12 text-center border-2 border-dashed border-slate-800 rounded-2xl bg-slate-900/20">
-                <p className="text-slate-500 font-medium">
+              <div className="flex flex-col items-center justify-center py-12 text-center border-2 border-dashed border-neutral-800 rounded-2xl bg-neutral-900/20">
+                <p className="text-neutral-500 font-medium">
                   {t('emptyStates.noDays')}
                 </p>
                 <div className="mt-4">

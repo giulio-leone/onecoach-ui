@@ -170,7 +170,7 @@ export function SessionEditCard({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="rounded-xl border border-blue-500 bg-white p-4 shadow-lg dark:border-blue-500 dark:bg-neutral-800"
+      className="rounded-xl border border-primary-500 bg-white p-4 shadow-lg dark:border-primary-500 dark:bg-neutral-800"
     >
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
@@ -184,7 +184,7 @@ export function SessionEditCard({
                   onSetGroupIndexChange?.(Math.max(0, setGroupIndex - 1));
                 }}
                 disabled={setGroupIndex === 0}
-                className="p-1 text-neutral-400 transition-colors hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:text-blue-400"
+                className="p-1 text-neutral-400 transition-colors hover:text-primary-600 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:text-primary-400"
                 title="SetGroup precedente"
               >
                 <ChevronLeft size={16} />
@@ -198,7 +198,7 @@ export function SessionEditCard({
                   onSetGroupIndexChange?.(Math.min(totalSetGroups - 1, setGroupIndex + 1));
                 }}
                 disabled={setGroupIndex >= totalSetGroups - 1}
-                className="p-1 text-neutral-400 transition-colors hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:text-blue-400"
+                className="p-1 text-neutral-400 transition-colors hover:text-primary-600 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:text-primary-400"
                 title="SetGroup successivo"
               >
                 <ChevronRight size={16} />
@@ -226,7 +226,7 @@ export function SessionEditCard({
                 e.stopPropagation();
                 onDuplicateSetGroup(index, setGroupIndex);
               }}
-              className="p-1.5 text-neutral-400 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+              className="p-1.5 text-neutral-400 transition-colors hover:text-primary-600 dark:hover:text-primary-400"
               title="Duplica SetGroup"
             >
               <Copy size={16} />
@@ -258,7 +258,7 @@ export function SessionEditCard({
       {oneRepMax && oneRepMax > 0 && (
         <div className="mb-3 flex items-center gap-2 text-xs">
           <span className="text-neutral-500 dark:text-neutral-400">1RM:</span>
-          <span className="font-bold text-blue-600 dark:text-blue-400">{oneRepMax}kg</span>
+          <span className="font-bold text-primary-600 dark:text-primary-400">{oneRepMax}kg</span>
           <span className="text-neutral-400">(valori calcolati in verde)</span>
         </div>
       )}
@@ -344,7 +344,7 @@ export function SessionEditCard({
         </div>
         <button
           onClick={onClose}
-          className="text-xs font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400"
+          className="text-xs font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400"
         >
           Chiudi
         </button>

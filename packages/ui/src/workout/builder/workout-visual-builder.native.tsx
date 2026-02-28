@@ -215,7 +215,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave }: WorkoutVisualBu
                   setSelectedDayIndex(0);
                 }}
                 className={`mr-2 rounded-full px-4 py-2 ${
-                  selectedWeekIndex === index ? 'bg-blue-600' : 'bg-neutral-200 dark:bg-neutral-800'
+                  selectedWeekIndex === index ? 'bg-primary-600' : 'bg-neutral-200 dark:bg-neutral-800'
                 }`}
               >
                 <Text
@@ -253,7 +253,7 @@ export function WorkoutVisualBuilder({ initialProgram, onSave }: WorkoutVisualBu
                 onPress={() => setSelectedDayIndex(index)}
                 className={`flex-row items-center gap-2 rounded-full border px-4 py-2 ${
                   selectedDayIndex === index
-                    ? 'border-blue-600 bg-blue-600'
+                    ? 'border-primary-600 bg-primary-600'
                     : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800'
                 } `}
               >

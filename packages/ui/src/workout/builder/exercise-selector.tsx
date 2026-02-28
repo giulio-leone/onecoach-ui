@@ -111,14 +111,14 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
             <h2 className="text-lg font-bold text-white">{t('title')}</h2>
             <button
               onClick={onClose}
-              className="rounded-full p-1 transition-colors hover:bg-neutral-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+              className="rounded-full p-1 transition-colors hover:bg-neutral-900 focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:outline-none"
               aria-label={t('close')}
             >
               <X size={24} className="text-neutral-400" />
             </button>
           </div>
 
-          <div className="flex items-center gap-2 rounded-xl bg-neutral-900 p-2 ring-1 ring-transparent focus-within:ring-blue-500">
+          <div className="flex items-center gap-2 rounded-xl bg-neutral-900 p-2 ring-1 ring-transparent focus-within:ring-primary-500">
             <Search size={18} className="ml-2 text-neutral-500" />
             <input
               value={searchQuery}
@@ -135,7 +135,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                 onClick={() => setSelectedMuscle(selectedMuscle === muscle ? null : muscle)}
                 className={`rounded-full border px-3 py-1 text-sm whitespace-nowrap transition-colors ${
                   selectedMuscle === muscle
-                    ? 'border-blue-500 bg-blue-600 text-white'
+                    ? 'border-primary-500 bg-primary-600 text-white'
                     : 'border-neutral-800 bg-neutral-950 text-neutral-300 hover:bg-neutral-900'
                 }`}
               >
@@ -149,7 +149,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
         <div className="min-h-0 flex-1 overflow-y-auto p-3 sm:p-4">
           {isLoading ? (
             <div className="flex h-full items-center justify-center">
-              <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary-600 border-t-transparent" />
             </div>
           ) : (
             <div className="space-y-3 pb-16 sm:pb-8">
@@ -157,10 +157,10 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                 <button
                   key={ex.id}
                   onClick={() => handleSelect(ex)}
-                  className="hover:bg-neutral-850 flex w-full items-center gap-4 rounded-xl border border-neutral-800 bg-neutral-900 p-4 text-left transition-colors hover:border-blue-500/60 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+                  className="hover:bg-neutral-850 flex w-full items-center gap-4 rounded-xl border border-neutral-800 bg-neutral-900 p-4 text-left transition-colors hover:border-primary-500/60 focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:outline-none"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-500/10">
-                    <Dumbbell size={24} className="text-blue-400" />
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-500/10">
+                    <Dumbbell size={24} className="text-primary-400" />
                   </div>
                   <div className="flex-1">
                     <div className="font-bold text-white">{ex.name}</div>
@@ -168,7 +168,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                       {ex.muscleGroups?.join(', ')}
                     </div>
                   </div>
-                  <Plus size={20} className="text-blue-400" />
+                  <Plus size={20} className="text-primary-400" />
                 </button>
               ))}
               {filteredExercises.length === 0 && (

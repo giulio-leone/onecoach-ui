@@ -36,7 +36,7 @@ function getEventIcon(type: string, message: string) {
     return <CheckCircle2 className="h-4 w-4 text-emerald-500" />;
   }
   if (lowerMessage.includes('starting') || lowerType === 'start' || lowerType === 'progress') {
-    return <Loader2 className="h-4 w-4 animate-spin text-blue-500" />;
+    return <Loader2 className="h-4 w-4 animate-spin text-primary-500" />;
   }
   if (lowerType === 'error' || lowerType === 'warning') {
     return <AlertCircle className="h-4 w-4 text-amber-500" />;
@@ -160,7 +160,7 @@ export function StreamingResult({
         {/* Gradient Progress Bar */}
         <div className="h-2.5 w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-blue-500 via-emerald-500 to-emerald-400 transition-all duration-300 ease-out"
+            className="h-full rounded-full bg-gradient-to-r from-primary-500 via-emerald-500 to-emerald-400 transition-all duration-300 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -170,7 +170,7 @@ export function StreamingResult({
       <Card variant="glass" className="flex max-h-80 flex-col overflow-hidden p-0">
         <div className="flex-shrink-0 border-b border-neutral-100 bg-neutral-50/80 px-4 py-3 dark:border-neutral-800 dark:bg-neutral-800/50">
           <div className="flex items-center gap-2">
-            <Sparkles className="h-4 w-4 text-blue-500" />
+            <Sparkles className="h-4 w-4 text-primary-500" />
             <span className="font-semibold text-neutral-900 dark:text-neutral-100">
               {title || 'AI Agent Orchestrator'}
             </span>
@@ -179,7 +179,7 @@ export function StreamingResult({
         <div className="custom-scrollbar space-y-2 overflow-y-auto p-3">
           {processedEvents.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-6">
-              <Loader2 className="h-6 w-6 animate-spin text-blue-500" />
+              <Loader2 className="h-6 w-6 animate-spin text-primary-500" />
               <span className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
                 In attesa di aggiornamenti...
               </span>

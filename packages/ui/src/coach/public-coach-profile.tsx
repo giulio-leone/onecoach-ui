@@ -59,7 +59,7 @@ export function PublicCoachProfile({ profile }: PublicCoachProfileProps) {
             )}
             {isVerified && (
               <div className="absolute right-0 bottom-0 rounded-full bg-white p-1 dark:bg-neutral-900">
-                <CheckCircle2 className="h-6 w-6 text-blue-500" />
+                <CheckCircle2 className="h-6 w-6 text-primary-500" />
               </div>
             )}
           </div>
@@ -71,7 +71,7 @@ export function PublicCoachProfile({ profile }: PublicCoachProfileProps) {
                 {profile.user.name || 'Coach'}
               </Heading>
               {isVerified && (
-                <span className="rounded-full bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800">
+                <span className="rounded-full bg-primary-100 px-2 py-1 text-xs font-medium text-primary-800">
                   Verificato
                 </span>
               )}

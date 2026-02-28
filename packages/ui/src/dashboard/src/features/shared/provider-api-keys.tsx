@@ -66,9 +66,9 @@ const PROVIDER_INFO: Record<
   google: {
     description: 'Gemini 2.5 Flash / Pro tramite Google AI Studio',
     icon: Sparkles,
-    color: 'text-blue-400',
-    gradient: 'from-blue-500/5 via-blue-500/0 to-transparent',
-    accent: 'bg-blue-500',
+    color: 'text-primary-400',
+    gradient: 'from-primary-500/5 via-primary-500/0 to-transparent',
+    accent: 'bg-primary-500',
   },
   anthropic: {
     description: 'Modelli Claude 3.5 (Haiku, Sonnet)',
@@ -299,8 +299,8 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
         <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <Activity className="h-5 w-5 text-blue-500 dark:text-blue-400" />
-              <span className="text-xs font-bold tracking-wider text-blue-500 uppercase dark:text-blue-400">
+              <Activity className="h-5 w-5 text-primary-500 dark:text-primary-400" />
+              <span className="text-xs font-bold tracking-wider text-primary-500 uppercase dark:text-primary-400">
                 {t('provider_api_keys.system_status')}
               </span>
             </div>
@@ -570,7 +570,7 @@ function ProviderCard({
                   </div>
                   <div className="group/input relative">
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                      <KeyRound className="h-4 w-4 text-neutral-400 transition-colors group-focus-within/input:text-blue-500" />
+                      <KeyRound className="h-4 w-4 text-neutral-400 transition-colors group-focus-within/input:text-primary-500" />
                     </div>
                     <Input
                       type={state.showKeyInput ? 'text' : 'password'}
@@ -580,7 +580,7 @@ function ProviderCard({
                         onApiKeyChange(state.provider, e.target.value)
                       }
                       placeholder={state.hasKey ? '••••••••••••••••' : 'Enter new API Key'}
-                      className="bg-white pr-10 pl-10 transition-all focus:ring-2 focus:ring-blue-500/20 dark:border-white/10 dark:bg-black/40 dark:text-white dark:placeholder:text-neutral-600"
+                      className="bg-white pr-10 pl-10 transition-all focus:ring-2 focus:ring-primary-500/20 dark:border-white/10 dark:bg-black/40 dark:text-white dark:placeholder:text-neutral-600"
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center gap-1 pr-2">
                       {state.hasKey && !state.newApiKey && (

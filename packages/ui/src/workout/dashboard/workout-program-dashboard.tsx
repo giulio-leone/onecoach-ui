@@ -231,7 +231,7 @@ export function WorkoutProgramDashboard({
             {nextSession && (
               <div className="group relative overflow-hidden rounded-[32px] p-1 shadow-2xl shadow-indigo-500/30 transition-transform duration-500 hover:scale-[1.01]">
                 {/* Animated Gradient Border */}
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-secondary-500 to-secondary-500 opacity-100" />
 
                 {/* Content Container */}
                 <div className="relative h-full overflow-hidden rounded-[28px] bg-neutral-950/90 p-6 backdrop-blur-xl sm:p-10">
@@ -340,7 +340,7 @@ export function WorkoutProgramDashboard({
                             {/* Outer Glow Container */}
                             <div className="group relative h-full overflow-hidden rounded-[28px] p-[2px] transition-all duration-500 hover:shadow-[0_0_60px_-10px_theme(colors.indigo.500/0.5),0_0_30px_-5px_theme(colors.purple.500/0.3)]">
                               {/* Animated Gradient Border */}
-                              <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-indigo-500/40 via-purple-500/30 to-pink-500/20 opacity-60 transition-all duration-500 group-hover:from-indigo-400/80 group-hover:via-purple-500/60 group-hover:to-pink-500/40 group-hover:opacity-100" />
+                              <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-indigo-500/40 via-secondary-500/30 to-secondary-500/20 opacity-60 transition-all duration-500 group-hover:from-indigo-400/80 group-hover:via-secondary-500/60 group-hover:to-secondary-500/40 group-hover:opacity-100" />
 
                               {/* Card Content */}
                               <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-[26px] bg-gradient-to-br from-[#0f0f14] via-[#0a0a0f] to-[#080810] p-6">
@@ -348,7 +348,7 @@ export function WorkoutProgramDashboard({
                                 <div className="pointer-events-none absolute -top-10 -right-10 h-40 w-40 rounded-full bg-indigo-500/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-indigo-500/20" />
 
                                 {/* Ambient Light - Bottom Left */}
-                                <div className="pointer-events-none absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-purple-500/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-purple-500/20" />
+                                <div className="pointer-events-none absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-secondary-500/10 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:bg-secondary-500/20" />
 
                                 {/* Top Surface Shine */}
                                 <div className="pointer-events-none absolute top-0 right-0 left-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
@@ -356,7 +356,7 @@ export function WorkoutProgramDashboard({
                                 <div className="relative z-10">
                                   <div className="mb-5 flex items-start justify-between">
                                     {/* Gradient Day Badge */}
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 text-lg font-black text-white shadow-lg ring-1 shadow-indigo-500/10 ring-white/10 transition-all duration-300 group-hover:scale-110 group-hover:from-indigo-500 group-hover:to-purple-600 group-hover:shadow-indigo-500/30 group-hover:ring-indigo-400/50">
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500/20 to-secondary-500/20 text-lg font-black text-white shadow-lg ring-1 shadow-indigo-500/10 ring-white/10 transition-all duration-300 group-hover:scale-110 group-hover:from-indigo-500 group-hover:to-secondary-600 group-hover:shadow-indigo-500/30 group-hover:ring-indigo-400/50">
                                       {day.dayNumber}
                                     </div>
                                     <div className="flex items-center gap-2">
@@ -385,8 +385,8 @@ export function WorkoutProgramDashboard({
                                             idx === 0
                                               ? 'bg-indigo-500/20 text-indigo-300 ring-1 ring-indigo-500/30 group-hover:bg-indigo-500/30 group-hover:text-indigo-200'
                                               : idx === 1
-                                                ? 'bg-purple-500/20 text-purple-300 ring-1 ring-purple-500/30 group-hover:bg-purple-500/30 group-hover:text-purple-200'
-                                                : 'bg-pink-500/20 text-pink-300 ring-1 ring-pink-500/30 group-hover:bg-pink-500/30 group-hover:text-pink-200'
+                                                ? 'bg-secondary-500/20 text-secondary-300 ring-1 ring-secondary-500/30 group-hover:bg-secondary-500/30 group-hover:text-secondary-200'
+                                                : 'bg-secondary-500/20 text-secondary-300 ring-1 ring-secondary-500/30 group-hover:bg-secondary-500/30 group-hover:text-secondary-200'
                                           }`}
                                         >
                                           {muscle}
@@ -492,7 +492,7 @@ export function WorkoutProgramDashboard({
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-500/10 text-purple-500">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary-500/10 text-secondary-500">
                         <Dumbbell className="h-4 w-4" />
                       </div>
                       <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">

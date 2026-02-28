@@ -217,7 +217,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
                   'rounded px-2 py-1 text-xs transition-colors',
                   exercise.duration !== undefined
                     ? 'bg-cyan-500/20 text-cyan-600'
-                    : 'bg-purple-500/20 text-purple-600'
+                    : 'bg-secondary-500/20 text-secondary-600'
                 )}
               >
                 {exercise.duration !== undefined ? '⏱️ Tempo' : '🔢 Reps'}

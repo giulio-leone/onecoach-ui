@@ -196,15 +196,15 @@ export function ToolExecuting({ toolName, className, ...props }: ToolExecutingPr
     <div
       className={cn(
         'flex items-center gap-2 rounded-lg px-3 py-2',
-        'border border-blue-200 bg-blue-50',
-        'dark:border-blue-800 dark:bg-blue-900/30',
+        'border border-primary-200 bg-primary-50',
+        'dark:border-primary-800 dark:bg-primary-900/30',
         className
       )}
       role="status"
       {...props}
     >
-      <AIElementSpinner size="sm" className="text-blue-500" />
-      <span className="text-xs text-blue-700 dark:text-blue-300">
+      <AIElementSpinner size="sm" className="text-primary-500" />
+      <span className="text-xs text-primary-700 dark:text-primary-300">
         {toolName ? `Eseguendo ${toolName}...` : 'Eseguendo strumento...'}
       </span>
     </div>

@@ -411,11 +411,11 @@ export function WorkoutImportModal({
         </div>
         {/* Help panel */}
         {showHelp && (
-          <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 text-sm dark:border-blue-800 dark:bg-blue-900/30">
-            <h4 className="mb-2 font-semibold text-blue-800 dark:text-blue-200">
+          <div className="rounded-lg border border-primary-200 bg-primary-50 p-4 text-sm dark:border-primary-800 dark:bg-primary-900/30">
+            <h4 className="mb-2 font-semibold text-primary-800 dark:text-primary-200">
               {t('workouts.workout_import_modal.formati_supportati')}
             </h4>
-            <ul className="space-y-1 text-blue-700 dark:text-blue-300">
+            <ul className="space-y-1 text-primary-700 dark:text-primary-300">
               <li>
                 • <strong>{t('workouts.workout_import_modal.spreadsheet')}</strong>{' '}
                 {t('workouts.workout_import_modal.csv_xlsx_xls_ods')}
@@ -433,7 +433,7 @@ export function WorkoutImportModal({
                 {t('workouts.workout_import_modal.jpeg_png_webp_heic')}
               </li>
             </ul>
-            <p className="mt-2 text-blue-600 dark:text-blue-400">
+            <p className="mt-2 text-primary-600 dark:text-primary-400">
               {t('workouts.workout_import_modal.max_10_file_10mb_per_file_le_immagini_e_')}
             </p>
           </div>
@@ -491,8 +491,8 @@ export function WorkoutImportModal({
               <div className="flex gap-2">
                 <FileSpreadsheet className="h-8 w-8 text-emerald-500" />
                 <FileType className="h-8 w-8 text-rose-500" />
-                <FileImage className="h-8 w-8 text-blue-500" />
-                <FileText className="h-8 w-8 text-purple-500" />
+                <FileImage className="h-8 w-8 text-primary-500" />
+                <FileText className="h-8 w-8 text-secondary-500" />
               </div>
               <div>
                 <p className="font-medium text-neutral-700 dark:text-neutral-300">
@@ -547,8 +547,8 @@ export function WorkoutImportModal({
                             'bg-emerald-50 text-emerald-500 dark:bg-emerald-900/30',
                           file.type === 'pdf' && 'bg-rose-50 text-rose-500 dark:bg-rose-900/30',
                           file.type === 'document' &&
-                            'bg-purple-50 text-purple-500 dark:bg-purple-900/30',
-                          file.type === 'image' && 'bg-blue-50 text-blue-500 dark:bg-blue-900/30'
+                            'bg-secondary-50 text-secondary-500 dark:bg-secondary-900/30',
+                          file.type === 'image' && 'bg-primary-50 text-primary-500 dark:bg-primary-900/30'
                         )}
                       />
                     )}

@@ -110,9 +110,9 @@ export function CheckoutSummary({
         )}
 
         {referralCode && (
-          <div className="flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 dark:border-blue-800 dark:bg-blue-900/20">
-            <Check className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-            <p className="text-xs font-medium text-blue-800 dark:text-blue-300">
+          <div className="flex items-center gap-2 rounded-lg border border-primary-200 bg-primary-50 px-3 py-2 dark:border-primary-800 dark:bg-primary-900/20">
+            <Check className="h-4 w-4 text-primary-600 dark:text-primary-400" />
+            <p className="text-xs font-medium text-primary-800 dark:text-primary-300">
               Codice referral attivo: {referralCode}
             </p>
           </div>

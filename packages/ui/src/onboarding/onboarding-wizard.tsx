@@ -155,9 +155,9 @@ function RadioCard({
       onClick={onClick}
       className={cn(
         'flex w-full items-start gap-3 rounded-xl border-2 p-4 text-left transition-all duration-200',
-        'focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 outline-none',
+        'focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 outline-none',
         selected
-          ? 'border-blue-500 bg-blue-50/80 dark:border-blue-400 dark:bg-blue-950/30'
+          ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
           : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600',
         className
       )}
@@ -166,7 +166,7 @@ function RadioCard({
         className={cn(
           'flex shrink-0 items-center justify-center rounded-lg p-2 transition-colors',
           selected
-            ? 'bg-blue-500 text-white'
+            ? 'bg-primary-500 text-white'
             : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
         )}
       >
@@ -176,7 +176,7 @@ function RadioCard({
         <span
           className={cn(
             'block text-sm font-semibold',
-            selected ? 'text-blue-700 dark:text-blue-300' : 'text-neutral-800 dark:text-neutral-200'
+            selected ? 'text-primary-700 dark:text-primary-300' : 'text-neutral-800 dark:text-neutral-200'
           )}
         >
           {label}
@@ -191,7 +191,7 @@ function RadioCard({
         className={cn(
           'mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-all',
           selected
-            ? 'border-blue-500 bg-blue-500 dark:border-blue-400 dark:bg-blue-400'
+            ? 'border-primary-500 bg-primary-500 dark:border-primary-400 dark:bg-primary-400'
             : 'border-neutral-300 dark:border-neutral-600'
         )}
       >
@@ -231,9 +231,9 @@ function TextInput({
       className={cn(
         'w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 transition-all',
         'placeholder:text-neutral-400',
-        'focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none',
+        'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
         'dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder:text-neutral-500',
-        'dark:focus:border-blue-400 dark:focus:ring-blue-400/30',
+        'dark:focus:border-primary-400 dark:focus:ring-primary-400/30',
         className
       )}
       {...props}
@@ -270,13 +270,13 @@ function AllergyTagInput({
         {tags.map((tag) => (
           <span
             key={tag}
-            className="inline-flex items-center gap-1 rounded-full bg-blue-100 px-2.5 py-1 text-xs font-medium text-blue-700 dark:bg-blue-900/40 dark:text-blue-300"
+            className="inline-flex items-center gap-1 rounded-full bg-primary-100 px-2.5 py-1 text-xs font-medium text-primary-700 dark:bg-primary-900/40 dark:text-primary-300"
           >
             {tag}
             <button
               type="button"
               onClick={() => onRemove(tag)}
-              className="rounded-full p-0.5 hover:bg-blue-200 dark:hover:bg-blue-800"
+              className="rounded-full p-0.5 hover:bg-primary-200 dark:hover:bg-primary-800"
             >
               <X className="h-3 w-3" />
             </button>
@@ -344,9 +344,9 @@ function StepBasicInfo({
               onClick={() => onChange({ primaryGoal: g.id })}
               className={cn(
                 'flex flex-col items-center gap-2 rounded-xl border-2 p-3 transition-all',
-                'focus-visible:ring-2 focus-visible:ring-blue-500 outline-none',
+                'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                 profile.primaryGoal === g.id
-                  ? 'border-blue-500 bg-blue-50/80 dark:border-blue-400 dark:bg-blue-950/30'
+                  ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
                   : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600'
               )}
             >
@@ -354,7 +354,7 @@ function StepBasicInfo({
                 className={cn(
                   'h-5 w-5',
                   profile.primaryGoal === g.id
-                    ? 'text-blue-600 dark:text-blue-400'
+                    ? 'text-primary-600 dark:text-primary-400'
                     : 'text-neutral-400 dark:text-neutral-500'
                 )}
               />
@@ -362,7 +362,7 @@ function StepBasicInfo({
                 className={cn(
                   'text-xs font-semibold',
                   profile.primaryGoal === g.id
-                    ? 'text-blue-700 dark:text-blue-300'
+                    ? 'text-primary-700 dark:text-primary-300'
                     : 'text-neutral-700 dark:text-neutral-300'
                 )}
               >
@@ -396,7 +396,7 @@ function StepBodyMetrics({
           className={cn(
             'rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
             !useImperial
-              ? 'bg-blue-600 text-white'
+              ? 'bg-primary-600 text-white'
               : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400'
           )}
         >
@@ -408,7 +408,7 @@ function StepBodyMetrics({
           className={cn(
             'rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
             useImperial
-              ? 'bg-blue-600 text-white'
+              ? 'bg-primary-600 text-white'
               : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400'
           )}
         >
@@ -460,7 +460,7 @@ function StepBodyMetrics({
             }
             className={cn(
               'w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 transition-all',
-              'focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none',
+              'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
               'dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100'
             )}
           >
@@ -474,7 +474,7 @@ function StepBodyMetrics({
 
       <div>
         <FieldLabel optional>
-          Body Fat % {profile.bodyFatPercent != null && <span className="text-blue-600 dark:text-blue-400">{profile.bodyFatPercent}%</span>}
+          Body Fat % {profile.bodyFatPercent != null && <span className="text-primary-600 dark:text-primary-400">{profile.bodyFatPercent}%</span>}
         </FieldLabel>
         <input
           type="range"
@@ -483,7 +483,7 @@ function StepBodyMetrics({
           step={1}
           value={profile.bodyFatPercent ?? 20}
           onChange={(e) => onChange({ bodyFatPercent: Number(e.target.value) })}
-          className="h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-200 accent-blue-600 dark:bg-neutral-700"
+          className="h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-200 accent-primary-600 dark:bg-neutral-700"
         />
         <div className="mt-1 flex justify-between text-[10px] text-neutral-400">
           <span>3%</span>
@@ -513,7 +513,7 @@ function StepTraining({
       <div>
         <FieldLabel>
           Days per Week{' '}
-          <span className="text-blue-600 dark:text-blue-400">{profile.daysPerWeek}</span>
+          <span className="text-primary-600 dark:text-primary-400">{profile.daysPerWeek}</span>
         </FieldLabel>
         <input
           type="range"
@@ -522,11 +522,11 @@ function StepTraining({
           step={1}
           value={profile.daysPerWeek}
           onChange={(e) => onChange({ daysPerWeek: Number(e.target.value) })}
-          className="h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-200 accent-blue-600 dark:bg-neutral-700"
+          className="h-2 w-full cursor-pointer appearance-none rounded-full bg-neutral-200 accent-primary-600 dark:bg-neutral-700"
         />
         <div className="mt-1 flex justify-between text-[10px] text-neutral-400">
           {[1, 2, 3, 4, 5, 6, 7].map((d) => (
-            <span key={d} className={cn(d === profile.daysPerWeek && 'font-bold text-blue-600 dark:text-blue-400')}>
+            <span key={d} className={cn(d === profile.daysPerWeek && 'font-bold text-primary-600 dark:text-primary-400')}>
               {d}
             </span>
           ))}
@@ -544,9 +544,9 @@ function StepTraining({
               onClick={() => onChange({ preferredDuration: opt.value })}
               className={cn(
                 'rounded-lg border px-4 py-2 text-sm font-medium transition-all',
-                'focus-visible:ring-2 focus-visible:ring-blue-500 outline-none',
+                'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                 profile.preferredDuration === opt.value
-                  ? 'border-blue-500 bg-blue-50 text-blue-700 dark:border-blue-400 dark:bg-blue-950/30 dark:text-blue-300'
+                  ? 'border-primary-500 bg-primary-50 text-primary-700 dark:border-primary-400 dark:bg-primary-950/30 dark:text-primary-300'
                   : 'border-neutral-200 text-neutral-600 hover:border-neutral-300 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-600'
               )}
             >
@@ -570,22 +570,22 @@ function StepTraining({
                 onClick={() => toggleEquipment(eq.id)}
                 className={cn(
                   'flex items-center gap-2 rounded-xl border-2 p-3 text-left transition-all',
-                  'focus-visible:ring-2 focus-visible:ring-blue-500 outline-none',
+                  'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                   selected
-                    ? 'border-blue-500 bg-blue-50/80 dark:border-blue-400 dark:bg-blue-950/30'
+                    ? 'border-primary-500 bg-primary-50/80 dark:border-primary-400 dark:bg-primary-950/30'
                     : 'border-neutral-200 bg-white hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600'
                 )}
               >
                 <eq.icon
                   className={cn(
                     'h-4 w-4',
-                    selected ? 'text-blue-600 dark:text-blue-400' : 'text-neutral-400'
+                    selected ? 'text-primary-600 dark:text-primary-400' : 'text-neutral-400'
                   )}
                 />
-                <span className={cn('text-xs font-semibold', selected ? 'text-blue-700 dark:text-blue-300' : 'text-neutral-700 dark:text-neutral-300')}>
+                <span className={cn('text-xs font-semibold', selected ? 'text-primary-700 dark:text-primary-300' : 'text-neutral-700 dark:text-neutral-300')}>
                   {eq.label}
                 </span>
-                {selected && <Check className="ml-auto h-4 w-4 text-blue-500" />}
+                {selected && <Check className="ml-auto h-4 w-4 text-primary-500" />}
               </button>
             );
           })}
@@ -603,7 +603,7 @@ function StepTraining({
           className={cn(
             'w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 transition-all',
             'placeholder:text-neutral-400',
-            'focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none',
+            'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
             'dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder:text-neutral-500'
           )}
         />
@@ -642,7 +642,7 @@ function StepNutrition({
       <div>
         <FieldLabel>
           Meals per Day{' '}
-          <span className="text-blue-600 dark:text-blue-400">{profile.mealsPerDay}</span>
+          <span className="text-primary-600 dark:text-primary-400">{profile.mealsPerDay}</span>
         </FieldLabel>
         <div className="flex gap-2">
           {[2, 3, 4, 5, 6].map((n) => (
@@ -652,9 +652,9 @@ function StepNutrition({
               onClick={() => onChange({ mealsPerDay: n })}
               className={cn(
                 'flex h-10 w-10 items-center justify-center rounded-lg border-2 text-sm font-bold transition-all',
-                'focus-visible:ring-2 focus-visible:ring-blue-500 outline-none',
+                'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
                 profile.mealsPerDay === n
-                  ? 'border-blue-500 bg-blue-600 text-white'
+                  ? 'border-primary-500 bg-primary-600 text-white'
                   : 'border-neutral-200 text-neutral-600 hover:border-neutral-300 dark:border-neutral-700 dark:text-neutral-400'
               )}
             >
@@ -819,9 +819,9 @@ function ProgressBar({
                 className={cn(
                   'flex h-9 w-9 items-center justify-center rounded-full border-2 transition-all duration-300',
                   isActive
-                    ? 'border-blue-500 bg-blue-600 text-white shadow-lg shadow-blue-500/30'
+                    ? 'border-primary-500 bg-primary-600 text-white shadow-lg shadow-primary-500/30'
                     : isCompleted
-                      ? 'cursor-pointer border-blue-400/50 bg-blue-50 text-blue-600 hover:bg-blue-100 dark:bg-blue-950/40 dark:text-blue-400'
+                      ? 'cursor-pointer border-primary-400/50 bg-primary-50 text-primary-600 hover:bg-primary-100 dark:bg-primary-950/40 dark:text-primary-400'
                       : 'border-neutral-200 text-neutral-400 dark:border-neutral-700 dark:text-neutral-500'
                 )}
               >
@@ -835,7 +835,7 @@ function ProgressBar({
                 className={cn(
                   'hidden text-[10px] font-semibold tracking-wider uppercase sm:block',
                   isActive
-                    ? 'text-blue-600 dark:text-blue-400'
+                    ? 'text-primary-600 dark:text-primary-400'
                     : isCompleted
                       ? 'text-neutral-600 dark:text-neutral-400'
                       : 'text-neutral-400 dark:text-neutral-600'
@@ -848,7 +848,7 @@ function ProgressBar({
                   className={cn(
                     'absolute top-4 right-[calc(-50%+20px)] left-[calc(50%+20px)] h-[2px] transition-all',
                     isCompleted
-                      ? 'bg-blue-400/60'
+                      ? 'bg-primary-400/60'
                       : 'bg-neutral-200 dark:bg-neutral-700'
                   )}
                   aria-hidden
@@ -982,7 +982,7 @@ export function OnboardingWizard({ onComplete, onSkip, initialStep = 0 }: Onboar
           className={cn(
             'flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-semibold text-neutral-600 transition-all',
             'hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800',
-            'focus-visible:ring-2 focus-visible:ring-blue-500 outline-none',
+            'focus-visible:ring-2 focus-visible:ring-primary-500 outline-none',
             step === 0 && 'pointer-events-none opacity-0'
           )}
         >
@@ -1008,9 +1008,9 @@ export function OnboardingWizard({ onComplete, onSkip, initialStep = 0 }: Onboar
               onClick={handleConfirm}
               className={cn(
                 'flex items-center gap-2 rounded-xl px-6 py-2.5 text-sm font-bold text-white transition-all',
-                'bg-blue-600 hover:bg-blue-500 active:scale-95',
-                'shadow-lg shadow-blue-600/30',
-                'focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 outline-none'
+                'bg-primary-600 hover:bg-primary-500 active:scale-95',
+                'shadow-lg shadow-primary-600/30',
+                'focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 outline-none'
               )}
             >
               <Sparkles className="h-4 w-4" />
@@ -1023,9 +1023,9 @@ export function OnboardingWizard({ onComplete, onSkip, initialStep = 0 }: Onboar
               disabled={!canProceed}
               className={cn(
                 'flex items-center gap-1.5 rounded-xl px-6 py-2.5 text-sm font-bold text-white transition-all',
-                'bg-blue-600 hover:bg-blue-500 active:scale-95',
-                'shadow-lg shadow-blue-600/30',
-                'focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 outline-none',
+                'bg-primary-600 hover:bg-primary-500 active:scale-95',
+                'shadow-lg shadow-primary-600/30',
+                'focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 outline-none',
                 !canProceed && 'pointer-events-none opacity-40 shadow-none'
               )}
             >

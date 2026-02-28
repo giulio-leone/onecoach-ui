@@ -387,8 +387,8 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
     };
   const getColorClasses = (color: string): { bg: string; icon: string } => {
     const defaultColor = {
-      bg: 'bg-blue-100 dark:bg-blue-900/30',
-      icon: 'text-blue-600 dark:text-blue-400',
+      bg: 'bg-primary-100 dark:bg-primary-900/30',
+      icon: 'text-primary-600 dark:text-primary-400',
     };
     const colorMap: Record<string, { bg: string; icon: string }> = {
       green: {
@@ -398,8 +398,8 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
       blue: defaultColor,
       red: { bg: 'bg-red-100 dark:bg-red-900/30', icon: 'text-red-600 dark:text-red-400' },
       purple: {
-        bg: 'bg-purple-100 dark:bg-purple-900/30',
-        icon: 'text-purple-600 dark:text-purple-400',
+        bg: 'bg-secondary-100 dark:bg-secondary-900/30',
+        icon: 'text-secondary-600 dark:text-secondary-400',
       },
       orange: {
         bg: 'bg-orange-100 dark:bg-orange-900/30',
@@ -551,8 +551,8 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
 
       <div className="space-y-3 rounded-lg border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-neutral-900">
         <div className="flex items-center gap-3">
-          <div className="rounded-lg bg-blue-100 p-2 dark:bg-blue-900/30">
-            <Timer className="h-5 w-5 text-blue-600 dark:text-blue-300" />
+          <div className="rounded-lg bg-primary-100 p-2 dark:bg-primary-900/30">
+            <Timer className="h-5 w-5 text-primary-600 dark:text-primary-300" />
           </div>
           <div>
             <h4 className="font-semibold text-neutral-900 dark:text-neutral-100">
@@ -599,7 +599,7 @@ export function ImportModelsConfig({ models }: ImportModelsConfigProps) {
 
       <div className="flex items-center justify-end gap-2">
         {saveStatus === 'saving' && (
-          <div className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400">
+          <div className="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400">
             <Loader2 className="h-4 w-4 animate-spin" />
             <span>{t('autoSave.saving')}</span>
           </div>

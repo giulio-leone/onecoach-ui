@@ -201,23 +201,23 @@ function CalendarMonth({
                   disabled={isDisabled}
                   className={cn(
                     'relative flex h-9 w-full items-center justify-center text-sm font-medium transition-all duration-150',
-                    'focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-blue-500',
+                    'focus:outline-none focus-visible:z-10 focus-visible:ring-2 focus-visible:ring-primary-500',
                     // Range background
-                    inRange && 'bg-blue-100 dark:bg-blue-900/30',
+                    inRange && 'bg-primary-100 dark:bg-primary-900/30',
                     // Range start styling
-                    isStart && 'rounded-l-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white',
+                    isStart && 'rounded-l-lg bg-gradient-to-r from-primary-600 to-primary-500 text-white',
                     // Range end styling
-                    isEnd && 'rounded-r-lg bg-gradient-to-l from-blue-600 to-blue-500 text-white',
+                    isEnd && 'rounded-r-lg bg-gradient-to-l from-primary-600 to-primary-500 text-white',
                     // Single selected (no range yet)
                     isSelected &&
                       !inRange &&
                       !isEnd &&
                       !isStart &&
-                      'rounded-lg bg-blue-600 text-white',
+                      'rounded-lg bg-primary-600 text-white',
                     // Both start and end (same day - shouldn't happen in round trip)
                     isStart && isEnd && 'rounded-lg',
                     // Today indicator
-                    !isSelected && isTodayDate && 'font-bold text-blue-600 dark:text-blue-400',
+                    !isSelected && isTodayDate && 'font-bold text-primary-600 dark:text-primary-400',
                     // Normal day
                     !isSelected &&
                       !inRange &&
@@ -230,7 +230,7 @@ function CalendarMonth({
                   {date.getDate()}
                   {/* Today dot */}
                   {isTodayDate && !isSelected && (
-                    <span className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-blue-600 dark:bg-blue-400" />
+                    <span className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-primary-600 dark:bg-primary-400" />
                   )}
                 </button>
               );
@@ -384,10 +384,10 @@ export function DateRangePicker({
         disabled={disabled}
         className={cn(
           'group relative flex w-full items-stretch overflow-hidden rounded-2xl border-2 border-neutral-200/50 bg-white/80 backdrop-blur-xl transition-all duration-300',
-          'hover:border-blue-300/50 hover:shadow-lg hover:shadow-blue-500/5',
-          'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50',
-          'dark:border-neutral-700/50 dark:bg-neutral-900/80 dark:hover:border-blue-500/30',
-          open && 'border-blue-400/50 shadow-xl ring-2 shadow-blue-500/10 ring-blue-500/20',
+          'hover:border-primary-300/50 hover:shadow-lg hover:shadow-primary-500/5',
+          'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50',
+          'dark:border-neutral-700/50 dark:bg-neutral-900/80 dark:hover:border-primary-500/30',
+          open && 'border-primary-400/50 shadow-xl ring-2 shadow-primary-500/10 ring-primary-500/20',
           disabled && 'cursor-not-allowed opacity-50',
           className
         )}
@@ -396,7 +396,7 @@ export function DateRangePicker({
         <div
           className={cn(
             'flex flex-1 flex-col items-start gap-1 px-4 py-3 transition-colors',
-            selectionMode === 'departure' && open && 'bg-blue-50/50 dark:bg-blue-900/20'
+            selectionMode === 'departure' && open && 'bg-primary-50/50 dark:bg-primary-900/20'
           )}
         >
           <span className="flex items-center gap-1.5 text-[10px] font-bold tracking-wider text-neutral-400 uppercase">
@@ -418,7 +418,7 @@ export function DateRangePicker({
           <div className="flex flex-col items-center justify-center border-x border-neutral-100 px-3 dark:border-neutral-800">
             {tripDuration ? (
               <>
-                <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
+                <span className="text-xs font-bold text-primary-600 dark:text-primary-400">
                   {tripDuration}
                 </span>
                 <span className="text-[9px] font-medium text-neutral-400">{t.nights}</span>
@@ -434,7 +434,7 @@ export function DateRangePicker({
           <div
             className={cn(
               'flex flex-1 flex-col items-start gap-1 px-4 py-3 transition-colors',
-              selectionMode === 'return' && open && 'bg-blue-50/50 dark:bg-blue-900/20'
+              selectionMode === 'return' && open && 'bg-primary-50/50 dark:bg-primary-900/20'
             )}
           >
             <span className="flex items-center gap-1.5 text-[10px] font-bold tracking-wider text-neutral-400 uppercase">
@@ -473,7 +473,7 @@ export function DateRangePicker({
                 className={cn(
                   'flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-all',
                   selectionMode === 'departure'
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
+                    ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/25'
                     : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
                 )}
               >
@@ -489,7 +489,7 @@ export function DateRangePicker({
                   className={cn(
                     'flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold transition-all',
                     selectionMode === 'return'
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
+                      ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/25'
                       : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700',
                     !departureDate && 'cursor-not-allowed opacity-50'
                   )}
@@ -569,8 +569,8 @@ export function DateRangePicker({
                     onClick={() => handlePreset(days)}
                     className={cn(
                       'rounded-lg px-3 py-1.5 text-xs font-medium transition-all',
-                      'bg-neutral-100 text-neutral-700 hover:bg-blue-100 hover:text-blue-700',
-                      'dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-blue-900/40 dark:hover:text-blue-300'
+                      'bg-neutral-100 text-neutral-700 hover:bg-primary-100 hover:text-primary-700',
+                      'dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-primary-900/40 dark:hover:text-primary-300'
                     )}
                   >
                     {label}

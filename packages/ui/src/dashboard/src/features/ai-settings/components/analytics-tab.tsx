@@ -270,11 +270,11 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
         <div
           className={cn(
             'rounded-2xl p-4',
-            'bg-gradient-to-br from-blue-500/10 to-blue-600/5',
-            'border border-blue-200/50 dark:border-blue-500/20'
+            'bg-gradient-to-br from-primary-500/10 to-primary-600/5',
+            'border border-primary-200/50 dark:border-primary-500/20'
           )}
         >
-          <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+          <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400">
             <MessageSquare className="h-5 w-5" />
             <span className="text-xs font-medium">{t('metrics.messages')}</span>
           </div>
@@ -359,7 +359,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
           )}
         >
           <div className="flex items-center gap-2">
-            <Users className="h-5 w-5 text-blue-500" />
+            <Users className="h-5 w-5 text-primary-500" />
             <span className="text-2xl font-bold text-neutral-900 dark:text-white">
               {stats?.uniqueUsers}
             </span>

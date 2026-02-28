@@ -37,11 +37,11 @@ const roleConfig: Record<string, { color: string; icon: typeof User }> = {
     icon: User,
   },
   COACH: {
-    color: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300',
+    color: 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300',
     icon: Dumbbell,
   },
   ADMIN: {
-    color: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300',
+    color: 'bg-secondary-100 text-secondary-700 dark:bg-secondary-900/30 dark:text-secondary-300',
     icon: Shield,
   },
   SUPER_ADMIN: {
@@ -108,8 +108,8 @@ export function UserCard({
   // Avatar background based on role
   const avatarColors: Record<string, string> = {
     USER: 'bg-gradient-to-br from-neutral-400 to-neutral-600',
-    COACH: 'bg-gradient-to-br from-blue-400 to-blue-600',
-    ADMIN: 'bg-gradient-to-br from-purple-400 to-purple-600',
+    COACH: 'bg-gradient-to-br from-primary-400 to-primary-600',
+    ADMIN: 'bg-gradient-to-br from-secondary-400 to-secondary-600',
     SUPER_ADMIN: 'bg-gradient-to-br from-amber-400 to-amber-600',
   };
 

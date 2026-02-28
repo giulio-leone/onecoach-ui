@@ -330,7 +330,7 @@ export function ExerciseCombobox({
           }}
           placeholder={effectivePlaceholder}
           autoFocus={autoFocus}
-          className="w-full rounded-lg border border-neutral-300 px-3 py-2 pr-9 pl-9 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-neutral-600"
+          className="w-full rounded-lg border border-neutral-300 px-3 py-2 pr-9 pl-9 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600"
           aria-label={t('search')}
           aria-autocomplete="list"
           aria-expanded={isOpen}
@@ -372,7 +372,7 @@ export function ExerciseCombobox({
               onMouseEnter={() => setSelectedIndex(index)}
               className={`flex w-full items-start gap-3 border-b border-neutral-100 px-4 py-3 text-left transition-colors last:border-b-0 ${
                 index === selectedIndex
-                  ? 'bg-blue-50 text-blue-900'
+                  ? 'bg-primary-50 text-primary-900'
                   : 'text-neutral-900 hover:bg-neutral-50 dark:bg-neutral-800/50 dark:text-neutral-100'
               }`}
             >
@@ -401,7 +401,7 @@ export function ExerciseCombobox({
                   </div>
                 )}
               </div>
-              {index === selectedIndex && <Check className="h-4 w-4 flex-shrink-0 text-blue-600" />}
+              {index === selectedIndex && <Check className="h-4 w-4 flex-shrink-0 text-primary-600" />}
             </button>
           ))}
         </div>

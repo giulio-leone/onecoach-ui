@@ -156,7 +156,7 @@ export function SetEditor({
     <div
       className={`rounded-lg border p-4 shadow-sm transition-all ${
         groupId
-          ? 'border-blue-300 bg-blue-50'
+          ? 'border-primary-300 bg-primary-50'
           : 'border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/50'
       } ${isDisabled ? 'opacity-60' : ''} ${className || ''}`}
     >
@@ -165,7 +165,7 @@ export function SetEditor({
           Serie {setIndex + 1}
         </div>
         {groupId && (
-          <span className="rounded bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700">
+          <span className="rounded bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-700">
             Gruppo
           </span>
         )}
@@ -192,7 +192,7 @@ export function SetEditor({
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
                   ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-neutral-600'
               }`}
               placeholder="Min"
               min="0"
@@ -212,7 +212,7 @@ export function SetEditor({
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
                   ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-neutral-600'
               }`}
               placeholder="Max"
               min="0"
@@ -230,7 +230,7 @@ export function SetEditor({
               </span>
             )}
             {!weightInputFocused && set.intensityPercent && hasOneRM && (
-              <Calculator className="h-3 w-3 text-blue-600" aria-label="Calcolato da intensità" />
+              <Calculator className="h-3 w-3 text-primary-600" aria-label="Calcolato da intensità" />
             )}
           </label>
           <div className="flex items-center gap-2">
@@ -248,8 +248,8 @@ export function SetEditor({
                 isDisabled
                   ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
                   : !weightInputFocused && set.intensityPercent && hasOneRM
-                    ? 'border-blue-300 bg-blue-50 text-blue-900'
-                    : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                    ? 'border-primary-300 bg-primary-50 text-primary-900'
+                    : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-neutral-600'
               }`}
               placeholder="Min"
               min="0"
@@ -268,7 +268,7 @@ export function SetEditor({
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
                   ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-neutral-600'
               }`}
               placeholder="Max"
               min="0"
@@ -286,7 +286,7 @@ export function SetEditor({
               </span>
             )}
             {!intensityPercentInputFocused && set.weight && hasOneRM && (
-              <Calculator className="h-3 w-3 text-blue-600" aria-label="Calcolato da peso" />
+              <Calculator className="h-3 w-3 text-primary-600" aria-label="Calcolato da peso" />
             )}
           </label>
           <div className="flex items-center gap-2">
@@ -306,8 +306,8 @@ export function SetEditor({
                 isDisabled
                   ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
                   : !intensityPercentInputFocused && set.weight && hasOneRM
-                    ? 'border-blue-300 bg-blue-50 text-blue-900'
-                    : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                    ? 'border-primary-300 bg-primary-50 text-primary-900'
+                    : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-neutral-600'
               }`}
               placeholder="Min"
             />
@@ -326,7 +326,7 @@ export function SetEditor({
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
                   ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-neutral-600'
               }`}
               placeholder="Max"
             />
@@ -349,7 +349,7 @@ export function SetEditor({
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
                   ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-neutral-600'
               }`}
               placeholder="Min"
             />
@@ -367,7 +367,7 @@ export function SetEditor({
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
                   ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-neutral-600'
               }`}
               placeholder="Max"
             />
@@ -394,7 +394,7 @@ export function SetEditor({
             className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
               isDisabled
                 ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-neutral-600'
             }`}
             placeholder="60"
             min="0"
@@ -404,7 +404,7 @@ export function SetEditor({
 
       {/* 1RM Info */}
       {hasOneRM && oneRepMax && (
-        <div className="mt-3 rounded bg-blue-50 p-2 text-xs text-blue-700">
+        <div className="mt-3 rounded bg-primary-50 p-2 text-xs text-primary-700">
           💡 1RM: {oneRepMax.toFixed(1)} {weightUnit === 'LBS' ? 'lbs' : 'kg'}
           {set.intensityPercent && !isNaN(parseFloat(set.intensityPercent.toString())) && (
             <span>

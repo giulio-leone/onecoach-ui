@@ -118,7 +118,7 @@ export function OneRMEstimator({
       className={`rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-800 ${className}`}
     >
       <div className="mb-3 flex items-center gap-2">
-        <Calculator className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+        <Calculator className="h-4 w-4 text-primary-600 dark:text-primary-400" />
         <h4 className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
           {t('workouts.one_rm_estimator.stima_1rm_per')}
           {exerciseName}
@@ -147,7 +147,7 @@ export function OneRMEstimator({
             value={weight}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setWeight(e.target.value)}
             placeholder={weightUnit === 'LBS' ? '176' : '80'}
-            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100"
+            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100"
           />
         </div>
 
@@ -163,7 +163,7 @@ export function OneRMEstimator({
             value={reps}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setReps(e.target.value)}
             placeholder="8"
-            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100"
+            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100"
           />
         </div>
 
@@ -177,7 +177,7 @@ export function OneRMEstimator({
           </label>
           <select
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setRpe(e.target.value)}
-            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100"
+            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-700 dark:text-neutral-100"
           >
             <option value="10">{t('workouts.one_rm_estimator.10_max')}</option>
             <option value="9.5">9.5</option>
@@ -194,15 +194,15 @@ export function OneRMEstimator({
       {/* Estimate Display */}
       {estimatedOneRM !== null && (
         <div className="mt-4">
-          <div className="mb-2 rounded-md bg-blue-50 p-3 dark:bg-blue-900/20">
+          <div className="mb-2 rounded-md bg-primary-50 p-3 dark:bg-primary-900/20">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-blue-900 dark:text-blue-100">
+                <p className="text-sm font-medium text-primary-900 dark:text-primary-100">
                   {t('workouts.one_rm_estimator.1rm_stimato')}
                   <span className="text-lg">{displayEstimate}</span>{' '}
                   {weightUnit === 'LBS' ? 'lbs' : 'kg'}
                 </p>
-                <p className="mt-1 text-xs text-blue-700 dark:text-blue-300">
+                <p className="mt-1 text-xs text-primary-700 dark:text-primary-300">
                   {t('workouts.one_rm_estimator.formula_epley_peso_1_reps_30_con_correzi')}
                 </p>
               </div>
@@ -211,7 +211,7 @@ export function OneRMEstimator({
 
           <button
             onClick={handleUseEstimate}
-            className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
+            className="w-full rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-primary-700"
           >
             {t('workouts.one_rm_estimator.usa_questa_stima_come_1rm')}
           </button>

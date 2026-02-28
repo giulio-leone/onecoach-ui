@@ -40,7 +40,7 @@ export interface ButtonLinkProps {
 // Ideally this would be shared, but extracting it might break existing button.tsx imports/exports structure unnecessarily for now.
 const variantStyles = {
   primary:
-    'relative overflow-hidden border border-white/20 bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] text-white shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur-sm',
+    'relative overflow-hidden border border-white/20 bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] text-white shadow-[0_0_20px_rgba(79,70,229,0.5)] hover:shadow-[0_0_30px_rgba(79,70,229,0.7)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur-sm',
   secondary:
     'relative overflow-hidden border border-neutral-200/80 bg-white/80 text-neutral-900 shadow-sm hover:bg-neutral-50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:border-white/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10 backdrop-blur-md',
   danger:
@@ -59,7 +59,7 @@ const variantStyles = {
   'gradient-primary':
     'relative overflow-hidden shadow-md shadow-violet-500/20 bg-gradient-to-br from-violet-600 to-indigo-600 text-white hover:from-violet-500 hover:to-indigo-500 hover:shadow-lg hover:shadow-violet-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
   'gradient-secondary':
-    'relative overflow-hidden shadow-md shadow-fuchsia-500/20 bg-gradient-to-br from-fuchsia-500 to-pink-600 text-white hover:from-fuchsia-400 hover:to-pink-500 hover:shadow-lg hover:shadow-fuchsia-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
+    'relative overflow-hidden shadow-md shadow-secondary-500/20 bg-gradient-to-br from-secondary-500 to-secondary-600 text-white hover:from-secondary-400 hover:to-secondary-500 hover:shadow-lg hover:shadow-secondary-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
 };
 
 const sizeStyles = {

@@ -93,17 +93,17 @@ export interface ProgramsPageLabels {
 
 const themeConfig = {
   blue: {
-    headerIconGradient: 'from-blue-500 to-indigo-600',
-    headerIconShadow: 'shadow-blue-500/20',
-    ctaGradient: 'from-blue-600 to-indigo-700 dark:from-blue-700 dark:to-indigo-800',
-    ctaTextMuted: 'text-blue-100',
-    ctaButtonText: 'text-blue-600',
-    ctaButtonHover: 'hover:bg-blue-50',
+    headerIconGradient: 'from-primary-500 to-indigo-600',
+    headerIconShadow: 'shadow-primary-500/20',
+    ctaGradient: 'from-primary-600 to-indigo-700 dark:from-primary-700 dark:to-indigo-800',
+    ctaTextMuted: 'text-primary-100',
+    ctaButtonText: 'text-primary-600',
+    ctaButtonHover: 'hover:bg-primary-50',
     importButtonStyle: cn(
       'border border-emerald-200 bg-emerald-50 text-emerald-700 hover:border-emerald-300 hover:bg-emerald-100',
       'dark:border-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 dark:hover:bg-emerald-900/50'
     ),
-    tipDot: 'text-blue-500',
+    tipDot: 'text-primary-500',
   },
   emerald: {
     headerIconGradient: 'from-green-500 to-emerald-600',

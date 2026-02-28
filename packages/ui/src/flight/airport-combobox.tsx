@@ -91,8 +91,8 @@ const AirportItem = React.memo(function AirportItem({
       onClick={onSelect}
       className={cn(
         'flex w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-all duration-150',
-        'hover:bg-blue-50 dark:hover:bg-blue-500/10',
-        isSelected && 'bg-blue-50 dark:bg-blue-500/20'
+        'hover:bg-primary-50 dark:hover:bg-primary-500/10',
+        isSelected && 'bg-primary-50 dark:bg-primary-500/20'
       )}
     >
       {/* Checkbox */}
@@ -100,7 +100,7 @@ const AirportItem = React.memo(function AirportItem({
         className={cn(
           'flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 transition-colors',
           isSelected
-            ? 'border-blue-500 bg-blue-500 text-white'
+            ? 'border-primary-500 bg-primary-500 text-white'
             : 'border-neutral-300 dark:border-neutral-600'
         )}
       >
@@ -154,10 +154,10 @@ function SelectedChips({
       {selectedAirports.map((airport: any) => (
         <span
           key={airport.code}
-          className="group flex items-center gap-1.5 rounded-full bg-blue-100 py-1 pr-1 pl-2.5 text-xs font-medium text-blue-700 transition-colors hover:bg-blue-200 dark:bg-blue-500/20 dark:text-blue-300 dark:hover:bg-blue-500/30"
+          className="group flex items-center gap-1.5 rounded-full bg-primary-100 py-1 pr-1 pl-2.5 text-xs font-medium text-primary-700 transition-colors hover:bg-primary-200 dark:bg-primary-500/20 dark:text-primary-300 dark:hover:bg-primary-500/30"
         >
           <span className="font-bold">{airport.code}</span>
-          <span className="max-w-[100px] truncate text-blue-600/70 dark:text-blue-400/70">
+          <span className="max-w-[100px] truncate text-primary-600/70 dark:text-primary-400/70">
             {airport.city}
           </span>
           <button
@@ -166,7 +166,7 @@ function SelectedChips({
               e.stopPropagation();
               onRemove(airport.code);
             }}
-            className="flex h-4 w-4 items-center justify-center rounded-full bg-blue-200 transition-colors hover:bg-blue-300 dark:bg-blue-500/40 dark:hover:bg-blue-500/60"
+            className="flex h-4 w-4 items-center justify-center rounded-full bg-primary-200 transition-colors hover:bg-primary-300 dark:bg-primary-500/40 dark:hover:bg-primary-500/60"
           >
             <X size={10} weight="bold" />
           </button>
@@ -351,14 +351,14 @@ export function AirportCombobox({
             disabled={disabled}
             className={cn(
               'relative flex h-14 w-full items-center justify-between rounded-2xl border-2 bg-white/50 px-4 py-3 text-left text-sm font-medium backdrop-blur-md transition-all duration-200',
-              'hover:bg-white/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50',
+              'hover:bg-white/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50',
               'dark:border-white/10 dark:bg-black/20 dark:hover:bg-black/30',
-              open && 'border-blue-500/50 ring-2 ring-blue-500/20',
+              open && 'border-primary-500/50 ring-2 ring-primary-500/20',
               disabled && 'cursor-not-allowed opacity-50'
             )}
           >
             <div className="flex items-center gap-3">
-              <Airplane className="h-5 w-5 text-blue-500" weight="duotone" />
+              <Airplane className="h-5 w-5 text-primary-500" weight="duotone" />
               {triggerLabel}
             </div>
             <CaretDown
@@ -393,12 +393,12 @@ export function AirportCombobox({
                   className={cn(
                     'w-full rounded-xl border border-neutral-200 bg-white py-2.5 pr-10 pl-10 text-sm transition-colors',
                     'placeholder:text-neutral-400',
-                    'focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none',
+                    'focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
                     'dark:border-neutral-700 dark:bg-neutral-800 dark:text-white'
                   )}
                 />
                 {isSearching && (
-                  <SpinnerGap className="absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 animate-spin text-blue-500" />
+                  <SpinnerGap className="absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 animate-spin text-primary-500" />
                 )}
                 {searchQuery && !isSearching && !isSearching && (
                   <button
@@ -429,7 +429,7 @@ export function AirportCombobox({
                 <div className="flex flex-col items-center justify-center py-8 text-center">
                   {isSearching ? (
                     <>
-                      <SpinnerGap className="mb-2 h-6 w-6 animate-spin text-blue-500" />
+                      <SpinnerGap className="mb-2 h-6 w-6 animate-spin text-primary-500" />
                       <p className="text-sm text-neutral-500">{t.loading}</p>
                     </>
                   ) : debouncedQuery.length >= 2 ? (

@@ -25,26 +25,26 @@ export const WorkoutCard = ({ program, onView, onDelete }: WorkoutCardProps) => 
     <Card variant="hover">
       <div className="mb-4 flex items-start justify-between">
         <div className="flex-1">
-          <h3 className="mb-3 flex items-center gap-2 text-xl font-bold text-slate-900">
+          <h3 className="mb-3 flex items-center gap-2 text-xl font-bold text-neutral-900">
             <div className="rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 p-2">
               <Dumbbell size={18} className="text-white" />
             </div>
             {program.name}
           </h3>
           <div className="grid grid-cols-2 gap-2 text-sm">
-            <div className="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 text-slate-600">
+            <div className="flex items-center gap-2 rounded-lg bg-neutral-50 px-3 py-2 text-neutral-600">
               <Target size={14} className="text-emerald-600" />
               <span>{program.goals?.[0] || 'Fitness'}</span>
             </div>
-            <div className="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 text-slate-600">
-              <Calendar size={14} className="text-blue-600" />
+            <div className="flex items-center gap-2 rounded-lg bg-neutral-50 px-3 py-2 text-neutral-600">
+              <Calendar size={14} className="text-primary-600" />
               <span>{program.durationWeeks} settimane</span>
             </div>
-            <div className="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 text-slate-600">
+            <div className="flex items-center gap-2 rounded-lg bg-neutral-50 px-3 py-2 text-neutral-600">
               <TrendingUp size={14} className="text-amber-600" />
               <span>{program.difficulty}</span>
             </div>
-            <div className="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2 text-slate-600">
+            <div className="flex items-center gap-2 rounded-lg bg-neutral-50 px-3 py-2 text-neutral-600">
               <Clock size={14} className="text-orange-600" />
               <span>
                 {program.weeks[0]?.days.length || 0} {t('common.workout_card.gg_sett')}
@@ -69,7 +69,7 @@ export const WorkoutCard = ({ program, onView, onDelete }: WorkoutCardProps) => 
       </div>
 
       {program.weeks && program.weeks[0] && (
-        <div className="mt-4 border-t border-slate-200 pt-4">
+        <div className="mt-4 border-t border-neutral-200 pt-4">
           <p className="mb-2 text-xs font-semibold tracking-wide text-emerald-700 uppercase">
             {t('common.workout_card.anteprima_settimana_1')}
           </p>
@@ -77,14 +77,14 @@ export const WorkoutCard = ({ program, onView, onDelete }: WorkoutCardProps) => 
             {program.weeks[0].days.slice(0, 2).map((day: WorkoutDay, idx: number) => (
               <div
                 key={idx}
-                className="rounded-lg border border-slate-100 bg-gradient-to-r from-slate-50 to-emerald-50 p-2 text-sm text-slate-700"
+                className="rounded-lg border border-neutral-100 bg-gradient-to-r from-neutral-50 to-emerald-50 p-2 text-sm text-neutral-700"
               >
                 <span className="font-semibold text-emerald-700">Giorno {day.dayNumber}:</span>{' '}
                 {day.name}
               </div>
             ))}
             {program.weeks[0].days.length > 2 && (
-              <p className="mt-2 text-xs text-slate-500">
+              <p className="mt-2 text-xs text-neutral-500">
                 +{program.weeks[0].days.length - 2} {t('common.workout_card.altri_giorni')}
               </p>
             )}

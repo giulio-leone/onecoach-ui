@@ -91,7 +91,7 @@ export function CartsPageClient() {
             label={t('stats.active')}
             value={stats.active}
             icon={ShoppingCart}
-            color="text-blue-600 dark:text-blue-400"
+            color="text-primary-600 dark:text-primary-400"
           />
           <StatCard
             label={t('stats.abandoned')}

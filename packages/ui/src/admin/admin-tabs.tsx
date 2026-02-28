@@ -113,12 +113,12 @@ export function AdminTabs({ tabs, defaultTab, onTabChange, className }: AdminTab
                 'min-h-[44px] min-w-[44px]', // Touch-friendly
                 'sm:px-4 sm:py-3',
                 'lg:min-w-0 lg:flex-1', // Desktop: flex-1 per distribuzione uniforme
-                'focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none',
+                'focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none',
                 isDisabled
                   ? 'cursor-not-allowed opacity-50'
                   : 'cursor-pointer hover:border-neutral-300 dark:hover:border-neutral-600',
                 isActive
-                  ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
+                  ? 'border-primary-600 text-primary-600 dark:border-primary-400 dark:text-primary-400'
                   : 'border-transparent text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300'
               )}
               aria-current={isActive ? 'page' : undefined}
@@ -131,7 +131,7 @@ export function AdminTabs({ tabs, defaultTab, onTabChange, className }: AdminTab
                       'flex-shrink-0 rounded-full px-1.5 py-0.5 text-xs font-semibold',
                       'sm:px-2',
                       isActive
-                        ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300'
+                        ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300'
                         : 'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400'
                     )}
                   >

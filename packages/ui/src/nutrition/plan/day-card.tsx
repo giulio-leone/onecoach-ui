@@ -89,17 +89,17 @@ export function DayCard({
         style={dragProps?.style}
         className={cn(
           'overflow-hidden rounded-2xl border transition-all duration-300',
-          'bg-slate-900/40 backdrop-blur-xl',
-          'border-slate-800',
-          'hover:border-slate-700',
+          'bg-neutral-900/40 backdrop-blur-xl',
+          'border-neutral-800',
+          'hover:border-neutral-700',
           isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-emerald-500/30' : ''
         )}
       >
         <div
           className={cn(
             'flex flex-col gap-3 border-b p-4 sm:flex-row sm:items-center sm:justify-between',
-            'border-slate-800',
-            'bg-slate-900/60'
+            'border-neutral-800',
+            'bg-neutral-900/60'
           )}
         >
           <div className="flex items-center gap-3">
@@ -109,7 +109,7 @@ export function DayCard({
                 {...(dragProps?.listeners || {})}
                 className={cn(
                   '-ml-2 flex min-h-[44px] min-w-[44px] flex-shrink-0 cursor-grab touch-manipulation items-center justify-center rounded-lg transition-all duration-200 active:cursor-grabbing',
-                  'text-slate-600 hover:text-slate-400 hover:bg-slate-800/50'
+                  'text-neutral-600 hover:text-neutral-400 hover:bg-neutral-800/50'
                 )}
                 aria-label={t('ariaLabels.dragDay')}
               >
@@ -122,10 +122,10 @@ export function DayCard({
               variant="ghost"
               onClick={onToggle}
               className={cn(
-                '-mx-2 flex items-center gap-2 rounded-lg px-2 text-lg font-bold tracking-tight text-white transition-colors hover:text-emerald-400 hover:bg-slate-800/50'
+                '-mx-2 flex items-center gap-2 rounded-lg px-2 text-lg font-bold tracking-tight text-white transition-colors hover:text-emerald-400 hover:bg-neutral-800/50'
               )}
             >
-              <span className="uppercase text-slate-500 text-xs font-bold tracking-widest">{t('viewer.labels.day')}</span>
+              <span className="uppercase text-neutral-500 text-xs font-bold tracking-widest">{t('viewer.labels.day')}</span>
               <span className="text-xl">{day.dayNumber}</span>
             </Button>
           </div>
@@ -147,7 +147,7 @@ export function DayCard({
                 size="sm"
                 onClick={onAddMealFromTemplate}
                 className={cn(
-                  'gap-1.5 px-3.5 text-xs font-semibold whitespace-nowrap border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
+                  'gap-1.5 px-3.5 text-xs font-semibold whitespace-nowrap border-neutral-700 bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-white'
                 )}
                 title={t('visualBuilder.dayEditor.loadFromTemplate')}
               >
@@ -164,7 +164,7 @@ export function DayCard({
                   onSaveDayAsTemplate();
                 }}
                 className={cn(
-                  'h-9 w-9 text-slate-400 hover:text-white hover:bg-slate-800'
+                  'h-9 w-9 text-neutral-400 hover:text-white hover:bg-neutral-800'
                 )}
                 title={t('saveAsTemplate.day')}
               >
@@ -176,7 +176,7 @@ export function DayCard({
               size="icon"
               onClick={onRemoveDay}
               className={cn(
-                'h-9 w-9 text-slate-500 hover:text-red-400 hover:bg-red-500/10'
+                'h-9 w-9 text-neutral-500 hover:text-red-400 hover:bg-red-500/10'
               )}
               aria-label={t('ariaLabels.removeDay')}
             >
@@ -188,8 +188,8 @@ export function DayCard({
         {isExpanded && (
           <div className={cn('animate-in fade-in slide-in-from-top-2 space-y-4 p-4 duration-300')}>
             {day.meals.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-12 text-center border-2 border-dashed border-slate-800 rounded-xl bg-slate-900/20">
-                <p className="text-slate-500 font-medium">
+              <div className="flex flex-col items-center justify-center py-12 text-center border-2 border-dashed border-neutral-800 rounded-xl bg-neutral-900/20">
+                <p className="text-neutral-500 font-medium">
                   {t('emptyStates.noMeals')}
                 </p>
                 <Button 

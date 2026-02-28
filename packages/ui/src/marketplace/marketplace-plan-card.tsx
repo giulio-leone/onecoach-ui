@@ -100,7 +100,7 @@ export function MarketplacePlanCard({ plan }: { plan: MarketplacePlanCardProps }
               )}
               <span className="flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400">
                 {plan.coach.name || 'Coach'}
-                {isVerified && <CheckCircle2 className="h-4 w-4 text-blue-500" />}
+                {isVerified && <CheckCircle2 className="h-4 w-4 text-primary-500" />}
               </span>
             </div>
           ) : (
@@ -120,7 +120,7 @@ export function MarketplacePlanCard({ plan }: { plan: MarketplacePlanCardProps }
               )}
               <span className="flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400">
                 {plan.coach.name || 'Coach'}
-                {isVerified && <CheckCircle2 className="h-4 w-4 text-blue-500" />}
+                {isVerified && <CheckCircle2 className="h-4 w-4 text-primary-500" />}
               </span>
             </div>
           )}

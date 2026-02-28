@@ -35,7 +35,7 @@ export function RouteGroup({
       className={cn(
         'overflow-hidden transition-all duration-300',
         'border border-white/20 dark:border-white/10',
-        isExpanded && 'ring-2 ring-blue-500/20'
+        isExpanded && 'ring-2 ring-primary-500/20'
       )}
     >
       {/* Header - Always visible */}
@@ -44,12 +44,12 @@ export function RouteGroup({
         className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-white/5"
       >
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10">
-            <Plane className="h-6 w-6 text-blue-500" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500/10">
+            <Plane className="h-6 w-6 text-primary-500" />
           </div>
           <div>
             <h3 className="text-lg font-bold text-neutral-900 dark:text-white">
-              {group.cityFrom} <span className="text-blue-500">→</span> {group.cityTo}
+              {group.cityFrom} <span className="text-primary-500">→</span> {group.cityTo}
             </h3>
             <p className="text-sm text-neutral-500">
               {group.flyFrom} - {group.flyTo} •{' '}
@@ -63,7 +63,7 @@ export function RouteGroup({
             <p className="text-xs font-medium text-neutral-500 uppercase">
               {t('results.lowestFrom', { price: group.lowestPrice })}
             </p>
-            <p className="text-2xl font-black text-blue-600 dark:text-blue-400">
+            <p className="text-2xl font-black text-primary-600 dark:text-primary-400">
               €{group.lowestPrice}
             </p>
           </div>

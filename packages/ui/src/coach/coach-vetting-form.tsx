@@ -159,8 +159,8 @@ export function CoachVettingForm({ hasPendingRequest, hasApprovedRequest }: Coac
             />
           </div>
         </div>
-        <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-900/20">
-          <Text size="sm" className="text-blue-800 dark:text-blue-300">
+        <div className="rounded-lg border border-primary-200 bg-primary-50 p-4 dark:border-primary-800 dark:bg-primary-900/20">
+          <Text size="sm" className="text-primary-800 dark:text-primary-300">
             <strong>{t('coach_vetting_form.nota')}</strong>{' '}
             {t('coach_vetting_form.dopo_l_invio_la_tua_richiesta_verra_revi')}
           </Text>

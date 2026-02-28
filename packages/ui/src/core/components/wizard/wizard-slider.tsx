@@ -36,8 +36,8 @@ export function WizardSlider({
     >
       <div className="flex flex-row items-center justify-between">
         <label className="text-sm font-medium text-neutral-900 dark:text-white">{label}</label>
-        <div className="rounded-lg bg-blue-100 px-3 py-1 dark:bg-blue-900/30">
-          <span className="text-xs font-bold text-blue-700 dark:text-blue-300">
+        <div className="rounded-lg bg-primary-100 px-3 py-1 dark:bg-primary-900/30">
+          <span className="text-xs font-bold text-primary-700 dark:text-primary-300">
             {value} {valueLabel}
           </span>
         </div>
@@ -51,7 +51,7 @@ export function WizardSlider({
           step={step}
           value={value}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(Number(e.target.value))}
-          className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-200 accent-blue-600 dark:bg-neutral-700 dark:accent-blue-500"
+          className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-200 accent-primary-600 dark:bg-neutral-700 dark:accent-primary-500"
         />
       </div>
 

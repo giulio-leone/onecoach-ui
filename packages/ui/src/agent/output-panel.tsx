@@ -43,16 +43,16 @@ export function StreamingOutputPanel({
       accent: 'text-green-700',
     },
     workout: {
-      border: 'border-blue-200',
-      bg: 'bg-blue-50',
-      icon: 'text-blue-600',
-      accent: 'text-blue-700',
+      border: 'border-primary-200',
+      bg: 'bg-primary-50',
+      icon: 'text-primary-600',
+      accent: 'text-primary-700',
     },
     chat: {
-      border: 'border-purple-200',
-      bg: 'bg-purple-50',
-      icon: 'text-purple-600',
-      accent: 'text-purple-700',
+      border: 'border-secondary-200',
+      bg: 'bg-secondary-50',
+      icon: 'text-secondary-600',
+      accent: 'text-secondary-700',
     },
   };
 
@@ -164,8 +164,8 @@ export function StreamingOutputPanel({
               colorTheme === 'nutrition'
                 ? 'from-green-500 to-emerald-600'
                 : colorTheme === 'workout'
-                  ? 'from-blue-500 to-indigo-600'
-                  : 'from-purple-500 to-violet-600'
+                  ? 'from-primary-500 to-indigo-600'
+                  : 'from-secondary-500 to-violet-600'
             }`}
           >
             {t('common.output_panel.salva_piano')}

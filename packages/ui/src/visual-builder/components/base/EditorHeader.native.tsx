@@ -41,7 +41,7 @@ export function EditorHeader({
   const gradientClass =
     saveButtonVariant === 'green'
       ? 'bg-green-600 dark:bg-green-700'
-      : 'bg-blue-600 dark:bg-blue-700';
+      : 'bg-primary-600 dark:bg-primary-700';
 
   return (
     <View

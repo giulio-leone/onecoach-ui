@@ -34,11 +34,11 @@ export const ErrorState = ({
     description ?? message ?? errorMessage ?? 'Something went wrong. Please try again later.';
 
   return (
-    <div className={`animate-fadeIn mt-20 text-center text-slate-500 ${className}`}>
+    <div className={`animate-fadeIn mt-20 text-center text-neutral-500 ${className}`}>
       <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full border border-red-200 bg-gradient-to-br from-red-50 to-red-100 dark:border-red-800 dark:from-red-900/20 dark:to-red-800/20">
         <AlertCircle size={40} className="text-red-500 dark:text-red-400" />
       </div>
-      <p className="mb-2 text-xl font-semibold text-slate-700 dark:text-slate-300">{errorTitle}</p>
+      <p className="mb-2 text-xl font-semibold text-neutral-700 dark:text-neutral-300">{errorTitle}</p>
       <p className="mb-4 text-sm text-red-600 dark:text-red-400">{errorDescription}</p>
       {action && <div className="mt-4">{action}</div>}
     </div>

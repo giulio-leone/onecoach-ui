@@ -53,14 +53,14 @@ export function LiveSupersetCard({
   return (
     <Card variant="glass" className={`overflow-hidden ${className}`} gradient={allComplete}>
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-5 py-4 dark:from-purple-500/20 dark:to-pink-500/20">
+      <div className="bg-gradient-to-r from-secondary-500/10 to-secondary-500/10 px-5 py-4 dark:from-secondary-500/20 dark:to-secondary-500/20">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500/20 dark:bg-purple-500/30">
-            <Layers className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-500/20 dark:bg-secondary-500/30">
+            <Layers className="h-5 w-5 text-secondary-600 dark:text-secondary-400" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="rounded-full bg-purple-100 px-2 py-0.5 text-[10px] font-bold text-purple-700 uppercase dark:bg-purple-500/20 dark:text-purple-400">
+              <span className="rounded-full bg-secondary-100 px-2 py-0.5 text-[10px] font-bold text-secondary-700 uppercase dark:bg-secondary-500/20 dark:text-secondary-400">
                 SUPERSET
               </span>
               {allComplete && (
@@ -90,14 +90,14 @@ export function LiveSupersetCard({
                   completedExercises.has(idx)
                     ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400'
                     : expandedExercise === idx
-                      ? 'bg-purple-100 text-purple-700 dark:bg-purple-500/20 dark:text-purple-400'
+                      ? 'bg-secondary-100 text-secondary-700 dark:bg-secondary-500/20 dark:text-secondary-400'
                       : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
                 }`}
               >
                 {ex.name}
               </div>
               {idx < superset.exercises.length - 1 && (
-                <div className="h-0.5 w-4 bg-purple-300 dark:bg-purple-600" />
+                <div className="h-0.5 w-4 bg-secondary-300 dark:bg-secondary-600" />
               )}
             </div>
           ))}
@@ -160,7 +160,7 @@ export function LiveSupersetCard({
 
                   <button
                     onClick={() => handleExerciseDone(exerciseIdx)}
-                    className="w-full rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 py-3 text-sm font-bold text-white transition-all hover:shadow-lg"
+                    className="w-full rounded-xl bg-gradient-to-r from-secondary-500 to-secondary-500 py-3 text-sm font-bold text-white transition-all hover:shadow-lg"
                   >
                     <CheckCircle2 className="mr-2 inline-block h-4 w-4" />
                     Fatto

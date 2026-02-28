@@ -74,11 +74,11 @@ export function PromptPreview({ agentId, template, variables, className }: Promp
   return (
     <div
       className={cn(
-        'flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950',
+        'flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950',
         className
       )}
     >
-      <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3 dark:border-slate-800">
+      <div className="flex items-center justify-between border-b border-neutral-200 px-4 py-3 dark:border-neutral-800">
         <h3 className="font-semibold">Preview</h3>
         <div className="flex gap-2">
           <Button variant="outline" size="sm" onClick={generatePreview} disabled={loading}>
@@ -97,13 +97,13 @@ export function PromptPreview({ agentId, template, variables, className }: Promp
         </div>
       </div>
 
-      <div className="flex-1 overflow-auto bg-slate-50 p-4 dark:bg-slate-900/50">
+      <div className="flex-1 overflow-auto bg-neutral-50 p-4 dark:bg-neutral-900/50">
         {preview ? (
-          <pre className="font-mono text-sm whitespace-pre-wrap text-slate-800 dark:text-slate-200">
+          <pre className="font-mono text-sm whitespace-pre-wrap text-neutral-800 dark:text-neutral-200">
             {preview}
           </pre>
         ) : (
-          <div className="flex h-full flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+          <div className="flex h-full flex-col items-center justify-center text-neutral-400 dark:text-neutral-500">
             <Play className="mb-2 h-8 w-8 opacity-20" />
             <p className="text-sm">{t('admin.prompt_preview.click_run_to_generate_preview')}</p>
             <p className="mt-1 text-xs opacity-70">

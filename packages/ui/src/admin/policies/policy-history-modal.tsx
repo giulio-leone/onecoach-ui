@@ -89,8 +89,8 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
         {/* Header */}
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200 bg-white px-6 py-4 dark:border-neutral-700 dark:bg-neutral-900">
           <div className="flex items-center gap-3">
-            <div className="rounded-lg bg-purple-100 p-2">
-              <History className="h-5 w-5 text-purple-600" />
+            <div className="rounded-lg bg-secondary-100 p-2">
+              <History className="h-5 w-5 text-secondary-600" />
             </div>
             <div>
               <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
@@ -113,7 +113,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
         <div className="p-6">
           {isLoading && (
             <div className="flex justify-center py-12">
-              <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary-500 border-t-transparent"></div>
             </div>
           )}
 
@@ -144,7 +144,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
                     onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
                   >
                     <div className="flex items-center gap-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-sm font-semibold text-blue-600">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-sm font-semibold text-primary-600">
                         v{item.version}
                       </div>
                       <div>

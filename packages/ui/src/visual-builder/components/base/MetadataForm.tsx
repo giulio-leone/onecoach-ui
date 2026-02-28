@@ -75,7 +75,7 @@ export function MetadataForm({
                 }
                 disabled={field.disabled}
                 className={cn(
-                  'block min-h-[44px] w-full touch-manipulation rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none',
+                  'block min-h-[44px] w-full touch-manipulation rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
                   darkModeClasses.input.base,
                   field.disabled && darkModeClasses.input.disabled
                 )}
@@ -98,7 +98,7 @@ export function MetadataForm({
                 max={field.max}
                 placeholder={field.placeholder}
                 className={cn(
-                  'block min-h-[44px] w-full touch-manipulation rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none',
+                  'block min-h-[44px] w-full touch-manipulation rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
                   darkModeClasses.input.base,
                   field.disabled && darkModeClasses.input.disabled
                 )}
@@ -113,7 +113,7 @@ export function MetadataForm({
                 disabled={field.disabled}
                 placeholder={field.placeholder}
                 className={cn(
-                  'block min-h-[44px] w-full touch-manipulation rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none',
+                  'block min-h-[44px] w-full touch-manipulation rounded-lg border px-3 py-2 text-sm shadow-sm transition-all duration-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none',
                   darkModeClasses.input.base,
                   field.disabled && darkModeClasses.input.disabled
                 )}

@@ -25,7 +25,7 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
       {actions.map((action: QuickAction) => {
         const Icon = typeof action.icon !== 'string' ? action.icon : null;
         // Default gradient if none provided
-        const colorClass = action.color || 'from-indigo-500 to-purple-500';
+        const colorClass = action.color || 'from-indigo-500 to-secondary-500';
 
         return (
           <Link key={action.id} href={action.href} className="group block h-full outline-none">

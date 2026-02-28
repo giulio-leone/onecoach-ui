@@ -28,7 +28,7 @@ export const Task = ({
       className={cn(
         'group rounded-lg border border-transparent bg-transparent transition-all duration-200',
         status === 'active' &&
-          'border-blue-100 bg-blue-50/50 dark:border-blue-900/30 dark:bg-blue-900/10',
+          'border-primary-100 bg-primary-50/50 dark:border-primary-900/30 dark:bg-primary-900/10',
         status === 'error' &&
           'border-red-100 bg-red-50/50 dark:border-red-900/30 dark:bg-red-900/10',
         className
@@ -72,7 +72,7 @@ export const TaskTrigger = ({
             ) : status === 'error' ? (
               <AlertCircle className="h-4 w-4 text-red-500" />
             ) : status === 'active' ? (
-              <Loader2 className="h-4 w-4 animate-spin text-blue-500" />
+              <Loader2 className="h-4 w-4 animate-spin text-primary-500" />
             ) : (
               <CircleDashed className="h-4 w-4 text-neutral-300 dark:text-neutral-600" />
             )}
@@ -84,7 +84,7 @@ export const TaskTrigger = ({
               className={cn(
                 'text-sm font-medium transition-colors',
                 status === 'active'
-                  ? 'text-blue-700 dark:text-blue-300'
+                  ? 'text-primary-700 dark:text-primary-300'
                   : status === 'completed'
                     ? 'text-neutral-700 dark:text-neutral-300'
                     : status === 'error'

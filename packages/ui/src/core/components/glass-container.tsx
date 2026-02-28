@@ -45,7 +45,7 @@ export const GlassContainer = ({
         <div
           className={cn(
             'absolute -bottom-[10%] -left-[10%] rounded-full blur-[80px] dark:blur-[100px]',
-            'bg-blue-200/30 dark:bg-blue-500/15',
+            'bg-primary-200/30 dark:bg-primary-500/15',
             intensity === 'intense' && 'animate-pulse-slow delay-700',
             'h-[400px] w-[400px] md:h-[600px] md:w-[600px]'
           )}
@@ -56,7 +56,7 @@ export const GlassContainer = ({
           <div
             className={cn(
               'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full',
-              'bg-purple-200/30 blur-[100px] dark:bg-purple-500/15',
+              'bg-secondary-200/30 blur-[100px] dark:bg-secondary-500/15',
               'h-[300px] w-[300px] md:h-[500px] md:w-[500px]'
             )}
           />

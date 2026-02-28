@@ -146,8 +146,8 @@ function SummaryCard({
   if (highlights.length === 0) return null;
 
   return (
-    <div className="rounded-xl border border-blue-100 bg-blue-50/60 px-4 py-3 dark:border-blue-500/20 dark:bg-blue-500/5">
-      <p className="text-xs font-medium text-blue-700 dark:text-blue-300">
+    <div className="rounded-xl border border-primary-100 bg-primary-50/60 px-4 py-3 dark:border-primary-500/20 dark:bg-primary-500/5">
+      <p className="text-xs font-medium text-primary-700 dark:text-primary-300">
         Riepilogo:{' '}
         {highlights.map((h, i) => (
           <span key={h.label}>
@@ -186,7 +186,7 @@ function ComparisonBar({
       <div className="flex items-center gap-2">
         <div className="h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
           <div
-            className="h-full rounded-full bg-blue-500 transition-all"
+            className="h-full rounded-full bg-primary-500 transition-all"
             style={{ width: `${curW}%` }}
           />
         </div>
@@ -253,8 +253,8 @@ export function PeriodComparison({
     <div className="space-y-4">
       {/* Period labels */}
       <div className="flex items-center gap-3 text-xs font-medium">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">
-          <span className="h-2 w-2 rounded-full bg-blue-500" />
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-100 px-3 py-1 text-primary-700 dark:bg-primary-500/20 dark:text-primary-300">
+          <span className="h-2 w-2 rounded-full bg-primary-500" />
           {curLabel}
         </span>
         <span className="text-neutral-400">vs</span>

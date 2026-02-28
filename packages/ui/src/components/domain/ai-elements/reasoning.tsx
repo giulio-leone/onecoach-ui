@@ -65,7 +65,7 @@ export const ReasoningTrigger = forwardRef<HTMLButtonElement, ReasoningTriggerPr
         {...props}
       >
         <div className="flex items-center gap-2">
-          <Brain className="h-4 w-4 text-purple-500" />
+          <Brain className="h-4 w-4 text-secondary-500" />
           <span className="text-xs font-medium text-neutral-600 dark:text-neutral-300">
             💭 Ragionamento AI
           </span>
@@ -133,12 +133,12 @@ export function ReasoningBubble({ text, isStreaming }: ReasoningBubbleProps) {
         className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700/50"
       >
         <div className="flex items-center gap-2">
-          <Brain className={cn('h-4 w-4 text-purple-500', isStreaming && 'animate-pulse')} />
+          <Brain className={cn('h-4 w-4 text-secondary-500', isStreaming && 'animate-pulse')} />
           <span className="text-xs font-medium text-neutral-600 dark:text-neutral-300">
             💭 Ragionamento AI
           </span>
           {isStreaming && (
-            <span className="animate-pulse text-xs text-purple-500">in corso...</span>
+            <span className="animate-pulse text-xs text-secondary-500">in corso...</span>
           )}
         </div>
         <ChevronDown

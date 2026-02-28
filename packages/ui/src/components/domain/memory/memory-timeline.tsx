@@ -37,8 +37,8 @@ const eventIcons: Record<TimelineEventType, LucideIcon> = {
 const eventColors: Record<TimelineEventType, string> = {
   progress: 'text-green-600 dark:text-green-400',
   injury: 'text-red-600 dark:text-red-400',
-  goal: 'text-blue-600 dark:text-blue-400',
-  milestone: 'text-purple-600 dark:text-purple-400',
+  goal: 'text-primary-600 dark:text-primary-400',
+  milestone: 'text-secondary-600 dark:text-secondary-400',
   note: 'text-neutral-600 dark:text-neutral-400',
 };
 

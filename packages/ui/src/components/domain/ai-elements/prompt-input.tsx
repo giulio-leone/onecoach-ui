@@ -70,7 +70,7 @@ export const PromptInput = forwardRef<HTMLDivElement, PromptInputProps>(
       <div
         className={cn(
           'absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300',
-          'bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20',
+          'bg-gradient-to-r from-indigo-500/20 via-secondary-500/20 to-secondary-500/20',
           'pointer-events-none group-focus-within:opacity-100',
           '-z-10 blur-xl'
         )}
@@ -220,8 +220,8 @@ export const PromptInputButton = forwardRef<HTMLButtonElement, PromptInputButton
         variant === 'ghost' &&
           'text-neutral-500 hover:bg-neutral-100/80 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-white/10 dark:hover:text-white',
         variant === 'accent' && [
-          'bg-gradient-to-r from-indigo-500 to-purple-500 text-white',
-          'hover:from-indigo-600 hover:to-purple-600',
+          'bg-gradient-to-r from-indigo-500 to-secondary-500 text-white',
+          'hover:from-indigo-600 hover:to-secondary-600',
           'shadow-sm shadow-indigo-500/25',
         ],
         className
@@ -270,7 +270,7 @@ export const PromptInputSubmit = forwardRef<HTMLButtonElement, PromptInputSubmit
           // Ready state - Gradient with glow
           !isBusy &&
             !isDisabled &&
-            'bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/40 dark:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30',
+            'bg-gradient-to-br from-indigo-500 via-indigo-600 to-secondary-600 text-white shadow-lg shadow-indigo-500/30 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/40 dark:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30',
           // Disabled state
           isDisabled && [
             'cursor-not-allowed bg-neutral-100 text-neutral-400',
@@ -288,7 +288,7 @@ export const PromptInputSubmit = forwardRef<HTMLButtonElement, PromptInputSubmit
       >
         {/* Animated background gradient */}
         {!isBusy && !isDisabled && (
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-indigo-400 via-secondary-500 to-secondary-500 opacity-0 transition-opacity duration-300 hover:opacity-100" />
         )}
 
         {/* Icon */}
@@ -392,7 +392,7 @@ export const PromptInputAIMode = forwardRef<HTMLDivElement, PromptInputAIModePro
       ref={ref}
       className={cn(
         'flex items-center gap-1.5 rounded-md px-2 py-1',
-        'bg-gradient-to-r from-indigo-500/10 to-purple-500/10',
+        'bg-gradient-to-r from-indigo-500/10 to-secondary-500/10',
         'text-xs font-medium text-indigo-600 dark:text-indigo-400',
         className
       )}

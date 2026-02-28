@@ -353,11 +353,11 @@ export function EdgeConfigPanel() {
       </div>
 
       {/* Info Box */}
-      <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-900/20">
-        <h4 className="mb-2 text-sm font-semibold text-blue-900 dark:text-blue-300">
+      <div className="rounded-lg border border-primary-200 bg-primary-50 p-4 dark:border-primary-800 dark:bg-primary-900/20">
+        <h4 className="mb-2 text-sm font-semibold text-primary-900 dark:text-primary-300">
           {t('infoTitle')}
         </h4>
-        <ul className="space-y-1 text-xs text-blue-800 sm:text-sm dark:text-blue-200">
+        <ul className="space-y-1 text-xs text-primary-800 sm:text-sm dark:text-primary-200">
           <li>{t('infoPoints.realtime')}</li>
           <li>{t('infoPoints.types')}</li>
           <li>{t('infoPoints.delete')}</li>

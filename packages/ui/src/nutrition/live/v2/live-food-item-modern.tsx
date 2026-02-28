@@ -29,10 +29,10 @@ export function LiveFoodItemModern({
 
   return (
     <div className={cn(
-      "group relative flex items-center justify-between py-4 px-4 mx-2 border-b border-slate-800/50 last:border-0 transition-all duration-200",
+      "group relative flex items-center justify-between py-4 px-4 mx-2 border-b border-neutral-800/50 last:border-0 transition-all duration-200",
       isCompleted 
         ? "opacity-50" 
-        : "hover:bg-slate-800/50"
+        : "hover:bg-neutral-800/50"
     )}>
 
        <div className="flex items-center gap-4 flex-1">
@@ -42,7 +42,7 @@ export function LiveFoodItemModern({
                  "h-6 w-6 rounded-full border-2 flex items-center justify-center transition-all",
                  isCompleted
                    ? "bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-500/20"
-                   : "border-slate-600 bg-slate-800/50 text-transparent group-hover:border-emerald-400"
+                   : "border-neutral-600 bg-neutral-800/50 text-transparent group-hover:border-emerald-400"
                )}>
                   {isCompleted && <Check className="w-4 h-4 stroke-[3]" />}
                </div>
@@ -56,17 +56,17 @@ export function LiveFoodItemModern({
              )}>
                {food.name}
              </div>
-             <div className="text-xs font-medium text-slate-500 mt-1 flex items-center gap-3">
-                <span className={cn("transition-colors", !isCompleted && "text-slate-400")}>
+             <div className="text-xs font-medium text-neutral-500 mt-1 flex items-center gap-3">
+                <span className={cn("transition-colors", !isCompleted && "text-neutral-400")}>
                   {food.quantity} {food.unit}
                 </span>
-                <span className={cn("transition-colors", !isCompleted && "text-slate-400")}>
+                <span className={cn("transition-colors", !isCompleted && "text-neutral-400")}>
                   {Math.round(food.macros?.calories || 0)} kcal
                 </span>
                 
                 {food.macros && (
                   <div className="flex items-center gap-2 ml-1">
-                    <span className="text-blue-400">{Math.round(food.macros.protein)}P</span>
+                    <span className="text-primary-400">{Math.round(food.macros.protein)}P</span>
                     <span className="text-amber-400">{Math.round(food.macros.carbs)}C</span>
                     <span className="text-rose-400">{Math.round(food.macros.fats)}F</span>
                   </div>

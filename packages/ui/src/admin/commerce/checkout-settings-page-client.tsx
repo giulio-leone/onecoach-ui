@@ -232,14 +232,14 @@ export function CheckoutSettingsPageClient() {
         label: t('metrics.acv'),
         value: formatEuro(metrics.averageCartValue),
         icon: BarChart3,
-        color: 'text-blue-600 dark:text-blue-400',
+        color: 'text-primary-600 dark:text-primary-400',
       },
       {
         id: 'revenue',
         label: t('metrics.revenue', { days: metrics.periodDays }),
         value: formatEuroFromCents(metrics.revenue.total),
         icon: Activity,
-        color: 'text-purple-600 dark:text-purple-400',
+        color: 'text-secondary-600 dark:text-secondary-400',
       },
     ];
   }, [metrics, t, formatEuro, formatEuroFromCents]);

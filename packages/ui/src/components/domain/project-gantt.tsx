@@ -93,13 +93,13 @@ export function ProjectGantt({
               {project.tasks.length === 0 ? (
                 <div className="group flex h-8 items-center">
                   <div
-                    className="absolute flex h-7 items-center rounded-xl border border-blue-500/20 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 backdrop-blur-sm"
+                    className="absolute flex h-7 items-center rounded-xl border border-primary-500/20 bg-gradient-to-r from-primary-500/20 to-indigo-500/20 px-4 backdrop-blur-sm"
                     style={{
                       left: 0,
                       width: '100%',
                     }}
                   >
-                    <span className="truncate text-[10px] font-bold tracking-widest text-blue-600 uppercase dark:text-blue-400">
+                    <span className="truncate text-[10px] font-bold tracking-widest text-primary-600 uppercase dark:text-primary-400">
                       {wholeProjectLabel}
                     </span>
                   </div>
@@ -118,7 +118,7 @@ export function ProjectGantt({
                   return (
                     <div key={task.id} className="group relative h-8">
                       <div
-                        className="absolute top-0.5 bottom-0.5 flex items-center overflow-hidden rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 px-4 shadow-lg shadow-blue-500/30 transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-blue-500/40"
+                        className="absolute top-0.5 bottom-0.5 flex items-center overflow-hidden rounded-xl bg-gradient-to-r from-primary-500 to-indigo-600 px-4 shadow-lg shadow-primary-500/30 transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-primary-500/40"
                         style={{
                           left,
                           width,

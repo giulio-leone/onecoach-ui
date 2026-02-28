@@ -40,7 +40,7 @@ export function CoachDashboardStats({ stats, isLoading }: CoachDashboardStatsPro
         label={t('coach_dashboard_stats.vendite_totali')}
         value={stats.totalSales}
         icon={TrendingUp}
-        color="from-blue-500 to-blue-600"
+        color="from-primary-500 to-primary-600"
         subtitle={`${stats.publishedPlans} piani pubblicati`}
       />
       <StatCard
@@ -61,7 +61,7 @@ export function CoachDashboardStats({ stats, isLoading }: CoachDashboardStatsPro
         label={t('coach_dashboard_stats.piani_totali')}
         value={stats.totalPlans}
         icon={Package}
-        color="from-purple-500 to-purple-600"
+        color="from-secondary-500 to-secondary-600"
         subtitle={`${stats.draftPlans} in bozza`}
       />
     </div>

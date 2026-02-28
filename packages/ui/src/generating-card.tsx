@@ -73,8 +73,8 @@ const WORKFLOW_CONFIG: Record<
   'workout-generation': {
     icon: Dumbbell,
     label: 'Workout Program',
-    color: 'text-blue-600 dark:text-blue-400',
-    bgColor: 'bg-blue-50 dark:bg-blue-950',
+    color: 'text-primary-600 dark:text-primary-400',
+    bgColor: 'bg-primary-50 dark:bg-primary-950',
   },
   'nutrition-generation': {
     icon: Utensils,
@@ -85,8 +85,8 @@ const WORKFLOW_CONFIG: Record<
   'agenda-planning': {
     icon: Calendar,
     label: 'Agenda',
-    color: 'text-purple-600 dark:text-purple-400',
-    bgColor: 'bg-purple-50 dark:bg-purple-950',
+    color: 'text-secondary-600 dark:text-secondary-400',
+    bgColor: 'bg-secondary-50 dark:bg-secondary-950',
   },
   'exercise-generation': {
     icon: Dumbbell,

@@ -92,7 +92,7 @@ export function AppShellHeader({
     <header
       className={cn(
         'sticky top-0 z-40 w-full overflow-hidden border-b',
-        'border-slate-200 bg-white/90 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90',
+        'border-neutral-200 bg-white/90 backdrop-blur-xl dark:border-neutral-800 dark:bg-neutral-950/90',
         'shadow-sm shadow-neutral-900/5 dark:shadow-neutral-900/20',
         'transition-all duration-200'
       )}
@@ -116,7 +116,7 @@ export function AppShellHeader({
                 href={safeBrandHref}
                 className="group flex min-w-0 items-center gap-2 lg:hidden"
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-600 to-indigo-600 text-white shadow-lg shadow-primary-500/20">
                   {isOneAgenda ? (
                     <Calendar className="h-4 w-4" />
                   ) : (
@@ -144,7 +144,7 @@ export function AppShellHeader({
             className={cn(
               'rounded-md p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800',
               user?.copilotEnabled
-                ? 'text-blue-600 dark:text-blue-400'
+                ? 'text-primary-600 dark:text-primary-400'
                 : 'text-neutral-500 dark:text-neutral-400'
             )}
             title={user?.copilotEnabled ? labels.disableCopilot : labels.enableCopilot}

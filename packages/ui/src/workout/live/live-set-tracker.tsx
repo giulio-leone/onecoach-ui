@@ -38,7 +38,7 @@ export function LiveSetTracker({
     return (
       <div className="relative">
         {/* Outer Gradient Border */}
-        <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-80" />
+        <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-indigo-500 via-secondary-500 to-secondary-500 opacity-80" />
 
         {/* Inner Content */}
         <div className="relative rounded-3xl bg-neutral-900 p-5">

@@ -19,7 +19,7 @@ export function WelcomeHeader({ userName, className, title, subtitle }: WelcomeH
       intensity="light"
       className={cn(
         'flex flex-row items-center gap-4 p-6',
-        'bg-gradient-to-r from-indigo-500/10 to-purple-500/10',
+        'bg-gradient-to-r from-indigo-500/10 to-secondary-500/10',
         'border-white/20 dark:border-white/10',
         className
       )}

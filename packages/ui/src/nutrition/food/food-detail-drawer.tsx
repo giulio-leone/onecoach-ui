@@ -374,7 +374,7 @@ export function FoodDetailDrawer({
               />
             </div>
             <div className="space-y-1">
-              <label className="text-xs text-blue-600 sm:text-sm">
+              <label className="text-xs text-primary-600 sm:text-sm">
                 {t('food.protein')} {t('common.food_detail_drawer.g')}
               </label>
               <input
@@ -414,7 +414,7 @@ export function FoodDetailDrawer({
               />
             </div>
             <div className="space-y-1">
-              <label className="text-xs text-purple-600 sm:text-sm">
+              <label className="text-xs text-secondary-600 sm:text-sm">
                 {t('food.fats')} {t('common.food_detail_drawer.g')}
               </label>
               <input
@@ -466,9 +466,9 @@ export function FoodDetailDrawer({
               </div>
               <div className="text-xs text-emerald-600">kcal</div>
             </div>
-            <div className="rounded-lg bg-blue-50 p-2.5 sm:p-3">
-              <div className="text-xs text-blue-600 sm:text-sm">Proteine</div>
-              <div className="mt-1 text-base font-bold text-blue-700 sm:text-lg md:text-xl">
+            <div className="rounded-lg bg-primary-50 p-2.5 sm:p-3">
+              <div className="text-xs text-primary-600 sm:text-sm">Proteine</div>
+              <div className="mt-1 text-base font-bold text-primary-700 sm:text-lg md:text-xl">
                 {macros.protein.toFixed(1)}g
               </div>
             </div>
@@ -478,9 +478,9 @@ export function FoodDetailDrawer({
                 {macros.carbs.toFixed(1)}g
               </div>
             </div>
-            <div className="rounded-lg bg-purple-50 p-2.5 sm:p-3">
-              <div className="text-xs text-purple-600 sm:text-sm">Grassi</div>
-              <div className="mt-1 text-base font-bold text-purple-700 sm:text-lg md:text-xl">
+            <div className="rounded-lg bg-secondary-50 p-2.5 sm:p-3">
+              <div className="text-xs text-secondary-600 sm:text-sm">Grassi</div>
+              <div className="mt-1 text-base font-bold text-secondary-700 sm:text-lg md:text-xl">
                 {macros.fats.toFixed(1)}g
               </div>
             </div>
@@ -501,7 +501,7 @@ export function FoodDetailDrawer({
       {(foodItem?.servingSize || isEditMode) && (
         <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
           <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
-            <Package className="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4" />
+            <Package className="h-3.5 w-3.5 text-primary-500 sm:h-4 sm:w-4" />
             {t('food.portion')}
           </h4>
           {isEditMode && editForm ? (
@@ -673,7 +673,7 @@ export function FoodDetailDrawer({
       {foodItem?.imageUrl && (
         <section className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-neutral-700 dark:bg-neutral-800/50">
           <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:mb-3 sm:text-sm dark:text-neutral-500">
-            <Camera className="h-3.5 w-3.5 text-purple-500 sm:h-4 sm:w-4" />
+            <Camera className="h-3.5 w-3.5 text-secondary-500 sm:h-4 sm:w-4" />
             {t('food.image')}
           </h4>
           <a
@@ -694,7 +694,7 @@ export function FoodDetailDrawer({
             href={foodItem.imageUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-flex min-h-[44px] touch-manipulation items-center justify-center gap-2 rounded-lg bg-purple-50 px-3 py-2.5 text-xs font-semibold text-purple-600 transition-colors hover:bg-purple-100 active:bg-purple-200 sm:text-sm"
+            className="mt-2 inline-flex min-h-[44px] touch-manipulation items-center justify-center gap-2 rounded-lg bg-secondary-50 px-3 py-2.5 text-xs font-semibold text-secondary-600 transition-colors hover:bg-secondary-100 active:bg-secondary-200 sm:text-sm"
           >
             {t('food.openImage')}
           </a>

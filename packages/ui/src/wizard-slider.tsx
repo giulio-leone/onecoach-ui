@@ -41,9 +41,9 @@ export function WizardSlider({
 
   const colorClasses = {
     blue: {
-      track: 'from-blue-500 to-blue-600',
-      text: 'text-blue-600 dark:text-blue-400',
-      thumb: 'accent-blue-600',
+      track: 'from-primary-500 to-primary-600',
+      text: 'text-primary-600 dark:text-primary-400',
+      thumb: 'accent-primary-600',
     },
     green: {
       track: 'from-emerald-500 to-green-500',
@@ -51,9 +51,9 @@ export function WizardSlider({
       thumb: 'accent-emerald-600',
     },
     purple: {
-      track: 'from-purple-500 to-indigo-500',
-      text: 'text-purple-600 dark:text-purple-400',
-      thumb: 'accent-purple-600',
+      track: 'from-secondary-500 to-indigo-500',
+      text: 'text-secondary-600 dark:text-secondary-400',
+      thumb: 'accent-secondary-600',
     },
   };
 

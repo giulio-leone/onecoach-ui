@@ -72,7 +72,7 @@ export function AutosaveIndicator({
       <div
         className={cn(
           'flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium',
-          'bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400',
+          'bg-primary-500/10 text-primary-600 dark:bg-primary-500/20 dark:text-primary-400',
           className
         )}
       >

@@ -26,12 +26,12 @@ export function PromptList({
   return (
     <div
       className={cn(
-        'flex h-full flex-col bg-white/50 backdrop-blur-xl dark:bg-slate-950/50',
+        'flex h-full flex-col bg-white/50 backdrop-blur-xl dark:bg-neutral-950/50',
         className
       )}
     >
       {/* Search Header */}
-      <div className="border-b border-slate-200 p-4 dark:border-slate-800">
+      <div className="border-b border-neutral-200 p-4 dark:border-neutral-800">
         <div className="relative">
           <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
           <input
@@ -68,10 +68,10 @@ export function PromptList({
             ).map(([category, categoryPrompts]) => (
               <div key={category} className="space-y-2">
                 <div className="flex items-center gap-2 px-2">
-                  <span className="text-xs font-bold tracking-wider text-slate-500 uppercase dark:text-slate-400">
+                  <span className="text-xs font-bold tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
                     {category}
                   </span>
-                  <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800" />
+                  <div className="h-px flex-1 bg-neutral-200 dark:bg-neutral-800" />
                 </div>
                 <div className="space-y-1">
                   {(categoryPrompts as any[]).map((prompt: any) => (
@@ -80,9 +80,9 @@ export function PromptList({
                       layoutId={prompt.agentId}
                       onClick={() => onSelectPrompt(prompt.agentId)}
                       className={cn(
-                        'group relative flex w-full flex-col items-start gap-1 rounded-xl p-3 text-left transition-all hover:bg-slate-100 dark:hover:bg-slate-800/50',
+                        'group relative flex w-full flex-col items-start gap-1 rounded-xl p-3 text-left transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800/50',
                         selectedPromptId === prompt.agentId
-                          ? 'bg-blue-50/80 ring-1 ring-blue-200 dark:bg-blue-900/20 dark:ring-blue-800'
+                          ? 'bg-primary-50/80 ring-1 ring-primary-200 dark:bg-primary-900/20 dark:ring-primary-800'
                           : 'bg-transparent'
                       )}
                     >
@@ -91,8 +91,8 @@ export function PromptList({
                           className={cn(
                             'truncate text-sm font-semibold',
                             selectedPromptId === prompt.agentId
-                              ? 'text-blue-700 dark:text-blue-300'
-                              : 'text-slate-900 dark:text-slate-100'
+                              ? 'text-primary-700 dark:text-primary-300'
+                              : 'text-neutral-900 dark:text-neutral-100'
                           )}
                         >
                           {prompt.name}
@@ -113,7 +113,7 @@ export function PromptList({
                       {selectedPromptId === prompt.agentId && (
                         <motion.div
                           layoutId="active-indicator"
-                          className="absolute top-3 bottom-3 left-0 w-1 rounded-r-full bg-blue-500"
+                          className="absolute top-3 bottom-3 left-0 w-1 rounded-r-full bg-primary-500"
                         />
                       )}
                     </motion.button>

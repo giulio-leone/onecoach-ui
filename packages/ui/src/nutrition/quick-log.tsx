@@ -231,7 +231,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
                       <Flame className="h-3 w-3" />
                       {food.calories}
                     </span>
-                    <span className="inline-flex items-center gap-0.5 rounded-md bg-blue-100 px-1.5 py-0.5 text-[10px] font-semibold text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+                    <span className="inline-flex items-center gap-0.5 rounded-md bg-primary-100 px-1.5 py-0.5 text-[10px] font-semibold text-primary-700 dark:bg-primary-900/40 dark:text-primary-300">
                       <Beef className="h-3 w-3" />
                       {food.protein}g
                     </span>
@@ -366,7 +366,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               <Flame className="h-3.5 w-3.5" />
               {Math.round(totals.calories)} kcal
             </div>
-            <div className="flex items-center gap-1 text-blue-600 dark:text-blue-400">
+            <div className="flex items-center gap-1 text-primary-600 dark:text-primary-400">
               <Beef className="h-3.5 w-3.5" />
               {Math.round(totals.protein)}g
             </div>

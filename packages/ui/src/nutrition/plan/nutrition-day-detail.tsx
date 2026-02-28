@@ -41,10 +41,10 @@ export function NutritionDayDetail({
   }
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-neutral-950">
       {/* Ambient Background Glows */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
+        <div className="absolute top-0 left-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary-500/10 blur-[120px]" />
         <div className="absolute top-0 right-1/4 h-[500px] w-[500px] translate-x-1/2 rounded-full bg-indigo-500/10 blur-[120px]" />
       </div>
 
@@ -88,36 +88,36 @@ export function NutritionDayDetail({
 
         {/* Macro Summary Card */}
         <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800 text-slate-400 shadow-inner">
+          <div className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-900/50 border border-neutral-800 backdrop-blur-md">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-800 text-neutral-400 shadow-inner">
               <Flame className="h-6 w-6" />
             </div>
             <div>
-              <Text size="xs" weight="bold" className="text-slate-500 uppercase tracking-wider">Calorie</Text>
+              <Text size="xs" weight="bold" className="text-neutral-500 uppercase tracking-wider">Calorie</Text>
               <Heading level={3} size="2xl" weight="extrabold" className="text-white">
                 {Math.round(day.totalMacros.calories)}
               </Heading>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 border border-blue-500/20 shadow-[0_0_15px_-3px_rgba(59,130,246,0.3)]">
+          <div className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-900/50 border border-neutral-800 backdrop-blur-md">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500/10 text-primary-500 border border-primary-500/20 shadow-[0_0_15px_-3px_rgba(99,102,241,0.3)]">
               <Beef className="h-6 w-6" />
             </div>
             <div>
-              <Text size="xs" weight="bold" className="text-slate-500 uppercase tracking-wider">Proteine</Text>
+              <Text size="xs" weight="bold" className="text-neutral-500 uppercase tracking-wider">Proteine</Text>
               <Heading level={3} size="2xl" weight="extrabold" className="text-white">
                 {Math.round(day.totalMacros.protein)}g
               </Heading>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md">
+          <div className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-900/50 border border-neutral-800 backdrop-blur-md">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/10 text-amber-500 border border-amber-500/20 shadow-[0_0_15px_-3px_rgba(245,158,11,0.3)]">
               <Wheat className="h-6 w-6" />
             </div>
             <div>
-              <Text size="xs" weight="bold" className="text-slate-500 uppercase tracking-wider">
+              <Text size="xs" weight="bold" className="text-neutral-500 uppercase tracking-wider">
                 Carboidrati
               </Text>
               <Heading level={3} size="2xl" weight="extrabold" className="text-white">
@@ -126,12 +126,12 @@ export function NutritionDayDetail({
             </div>
           </div>
 
-          <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-md">
+          <div className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-900/50 border border-neutral-800 backdrop-blur-md">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-500/10 text-rose-500 border border-rose-500/20 shadow-[0_0_15px_-3px_rgba(244,63,94,0.3)]">
               <Droplets className="h-6 w-6" />
             </div>
             <div>
-              <Text size="xs" weight="bold" className="text-slate-500 uppercase tracking-wider">Grassi</Text>
+              <Text size="xs" weight="bold" className="text-neutral-500 uppercase tracking-wider">Grassi</Text>
               <Heading level={3} size="2xl" weight="extrabold" className="text-white">
                 {Math.round(day.totalMacros.fats)}g
               </Heading>
@@ -142,7 +142,7 @@ export function NutritionDayDetail({
         {/* Meals List */}
         <div className="space-y-6">
           <Heading level={2} size="xl" weight="bold" className="flex items-center gap-2 text-white mb-6">
-            <Utensils className="h-5 w-5 text-slate-400" />
+            <Utensils className="h-5 w-5 text-neutral-400" />
             Pasti del Giorno
           </Heading>
 

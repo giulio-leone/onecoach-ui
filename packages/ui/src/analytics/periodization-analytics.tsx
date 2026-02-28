@@ -46,9 +46,9 @@ const PHASE_COLORS: Record<PhaseAnalytics['type'], { bg: string; text: string; b
     bar: 'bg-violet-500',
   },
   strength: {
-    bg: 'bg-blue-50 dark:bg-blue-500/10',
-    text: 'text-blue-700 dark:text-blue-300',
-    bar: 'bg-blue-500',
+    bg: 'bg-primary-50 dark:bg-primary-500/10',
+    text: 'text-primary-700 dark:text-primary-300',
+    bar: 'bg-primary-500',
   },
   power: {
     bg: 'bg-amber-50 dark:bg-amber-500/10',
@@ -99,7 +99,7 @@ function MesocycleProgressBar({ progress }: { progress: number }) {
       </div>
       <div className="h-2.5 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-blue-500 to-violet-500 transition-all"
+          className="h-full rounded-full bg-gradient-to-r from-primary-500 to-violet-500 transition-all"
           style={{ width: `${clamped}%` }}
         />
       </div>
@@ -209,7 +209,7 @@ function PhaseDetailCard({ phase }: { phase: PhaseAnalytics }) {
           className={cn(
             'rounded-full px-2 py-0.5 text-[10px] font-semibold',
             phase.status === 'completed' && 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400',
-            phase.status === 'active' && 'bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400',
+            phase.status === 'active' && 'bg-primary-100 text-primary-700 dark:bg-primary-500/10 dark:text-primary-400',
             phase.status === 'upcoming' && 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
           )}
         >
@@ -376,7 +376,7 @@ export function PeriodizationAnalytics({
               className={cn(
                 'flex w-full items-center gap-3 rounded-lg border px-3 py-2 text-left transition-colors',
                 selectedPhase === i
-                  ? 'border-blue-200 bg-blue-50/50 dark:border-blue-500/30 dark:bg-blue-500/5'
+                  ? 'border-primary-200 bg-primary-50/50 dark:border-primary-500/30 dark:bg-primary-500/5'
                   : 'border-neutral-100 bg-white/60 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:bg-neutral-800/60'
               )}
             >

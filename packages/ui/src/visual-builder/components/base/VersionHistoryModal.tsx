@@ -75,7 +75,7 @@ export function VersionHistoryModal<T>({
   const accentClass =
     variant === 'emerald'
       ? 'text-emerald-600 dark:text-emerald-400'
-      : 'text-blue-600 dark:text-blue-400';
+      : 'text-primary-600 dark:text-primary-400';
 
   const diff = useMemo(() => {
     if (!showDiff || selectedForCompare.length !== 2 || !getDiff) return null;
@@ -333,14 +333,14 @@ export function VersionHistoryModal<T>({
                     className={cn(
                       'group relative flex cursor-pointer items-start gap-3 rounded-xl border p-3 transition-all',
                       isSelected
-                        ? 'border-blue-500 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/20'
+                        ? 'border-primary-500 bg-primary-50 dark:border-primary-500 dark:bg-primary-900/20'
                         : 'border-transparent hover:bg-neutral-50 dark:hover:bg-white/5'
                     )}
                     onClick={() => toggleCompareSelection(index)}
                   >
                     <div className="relative mt-1">
                       {isSelected ? (
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-white">
+                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary-500 text-white">
                           <Check size={12} />
                         </div>
                       ) : (
@@ -398,7 +398,7 @@ export function VersionHistoryModal<T>({
                 'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors',
                 variant === 'emerald'
                   ? 'bg-emerald-600 hover:bg-emerald-700'
-                  : 'bg-blue-600 hover:bg-blue-700'
+                  : 'bg-primary-600 hover:bg-primary-700'
               )}
             >
               <GitCompare size={16} />

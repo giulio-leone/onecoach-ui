@@ -27,8 +27,8 @@ function StatCardComponent({
 }: StatCardProps) {
   const gradients = {
     green: 'from-green-500 to-green-600',
-    blue: 'from-blue-500 to-blue-600',
-    purple: 'from-purple-500 to-purple-600',
+    blue: 'from-primary-500 to-primary-600',
+    purple: 'from-secondary-500 to-secondary-600',
     orange: 'from-orange-500 to-orange-600',
     red: 'from-red-500 to-red-600',
   };
@@ -52,7 +52,7 @@ function StatCardComponent({
       <div
         className={cn(
           'absolute -top-10 -right-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-20',
-          gradientClass ? `bg-gradient-to-br ${gradientClass}` : 'bg-blue-500'
+          gradientClass ? `bg-gradient-to-br ${gradientClass}` : 'bg-primary-500'
         )}
       />
 

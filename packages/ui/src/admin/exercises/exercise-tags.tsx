@@ -56,9 +56,9 @@ export function ExerciseTags({ exercise, maxVisible = 8, className = '' }: Exerc
         label: `${muscle.name} · ${muscle.role?.toLowerCase() ?? ''}`,
         type: 'muscle',
         color: cn(
-          'bg-purple-50 dark:bg-purple-900/40',
-          'text-purple-700 dark:text-purple-300',
-          'border border-purple-200 dark:border-purple-800'
+          'bg-secondary-50 dark:bg-secondary-900/40',
+          'text-secondary-700 dark:text-secondary-300',
+          'border border-secondary-200 dark:border-secondary-800'
         ),
       });
     });
@@ -87,9 +87,9 @@ export function ExerciseTags({ exercise, maxVisible = 8, className = '' }: Exerc
       label: `v${exercise.version}`,
       type: 'version',
       color: cn(
-        'bg-blue-50 dark:bg-blue-900/40',
-        'text-blue-700 dark:text-blue-300',
-        'border border-blue-200 dark:border-blue-800'
+        'bg-primary-50 dark:bg-primary-900/40',
+        'text-primary-700 dark:text-primary-300',
+        'border border-primary-200 dark:border-primary-800'
       ),
     });
 

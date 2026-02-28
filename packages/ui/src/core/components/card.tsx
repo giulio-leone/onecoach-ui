@@ -67,7 +67,7 @@ export const Card = ({
     interactive: cn(
       'bg-background-base',
       'rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60',
-      'hover:border-blue-400/50 dark:hover:border-blue-500/40',
+      'hover:border-primary-400/50 dark:hover:border-primary-500/40',
       'hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-black/30',
       'transition-all duration-300 cursor-pointer'
     ),
@@ -92,16 +92,16 @@ export const Card = ({
     ),
     'glass-vibrant': cn(
       glassIntensityClasses.heavy,
-      'rounded-[2rem] shadow-[0_20px_40px_rgba(59,130,246,0.15)] dark:shadow-[0_20px_40px_rgba(59,130,246,0.1)]',
-      'border border-blue-400/30 dark:border-blue-500/20',
+      'rounded-[2rem] shadow-[0_20px_40px_rgba(99,102,241,0.15)] dark:shadow-[0_20px_40px_rgba(99,102,241,0.1)]',
+      'border border-primary-400/30 dark:border-primary-500/20',
       'transition-all duration-500 text-neutral-900 dark:text-white',
-      'bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5'
+      'bg-gradient-to-br from-primary-500/5 via-transparent to-secondary-500/5'
     ),
     hover: cn(
       'bg-background-base',
       'rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60',
       'hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-black/30',
-      'hover:border-blue-400/30 dark:hover:border-blue-500/30',
+      'hover:border-primary-400/30 dark:hover:border-primary-500/30',
       'transition-all duration-300'
     ),
   };
@@ -111,9 +111,9 @@ export const Card = ({
       {/* Gradient Background/Border Effect for Glass variants */}
       {(variant === 'glass' || variant === 'glass-strong') && gradient && (
         <>
-          <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-10" />
+          <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-indigo-500 via-secondary-500 to-secondary-500 opacity-10" />
           <div
-            className="absolute inset-0 -z-20 rounded-2xl bg-gradient-to-br from-violet-500/20 via-fuchsia-500/20 to-indigo-500/20 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
+            className="absolute inset-0 -z-20 rounded-2xl bg-gradient-to-br from-violet-500/20 via-secondary-500/20 to-indigo-500/20 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
             aria-hidden="true"
           />
         </>

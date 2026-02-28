@@ -92,11 +92,11 @@ function computeDataToShow(event: StreamEvent) {
 function getEventIconColor(type: string): string {
   switch (type) {
     case 'agent_start':
-      return 'text-blue-600 dark:text-blue-400';
+      return 'text-primary-600 dark:text-primary-400';
     case 'agent_complete':
       return 'text-green-600 dark:text-green-400';
     case 'delegation':
-      return 'text-purple-600 dark:text-purple-400';
+      return 'text-secondary-600 dark:text-secondary-400';
     case 'agent_error':
       return 'text-red-600 dark:text-red-400';
     case 'retry':

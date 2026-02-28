@@ -45,8 +45,8 @@ export function AdminAffiliateStats({ stats, program }: AdminAffiliateStatsProps
       value: stats.totalAffiliates.toString(),
       icon: Users,
       subtitle: `${stats.activeAffiliates} attivi (${formatPercent(stats.activeAffiliates, stats.totalAffiliates)})`,
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
+      color: 'text-primary-600',
+      bgColor: 'bg-primary-50',
       trend: stats.newAffiliatesThisMonth > 0 ? ('up' as const) : undefined,
     },
     {
@@ -62,8 +62,8 @@ export function AdminAffiliateStats({ stats, program }: AdminAffiliateStatsProps
       value: formatCurrency(stats.totalPayoutAmount),
       icon: Coins,
       subtitle: `${stats.clearedRewards} pagamenti effettuati`,
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50',
+      color: 'text-secondary-600',
+      bgColor: 'bg-secondary-50',
     },
     {
       title: 'Payout Pending',

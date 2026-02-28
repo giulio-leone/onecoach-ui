@@ -508,7 +508,7 @@ export function CoachProfileForm({ initialProfile, isLoading }: CoachProfileForm
         <div className="flex items-center gap-4">
           {/* Avatar */}
           <div className="group relative">
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-50 blur-md transition duration-500 group-hover:opacity-100" />
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-indigo-500 via-secondary-500 to-secondary-500 opacity-50 blur-md transition duration-500 group-hover:opacity-100" />
             <Avatar
               src={user?.profileImage || undefined}
               fallback={user?.name?.slice(0, 2).toUpperCase() || 'C'}

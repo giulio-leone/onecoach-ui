@@ -37,9 +37,9 @@ export const WizardStepper = ({
                     'relative z-10 flex items-center justify-center rounded-xl border-2 transition-all duration-500',
                     'h-8 w-8 sm:h-10 sm:w-10',
                     isActive
-                      ? 'scale-110 border-transparent bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-[0_0_30px_rgba(37,99,235,0.4)]'
+                      ? 'scale-110 border-transparent bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-[0_0_30px_rgba(79,70,229,0.4)]'
                       : isCompleted
-                        ? 'border-blue-500/40 bg-blue-500/10 text-blue-500 shadow-[0_0_15px_rgba(37,99,235,0.1)] dark:bg-blue-500/20'
+                        ? 'border-primary-500/40 bg-primary-500/10 text-primary-500 shadow-[0_0_15px_rgba(79,70,229,0.1)] dark:bg-primary-500/20'
                         : 'border-neutral-200/50 bg-white/40 text-neutral-400 backdrop-blur-md dark:border-neutral-800/50 dark:bg-neutral-900/40'
                   )}
                 >
@@ -57,7 +57,7 @@ export const WizardStepper = ({
                     className={cn(
                       'text-[9px] font-bold tracking-[0.15em] uppercase transition-all duration-500 sm:text-[10px]',
                       isActive
-                        ? 'text-blue-600 dark:text-blue-400'
+                        ? 'text-primary-600 dark:text-primary-400'
                         : isCompleted
                           ? 'text-neutral-900 opacity-80 dark:text-neutral-200'
                           : 'text-neutral-400 opacity-40 dark:text-neutral-500'
@@ -72,7 +72,7 @@ export const WizardStepper = ({
                     className={cn(
                       'absolute top-4 right-[calc(-50%+24px)] left-[calc(50%+24px)] -z-0 h-[1px] transition-all duration-700 sm:top-5',
                       isCompleted
-                        ? 'bg-gradient-to-r from-blue-600/60 to-blue-400/40'
+                        ? 'bg-gradient-to-r from-primary-600/60 to-primary-400/40'
                         : 'bg-neutral-200 dark:bg-neutral-800/50'
                     )}
                     aria-hidden="true"
@@ -158,8 +158,8 @@ export const WizardActions = ({
         onClick={onNext}
         disabled={!canNext}
         className={cn(
-          'h-12 min-w-[160px] gap-2 rounded-2xl font-black shadow-[0_12px_24px_-8px_rgba(37,99,235,0.5)] transition-all',
-          'border-0 bg-blue-600 text-white hover:bg-blue-500 active:scale-95',
+          'h-12 min-w-[160px] gap-2 rounded-2xl font-black shadow-[0_12px_24px_-8px_rgba(79,70,229,0.5)] transition-all',
+          'border-0 bg-primary-600 text-white hover:bg-primary-500 active:scale-95',
           !canNext && 'pointer-events-none opacity-40 shadow-none grayscale'
         )}
       >
@@ -220,7 +220,7 @@ export const WizardRadioGroup = ({
             className={cn(
               'relative z-10 flex-1 rounded-xl px-4 py-2.5 text-sm font-bold transition-all duration-300',
               isSelected
-                ? 'text-blue-700 dark:text-blue-50'
+                ? 'text-primary-700 dark:text-primary-50'
                 : 'text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200'
             )}
           >
@@ -229,9 +229,9 @@ export const WizardRadioGroup = ({
                 layoutId="active-pill"
                 className={cn(
                   'absolute inset-0 -z-10 rounded-xl',
-                  'bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600/40 dark:to-blue-500/30',
-                  'shadow-[0_4px_12px_rgba(59,130,246,0.3)] dark:shadow-[0_8px_20px_rgba(37,99,235,0.4)]',
-                  'border border-blue-400/50 dark:border-blue-400/30',
+                  'bg-gradient-to-br from-primary-500 to-primary-600 dark:from-primary-600/40 dark:to-primary-500/30',
+                  'shadow-[0_4px_12px_rgba(99,102,241,0.3)] dark:shadow-[0_8px_20px_rgba(79,70,229,0.4)]',
+                  'border border-primary-400/50 dark:border-primary-400/30',
                   'transition-opacity before:absolute before:inset-0 before:rounded-xl before:bg-white/20 before:opacity-0 hover:before:opacity-100'
                 )}
                 transition={{ type: 'spring', bounce: 0.15, duration: 0.5 }}

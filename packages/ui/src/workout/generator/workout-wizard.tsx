@@ -29,19 +29,19 @@ const GOALS: SelectionOption[] = [
     id: 'strength',
     title: 'Forza',
     description: 'Aumenta la forza massimale',
-    icon: <Dumbbell size={24} className="text-blue-600" />,
+    icon: <Dumbbell size={24} className="text-primary-600" />,
   },
   {
     id: 'hypertrophy',
     title: 'Ipertrofia',
     description: 'Aumenta la massa muscolare',
-    icon: <User size={24} className="text-blue-600" />,
+    icon: <User size={24} className="text-primary-600" />,
   },
   {
     id: 'endurance',
     title: 'Resistenza',
     description: 'Migliora la resistenza cardiovascolare',
-    icon: <Clock size={24} className="text-blue-600" />,
+    icon: <Clock size={24} className="text-primary-600" />,
   },
 ];
 
@@ -175,19 +175,19 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
               id: 'gym',
               title: 'Palestra',
               description: 'Accesso completo a macchinari e pesi',
-              icon: <MapPin size={24} className="text-purple-500" />,
+              icon: <MapPin size={24} className="text-secondary-500" />,
             },
             {
               id: 'home_dumbbells',
               title: 'Casa (Manubri)',
               description: 'Allenamento con manubri e panca',
-              icon: <MapPin size={24} className="text-purple-500" />,
+              icon: <MapPin size={24} className="text-secondary-500" />,
             },
             {
               id: 'bodyweight',
               title: 'Corpo Libero',
               description: t('common.ui.noEquipment'),
-              icon: <MapPin size={24} className="text-purple-500" />,
+              icon: <MapPin size={24} className="text-secondary-500" />,
             },
           ].map((loc: any) => (
             <SelectionCard

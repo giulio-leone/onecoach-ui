@@ -175,7 +175,7 @@ const textVariantStyles = {
   tertiary: darkModeClasses.text.tertiary,
   muted: darkModeClasses.text.muted,
   inverse: darkModeClasses.text.inverse,
-  link: 'text-blue-600 dark:text-blue-400 underline', // Simplified link for native
+  link: 'text-primary-600 dark:text-primary-400 underline', // Simplified link for native
   success: darkModeClasses.semantic.success.text,
   warning: darkModeClasses.semantic.warning.text,
   error: darkModeClasses.semantic.error.text,

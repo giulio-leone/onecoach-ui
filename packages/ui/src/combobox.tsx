@@ -81,9 +81,9 @@ export const Combobox = ({
           disabled={disabled}
           className={cn(
             'relative flex h-10 w-full min-w-[200px] items-center justify-between rounded-xl border border-white/20 bg-white/50 px-3 py-2 text-sm backdrop-blur-md transition-all',
-            'hover:bg-white/60 focus:ring-2 focus:ring-blue-500/20 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:hover:bg-black/30',
+            'hover:bg-white/60 focus:ring-2 focus:ring-primary-500/20 focus:outline-none dark:border-white/10 dark:bg-black/20 dark:hover:bg-black/30',
             disabled && 'cursor-not-allowed opacity-50',
-            open && 'border-blue-500/30 ring-2 ring-blue-500/20',
+            open && 'border-primary-500/30 ring-2 ring-primary-500/20',
             className
           )}
         >
@@ -107,7 +107,7 @@ export const Combobox = ({
               <Search className="absolute top-1/2 left-4 h-4 w-4 -translate-y-[calc(50%+4px)] text-neutral-400" />
               <Command.Input
                 placeholder={searchPlaceholder}
-                className="w-full rounded-lg border border-neutral-200 bg-white/50 px-8 py-1.5 text-sm transition-colors outline-none placeholder:text-neutral-400 focus:border-blue-500/50 focus:bg-white dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:focus:border-blue-500/50"
+                className="w-full rounded-lg border border-neutral-200 bg-white/50 px-8 py-1.5 text-sm transition-colors outline-none placeholder:text-neutral-400 focus:border-primary-500/50 focus:bg-white dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:focus:border-primary-500/50"
               />
             </div>
 
@@ -122,16 +122,16 @@ export const Combobox = ({
                   value={option.label}
                   onSelect={() => handleSelect(option.value)}
                   className={cn(
-                    'flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors aria-selected:bg-blue-50 aria-selected:text-blue-600 dark:aria-selected:bg-blue-500/10 dark:aria-selected:text-blue-400',
+                    'flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm transition-colors aria-selected:bg-primary-50 aria-selected:text-primary-600 dark:aria-selected:bg-primary-500/10 dark:aria-selected:text-primary-400',
                     isSelected(option.value) &&
-                      'bg-blue-50 font-medium text-blue-600 dark:bg-blue-500/20 dark:text-blue-400'
+                      'bg-primary-50 font-medium text-primary-600 dark:bg-primary-500/20 dark:text-primary-400'
                   )}
                 >
                   <div
                     className={cn(
                       'flex h-4 w-4 items-center justify-center rounded border',
                       isSelected(option.value)
-                        ? 'border-blue-500 bg-blue-500 text-white'
+                        ? 'border-primary-500 bg-primary-500 text-white'
                         : 'border-neutral-300 dark:border-neutral-600'
                     )}
                   >

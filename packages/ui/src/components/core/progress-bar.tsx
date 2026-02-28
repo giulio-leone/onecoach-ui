@@ -15,7 +15,7 @@ export function ProgressBar({
   value,
   max = 100,
   className,
-  color = 'bg-blue-500',
+  color = 'bg-primary-500',
   showLabel = false,
   size = 'md',
 }: ProgressBarProps) {
@@ -30,14 +30,14 @@ export function ProgressBar({
   return (
     <div className={cn('w-full', className)}>
       {showLabel && (
-        <div className="mb-1 flex justify-between text-xs font-medium text-slate-600 dark:text-slate-400">
+        <div className="mb-1 flex justify-between text-xs font-medium text-neutral-600 dark:text-neutral-400">
           <span>Progress</span>
           <span>{Math.round(percentage)}%</span>
         </div>
       )}
       <div
         className={cn(
-          'w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800',
+          'w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800',
           heights[size]
         )}
       >
