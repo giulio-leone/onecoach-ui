@@ -26,7 +26,7 @@ export function PromptList({
   return (
     <div
       className={cn(
-        'flex h-full flex-col bg-white/50 backdrop-blur-xl dark:bg-neutral-950/50',
+        'flex h-full flex-col bg-white/50 backdrop-blur-xl dark:bg-[#09090b]/50',
         className
       )}
     >

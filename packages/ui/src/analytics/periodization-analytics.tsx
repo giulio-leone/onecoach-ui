@@ -297,7 +297,7 @@ function VolumeIntensityOverlay({ phases }: { phases: PhaseAnalytics[] }) {
               />
               {/* Intensity bar */}
               <div
-                className="w-3 rounded-t bg-neutral-400 transition-all dark:bg-neutral-500"
+                className="w-3 rounded-t bg-neutral-400 transition-all dark:bg-white/[0.15]"
                 style={{ height: `${intH}%` }}
                 title={`Intensità: ${phase.metrics.avgIntensity}%`}
               />
@@ -314,7 +314,7 @@ function VolumeIntensityOverlay({ phases }: { phases: PhaseAnalytics[] }) {
           <span className="h-2 w-2 rounded-sm bg-violet-500" /> Volume
         </span>
         <span className="flex items-center gap-1">
-          <span className="h-2 w-2 rounded-sm bg-neutral-400 dark:bg-neutral-500" /> Intensità
+          <span className="h-2 w-2 rounded-sm bg-neutral-400 dark:bg-white/[0.15]" /> Intensità
         </span>
       </div>
     </div>

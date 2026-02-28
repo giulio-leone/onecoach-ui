@@ -69,7 +69,7 @@ export function ProgramInfoCard({
                 return (
                   <div
                     key={idx}
-                    className="flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white px-3 py-1.5 shadow-sm backdrop-blur-sm dark:border-white/[0.1] dark:bg-neutral-700/80"
+                    className="flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white px-3 py-1.5 shadow-sm backdrop-blur-sm dark:border-white/[0.1] dark:bg-white/[0.08]"
                   >
                     {MetaIcon && <MetaIcon className={cn('h-5 w-5', iconColor)} />}
                     <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">

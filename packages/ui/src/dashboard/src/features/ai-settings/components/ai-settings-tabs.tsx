@@ -146,7 +146,7 @@ export function AISettingsTabs({
             className={cn(
               'absolute top-full right-0 left-0 z-50 mt-2',
               'rounded-2xl p-2',
-              'bg-white/95 dark:bg-neutral-800/95',
+              'bg-white/95 dark:bg-white/[0.08]',
               'backdrop-blur-xl',
               'border border-neutral-200/50 dark:border-white/[0.08]',
               'shadow-2xl shadow-neutral-900/20 dark:shadow-neutral-900/40'

@@ -66,7 +66,7 @@ export const Alert = ({
       {dismissible && (
         <button
           onClick={handleDismiss}
-          className="flex-shrink-0 rounded-lg p-1 transition-colors hover:bg-black/5 dark:bg-neutral-900/5 dark:hover:bg-white"
+          className="flex-shrink-0 rounded-lg p-1 transition-colors hover:bg-black/5 dark:bg-white/[0.01] dark:hover:bg-white"
           aria-label="Dismiss alert"
         >
           <X className="h-4 w-4" />

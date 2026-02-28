@@ -450,7 +450,7 @@ export function ModernSidebar({
     return (
       <div
         className={cn(
-          'h-full w-full border-r border-neutral-200/50 bg-white/80 backdrop-blur-xl dark:border-white/[0.06] dark:bg-neutral-950/80',
+          'h-full w-full border-r border-neutral-200/50 bg-white/80 backdrop-blur-xl dark:border-white/[0.06] dark:bg-[#09090b]/80',
           className
         )}
       >
@@ -466,7 +466,7 @@ export function ModernSidebar({
         animate={isCollapsed ? 'collapsed' : 'expanded'}
         variants={sidebarVariants}
         className={cn(
-          'relative hidden h-screen overflow-visible border-r border-neutral-200/50 bg-white/90 backdrop-blur-xl transition-all duration-300 lg:block dark:border-white/[0.06] dark:bg-neutral-950/90',
+          'relative hidden h-screen overflow-visible border-r border-neutral-200/50 bg-white/90 backdrop-blur-xl transition-all duration-300 lg:block dark:border-white/[0.06] dark:bg-[#09090b]/90',
           className
         )}
         aria-expanded={!isCollapsed}

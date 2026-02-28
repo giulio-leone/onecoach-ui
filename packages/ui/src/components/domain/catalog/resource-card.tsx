@@ -98,7 +98,7 @@ export const ResourceCard = ({
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center text-neutral-300 dark:text-neutral-600">
-            <div className="h-12 w-12 rounded-full bg-neutral-200/50 dark:bg-neutral-700/50" />
+            <div className="h-12 w-12 rounded-full bg-neutral-200/50 dark:bg-white/[0.06]" />
           </div>
         )}
 

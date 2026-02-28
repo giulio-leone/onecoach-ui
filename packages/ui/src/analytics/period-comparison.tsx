@@ -197,7 +197,7 @@ function ComparisonBar({
       <div className="flex items-center gap-2">
         <div className="h-2 flex-1 overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.04]">
           <div
-            className="h-full rounded-full bg-neutral-400 transition-all dark:bg-neutral-600"
+            className="h-full rounded-full bg-neutral-400 transition-all dark:bg-white/[0.10]"
             style={{ width: `${prevW}%` }}
           />
         </div>
@@ -259,7 +259,7 @@ export function PeriodComparison({
         </span>
         <span className="text-neutral-400">vs</span>
         <span className="inline-flex items-center gap-1.5 rounded-full bg-neutral-100 px-3 py-1 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
-          <span className="h-2 w-2 rounded-full bg-neutral-400 dark:bg-neutral-600" />
+          <span className="h-2 w-2 rounded-full bg-neutral-400 dark:bg-white/[0.10]" />
           {prevLabel}
         </span>
       </div>

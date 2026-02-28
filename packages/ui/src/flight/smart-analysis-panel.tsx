@@ -546,7 +546,7 @@ function QuickStat({ icon: Icon, label, value, isPositive }: QuickStatProps) {
           'mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-lg',
           isPositive
             ? 'bg-emerald-500/10 text-emerald-500'
-            : 'bg-neutral-200/50 text-neutral-500 dark:bg-neutral-700/50 dark:text-neutral-400'
+            : 'bg-neutral-200/50 text-neutral-500 dark:bg-white/[0.06] dark:text-neutral-400'
         )}
       >
         <Icon className="h-4 w-4" weight="duotone" />

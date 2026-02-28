@@ -249,7 +249,7 @@ export function ExerciseCard({
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="w-48 border-neutral-200/60 bg-white p-1 shadow-xl dark:border-white/10 dark:bg-neutral-950/95 dark:text-white dark:backdrop-blur-xl"
+                className="w-48 border-neutral-200/60 bg-white p-1 shadow-xl dark:border-white/10 dark:bg-[#09090b]/95 dark:text-white dark:backdrop-blur-xl"
               >
                 <DropdownMenuItem
                   onClick={() => setIsSelectorOpen(true)}

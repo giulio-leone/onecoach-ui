@@ -615,7 +615,7 @@ export function AISettingsPageClient({
                       transition={{ delay: idx * 0.05 }}
                       className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-white/[0.06] dark:bg-white/[0.05]"
                     >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-neutral-700/70">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-white/[0.08]">
                         <Icon className="text-primary-500 h-5 w-5" />
                       </div>
                       <div>
@@ -656,7 +656,7 @@ export function AISettingsPageClient({
                       transition={{ delay: idx * 0.05 }}
                       className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-white/[0.06] dark:bg-white/[0.05]"
                     >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-neutral-700/70">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-white/[0.08]">
                         <Icon className="text-primary-500 h-5 w-5" />
                       </div>
                       <div>
@@ -856,7 +856,7 @@ export function AISettingsPageClient({
                       className="rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-white/[0.06] dark:bg-white/[0.05]"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-neutral-700/70">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-white/[0.08]">
                           <Icon className="text-primary-500 h-5 w-5" />
                         </div>
                         <div>
@@ -929,7 +929,7 @@ export function AISettingsPageClient({
                         'shrink-0 rounded-full px-2 py-0.5 text-xs font-medium',
                         flag.enabled
                           ? 'bg-emerald-500 text-white'
-                          : 'bg-neutral-300 text-neutral-600 dark:bg-neutral-600 dark:text-neutral-300'
+                          : 'bg-neutral-300 text-neutral-600 dark:bg-white/[0.10] dark:text-neutral-300'
                       )}
                     >
                       {flag.enabled ? t('flags.status.on') : t('flags.status.off')}

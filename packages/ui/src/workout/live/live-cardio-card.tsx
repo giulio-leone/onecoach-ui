@@ -137,7 +137,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
             disabled={isCompleted}
             className={`flex h-14 w-14 items-center justify-center rounded-full transition-all ${
               isCompleted
-                ? 'cursor-not-allowed bg-neutral-300 text-neutral-500 dark:bg-neutral-600'
+                ? 'cursor-not-allowed bg-neutral-300 text-neutral-500 dark:bg-white/[0.10]'
                 : isActive
                   ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30 hover:bg-primary-600'
                   : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300 dark:bg-white/[0.08] dark:text-neutral-200'

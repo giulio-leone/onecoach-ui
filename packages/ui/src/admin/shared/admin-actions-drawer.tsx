@@ -67,7 +67,7 @@ export function AdminActionsDrawer({
       >
         {/* Handle bar */}
         <div className="flex items-center justify-center pt-3 pb-2">
-          <div className={cn('h-1 w-12 rounded-full', 'bg-neutral-300 dark:bg-neutral-600')} />
+          <div className={cn('h-1 w-12 rounded-full', 'bg-neutral-300 dark:bg-white/[0.10]')} />
         </div>
 
         {/* Header */}

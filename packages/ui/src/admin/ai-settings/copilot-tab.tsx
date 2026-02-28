@@ -443,7 +443,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
                     'transition-colors',
                     isEnabled
                       ? 'bg-primary-50 dark:bg-primary-500/10'
-                      : 'bg-neutral-50 dark:bg-neutral-700/50'
+                      : 'bg-neutral-50 dark:bg-white/[0.06]'
                   )}
                 >
                   <div>

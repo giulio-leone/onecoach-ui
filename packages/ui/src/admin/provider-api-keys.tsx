@@ -460,7 +460,7 @@ function ProviderCard({
                     'h-2 w-2 rounded-full',
                     state.isEnabled
                       ? 'animate-pulse bg-green-500'
-                      : 'bg-neutral-300 dark:bg-neutral-600'
+                      : 'bg-neutral-300 dark:bg-white/[0.10]'
                   )}
                 ></div>
                 <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">

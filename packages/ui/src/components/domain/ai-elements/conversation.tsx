@@ -131,7 +131,7 @@ export function ConversationScrollButton({
         'absolute bottom-20 left-1/2 -translate-x-1/2',
         'flex items-center gap-2 rounded-full',
         'bg-white/90 px-4 py-2 shadow-lg backdrop-blur-sm',
-        'dark:bg-neutral-800/90',
+        'dark:bg-white/[0.08]',
         'text-sm font-medium text-neutral-700 dark:text-neutral-200',
         'hover:bg-white dark:hover:bg-white/[0.08]',
         'transition-colors',

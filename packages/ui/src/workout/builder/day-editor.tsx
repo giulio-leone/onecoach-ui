@@ -106,7 +106,7 @@ export function DayEditor({
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="border-neutral-200/60 bg-white text-neutral-900 shadow-xl dark:border-white/10 dark:bg-neutral-950/95 dark:text-white dark:backdrop-blur-xl"
+              className="border-neutral-200/60 bg-white text-neutral-900 shadow-xl dark:border-white/10 dark:bg-[#09090b]/95 dark:text-white dark:backdrop-blur-xl"
             >
               {exerciseClipboard.hasItem() ? (
                 <DropdownMenuItem

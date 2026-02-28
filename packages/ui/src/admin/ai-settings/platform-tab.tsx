@@ -221,7 +221,7 @@ export function PlatformTab({
                           'shrink-0 rounded-full px-2 py-0.5 text-xs font-medium',
                           flag.enabled
                             ? 'bg-emerald-500 text-white'
-                            : 'bg-neutral-300 text-neutral-600 dark:bg-neutral-600 dark:text-neutral-300'
+                            : 'bg-neutral-300 text-neutral-600 dark:bg-white/[0.10] dark:text-neutral-300'
                         )}
                       >
                         {flag.enabled ? t('flags.on') : t('flags.off')}

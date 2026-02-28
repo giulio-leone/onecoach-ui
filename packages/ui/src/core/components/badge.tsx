@@ -48,7 +48,7 @@ export const Badge = ({
       'border border-primary-200/60 dark:border-primary-500/20'
     ),
     neutral: cn(
-      'bg-neutral-100 dark:bg-neutral-500/15',
+      'bg-neutral-100 dark:bg-white/[0.04]',
       'text-neutral-700 dark:text-neutral-300',
       'border border-neutral-200/60 dark:border-neutral-500/20'
     ),
