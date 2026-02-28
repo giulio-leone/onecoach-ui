@@ -210,7 +210,7 @@ export function PolicyHistoryModal({ policyId, onClose }: PolicyHistoryModalProp
                         <label className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
                           {t('admin.policy_history_modal.contenuto')}
                         </label>
-                        <div className="mt-2 max-h-60 overflow-y-auto rounded-lg bg-neutral-50 p-4 dark:bg-neutral-800/50">
+                        <div className="mt-2 max-h-60 overflow-y-auto rounded-lg bg-neutral-50 p-4 dark:bg-white/[0.05]">
                           <div
                             className="prose prose-sm max-w-none"
                             dangerouslySetInnerHTML={{ __html: item.content }}

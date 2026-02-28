@@ -147,7 +147,7 @@ export function ChatHistoryModal({
       title="Cronologia Chat"
       size="lg" // Wide modal
       mobileFullScreen={true}
-      className="flex h-[80vh] w-[calc(100vw-20px)] max-w-[560px] flex-col overflow-hidden bg-white/90 p-0 backdrop-blur-xl sm:h-[620px] sm:max-w-[680px] dark:bg-neutral-900/90"
+      className="flex h-[80vh] w-[calc(100vw-20px)] max-w-[560px] flex-col overflow-hidden bg-white/90 p-0 backdrop-blur-xl sm:h-[620px] sm:max-w-[680px] dark:bg-white/[0.08]"
     >
       <div className="flex h-full flex-col">
         {/* Search Header */}
@@ -347,7 +347,7 @@ export function ChatHistoryModal({
                       {/* Actions: sempre visibili su mobile, on-hover su desktop */}
                       <div
                         className={cn(
-                          'absolute top-1/2 right-2 flex -translate-y-1/2 items-center gap-1 rounded-lg bg-white/90 p-1 shadow-sm backdrop-blur-sm dark:bg-neutral-900/90',
+                          'absolute top-1/2 right-2 flex -translate-y-1/2 items-center gap-1 rounded-lg bg-white/90 p-1 shadow-sm backdrop-blur-sm dark:bg-white/[0.08]',
                           isMobile
                             ? 'opacity-100'
                             : 'opacity-0 transition-opacity group-hover:opacity-100'

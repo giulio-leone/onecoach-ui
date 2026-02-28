@@ -54,7 +54,7 @@ export const Suggestion = ({
         // Base
         'group cursor-pointer gap-2 rounded-full px-4',
         // Glassmorphism
-        'bg-white/70 dark:bg-neutral-800/70',
+        'bg-white/70 dark:bg-white/[0.06]',
         'backdrop-blur-sm',
         'border border-neutral-200/50 dark:border-white/[0.08]',
         // Text

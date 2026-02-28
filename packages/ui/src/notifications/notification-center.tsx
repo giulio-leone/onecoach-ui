@@ -280,7 +280,7 @@ export function NotificationCenter({
                   if (items.length === 0) return null;
                   return (
                     <div key={group}>
-                      <p className="sticky top-0 z-10 bg-neutral-50/90 px-4 py-1.5 text-[10px] font-semibold tracking-wide text-neutral-400 uppercase backdrop-blur-sm dark:bg-neutral-900/90">
+                      <p className="sticky top-0 z-10 bg-neutral-50/90 px-4 py-1.5 text-[10px] font-semibold tracking-wide text-neutral-400 uppercase backdrop-blur-sm dark:bg-white/[0.08]">
                         {GROUP_LABELS[group]}
                       </p>
                       {items.map((n) => (

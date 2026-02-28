@@ -95,7 +95,7 @@ export function SelectionCard({
                   ? 'shadow-[0_0_20px_rgba(99,102,241,0.2)]'
                   : 'scale-[1.01] shadow-[0_0_30px_rgba(99,102,241,0.25)]'
               )
-            : 'ring-1 ring-white/15 hover:bg-white/50 dark:bg-neutral-900/40 dark:ring-white/10 dark:hover:bg-white/5'
+            : 'ring-1 ring-white/15 hover:bg-white/50 dark:bg-white/[0.03] dark:ring-white/10 dark:hover:bg-white/5'
         )}
       >
         {/* Selection Glow Effect - More subtle */}
@@ -124,7 +124,7 @@ export function SelectionCard({
                     compact ? 'rounded-md p-1' : 'mb-2.5 self-start rounded-xl p-2',
                     selected
                       ? 'bg-primary-500 text-white shadow-md shadow-primary-500/25'
-                      : 'bg-neutral-100/80 text-neutral-500 dark:bg-neutral-800/80 dark:text-neutral-400'
+                      : 'bg-neutral-100/80 text-neutral-500 dark:bg-white/[0.06] dark:text-neutral-400'
                   )}
                 >
                   {React.isValidElement(icon)

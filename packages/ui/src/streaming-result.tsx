@@ -52,7 +52,7 @@ function EventCard({ event }: { event: StreamEvent }) {
     <button
       onClick={() => hasData && setIsExpanded((prev) => !prev)}
       className={cn(
-        'w-full rounded-xl border border-neutral-200/60 bg-white/50 text-left dark:border-white/[0.08]/60 dark:bg-neutral-800/50',
+        'w-full rounded-xl border border-neutral-200/60 bg-white/50 text-left dark:border-white/[0.08]/60 dark:bg-white/[0.05]',
         'px-3 py-2.5 transition-colors',
         hasData &&
           'hover:bg-neutral-50 active:bg-neutral-100 dark:hover:bg-white/[0.08]/30 dark:active:bg-neutral-700/50',
@@ -168,7 +168,7 @@ export function StreamingResult({
 
       {/* Events Log */}
       <Card variant="glass" className="flex max-h-80 flex-col overflow-hidden p-0">
-        <div className="flex-shrink-0 border-b border-neutral-100 bg-neutral-50/80 px-4 py-3 dark:border-white/[0.08] dark:bg-neutral-800/50">
+        <div className="flex-shrink-0 border-b border-neutral-100 bg-neutral-50/80 px-4 py-3 dark:border-white/[0.08] dark:bg-white/[0.05]">
           <div className="flex items-center gap-2">
             <Sparkles className="h-4 w-4 text-primary-500" />
             <span className="font-semibold text-neutral-900 dark:text-neutral-100">

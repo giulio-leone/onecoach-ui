@@ -108,7 +108,7 @@ export function MemoryTimeline({
           return (
             <div
               key={event.id}
-              className="flex gap-4 rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50"
+              className="flex gap-4 rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]"
             >
               <div className={cn('flex-shrink-0', colorClass)}>
                 <Icon className="h-5 w-5" />

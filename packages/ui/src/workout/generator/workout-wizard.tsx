@@ -158,7 +158,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
             value={formData.durationMinutes.toString()}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateData('durationMinutes', parseInt(e.target.value) || 0)}
             type="number"
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
         </div>
       ),

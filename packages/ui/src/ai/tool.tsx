@@ -30,7 +30,7 @@ export const Tool = ({ className, ...props }: ToolProps) => (
       // Base
       'not-prose mb-4 w-full overflow-hidden rounded-xl',
       // Glassmorphism
-      'bg-white/60 dark:bg-neutral-800/60',
+      'bg-white/60 dark:bg-white/[0.05]',
       'backdrop-blur-sm',
       'border border-neutral-200/50 dark:border-white/[0.08]',
       // Shadow
@@ -167,7 +167,7 @@ export const ToolInput = ({ className, input, ...props }: ToolInputProps) => {
       <h4 className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
         {t('common.ui.parameters')}
       </h4>
-      <div className="overflow-hidden rounded-lg bg-neutral-50 dark:bg-neutral-900/50">
+      <div className="overflow-hidden rounded-lg bg-neutral-50 dark:bg-white/[0.04]">
         <CodeBlock code={JSON.stringify(input, null, 2)} language="json" />
       </div>
     </div>
@@ -211,7 +211,7 @@ export const ToolOutput = ({ className, output, errorText, ...props }: ToolOutpu
           'overflow-x-auto rounded-lg text-xs [&_table]:w-full',
           errorText
             ? 'bg-red-50 p-3 text-red-600 dark:bg-red-900/20 dark:text-red-400'
-            : 'bg-neutral-50 dark:bg-neutral-900/50'
+            : 'bg-neutral-50 dark:bg-white/[0.04]'
         )}
       >
         {errorText && <div className="font-mono">{errorText}</div>}

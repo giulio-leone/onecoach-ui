@@ -157,7 +157,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                     <Pressable
                       key={ex.id}
                       onPress={() => handleSelect(ex)}
-                      className="flex-row items-center gap-4 rounded-xl border border-neutral-200/60 bg-white p-4 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-neutral-800/50 dark:hover:bg-white/[0.06]"
+                      className="flex-row items-center gap-4 rounded-xl border border-neutral-200/60 bg-white p-4 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.05] dark:hover:bg-white/[0.06]"
                     >
                       <View className="h-12 w-12 items-center justify-center rounded-full bg-primary-50 dark:bg-primary-900/20">
                         <Dumbbell size={24} className="text-primary-600 dark:text-primary-400" />

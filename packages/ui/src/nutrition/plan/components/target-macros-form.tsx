@@ -48,7 +48,7 @@ export function TargetMacrosForm({
           showLabels={true}
         />
       </div>
-      <div className="grid gap-4 rounded-xl border border-neutral-100 bg-neutral-50 p-4 sm:grid-cols-2 lg:grid-cols-4 dark:bg-neutral-800/50">
+      <div className="grid gap-4 rounded-xl border border-neutral-100 bg-neutral-50 p-4 sm:grid-cols-2 lg:grid-cols-4 dark:bg-white/[0.05]">
         <div>
           <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300">
             Calorie

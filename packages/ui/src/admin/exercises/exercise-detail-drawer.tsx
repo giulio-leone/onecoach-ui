@@ -112,7 +112,7 @@ export function ExerciseDetailDrawer({
             {(exercise.videoUrl || exercise.imageUrl) && (
               <section className="grid gap-3 sm:grid-cols-2">
                 {exercise.videoUrl && (
-                  <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+                  <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
                     <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                       <PlayCircle className="h-3.5 w-3.5 text-primary-500 sm:h-4 sm:w-4" />
                       Video
@@ -128,7 +128,7 @@ export function ExerciseDetailDrawer({
                   </div>
                 )}
                 {exercise.imageUrl && (
-                  <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+                  <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
                     <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                       <Camera className="h-3.5 w-3.5 text-secondary-500 sm:h-4 sm:w-4" />
                       Immagine

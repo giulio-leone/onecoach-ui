@@ -386,7 +386,7 @@ export function DateRangePicker({
           'group relative flex w-full items-stretch overflow-hidden rounded-2xl border-2 border-neutral-200/50 bg-white/80 backdrop-blur-xl transition-all duration-300',
           'hover:border-primary-300/50 hover:shadow-lg hover:shadow-primary-500/5',
           'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50',
-          'dark:border-white/[0.08] dark:bg-neutral-900/80 dark:hover:border-primary-500/30',
+          'dark:border-white/[0.08] dark:bg-white/[0.06] dark:hover:border-primary-500/30',
           open && 'border-primary-400/50 shadow-xl ring-2 shadow-primary-500/10 ring-primary-500/20',
           disabled && 'cursor-not-allowed opacity-50',
           className
@@ -461,7 +461,7 @@ export function DateRangePicker({
             'z-50 w-[min(680px,95vw)] rounded-2xl border border-neutral-200/50 bg-white/95 p-4 shadow-2xl backdrop-blur-xl',
             'animate-in fade-in-0 zoom-in-95 slide-in-from-top-2',
             'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
-            'dark:border-white/[0.08] dark:bg-neutral-900/95'
+            'dark:border-white/[0.08] dark:bg-white/[0.10]'
           )}
         >
           {/* Selection mode indicator */}

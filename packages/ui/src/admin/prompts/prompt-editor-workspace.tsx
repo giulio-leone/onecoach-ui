@@ -248,7 +248,7 @@ export function PromptEditorWorkspace({ prompt, onSave, className }: PromptEdito
               initial={{ width: 0, opacity: 0 }}
               animate={{ width: '50%', opacity: 1 }}
               exit={{ width: 0, opacity: 0 }}
-              className="flex flex-col overflow-hidden bg-neutral-50 dark:bg-neutral-900/50"
+              className="flex flex-col overflow-hidden bg-neutral-50 dark:bg-white/[0.04]"
             >
               <PromptPreview
                 agentId={prompt.agentId}

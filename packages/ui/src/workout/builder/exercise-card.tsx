@@ -150,9 +150,9 @@ export function ExerciseCard({
           'group/card relative mb-4 rounded-2xl border transition-all duration-300',
           isExpanded
             ? 'glass border-primary-500/30 shadow-primary-500/5 dark:glass-strong shadow-lg dark:border-white/10 dark:shadow-black/20'
-            : 'hover:border-primary-500/30 dark:hover:glass border-neutral-200/60 bg-white hover:shadow-md dark:border-white/[0.06] dark:bg-neutral-900/40 dark:hover:border-white/20',
+            : 'hover:border-primary-500/30 dark:hover:glass border-neutral-200/60 bg-white hover:shadow-md dark:border-white/[0.06] dark:bg-white/[0.03] dark:hover:border-white/20',
           isDragging &&
-            'shadow-glow ring-primary-500/50 z-50 scale-[1.02] bg-white ring-2 backdrop-blur-xl dark:bg-neutral-900/95'
+            'shadow-glow ring-primary-500/50 z-50 scale-[1.02] bg-white ring-2 backdrop-blur-xl dark:bg-white/[0.10]'
         )}
       >
         {/* Header */}
@@ -183,7 +183,7 @@ export function ExerciseCard({
                 'flex h-7 w-7 items-center justify-center rounded-lg font-mono text-sm font-bold tabular-nums transition-colors',
                 isExpanded
                   ? 'bg-primary-50 text-primary-600 ring-primary-500/20 dark:bg-primary-500/20 dark:text-primary-400 shadow-sm ring-1 dark:shadow-[0_0_10px_rgba(79,70,229,0.2)]'
-                  : 'group-hover/card:bg-primary-50 group-hover/card:text-primary-600 dark:group-hover/card:bg-primary-500/10 dark:group-hover/card:text-primary-400 bg-neutral-100 text-neutral-500 dark:bg-neutral-800/50 dark:text-neutral-500'
+                  : 'group-hover/card:bg-primary-50 group-hover/card:text-primary-600 dark:group-hover/card:bg-primary-500/10 dark:group-hover/card:text-primary-400 bg-neutral-100 text-neutral-500 dark:bg-white/[0.05] dark:text-neutral-500'
               )}
             >
               {index + 1}

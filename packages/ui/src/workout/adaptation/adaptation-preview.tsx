@@ -144,7 +144,7 @@ function AnalysisSummary({ analysis }: { analysis: AdaptationAnalysis }) {
               {analysis.strengthChanges.map((sc) => (
                 <div
                   key={sc.exerciseName}
-                  className="flex items-center justify-between rounded-lg bg-neutral-50 px-3 py-2 dark:bg-neutral-800/50"
+                  className="flex items-center justify-between rounded-lg bg-neutral-50 px-3 py-2 dark:bg-white/[0.05]"
                 >
                   <span className="text-sm text-neutral-700 dark:text-neutral-300">
                     {sc.exerciseName}
@@ -189,7 +189,7 @@ function SignalList({ signals }: { signals: AdaptationSignal[] }) {
           {signals.map((signal, i) => (
             <div
               key={`${signal.type}-${i}`}
-              className="flex items-start gap-3 rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/30"
+              className="flex items-start gap-3 rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-white/[0.04]"
             >
               <Badge variant={priorityBadgeVariant[signal.priority]} size="sm">
                 {signal.priority}
@@ -240,7 +240,7 @@ function SuggestedChangesList({ changes }: { changes: SuggestedChange[] }) {
                 </span>
               </div>
               {(change.before || change.after) && (
-                <div className="flex items-center gap-2 rounded-lg bg-neutral-50 p-2.5 text-sm dark:bg-neutral-800/50">
+                <div className="flex items-center gap-2 rounded-lg bg-neutral-50 p-2.5 text-sm dark:bg-white/[0.05]">
                   {change.before && (
                     <span className="rounded bg-red-100 px-2 py-0.5 text-red-700 line-through dark:bg-red-900/30 dark:text-red-300">
                       {change.before}

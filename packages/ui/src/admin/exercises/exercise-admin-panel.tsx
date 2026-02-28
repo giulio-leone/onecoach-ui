@@ -408,7 +408,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
 
           {/* Empty State */}
           {!isLoading && exercises.length === 0 && (
-            <div className="flex h-64 flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-200/60 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-900/50">
+            <div className="flex h-64 flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-200/60 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-white/[0.04]">
               <p className="text-neutral-500">{t('empty')}</p>
               {isActive && (
                 <Button variant="ghost" onClick={reset}>
@@ -421,7 +421,7 @@ export function ExercisesAdminPanel({ initialData, locale }: ExercisesAdminPanel
 
         {/* Pagination */}
         <div className="sticky bottom-4 z-30">
-          <div className="rounded-2xl border border-white/20 bg-white/80 p-2 shadow-lg backdrop-blur-xl dark:bg-neutral-900/80">
+          <div className="rounded-2xl border border-white/20 bg-white/80 p-2 shadow-lg backdrop-blur-xl dark:bg-white/[0.06]">
             <ExercisePagination
               page={page}
               total={total || 0}

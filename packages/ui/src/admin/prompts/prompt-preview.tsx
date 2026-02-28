@@ -97,7 +97,7 @@ export function PromptPreview({ agentId, template, variables, className }: Promp
         </div>
       </div>
 
-      <div className="flex-1 overflow-auto bg-neutral-50 p-4 dark:bg-neutral-900/50">
+      <div className="flex-1 overflow-auto bg-neutral-50 p-4 dark:bg-white/[0.04]">
         {preview ? (
           <pre className="font-mono text-sm whitespace-pre-wrap text-neutral-800 dark:text-neutral-200">
             {preview}

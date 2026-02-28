@@ -300,7 +300,7 @@ export function BodyMeasurementsTracker({
       </div>
 
       {/* ── Weight quick entry ── */}
-      <div className="rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-neutral-900/80">
+      <div className="rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-white/[0.06]">
         <div className="mb-3 flex items-center gap-2">
           <Scale className="h-4 w-4 text-primary-500" />
           <span className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
@@ -315,7 +315,7 @@ export function BodyMeasurementsTracker({
       </div>
 
       {/* ── Body composition ── */}
-      <div className="rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-neutral-900/80">
+      <div className="rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-white/[0.06]">
         <p className="mb-4 text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
           Composizione corporea
         </p>
@@ -350,7 +350,7 @@ export function BodyMeasurementsTracker({
       </div>
 
       {/* ── Circumferences ── */}
-      <div className="rounded-xl border border-neutral-200/50 bg-white/80 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-neutral-900/80">
+      <div className="rounded-xl border border-neutral-200/50 bg-white/80 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-white/[0.06]">
         <button
           type="button"
           onClick={() => setCircumOpen((o) => !o)}
@@ -432,7 +432,7 @@ export function BodyMeasurementsTracker({
           <div className="overflow-x-auto rounded-xl border border-neutral-200/50 dark:border-white/[0.06]">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-neutral-100 bg-neutral-50/80 dark:border-white/[0.08] dark:bg-neutral-900/50">
+                <tr className="border-b border-neutral-100 bg-neutral-50/80 dark:border-white/[0.08] dark:bg-white/[0.04]">
                   <th className="px-3 py-2 font-semibold text-neutral-500 dark:text-neutral-400">Data</th>
                   <th className="px-3 py-2 font-semibold text-neutral-500 dark:text-neutral-400">Peso</th>
                   <th className="px-3 py-2 font-semibold text-neutral-500 dark:text-neutral-400">BF%</th>

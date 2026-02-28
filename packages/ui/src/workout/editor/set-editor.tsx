@@ -157,7 +157,7 @@ export function SetEditor({
       className={`rounded-lg border p-4 shadow-sm transition-all ${
         groupId
           ? 'border-primary-300 bg-primary-50'
-          : 'border-neutral-200/60 bg-neutral-50 dark:border-white/[0.08] dark:bg-neutral-800/50'
+          : 'border-neutral-200/60 bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.05]'
       } ${isDisabled ? 'opacity-60' : ''} ${className || ''}`}
     >
       <div className="mb-2 flex items-center justify-between">

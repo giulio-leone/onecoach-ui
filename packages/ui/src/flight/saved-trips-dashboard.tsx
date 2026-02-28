@@ -228,7 +228,7 @@ function SavedTripCard({ trip }: { trip: SavedTrip }) {
             </div>
 
             {/* Flight Segments Preview */}
-            <div className="space-y-3 rounded-xl bg-neutral-50 p-4 ring-1 ring-neutral-200 dark:bg-neutral-800/50 dark:ring-white/5">
+            <div className="space-y-3 rounded-xl bg-neutral-50 p-4 ring-1 ring-neutral-200 dark:bg-white/[0.05] dark:ring-white/5">
               <FlightSegmentPreview flight={trip.outboundFlight} />
               {trip.returnFlight && (
                 <>

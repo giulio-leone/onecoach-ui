@@ -40,7 +40,7 @@ export const WizardStepper = ({
                       ? 'scale-110 border-transparent bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-[0_0_30px_rgba(79,70,229,0.4)]'
                       : isCompleted
                         ? 'border-primary-500/40 bg-primary-500/10 text-primary-500 shadow-[0_0_15px_rgba(79,70,229,0.1)] dark:bg-primary-500/20'
-                        : 'border-neutral-200/50 bg-white/40 text-neutral-400 backdrop-blur-md dark:border-white/[0.06] dark:bg-neutral-900/40'
+                        : 'border-neutral-200/50 bg-white/40 text-neutral-400 backdrop-blur-md dark:border-white/[0.06] dark:bg-white/[0.03]'
                   )}
                 >
                   {isCompleted ? (
@@ -73,7 +73,7 @@ export const WizardStepper = ({
                       'absolute top-4 right-[calc(-50%+24px)] left-[calc(50%+24px)] -z-0 h-[1px] transition-all duration-700 sm:top-5',
                       isCompleted
                         ? 'bg-gradient-to-r from-primary-600/60 to-primary-400/40'
-                        : 'bg-neutral-200 dark:bg-neutral-800/50'
+                        : 'bg-neutral-200 dark:bg-white/[0.05]'
                     )}
                     aria-hidden="true"
                   />
@@ -204,7 +204,7 @@ export const WizardRadioGroup = ({
     <div
       className={cn(
         'relative flex items-center gap-1.5 overflow-hidden rounded-2xl p-1.5',
-        'border border-white/40 bg-white/30 backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/40',
+        'border border-white/40 bg-white/30 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.03]',
         'shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] dark:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.3)]',
         className
       )}

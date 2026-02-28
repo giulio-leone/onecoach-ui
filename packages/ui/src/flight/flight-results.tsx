@@ -426,7 +426,7 @@ export function FlightResults({
       )}
 
       {/* Tabs */}
-      <div className="flex gap-2 rounded-2xl bg-neutral-100 p-1.5 dark:bg-neutral-800/50">
+      <div className="flex gap-2 rounded-2xl bg-neutral-100 p-1.5 dark:bg-white/[0.05]">
         <TabButton
           active={activeTab === 'outbound'}
           onClick={() => setActiveTab('outbound')}
@@ -658,7 +658,7 @@ function SelectionCard({ label, flight, onClear }: SelectionCardProps) {
       </div>
     );
   return (
-    <div className="relative rounded-xl border border-white/20 bg-white/50 p-4 dark:bg-neutral-800/80">
+    <div className="relative rounded-xl border border-white/20 bg-white/50 p-4 dark:bg-white/[0.06]">
       <button
         onClick={onClear}
         className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs text-white hover:bg-red-600"

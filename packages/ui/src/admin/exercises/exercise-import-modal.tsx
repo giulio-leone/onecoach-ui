@@ -82,7 +82,7 @@ export function ExerciseImportModal({ isOpen, onClose, onSuccess }: ExerciseImpo
         {t('admin.exercise_import_modal.incolla_il_json_esportato_oppure_carica_')}
       </p>
       <form onSubmit={handleSubmit} className="flex flex-1 flex-col gap-4">
-        <div className="rounded-xl border border-dashed border-neutral-300 bg-neutral-50 p-4 text-sm text-neutral-600 dark:border-white/[0.1] dark:bg-neutral-800/50 dark:text-neutral-400">
+        <div className="rounded-xl border border-dashed border-neutral-300 bg-neutral-50 p-4 text-sm text-neutral-600 dark:border-white/[0.1] dark:bg-white/[0.05] dark:text-neutral-400">
           <div className="flex flex-col items-center justify-center gap-3 text-center">
             <FileJson className="h-8 w-8 text-emerald-500" />
             <p className="font-medium">
@@ -115,7 +115,7 @@ export function ExerciseImportModal({ isOpen, onClose, onSuccess }: ExerciseImpo
             required
           />
         </div>
-        <div className="flex flex-wrap items-center gap-4 rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-400">
+        <div className="flex flex-wrap items-center gap-4 rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-white/[0.05] dark:text-neutral-400">
           <Checkbox
             label={t('admin.exercise_import_modal.approva_automaticamente_i_nuovi_esercizi')}
             checked={autoApprove}

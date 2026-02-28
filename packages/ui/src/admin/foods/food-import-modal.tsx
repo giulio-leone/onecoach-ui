@@ -80,7 +80,7 @@ export function FoodImportModal({ isOpen, onClose, onImported }: FoodImportModal
       {results && (
         <div className="mt-4 max-h-64 overflow-auto rounded border border-neutral-200/60 dark:border-white/[0.08]">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-400">
+            <thead className="bg-neutral-50 text-neutral-600 dark:bg-white/[0.05] dark:text-neutral-400">
               <tr>
                 <th className="px-3 py-2">Nome</th>
                 <th className="px-3 py-2">Marca</th>

@@ -30,7 +30,7 @@ export function WorkoutForm({
   return (
     <div className="space-y-8">
       {/* Parametri Personali */}
-      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
         <div className="border-b border-neutral-200/60 bg-primary-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-primary-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30">
@@ -56,7 +56,7 @@ export function WorkoutForm({
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateField('userProfile', { age: parseInt(e.target.value) || 0 })}
                 type="number"
                 placeholder="Anni"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
             <div className="flex-1">
@@ -68,7 +68,7 @@ export function WorkoutForm({
                 }
                 type="number"
                 placeholder="kg"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
             <div className="flex-1">
@@ -80,7 +80,7 @@ export function WorkoutForm({
                 }
                 type="number"
                 placeholder="cm"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
           </div>
@@ -124,7 +124,7 @@ export function WorkoutForm({
       </Card>
 
       {/* Livello Esperienza */}
-      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
         <div className="border-b border-neutral-200/60 bg-secondary-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-secondary-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-100 dark:bg-secondary-900/30">
@@ -206,7 +206,7 @@ export function WorkoutForm({
       </Card>
 
       {/* Obiettivi */}
-      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
         <div className="border-b border-neutral-200/60 bg-red-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-red-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30">
@@ -287,7 +287,7 @@ export function WorkoutForm({
                   updateField('goals', { daysPerWeek: parseInt(e.target.value) || 0 })
                 }
                 type="number"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
             <div className="flex-1">
@@ -298,7 +298,7 @@ export function WorkoutForm({
                   updateField('goals', { sessionDurationMinutes: parseInt(e.target.value) || 0 })
                 }
                 type="number"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
           </div>
@@ -332,7 +332,7 @@ export function WorkoutForm({
       </Card>
 
       {/* Preferenze & Limitazioni */}
-      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
         <div className="border-b border-neutral-200/60 bg-orange-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-orange-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
@@ -357,7 +357,7 @@ export function WorkoutForm({
               updateField('constraints', { injuriesLimitations: arrayFromCsv(e.target.value) })
             }
             placeholder="es. spalla dx, schiena..."
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
           <Input
             label="Attrezzatura Disponibile"
@@ -366,7 +366,7 @@ export function WorkoutForm({
               updateField('constraints', { availableEquipment: arrayFromCsv(e.target.value) })
             }
             placeholder="es. manubri, bilanciere, panca..."
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
           <Input
             label="Esercizi Preferiti"
@@ -375,20 +375,20 @@ export function WorkoutForm({
               updateField('constraints', { preferredExercises: arrayFromCsv(e.target.value) })
             }
             placeholder="es. panca piana, squat..."
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
           <Input
             label="Note Aggiuntive"
             value={formData.additionalNotes}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateAdditionalNotes(e.target.value)}
             placeholder="Dettagli extra per il coach..."
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
         </div>
       </Card>
 
       {/* AI Settings */}
-      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-neutral-900/50">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
         <div className="border-b border-neutral-200/60 bg-gray-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-gray-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">

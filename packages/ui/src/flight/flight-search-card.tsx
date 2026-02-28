@@ -95,7 +95,7 @@ export function FlightSearchCard({
             'flex h-8 w-8 items-center justify-center rounded-full transition-all',
             search.isFavorite
               ? 'bg-red-500/10 text-red-500 hover:bg-red-500/20'
-              : 'bg-white/50 text-neutral-400 hover:bg-white/80 hover:text-red-500 dark:bg-neutral-800/50 dark:hover:bg-white/[0.08]',
+              : 'bg-white/50 text-neutral-400 hover:bg-white/80 hover:text-red-500 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]',
             isTogglingFavorite && 'animate-pulse'
           )}
           aria-label={search.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
@@ -106,7 +106,7 @@ export function FlightSearchCard({
           onClick={handleDelete}
           disabled={isDeleting}
           className={cn(
-            'flex h-8 w-8 items-center justify-center rounded-full bg-white/50 text-neutral-400 transition-all hover:bg-red-500/10 hover:text-red-500 dark:bg-neutral-800/50 dark:hover:bg-white/[0.08]',
+            'flex h-8 w-8 items-center justify-center rounded-full bg-white/50 text-neutral-400 transition-all hover:bg-red-500/10 hover:text-red-500 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]',
             isDeleting && 'animate-pulse'
           )}
           aria-label="Delete search"

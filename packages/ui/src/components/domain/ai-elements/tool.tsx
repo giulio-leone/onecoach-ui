@@ -45,7 +45,7 @@ export const Tool = forwardRef<HTMLDivElement, ToolProps>(
         ref={ref}
         className={cn(
           'rounded-lg border border-neutral-200/60 bg-neutral-50',
-          'dark:border-white/[0.08] dark:bg-neutral-800/50',
+          'dark:border-white/[0.08] dark:bg-white/[0.05]',
           'overflow-hidden',
           className
         )}
@@ -282,7 +282,7 @@ export function ToolBubble({ toolName, state, args, result }: ToolBubbleProps) {
     .replace(/^oneagenda /, '📅 ');
 
   return (
-    <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 dark:border-white/[0.08] dark:bg-neutral-800/50">
+    <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.05]">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50"

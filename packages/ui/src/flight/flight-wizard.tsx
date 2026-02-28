@@ -883,7 +883,7 @@ export function FlightWizard({
           className={cn(
             'rounded-3xl border p-8 backdrop-blur-xl',
             'border-neutral-200/80 bg-white/90 shadow-2xl shadow-neutral-500/5',
-            'dark:border-white/[0.08]/60 dark:bg-neutral-900/95 dark:shadow-black/20'
+            'dark:border-white/[0.08]/60 dark:bg-white/[0.10] dark:shadow-black/20'
           )}
         >
           {/* Step Header */}

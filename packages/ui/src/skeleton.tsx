@@ -13,7 +13,7 @@ export function Skeleton({ className, style }: SkeletonProps) {
   return (
     <div
       className={clsx(
-        'animate-pulse rounded-md bg-neutral-200/80 dark:bg-neutral-800/80',
+        'animate-pulse rounded-md bg-neutral-200/80 dark:bg-white/[0.06]',
         className
       )}
       style={style}

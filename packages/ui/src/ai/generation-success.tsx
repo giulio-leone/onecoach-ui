@@ -45,7 +45,7 @@ export function GenerationSuccess({
           {stats && stats.length > 0 && (
             <div className="mb-8 grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
               {stats.map((stat, i) => (
-                <div key={i} className="rounded-lg bg-neutral-50 p-3 dark:bg-neutral-800/50">
+                <div key={i} className="rounded-lg bg-neutral-50 p-3 dark:bg-white/[0.05]">
                   <div className="text-xs font-medium tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
                     {stat.label}
                   </div>

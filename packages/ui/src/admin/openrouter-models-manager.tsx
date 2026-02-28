@@ -270,7 +270,7 @@ export function OpenRouterModelsManager() {
         {/* Desktop Table */}
         <div className="hidden overflow-x-auto md:block">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-xs text-neutral-500 uppercase dark:bg-neutral-800/50 dark:text-neutral-400">
+            <thead className="bg-neutral-50 text-xs text-neutral-500 uppercase dark:bg-white/[0.05] dark:text-neutral-400">
               <tr>
                 <th className="px-6 py-3">Name</th>
                 <th className="px-6 py-3">{t('openrouter_models_manager.model_id')}</th>

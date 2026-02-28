@@ -44,14 +44,14 @@ export function ProjectGantt({
     <div
       className={cn(
         'flex w-full flex-col overflow-hidden rounded-2xl',
-        'bg-white/80 dark:bg-neutral-900/80',
+        'bg-white/80 dark:bg-white/[0.06]',
         'border border-neutral-200/50 dark:border-white/[0.06]',
         'shadow-sm dark:shadow-lg dark:shadow-black/20',
         'backdrop-blur-sm',
         className
       )}
     >
-      <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-6 py-4 dark:border-white/[0.06] dark:bg-neutral-800/30">
+      <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-6 py-4 dark:border-white/[0.06] dark:bg-white/[0.04]">
         <h3 className="font-bold text-neutral-900 dark:text-white">{project.title}</h3>
       </div>
 

@@ -46,7 +46,7 @@ export function UnifiedListItem({
       onKeyDown={(e) => e.key === 'Enter' && onPress?.()}
       className={cn(
         'group relative mb-3 flex cursor-pointer flex-row items-center overflow-hidden rounded-2xl border p-4',
-        'bg-white/90 dark:bg-neutral-900/95',
+        'bg-white/90 dark:bg-white/[0.10]',
         'border-neutral-200/40 dark:border-white/[0.08]',
         'shadow-sm dark:shadow-lg dark:shadow-black/20',
         'transition-all duration-200',

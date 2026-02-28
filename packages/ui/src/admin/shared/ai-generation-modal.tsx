@@ -128,7 +128,7 @@ export function AiGenerationModal<TOutput>({
               />
             </div>
             {options.length > 0 && (
-              <div className="flex flex-wrap items-center gap-4 rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-400">
+              <div className="flex flex-wrap items-center gap-4 rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-white/[0.05] dark:text-neutral-400">
                 {options.map((option: any) => (
                   <Checkbox
                     key={option.key}

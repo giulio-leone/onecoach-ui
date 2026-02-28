@@ -145,7 +145,7 @@ export function LiveSupersetCard({
 
               {/* Sets Preview (Collapsible) */}
               {isExpanded && !isDone && (
-                <div className="bg-neutral-50 px-5 py-4 dark:bg-neutral-900/30">
+                <div className="bg-neutral-50 px-5 py-4 dark:bg-white/[0.03]">
                   <div className="mb-3 grid grid-cols-3 gap-3 text-center">
                     {sets.slice(0, 3).map((set, setIdx) => (
                       <div key={setIdx} className="rounded-lg bg-white p-3 dark:bg-white/[0.04]">

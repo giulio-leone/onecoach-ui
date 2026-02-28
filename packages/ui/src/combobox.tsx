@@ -99,7 +99,7 @@ export const Combobox = ({
 
       <Popover.Portal>
         <Popover.Content
-          className="animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-[9999] w-[var(--radix-popover-trigger-width)] min-w-[200px] overflow-hidden rounded-xl border border-white/20 bg-white/95 p-1 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/95"
+          className="animate-in fade-in zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-[9999] w-[var(--radix-popover-trigger-width)] min-w-[200px] overflow-hidden rounded-xl border border-white/20 bg-white/95 p-1 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.10]"
           sideOffset={5}
         >
           <Command className="w-full">

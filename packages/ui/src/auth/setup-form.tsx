@@ -75,7 +75,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
   return (
     <form onSubmit={form.handleSubmit} className="mt-8 space-y-6" noValidate>
       {disabled && (
-        <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-3 text-sm text-neutral-600 dark:border-white/[0.08] dark:bg-neutral-800/50 dark:text-neutral-400">
+        <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-3 text-sm text-neutral-600 dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-neutral-400">
           <p className="font-semibold">{t('setup_form.form_disabilitato')}</p>
           <p className="mt-1">{t('setup_form.il_form_e_disabilitato_perche_le_credenz')}</p>
         </div>

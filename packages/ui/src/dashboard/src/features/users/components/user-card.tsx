@@ -258,7 +258,7 @@ export function UserCard({
         </div>
 
         {/* Stats Grid */}
-        <div className="mt-4 grid grid-cols-3 gap-2 rounded-lg bg-neutral-50 p-2.5 sm:gap-3 sm:p-3 dark:bg-neutral-800/50">
+        <div className="mt-4 grid grid-cols-3 gap-2 rounded-lg bg-neutral-50 p-2.5 sm:gap-3 sm:p-3 dark:bg-white/[0.05]">
           <div className="text-center">
             <div className="flex items-center justify-center gap-1 text-neutral-500 dark:text-neutral-400">
               <Coins className="h-3.5 w-3.5" />

@@ -140,7 +140,7 @@ export const Drawer = ({
           borderRadiusClasses[position],
           'relative',
           'overflow-hidden',
-          'border-l border-white/20 bg-white/95 backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/95',
+          'border-l border-white/20 bg-white/95 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.10]',
           'shadow-2xl',
           'flex flex-col',
           useBottomSheet && 'max-h-[90vh] sm:max-h-full',

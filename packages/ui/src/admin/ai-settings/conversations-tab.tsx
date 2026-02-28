@@ -427,7 +427,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
       </div>
 
       {(selectionMode || hasSelection) && (
-        <div className="flex flex-wrap items-center gap-2 rounded-xl border border-neutral-200/60 bg-white/80 p-3 text-sm dark:border-white/[0.08] dark:bg-neutral-800/80">
+        <div className="flex flex-wrap items-center gap-2 rounded-xl border border-neutral-200/60 bg-white/80 p-3 text-sm dark:border-white/[0.08] dark:bg-white/[0.06]">
           <span className="text-neutral-600 dark:text-neutral-300">
             {hasSelection ? t('selection.count', { count: selectedIds.size }) : t('selection.none')}
           </span>
@@ -505,7 +505,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
         <div
           className={cn(
             'rounded-2xl lg:col-span-2',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]',
             'overflow-hidden'
@@ -668,7 +668,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
         <div
           className={cn(
             'rounded-2xl lg:col-span-3',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]',
             'overflow-hidden'

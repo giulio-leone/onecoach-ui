@@ -192,7 +192,7 @@ function PhaseDetailCard({ phase }: { phase: PhaseAnalytics }) {
     <div
       className={cn(
         'rounded-xl border p-4',
-        'border-neutral-200/60 bg-white/80 dark:border-white/[0.08] dark:bg-neutral-900/80'
+        'border-neutral-200/60 bg-white/80 dark:border-white/[0.08] dark:bg-white/[0.06]'
       )}
     >
       {/* Header */}
@@ -377,7 +377,7 @@ export function PeriodizationAnalytics({
                 'flex w-full items-center gap-3 rounded-lg border px-3 py-2 text-left transition-colors',
                 selectedPhase === i
                   ? 'border-primary-200 bg-primary-50/50 dark:border-primary-500/30 dark:bg-primary-500/5'
-                  : 'border-neutral-100 bg-white/60 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-neutral-900/40 dark:hover:bg-white/[0.06]/60'
+                  : 'border-neutral-100 bg-white/60 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.03] dark:hover:bg-white/[0.06]/60'
               )}
             >
               <span className={cn('h-2 w-2 shrink-0 rounded-full', colors.bar)} />

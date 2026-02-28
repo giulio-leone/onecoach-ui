@@ -107,7 +107,7 @@ export function MemoryVersionHistory({
         {versions.map((version: any) => (
           <div
             key={version.id}
-            className="flex items-center justify-between rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/50"
+            className="flex items-center justify-between rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-white/[0.05]"
           >
             <div className="flex-1">
               <div className="flex items-center gap-2">

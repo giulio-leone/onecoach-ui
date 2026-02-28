@@ -28,7 +28,7 @@ export const GlassToolbar = ({
   return (
     <div
       className={cn(
-        'sticky top-0 z-10 mb-8 flex flex-col gap-4 rounded-2xl bg-white/80 p-2 backdrop-blur-xl sm:flex-row sm:items-center dark:bg-neutral-900/80',
+        'sticky top-0 z-10 mb-8 flex flex-col gap-4 rounded-2xl bg-white/80 p-2 backdrop-blur-xl sm:flex-row sm:items-center dark:bg-white/[0.06]',
         className
       )}
     >

@@ -22,7 +22,7 @@ export function MilestoneItem({ title, progress, tasks, className }: MilestonePr
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-2xl border border-neutral-200/60 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-900/50',
+        'overflow-hidden rounded-2xl border border-neutral-200/60 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-white/[0.04]',
         className
       )}
     >

@@ -60,7 +60,7 @@ export function ExerciseCard({
   return (
     <Card variant="glass" className="overflow-hidden p-0">
       {/* Header */}
-      <View className="flex-row items-center justify-between border-b border-neutral-200/60 bg-white/50 p-4 dark:border-white/[0.08] dark:bg-neutral-900/30">
+      <View className="flex-row items-center justify-between border-b border-neutral-200/60 bg-white/50 p-4 dark:border-white/[0.08] dark:bg-white/[0.03]">
         <Pressable
           onPress={() => setIsExpanded(!isExpanded)}
           className="flex-1 flex-row items-center gap-3"

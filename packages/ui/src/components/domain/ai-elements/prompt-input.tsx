@@ -52,7 +52,7 @@ export const PromptInput = forwardRef<HTMLDivElement, PromptInputProps>(
         'relative flex flex-col overflow-hidden',
         // Glassmorphism
         'rounded-2xl border bg-white/90 backdrop-blur-xl',
-        'border-neutral-200/80 dark:border-white/10 dark:bg-neutral-900/90',
+        'border-neutral-200/80 dark:border-white/10 dark:bg-white/[0.08]',
         // Shadow & glow
         'shadow-[0_8px_32px_rgba(0,0,0,0.08)]',
         'dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]',
@@ -570,7 +570,7 @@ export const PromptInputAttachments = ({
 export const PromptInputAttachment = ({ data }: { data: PromptAttachment }) => {
   const { removeAttachment } = usePromptInput();
   return (
-    <div className="group relative flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white/80 px-3 py-2 text-sm shadow-sm backdrop-blur dark:border-white/[0.08] dark:bg-neutral-900/80">
+    <div className="group relative flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white/80 px-3 py-2 text-sm shadow-sm backdrop-blur dark:border-white/[0.08] dark:bg-white/[0.06]">
       <span className="truncate">{data.filename}</span>
       <button
         type="button"

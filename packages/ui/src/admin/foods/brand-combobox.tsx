@@ -87,7 +87,7 @@ export function BrandCombobox({
             <button
               key={opt.id}
               type="button"
-              className="block w-full px-3 py-2 text-left text-sm hover:bg-neutral-50 dark:bg-neutral-800/50"
+              className="block w-full px-3 py-2 text-left text-sm hover:bg-neutral-50 dark:bg-white/[0.05]"
               onClick={() => handleSelect(opt)}
             >
               {opt.name}

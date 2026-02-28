@@ -37,7 +37,7 @@ export function MemoryInsightsCard({
             {patterns.slice(0, 5).map((pattern, index) => (
               <div
                 key={index}
-                className="rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50"
+                className="rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">

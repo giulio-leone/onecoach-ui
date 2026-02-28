@@ -160,7 +160,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
         {/* Metrics Inputs */}
         <div className="mt-4 grid grid-cols-2 gap-3">
           {/* Distance */}
-          <div className="rounded-xl bg-neutral-50 p-3 dark:bg-neutral-800/50">
+          <div className="rounded-xl bg-neutral-50 p-3 dark:bg-white/[0.05]">
             <div className="mb-2 flex items-center gap-2">
               <MapPin className="h-4 w-4 text-neutral-500" />
               <span className="text-xs font-medium text-neutral-500 uppercase">Distanza</span>
@@ -184,7 +184,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
           </div>
 
           {/* Heart Rate */}
-          <div className="rounded-xl bg-neutral-50 p-3 dark:bg-neutral-800/50">
+          <div className="rounded-xl bg-neutral-50 p-3 dark:bg-white/[0.05]">
             <div className="mb-2 flex items-center gap-2">
               <Heart className="h-4 w-4 text-red-500" />
               <span className="text-xs font-medium text-neutral-500 uppercase">FC Media</span>

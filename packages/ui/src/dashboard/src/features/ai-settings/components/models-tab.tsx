@@ -424,7 +424,7 @@ export function ModelsTab({
             <div
               className={cn(
                 'rounded-2xl p-4 sm:p-6',
-                'bg-white/80 dark:bg-neutral-800/80',
+                'bg-white/80 dark:bg-white/[0.06]',
                 'backdrop-blur-xl',
                 'border border-neutral-200/50 dark:border-white/[0.08]',
                 'overflow-x-auto'
@@ -872,7 +872,7 @@ function ModelCard({
         'border',
         model.isActive
           ? 'border-primary-200 dark:border-primary-800 bg-white dark:bg-white/[0.04]'
-          : 'border-neutral-200/50 bg-neutral-50/50 opacity-60 dark:border-white/[0.08] dark:bg-neutral-800/50',
+          : 'border-neutral-200/50 bg-neutral-50/50 opacity-60 dark:border-white/[0.08] dark:bg-white/[0.05]',
         model.isDefault && 'ring-primary-500 ring-2 ring-offset-2 dark:ring-offset-[#09090b]'
       )}
     >

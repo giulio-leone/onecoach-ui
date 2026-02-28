@@ -487,7 +487,7 @@ export function FoodDetailDrawer({
           </div>
         )}
         {macros.fiber !== undefined && !isEditMode && (
-          <div className="mt-3 rounded-lg bg-neutral-50 p-2 dark:bg-neutral-800/50">
+          <div className="mt-3 rounded-lg bg-neutral-50 p-2 dark:bg-white/[0.05]">
             <div className="flex items-center justify-between text-sm">
               <span className="text-neutral-600 dark:text-neutral-400">Fibre</span>
               <span className="font-semibold text-neutral-900 dark:text-neutral-100">
@@ -671,7 +671,7 @@ export function FoodDetailDrawer({
       )}
       {/* Image */}
       {foodItem?.imageUrl && (
-        <section className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+        <section className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
           <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:mb-3 sm:text-sm dark:text-neutral-500">
             <Camera className="h-3.5 w-3.5 text-secondary-500 sm:h-4 sm:w-4" />
             {t('food.image')}
@@ -702,7 +702,7 @@ export function FoodDetailDrawer({
       )}
       {/* Timestamps - Solo per admin e non in modalità create */}
       {isAdmin && !isCreateMode && foodItem && (
-        <section className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 text-xs text-neutral-500 sm:p-4 sm:text-sm dark:border-white/[0.08] dark:bg-neutral-800/50 dark:text-neutral-500">
+        <section className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 text-xs text-neutral-500 sm:p-4 sm:text-sm dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-neutral-500">
           <div className="flex flex-col gap-1 sm:flex-row sm:justify-between">
             <div>
               <span className="font-medium">{t('food.created')}:</span>{' '}

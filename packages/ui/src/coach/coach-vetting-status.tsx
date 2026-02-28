@@ -104,7 +104,7 @@ export function CoachVettingStatus({ vettingRequest }: CoachVettingStatusProps) 
         </div>
         {/* Review Notes */}
         {vettingRequest.reviewNotes && (
-          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50">
+          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
             <Heading level={4} size="sm" weight="medium" className="mb-2">
               {t('coach_vetting_status.note_di_revisione')}
             </Heading>

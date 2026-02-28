@@ -127,7 +127,7 @@ export function VisualBuilderShell({
   const themeConfig = {
     primary: {
       header:
-        'bg-white/80 border-b border-neutral-200/50 dark:bg-neutral-900/90 dark:border-primary-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(99,102,241,0.1)]',
+        'bg-white/80 border-b border-neutral-200/50 dark:bg-white/[0.08] dark:border-primary-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(99,102,241,0.1)]',
       glow1: 'from-primary-500/20 via-indigo-500/20',
       glow2: 'from-indigo-500/20 via-primary-500/20',
       glow3: 'from-primary-500/10 via-indigo-500/10',
@@ -146,7 +146,7 @@ export function VisualBuilderShell({
     },
     emerald: {
       header:
-        'bg-white/80 border-b border-neutral-200/50 dark:bg-neutral-900/90 dark:border-emerald-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(16,185,129,0.1)]',
+        'bg-white/80 border-b border-neutral-200/50 dark:bg-white/[0.08] dark:border-emerald-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(16,185,129,0.1)]',
       glow1: 'from-emerald-500/20 via-teal-500/20',
       glow2: 'from-teal-500/20 via-emerald-500/20',
       glow3: 'from-emerald-500/10 via-teal-500/10',
@@ -211,7 +211,7 @@ export function VisualBuilderShell({
               )}
 
               {/* View Mode Switcher */}
-              <div className="flex items-center rounded-full bg-neutral-100/50 p-1 ring-1 ring-neutral-200 dark:bg-neutral-900/50 dark:ring-white/10">
+              <div className="flex items-center rounded-full bg-neutral-100/50 p-1 ring-1 ring-neutral-200 dark:bg-white/[0.04] dark:ring-white/10">
                 {viewModes.map((mode: any) => (
                   <button
                     key={mode.id}

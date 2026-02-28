@@ -206,7 +206,7 @@ export function SetGroupEditor({
         <div className="flex flex-1 items-center gap-2">
           <button
             onClick={toggleExpand}
-            className="flex flex-1 items-center gap-2 rounded px-2 py-1 text-left transition-colors hover:bg-neutral-50 dark:bg-neutral-800/50"
+            className="flex flex-1 items-center gap-2 rounded px-2 py-1 text-left transition-colors hover:bg-neutral-50 dark:bg-white/[0.05]"
           >
             {isExpanded ? (
               <ChevronUp className="h-4 w-4 text-neutral-500 dark:text-neutral-500" />
@@ -292,7 +292,7 @@ export function SetGroupEditor({
 
           {/* Editor parametri base */}
           {editMode === 'block' && (
-            <div className="rounded-lg bg-neutral-50 p-3 dark:bg-neutral-800/50">
+            <div className="rounded-lg bg-neutral-50 p-3 dark:bg-white/[0.05]">
               <label className="mb-2 block text-xs font-semibold text-neutral-700 dark:text-neutral-300">
                 Parametri base (applicati a tutte le serie)
               </label>

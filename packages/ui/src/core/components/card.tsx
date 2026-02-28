@@ -50,24 +50,24 @@ export const Card = ({
 
   const variantStyles = {
     default: cn(
-      'bg-white dark:bg-neutral-900/90',
+      'bg-white dark:bg-white/[0.08]',
       'rounded-2xl shadow-sm dark:shadow-2xl dark:shadow-black/30',
       'border border-neutral-200/60 dark:border-white/[0.06]',
       'backdrop-blur-sm'
     ),
     elevated: cn(
-      'bg-white dark:bg-neutral-900/95',
+      'bg-white dark:bg-white/[0.10]',
       'rounded-2xl shadow-xl dark:shadow-2xl dark:shadow-black/40',
       'border border-neutral-100 dark:border-white/[0.08]',
       'backdrop-blur-md'
     ),
     bordered: cn(
-      'bg-white dark:bg-neutral-900/80',
+      'bg-white dark:bg-white/[0.06]',
       'rounded-xl shadow-sm dark:shadow-lg dark:shadow-black/20',
       'border border-neutral-200/60 dark:border-white/[0.08]'
     ),
     interactive: cn(
-      'bg-white dark:bg-neutral-900/80',
+      'bg-white dark:bg-white/[0.06]',
       'rounded-2xl border border-neutral-200/60 dark:border-white/[0.06]',
       'hover:border-primary-400/40 dark:hover:border-primary-400/30',
       'hover:shadow-lg hover:shadow-primary-500/5 dark:hover:shadow-xl dark:hover:shadow-primary-500/10',
@@ -100,7 +100,7 @@ export const Card = ({
       'bg-gradient-to-br from-primary-500/[0.03] via-transparent to-secondary-500/[0.03] dark:from-primary-500/[0.04] dark:via-transparent dark:to-secondary-500/[0.04]'
     ),
     hover: cn(
-      'bg-white dark:bg-neutral-900/80',
+      'bg-white dark:bg-white/[0.06]',
       'rounded-2xl border border-neutral-200/60 dark:border-white/[0.06]',
       'hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-black/30',
       'hover:border-primary-400/30 dark:hover:border-primary-400/20',

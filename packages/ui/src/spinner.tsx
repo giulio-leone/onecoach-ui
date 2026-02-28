@@ -42,7 +42,7 @@ export const Spinner = ({ size = 'md', variant = 'primary', className = '' }: Sp
 // Full page loader
 export const PageLoader = () => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white backdrop-blur-sm dark:bg-neutral-900/80">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white backdrop-blur-sm dark:bg-white/[0.06]">
       <div className="text-center">
         <Spinner size="xl" variant="primary" />
         <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-400">Loading...</p>

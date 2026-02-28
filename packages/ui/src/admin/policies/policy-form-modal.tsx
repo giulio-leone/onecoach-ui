@@ -149,7 +149,7 @@ export function PolicyFormModal({ isOpen, policy, onClose }: PolicyFormModalProp
               {t('admin.policy_form_modal.slug_url')}
             </label>
             <div className="flex items-center">
-              <span className="rounded-l-lg border border-r-0 border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-500 dark:border-white/[0.1] dark:bg-neutral-800/50 dark:text-neutral-500">
+              <span className="rounded-l-lg border border-r-0 border-neutral-300 bg-neutral-50 px-3 py-2 text-sm text-neutral-500 dark:border-white/[0.1] dark:bg-white/[0.05] dark:text-neutral-500">
                 /
               </span>
               <input

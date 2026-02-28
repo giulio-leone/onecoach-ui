@@ -610,7 +610,7 @@ export function NutritionPlanEditor({
       <div
         className={cn(
           'rounded-2xl border-2 border-dashed p-6 text-center shadow-sm transition-all duration-200 hover:border-green-400 dark:hover:border-green-500',
-          'bg-neutral-50 dark:bg-neutral-800/50',
+          'bg-neutral-50 dark:bg-white/[0.05]',
           darkModeClasses.border.base
         )}
       >

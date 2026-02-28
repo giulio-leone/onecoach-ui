@@ -80,7 +80,7 @@ export function UndoRedoToolbar({
       className={cn(
         'flex items-center gap-1 rounded-xl bg-white/80 p-1',
         'border border-neutral-200/80 shadow-sm backdrop-blur-md',
-        'dark:border-white/10 dark:bg-neutral-900/60',
+        'dark:border-white/10 dark:bg-white/[0.05]',
         className
       )}
     >

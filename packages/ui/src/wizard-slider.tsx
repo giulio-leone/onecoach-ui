@@ -77,7 +77,7 @@ export function WizardSlider({
         {/* Track background */}
         <div className="pointer-events-none absolute inset-y-0 right-0 left-0 flex items-center">
           {/* Track Background */}
-          <div className="absolute top-1/2 h-1.5 w-full -translate-y-1/2 rounded-full bg-neutral-200 dark:bg-neutral-800/80" />
+          <div className="absolute top-1/2 h-1.5 w-full -translate-y-1/2 rounded-full bg-neutral-200 dark:bg-white/[0.06]" />
 
           {/* Filled Track - Gradient */}
           <div

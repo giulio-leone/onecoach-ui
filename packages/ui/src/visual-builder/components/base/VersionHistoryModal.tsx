@@ -193,7 +193,7 @@ export function VersionHistoryModal<T>({
                 </button>
               </div>
 
-              <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/10 dark:bg-neutral-800/50">
+              <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/10 dark:bg-white/[0.05]">
                 {!semanticDiff || semanticDiff.length === 0 ? (
                   <p className="text-center text-neutral-500">No differences found</p>
                 ) : (
@@ -385,7 +385,7 @@ export function VersionHistoryModal<T>({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between border-t border-neutral-200/60 bg-neutral-50 px-6 py-4 dark:border-white/10 dark:bg-neutral-900/50">
+        <div className="flex items-center justify-between border-t border-neutral-200/60 bg-neutral-50 px-6 py-4 dark:border-white/10 dark:bg-white/[0.04]">
           <div className="text-sm text-neutral-500 dark:text-neutral-400">
             {selectedForCompare.length === 2
               ? '2 versions selected'

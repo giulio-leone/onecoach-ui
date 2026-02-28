@@ -374,7 +374,7 @@ export function WorkoutVisualBuilder({
               />
             ) : (
               <div className="flex flex-col items-center justify-center space-y-4 py-32 text-center">
-                <div className="rounded-full bg-neutral-100 p-6 text-neutral-400 ring-1 ring-neutral-200 dark:bg-neutral-900/50 dark:text-neutral-600 dark:ring-white/5">
+                <div className="rounded-full bg-neutral-100 p-6 text-neutral-400 ring-1 ring-neutral-200 dark:bg-white/[0.04] dark:text-neutral-600 dark:ring-white/5">
                   <Layout className="h-10 w-10" />
                 </div>
                 <div className="space-y-1">

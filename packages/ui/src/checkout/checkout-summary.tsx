@@ -73,7 +73,7 @@ export function CheckoutSummary({
         </div>
 
         {items && items.length > 0 && (
-          <div className="space-y-2 rounded-md border border-neutral-200/60 bg-neutral-50 p-3 dark:border-white/[0.08] dark:bg-neutral-800/60">
+          <div className="space-y-2 rounded-md border border-neutral-200/60 bg-neutral-50 p-3 dark:border-white/[0.08] dark:bg-white/[0.05]">
             {items.map((item, idx) => (
               <div key={`${item.title}-${idx}`} className="flex items-center justify-between">
                 <div className="text-xs text-neutral-600 dark:text-neutral-300">

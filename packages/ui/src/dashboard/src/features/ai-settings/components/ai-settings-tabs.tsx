@@ -100,7 +100,7 @@ export function AISettingsTabs({
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           className={cn(
             'flex w-full items-center justify-between gap-3 rounded-2xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]',
             'shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20',
@@ -207,7 +207,7 @@ export function AISettingsTabs({
         <div
           className={cn(
             'flex gap-1 rounded-2xl p-1.5',
-            'bg-white/60 dark:bg-neutral-800/60',
+            'bg-white/60 dark:bg-white/[0.05]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]',
             'shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20',

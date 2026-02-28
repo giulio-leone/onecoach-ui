@@ -241,7 +241,7 @@ export function ModelSelector({
       ) : (
         /* Desktop Dropdown */
         isOpen && (
-          <div className="animate-in fade-in zoom-in-95 absolute top-full left-0 z-50 mt-2 w-[320px] origin-top-left rounded-2xl border border-white/20 bg-white/80 p-3 shadow-xl backdrop-blur-xl duration-200 dark:border-white/10 dark:bg-neutral-900/80">
+          <div className="animate-in fade-in zoom-in-95 absolute top-full left-0 z-50 mt-2 w-[320px] origin-top-left rounded-2xl border border-white/20 bg-white/80 p-3 shadow-xl backdrop-blur-xl duration-200 dark:border-white/10 dark:bg-white/[0.06]">
             <ModelListContent />
           </div>
         )

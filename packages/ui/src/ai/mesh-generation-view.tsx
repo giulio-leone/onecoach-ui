@@ -124,7 +124,7 @@ export function MeshGenerationView({
             </span>
           </div>
 
-          <div className="h-1.5 w-full overflow-hidden rounded-full bg-neutral-100/50 dark:bg-neutral-800/50">
+          <div className="h-1.5 w-full overflow-hidden rounded-full bg-neutral-100/50 dark:bg-white/[0.05]">
             <motion.div
               className="h-full bg-gradient-to-r from-primary-500 to-indigo-500"
               initial={{ width: 0 }}

@@ -33,7 +33,7 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
               className={cn(
                 'relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border p-5 transition-all duration-300',
                 // Glassmorphism Base
-                'bg-white/40 backdrop-blur-md dark:bg-neutral-900/40',
+                'bg-white/40 backdrop-blur-md dark:bg-white/[0.03]',
                 'border-white/40 dark:border-white/5',
                 // Hover State
                 'hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-900/20',

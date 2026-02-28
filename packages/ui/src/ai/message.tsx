@@ -61,7 +61,7 @@ export const MessageContent = ({ children, className, ...props }: MessageContent
       'group-[.is-user]:shadow-primary-500/20 group-[.is-user]:shadow-lg',
       // Assistant styles - glassmorphism
       'group-[.is-assistant]:rounded-2xl group-[.is-assistant]:rounded-bl-md',
-      'group-[.is-assistant]:bg-white/70 group-[.is-assistant]:dark:bg-neutral-800/70',
+      'group-[.is-assistant]:bg-white/70 group-[.is-assistant]:dark:bg-white/[0.06]',
       'group-[.is-assistant]:backdrop-blur-sm',
       'group-[.is-assistant]:border group-[.is-assistant]:border-neutral-200/50',
       'group-[.is-assistant]:dark:border-white/[0.08]',

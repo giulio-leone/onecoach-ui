@@ -170,7 +170,7 @@ export function AdminAffiliateStats({ stats, program }: AdminAffiliateStatsProps
               className="rounded-lg border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950"
             >
               <div className="flex items-center gap-3">
-                <div className="rounded-lg bg-neutral-50 p-2 dark:bg-neutral-800/50">
+                <div className="rounded-lg bg-neutral-50 p-2 dark:bg-white/[0.05]">
                   <metric.icon className="h-4 w-4 text-neutral-600 dark:text-neutral-400" />
                 </div>
                 <div>

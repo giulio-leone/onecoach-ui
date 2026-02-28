@@ -251,7 +251,7 @@ export function MetadataTranslationManager() {
         </button>
       </div>
       {/* Locale Selector */}
-      <div className="border-b border-neutral-200/60 bg-neutral-50 px-6 py-3 dark:border-white/[0.08] dark:bg-neutral-800/50">
+      <div className="border-b border-neutral-200/60 bg-neutral-50 px-6 py-3 dark:border-white/[0.08] dark:bg-white/[0.05]">
         <label className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-500">
           {t('admin.metadata_translation_manager.target_language')}
         </label>
@@ -282,7 +282,7 @@ export function MetadataTranslationManager() {
             return (
               <div
                 key={entity.id}
-                className="grid grid-cols-2 gap-4 rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-neutral-800/50"
+                className="grid grid-cols-2 gap-4 rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]"
               >
                 <div>
                   <label className="mb-1 block text-xs font-semibold text-neutral-500 uppercase dark:text-neutral-500">

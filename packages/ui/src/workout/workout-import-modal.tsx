@@ -387,7 +387,7 @@ export function WorkoutImportModal({
     >
       <div className="flex flex-col gap-4">
         {/* Header con info crediti */}
-        <div className="flex items-center justify-between rounded-lg bg-neutral-50 p-3 dark:bg-neutral-800/50">
+        <div className="flex items-center justify-between rounded-lg bg-neutral-50 p-3 dark:bg-white/[0.05]">
           <div className="flex items-center gap-2 text-sm">
             <Zap className="h-4 w-4 text-amber-500" />
             <span className="text-neutral-600 dark:text-neutral-400">
@@ -482,7 +482,7 @@ export function WorkoutImportModal({
             'relative rounded-xl border-2 border-dashed p-6 transition-colors',
             isDragging
               ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20'
-              : 'border-neutral-300 bg-neutral-50 dark:border-white/[0.1] dark:bg-neutral-800/50',
+              : 'border-neutral-300 bg-neutral-50 dark:border-white/[0.1] dark:bg-white/[0.05]',
             files.length > 0 && 'pb-4'
           )}
         >

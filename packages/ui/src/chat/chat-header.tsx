@@ -24,7 +24,7 @@ export const ChatHeader = memo(function ChatHeader({
     <div
       className={cn(
         'relative z-10 flex items-center justify-end border-b px-3 py-2 backdrop-blur-sm sm:px-4 sm:py-3',
-        'border-neutral-200/50 bg-white/50 dark:border-white/[0.06] dark:bg-neutral-900/50',
+        'border-neutral-200/50 bg-white/50 dark:border-white/[0.06] dark:bg-white/[0.04]',
         className
       )}
     >

@@ -85,7 +85,7 @@ export function MissingOneRMModal({ missing, isOpen, onClose, onSaved }: Missing
       onClose={onClose}
       title={t('missingTitle')}
       size="lg"
-      className="glass-strong flex max-h-[90vh] flex-col border border-white/20 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/80"
+      className="glass-strong flex max-h-[90vh] flex-col border border-white/20 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]"
     >
       <div className="mb-6 flex items-start gap-4 rounded-xl border border-amber-500/20 bg-amber-500/10 p-4 backdrop-blur-sm">
         <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
@@ -310,7 +310,7 @@ function OneRMEntry({
     >
       {/* Shimmer overlay during save */}
       {isSaving && (
-        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white/50 backdrop-blur-[2px] dark:bg-neutral-900/50">
+        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-white/50 backdrop-blur-[2px] dark:bg-white/[0.04]">
           <div className="flex items-center gap-2 rounded-lg bg-primary-500/10 px-3 py-2 text-primary-600 backdrop-blur-md">
             <Loader2 className="h-4 w-4 animate-spin" />
             <span className="text-sm font-medium">{t('saving')}</span>

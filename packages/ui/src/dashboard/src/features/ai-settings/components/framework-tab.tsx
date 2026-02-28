@@ -220,7 +220,7 @@ export function FrameworkTab({
                 'border',
                 config.isEnabled
                   ? 'border-primary-200 dark:border-primary-800 bg-white dark:bg-white/[0.04]'
-                  : 'border-neutral-200/50 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-neutral-800/50'
+                  : 'border-neutral-200/50 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-white/[0.05]'
               )}
             >
               {/* Header */}

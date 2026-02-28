@@ -385,7 +385,7 @@ export function SmartAnalysisPanel({
                               className={cn(
                                 'flex items-center justify-between rounded-xl border p-3 transition-colors',
                                 'border-neutral-200/60 bg-white hover:border-neutral-300',
-                                'dark:border-white/[0.08] dark:bg-neutral-800/50 dark:hover:border-neutral-600'
+                                'dark:border-white/[0.08] dark:bg-white/[0.05] dark:hover:border-neutral-600'
                               )}
                             >
                               <div className="flex items-center gap-3">
@@ -430,7 +430,7 @@ export function SmartAnalysisPanel({
               )}
 
               {/* Market Summary */}
-              <div className="rounded-2xl bg-neutral-100/80 p-4 dark:bg-neutral-800/50">
+              <div className="rounded-2xl bg-neutral-100/80 p-4 dark:bg-white/[0.05]">
                 <p className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
                   {analysis.marketSummary}
                 </p>

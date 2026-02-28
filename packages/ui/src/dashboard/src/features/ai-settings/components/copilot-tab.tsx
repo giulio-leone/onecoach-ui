@@ -249,7 +249,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
@@ -265,7 +265,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
@@ -281,7 +281,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
@@ -297,7 +297,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
@@ -316,7 +316,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
       <div
         className={cn(
           'rounded-2xl p-6',
-          'bg-white/80 dark:bg-neutral-800/80',
+          'bg-white/80 dark:bg-white/[0.06]',
           'backdrop-blur-xl',
           'border border-neutral-200/50 dark:border-white/[0.08]'
         )}
@@ -360,7 +360,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
       <div
         className={cn(
           'rounded-2xl p-6',
-          'bg-white/80 dark:bg-neutral-800/80',
+          'bg-white/80 dark:bg-white/[0.06]',
           'backdrop-blur-xl',
           'border border-neutral-200/50 dark:border-white/[0.08]'
         )}
@@ -419,7 +419,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-2xl p-6',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
@@ -467,7 +467,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-2xl p-6',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
             'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
@@ -510,7 +510,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
       <div
         className={cn(
           'rounded-2xl p-6',
-          'bg-white/80 dark:bg-neutral-800/80',
+          'bg-white/80 dark:bg-white/[0.06]',
           'backdrop-blur-xl',
           'border border-neutral-200/50 dark:border-white/[0.08]'
         )}

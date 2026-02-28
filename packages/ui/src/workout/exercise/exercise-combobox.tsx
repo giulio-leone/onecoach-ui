@@ -373,7 +373,7 @@ export function ExerciseCombobox({
               className={`flex w-full items-start gap-3 border-b border-neutral-100 px-4 py-3 text-left transition-colors last:border-b-0 ${
                 index === selectedIndex
                   ? 'bg-primary-50 text-primary-900'
-                  : 'text-neutral-900 hover:bg-neutral-50 dark:bg-neutral-800/50 dark:text-neutral-100'
+                  : 'text-neutral-900 hover:bg-neutral-50 dark:bg-white/[0.05] dark:text-neutral-100'
               }`}
             >
               <div className="flex-1">

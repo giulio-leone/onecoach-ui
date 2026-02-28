@@ -173,7 +173,7 @@ export const ConversationScrollButton = ({
         // Size
         'size-10',
         // Glassmorphism
-        'bg-white/80 dark:bg-neutral-900/80',
+        'bg-white/80 dark:bg-white/[0.06]',
         'backdrop-blur-lg',
         'border border-neutral-200/50 dark:border-white/[0.08]',
         // Shadow
