@@ -84,15 +84,15 @@ const themeConfig = {
     iconBg: 'border-emerald-500/20 bg-emerald-500/10 text-emerald-400',
     glowPrimary: 'bg-emerald-500/10 group-hover:bg-emerald-500/20',
     glowSecondary: 'bg-teal-500/10 group-hover:bg-teal-500/20',
-    hoverRing: 'hover:ring-emerald-500/50',
-    selectionRing: 'ring-emerald-400/80',
+    hoverRing: 'hover:ring-primary-500/50',
+    selectionRing: 'ring-primary-400/80',
     selectionCheckbox: 'border-emerald-400 bg-emerald-500',
   },
 } as const;
 
 const actionHoverColors = {
   blue: 'hover:border-primary-500/30 hover:bg-primary-500/20 hover:text-primary-400',
-  emerald: 'hover:border-emerald-500/30 hover:bg-emerald-500/20 hover:text-emerald-400',
+  emerald: 'hover:border-primary-500/30 hover:bg-emerald-500/20 hover:text-emerald-400',
   rose: 'hover:border-rose-500/30 hover:bg-rose-500/20 hover:text-rose-400',
 } as const;
 

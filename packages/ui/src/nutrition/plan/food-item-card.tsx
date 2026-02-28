@@ -79,7 +79,7 @@ export const FoodItemCard = memo(function FoodItemCard({
         className={cn(
           'group cursor-pointer touch-manipulation rounded-xl border border-transparent p-3 transition-all duration-200',
           'bg-neutral-900/40 hover:bg-neutral-800/60',
-          'border-neutral-800/50 hover:border-emerald-500/20',
+          'border-neutral-800/50 hover:border-primary-500/20',
           isDragging ? 'scale-[0.97] opacity-60 bg-neutral-800 border-emerald-500/30' : '',
           className
         )}
@@ -132,7 +132,7 @@ export const FoodItemCard = memo(function FoodItemCard({
             </div>
             
             <div className="flex items-center gap-3 text-xs text-neutral-400">
-               <div className="flex items-center gap-1 bg-neutral-800/50 rounded-md px-1.5 py-0.5 border border-neutral-700/50 group-focus-within:border-emerald-500/50 group-focus-within:bg-neutral-800 group-focus-within:ring-1 group-focus-within:ring-emerald-500/20 transition-all">
+               <div className="flex items-center gap-1 bg-neutral-800/50 rounded-md px-1.5 py-0.5 border border-neutral-700/50 group-focus-within:border-primary-500/50 group-focus-within:bg-neutral-800 group-focus-within:ring-1 group-focus-within:ring-primary-500/20 transition-all">
                 <input
                   type="text"
                   inputMode="decimal"

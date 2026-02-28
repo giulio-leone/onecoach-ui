@@ -7,11 +7,11 @@ export interface KpiCardProps {
   change?: string;
   trend?: 'up' | 'down' | 'flat';
   icon?: React.ComponentType<{ className?: string }>;
-  color?: 'blue' | 'violet' | 'emerald' | 'amber' | 'neutral';
+  color?: 'primary' | 'violet' | 'emerald' | 'amber' | 'neutral';
 }
 
 const colors: Record<NonNullable<KpiCardProps['color']>, string> = {
-  blue: 'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-300',
+  primary: 'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-300',
   violet: 'bg-violet-50 text-violet-600 dark:bg-violet-500/10 dark:text-violet-300',
   emerald: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300',
   amber: 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-300',

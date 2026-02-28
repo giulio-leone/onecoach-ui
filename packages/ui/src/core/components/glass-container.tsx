@@ -26,7 +26,7 @@ export const GlassContainer = ({
 }: GlassContainerProps) => {
   return (
     <div
-      className={cn('relative w-full overflow-hidden bg-neutral-50 dark:bg-[#050505]', className)}
+      className={cn('relative w-full overflow-hidden bg-neutral-50 dark:bg-[#09090b]', className)}
       {...props}
     >
       {/* Ambient Background Layer */}

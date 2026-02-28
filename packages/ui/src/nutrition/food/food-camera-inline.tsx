@@ -79,7 +79,7 @@ export function FoodCameraInline({
         className={cn(
           'group flex items-center gap-4 rounded-xl p-3 transition-all duration-200',
           'border border-white/10 bg-white/5',
-          'hover:border-emerald-500/40 hover:bg-emerald-500/10',
+          'hover:border-primary-500/40 hover:bg-emerald-500/10',
           'active:scale-[0.98]'
         )}
       >
@@ -109,7 +109,7 @@ export function FoodCameraInline({
         className={cn(
           'group flex items-center gap-4 rounded-xl p-3 transition-all duration-200',
           'border border-white/10 bg-white/5',
-          'hover:border-emerald-500/40 hover:bg-emerald-500/10',
+          'hover:border-primary-500/40 hover:bg-emerald-500/10',
           'active:scale-[0.98]'
         )}
       >

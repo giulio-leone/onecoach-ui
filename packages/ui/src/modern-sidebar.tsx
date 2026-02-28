@@ -324,7 +324,7 @@ export function ModernSidebar({
         ))}
 
       {/* Footer / User Profile - Sticky at bottom */}
-      <div className="mt-auto border-t border-neutral-200 bg-neutral-50/50 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/50">
+      <div className="mt-auto border-t border-neutral-200/50 bg-neutral-50/30 p-4 backdrop-blur-sm dark:border-white/[0.06] dark:bg-neutral-900/30">
         {!isCollapsed ? (
           <div className="space-y-4">
             {/* Credits Card */}
@@ -409,7 +409,7 @@ export function ModernSidebar({
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute bottom-full left-0 mb-2 w-full overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-xl dark:border-neutral-700 dark:bg-neutral-800"
+                    className="absolute bottom-full left-0 mb-2 w-full overflow-hidden rounded-xl border border-neutral-200/60 bg-white/90 shadow-xl backdrop-blur-2xl dark:border-white/[0.08] dark:bg-neutral-900/90"
                   >
                     <div className="p-1">
                       <div className="px-3 py-2">
@@ -466,7 +466,7 @@ export function ModernSidebar({
         animate={isCollapsed ? 'collapsed' : 'expanded'}
         variants={sidebarVariants}
         className={cn(
-          'relative hidden h-screen overflow-visible border-r border-neutral-200 bg-white/90 backdrop-blur-xl transition-all duration-300 lg:block dark:border-neutral-800 dark:bg-neutral-950/90',
+          'relative hidden h-screen overflow-visible border-r border-neutral-200/50 bg-white/90 backdrop-blur-xl transition-all duration-300 lg:block dark:border-white/[0.06] dark:bg-neutral-950/90',
           className
         )}
         aria-expanded={!isCollapsed}
@@ -477,7 +477,7 @@ export function ModernSidebar({
         {/* Collapse Toggle */}
         <button
           onClick={handleToggleCollapse}
-          className="absolute top-28 -right-3 z-50 flex h-6 w-6 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-500 shadow-sm transition-all hover:scale-110 hover:text-primary-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-primary-400"
+          className="absolute top-28 -right-3 z-50 flex h-6 w-6 items-center justify-center rounded-full border border-neutral-200/60 bg-white/90 text-neutral-500 shadow-sm backdrop-blur-md transition-all hover:scale-110 hover:text-primary-600 dark:border-white/[0.1] dark:bg-neutral-900/90 dark:text-neutral-400 dark:hover:text-primary-400"
         >
           {isCollapsed ? <ChevronRight className="h-3 w-3" /> : <ChevronLeft className="h-3 w-3" />}
         </button>

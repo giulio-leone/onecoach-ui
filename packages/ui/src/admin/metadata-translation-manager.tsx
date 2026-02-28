@@ -258,7 +258,7 @@ export function MetadataTranslationManager() {
         <select
           value={selectedLocale}
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedLocale(e.target.value)}
-          className="mt-2 w-full max-w-xs rounded-lg border border-neutral-300 px-3 py-2 text-sm focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none dark:border-neutral-600"
+          className="mt-2 w-full max-w-xs rounded-lg border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600"
         >
           {LOCALES.filter((l: any) => l.code !== 'en').map((locale: any) => (
             <option key={locale.code} value={locale.code}>

@@ -188,7 +188,7 @@ export function NutritionPlanDashboard({
             <Button
               variant="outline"
               onClick={() => router.push(`/nutrition/${planId}/shopping`)}
-              className="h-10 gap-2 border-neutral-800 bg-neutral-900 text-emerald-400 hover:border-emerald-500/30 hover:bg-emerald-500/10"
+              className="h-10 gap-2 border-neutral-800 bg-neutral-900 text-emerald-400 hover:border-primary-500/30 hover:bg-emerald-500/10"
             >
               <ShoppingCart className="h-4 w-4" />
               {labels.shoppingList}
@@ -310,7 +310,7 @@ export function NutritionPlanDashboard({
                         <div
                           key={day.dayNumber}
                           onClick={() => handleDayClick(day, week.weekNumber)}
-                          className="group flex cursor-pointer flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-500/10"
+                          className="group flex cursor-pointer flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/60 p-5 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary-500/30 hover:shadow-lg hover:shadow-emerald-500/10"
                         >
                           <div>
                             <div className="mb-3 flex items-start justify-between">

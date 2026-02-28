@@ -361,7 +361,7 @@ export function WorkoutProgramDashboard({
                                     </div>
                                     <div className="flex items-center gap-2">
                                       {(day as any).isCompleted && (
-                                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500/30 to-green-500/20 text-emerald-400 shadow-lg ring-1 shadow-emerald-500/20 ring-emerald-500/30">
+                                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500/30 to-green-500/20 text-emerald-400 shadow-lg ring-1 shadow-emerald-500/20 ring-primary-500/30">
                                           <Check className="h-5 w-5 stroke-[3]" />
                                         </div>
                                       )}

@@ -352,7 +352,7 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
           )}
         >
           <div className="mb-6 flex items-center gap-2">
-            <div className="rounded-md bg-emerald-500/10 p-1.5 ring-1 ring-emerald-500/20">
+            <div className="rounded-md bg-emerald-500/10 p-1.5 ring-1 ring-primary-500/20">
               <TrendingUp size={18} className="text-emerald-600 dark:text-emerald-400" />
             </div>
             <Heading

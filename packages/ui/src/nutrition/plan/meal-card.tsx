@@ -123,8 +123,8 @@ export const MealCard = memo(function MealCard({
           'overflow-hidden rounded-2xl border transition-all duration-300',
           'bg-neutral-900/50 backdrop-blur-xl',
           'border-neutral-800',
-          'hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-900/10',
-          isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-emerald-500/30' : ''
+          'hover:border-primary-500/30 hover:shadow-lg hover:shadow-emerald-900/10',
+          isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-primary-500/30' : ''
         )}
 
       >

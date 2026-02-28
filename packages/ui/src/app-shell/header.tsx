@@ -92,8 +92,8 @@ export function AppShellHeader({
     <header
       className={cn(
         'sticky top-0 z-40 w-full overflow-hidden border-b',
-        'border-neutral-200 bg-white/90 backdrop-blur-xl dark:border-neutral-800 dark:bg-neutral-950/90',
-        'shadow-sm shadow-neutral-900/5 dark:shadow-neutral-900/20',
+        'border-neutral-200/50 bg-white/90 backdrop-blur-xl dark:border-white/[0.06] dark:bg-neutral-950/90',
+        'shadow-sm shadow-neutral-900/5 dark:shadow-[0_4px_30px_-4px_rgba(0,0,0,0.3)]',
         'transition-all duration-200'
       )}
     >

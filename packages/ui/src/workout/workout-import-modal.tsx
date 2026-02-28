@@ -575,7 +575,7 @@ export function WorkoutImportModal({
               })}
               {/* Add more files */}
               {files.length < 10 && (
-                <label className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 p-3 text-sm text-neutral-500 hover:border-emerald-500 hover:text-emerald-600 dark:border-neutral-600 dark:hover:border-emerald-500">
+                <label className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 p-3 text-sm text-neutral-500 hover:border-primary-500 hover:text-emerald-600 dark:border-neutral-600 dark:hover:border-primary-500">
                   <Upload className="h-4 w-4" />
                   {t('workouts.workout_import_modal.aggiungi_altri_file')}
                   <input

@@ -106,7 +106,7 @@ export function ExerciseImportModal({ isOpen, onClose, onSuccess }: ExerciseImpo
             {t('admin.exercise_import_modal.json_da_importare')}
           </label>
           <textarea
-            className="h-60 w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-800 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-200"
+            className="h-60 w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-800 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-200"
             placeholder={t('admin.exercise_import_modal.n_n_slug_n_translations_n_n')}
             value={jsonInput}
             onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>

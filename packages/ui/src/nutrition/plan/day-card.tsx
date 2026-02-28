@@ -92,7 +92,7 @@ export function DayCard({
           'bg-neutral-900/40 backdrop-blur-xl',
           'border-neutral-800',
           'hover:border-neutral-700',
-          isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-emerald-500/30' : ''
+          isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-primary-500/30' : ''
         )}
       >
         <div

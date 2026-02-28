@@ -321,8 +321,8 @@ export function MetadataMultiSelect({
             : options.length === 0 && !error
               ? 'cursor-not-allowed opacity-50'
               : isOpen
-                ? 'cursor-pointer border-emerald-500 shadow-sm ring-2 ring-emerald-200 dark:border-emerald-400 dark:ring-emerald-800'
-                : 'cursor-pointer hover:border-emerald-400 hover:shadow-sm focus:border-emerald-500 dark:hover:border-emerald-500 dark:focus:border-emerald-400'
+                ? 'cursor-pointer border-primary-500 shadow-sm ring-2 ring-emerald-200 dark:border-emerald-400 dark:ring-emerald-800'
+                : 'cursor-pointer hover:border-primary-400 hover:shadow-sm focus:border-primary-500 dark:hover:border-primary-500 dark:focus:border-primary-400'
         }`}
       >
         <div className="flex flex-1 flex-wrap items-center gap-2">
@@ -392,7 +392,7 @@ export function MetadataMultiSelect({
                       setSearchQuery(e.target.value)
                     }
                     onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
-                    className="w-full rounded-lg border border-neutral-300 bg-white px-9 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder-neutral-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-800"
+                    className="w-full rounded-lg border border-neutral-300 bg-white px-9 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-neutral-600 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder-neutral-500 dark:focus:border-primary-400 dark:focus:ring-primary-800"
                     autoFocus
                   />
                 </div>

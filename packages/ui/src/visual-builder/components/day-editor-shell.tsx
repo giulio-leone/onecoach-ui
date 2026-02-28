@@ -132,7 +132,7 @@ export function DayEditorShell({
 
       // Empty State
       emptyBorder:
-        'hover:border-emerald-400/50 hover:bg-emerald-50/50 dark:hover:border-emerald-500/40 dark:hover:bg-emerald-950/20',
+        'hover:border-primary-400/50 hover:bg-emerald-50/50 dark:hover:border-primary-500/40 dark:hover:bg-emerald-950/20',
       emptyIcon:
         'group-hover:shadow-emerald-500/10 group-hover:bg-emerald-500/20 group-hover:text-emerald-500',
 

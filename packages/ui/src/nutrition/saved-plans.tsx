@@ -182,7 +182,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Link
             href="/nutrition/create"
-            className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-emerald-500/50 hover:bg-emerald-900/10"
+            className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-primary-500/50 hover:bg-emerald-900/10"
           >
             <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-neutral-400 transition-colors group-hover:bg-emerald-900/30 group-hover:text-emerald-400">
               <Plus className="h-6 w-6" />
@@ -227,7 +227,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
         {/* Add New Card (Visual Placeholder) - matches workouts style */}
         <Link
           href="/nutrition/create"
-          className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-emerald-500/50 hover:bg-emerald-900/10"
+          className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-primary-500/50 hover:bg-emerald-900/10"
         >
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-neutral-400 transition-colors group-hover:bg-emerald-900/30 group-hover:text-emerald-400">
             <Plus className="h-6 w-6" />

@@ -42,7 +42,7 @@ export function LiveFoodItemModern({
                  "h-6 w-6 rounded-full border-2 flex items-center justify-center transition-all",
                  isCompleted
                    ? "bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-500/20"
-                   : "border-neutral-600 bg-neutral-800/50 text-transparent group-hover:border-emerald-400"
+                   : "border-neutral-600 bg-neutral-800/50 text-transparent group-hover:border-primary-400"
                )}>
                   {isCompleted && <Check className="w-4 h-4 stroke-[3]" />}
                </div>

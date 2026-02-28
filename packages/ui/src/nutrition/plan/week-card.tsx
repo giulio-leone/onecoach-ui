@@ -106,7 +106,7 @@ export function WeekCard({
           'bg-neutral-900/30 backdrop-blur-sm',
           'border-neutral-800/50',
           'hover:border-neutral-700 hover:bg-neutral-900/40',
-          isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-emerald-500/30' : ''
+          isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-primary-500/30' : ''
         )}
       >
         <div

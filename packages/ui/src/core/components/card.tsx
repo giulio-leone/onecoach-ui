@@ -43,66 +43,68 @@ export const Card = ({
   ...props
 }: CardProps) => {
   const glassIntensityClasses = {
-    light: 'bg-white/60 dark:bg-neutral-900/95 backdrop-blur-md',
-    medium: 'bg-white/70 dark:bg-neutral-900/95 backdrop-blur-xl',
-    heavy: 'bg-white/80 dark:bg-neutral-900 backdrop-blur-2xl',
+    light: 'bg-white/60 dark:bg-white/[0.03] backdrop-blur-md',
+    medium: 'bg-white/70 dark:bg-white/[0.04] backdrop-blur-xl',
+    heavy: 'bg-white/80 dark:bg-white/[0.06] backdrop-blur-2xl',
   };
 
   const variantStyles = {
     default: cn(
-      'bg-background-base',
-      'rounded-2xl shadow-sm dark:shadow-lg dark:shadow-black/20',
-      'border border-neutral-200/60 dark:border-neutral-800/60'
+      'bg-white dark:bg-neutral-900/90',
+      'rounded-2xl shadow-sm dark:shadow-2xl dark:shadow-black/30',
+      'border border-neutral-200/60 dark:border-white/[0.06]',
+      'backdrop-blur-sm'
     ),
     elevated: cn(
-      'bg-background-elevated',
-      'rounded-2xl shadow-xl dark:shadow-2xl dark:shadow-black/30',
-      'border border-neutral-100 dark:border-neutral-800/50'
+      'bg-white dark:bg-neutral-900/95',
+      'rounded-2xl shadow-xl dark:shadow-2xl dark:shadow-black/40',
+      'border border-neutral-100 dark:border-white/[0.08]',
+      'backdrop-blur-md'
     ),
     bordered: cn(
-      'bg-background-base',
+      'bg-white dark:bg-neutral-900/80',
       'rounded-xl shadow-sm dark:shadow-lg dark:shadow-black/20',
-      'border border-neutral-200 dark:border-neutral-800/60'
+      'border border-neutral-200 dark:border-white/[0.08]'
     ),
     interactive: cn(
-      'bg-background-base',
-      'rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60',
-      'hover:border-primary-400/50 dark:hover:border-primary-500/40',
-      'hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-black/30',
-      'transition-all duration-300 cursor-pointer'
+      'bg-white dark:bg-neutral-900/80',
+      'rounded-2xl border border-neutral-200/60 dark:border-white/[0.06]',
+      'hover:border-primary-400/40 dark:hover:border-primary-400/30',
+      'hover:shadow-lg hover:shadow-primary-500/5 dark:hover:shadow-xl dark:hover:shadow-primary-500/10',
+      'transition-all duration-300 cursor-pointer backdrop-blur-sm'
     ),
     glass: cn(
       glassIntensityClasses[glassIntensity],
-      'rounded-2xl shadow-lg dark:shadow-xl dark:shadow-black/25',
-      'border border-neutral-200/40 dark:border-neutral-700/40',
+      'rounded-2xl shadow-lg dark:shadow-2xl dark:shadow-black/30',
+      'border border-white/40 dark:border-white/[0.08]',
       'transition-all duration-300 text-neutral-900 dark:text-white'
     ),
     'glass-strong': cn(
       glassIntensityClasses.heavy,
-      'rounded-3xl shadow-2xl dark:shadow-2xl dark:shadow-black/30',
-      'border border-neutral-200/50 dark:border-neutral-700/50',
+      'rounded-3xl shadow-2xl dark:shadow-2xl dark:shadow-black/40',
+      'border border-white/30 dark:border-white/[0.06]',
       'transition-all duration-300 text-neutral-900 dark:text-white'
     ),
     'glass-premium': cn(
       glassIntensityClasses.heavy,
-      'rounded-[2rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] dark:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)]',
-      'border border-neutral-200/40 dark:border-neutral-700/30',
+      'rounded-[2rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] dark:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)]',
+      'border border-white/20 dark:border-white/[0.06]',
       'transition-all duration-700 text-neutral-900 dark:text-white',
       'relative overflow-hidden group/premium'
     ),
     'glass-vibrant': cn(
       glassIntensityClasses.heavy,
-      'rounded-[2rem] shadow-[0_20px_40px_rgba(99,102,241,0.15)] dark:shadow-[0_20px_40px_rgba(99,102,241,0.1)]',
-      'border border-primary-400/30 dark:border-primary-500/20',
+      'rounded-[2rem] shadow-[0_20px_40px_rgba(99,102,241,0.1)] dark:shadow-[0_20px_40px_rgba(99,102,241,0.08)]',
+      'border border-primary-400/20 dark:border-primary-400/10',
       'transition-all duration-500 text-neutral-900 dark:text-white',
-      'bg-gradient-to-br from-primary-500/5 via-transparent to-secondary-500/5'
+      'bg-gradient-to-br from-primary-500/[0.03] via-transparent to-secondary-500/[0.03] dark:from-primary-500/[0.04] dark:via-transparent dark:to-secondary-500/[0.04]'
     ),
     hover: cn(
-      'bg-background-base',
-      'rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60',
+      'bg-white dark:bg-neutral-900/80',
+      'rounded-2xl border border-neutral-200/60 dark:border-white/[0.06]',
       'hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-black/30',
-      'hover:border-primary-400/30 dark:hover:border-primary-500/30',
-      'transition-all duration-300'
+      'hover:border-primary-400/30 dark:hover:border-primary-400/20',
+      'transition-all duration-300 backdrop-blur-sm'
     ),
   };
 
@@ -111,9 +113,9 @@ export const Card = ({
       {/* Gradient Background/Border Effect for Glass variants */}
       {(variant === 'glass' || variant === 'glass-strong') && gradient && (
         <>
-          <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-indigo-500 via-secondary-500 to-secondary-500 opacity-10" />
+          <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-br from-primary-500/10 via-secondary-500/5 to-accent-500/10 dark:from-primary-500/[0.06] dark:via-secondary-500/[0.03] dark:to-accent-500/[0.06]" />
           <div
-            className="absolute inset-0 -z-20 rounded-2xl bg-gradient-to-br from-violet-500/20 via-secondary-500/20 to-indigo-500/20 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
+            className="absolute inset-0 -z-20 rounded-2xl bg-gradient-to-br from-primary-500/15 via-secondary-500/10 to-accent-500/15 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"
             aria-hidden="true"
           />
         </>

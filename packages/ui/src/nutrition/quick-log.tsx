@@ -182,8 +182,8 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
           placeholder="Search foods…"
           className={cn(
             'w-full rounded-xl border border-neutral-200 bg-white py-2.5 pl-10 pr-4 text-sm outline-none transition-colors',
-            'placeholder:text-neutral-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20',
-            'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:border-emerald-500'
+            'placeholder:text-neutral-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20',
+            'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:border-primary-500'
           )}
         />
         {search && (
@@ -257,8 +257,8 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
                 onClick={() => handleLogPreset(preset)}
                 className={cn(
                   'flex items-center justify-between rounded-xl border border-neutral-200 bg-white px-4 py-3 text-left transition-all duration-200',
-                  'hover:border-emerald-300 hover:bg-emerald-50/50',
-                  'dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-emerald-700 dark:hover:bg-emerald-950/30'
+                  'hover:border-primary-300 hover:bg-emerald-50/50',
+                  'dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-primary-700 dark:hover:bg-emerald-950/30'
                 )}
               >
                 <div>
@@ -286,8 +286,8 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
           onClick={() => setShowQuickAdd(true)}
           className={cn(
             'flex items-center justify-center gap-2 rounded-xl border border-dashed border-neutral-300 px-4 py-3 text-sm font-medium text-neutral-500 transition-colors',
-            'hover:border-emerald-400 hover:text-emerald-600',
-            'dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-emerald-600 dark:hover:text-emerald-400'
+            'hover:border-primary-400 hover:text-emerald-600',
+            'dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-primary-600 dark:hover:text-emerald-400'
           )}
         >
           <Plus className="h-4 w-4" />
@@ -308,7 +308,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickLabel}
               onChange={(e) => setQuickLabel(e.target.value)}
               placeholder="Label (optional)"
-              className="col-span-2 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-emerald-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+              className="col-span-2 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
             />
             <input
               type="number"
@@ -316,7 +316,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickCal}
               onChange={(e) => setQuickCal(e.target.value)}
               placeholder="Calories *"
-              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-emerald-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
             />
             <input
               type="number"
@@ -324,7 +324,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickProtein}
               onChange={(e) => setQuickProtein(e.target.value)}
               placeholder="Protein (g)"
-              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-emerald-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
             />
             <input
               type="number"
@@ -332,7 +332,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickCarbs}
               onChange={(e) => setQuickCarbs(e.target.value)}
               placeholder="Carbs (g)"
-              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-emerald-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
             />
             <input
               type="number"
@@ -340,7 +340,7 @@ export function QuickLog({ onLog, recentFoods = [], mealPresets = [] }: QuickLog
               value={quickFats}
               onChange={(e) => setQuickFats(e.target.value)}
               placeholder="Fats (g)"
-              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-emerald-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+              className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none focus:border-primary-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
             />
           </div>
           <button

@@ -100,7 +100,7 @@ const themeConfig = {
     ctaButtonText: 'text-primary-600',
     ctaButtonHover: 'hover:bg-primary-50',
     importButtonStyle: cn(
-      'border border-emerald-200 bg-emerald-50 text-emerald-700 hover:border-emerald-300 hover:bg-emerald-100',
+      'border border-emerald-200 bg-emerald-50 text-emerald-700 hover:border-primary-300 hover:bg-emerald-100',
       'dark:border-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 dark:hover:bg-emerald-900/50'
     ),
     tipDot: 'text-primary-500',

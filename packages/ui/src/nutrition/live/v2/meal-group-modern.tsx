@@ -52,7 +52,7 @@ export function MealGroupModern({
                "h-12 w-12 rounded-2xl flex items-center justify-center transition-all",
                isFullyCompleted 
                  ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30" 
-                 : "bg-neutral-800 border border-neutral-700 text-emerald-400 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/30"
+                 : "bg-neutral-800 border border-neutral-700 text-emerald-400 group-hover:bg-emerald-500/10 group-hover:border-primary-500/30"
              )}>
                 <Utensils className="w-5 h-5" />
              </div>
@@ -110,7 +110,7 @@ export function MealGroupModern({
 
              {/* Chevron */}
              <div className={cn(
-                "h-8 w-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 transition-all duration-300 group-hover:border-emerald-500/20 group-hover:text-emerald-400",
+                "h-8 w-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 transition-all duration-300 group-hover:border-primary-500/20 group-hover:text-emerald-400",
                 isExpanded && "rotate-180 bg-white/10"
              )}>
                 <ChevronDown className="w-4 h-4" />

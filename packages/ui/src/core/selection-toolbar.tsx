@@ -51,7 +51,7 @@ export function SelectionToolbar({
     },
     emerald: {
       bg: 'from-emerald-600 to-teal-700',
-      ring: 'ring-emerald-400/30',
+      ring: 'ring-primary-400/30',
       accent: 'bg-emerald-500/20 hover:bg-emerald-500/30',
     },
     indigo: {
