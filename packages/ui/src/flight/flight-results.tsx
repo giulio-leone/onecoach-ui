@@ -489,7 +489,7 @@ export function FlightResults({
                       className={cn(
                         'cursor-pointer transition-all duration-200',
                         isSelected &&
-                          'ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-neutral-900'
+                          'ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-[#09090b]'
                       )}
                       onClick={() => handleFlightSelect(flight)}
                       onKeyDown={(e) => e.key === 'Enter' && handleFlightSelect(flight)}

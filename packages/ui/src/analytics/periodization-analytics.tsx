@@ -154,7 +154,7 @@ function PhaseTimeline({
                 colors.bar,
                 phase.status === 'active' && 'ring-2 ring-white dark:ring-neutral-900',
                 phase.status === 'upcoming' && 'opacity-50',
-                selectedIndex === i && 'ring-2 ring-offset-1 ring-offset-white dark:ring-offset-neutral-900'
+                selectedIndex === i && 'ring-2 ring-offset-1 ring-offset-white dark:ring-offset-[#09090b]'
               )}
               style={{ left: `${leftPct}%`, width: `${Math.max(widthPct, 2)}%` }}
             >

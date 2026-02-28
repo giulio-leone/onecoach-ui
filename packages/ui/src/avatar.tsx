@@ -34,7 +34,7 @@ export function Avatar({
         'relative inline-flex shrink-0 overflow-hidden rounded-full',
         sizeClasses[size],
         bordered &&
-          'ring-2 ring-indigo-500 ring-offset-2 dark:ring-indigo-400 dark:ring-offset-neutral-900',
+          'ring-2 ring-indigo-500 ring-offset-2 dark:ring-indigo-400 dark:ring-offset-[#09090b]',
         className
       )}
       {...props}

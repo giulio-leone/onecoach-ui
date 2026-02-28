@@ -72,7 +72,7 @@ export function UndoRedoToolbar({
     'flex items-center justify-center rounded-lg transition-all duration-200',
     'min-h-[2.5rem] min-w-[2.5rem] p-2',
     'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-    'focus-visible:ring-primary-500 dark:focus-visible:ring-offset-neutral-900'
+    'focus-visible:ring-primary-500 dark:focus-visible:ring-offset-[#09090b]'
   );
 
   return (

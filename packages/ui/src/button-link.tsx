@@ -95,7 +95,7 @@ export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
       'inline-flex items-center justify-center gap-2.5',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
       'focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400',
-      'focus-visible:ring-offset-white dark:focus-visible:ring-offset-neutral-900',
+      'focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#09090b]',
       'touch-manipulation',
       variantStyles[variant],
       sizeStyles[size],

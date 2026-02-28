@@ -138,7 +138,7 @@ export const ConversationEmptyState = ({
                   'transition-all duration-200',
                   // Focus
                   'focus-visible:ring-primary-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
-                  'dark:focus-visible:ring-offset-neutral-900'
+                  'dark:focus-visible:ring-offset-[#09090b]'
                 )}
               >
                 {suggestion}
