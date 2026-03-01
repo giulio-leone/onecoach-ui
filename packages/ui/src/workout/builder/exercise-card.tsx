@@ -292,6 +292,34 @@ export function ExerciseCard({
           )}
         >
           <div className="space-y-0 px-4 pt-2 pb-6">
+            {/* Form Cues */}
+            {exercise.formCues && exercise.formCues.length > 0 && (
+              <div className="mb-3 rounded-xl border border-amber-200/60 bg-amber-50/50 p-3 dark:border-amber-500/20 dark:bg-amber-500/5">
+                <p className="mb-1.5 text-[10px] font-bold tracking-wider text-amber-700 uppercase dark:text-amber-400">
+                  {t('formCues')}
+                </p>
+                <ul className="space-y-0.5">
+                  {exercise.formCues.map((cue, i) => (
+                    <li key={i} className="flex items-start gap-1.5 text-xs text-amber-800 dark:text-amber-300/80">
+                      <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-500" />
+                      {cue}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Exercise Notes */}
+            <div className="mb-3">
+              <textarea
+                value={exercise.notes || ''}
+                onChange={(e) => onUpdate({ ...exercise, notes: e.target.value })}
+                placeholder={t('notesPlaceholder')}
+                rows={2}
+                className="w-full resize-none rounded-xl border border-neutral-200/60 bg-neutral-50/50 px-3 py-2 text-xs text-neutral-700 placeholder:text-neutral-400 focus:border-indigo-300 focus:ring-1 focus:ring-indigo-300/50 focus:outline-none dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-neutral-300 dark:placeholder:text-neutral-600 dark:focus:border-indigo-500/30 dark:focus:ring-indigo-500/20"
+              />
+            </div>
+
             {exercise.setGroups?.map((group, groupIndex) => (
               <div key={group.id || `fallback-${exercise.id}-${groupIndex}`} className="py-2">
                 <SetGroupEditor
