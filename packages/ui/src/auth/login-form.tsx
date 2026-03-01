@@ -181,7 +181,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
         )}
       </div>
       {/* Extra options */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <Checkbox
           id="remember"
           label="Ricordami"
