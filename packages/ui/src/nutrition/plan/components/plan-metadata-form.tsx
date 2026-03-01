@@ -48,7 +48,7 @@ export function PlanMetadataForm({ plan, onPlanChange, className = '' }: PlanMet
           className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-white/[0.1] dark:bg-zinc-950"
         >
           <option value="">Seleziona obiettivo</option>
-          {GOAL_OPTIONS.map((option: any) => (
+          {GOAL_OPTIONS.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
@@ -83,7 +83,7 @@ export function PlanMetadataForm({ plan, onPlanChange, className = '' }: PlanMet
           }
           className="mt-1 block min-h-[44px] w-full touch-manipulation rounded-lg border border-neutral-300 bg-white px-3 shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-white/[0.1] dark:bg-zinc-950"
         >
-          {STATUS_OPTIONS.map((option: any) => (
+          {STATUS_OPTIONS.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>

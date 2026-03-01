@@ -133,7 +133,7 @@ export function TemplateSaveDialog({
             )}
           >
             <option value="">{tCommon('empty.noCategory')}</option>
-            {CATEGORIES.map((cat: any) => (
+            {CATEGORIES.map((cat) => (
               <option key={cat} value={cat}>
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}
               </option>

@@ -1,5 +1,10 @@
 'use client';
 
+/** Webkit-prefixed AudioContext for older Safari */
+interface WebkitWindow extends Window {
+  webkitAudioContext?: typeof AudioContext;
+}
+
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
 import {
@@ -56,8 +61,7 @@ export function RestTimer({
     try {
       const AudioContext =
         window.AudioContext ||
-        (window as unknown as { webkitAudioContext?: typeof window.AudioContext })
-          .webkitAudioContext;
+        (window as WebkitWindow).webkitAudioContext;
       if (!AudioContext) return;
       const ctx = new AudioContext();
       const osc = ctx.createOscillator();
