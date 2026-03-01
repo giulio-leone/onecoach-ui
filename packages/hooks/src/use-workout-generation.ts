@@ -109,7 +109,7 @@ export function useWorkoutGeneration(
   } = options;
 
   const log = debug
-    ? (msg: string, data?: unknown) => console.log(`[useWorkoutGeneration] ${msg}`, data ?? '')
+    ? (msg: string, data?: unknown) => console.warn(`[useWorkoutGeneration] ${msg}`, data ?? '')
     : () => {};
 
   const [state, setState] = useState<WorkoutGenerationStateV41>({

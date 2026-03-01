@@ -220,7 +220,7 @@ export function useUserActiveGenerations(options: UseUserActiveGenerationsOption
       if (payload.new && payload.new.user_id !== userId) return;
       if (payload.old && payload.old.user_id !== userId) return;
 
-      console.log('[UserActiveGenerations] Realtime event:', payload.eventType);
+      console.warn('[UserActiveGenerations] Realtime event:', payload.eventType);
 
       switch (payload.eventType) {
         case 'INSERT':
@@ -300,12 +300,12 @@ export function useUserActiveGenerations(options: UseUserActiveGenerationsOption
         }
       )
       .subscribe((status: string) => {
-        console.log('[UserActiveGenerations] Realtime status:', status);
+        console.warn('[UserActiveGenerations] Realtime status:', status);
         setIsConnected(status === 'SUBSCRIBED');
       });
 
     return () => {
-      console.log('[UserActiveGenerations] Unsubscribing from realtime');
+      console.warn('[UserActiveGenerations] Unsubscribing from realtime');
       supabase.removeChannel(channel);
     };
   }, [supabase, userId, enableRealtime, fetchGenerations, handleRealtimeUpdate]);

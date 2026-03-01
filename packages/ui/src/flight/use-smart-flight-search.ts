@@ -174,12 +174,12 @@ export function useSmartFlightSearch(options: UseSmartFlightSearchOptions = {}) 
         let buffer = '';
         let finalResult: SmartSearchResult | null = null;
 
-        console.log('[useSmartFlightSearch] Starting stream processing...');
+        console.warn('[useSmartFlightSearch] Starting stream processing...');
 
         while (true) {
           const { done, value } = await reader.read();
           if (done) {
-            console.log('[useSmartFlightSearch] Stream done, finalResult:', finalResult);
+            console.warn('[useSmartFlightSearch] Stream done, finalResult:', finalResult);
             break;
           }
 
@@ -193,12 +193,12 @@ export function useSmartFlightSearch(options: UseSmartFlightSearchOptions = {}) 
             try {
               const jsonStr = line.slice(6);
               if (jsonStr === '[DONE]') {
-                console.log('[useSmartFlightSearch] Received [DONE] signal');
+                console.warn('[useSmartFlightSearch] Received [DONE] signal');
                 continue;
               }
 
               const event = JSON.parse(jsonStr);
-              console.log('[useSmartFlightSearch] Parsed event type:', event.type);
+              console.warn('[useSmartFlightSearch] Parsed event type:', event.type);
 
               // Handle progress events
               if (event.type === 'data-progress' || event.type === 'data') {
@@ -219,9 +219,9 @@ export function useSmartFlightSearch(options: UseSmartFlightSearchOptions = {}) 
                 event.type === 'complete' ||
                 event.type === 'data-finish'
               ) {
-                console.log('[useSmartFlightSearch] Finish event received:', event);
+                console.warn('[useSmartFlightSearch] Finish event received:', event);
                 const output = event.output || event.data?.output || event.data;
-                console.log('[useSmartFlightSearch] Parsed output:', output);
+                console.warn('[useSmartFlightSearch] Parsed output:', output);
                 if (output?.tripType) {
                   finalResult = {
                     tripType: output.tripType,
@@ -232,7 +232,7 @@ export function useSmartFlightSearch(options: UseSmartFlightSearchOptions = {}) 
                     alternatives: output.alternatives,
                     metadata: output.metadata,
                   };
-                  console.log('[useSmartFlightSearch] Final result set:', finalResult);
+                  console.warn('[useSmartFlightSearch] Final result set:', finalResult);
                 } else {
                   console.warn('[useSmartFlightSearch] No tripType in output, skipping');
                 }
@@ -244,7 +244,7 @@ export function useSmartFlightSearch(options: UseSmartFlightSearchOptions = {}) 
         }
 
         // Update final state
-        console.log('[useSmartFlightSearch] Setting final state, isSearching: false');
+        console.warn('[useSmartFlightSearch] Setting final state, isSearching: false');
         setState((prev) => ({
           ...prev,
           isSearching: false,
