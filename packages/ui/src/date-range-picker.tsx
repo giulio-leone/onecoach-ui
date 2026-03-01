@@ -14,6 +14,7 @@
  */
 
 'use client';
+'use no memo';
 
 import * as React from 'react';
 import { useState, useCallback, useMemo, useEffect } from 'react';
