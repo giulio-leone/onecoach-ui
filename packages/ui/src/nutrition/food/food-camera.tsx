@@ -60,7 +60,7 @@ export function FoodCamera({ mode, onCapture, onClose, className = '' }: FoodCam
           : "Errore nell'accesso alla fotocamera"
       );
     }
-  }, [mode]);
+  }, [mode, t]);
 
   const stopCamera = useCallback(() => {
     if (stream) {
@@ -131,7 +131,7 @@ export function FoodCamera({ mode, onCapture, onClose, className = '' }: FoodCam
     } finally {
       setIsProcessing(false);
     }
-  }, [capturedImage, onCapture, onClose]);
+  }, [capturedImage, onCapture, onClose, t]);
 
   const handleRetake = useCallback(() => {
     setCapturedImage(null);

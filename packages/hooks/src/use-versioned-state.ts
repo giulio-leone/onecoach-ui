@@ -417,7 +417,7 @@ export function useVersionedState<T>({
         scheduleSnapshot(update, prevStateRef.current);
       }
     },
-    [scheduleSnapshot, versionedState.current]
+    [scheduleSnapshot, versionedState]
   );
 
   // Undo action
@@ -457,7 +457,7 @@ export function useVersionedState<T>({
 
       return computeDiff(fromState, toState);
     },
-    [versionedState.current, versionedState.history]
+    [versionedState]
   );
 
   // Manual snapshot creation

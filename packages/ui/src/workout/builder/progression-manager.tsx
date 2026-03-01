@@ -236,7 +236,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
     return () => {
       active = false;
     };
-  }, [catalogExerciseId]);
+  }, [catalogExerciseId, t]);
 
   // Calculate Preview + Apply Overrides
   useEffect(() => {
@@ -364,7 +364,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
       setOneRepStatus('error');
       setOneRepError(t('errors.save1RM'));
     }
-  }, [catalogExerciseId, oneRepMax, oneRepNotFound]);
+  }, [catalogExerciseId, oneRepMax, oneRepNotFound, t]);
 
   const handleDeleteOneRepMax = useCallback(async () => {
     if (!catalogExerciseId) return;

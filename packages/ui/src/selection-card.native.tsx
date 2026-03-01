@@ -53,7 +53,7 @@ export function SelectionCard({
       >
         {image && (
           <View className={cn('w-full overflow-hidden', compact ? 'h-16' : 'h-32')}>
-            <Image source={image} className="h-full w-full object-cover opacity-90" />
+            <Image source={image} className="h-full w-full object-cover opacity-90" alt="" />
             <View className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent dark:from-neutral-900/90" />
           </View>
         )}

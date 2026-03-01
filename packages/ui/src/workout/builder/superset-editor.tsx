@@ -155,6 +155,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
   // Update parent when scalar values change
   useEffect(() => {
     emitChange({});
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only fire when scalar values change, not when emitChange identity changes
   }, [restBetween, restAfter, rounds]);
 
   const handleAddExercise = useCallback(() => {

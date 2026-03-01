@@ -168,6 +168,7 @@ export function useTimeline(
     } finally {
       setIsLoading(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- using individual properties to avoid infinite loops when options object changes identity
   }, [options.eventType, options.domain, options.limit]);
 
   useEffect(() => {

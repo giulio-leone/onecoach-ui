@@ -91,7 +91,7 @@ export function CoachAnalyticsCharts({ userId, period = '30d' }: CoachAnalyticsC
     };
 
     fetchData();
-  }, [period, userId, t]);
+  }, [period, userId, t, tCommon]);
 
   if (loading) {
     return (

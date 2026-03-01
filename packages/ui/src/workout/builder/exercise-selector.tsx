@@ -379,6 +379,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
                     {/* Video thumbnail or icon */}
                     {ytId ? (
                       <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-lg bg-neutral-800">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={`https://img.youtube.com/vi/${ytId}/default.jpg`}
                           alt=""

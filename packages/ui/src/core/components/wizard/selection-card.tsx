@@ -104,6 +104,7 @@ export function SelectionCard({
         )}
         {image && (
           <div className={cn('relative w-full overflow-hidden', compact ? 'h-16 lg:h-20' : 'h-32')}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={image} alt={title} className="h-full w-full object-cover opacity-90" />
             <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent dark:from-neutral-900/90" />
           </div>

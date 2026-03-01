@@ -43,6 +43,7 @@ export function VideoPlayer({ url, title, compact = false, className = '' }: Vid
         aria-label={`Play ${title || 'video'}`}
       >
         {youtubeId ? (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={`https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`}
             alt={title || 'Video thumbnail'}
@@ -89,6 +90,7 @@ export function VideoPlayer({ url, title, compact = false, className = '' }: Vid
             onClick={() => setPlaying(true)}
             className="group relative aspect-video w-full"
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
               alt={title || 'Video thumbnail'}

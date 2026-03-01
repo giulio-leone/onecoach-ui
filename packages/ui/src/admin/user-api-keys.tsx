@@ -55,7 +55,7 @@ export function UserApiKeys({ userId }: UserApiKeysProps) {
     } finally {
       setLoading(false);
     }
-  }, [userId, t, tCommon]);
+  }, [userId, tCommon, tAdmin]);
 
   useEffect(() => {
     void fetchApiKeys();

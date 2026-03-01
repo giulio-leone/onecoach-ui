@@ -32,6 +32,7 @@ export function WorkoutCompleteModal({
   // Memoize exercises array to prevent recalculation on every render
   const exercises = useMemo(
     () => sessionExercises(session),
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentionally depend only on exercises, not the full session object
     [session.exercises]
   );
   const totalExercises = exercises.length;

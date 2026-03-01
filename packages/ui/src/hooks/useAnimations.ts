@@ -27,6 +27,7 @@ export function useFadeIn(config: AnimationConfig = {}) {
 
   useEffect(() => {
     opacity.value = withDelay(delay, withTiming(1, { duration }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
   }, []);
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -55,6 +56,7 @@ export function useSlideIn(
     translateX.value = withDelay(delay, withTiming(0, { duration }));
     translateY.value = withDelay(delay, withTiming(0, { duration }));
     opacity.value = withDelay(delay, withTiming(1, { duration }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
   }, []);
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -78,6 +80,7 @@ export function useScaleIn(config: AnimationConfig = {}) {
   useEffect(() => {
     scale.value = withDelay(delay, withSpring(1, { damping, stiffness }));
     opacity.value = withDelay(delay, withTiming(1, { duration: 200 }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
   }, []);
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -122,6 +125,7 @@ export function useStaggeredFadeIn(index: number, config: AnimationConfig = {}) 
     const itemDelay = index * delay;
     opacity.value = withDelay(itemDelay, withTiming(1, { duration }));
     translateY.value = withDelay(itemDelay, withTiming(0, { duration }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
   }, []);
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -147,6 +151,7 @@ export function useShimmer(duration: number = 1500) {
         translateX.value = withTiming(1, { duration });
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
   }, []);
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -195,6 +200,7 @@ export function usePulse(config: AnimationConfig = {}) {
         scale.value = withTiming(1, { duration: duration / 2 });
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
   }, []);
 
   const animatedStyle = useAnimatedStyle(() => ({

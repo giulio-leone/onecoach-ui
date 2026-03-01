@@ -123,6 +123,7 @@ export function LiveFocusView({
 
   const exercises = useMemo(
     () => sessionExercises(session),
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentionally depend only on exercises, not the full session object
     [session.exercises]
   );
 

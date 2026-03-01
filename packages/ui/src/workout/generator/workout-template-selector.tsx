@@ -125,7 +125,7 @@ export function WorkoutTemplateSelector({
     } finally {
       setIsLoading(false);
     }
-  }, [debouncedQuery, selectedType, selectedCategory]);
+  }, [debouncedQuery, selectedType, selectedCategory, t]);
 
   useEffect(() => {
     void loadTemplates();

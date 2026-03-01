@@ -162,7 +162,7 @@ export function CreditCheckoutModal({ open, pack, onClose, onCheckout }: CreditC
     if (open && !previousOpenRef.current) {
       // Modal just opened, reset state
 
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+       
       setMode('login');
       loginForm.reset();
       registerForm.reset();

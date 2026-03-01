@@ -63,7 +63,7 @@ export function FoodSelector({
         setIsLoading(false);
       }
     },
-    [limit]
+    [limit, t]
   );
 
   // Debounce search

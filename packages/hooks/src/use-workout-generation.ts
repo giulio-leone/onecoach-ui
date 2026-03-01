@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState, useRef } from 'react';
+import { useCallback, useState, useRef, useMemo } from 'react';
 import type {
   GenerationCallbacks,
   GenerationStreamEvent,
@@ -108,9 +108,13 @@ export function useWorkoutGeneration(
     debug = false,
   } = options;
 
-  const log = debug
-    ? (msg: string, data?: unknown) => console.warn(`[useWorkoutGeneration] ${msg}`, data ?? '')
-    : () => {};
+  const log = useMemo(
+    () =>
+      debug
+        ? (msg: string, data?: unknown) => console.warn(`[useWorkoutGeneration] ${msg}`, data ?? '')
+        : () => {},
+    [debug]
+  );
 
   const [state, setState] = useState<WorkoutGenerationStateV41>({
     isGenerating: false,
