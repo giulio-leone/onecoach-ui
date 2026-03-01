@@ -11,7 +11,7 @@ import { CopilotDomainProvider } from '@giulio-leone/one-agent';
 import { logger } from '@giulio-leone/lib-shared';
 import { ArrowLeft, BarChart2, Layout, TrendingUp, Dumbbell, Upload } from 'lucide-react';
 // import { WorkoutImportModal } from '@/components/workout/workout-import-modal';
-// import { WorkoutClipboardProvider } from './workout-clipboard-provider';
+import { ExerciseClipboardProvider } from './workout-clipboard-provider';
 import type { LucideIcon } from 'lucide-react';
 import { WorkoutStatus } from '@giulio-leone/types/client';
 import { Text, Button } from '@giulio-leone/ui';
@@ -304,7 +304,7 @@ export function WorkoutVisualBuilder({
 
   // Content wrapped with clipboard provider
   const builderContent = (
-    <>
+    <ExerciseClipboardProvider>
       <VisualBuilderShell
         theme="primary"
         // ... props ...
@@ -413,7 +413,7 @@ export function WorkoutVisualBuilder({
         onClose={() => setIsImportModalOpen(false)}
         onSuccess={handleImportSuccess}
       /> */}
-    </>
+    </ExerciseClipboardProvider>
   );
 
   // Wrap with CopilotDomainProvider only when we have a valid program
