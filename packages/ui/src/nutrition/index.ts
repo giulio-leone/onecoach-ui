@@ -27,3 +27,6 @@ export type { QuickLogProps, QuickLogEntry, QuickLogFood, QuickLogPreset } from 
 // Hydration Tracker (M6-I4)
 export { HydrationTracker } from './hydration-tracker';
 export type { HydrationTrackerProps, HydrationEntry } from './hydration-tracker';
+
+// Diary (M21)
+export * from './diary';
