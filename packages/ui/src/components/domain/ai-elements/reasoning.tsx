@@ -21,7 +21,7 @@ export interface ReasoningProps extends ComponentProps<'div'> {
 }
 
 export const Reasoning = forwardRef<HTMLDivElement, ReasoningProps>(
-  ({ isStreaming = false, duration, className, children, ...props }, ref) => (
+  ({ isStreaming = false, duration: _duration, className, children, ...props }, ref) => (
     <div
       ref={ref}
       className={cn(

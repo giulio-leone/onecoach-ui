@@ -62,7 +62,7 @@ export function SetEditor({
   oneRepMax = null,
   weightUnit = 'KG',
 }: SetEditorProps) {
-  const t = useTranslations('workouts.builder.setEditor');
+  const _t = useTranslations('workouts.builder.setEditor');
   const [intensityPercentInputFocused, setIntensityInputFocused] = useState(false);
   const [weightInputFocused, setWeightInputFocused] = useState(false);
   const rpeString = (set.rpe ?? '').toString();

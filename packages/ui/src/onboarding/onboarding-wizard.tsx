@@ -21,7 +21,6 @@ import {
   Weight,
   Clock,
   Cable,
-  AlertTriangle,
   Salad,
   Egg,
   Leaf,
@@ -792,7 +791,7 @@ function Summary({ profile }: { profile: OnboardingProfile }) {
 
 function ProgressBar({
   currentStep,
-  totalSteps,
+  totalSteps: _totalSteps,
   completedSteps,
   onStepClick,
 }: {

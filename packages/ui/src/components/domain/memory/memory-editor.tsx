@@ -28,7 +28,7 @@ export function MemoryEditor({ userId, domain, onSave, className }: MemoryEditor
   const [preferences, setPreferences] = useState<Record<string, unknown>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
-  const [activeTab, setActiveTab] = useState<'preferences' | 'patterns' | 'insights'>(
+  const [_activeTab, setActiveTab] = useState<'preferences' | 'patterns' | 'insights'>(
     'preferences'
   );
 
@@ -117,7 +117,7 @@ export function MemoryEditor({ userId, domain, onSave, className }: MemoryEditor
           </Button>
         </div>
 
-        <Tabs defaultValue="preferences" onValueChange={(v) => setActiveTab(v as typeof activeTab)}>
+        <Tabs defaultValue="preferences" onValueChange={(v) => setActiveTab(v as typeof _activeTab)}>
           <TabsList>
             <TabsTrigger value="preferences">Preferenze</TabsTrigger>
             <TabsTrigger value="patterns">Pattern</TabsTrigger>

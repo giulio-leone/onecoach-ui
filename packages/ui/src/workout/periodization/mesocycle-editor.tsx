@@ -77,7 +77,7 @@ const EXPERIENCE_OPTIONS: ExperienceLevel[] = ['beginner', 'intermediate', 'adva
 
 function generatePreviewPhases(config: MesocycleEditorConfig): PhaseConfig[] {
   const phases: PhaseConfig[] = [];
-  let remainingWeeks = config.totalWeeks;
+  const remainingWeeks = config.totalWeeks;
 
   if (config.model === 'linear') {
     const accWeeks = Math.max(1, Math.floor(remainingWeeks * 0.5));

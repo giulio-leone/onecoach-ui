@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { Search, X, Dumbbell, Plus, Heart, Clock, SlidersHorizontal, Play, ChevronDown } from 'lucide-react';
+import { Search, X, Dumbbell, Plus, Heart, Clock, SlidersHorizontal, Play } from 'lucide-react';
 // import { getExercises } from '@/app/actions/workouts';
 const getExercises = async (_query: string) => {
   console.warn('getExercises mocked in UI package');

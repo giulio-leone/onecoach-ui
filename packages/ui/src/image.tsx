@@ -12,7 +12,7 @@ type ExpoNativeImageProps = ComponentProps<typeof ExpoImage> & {
   className?: string;
 };
 
-export function Image({ src, source, width, height, alt, ...rest }: ExpoNativeImageProps) {
+export function Image({ src, source, width: _width, height: _height, alt, ...rest }: ExpoNativeImageProps) {
   const resolvedSource = source ?? (src ? { uri: src } : undefined);
 
   if (!resolvedSource) {

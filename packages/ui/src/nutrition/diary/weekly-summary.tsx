@@ -17,7 +17,7 @@ export interface WeeklySummaryProps {
 const DAY_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 export function WeeklySummary({ days, className }: WeeklySummaryProps) {
-  const { maxValue, average, bars } = useMemo(() => {
+  const { maxValue: _maxValue, average, bars } = useMemo(() => {
     const max = Math.max(...days.map((d) => Math.max(d.calories, d.target)), 1);
     const avg = days.length > 0
       ? Math.round(days.reduce((s, d) => s + d.calories, 0) / days.length)

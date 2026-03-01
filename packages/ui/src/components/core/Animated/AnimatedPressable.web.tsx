@@ -15,7 +15,7 @@ interface AnimatedPressableButtonProps extends Omit<PressableProps, 'style'> {
  */
 export function AnimatedPressableButton({
   children,
-  hapticFeedback = false, // No haptics on web
+  hapticFeedback: _hapticFeedback = false, // No haptics on web
   scaleValue = 0.95,
   style,
   ...props

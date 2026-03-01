@@ -7,7 +7,6 @@ import {
   Dumbbell,
   Utensils,
   Play,
-  CheckCircle2,
   Clock,
   Flame,
   Link2,

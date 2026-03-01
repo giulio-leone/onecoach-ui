@@ -124,7 +124,7 @@ export function WizardLayout({
           disabled={isFirstStep}
           style={[styles.backButton, isFirstStep && { opacity: 0 }]}
         >
-          {/* @ts-ignore */}
+          {/* @ts-expect-error — ChevronLeft style prop type mismatch with RN StyleProp */}
           <ChevronLeft size={20} style={{ color: isFirstStep ? '#cbd5e1' : '#475569' }} />
           <Text style={styles.backButtonText}>Indietro</Text>
         </TouchableOpacity>
@@ -138,9 +138,9 @@ export function WizardLayout({
         >
           <View style={styles.nextButtonContent}>
             <Text style={styles.nextButtonText}>{isLastStep ? 'Genera' : 'Avanti'}</Text>
-            {/* @ts-ignore */}
+            {/* @ts-expect-error — ChevronRight style prop type mismatch with RN StyleProp */}
             {!isLastStep && <ChevronRight size={20} style={{ color: 'white' }} />}
-            {/* @ts-ignore */}
+            {/* @ts-expect-error — Check style prop type mismatch with RN StyleProp */}
             {isLastStep && <Check size={20} style={{ color: 'white' }} />}
           </View>
         </Button>

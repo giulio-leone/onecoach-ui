@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
  *
  * Form per il login utente
  */
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';

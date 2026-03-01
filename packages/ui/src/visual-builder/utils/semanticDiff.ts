@@ -1,5 +1,5 @@
 import type { StateDiff } from '@giulio-leone/hooks';
-// @ts-ignore
+// @ts-expect-error — lodash/get has no bundled type declarations
 import get from 'lodash/get';
 
 // ----------------------------------------------------------------------------
