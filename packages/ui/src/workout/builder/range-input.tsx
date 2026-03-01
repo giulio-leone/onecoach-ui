@@ -116,7 +116,6 @@ export function RangeInput({
   useEffect(() => {
     if (!isFocused) {
       const formatted = formatRange(value, valueMax);
-      // eslint-disable-next-line
       setLocalValue((prev) => (prev !== formatted ? formatted : prev));
     }
   }, [value, valueMax, isFocused]);

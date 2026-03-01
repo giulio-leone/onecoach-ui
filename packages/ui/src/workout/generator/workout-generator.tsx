@@ -33,9 +33,7 @@ export function WorkoutGenerator({
   profileLoader = defaultProfileLoader,
   onSuccess,
 }: WorkoutGeneratorProps) {
-  // eslint-disable-next-line
   const t = useTranslations('workouts.generator');
-  // eslint-disable-next-line
   const [generatedId, setGeneratedId] = useState<string | null>(null);
 
   // 1. Form State Management
@@ -55,7 +53,6 @@ export function WorkoutGenerator({
   );
 
   // 2. Generation Logic
-  // eslint-disable-next-line
   const { generate, isGenerating, progress, error, reset } = useWorkoutGenerationHook({
     onSuccess: handleSuccess,
   });
