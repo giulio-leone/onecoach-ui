@@ -107,7 +107,7 @@ export function StreamingResult({
   if (!isStreaming && events.length === 0) return null;
 
   // Process events to merge same-agent updates
-  const processedEvents = events.reduce((acc: any, event: any) => {
+  const processedEvents = events.reduce((acc: StreamEvent[], event: StreamEvent) => {
     // Try to find if this agent/role already exists in accumulator
     const agentId =
       event.data?.agent ||
@@ -115,7 +115,7 @@ export function StreamingResult({
       (event.type.startsWith('agent_') ? event.data?.step : undefined);
 
     if (agentId) {
-      const existingIndex = acc.findIndex((e: any) => {
+      const existingIndex = acc.findIndex((e) => {
         const eId =
           e.data?.agent || e.data?.role || (e.type.startsWith('agent_') ? e.data?.step : undefined);
         return eId === agentId;
@@ -185,7 +185,7 @@ export function StreamingResult({
               </span>
             </div>
           ) : (
-            processedEvents.map((event: any, index: any) => (
+            processedEvents.map((event: StreamEvent, index: number) => (
               <EventCard key={`${event.type}-${index}`} event={event} />
             ))
           )}

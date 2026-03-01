@@ -98,7 +98,7 @@ export function VersionHistoryModal<T>({
   const toggleCompareSelection = (index: number) => {
     setSelectedForCompare((prev) => {
       if (prev.includes(index)) {
-        return prev.filter((i: any) => i !== index);
+        return prev.filter((i) => i !== index);
       }
       if (prev.length >= 2) {
         return [prev[1] ?? index, index];
@@ -198,7 +198,7 @@ export function VersionHistoryModal<T>({
                   <p className="text-center text-neutral-500">No differences found</p>
                 ) : (
                   <div className="space-y-3">
-                    {semanticDiff.map((change: any) => (
+                    {semanticDiff.map((change) => (
                       <div
                         key={change.id}
                         className="relative overflow-hidden rounded-lg border border-neutral-200/60 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-white/[0.04]"
@@ -272,7 +272,7 @@ export function VersionHistoryModal<T>({
                               </div>
 
                               <div className="divide-y divide-neutral-100 dark:divide-white/5">
-                                {change.details.map((detail: any, idx: any) => (
+                                {change.details.map((detail: SemanticChangeDetail, idx: number) => (
                                   <div
                                     key={idx}
                                     className="grid grid-cols-1 gap-1 py-2 sm:grid-cols-2 sm:gap-4"

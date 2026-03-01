@@ -51,7 +51,7 @@ export function MetadataForm({
         className
       )}
     >
-      {fields.map((field: any) => {
+      {fields.map((field) => {
         if (renderCustomField) {
           const custom = renderCustomField(field);
           if (custom) return <div key={field.key}>{custom}</div>;
@@ -80,7 +80,7 @@ export function MetadataForm({
                   field.disabled && darkModeClasses.input.disabled
                 )}
               >
-                {field.options?.map((option: any) => (
+                {field.options?.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>

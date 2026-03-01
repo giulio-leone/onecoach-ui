@@ -58,7 +58,7 @@ export function AnalyticsHeader({
 
       <Card variant="glass" className="flex items-center justify-between p-2">
         <div className="flex items-center space-x-1 rounded-lg bg-neutral-100 p-1 dark:bg-white/[0.04]">
-          {periods.map((p: any) => (
+          {periods.map((p) => (
             <Button
               key={p.value}
               onClick={() => onPeriodChange(p.value)}

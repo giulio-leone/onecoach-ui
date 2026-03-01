@@ -64,7 +64,7 @@ export function ExerciseFilters({
               onStatusChange(e.target.value as FilterStatus)
             }
           >
-            {statusFilters.map((option: any) => (
+            {statusFilters.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
               </option>

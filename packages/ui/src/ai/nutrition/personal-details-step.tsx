@@ -93,7 +93,7 @@ export function PersonalDetailsStep({ formData, onChange }: PersonalDetailsStepP
             {[
               { label: 'Uomo', value: Sex.MALE },
               { label: 'Donna', value: Sex.FEMALE },
-            ].map((option: any) => (
+            ].map((option) => (
               <button
                 key={option.value}
                 type="button"

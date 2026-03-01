@@ -175,14 +175,14 @@ export function MetadataMultiSelect({
     if (!enableSearch || !searchQuery.trim()) return options;
 
     const query = searchQuery.toLowerCase();
-    return options.filter((opt: any) =>
+    return options.filter((opt) =>
         opt.name.toLowerCase().includes(query) || opt.localizedName.toLowerCase().includes(query)
     );
   }, [options, searchQuery, enableSearch]);
 
   // Trova le opzioni selezionate
   const selectedOptions = useMemo(() => {
-    return options.filter((opt: any) => value.includes(opt.id));
+    return options.filter((opt) => value.includes(opt.id));
   }, [options, value]);
 
   const handleToggle = useCallback(

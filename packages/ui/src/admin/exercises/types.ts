@@ -33,7 +33,7 @@ export interface AdminExercise {
   instructions?: string[] | null;
   exerciseTips?: string[] | null;
   variations?: { id: string; name?: string }[] | null;
-  related?: { id: string; name?: string }[] | null;
+  related?: { id: string; name?: string; relation?: string; slug?: string }[] | null;
   metadata?: {
     isUserGenerated?: boolean;
     autoApprove?: boolean;

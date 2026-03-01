@@ -89,7 +89,7 @@ export function CreditPacksSection() {
       </div>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {CREDIT_PACK_OPTIONS.map((pack: any) => (
+        {CREDIT_PACK_OPTIONS.map((pack) => (
           <div
             key={pack.id}
             className={`relative rounded-xl border-2 p-6 shadow-sm transition-shadow hover:shadow-lg sm:p-6 ${

@@ -118,7 +118,7 @@ export function CartsPageClient() {
                 setFilters({ ...filters, status: e.target.value })
               }
             >
-              {STATUS_OPTIONS.map((opt: any) => (
+              {STATUS_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                   {t(`status.${opt.labelKey}`)}
                 </option>
@@ -184,7 +184,7 @@ export function CartsPageClient() {
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200 dark:divide-white/[0.06]">
-              {carts.map((cart: any) => (
+              {carts.map((cart) => (
                 <tr
                   key={cart.id}
                   className="group hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50"

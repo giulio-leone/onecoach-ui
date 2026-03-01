@@ -117,7 +117,7 @@ export function useAdminFoodsRealtime() {
           if (!oldData) return { data: [food], total: 1 };
           return {
             ...oldData,
-            data: oldData.data.map((item: any) => (item.id === food.id ? food : item)),
+            data: oldData.data.map((item) => (item.id === food.id ? food : item)),
           };
         }
       );
@@ -135,7 +135,7 @@ export function useAdminFoodsRealtime() {
         { queryKey: foodKeys.lists(), exact: false },
         (oldData) => {
           if (!oldData) return { data: [], total: 0 };
-          const newData = oldData.data.filter((item: any) => item.id !== record.id);
+          const newData = oldData.data.filter((item) => item.id !== record.id);
           return {
             ...oldData,
             data: newData,

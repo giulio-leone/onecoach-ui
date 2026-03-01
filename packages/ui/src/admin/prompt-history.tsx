@@ -67,7 +67,7 @@ export function PromptHistory({ agentId, onClose }: PromptHistoryProps) {
         <div className="text-muted-foreground py-8 text-center">{t('noHistory')}</div>
       ) : (
         <div className="space-y-4">
-          {history.map((entry: any) => (
+          {history.map((entry) => (
             <div
               key={entry.id}
               className="hover:bg-muted/50 cursor-pointer rounded-lg border p-4 transition-colors"

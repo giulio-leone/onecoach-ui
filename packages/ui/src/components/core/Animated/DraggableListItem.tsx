@@ -95,7 +95,7 @@ export function DraggableListItem({
   return (
     <GestureDetector gesture={composedGesture}>
       {/* @ts-expect-error — React Native Animated.View style type mismatch */}
-      <Animated.View style={combinedStyle as any}>{children}</Animated.View>
+      <Animated.View style={combinedStyle}>{children}</Animated.View>
     </GestureDetector>
   );
 }

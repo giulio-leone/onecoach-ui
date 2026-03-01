@@ -59,7 +59,7 @@ export function PlatformTab({
   const [activeSubTab, setActiveSubTab] = useState<PlatformSubTab>('billing');
 
   const enabledFlags = useMemo(
-    () => featureFlagsData.flags.filter((f: any) => f.enabled).length,
+    () => featureFlagsData.flags.filter((f) => f.enabled).length,
     [featureFlagsData.flags]
   );
 
@@ -72,7 +72,7 @@ export function PlatformTab({
     <div className="space-y-6">
       {/* Sub-tab navigation */}
       <div className="flex items-center gap-2">
-        {subTabs.map((tab: any) => {
+        {subTabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeSubTab === tab.id;
           return (

@@ -49,7 +49,7 @@ export function useMaxesListRealtime() {
       queryClient.setQueryData<{ maxes: MaxRealtimePayload[] }>(maxesKeys.list(), (old) => {
         if (!old?.maxes) return old;
         return {
-          maxes: old.maxes.map((m: any) => (m.exerciseId === record.exerciseId ? record : m)),
+          maxes: old.maxes.map((m) => (m.exerciseId === record.exerciseId ? record : m)),
         };
       });
       queryClient.setQueryData(maxesKeys.detail(record.exerciseId), record);
@@ -62,7 +62,7 @@ export function useMaxesListRealtime() {
       queryClient.setQueryData<{ maxes: MaxRealtimePayload[] }>(maxesKeys.list(), (old) => {
         if (!old?.maxes) return old;
         return {
-          maxes: old.maxes.filter((m: any) => m.exerciseId !== record.exerciseId),
+          maxes: old.maxes.filter((m) => m.exerciseId !== record.exerciseId),
         };
       });
       queryClient.removeQueries({
@@ -90,7 +90,7 @@ export function useMaxDetailRealtime(exerciseId: string) {
       queryClient.setQueryData<{ maxes: MaxRealtimePayload[] }>(maxesKeys.list(), (old) => {
         if (!old?.maxes) return old;
         return {
-          maxes: old.maxes.map((m: any) => (m.exerciseId === exerciseId ? record : m)),
+          maxes: old.maxes.map((m) => (m.exerciseId === exerciseId ? record : m)),
         };
       });
     },
@@ -102,7 +102,7 @@ export function useMaxDetailRealtime(exerciseId: string) {
       queryClient.setQueryData<{ maxes: MaxRealtimePayload[] }>(maxesKeys.list(), (old) => {
         if (!old?.maxes) return old;
         return {
-          maxes: old.maxes.filter((m: any) => m.exerciseId !== exerciseId),
+          maxes: old.maxes.filter((m) => m.exerciseId !== exerciseId),
         };
       });
     },

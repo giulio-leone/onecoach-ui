@@ -15,7 +15,7 @@ export function WizardRadioGroup<T extends string | number>({
 }: WizardRadioGroupProps<T>) {
   return (
     <div className={cn('flex flex-row gap-2', className)}>
-      {options.map((option: any) => {
+      {options.map((option) => {
         const isSelected = value === option.id;
         return (
           <button

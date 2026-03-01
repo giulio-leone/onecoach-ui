@@ -109,7 +109,7 @@ export function useAdminExercisesRealtime() {
           if (!oldData) return { data: [exercise], total: 1 };
           return {
             ...oldData,
-            data: oldData.data.map((item: any) => (item.id === exercise.id ? exercise : item)),
+            data: oldData.data.map((item) => (item.id === exercise.id ? exercise : item)),
           };
         }
       );
@@ -129,7 +129,7 @@ export function useAdminExercisesRealtime() {
         { queryKey: exerciseKeys.lists(), exact: false },
         (oldData) => {
           if (!oldData) return { data: [], total: 0 };
-          const newData = oldData.data.filter((item: any) => item.id !== record.id);
+          const newData = oldData.data.filter((item) => item.id !== record.id);
           return {
             ...oldData,
             data: newData,

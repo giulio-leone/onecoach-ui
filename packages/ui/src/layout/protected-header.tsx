@@ -111,7 +111,7 @@ export function ProtectedHeader({ user }: ProtectedHeaderProps) {
 
           {/* Navigation */}
           <nav className="hidden items-center gap-1 md:flex">
-            {navigation.map((item: any) => {
+            {navigation.map((item) => {
               const isActive =
                 pathname === item.href ||
                 (item.href !== '/dashboard' && pathname.startsWith(item.href));

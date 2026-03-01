@@ -238,7 +238,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
 
       if (res.ok) {
         if (action === 'delete') {
-          setConversations((prev) => prev.filter((c: any) => c.id !== conversationId));
+          setConversations((prev) => prev.filter((c) => c.id !== conversationId));
           if (selectedConversation?.id === conversationId) {
             setSelectedConversation(null);
             setMessages([]);
@@ -252,12 +252,12 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
           toast.success(tAdmin('toasts.deleted'));
         } else if (action === 'archive') {
           setConversations((prev) =>
-            prev.map((c: any) => (c.id === conversationId ? { ...c, status: 'archived' as const } : c))
+            prev.map((c) => (c.id === conversationId ? { ...c, status: 'archived' as const } : c))
           );
           toast.success(tAdmin('toasts.archived'));
         } else {
           setConversations((prev) =>
-            prev.map((c: any) => (c.id === conversationId ? { ...c, status: 'flagged' as const } : c))
+            prev.map((c) => (c.id === conversationId ? { ...c, status: 'flagged' as const } : c))
           );
           toast.success(tAdmin('toasts.flagged'));
         }
@@ -301,7 +301,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
       }
 
       if (action === 'delete') {
-        setConversations((prev) => prev.filter((c: any) => !selectedIds.has(c.id)));
+        setConversations((prev) => prev.filter((c) => !selectedIds.has(c.id)));
         if (selectedConversation && selectedIds.has(selectedConversation.id)) {
           setSelectedConversation(null);
           setMessages([]);
@@ -310,7 +310,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
       } else {
         const targetStatus = action === 'archive' ? ('archived' as const) : ('flagged' as const);
         setConversations((prev) =>
-          prev.map((c: any) => (selectedIds.has(c.id) ? { ...c, status: targetStatus } : c))
+          prev.map((c) => (selectedIds.has(c.id) ? { ...c, status: targetStatus } : c))
         );
         toast.success(
           targetStatus === 'archived' ? tAdmin('toasts.batchArchived') : tAdmin('toasts.batchFlagged')
@@ -326,7 +326,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
   };
 
   // Filtered conversations
-  const filteredConversations = conversations.filter((c: any) => {
+  const filteredConversations = conversations.filter((c) => {
     const matchesSearch =
       !searchQuery ||
       c.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -339,7 +339,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
   const hasSelection = selectedIds.size > 0;
   const selectAllFiltered = () => {
     setSelectionMode(true);
-    setSelectedIds(new Set(filteredConversations.map((conversation: any) => conversation.id)));
+    setSelectedIds(new Set(filteredConversations.map((conversation) => conversation.id)));
   };
 
   return (
@@ -521,7 +521,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
             </div>
           ) : (
             <div className="max-h-[600px] divide-y divide-neutral-100 overflow-y-auto dark:divide-white/[0.08]">
-              {filteredConversations.map((conversation: any) => (
+              {filteredConversations.map((conversation) => (
                 <div
                   key={conversation.id}
                   className={cn(
@@ -708,7 +708,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                     <Loader2 className="text-primary-500 h-6 w-6 animate-spin" />
                   </div>
                 ) : (
-                  messages.map((message: any) => (
+                  messages.map((message) => (
                     <div
                       key={message.id}
                       className={cn(
@@ -747,7 +747,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                                 {t('messages.tokens', { count: message.metadata.tokens })}
                               </span>
                             )}
-                            {message.metadata.toolCalls?.map((tool: any) => (
+                            {message.metadata.toolCalls?.map((tool) => (
                               <span
                                 key={tool}
                                 className="rounded-full bg-violet-500/20 px-2 py-0.5 text-violet-600 dark:text-violet-400"

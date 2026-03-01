@@ -58,7 +58,7 @@ export function GenerationLog({
   const [autoScroll, setAutoScroll] = useState(true);
 
   // Filter relevant events for display
-  const relevantEvents = events.filter((event: any) =>
+  const relevantEvents = events.filter((event) =>
     [
       'agent_start',
       'agent_complete',

@@ -83,7 +83,7 @@ export function AgentFormField({
             error ? darkModeClasses.input.error : darkModeClasses.input.focus
           )}
         >
-          {options.map((option: any) => (
+          {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>

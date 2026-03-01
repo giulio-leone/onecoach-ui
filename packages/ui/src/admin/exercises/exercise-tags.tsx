@@ -102,7 +102,7 @@ export function ExerciseTags({ exercise, maxVisible = 8, className = '' }: Exerc
   return (
     <div className={cn('space-y-2', className)}>
       <div className="flex flex-wrap items-center gap-2">
-        {visibleTags.map((tag: any) => (
+        {visibleTags.map((tag) => (
           <span
             key={tag.id}
             className={cn(

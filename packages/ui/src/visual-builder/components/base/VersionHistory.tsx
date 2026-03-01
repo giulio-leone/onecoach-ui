@@ -52,7 +52,7 @@ export function VersionHistory({
         {versions.length === 0 ? (
           <p className={cn('text-sm', darkModeClasses.text.muted)}>Nessuna versione precedente</p>
         ) : (
-          versions.map((v: any) => (
+          versions.map((v) => (
             <div
               key={v.id}
               className={cn(

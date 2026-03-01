@@ -209,7 +209,7 @@ export const WizardRadioGroup = ({
         className
       )}
     >
-      {options.map((option: any) => {
+      {options.map((option) => {
         const isSelected = option.id === value;
 
         return (

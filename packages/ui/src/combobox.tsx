@@ -116,7 +116,7 @@ export const Combobox = ({
                 No results found.
               </Command.Empty>
 
-              {options.map((option: any) => (
+              {options.map((option) => (
                 <Command.Item
                   key={option.value}
                   value={option.label}

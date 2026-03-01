@@ -163,7 +163,7 @@ function CalendarMonth({
 
       {/* Weekday headers */}
       <div className="mb-1 grid grid-cols-7 gap-0.5">
-        {t.weekdays.short.map((day: any) => (
+        {t.weekdays.short.map((day) => (
           <div
             key={day}
             className="text-center text-[10px] font-medium text-neutral-400 dark:text-neutral-500"

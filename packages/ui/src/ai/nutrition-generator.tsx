@@ -212,7 +212,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
               icon: Scale,
               desc: 'Perdere grasso e guadagnare muscolo simultaneamente',
             },
-          ].map((option: any) => (
+          ].map((option) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -250,7 +250,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormDat
               label: 'Molto Attivo',
               desc: 'Esercizio molto intenso/lavoro fisico',
             },
-          ].map((option: any) => (
+          ].map((option) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -353,7 +353,7 @@ const StepThree = ({ formData, setFormData }: MeshWizardStepProps<NutritionFormD
               label: 'Mediterranea',
               desc: 'Equilibrata e tradizionale',
             },
-          ].map((option: any) => (
+          ].map((option) => (
             <SelectionCard
               key={option.id}
               role="radio"

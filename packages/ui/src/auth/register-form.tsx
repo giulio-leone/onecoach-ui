@@ -183,7 +183,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
       },
       privacyConsent: (value: boolean) => (!value ? t('validation.privacyRequired') : null),
       termsConsent: (value: boolean) => (!value ? t('validation.termsRequired') : null),
-    } as any,
+    } as Record<string, (value: never, allValues: RegisterFormValues | undefined) => string | null>,
     validateOnBlur: true,
   });
 

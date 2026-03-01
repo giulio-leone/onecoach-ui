@@ -150,7 +150,7 @@ export function ModelsTab({
 
     setIsSyncing(true);
     try {
-      const modelsToImport = externalModels.filter((m: any) => selectedExternalModels.has(m.id));
+      const modelsToImport = externalModels.filter((m) => selectedExternalModels.has(m.id));
 
       // Import each model
       for (const extModel of modelsToImport) {
@@ -227,7 +227,7 @@ export function ModelsTab({
 
         // Show them for selection
         setExternalModels((prev) => {
-          const existingIds = new Set(prev.map((m: any) => m.modelId));
+          const existingIds = new Set(prev.map((m) => m.modelId));
           // Provide a fallback ID for filtering if modelId is somehow missing
           const newModels = data.models.filter(
             (m: { modelId: string }) => !existingIds.has(m.modelId)
@@ -274,11 +274,11 @@ export function ModelsTab({
   const availableExternalModels = useMemo(
     () =>
       externalModels
-        .filter((ext: any) => {
+        .filter((ext) => {
           // Exclude models already in ai_chat_models
           return !models.some((m) => m.modelId === ext.modelId);
         })
-        .filter((m: any) =>
+        .filter((m) =>
             syncSearch === '' ||
             m.name.toLowerCase().includes(syncSearch.toLowerCase()) ||
             m.modelId.toLowerCase().includes(syncSearch.toLowerCase())
@@ -289,7 +289,7 @@ export function ModelsTab({
   // Toggle model active
   const toggleModel = useCallback(
     (modelId: string) => {
-      const model = models.find((m: any) => m.id === modelId);
+      const model = models.find((m) => m.id === modelId);
       if (model) {
         onUpdateModel(modelId, { isActive: !model.isActive });
       }
@@ -329,7 +329,7 @@ export function ModelsTab({
         });
         if (!res.ok) throw new Error('Errore eliminazione');
 
-        onModelsChange(models.filter((m: any) => m.id !== modelId));
+        onModelsChange(models.filter((m) => m.id !== modelId));
         toast.success(t('deleteSuccess') || 'Modello eliminato');
       } catch {
         toast.error(t('deleteError') || "Errore durante l'eliminazione");
@@ -360,8 +360,8 @@ export function ModelsTab({
           <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">{t('title')}</h2>
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
             {t('activeCount', {
-              count: models.filter((m: any) => m.isActive).length,
-              active: models.filter((m: any) => m.isActive).length,
+              count: models.filter((m) => m.isActive).length,
+              active: models.filter((m) => m.isActive).length,
               total: models.length,
             })}
           </p>
@@ -442,7 +442,7 @@ export function ModelsTab({
                     <th className="pb-3 text-left text-sm font-medium text-neutral-500">
                       {t('modelName')}
                     </th>
-                    {ROLES.map((role: any) => (
+                    {ROLES.map((role) => (
                       <th
                         key={role}
                         className="pb-3 text-center text-sm font-medium text-neutral-500"
@@ -454,8 +454,8 @@ export function ModelsTab({
                 </thead>
                 <tbody className="divide-y divide-neutral-100 dark:divide-white/[0.08]/50">
                   {models
-                    .filter((m: any) => m.isActive)
-                    .map((model: any) => (
+                    .filter((m) => m.isActive)
+                    .map((model) => (
                       <tr key={model.id}>
                         <td className="py-3">
                           <div className="flex items-center gap-2">
@@ -467,7 +467,7 @@ export function ModelsTab({
                             </span>
                           </div>
                         </td>
-                        {ROLES.map((role: any) => {
+                        {ROLES.map((role) => {
                           const hasAccess = getAccess(model.id, role as UserRole);
                           return (
                             <td key={role} className="py-3 text-center">
@@ -513,8 +513,8 @@ export function ModelsTab({
                   <span className="text-xs text-neutral-400">
                     (
                     {t('activeCount', {
-                      count: modelsForProvider.filter((m: any) => m.isActive).length,
-                      active: modelsForProvider.filter((m: any) => m.isActive).length,
+                      count: modelsForProvider.filter((m) => m.isActive).length,
+                      active: modelsForProvider.filter((m) => m.isActive).length,
                       total: modelsForProvider.length,
                     })}
                     )
@@ -671,7 +671,7 @@ export function ModelsTab({
                             'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
                           )}
                         >
-                          {EXTERNAL_PROVIDERS.map((p: any) => (
+                          {EXTERNAL_PROVIDERS.map((p) => (
                             <option key={p} value={p}>
                               {EXTERNAL_PROVIDER_LABELS[p]}
                             </option>
@@ -719,7 +719,7 @@ export function ModelsTab({
                       <div className="mt-4 flex items-center justify-between">
                         <button
                           onClick={() => {
-                            const allIds = availableExternalModels.map((m: any) => m.id);
+                            const allIds = availableExternalModels.map((m) => m.id);
                             if (selectedExternalModels.size === allIds.length) {
                               setSelectedExternalModels(new Set());
                             } else {
@@ -755,7 +755,7 @@ export function ModelsTab({
                       </div>
                     ) : (
                       <div className="space-y-3 py-3">
-                        {availableExternalModels.map((model: any) => (
+                        {availableExternalModels.map((model) => (
                           <div
                             key={model.id}
                             onClick={() => {
@@ -1193,7 +1193,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}
             >
-              {PROVIDERS.map((p: any) => (
+              {PROVIDERS.map((p) => (
                 <option key={p} value={p}>
                   {PROVIDER_LABELS[p]}
                 </option>
@@ -1290,7 +1290,7 @@ function ModelFormModal({ model, onClose, onSave }: ModelFormModalProps) {
                   'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
                 )}
               >
-                {OPENROUTER_PROVIDERS.map((p: any) => (
+                {OPENROUTER_PROVIDERS.map((p) => (
                   <option key={p.value} value={p.value}>
                     {p.label}
                   </option>

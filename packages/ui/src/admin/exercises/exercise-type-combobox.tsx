@@ -18,7 +18,7 @@ export function ExerciseTypeCombobox({
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [options, setOptions] = useState<Option[]>([]);
-  const selectedName = options.find((o: any) => o.id === value)?.name;
+  const selectedName = options.find((o) => o.id === value)?.name;
 
   useEffect(() => {
     let active = true;

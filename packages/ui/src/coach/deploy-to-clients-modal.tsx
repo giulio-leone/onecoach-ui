@@ -80,7 +80,7 @@ export function DeployToClientsModal({
 
   const toggleUser = (userId: string) => {
     setSelectedUsers((prev) =>
-      prev.includes(userId) ? prev.filter((id: any) => id !== userId) : [...prev, userId]
+      prev.includes(userId) ? prev.filter((id) => id !== userId) : [...prev, userId]
     );
   };
 
@@ -287,7 +287,7 @@ export function DeployToClientsModal({
             /* Results view */
             <>
               <div className="max-h-64 space-y-2 overflow-y-auto">
-                {results.map((r: any) => {
+                {results.map((r) => {
                   const client = clientsData?.clients?.find((c: CoachClient) => c.id === r.userId);
                   return (
                     <div

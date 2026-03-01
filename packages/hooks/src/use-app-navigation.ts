@@ -56,7 +56,7 @@ function dedupeNavigation(items: SidebarNavigationItem[]): SidebarNavigationItem
 
 const deriveLocaleFromPathname = (pathname: string): Locale => {
   const firstSegment = pathname.replace(/^\/+/, '').split('/')[0];
-  const candidate = locales.find((locale: any) => locale === firstSegment);
+  const candidate = locales.find((locale) => locale === firstSegment);
 
   return (candidate ?? defaultLocale) as Locale;
 };

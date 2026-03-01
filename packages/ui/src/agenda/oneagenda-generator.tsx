@@ -88,7 +88,7 @@ const StepOne = ({ formData, setFormData }: MeshWizardStepProps<OneAgendaFormDat
           {t('focus.question')}
         </Heading>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {options.map((option: any) => (
+          {options.map((option) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -175,7 +175,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<OneAgendaFormDat
           {t('horizon.title')}
         </Heading>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {horizonOptions.map((option: any) => (
+          {horizonOptions.map((option) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -201,7 +201,7 @@ const StepTwo = ({ formData, setFormData }: MeshWizardStepProps<OneAgendaFormDat
           {t('intensity.title')}
         </Heading>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {intensityOptions.map((option: any) => (
+          {intensityOptions.map((option) => (
             <SelectionCard
               key={option.id}
               role="radio"
@@ -269,7 +269,7 @@ export function OneAgendaGenerator({ variant = 'page', onComplete }: OneAgendaGe
         status={error ? 'error' : result ? 'success' : isGenerating ? 'generating' : 'idle'}
         progress={progress}
         currentMessage={currentMessage}
-        logs={logs as any}
+        logs={logs as unknown as GenerationLogEvent[]}
         result={result}
         error={error}
         onReset={reset}

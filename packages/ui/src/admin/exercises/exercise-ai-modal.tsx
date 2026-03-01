@@ -33,7 +33,7 @@ export function ExerciseAiModal({ isOpen, onClose, onSuccess }: ExerciseAiModalP
   const [mergeExisting, setMergeExisting] = useState(true);
 
   const countSuccess = (entries: Array<{ success?: boolean } | null | undefined> | undefined) =>
-    Array.isArray(entries) ? entries.filter((entry: any) => entry?.success).length : 0;
+    Array.isArray(entries) ? entries.filter((entry) => entry?.success).length : 0;
 
   const generation = useExerciseGeneration({
     onProgress: () => {

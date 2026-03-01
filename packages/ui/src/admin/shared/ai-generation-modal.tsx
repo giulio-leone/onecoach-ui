@@ -101,7 +101,7 @@ export function AiGenerationModal<TOutput>({
   };
   const hasStarted = isStreaming || isGenerating || result || error;
   // Map logs
-  const logs: AIGenerationLog[] = streamEvents.map((event: any) => ({
+  const logs: AIGenerationLog[] = streamEvents.map((event) => ({
     timestamp: event.timestamp,
     message: event.message,
     type: 'info', // Generic mapping, can be improved if event has type info
@@ -129,7 +129,7 @@ export function AiGenerationModal<TOutput>({
             </div>
             {options.length > 0 && (
               <div className="flex flex-wrap items-center gap-4 rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-white/[0.05] dark:text-neutral-400">
-                {options.map((option: any) => (
+                {options.map((option) => (
                   <Checkbox
                     key={option.key}
                     label={option.label}

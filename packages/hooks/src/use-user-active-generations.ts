@@ -237,13 +237,13 @@ export function useUserActiveGenerations(options: UseUserActiveGenerationsOption
         case 'UPDATE':
           if (payload.new) {
             setGenerations((prev) =>
-              prev.map((gen: any) => (gen.run_id === payload.new!.run_id ? payload.new! : gen))
+              prev.map((gen) => (gen.run_id === payload.new!.run_id ? payload.new! : gen))
             );
 
             // If completed and we're not showing completed, remove it
             if (!includeCompleted && (payload.new.completed_at || payload.new.error_message)) {
               setTimeout(() => {
-                setGenerations((prev) => prev.filter((gen: any) => gen.run_id !== payload.new!.run_id));
+                setGenerations((prev) => prev.filter((gen) => gen.run_id !== payload.new!.run_id));
               }, 2000); // Keep visible for 2s before removing
             }
           }
@@ -251,7 +251,7 @@ export function useUserActiveGenerations(options: UseUserActiveGenerationsOption
 
         case 'DELETE':
           if (payload.old) {
-            setGenerations((prev) => prev.filter((gen: any) => gen.run_id !== payload.old!.run_id));
+            setGenerations((prev) => prev.filter((gen) => gen.run_id !== payload.old!.run_id));
           }
           break;
       }
@@ -322,7 +322,7 @@ export function useUserActiveGenerations(options: UseUserActiveGenerationsOption
    * Filtered to only active (non-completed)
    */
   const activeGenerations = useMemo(
-    () => generationsWithStatus.filter((g: any) => g.status === 'running'),
+    () => generationsWithStatus.filter((g) => g.status === 'running'),
     [generationsWithStatus]
   );
 
@@ -336,7 +336,7 @@ export function useUserActiveGenerations(options: UseUserActiveGenerationsOption
    */
   const getByType = useCallback(
     (type: WorkflowType): GenerationWithStatus | undefined => {
-      return activeGenerations.find((g: any) => g.workflow_type === type);
+      return activeGenerations.find((g) => g.workflow_type === type);
     },
     [activeGenerations]
   );

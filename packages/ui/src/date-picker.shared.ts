@@ -231,7 +231,7 @@ export function getQuickSelectOptions(
       label: qs.nextMonth,
       getDate: (base: Date) => addMonths(base, 1),
     },
-  ].filter((option: any) => {
+  ].filter((option) => {
     // Filter out options that would result in dates before minDate
     if (!minDate) return true;
     const resultDate = option.getDate(baseDate);

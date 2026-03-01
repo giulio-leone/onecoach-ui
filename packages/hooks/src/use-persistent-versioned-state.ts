@@ -235,7 +235,7 @@ export function usePersistentVersionedState<T>({
     const inMemory = baseVersioning.history;
     
     // Add persisted versions that aren't already in in-memory
-    const persistedAsSnapshots: VersionSnapshot<T>[] = persistedHistory.map((pv: any) => ({
+    const persistedAsSnapshots: VersionSnapshot<T>[] = persistedHistory.map((pv) => ({
       id: pv.id,
       state: pv.state,
       timestamp: new Date(pv.createdAt),

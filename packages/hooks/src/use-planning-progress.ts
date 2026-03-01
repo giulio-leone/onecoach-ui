@@ -145,7 +145,7 @@ export function usePlanningProgress({
                 weekNumber: data.currentTask.weekNumber,
                 status: (data.currentTask as Record<string, unknown>).status as string,
                 subTasks: [],
-              } as any as PlanningTask
+              } as unknown as PlanningTask
             : undefined,
           currentSubTask: data.currentSubTask
             ? {
@@ -153,7 +153,7 @@ export function usePlanningProgress({
                 dayNumber: data.currentSubTask.dayNumber,
                 dayName: data.currentSubTask.dayName,
                 status: (data.currentSubTask as Record<string, unknown>).status as string,
-              } as any
+              } as unknown as PlanningTask
             : undefined,
         });
         setError(null);

@@ -53,7 +53,7 @@ export function ChatHistoryModal({
   const [selectionMode, setSelectionMode] = useState(false);
 
   const toggleSelect = (id: string) => {
-    setSelectedIds((prev) => (prev.includes(id) ? prev.filter((x: any) => x !== id) : [...prev, id]));
+    setSelectedIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
   };
 
   const clearSelection = () => {
@@ -65,7 +65,7 @@ export function ChatHistoryModal({
 
   // Filter and Group Conversations
   const groupedConversations = useMemo(() => {
-    const filtered = conversations.filter((c: any) =>
+    const filtered = conversations.filter((c) =>
         c.title.toLowerCase().includes(search.toLowerCase()) ||
         c.preview.toLowerCase().includes(search.toLowerCase())
     );
@@ -78,7 +78,7 @@ export function ChatHistoryModal({
       'Più vecchi': [],
     };
 
-    filtered.forEach((c: any) => {
+    filtered.forEach((c) => {
       const date = new Date(c.updatedAt);
       if (isToday(date)) groups['Oggi']!.push(c);
       else if (isYesterday(date)) groups['Ieri']!.push(c);
@@ -241,7 +241,7 @@ export function ChatHistoryModal({
                   <Calendar className="h-3 w-3" /> {label}
                 </h3>
                 <div className="space-y-2">
-                  {items.map((conv: any) => (
+                  {items.map((conv) => (
                     <div
                       key={conv.id}
                       onClick={() => {

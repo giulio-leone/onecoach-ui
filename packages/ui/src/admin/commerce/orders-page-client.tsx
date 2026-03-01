@@ -172,7 +172,7 @@ export function OrdersPageClient() {
                 setFilters({ ...filters, status: e.target.value })
               }
             >
-              {STATUS_OPTIONS.map((opt: any) => (
+              {STATUS_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                   {t(`status.${opt.labelKey}`)}
                 </option>
@@ -187,7 +187,7 @@ export function OrdersPageClient() {
                 setFilters({ ...filters, type: e.target.value })
               }
             >
-              {TYPE_OPTIONS.map((opt: any) => (
+              {TYPE_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                   {t(`type.${opt.labelKey}`)}
                 </option>
@@ -265,7 +265,7 @@ export function OrdersPageClient() {
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-200 dark:divide-white/[0.06]">
-              {orders.map((order: any) => (
+              {orders.map((order) => (
                 <tr
                   key={order.id}
                   className="group hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50"

@@ -94,14 +94,14 @@ export function FrameworkTab({
   // Toggle feature
   const toggleFeature = useCallback(
     async (feature: FrameworkFeature) => {
-      const config = localConfigs.find((c: any) => c.feature === feature);
+      const config = localConfigs.find((c) => c.feature === feature);
       if (!config) return;
 
       const newEnabled = !config.isEnabled;
 
       // Optimistic update
       setLocalConfigs((prev) =>
-        prev.map((c: any) => (c.feature === feature ? { ...c, isEnabled: newEnabled } : c))
+        prev.map((c) => (c.feature === feature ? { ...c, isEnabled: newEnabled } : c))
       );
 
       try {
@@ -123,7 +123,7 @@ export function FrameworkTab({
       } catch {
         // Rollback
         setLocalConfigs((prev) =>
-          prev.map((c: any) => (c.feature === feature ? { ...c, isEnabled: !newEnabled } : c))
+          prev.map((c) => (c.feature === feature ? { ...c, isEnabled: !newEnabled } : c))
         );
         toast.error(frameT('updateError'));
       }
@@ -149,7 +149,7 @@ export function FrameworkTab({
         if (!res.ok) throw new Error();
 
         setLocalConfigs((prev) =>
-          prev.map((c: any) => (c.feature === feature ? { ...c, config: newConfig } : c))
+          prev.map((c) => (c.feature === feature ? { ...c, config: newConfig } : c))
         );
 
         toast.success(frameT('saveSuccess'));
@@ -163,7 +163,7 @@ export function FrameworkTab({
   );
 
   // Get enabled count
-  const enabledCount = localConfigs.filter((c: any) => c.isEnabled).length;
+  const enabledCount = localConfigs.filter((c) => c.isEnabled).length;
 
   if (isLoading) {
     return (
@@ -421,7 +421,7 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                   'disabled:cursor-not-allowed disabled:opacity-50'
                 )}
               >
-                {field.options?.map((opt: any) => (
+                {field.options?.map((opt) => (
                   <option key={opt.value} value={opt.value}>
                     {/* Handle special select cases like strategies or feedback levels */}
                     {key === 'votingStrategy' 
@@ -437,7 +437,7 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
             {/* Multiselect (e.g. adaptive_recovery strategies) */}
             {field.type === 'multiselect' && (
               <div className="flex flex-wrap gap-2">
-                {field.options?.map((opt: any) => {
+                {field.options?.map((opt) => {
                   const values = (localConfig[key] as string[]) || [];
                   const isSelected = values.includes(opt.value);
                   return (
@@ -445,7 +445,7 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                       key={opt.value}
                       onClick={() => {
                         const newValues = isSelected
-                          ? values.filter((v: any) => v !== opt.value)
+                          ? values.filter((v) => v !== opt.value)
                           : [...values, opt.value];
                         updateValue(key, newValues);
                       }}

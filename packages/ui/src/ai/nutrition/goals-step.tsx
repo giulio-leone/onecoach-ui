@@ -70,7 +70,7 @@ export function GoalsStep({ formData, onGoalChange, onActivityChange }: GoalsSte
           {t('nutrition.goals_step.obiettivo_principale')}
         </label>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {goals.map((goal: any) => {
+          {goals.map((goal) => {
             const Icon = goal.icon;
             const isSelected = formData.goals?.goal === goal.id;
             return (
@@ -122,7 +122,7 @@ export function GoalsStep({ formData, onGoalChange, onActivityChange }: GoalsSte
           {t('nutrition.goals_step.livello_di_attivita')}
         </label>
         <div className="grid grid-cols-1 gap-2">
-          {activityLevels.map((level: any) => (
+          {activityLevels.map((level) => (
             <button
               key={level.id}
               type="button"
@@ -161,7 +161,7 @@ export function GoalsStep({ formData, onGoalChange, onActivityChange }: GoalsSte
               'focus:border-green-500 focus:ring-green-200 dark:focus:border-green-400 dark:focus:ring-green-900/50'
             )}
           >
-            {[3, 4, 5, 6].map((n: any) => (
+            {[3, 4, 5, 6].map((n) => (
               <option key={n} value={n}>
                 {n} pasti
               </option>

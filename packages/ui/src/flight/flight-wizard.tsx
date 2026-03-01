@@ -263,7 +263,7 @@ const StepRoute = ({ data, update, initialAirports, searchAirports, t }: StepRou
 
           <AirportCombobox
             value={data.flyFrom}
-            onChange={(codes: any) => update({ flyFrom: codes })}
+            onChange={(codes) => update({ flyFrom: codes })}
             placeholder={t('wizard.placeholders.selectAirports')}
             searchPlaceholder={t('wizard.placeholders.searchDeparture')}
             hint={t('wizard.hints.multipleAirports')}
@@ -307,7 +307,7 @@ const StepRoute = ({ data, update, initialAirports, searchAirports, t }: StepRou
 
           <AirportCombobox
             value={data.flyTo}
-            onChange={(codes: any) => update({ flyTo: codes })}
+            onChange={(codes) => update({ flyTo: codes })}
             placeholder={t('wizard.placeholders.selectAirports')}
             searchPlaceholder={t('wizard.placeholders.searchDestination')}
             hint={t('wizard.hints.multipleDestinations')}
@@ -569,7 +569,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
             { id: 'W', label: 'Premium', icon: '✨' },
             { id: 'C', label: 'Business', icon: '💼' },
             { id: 'F', label: 'First', icon: '👑' },
-          ].map((cabin: any) => (
+          ].map((cabin) => (
             <motion.button
               key={cabin.id}
               type="button"

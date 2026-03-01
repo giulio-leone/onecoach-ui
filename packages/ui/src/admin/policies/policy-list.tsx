@@ -44,7 +44,7 @@ export function PolicyList({ policies: initialPolicies, stats }: PolicyListProps
   const [historyPolicyId, setHistoryPolicyId] = useState<string | null>(null);
 
   // Filtra policy
-  const filteredPolicies = policies.filter((policy: any) => {
+  const filteredPolicies = policies.filter((policy) => {
     const matchesSearch =
       policy.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       policy.slug.toLowerCase().includes(searchTerm.toLowerCase());
@@ -67,7 +67,7 @@ export function PolicyList({ policies: initialPolicies, stats }: PolicyListProps
       }
 
       // Rimuovi la policy dalla lista
-      setPolicies(policies.filter((p: any) => p.id !== id));
+      setPolicies(policies.filter((p) => p.id !== id));
     } catch (error: unknown) {
       alert(error instanceof Error ? error.message : "Errore durante l'eliminazione della policy");
     }
@@ -153,7 +153,7 @@ export function PolicyList({ policies: initialPolicies, stats }: PolicyListProps
           </div>
         }
       >
-        {filteredPolicies.map((policy: any) => (
+        {filteredPolicies.map((policy) => (
           <ResourceCard
             key={policy.id}
             title={policy.title}

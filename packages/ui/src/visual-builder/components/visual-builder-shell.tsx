@@ -212,7 +212,7 @@ export function VisualBuilderShell({
 
               {/* View Mode Switcher */}
               <div className="flex items-center rounded-full bg-neutral-100/50 p-1 ring-1 ring-neutral-200 dark:bg-white/[0.04] dark:ring-white/10">
-                {viewModes.map((mode: any) => (
+                {viewModes.map((mode) => (
                   <button
                     key={mode.id}
                     onClick={() => onViewModeChange(mode.id)}

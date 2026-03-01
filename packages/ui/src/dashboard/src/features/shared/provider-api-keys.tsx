@@ -128,7 +128,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
   const tCommon = useTranslations('common');
   const initialState = providerOrder.map<ProviderState>((provider) => {
     const config =
-      configs.find((item: any) => item.provider === provider) ??
+      configs.find((item) => item.provider === provider) ??
       ({
         provider,
         label: provider.charAt(0).toUpperCase() + provider.slice(1),
@@ -160,7 +160,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
   const [providers, setProviders] = useState<ProviderState[]>(initialState);
   const updateProviderState = (provider: ProviderName, updates: Partial<ProviderState>) => {
     setProviders((prev) =>
-      prev.map((item: any) => (item.provider === provider ? { ...item, ...updates } : item))
+      prev.map((item) => (item.provider === provider ? { ...item, ...updates } : item))
     );
   };
   const handleToggle = (provider: ProviderName, isEnabled: boolean) => {
@@ -178,13 +178,13 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
     });
   };
   const toggleKeyInputVisibility = (provider: ProviderName) => {
-    const current = providers.find((p: any) => p.provider === provider);
+    const current = providers.find((p) => p.provider === provider);
     if (current) {
       updateProviderState(provider, { showKeyInput: !current.showKeyInput });
     }
   };
   const toggleExpand = (provider: ProviderName) => {
-    const current = providers.find((p: any) => p.provider === provider);
+    const current = providers.find((p) => p.provider === provider);
     if (current) {
       updateProviderState(provider, { isExpanded: !current.isExpanded });
     }
@@ -194,7 +194,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
     // Simulate network request
     const latency = Math.floor(Math.random() * 200) + 50; // 50-250ms
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    const current = providers.find((p: any) => p.provider === provider);
+    const current = providers.find((p) => p.provider === provider);
     // Fail if no key or disabled (simulation logic)
     if (!current?.hasKey && !current?.newApiKey) {
       updateProviderState(provider, { connectionStatus: 'failed' });
@@ -204,7 +204,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
   };
   const handleSave = async (provider: ProviderName) => {
     updateProviderState(provider, { isSaving: true, saveSuccess: false, error: undefined });
-    const current = providers.find((item: any) => item.provider === provider);
+    const current = providers.find((item) => item.provider === provider);
     if (!current) return;
     try {
       const defaultModelParam = provider === 'openrouter' ? current.modelInput.trim() : undefined;
@@ -289,7 +289,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
       updateProviderState(provider, { isDeleting: false, error: message });
     }
   };
-  const activeProvidersCount = providers.filter((p: any) => p.isEnabled && p.hasKey).length;
+  const activeProvidersCount = providers.filter((p) => p.isEnabled && p.hasKey).length;
   const totalProviders = providers.length;
   const isSystemOperational = activeProvidersCount > 0;
   return (
@@ -348,7 +348,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
       </div>
       {/* Providers Grid */}
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {providers.map((provider: any) => (
+        {providers.map((provider) => (
           <ProviderCard
             key={provider.provider}
             state={provider}

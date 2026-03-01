@@ -87,11 +87,11 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
   if (isLoading) {
     return (
       <div className="space-y-8">
-        {[1, 2].map((i: any) => (
+        {[1, 2].map((i) => (
           <div key={i} className="space-y-4">
             <div className="h-8 w-48 animate-pulse rounded-lg bg-neutral-100 dark:bg-white/[0.04]" />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {[1, 2, 3].map((j: any) => (
+              {[1, 2, 3].map((j) => (
                 <div
                   key={j}
                   className="h-64 animate-pulse rounded-2xl bg-neutral-100 dark:bg-white/[0.04]"
@@ -116,7 +116,7 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
 
   return (
     <div className="space-y-12">
-      {groupedTrips.map((group: any) => (
+      {groupedTrips.map((group) => (
         <section key={group.destinationCityCode} className="space-y-6">
           <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div className="flex items-center gap-4">

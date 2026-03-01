@@ -59,7 +59,7 @@ export function ProjectGantt({
         <div style={{ width: totalDays * dayWidth }}>
           {/* Header Days */}
           <div className="mb-6 flex border-b border-neutral-200/30 pb-3 dark:border-white/[0.06]">
-            {days.map((day: any) => (
+            {days.map((day) => (
               <div
                 key={day.toISOString()}
                 style={{ width: dayWidth }}
@@ -78,7 +78,7 @@ export function ProjectGantt({
           {/* Grid Background */}
           <div className="relative">
             <div className="absolute inset-0 flex">
-              {days.map((day: any) => (
+              {days.map((day) => (
                 <div
                   key={`grid-${day.toISOString()}`}
                   style={{ width: dayWidth }}
@@ -105,7 +105,7 @@ export function ProjectGantt({
                   </div>
                 </div>
               ) : (
-                project.tasks.map((task: any) => {
+                project.tasks.map((task) => {
                   const taskStart = new Date(task.startDate);
                   const taskEnd = new Date(task.endDate);
 

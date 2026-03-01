@@ -94,7 +94,7 @@ export function ExerciseFormModal({
         translations: [
           { language: 'en', name: values.englishName, description: '' },
           { language: 'it', name: values.italianName, description: '' },
-        ].filter((t: any) => t.name),
+        ].filter((t) => t.name),
         exerciseTypeId: values.exerciseTypeId,
         videoUrl: values.videoUrl || undefined,
         imageUrl: values.imageUrl || undefined,
@@ -129,8 +129,8 @@ export function ExerciseFormModal({
       hasPrefilledRef.current = e.id;
 
       // Use 'locale' not 'language' based on ExerciseTranslationView interface
-      const en = e.translations?.find((t: any) => t.locale === 'en')?.name || e.name || '';
-      const it = e.translations?.find((t: any) => t.locale === 'it')?.name || '';
+      const en = e.translations?.find((t) => t.locale === 'en')?.name || e.name || '';
+      const it = e.translations?.find((t) => t.locale === 'it')?.name || '';
 
       form.setValues({
         slug: e.slug || '',
@@ -142,10 +142,10 @@ export function ExerciseFormModal({
         isUserGenerated: e.metadata?.isUserGenerated || false,
         autoApprove: e.metadata?.autoApprove || false,
         exerciseTypeId: e.exerciseTypeId || '',
-        primaryMuscles: e.muscles?.filter((m: any) => m.role === 'PRIMARY').map((m: any) => m.id) || ([] as string[]),
-        secondaryMuscles: e.muscles?.filter((m: any) => m.role === 'SECONDARY').map((m: any) => m.id) || ([] as string[]),
+        primaryMuscles: e.muscles?.filter((m) => m.role === 'PRIMARY').map((m) => m.id) || ([] as string[]),
+        secondaryMuscles: e.muscles?.filter((m) => m.role === 'SECONDARY').map((m) => m.id) || ([] as string[]),
         bodyParts: e.bodyParts?.map((b: { id: string }) => b.id) || ([] as string[]),
-        equipments: e.equipments?.map((eq: any) => eq.id) || ([] as string[]),
+        equipments: e.equipments?.map((eq) => eq.id) || ([] as string[]),
       });
     } else if (mode === 'create') {
       hasPrefilledRef.current = null;

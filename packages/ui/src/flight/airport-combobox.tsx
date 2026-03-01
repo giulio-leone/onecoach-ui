@@ -151,7 +151,7 @@ function SelectedChips({
 
   return (
     <div className="flex flex-wrap gap-1.5 pt-2">
-      {selectedAirports.map((airport: any) => (
+      {selectedAirports.map((airport) => (
         <span
           key={airport.code}
           className="group flex items-center gap-1.5 rounded-full bg-primary-100 py-1 pr-1 pl-2.5 text-xs font-medium text-primary-700 transition-colors hover:bg-primary-200 dark:bg-primary-500/20 dark:text-primary-300 dark:hover:bg-primary-500/30"
@@ -237,8 +237,8 @@ export function AirportCombobox({
   // Selected airports with full data
   const selectedAirports = useMemo(() => {
     const allAirports = [...initialAirports, ...searchResults];
-    const airportMap = new Map(allAirports.map((a: any) => [a.code, a]));
-    return value.map((code: any) => airportMap.get(code)).filter((a): a is Airport => a !== undefined);
+    const airportMap = new Map(allAirports.map((a) => [a.code, a]));
+    return value.map((code) => airportMap.get(code)).filter((a): a is Airport => a !== undefined);
   }, [value, initialAirports, searchResults]);
 
   // Search effect
@@ -289,7 +289,7 @@ export function AirportCombobox({
     (code: string) => {
       if (selectedCodesSet.has(code)) {
         // Remove
-        onChange(value.filter((c: any) => c !== code));
+        onChange(value.filter((c) => c !== code));
       } else {
         // Add (check max limit)
         if (maxSelections > 0 && value.length >= maxSelections) {
@@ -307,7 +307,7 @@ export function AirportCombobox({
 
   const handleRemove = useCallback(
     (code: string) => {
-      onChange(value.filter((c: any) => c !== code));
+      onChange(value.filter((c) => c !== code));
     },
     [value, onChange]
   );
@@ -446,7 +446,7 @@ export function AirportCombobox({
                 </div>
               ) : (
                 <div className="flex flex-col gap-0.5">
-                  {displayList.map((airport: any) => (
+                  {displayList.map((airport) => (
                     <AirportItem
                       key={airport.code}
                       airport={airport}

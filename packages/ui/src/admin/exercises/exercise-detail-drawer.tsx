@@ -153,12 +153,12 @@ export function ExerciseDetailDrawer({
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
                   {exercise.muscles!
-                    .map((muscle: any) => ({
+                    .map((muscle) => ({
                       slug: muscle.slug ?? '',
                       name: muscle.name ?? 'Muscolo',
                       role: (muscle.role ?? '').toLowerCase(),
                     }))
-                    .map((muscle: any) => (
+                    .map((muscle) => (
                       <span
                         key={`${exercise.id}-${muscle.slug}-${muscle.role}`}
                         className="rounded-full bg-emerald-50 px-2 py-1 text-emerald-700"
@@ -174,7 +174,7 @@ export function ExerciseDetailDrawer({
                   {t('admin.exercise_detail_drawer.parti_del_corpo')}
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                  {exercise.bodyParts!.map((bodyPart: any) => {
+                  {exercise.bodyParts!.map((bodyPart) => {
                     const slug = bodyPart.slug ?? 'part';
                     const name = bodyPart.name ?? 'Body part';
                     return (
@@ -198,7 +198,7 @@ export function ExerciseDetailDrawer({
                 {((exercise.equipment ?? []).length
                   ? (exercise.equipment ?? [])
                   : [{ name: 'Bodyweight', slug: 'bodyweight' }]
-                ).map((equipment: any) => {
+                ).map((equipment) => {
                   const slug = equipment.slug ?? 'equipment';
                   const name = equipment.name ?? 'Equipment';
                   return (
@@ -286,7 +286,7 @@ export function ExerciseDetailDrawer({
                   Relazioni
                 </h4>
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-700 dark:text-neutral-300">
-                  {(exercise.related ?? []).map((relation: any) => {
+                  {(exercise.related ?? []).map((relation) => {
                     const relationId = relation.id ?? 'relation';
                     const relationType = relation.relation ?? 'related';
                     const relationSlug = relation.slug ?? '';

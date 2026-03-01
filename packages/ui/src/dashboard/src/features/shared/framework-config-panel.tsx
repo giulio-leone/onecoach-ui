@@ -189,7 +189,7 @@ export function FrameworkConfigPanel() {
 
       {/* Feature Cards */}
       <div className="space-y-4">
-        {(Object.values(FrameworkFeature) as FrameworkFeature[]).map((feature: any) => {
+        {(Object.values(FrameworkFeature) as FrameworkFeature[]).map((feature) => {
           const config = configs[feature];
           if (!config) return null;
 

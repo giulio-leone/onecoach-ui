@@ -200,7 +200,7 @@ export function AdminAffiliateStats({ stats, program }: AdminAffiliateStatsProps
             {t('admin.admin_affiliate_stats.impostazioni_programma_attuale')}
           </h3>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {programInfo.map((info: any) => (
+            {programInfo.map((info) => (
               <div
                 key={info.label}
                 className="flex items-center justify-between border-b border-neutral-100 py-2"

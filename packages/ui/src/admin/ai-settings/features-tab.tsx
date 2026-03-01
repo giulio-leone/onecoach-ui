@@ -59,7 +59,7 @@ export function FeaturesTab({ featureConfigs, onUpdateFeature }: FeaturesTabProp
   // Toggle feature enabled
   const toggleFeature = useCallback(
     (feature: AIChatFeature) => {
-      const config = featureConfigs.find((c: any) => c.feature === feature);
+      const config = featureConfigs.find((c) => c.feature === feature);
       if (config) {
         onUpdateFeature(config.id, { isEnabled: !config.isEnabled });
       }
@@ -70,7 +70,7 @@ export function FeaturesTab({ featureConfigs, onUpdateFeature }: FeaturesTabProp
   // Toggle role access for feature
   const toggleRoleForFeature = useCallback(
     (feature: AIChatFeature, role: UserRole) => {
-      const config = featureConfigs.find((c: any) => c.feature === feature);
+      const config = featureConfigs.find((c) => c.feature === feature);
       if (config) {
         const hasRole = config.enabledForRoles.includes(role);
         const newRoles = hasRole
@@ -102,7 +102,7 @@ export function FeaturesTab({ featureConfigs, onUpdateFeature }: FeaturesTabProp
   }, [featureConfigs]);
 
   // Stats
-  const enabledCount = featureConfigs.filter((f: any) => f.isEnabled).length;
+  const enabledCount = featureConfigs.filter((f) => f.isEnabled).length;
   const totalCount = featureConfigs.length;
 
   return (
@@ -118,7 +118,7 @@ export function FeaturesTab({ featureConfigs, onUpdateFeature }: FeaturesTabProp
         <StatCard
           label={t('stats.forAdmin')}
           value={
-            featureConfigs.filter((f: any) =>
+            featureConfigs.filter((f) =>
                 f.enabledForRoles.includes('ADMIN') || f.enabledForRoles.includes('SUPER_ADMIN')
             ).length
           }
@@ -127,13 +127,13 @@ export function FeaturesTab({ featureConfigs, onUpdateFeature }: FeaturesTabProp
         />
         <StatCard
           label={t('stats.forCoach')}
-          value={featureConfigs.filter((f: any) => f.enabledForRoles.includes('COACH')).length}
+          value={featureConfigs.filter((f) => f.enabledForRoles.includes('COACH')).length}
           total={totalCount}
           color="blue"
         />
         <StatCard
           label={t('stats.forUsers')}
-          value={featureConfigs.filter((f: any) => f.enabledForRoles.includes('USER')).length}
+          value={featureConfigs.filter((f) => f.enabledForRoles.includes('USER')).length}
           total={totalCount}
           color="amber"
         />
@@ -151,7 +151,7 @@ export function FeaturesTab({ featureConfigs, onUpdateFeature }: FeaturesTabProp
                 {t(`categories.${category}.label`)}
               </h3>
               <span className="text-sm text-neutral-400">
-                ({features.filter((f: any) => f.isEnabled).length}/{features.length})
+                ({features.filter((f) => f.isEnabled).length}/{features.length})
               </span>
             </div>
             <p className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -290,7 +290,7 @@ function FeatureCard({ config, index, onToggleEnabled, onToggleRole }: FeatureCa
 
       {/* Role Access */}
       <div className="mt-3 flex flex-wrap gap-1.5">
-        {ROLES.map((role: any) => {
+        {ROLES.map((role) => {
           const isAllowed = config.enabledForRoles.includes(role as UserRole);
           return (
             <button

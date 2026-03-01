@@ -82,7 +82,7 @@ export function ModelSelector({
   }, [isMobile]);
 
   // Filter models
-  const filteredModels = models.filter((model: any) => {
+  const filteredModels = models.filter((model) => {
     const matchesSearch =
       model.name.toLowerCase().includes(search.toLowerCase()) ||
       model.id.toLowerCase().includes(search.toLowerCase());
@@ -91,9 +91,9 @@ export function ModelSelector({
   });
 
   // Unique providers for filter
-  const providers = Array.from(new Set(models.map((m: any) => m.provider))).sort();
+  const providers = Array.from(new Set(models.map((m) => m.provider))).sort();
 
-  const selectedModel = models.find((m: any) => m.id === value);
+  const selectedModel = models.find((m) => m.id === value);
 
   const ModelListContent = () => (
     <div className="flex h-full flex-col">
@@ -118,7 +118,7 @@ export function ModelSelector({
             className="h-9 border-neutral-200/60 bg-neutral-50 text-xs dark:border-white/10 dark:bg-white/5"
           >
             <option value="all">All</option>
-            {providers.map((p: any) => (
+            {providers.map((p) => (
               <option key={p} value={p}>
                 {p}
               </option>

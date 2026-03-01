@@ -21,7 +21,7 @@ export function LanguageSwitcher() {
       onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleChange(e.target.value as Locale)}
       className="rounded border border-gray-300 bg-transparent px-2 py-1 text-sm focus:ring-2 focus:ring-primary-500 focus:outline-none"
     >
-      {locales.map((loc: any) => (
+      {locales.map((loc) => (
         <option key={loc} value={loc}>
           {loc === 'en' ? 'EN' : 'IT'}
         </option>

@@ -156,7 +156,7 @@ export function UserApiKeys({ userId }: UserApiKeysProps) {
         </div>
       ) : (
         <div className="space-y-3">
-          {apiKeys.map((key: any) => (
+          {apiKeys.map((key) => (
             <div
               key={key.id}
               className="rounded-lg border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950"
