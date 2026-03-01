@@ -36,12 +36,10 @@ declare module 'app/navigation' {
 
 // Next.js app-level path aliases (used in ui-chat)
 declare module '@/lib/chat' {
-  import type { Message as AIMessage } from 'ai';
-
-  export interface UIMessage extends AIMessage {
+  export interface UIMessage {
     id: string;
     role: 'user' | 'assistant' | 'system';
-    content: string;
+    parts: Array<{ type: string; text?: string; [key: string]: unknown }>;
   }
   export interface MessagePart {
     type: string;
@@ -50,7 +48,7 @@ declare module '@/lib/chat' {
   export interface ChatMessage {
     id: string;
     role: string;
-    content: string;
+    parts: Array<{ type: string; text?: string; [key: string]: unknown }>;
     createdAt?: Date;
   }
   export interface ChatConfig {

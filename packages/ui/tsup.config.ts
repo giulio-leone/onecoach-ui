@@ -17,7 +17,7 @@ export default defineConfig({
     'react', 'react-dom', /^next/,
     'framer-motion', /^@radix-ui\//, /^lucide-/,
     'zustand', 'class-variance-authority', 'clsx', 'tailwind-merge',
-    'recharts', 'ai', /^ai\//, /^@ai-sdk\//,
+    'recharts',
     'zod', 'sonner', 'vaul', /^@dnd-kit\//,
     /^@tanstack\//, 'stripe', /^@stripe\//,
     'react-day-picker', 'date-fns', 'react-hook-form', '@hookform/resolvers',

@@ -20,7 +20,6 @@ export * from './use-app-navigation';
 export * from './use-user-active-generations';
 
 // Cross-feature utility hooks
-export * from './use-chat';
 export * from './use-admin-check';
 export * from './use-calendar-assignments';
 export * from './use-calendar-navigation';

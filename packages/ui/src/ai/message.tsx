@@ -11,7 +11,6 @@ import {
   TooltipTrigger,
 } from '@giulio-leone/ui';
 import type { FileUIPart } from './ai-types';
-// import type { UIMessage } from 'ai';
 import { ChevronLeftIcon, ChevronRightIcon, PaperclipIcon, XIcon } from 'lucide-react';
 import type { ComponentProps, HTMLAttributes, ReactElement } from 'react';
 import { createContext, memo, useContext, useLayoutEffect, useMemo, useState } from 'react';

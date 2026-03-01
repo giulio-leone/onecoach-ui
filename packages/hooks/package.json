@@ -159,11 +159,6 @@
       "import": "./dist/use-durable-generation.js",
       "default": "./src/use-durable-generation.ts"
     },
-    "./use-chat": {
-      "types": "./dist/use-chat.d.ts",
-      "import": "./dist/use-chat.js",
-      "default": "./src/use-chat.ts"
-    },
     "./use-workout-generation": {
       "types": "./dist/use-workout-generation.d.ts",
       "import": "./dist/use-workout-generation.js",
