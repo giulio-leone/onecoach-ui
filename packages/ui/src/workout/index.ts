@@ -17,8 +17,7 @@ export * from './builder';
 // Editor
 export * from './editor';
 
-// Individual Components
-export { ElementTypeSelector } from './element-type-selector';
+// Individual Components (ElementTypeSelector now exported from builder)
 export { MissingOneRMModal } from './missing-one-rm-modal';
 export { OneRMEstimator } from './one-rm-estimator';
 export { SavedWorkoutPrograms } from './saved-programs';

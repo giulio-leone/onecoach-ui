@@ -78,7 +78,7 @@ const fromBuilder = (b: SupersetBuilderExercise): Exercise => {
       : [
           {
             // Fallback: create new setGroup if none exist
-            id: `sg_${Math.random().toString(36).substr(2, 9)}`,
+            id: `sg_${Math.random().toString(36).substring(2, 11)}`,
             count: b.sets,
             baseSet: {
               reps: b.reps,
@@ -140,7 +140,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
       const currentExercises = updates?.exercises ?? exercises;
 
       onChange({
-        id: superset?.id ?? `superset_${Math.random().toString(36).substr(2, 9)}`,
+        id: superset?.id ?? `superset_${Math.random().toString(36).substring(2, 11)}`,
         type: 'superset',
         name: currentName,
         exercises: currentExercises.map(fromBuilder),
@@ -162,7 +162,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
     const updated = [
       ...exercises,
       {
-        exerciseId: `ex_${Math.random().toString(36).substr(2, 9)}`,
+        exerciseId: `ex_${Math.random().toString(36).substring(2, 11)}`,
         name: '',
         sets: 3,
         reps: 10,

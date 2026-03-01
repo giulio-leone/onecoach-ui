@@ -39,7 +39,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
   const emitChange = useCallback(
     (updates?: Partial<Circuit>) => {
       onChange({
-        id: circuit?.id ?? `circuit_${Math.random().toString(36).substr(2, 9)}`,
+        id: circuit?.id ?? `circuit_${Math.random().toString(36).substring(2, 11)}`,
         type: 'circuit',
         name,
         exercises,
@@ -55,7 +55,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
   const handleAddExercise = useCallback(() => {
     const updated = [
       ...exercises,
-      { exerciseId: `ex_${Math.random().toString(36).substr(2, 9)}`, name: '', reps: 10 },
+      { exerciseId: `ex_${Math.random().toString(36).substring(2, 11)}`, name: '', reps: 10 },
     ];
     setExercises(updated);
     emitChange({ exercises: updated });

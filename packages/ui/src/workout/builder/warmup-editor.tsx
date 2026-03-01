@@ -47,7 +47,7 @@ export function WarmupEditor({ warmup, onChange, onRemove, className }: WarmupEd
   const emitChange = useCallback(
     (newExercises?: WarmupExerciseItem[], newDuration?: number, newName?: string) => {
       onChange({
-        id: warmup?.id ?? `warmup_${Math.random().toString(36).substr(2, 9)}`,
+        id: warmup?.id ?? `warmup_${Math.random().toString(36).substring(2, 11)}`,
         type: 'warmup',
         name: newName ?? name,
         durationMinutes: newDuration ?? durationMinutes,

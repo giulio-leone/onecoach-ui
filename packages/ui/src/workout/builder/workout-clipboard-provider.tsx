@@ -16,13 +16,13 @@ export const cloneExerciseWithNewIds = (exercise: Exercise): Exercise => {
   const newSetGroups =
     exercise.setGroups?.map((sg: any) => ({
       ...sg,
-      id: Math.random().toString(36).substr(2, 9),
+      id: Math.random().toString(36).substring(2, 11),
       sets: sg.sets?.map((s: any) => ({ ...s })) || [],
     })) || [];
 
   return {
     ...exercise,
-    id: Math.random().toString(36).substr(2, 9),
+    id: Math.random().toString(36).substring(2, 11),
     setGroups: newSetGroups,
   };
 };
