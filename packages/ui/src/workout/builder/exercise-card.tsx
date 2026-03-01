@@ -327,7 +327,7 @@ export function ExerciseCard({
                   exerciseId={exercise.catalogExerciseId}
                   onGroupChange={(updatedGroup) => {
                     const newGroups = [...(exercise.setGroups || [])];
-                    newGroups[groupIndex] = toDomainSetGroup(updatedGroup as any);
+                    newGroups[groupIndex] = toDomainSetGroup(updatedGroup as Partial<SetGroup> & Pick<SetGroup, 'baseSet'>);
                     handleSetGroupsChange(newGroups);
                   }}
                   onGroupDelete={() => {

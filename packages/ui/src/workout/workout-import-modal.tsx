@@ -215,11 +215,11 @@ export function WorkoutImportModal({
    */
   const removeFile = useCallback((id: string) => {
     setFiles((prev) => {
-      const file = prev.find((f: any) => f.id === id);
+      const file = prev.find((f) => f.id === id);
       if (file?.preview) {
         URL.revokeObjectURL(file.preview);
       }
-      return prev.filter((f: any) => f.id !== id);
+      return prev.filter((f) => f.id !== id);
     });
   }, []);
   /**
@@ -231,7 +231,7 @@ export function WorkoutImportModal({
       e.stopPropagation();
       setIsDragging(false);
       const droppedFiles = Array.from(e.dataTransfer.files);
-      droppedFiles.forEach((file: any) => addFile(file));
+      droppedFiles.forEach((file) => addFile(file));
     },
     [addFile]
   );
@@ -259,7 +259,7 @@ export function WorkoutImportModal({
   const handleFileSelect = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const selectedFiles = Array.from(e.target.files || []);
-      selectedFiles.forEach((file: any) => addFile(file));
+      selectedFiles.forEach((file) => addFile(file));
       // Reset input per permettere ri-selezione dello stesso file
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
@@ -342,7 +342,7 @@ export function WorkoutImportModal({
         message: 'Import completato!',
       });
       // Cleanup preview URLs
-      files.forEach((f: any) => {
+      files.forEach((f) => {
         if (f.preview) URL.revokeObjectURL(f.preview);
       });
       // Callback di successo
@@ -369,12 +369,12 @@ export function WorkoutImportModal({
    * Calcola statistiche file
    */
   const fileStats = useMemo(() => {
-    const totalSize = files.reduce((sum: any, f: any) => sum + f.size, 0);
+    const totalSize = files.reduce((sum, f) => sum + f.size, 0);
     const count = {
-      spreadsheet: files.filter((f: any) => f.type === 'spreadsheet').length,
-      pdf: files.filter((f: any) => f.type === 'pdf').length,
-      document: files.filter((f: any) => f.type === 'document').length,
-      image: files.filter((f: any) => f.type === 'image').length,
+      spreadsheet: files.filter((f) => f.type === 'spreadsheet').length,
+      pdf: files.filter((f) => f.type === 'pdf').length,
+      document: files.filter((f) => f.type === 'document').length,
+      image: files.filter((f) => f.type === 'image').length,
     };
     return { totalSize, byType: count };
   }, [files]);
@@ -518,7 +518,7 @@ export function WorkoutImportModal({
           ) : (
             <div className="space-y-2">
               {/* File list */}
-              {files.map((file: any) => {
+              {files.map((file) => {
                 const Icon = getFileIcon(file.type);
                 return (
                   <div

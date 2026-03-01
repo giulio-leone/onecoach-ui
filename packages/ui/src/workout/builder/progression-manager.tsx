@@ -56,7 +56,7 @@ function deepCloneSetGroup(setGroup: SetGroup): SetGroup {
   return {
     ...setGroup,
     baseSet: { ...setGroup.baseSet },
-    sets: setGroup.sets?.map((s: any) => ({ ...s })) || [],
+    sets: setGroup.sets?.map((s) => ({ ...s })) || [],
   } as SetGroup;
 }
 
@@ -537,7 +537,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
         </div>
         <div className="flex gap-2 overflow-x-auto p-2 lg:flex-1 lg:flex-col lg:overflow-y-auto">
           <LayoutGroup>
-            {groupedExercises.map((group: any) => (
+            {groupedExercises.map((group) => (
               <motion.button
                 layout
                 key={group.exerciseId}
@@ -709,7 +709,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                         { id: 'linear', label: t('templates.linear') },
                         { id: 'volume', label: t('templates.volume') },
                         { id: 'undulating', label: t('templates.undulating') },
-                      ].map((item: any) => (
+                      ].map((item) => (
                         <button
                           key={item.id}
                           className="group rounded-lg border border-neutral-200/60 bg-white p-3 text-left transition-all hover:border-primary-500/50 hover:bg-neutral-50 dark:border-white/5 dark:bg-white/[0.04] dark:hover:bg-white/[0.06]"
@@ -732,7 +732,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                   {t('labels.type')}
                 </label>
                 <div className="grid grid-cols-2 gap-2">
-                  {progressionTypes.map((typeOption: any) => (
+                  {progressionTypes.map((typeOption) => (
                     <button
                       key={typeOption.id}
                       onClick={() =>
@@ -937,7 +937,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                         <SetGroupEditor
                           group={currentSetGroup}
                           onGroupChange={(updated) =>
-                            handleGroupUpdate(idx, toDomainSetGroup(updated as any))
+                            handleGroupUpdate(idx, toDomainSetGroup(updated as Partial<SetGroup> & Pick<SetGroup, 'baseSet'>))
                           }
                           onGroupDelete={() => handleRemoveSetGroup(idx, editingSetGroupIndex)}
                           onGroupDuplicate={() =>

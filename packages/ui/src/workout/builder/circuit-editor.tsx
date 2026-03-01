@@ -93,7 +93,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
   };
 
   const estimatedDuration =
-    exercises.reduce((sum: any, ex: any) => {
+    exercises.reduce((sum: number, ex: CircuitExerciseItem) => {
       return sum + (ex.duration ?? (ex.reps ?? 10) * 3);
     }, 0) *
       rounds +

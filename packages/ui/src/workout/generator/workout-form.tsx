@@ -308,7 +308,7 @@ export function WorkoutForm({
               Split Preferita
             </p>
             <div className="flex flex-row flex-wrap gap-3">
-              {SPLIT_OPTIONS.map((option: any) => (
+              {SPLIT_OPTIONS.map((option) => (
                 <SelectionCard
                   key={option.value}
                   title={option.label}
@@ -406,7 +406,7 @@ export function WorkoutForm({
         </div>
 
         <div className="flex flex-row flex-wrap gap-3 p-5">
-          {TIER_OPTIONS.map((option: any) => (
+          {TIER_OPTIONS.map((option) => (
             <SelectionCard
               key={option.value}
               title={option.label}

@@ -1,3 +1,10 @@
+import type { SetGroup as TypesSetGroup } from '@giulio-leone/types';
+
+/** Type-safe adapter: BuilderSetGroup → TypesSetGroup for utility functions */
+export function toTypesSetGroup(group: BuilderSetGroup): TypesSetGroup {
+  return group as unknown as TypesSetGroup;
+}
+
 export type BuilderSetType = 'straight' | 'drop_set' | 'rest_pause' | 'amrap' | 'timed' | 'warmup';
 
 export interface BuilderTempo {

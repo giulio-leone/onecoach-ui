@@ -246,7 +246,7 @@ export function WorkoutTemplateSelector({
               >
                 Tutti
               </button>
-              {(['exercise', 'day', 'week'] as const).map((t: any) => (
+              {(['exercise', 'day', 'week'] as const).map((t) => (
                 <button
                   key={t}
                   onClick={() => setSelectedType(t)}
@@ -259,7 +259,7 @@ export function WorkoutTemplateSelector({
                   type="button"
                 >
                   {getTypeIcon(t)}
-                  {(TYPE_LABELS as any)[t]}
+                  {TYPE_LABELS[t]}
                 </button>
               ))}
             </div>
@@ -279,7 +279,7 @@ export function WorkoutTemplateSelector({
             >
               Tutte le categorie
             </button>
-            {categories.slice(0, 8).map((cat: any) => (
+            {categories.slice(0, 8).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
@@ -415,7 +415,7 @@ export function WorkoutTemplateSelector({
                         </div>
                         {template.tags.length > 0 && (
                           <div className="mt-2.5 flex flex-wrap gap-1.5">
-                            {template.tags.slice(0, 3).map((tag: any) => (
+                            {template.tags.slice(0, 3).map((tag) => (
                               <span
                                 key={tag}
                                 className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400"

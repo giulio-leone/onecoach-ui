@@ -110,7 +110,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
       <div className="mb-4">
         <label className="text-muted-foreground mb-2 block text-sm">Macchina</label>
         <div className="grid grid-cols-4 gap-2 sm:grid-cols-7">
-          {MACHINE_OPTIONS.map((option: any) => (
+          {MACHINE_OPTIONS.map((option) => (
             <motion.button
               key={option.value}
               whileHover={{ scale: 1.05 }}
@@ -162,7 +162,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
       <div className="mb-4">
         <label className="text-muted-foreground mb-2 block text-sm">Intensità</label>
         <div className="grid grid-cols-4 gap-2">
-          {INTENSITY_OPTIONS.map((option: any) => (
+          {INTENSITY_OPTIONS.map((option) => (
             <motion.button
               key={option.value}
               whileHover={{ scale: 1.02 }}

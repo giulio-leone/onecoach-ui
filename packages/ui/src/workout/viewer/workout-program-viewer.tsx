@@ -146,7 +146,7 @@ export function WorkoutProgramViewer({
   const handleTrack = () => {
     if (onTrack) {
       const today = new Date();
-      const weekDay = getWeekAndDayFromDate(program as any, today);
+      const weekDay = getWeekAndDayFromDate(program as Parameters<typeof getWeekAndDayFromDate>[0], today);
       if (weekDay) {
         onTrack(weekDay.weekNumber, weekDay.dayNumber);
       } else {
@@ -154,7 +154,7 @@ export function WorkoutProgramViewer({
       }
     } else {
       const today = new Date();
-      const weekDay = getWeekAndDayFromDate(program as any, today);
+      const weekDay = getWeekAndDayFromDate(program as Parameters<typeof getWeekAndDayFromDate>[0], today);
       if (weekDay) {
         router.push(
           `/workouts/${programId}/start?week=${weekDay.weekNumber}&day=${weekDay.dayNumber}`

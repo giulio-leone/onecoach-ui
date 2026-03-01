@@ -8,7 +8,7 @@ export function csvFromArray(values?: string[]): string {
 export function arrayFromCsv(value: string): string[] {
   return value
     .split(',')
-    .map((entry: any) => entry.trim())
+    .map((entry) => entry.trim())
     .filter(Boolean);
 }
 

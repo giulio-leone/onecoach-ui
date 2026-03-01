@@ -197,9 +197,9 @@ export function WorkoutVisualBuilder({
     const exercises: Exercise[] = [];
     const seenIds = new Set<string>();
 
-    program.weeks?.forEach((week: any) => {
-      week.days.forEach((day: any) => {
-        day.exercises?.forEach((ex: any) => {
+    program.weeks?.forEach((week) => {
+      week.days.forEach((day) => {
+        day.exercises?.forEach((ex) => {
           if (ex.id && !seenIds.has(ex.id)) {
             seenIds.add(ex.id);
             exercises.push(ex);

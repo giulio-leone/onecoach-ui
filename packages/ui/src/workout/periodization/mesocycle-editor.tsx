@@ -187,7 +187,7 @@ export function MesocycleEditor({
 
   // Translation helper with fallback
   const tf = (key: string, fallback: string) =>
-    t(`workout.periodization.${key}`, { fallback } as any);
+    t(`workout.periodization.${key}`, { defaultValue: fallback } as Record<string, string>);
 
   return (
     <div className={cn('space-y-6', className)}>
