@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
  *
  * Form per il login utente
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';
@@ -75,8 +75,8 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
     },
     validateOnBlur: true,
   });
-  // Prefill email dal localStorage
-  useEffect(() => {
+  // Prefill email dal localStorage (useLayoutEffect runs before paint → no flash)
+  useLayoutEffect(() => {
     try {
       const last = window.localStorage.getItem('last_login_email');
       if (last) form.setValue('email', last);
