@@ -3,7 +3,7 @@
 import { ChevronLeft, Flame, Droplets, Wheat, Beef, Utensils, Play } from 'lucide-react';
 import { MealGroupModern } from '../live/v2/meal-group-modern';
 import { Heading, Text, Button } from '@giulio-leone/ui';
-import type { NutritionPlan, Meal } from '@giulio-leone/types/nutrition';
+import type { NutritionPlan, Meal, NutritionWeek, NutritionDay } from '@giulio-leone/types/nutrition';
 
 
 // --- MAIN COMPONENT ---
@@ -24,8 +24,8 @@ export function NutritionDayDetail({
   onTrack,
 }: NutritionDayDetailProps) {
   // Find the specific day
-  const week = plan.weeks?.find((w: any) => w.weekNumber === weekNumber);
-  const day = week?.days?.find((d: any) => d.dayNumber === dayNumber);
+  const week = plan.weeks?.find((w: NutritionWeek) => w.weekNumber === weekNumber);
+  const day = week?.days?.find((d: NutritionDay) => d.dayNumber === dayNumber);
 
   if (!day) {
     return (

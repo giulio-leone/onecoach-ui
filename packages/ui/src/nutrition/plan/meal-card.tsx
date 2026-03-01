@@ -65,7 +65,7 @@ export const MealCard = memo(function MealCard({
 
   // OPTIMIZATION: Memoize drag IDs to prevent recalculation on every render
   const foodDragIds = useMemo(
-    () => meal.foods.map((food: any) => createFoodDragId(dayNumber, meal.id, food.id)),
+    () => meal.foods.map((food: FoodItem) => createFoodDragId(dayNumber, meal.id, food.id)),
     [meal.foods, meal.id, dayNumber]
   );
 

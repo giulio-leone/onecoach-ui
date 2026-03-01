@@ -8,7 +8,7 @@
 // Fixed component with correct imports and logic
 'use client';
 import React, { useState } from 'react';
-import { Search, Filter, Trash2, Calendar, Utensils, Sun, Moon, Coffee } from 'lucide-react';
+import { Search, Filter, Trash2, Calendar, Utensils, Sun, Moon, Coffee, type LucideIcon } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { Button } from '@giulio-leone/ui';
@@ -25,7 +25,7 @@ type NutritionTemplateSelectorProps = {
   onClose: () => void;
 };
 
-const TYPE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+const TYPE_ICONS: Record<string, LucideIcon> = {
   meal: Utensils,
   day: Sun,
   week: Calendar,
@@ -156,7 +156,7 @@ export function NutritionTemplateSelector({
                   {t('form.category')}
                 </h5>
                 <div className="flex flex-wrap gap-2">
-                  {['colazione', 'pranzo', 'cena', 'snack'].map((cat: any) => (
+                  {['colazione', 'pranzo', 'cena', 'snack'].map((cat) => (
                     <button
                       key={cat}
                       onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
@@ -184,7 +184,7 @@ export function NutritionTemplateSelector({
             <EmptyState
               title={t('empty.title')}
               description={t('empty.description')}
-              icon={TypeIcon as any}
+              icon={TypeIcon}
               action={<Button onClick={() => {}}>{t('empty.action')}</Button>}
             />
           ) : (
@@ -255,7 +255,7 @@ export function NutritionTemplateSelector({
                           </p>
                         )}
                         <div className="mt-3 flex flex-wrap gap-2 text-xs text-neutral-500">
-                          {template.tags.map((tag: any) => (
+                          {template.tags.map((tag: string) => (
                             <span
                               key={tag}
                               className="rounded bg-neutral-100 px-2 py-0.5 dark:bg-white/[0.04]"

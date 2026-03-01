@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { getWeekAndDayFromDate } from '@giulio-leone/lib-shared';
 import { Spinner, Heading, Text, Button } from '@giulio-leone/ui';
-import type { NutritionPlan, Meal, NutritionDay } from '@giulio-leone/types/nutrition';
+import type { NutritionPlan, Meal, NutritionDay, NutritionWeek } from '@giulio-leone/types/nutrition';
 
 // --- HELPER COMPONENTS ---
 
@@ -120,8 +120,8 @@ export function NutritionPlanDashboard({
     const today = new Date();
     const weekDay = getWeekAndDayFromDate(plan, today); // Use shared helper
     if (weekDay && plan.weeks) {
-      const week = plan.weeks.find((w: any) => w.weekNumber === weekDay.weekNumber);
-      const day = week?.days?.find((d: any) => d.dayNumber === weekDay.dayNumber);
+      const week = plan.weeks.find((w: NutritionWeek) => w.weekNumber === weekDay.weekNumber);
+      const day = week?.days?.find((d: NutritionDay) => d.dayNumber === weekDay.dayNumber);
       if (day) return { day, ...weekDay, isToday: true };
     }
     // Fallback
@@ -289,7 +289,7 @@ export function NutritionPlanDashboard({
               </Heading>
 
               <div className="space-y-8">
-                {(plan.weeks || []).map((week: any) => (
+                {(plan.weeks || []).map((week: NutritionWeek) => (
                   <div key={week.weekNumber} className="space-y-4">
                     {/* Week Header */}
                     <div className="flex items-center gap-4">
@@ -306,7 +306,7 @@ export function NutritionPlanDashboard({
 
                     {/* Days Grid */}
                     <div className="grid gap-4 sm:grid-cols-2">
-                      {(week.days || []).map((day: any) => (
+                      {(week.days || []).map((day: NutritionDay) => (
                         <div
                           key={day.dayNumber}
                           onClick={() => handleDayClick(day, week.weekNumber)}

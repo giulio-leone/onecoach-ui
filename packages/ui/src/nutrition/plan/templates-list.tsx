@@ -211,7 +211,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
           >
             {t('type.all')}
           </button>
-          {(['meal', 'day', 'week'] as const).map((type: any) => (
+          {(['meal', 'day', 'week'] as const).map((type) => (
             <button
               key={type}
               onClick={() => setSelectedType(type)}
@@ -241,7 +241,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
           >
             {t('category.all')}
           </button>
-          {categories.map((cat: any) => (
+          {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
@@ -304,8 +304,8 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
             </p>
           </div>
         ) : (
-          templates.map((template: any) => {
-            const TypeIcon = (TYPE_ICONS as any)[template.type];
+          templates.map((template: NutritionTemplate) => {
+            const TypeIcon = TYPE_ICONS[template.type as keyof typeof TYPE_ICONS];
 
             return (
               <div
@@ -404,7 +404,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
                     </div>
                     {template.tags.length > 0 && (
                       <div className="mt-2 flex flex-wrap gap-1">
-                        {template.tags.map((tag: any) => (
+                        {template.tags.map((tag: string) => (
                           <span
                             key={tag}
                             className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400"

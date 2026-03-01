@@ -14,7 +14,7 @@ import { SortableList, SortableItem, type SortableItemRenderProps, Button } from
 import { createNutritionDayDragId } from '@giulio-leone/lib-shared';
 import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
-import type { NutritionWeek } from "@giulio-leone/types/nutrition";
+import type { NutritionWeek, NutritionDay } from "@giulio-leone/types/nutrition";
 import type { FoodItem } from "@giulio-leone/types/nutrition";
 
 interface WeekCardProps {
@@ -90,7 +90,7 @@ export function WeekCard({
 
   // Memoize day drag IDs
   const dayDragIds = useMemo(
-    () => week.days?.map((day: any) => createNutritionDayDragId(week.weekNumber, day.dayNumber)) || [],
+    () => week.days?.map((day: NutritionDay) => createNutritionDayDragId(week.weekNumber, day.dayNumber)) || [],
     [week.days, week.weekNumber]
   );
 
@@ -264,7 +264,7 @@ export function WeekCard({
                 })}
               </SortableList>
             ) : (
-              week.days.map((day: any) => {
+              week.days.map((day: NutritionDay) => {
                 const dayKey = `${week.weekNumber}-${day.dayNumber}`;
                 return (
                   <DayCard

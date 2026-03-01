@@ -14,7 +14,7 @@ import { SortableList, SortableItem, type SortableItemRenderProps, Button } from
 import { createMealDragId } from '@giulio-leone/lib-shared';
 import { cn } from '@giulio-leone/lib-design-system';
 import { useTranslations } from 'next-intl';
-import type { NutritionDay } from "@giulio-leone/types/nutrition";
+import type { NutritionDay, Meal } from "@giulio-leone/types/nutrition";
 import type { FoodItem } from "@giulio-leone/types/nutrition";
 
 interface DayCardProps {
@@ -74,7 +74,7 @@ export function DayCard({
   // Memoize meal drag IDs
   // Memoize meal drag IDs
   const mealDragIds = useMemo(
-    () => day.meals.map((meal: any) => createMealDragId(day.dayNumber, meal.id)),
+    () => day.meals.map((meal: Meal) => createMealDragId(day.dayNumber, meal.id)),
     [day.meals, day.dayNumber]
   );
   
@@ -237,7 +237,7 @@ export function DayCard({
                 })}
               </SortableList>
             ) : (
-              day.meals.map((meal: any) => {
+              day.meals.map((meal: Meal) => {
                 const mealKey = `${day.dayNumber}-${meal.id}`;
                 return (
                   <MealCard
