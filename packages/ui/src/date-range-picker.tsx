@@ -260,6 +260,7 @@ export function DateRangePicker({
   showPresets = true,
   isOneWay = false,
 }: DateRangePickerProps): React.ReactElement {
+  'use no memo';
   const t = { ...defaultRangeTranslations, ...translations };
 
   const [open, setOpen] = useState(false);

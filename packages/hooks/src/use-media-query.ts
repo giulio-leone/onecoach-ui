@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
  * Subscribes to `matchMedia` changes so the value stays in sync.
  */
 export function useMediaQuery(query: string): boolean {
+  'use no memo';
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {

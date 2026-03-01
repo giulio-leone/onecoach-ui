@@ -112,6 +112,7 @@ export function ModernSidebar({
   onToggleCollapse,
   extraContent,
 }: ModernSidebarProps) {
+  'use no memo';
   const [internalIsCollapsed, setInternalIsCollapsed] = useState(false);
   const isCollapsed = controlledIsCollapsed ?? internalIsCollapsed;
   const handleToggleCollapse =

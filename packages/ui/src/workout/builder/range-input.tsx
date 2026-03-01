@@ -104,6 +104,7 @@ export function RangeInput({
   className = '',
   id,
 }: RangeInputProps) {
+  'use no memo';
   const inputRef = useRef<HTMLInputElement>(null);
   const [localValue, setLocalValue] = useState<string>('');
   const [isFocused, setIsFocused] = useState(false);

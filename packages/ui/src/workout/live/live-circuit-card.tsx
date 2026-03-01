@@ -18,6 +18,7 @@ export interface LiveCircuitCardProps {
  * Each round cycles through all exercises.
  */
 export function LiveCircuitCard({ circuit, onComplete, className = '' }: LiveCircuitCardProps) {
+  'use no memo';
   const [currentRound, setCurrentRound] = useState(1);
   const [currentExerciseIdx, setCurrentExerciseIdx] = useState(0);
   const [exercisesDone, setExercisesDone] = useState<Set<string>>(new Set());

@@ -82,6 +82,7 @@ export function DatePicker({
   defaultViewDate,
   showQuickSelect = false,
 }: DatePickerComponentProps): React.ReactElement {
+  'use no memo';
   const [open, setOpen] = useState(false);
 
   // Smart initial viewDate: prioritize defaultViewDate > minDate > value > today

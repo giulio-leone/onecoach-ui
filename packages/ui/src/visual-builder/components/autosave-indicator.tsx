@@ -33,6 +33,7 @@ export function AutosaveIndicator({
   onRetry,
   className,
 }: AutosaveIndicatorProps) {
+  'use no memo';
   const [showSaved, setShowSaved] = useState(false);
 
   // Show "Saved" indicator briefly after save completes

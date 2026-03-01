@@ -31,6 +31,7 @@ export function ThemeProvider({
   defaultTheme = 'system',
   storageKey = 'onecoach-theme',
 }: ThemeProviderProps) {
+  'use no memo';
   const systemColorScheme = useColorScheme();
   const [theme, setThemeState] = useState<Theme>(defaultTheme);
   const [actualTheme, setActualTheme] = useState<'light' | 'dark'>(
