@@ -10,7 +10,10 @@
 import { useState, useRef, useCallback } from 'react';
 import { Clock, Calculator, Minus, Plus } from 'lucide-react';
 import { kgToLbs, lbsToKg, getWeightValue } from '@giulio-leone/lib-shared';
+import { useTranslations } from 'next-intl';
 import { useBidirectionalWeightCalc } from '../hooks/use-bidirectional-weight-calc';
+import { SetTypeSelector } from './set-type-selector';
+import { TempoInput } from './tempo-input';
 import type { BuilderExerciseSet as ExerciseSet } from './builder-types';
 
 function StepButton({
@@ -59,6 +62,7 @@ export function SetEditor({
   oneRepMax = null,
   weightUnit = 'KG',
 }: SetEditorProps) {
+  const t = useTranslations('workouts.builder.setEditor');
   const [intensityPercentInputFocused, setIntensityInputFocused] = useState(false);
   const [weightInputFocused, setWeightInputFocused] = useState(false);
   const rpeString = (set.rpe ?? '').toString();
@@ -165,9 +169,21 @@ export function SetEditor({
 
   const handleRpeChange = (value: string) => {
     const numValue = value === '' ? undefined : parseInt(value, 10);
+    const rpe = numValue && !isNaN(numValue) && numValue >= 1 && numValue <= 10 ? numValue : null;
     onSetChange({
       ...set,
-      rpe: numValue && !isNaN(numValue) && numValue >= 1 && numValue <= 10 ? numValue : null,
+      rpe,
+      rir: rpe !== null ? 10 - rpe : null,
+    });
+  };
+
+  const handleRirChange = (value: string) => {
+    const numValue = value === '' ? undefined : parseInt(value, 10);
+    const rir = numValue !== undefined && !isNaN(numValue) && numValue >= 0 && numValue <= 5 ? numValue : null;
+    onSetChange({
+      ...set,
+      rir,
+      rpe: rir !== null ? 10 - rir : null,
     });
   };
 
@@ -190,6 +206,15 @@ export function SetEditor({
             Gruppo
           </span>
         )}
+      </div>
+
+      {/* Set Type Selector */}
+      <div className="mb-3">
+        <SetTypeSelector
+          value={set.setType ?? 'straight'}
+          onChange={(type) => onSetChange({ ...set, setType: type })}
+          disabled={isDisabled}
+        />
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -458,6 +483,36 @@ export function SetEditor({
             min="0"
           />
         </div>
+
+        {/* RIR (Reps In Reserve) */}
+        <div className="flex flex-col">
+          <label className="mb-1 text-xs font-medium text-neutral-600 dark:text-neutral-400">
+            RIR
+          </label>
+          <input
+            type="number"
+            min="0"
+            max="5"
+            value={set.rir?.toString() ?? ''}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleRirChange(e.target.value)}
+            disabled={isDisabled}
+            className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
+              isDisabled
+                ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
+                : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
+            }`}
+            placeholder="0-5"
+          />
+        </div>
+      </div>
+
+      {/* Tempo */}
+      <div className="mt-3">
+        <TempoInput
+          value={set.tempo}
+          onChange={(tempo) => onSetChange({ ...set, tempo })}
+          disabled={isDisabled}
+        />
       </div>
 
       {/* 1RM Info */}

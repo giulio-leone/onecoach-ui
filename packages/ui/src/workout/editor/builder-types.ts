@@ -1,20 +1,31 @@
+export type BuilderSetType = 'straight' | 'drop_set' | 'rest_pause' | 'amrap' | 'timed' | 'warmup';
+
+export interface BuilderTempo {
+  eccentric: number;
+  pause1: number;
+  concentric: number;
+  pause2: number;
+}
+
 export interface BuilderExerciseSet {
   id?: string;
   setNumber?: number;
+  setType?: BuilderSetType;
   reps?: number;
   repsMax?: number;
-  weight?: number | null; // Nullable for builder UI
+  weight?: number | null;
   weightLbs?: number | null;
   weightMax?: number | null;
   intensityPercent?: number | null;
   intensityPercentMax?: number | null;
   rpe?: number | null;
   rpeMax?: number | null;
-  rest?: number | null; // seconds
+  rir?: number | null;
+  rirMax?: number | null;
+  tempo?: BuilderTempo | null;
+  rest?: number | null;
   duration?: number;
   notes?: string | null;
-  tempo?: string | null;
-  // Additional fields for compatibility
   isWarmup?: boolean;
 }
 
