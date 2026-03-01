@@ -47,7 +47,6 @@ export function FeatureFlagFormModal({ flag, onClose, onSuccess }: FeatureFlagFo
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const t = useTranslations('admin');
     e.preventDefault();
     setIsSubmitting(true);
 

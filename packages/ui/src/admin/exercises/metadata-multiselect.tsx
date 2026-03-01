@@ -107,7 +107,6 @@ export function MetadataMultiSelect({
     let cancelled = false;
 
     const loadMetadata = async () => {
-      const t = useTranslations('admin');
       if (cancelled) return;
 
       setIsLoading(true);
@@ -211,7 +210,6 @@ export function MetadataMultiSelect({
   );
 
   const handleReload = useCallback(async () => {
-    const t = useTranslations('admin');
     setIsLoading(true);
     setError(null);
 
