@@ -221,14 +221,10 @@
     "@giulio-leone/lib-api": "workspace:*"
   },
   "peerDependencies": {
-    "@giulio-leone/ui": "workspace:*",
     "react": ">=19.1.0 <20",
     "react-native": ">=0.81 <0.83"
   },
   "peerDependenciesMeta": {
-    "@giulio-leone/ui": {
-      "optional": true
-    },
     "react-native": {
       "optional": true
     }

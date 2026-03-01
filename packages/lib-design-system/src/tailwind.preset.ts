@@ -59,4 +59,4 @@ export const oneCoachPreset: Config = {
 };
 
 // CJS compat — consumed by packages/app/tailwind.config.js via require()
-export const theme = oneCoachPreset.theme;
+export const theme: Config['theme'] = oneCoachPreset.theme;
