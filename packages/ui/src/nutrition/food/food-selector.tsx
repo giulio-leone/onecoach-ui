@@ -3,15 +3,20 @@
  *
  * Autocomplete con search BM25 per selezione alimenti
  * Usato per aggiungere alimenti ai piani nutrizionali
+ * Integra risultati locali + OpenFoodFacts
  */
 
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { Search, Loader2, X, Check } from 'lucide-react';
+import { Search, Loader2, X, Check, Globe } from 'lucide-react';
 import type { FoodItem } from '@giulio-leone/types/nutrition';
 import { logger } from '@giulio-leone/lib-shared';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+
+interface FoodResultItem extends FoodItem {
+  source?: 'local' | 'openfoodfacts';
+}
 
 export interface FoodSelectorProps {
   onSelect: (foodItem: FoodItem, quantity?: number) => void;
@@ -27,11 +32,13 @@ export function FoodSelector({
   limit = 10,
 }: FoodSelectorProps) {
   const t = useTranslations('common');
+  const locale = useLocale();
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<FoodItem[]>([]);
+  const [results, setResults] = useState<FoodResultItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [isImporting, setIsImporting] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
@@ -46,7 +53,7 @@ export function FoodSelector({
       setIsLoading(true);
       try {
         const response = await fetch(
-          `/api/food/search?q=${encodeURIComponent(searchQuery)}&limit=${limit}`
+          `/api/food/search?q=${encodeURIComponent(searchQuery)}&limit=${limit}&locale=${encodeURIComponent(locale)}`
         );
 
         if (!response.ok) {
@@ -63,7 +70,7 @@ export function FoodSelector({
         setIsLoading(false);
       }
     },
-    [limit, t]
+    [limit, locale, t]
   );
 
   // Debounce search
@@ -75,8 +82,54 @@ export function FoodSelector({
     return () => clearTimeout(timer);
   }, [query, searchFoods]);
 
-  const handleSelect = (foodItem: FoodItem) => {
-    onSelect(foodItem);
+  const importExternalFood = async (food: FoodResultItem): Promise<FoodItem | null> => {
+    try {
+      const metadataBrand = typeof food.metadata?.brand === 'string' ? food.metadata.brand : null;
+      const response = await fetch('/api/food/import-external', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          externalId: food.metadata?.externalId ?? food.id.replace('off:', ''),
+          name: food.name,
+          barcode: food.barcode ?? null,
+          macrosPer100g: food.macrosPer100g,
+          servingSize: food.servingSize,
+          unit: food.unit,
+          imageUrl: food.imageUrl ?? null,
+          brand: metadataBrand,
+          source: 'openfoodfacts',
+          locale,
+        }),
+      });
+
+      if (!response.ok) return null;
+      const data = await response.json();
+      return data.data ?? null;
+    } catch (error) {
+      logger.error('Import external food error', error);
+      return null;
+    }
+  };
+
+  const handleSelect = async (foodItem: FoodResultItem) => {
+    // If it's an external item, import it first
+    if (foodItem.source === 'openfoodfacts') {
+      setIsImporting(true);
+      try {
+        const imported = await importExternalFood(foodItem);
+        if (imported) {
+          onSelect(imported);
+        } else {
+          // Fallback: pass the external item as-is
+          onSelect(foodItem);
+        }
+      } finally {
+        setIsImporting(false);
+      }
+    } else {
+      onSelect(foodItem);
+    }
+
     setQuery('');
     setResults([]);
     setIsOpen(false);
@@ -165,7 +218,7 @@ export function FoodSelector({
           ref={resultsRef}
           className="absolute z-50 mt-2 max-h-64 w-full overflow-y-auto rounded-xl border border-neutral-200/60 bg-white shadow-lg dark:border-white/[0.08] dark:bg-zinc-950"
         >
-          {isLoading ? (
+          {isLoading || isImporting ? (
             <div className="flex items-center justify-center py-8">
               <Loader2 className="h-6 w-6 animate-spin text-neutral-400 dark:text-neutral-600" />
             </div>
@@ -187,8 +240,11 @@ export function FoodSelector({
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
-                      <div className="font-medium text-neutral-900 dark:text-neutral-100">
+                      <div className="flex items-center gap-1.5 font-medium text-neutral-900 dark:text-neutral-100">
                         {food.name}
+                        {food.source === 'openfoodfacts' && (
+                          <Globe className="h-3.5 w-3.5 flex-shrink-0 text-emerald-500" />
+                        )}
                       </div>
                       <div className="mt-1 text-xs text-neutral-500 dark:text-neutral-500">
                         {food.macrosPer100g.calories} {t('common.food_selector.kcal_p')}

@@ -1,17 +1,63 @@
 'use client';
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Search, X, Dumbbell, Plus, Heart, Clock, SlidersHorizontal, Play } from 'lucide-react';
-// import { getExercises } from '@/app/actions/workouts';
-const getExercises = async (_query: string) => {
-  console.warn('getExercises mocked in UI package');
-  return [] as Exercise[];
-};
 
 import { logger } from '@giulio-leone/lib-shared';
 import type { Exercise } from '@giulio-leone/types/workout';
 import type { MuscleGroup, ExerciseCategory } from '@giulio-leone/types';
+
+/** Shape returned by /api/exercises/autocomplete */
+interface AutocompleteExercise {
+  id: string;
+  slug: string;
+  name: string;
+  exerciseTypeName: string | null;
+  overview: string | null;
+  videoUrl: string | null;
+  muscles: Array<{ id: string; name: string; slug: string; role: string }>;
+  equipments: Array<{ id: string; name: string; slug: string }>;
+}
+
+const EXERCISE_TYPE_TO_CATEGORY: Record<string, ExerciseCategory> = {
+  strength: 'strength',
+  cardio: 'cardio',
+  flexibility: 'flexibility',
+  balance: 'balance',
+};
+
+const MUSCLE_SLUG_TO_GROUP: Record<string, MuscleGroup> = {
+  chest: 'chest',
+  back: 'back',
+  shoulders: 'shoulders',
+  biceps: 'arms',
+  triceps: 'arms',
+  forearms: 'arms',
+  quadriceps: 'legs',
+  hamstrings: 'legs',
+  glutes: 'legs',
+  calves: 'legs',
+  abs: 'core',
+};
+
+function mapApiExercise(ex: AutocompleteExercise): Omit<Exercise, 'setGroups' | 'notes' | 'typeLabel' | 'repRange' | 'formCues'> {
+  const categoryKey = (ex.exerciseTypeName ?? '').toLowerCase();
+  const category: ExerciseCategory = EXERCISE_TYPE_TO_CATEGORY[categoryKey] ?? 'strength';
+  const muscleGroups = Array.from(
+    new Set(ex.muscles.map((m) => MUSCLE_SLUG_TO_GROUP[m.slug] ?? 'full-body'))
+  ) as MuscleGroup[];
+  return {
+    id: ex.id,
+    catalogExerciseId: ex.id,
+    name: ex.name,
+    description: ex.overview ?? '',
+    category,
+    muscleGroups,
+    equipment: ex.equipments.map((e) => e.slug),
+    videoUrl: ex.videoUrl ?? undefined,
+  };
+}
 
 const ALL_MUSCLE_GROUPS: MuscleGroup[] = [
   'chest', 'back', 'shoulders', 'arms', 'legs', 'core', 'full-body',
@@ -60,7 +106,7 @@ function toggleFav(id: string): boolean {
 
 function parseYouTubeId(url: string): string | null {
   const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/);
-  return m ? m[1] : null;
+  return m?.[1] ?? null;
 }
 
 /**
@@ -68,13 +114,14 @@ function parseYouTubeId(url: string): string | null {
  */
 export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelectorProps) {
   const t = useTranslations('workouts.builder.selector');
+  const locale = useLocale();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedMuscles, setSelectedMuscles] = useState<MuscleGroup[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<ExerciseCategory[]>([]);
   const [selectedEquipment, setSelectedEquipment] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   const [activeTab, setActiveTab] = useState<Tab>('all');
-  const [exercises, setExercises] = useState<Exercise[]>([]);
+  const [exercises, setExercises] = useState<Omit<Exercise, 'setGroups' | 'notes' | 'typeLabel' | 'repRange' | 'formCues'>[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [favIds, setFavIds] = useState<string[]>([]);
   const [recentIds, setRecentIds] = useState<string[]>([]);
@@ -91,17 +138,43 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
     const fetchExercises = async () => {
       setIsLoading(true);
       try {
-        const data = await getExercises(searchQuery);
-        setExercises(Array.isArray(data) ? (data as Exercise[]) : []);
+        const q = searchQuery.trim();
+        let url: string;
+
+        if (q.length >= 2) {
+          // Search mode: use autocomplete with BM25
+          const params = new URLSearchParams({ q, locale, limit: '30' });
+          if (selectedMuscles.length > 0) params.set('muscles', selectedMuscles.join(','));
+          if (selectedEquipment.length > 0) params.set('equipments', selectedEquipment.join(','));
+          url = `/api/exercises/autocomplete?${params.toString()}`;
+        } else if (q.length > 0) {
+          // Too short for search
+          setExercises([]);
+          setIsLoading(false);
+          return;
+        } else {
+          // Browse mode: list all exercises
+          const params = new URLSearchParams({ locale, pageSize: '50' });
+          if (selectedMuscles.length > 0) params.set('muscles', selectedMuscles.join(','));
+          if (selectedEquipment.length > 0) params.set('equipments', selectedEquipment.join(','));
+          url = `/api/exercises?${params.toString()}`;
+        }
+
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const json = await response.json();
+        const data: AutocompleteExercise[] = json.data ?? [];
+        setExercises(data.map(mapApiExercise));
       } catch (error: unknown) {
         logger.error('Failed to fetch exercises', error);
+        setExercises([]);
       } finally {
         setIsLoading(false);
       }
     };
     const debounce = setTimeout(fetchExercises, 300);
     return () => clearTimeout(debounce);
-  }, [searchQuery, isOpen]);
+  }, [searchQuery, isOpen, locale, selectedMuscles, selectedEquipment]);
 
   // Multi-filter
   const filteredExercises = useMemo(() => {
@@ -167,7 +240,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
     setFavIds(getFavIds());
   }, []);
 
-  const handleSelect = (ex: Exercise) => {
+  const handleSelect = (ex: Omit<Exercise, 'setGroups' | 'notes' | 'typeLabel' | 'repRange' | 'formCues'>) => {
     const catalogId = ex.catalogExerciseId || ex.id;
     if (!catalogId) {
       logger.error('[ExerciseSelector] Cannot determine catalogExerciseId for:', ex);
@@ -179,8 +252,8 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
     const newExercise: Exercise = {
       id: `exercise_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`,
       catalogExerciseId: catalogId,
-      name: ex.name!,
-      description: '',
+      name: ex.name,
+      description: ex.description ?? '',
       category: ex.category,
       muscleGroups: ex.muscleGroups,
       setGroups: [
@@ -365,7 +438,7 @@ export function ExerciseSelector({ isOpen, onClose, onSelect }: ExerciseSelector
             </div>
           ) : (
             <div className="space-y-3 pb-16 sm:pb-8">
-              {filteredExercises.map((ex: Exercise) => {
+              {filteredExercises.map((ex) => {
                 const catalogId = ex.catalogExerciseId || ex.id;
                 const isFav = favIds.includes(catalogId);
                 const ytId = ex.videoUrl ? parseYouTubeId(ex.videoUrl) : null;
