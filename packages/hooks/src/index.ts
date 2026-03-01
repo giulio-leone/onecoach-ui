@@ -47,6 +47,7 @@ export * from './use-persistent-versioned-state';
 
 export * from './use-import-measurements';
 export * from './user-preferences';
+export * from './use-media-query';
 
 // Realtime hooks (Supabase realtime sync)
 export * from './realtime';

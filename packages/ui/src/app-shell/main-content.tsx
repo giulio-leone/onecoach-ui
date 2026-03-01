@@ -6,9 +6,9 @@
  * Wrapper responsivo che applica margini dinamici per sidebar e copilot.
  */
 
-import { useEffect, useState } from 'react';
 import { useSidebar, useUIStore, useCopilotStore } from '@giulio-leone/lib-stores';
 import { cn } from '@giulio-leone/lib-design-system';
+import { useIsDesktop } from '@giulio-leone/hooks';
 import { SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '../modern-sidebar';
 
 export interface AppShellMainContentProps {
@@ -29,14 +29,7 @@ export function AppShellMainContent({ children, className }: AppShellMainContent
   const isResizing = useCopilotStore((state: { isResizing: boolean }) => state.isResizing);
 
   // Detect if we're on desktop (Copilot uses sidebar mode)
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const checkDesktop = () => setIsDesktop(window.innerWidth >= 1024);
-    checkDesktop();
-    window.addEventListener('resize', checkDesktop);
-    return () => window.removeEventListener('resize', checkDesktop);
-  }, []);
+  const isDesktop = useIsDesktop();
 
   // Only apply right margin on desktop when Copilot is open
   const shouldApplyCopilotMargin = copilotVisible && isDesktop;

@@ -5,6 +5,7 @@ import { Input } from '../../input';
 import { Select } from '../../select';
 import { Search, Check, ChevronsUpDown, Sparkles, Box, Cpu, Zap } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
+import { useIsMobile } from '@giulio-leone/hooks';
 import type { ModelOption } from './model-selector-modal';
 import { Drawer } from '../../drawer';
 
@@ -39,18 +40,8 @@ export function ModelSelector({
   const [search, setSearch] = useState('');
   const [providerFilter, setProviderFilter] = useState<string>('all');
   const [isLoading, setIsLoading] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
-
-  // Detect mobile
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640); // sm breakpoint
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   useEffect(() => {
     const fetchModels = async () => {

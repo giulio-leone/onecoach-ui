@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Search, Trash2, MessageSquare, Calendar, X, Pencil, Check } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
+import { useIsMobile } from '@giulio-leone/hooks';
 import { Modal } from '../../../dialog';
 import { Input } from '../../../input';
 import { Button } from '../../../button';
@@ -47,16 +48,9 @@ export function ChatHistoryModal({
   const [renameId, setRenameId] = useState<string | null>(null);
   const [renameValue, setRenameValue] = useState('');
   const [isSaving, setIsSaving] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [selectionMode, setSelectionMode] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const toggleSelect = (id: string) => {
     setSelectedIds((prev) => (prev.includes(id) ? prev.filter((x: any) => x !== id) : [...prev, id]));
