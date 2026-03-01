@@ -1,4 +1,5 @@
 'use client';
+'use no memo';
 
 import { useEffect, useRef } from 'react';
 import { View, Animated, StyleSheet, type ViewStyle, type StyleProp } from 'react-native';
