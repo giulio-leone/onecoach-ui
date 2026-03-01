@@ -22,10 +22,10 @@ export const MessageBubble = ({ message, isUser }: MessageBubbleProps) => {
           'max-w-[85%] rounded-2xl p-4 shadow-lg sm:max-w-[75%]',
           isUser
             ? cn(
-                'rounded-br-md bg-gradient-to-br from-blue-500 to-indigo-600',
-                'dark:from-blue-600 dark:to-indigo-700',
-                'border border-blue-400/20 text-white dark:border-blue-500/30',
-                'shadow-md dark:shadow-lg dark:shadow-blue-950/30'
+                'rounded-br-md bg-gradient-to-br from-primary-500 to-indigo-600',
+                'dark:from-primary-600 dark:to-indigo-700',
+                'border border-primary-400/20 text-white dark:border-primary-500/30',
+                'shadow-md dark:shadow-lg dark:shadow-primary-950/30'
               )
             : cn(
                 'rounded-bl-md border',

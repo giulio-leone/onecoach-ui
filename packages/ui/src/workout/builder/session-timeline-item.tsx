@@ -74,7 +74,7 @@ export function SessionTimelineItem({
           e.stopPropagation();
           onEdit(index);
         }}
-        className="absolute top-2 right-2 p-2 text-neutral-400 opacity-0 transition-all group-hover:opacity-100 hover:text-blue-600"
+        className="absolute top-2 right-2 p-2 text-neutral-400 opacity-0 transition-all group-hover:opacity-100 hover:text-primary-600"
         aria-label="Modifica sessione"
       >
         <Pen size={16} />
@@ -116,8 +116,8 @@ function SelectionIndicator({ isSelected }: { isSelected: boolean }) {
     <div
       className={`flex h-6 w-6 items-center justify-center rounded-full border transition-colors ${
         isSelected
-          ? 'border-blue-500 bg-blue-500 text-white'
-          : 'border-neutral-300 bg-transparent text-transparent dark:border-neutral-600'
+          ? 'border-primary-500 bg-primary-500 text-white'
+          : 'border-neutral-300 bg-transparent text-transparent dark:border-white/[0.1]'
       }`}
     >
       <CheckCircle2 size={14} />
@@ -127,7 +127,7 @@ function SelectionIndicator({ isSelected }: { isSelected: boolean }) {
 
 function WeekBadge({ weekNumber }: { weekNumber: number }) {
   return (
-    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 font-mono text-xs font-bold text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 font-mono text-xs font-bold text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
       W{weekNumber}
     </div>
   );
@@ -135,7 +135,7 @@ function WeekBadge({ weekNumber }: { weekNumber: number }) {
 
 function OverrideBadge() {
   return (
-    <span className="ml-2 rounded bg-purple-100 px-1.5 py-0.5 text-[10px] font-bold text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+    <span className="ml-2 rounded bg-secondary-100 px-1.5 py-0.5 text-[10px] font-bold text-secondary-600 dark:bg-secondary-900/30 dark:text-secondary-400">
       MODIFICATO
     </span>
   );
@@ -198,7 +198,7 @@ function SetSummary({ setGroup, showRanges }: SetSummaryProps) {
 }
 
 function Divider() {
-  return <div className="h-3 w-px bg-neutral-300 dark:bg-neutral-700" />;
+  return <div className="h-3 w-px bg-neutral-300 dark:bg-white/[0.08]" />;
 }
 
 interface DynamicValueBadgeProps {
@@ -214,8 +214,8 @@ function DynamicValueBadge({ value, isSelected }: DynamicValueBadgeProps) {
       animate={{ scale: 1 }}
       className={`hidden min-w-[80px] rounded-lg px-3 py-1.5 text-center font-mono font-bold transition-colors sm:block ${
         isSelected
-          ? 'bg-white text-blue-600 shadow-sm dark:bg-neutral-800 dark:text-blue-400'
-          : 'bg-neutral-100 text-neutral-400 dark:bg-neutral-800 dark:text-neutral-600'
+          ? 'bg-white text-primary-600 shadow-sm dark:bg-white/[0.04] dark:text-primary-400'
+          : 'bg-neutral-100 text-neutral-400 dark:bg-white/[0.04] dark:text-neutral-600'
       }`}
     >
       {value}
@@ -229,14 +229,14 @@ function DynamicValueBadge({ value, isSelected }: DynamicValueBadgeProps) {
 
 function getCardClassName(isSelected: boolean, isOverridden: boolean): string {
   if (!isSelected) {
-    return 'border-neutral-200 bg-white opacity-60 hover:opacity-100 dark:border-neutral-800 dark:bg-neutral-900';
+    return 'border-neutral-200/60 bg-white opacity-60 hover:opacity-100 dark:border-white/[0.08] dark:bg-zinc-950';
   }
 
   if (isOverridden) {
-    return 'border-purple-200 bg-purple-50/50 dark:border-purple-900/50 dark:bg-purple-900/10';
+    return 'border-secondary-200 bg-secondary-50/50 dark:border-secondary-900/50 dark:bg-secondary-900/10';
   }
 
-  return 'border-blue-200 bg-blue-50/50 dark:border-blue-900/50 dark:bg-blue-900/10';
+  return 'border-primary-200 bg-primary-50/50 dark:border-primary-900/50 dark:bg-primary-900/10';
 }
 
 function getDynamicDisplayValue(

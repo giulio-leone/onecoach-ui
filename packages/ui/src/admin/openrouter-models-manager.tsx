@@ -270,7 +270,7 @@ export function OpenRouterModelsManager() {
         {/* Desktop Table */}
         <div className="hidden overflow-x-auto md:block">
           <table className="w-full text-left text-sm">
-            <thead className="bg-neutral-50 text-xs text-neutral-500 uppercase dark:bg-neutral-800/50 dark:text-neutral-400">
+            <thead className="bg-neutral-50 text-xs text-neutral-500 uppercase dark:bg-white/[0.05] dark:text-neutral-400">
               <tr>
                 <th className="px-6 py-3">Name</th>
                 <th className="px-6 py-3">{t('openrouter_models_manager.model_id')}</th>
@@ -281,7 +281,7 @@ export function OpenRouterModelsManager() {
                 <th className="px-6 py-3 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-200 dark:divide-neutral-700">
+            <tbody className="divide-y divide-neutral-200 dark:divide-white/[0.08]">
               {isLoading ? (
                 <tr>
                   <td colSpan={7} className="p-8 text-center">
@@ -296,7 +296,7 @@ export function OpenRouterModelsManager() {
                 </tr>
               ) : (
                 models.map((model: any) => (
-                  <tr key={model.id} className="hover:bg-neutral-50 dark:hover:bg-neutral-800/30">
+                  <tr key={model.id} className="hover:bg-neutral-50 dark:hover:bg-white/[0.06]/30">
                     <td className="px-6 py-4 font-medium">{model.name}</td>
                     <td className="px-6 py-4 text-neutral-500">{model.modelId}</td>
                     <td className="px-6 py-4">
@@ -307,7 +307,7 @@ export function OpenRouterModelsManager() {
                       {model.supportsImages && (
                         <span
                           title="Images"
-                          className="rounded bg-blue-100 px-1.5 py-0.5 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                          className="rounded bg-primary-100 px-1.5 py-0.5 text-xs text-primary-800 dark:bg-primary-900 dark:text-primary-200"
                         >
                           IMG
                         </span>
@@ -315,7 +315,7 @@ export function OpenRouterModelsManager() {
                       {model.supportsReasoning && (
                         <span
                           title="Reasoning"
-                          className="rounded bg-purple-100 px-1.5 py-0.5 text-xs text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                          className="rounded bg-secondary-100 px-1.5 py-0.5 text-xs text-secondary-800 dark:bg-secondary-900 dark:text-secondary-200"
                         >
                           THK
                         </span>
@@ -393,7 +393,7 @@ export function OpenRouterModelsManager() {
               {t('openrouter_models_manager.no_models_found_sync_or_add_one')}
             </div>
           ) : (
-            <div className="divide-y divide-neutral-200 dark:divide-neutral-700">
+            <div className="divide-y divide-neutral-200 dark:divide-white/[0.08]">
               {models.map((model: any) => (
                 <div key={model.id} className="space-y-3 p-4">
                   <div className="flex items-start justify-between gap-2">
@@ -437,12 +437,12 @@ export function OpenRouterModelsManager() {
                   <div className="flex items-center justify-between pt-1">
                     <div className="flex gap-1">
                       {model.supportsImages && (
-                        <span className="rounded bg-blue-100 px-1.5 py-0.5 text-[10px] text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                        <span className="rounded bg-primary-100 px-1.5 py-0.5 text-[10px] text-primary-800 dark:bg-primary-900 dark:text-primary-200">
                           IMG
                         </span>
                       )}
                       {model.supportsReasoning && (
-                        <span className="rounded bg-purple-100 px-1.5 py-0.5 text-[10px] text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+                        <span className="rounded bg-secondary-100 px-1.5 py-0.5 text-[10px] text-secondary-800 dark:bg-secondary-900 dark:text-secondary-200">
                           THK
                         </span>
                       )}
@@ -524,7 +524,7 @@ export function OpenRouterModelsManager() {
               </div>
             ) : (
               <table className="w-full text-left text-sm">
-                <thead className="sticky top-0 z-10 bg-neutral-50 dark:bg-neutral-800">
+                <thead className="sticky top-0 z-10 bg-neutral-50 dark:bg-white/[0.04]">
                   <tr>
                     <th className="w-10 px-4 py-2">
                       <Checkbox
@@ -548,7 +548,7 @@ export function OpenRouterModelsManager() {
                   {filteredSyncModels.map((m: any) => (
                     <tr
                       key={m.modelId}
-                      className="border-b border-neutral-100 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-800/30"
+                      className="border-b border-neutral-100 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:bg-white/[0.06]/30"
                     >
                       <td className="px-4 py-2">
                         <Checkbox
@@ -573,7 +573,7 @@ export function OpenRouterModelsManager() {
             )}
           </div>
 
-          <div className="flex items-center justify-between border-t border-neutral-200 pt-4 dark:border-neutral-700">
+          <div className="flex items-center justify-between border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
             <div className="text-sm text-neutral-500">
               {t('openrouter_models_manager.selected')}
               {selectedSyncModels.size}
@@ -673,7 +673,7 @@ export function OpenRouterModelsManager() {
               />
             </div>
           </div>
-          <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-neutral-700">
+          <div className="flex justify-end gap-2 border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
             <Button variant="outline" onClick={() => setIsEditDialogOpen(false)}>
               Cancel
             </Button>
@@ -698,7 +698,7 @@ export function OpenRouterModelsManager() {
 
           <div className="space-y-4">
             {testResult ? (
-              <div className="rounded bg-neutral-100 p-4 font-mono text-sm whitespace-pre-wrap dark:bg-neutral-900">
+              <div className="rounded bg-neutral-100 p-4 font-mono text-sm whitespace-pre-wrap dark:bg-zinc-950">
                 {testResult}
               </div>
             ) : (
@@ -708,7 +708,7 @@ export function OpenRouterModelsManager() {
             )}
           </div>
 
-          <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-neutral-700">
+          <div className="flex justify-end gap-2 border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
             <Button variant="outline" onClick={() => setIsTestDialogOpen(false)}>
               Close
             </Button>

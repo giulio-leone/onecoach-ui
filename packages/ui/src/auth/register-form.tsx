@@ -221,7 +221,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           onBlur={form.handleBlur('name')}
           disabled={form.isSubmitting}
           autoComplete="name"
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
           aria-invalid={!!form.errors.name}
           aria-describedby={form.errors.name ? 'name-error' : undefined}
         />
@@ -252,7 +252,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           required
           disabled={form.isSubmitting}
           autoComplete="email"
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
           aria-invalid={!!form.errors.email}
           aria-describedby={form.errors.email ? 'email-error' : undefined}
         />
@@ -299,7 +299,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           />
           {isCheckingReferral && (
             <div className="absolute top-1/2 right-3 -translate-y-1/2">
-              <div className="h-4 w-4 animate-spin rounded-full border-2 border-blue-600 border-t-transparent"></div>
+              <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary-600 border-t-transparent"></div>
             </div>
           )}
           {referralCode && !isCheckingReferral && isReferralValid && (
@@ -362,7 +362,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
             />
             {isCheckingInvitation && (
               <div className="absolute top-1/2 right-3 -translate-y-1/2">
-                <div className="h-4 w-4 animate-spin rounded-full border-2 border-blue-600 border-t-transparent"></div>
+                <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary-600 border-t-transparent"></div>
               </div>
             )}
             {invitationCode && !isCheckingInvitation && isInvitationValid && (
@@ -398,7 +398,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           required
           disabled={form.isSubmitting}
           autoComplete="new-password"
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
           aria-invalid={!!form.errors.password}
           aria-describedby={form.errors.password ? 'password-error' : undefined}
         />
@@ -433,7 +433,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           required
           disabled={form.isSubmitting}
           autoComplete="new-password"
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
           aria-invalid={!!form.errors.confirmPassword}
           aria-describedby={form.errors.confirmPassword ? 'confirmPassword-error' : undefined}
         />
@@ -461,7 +461,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
                 href="/policy/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-blue-600 underline hover:text-blue-700"
+                className="font-medium text-primary-600 underline hover:text-primary-700"
                 onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
               >
                 {t('register_form.privacy_policy')}
@@ -489,7 +489,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
                 href="/policy/terms-conditions"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-blue-600 underline hover:text-blue-700"
+                className="font-medium text-primary-600 underline hover:text-primary-700"
                 onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
               >
                 {t('register_form.termini_e_condizioni')}
@@ -505,7 +505,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
         type="submit"
         variant="primary"
         disabled={form.isSubmitting}
-        className="w-full focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+        className="w-full focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
       >
         {form.isSubmitting
           ? t('register_form.registrazione_in_corso')
@@ -515,10 +515,10 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
       {/* Separator */}
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t border-neutral-300 dark:border-neutral-700" />
+          <span className="w-full border-t border-neutral-300 dark:border-white/[0.08]" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-white px-2 text-neutral-500 dark:bg-neutral-900">
+          <span className="bg-white px-2 text-neutral-500 dark:bg-zinc-950">
             {t('register_form.oppure')}
           </span>
         </div>
@@ -530,7 +530,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           type="button"
           variant="outline"
           size="md"
-          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-white/[0.1] dark:hover:bg-white/[0.06]"
           disabled
           aria-disabled="true"
         >
@@ -564,7 +564,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
           type="button"
           variant="outline"
           size="md"
-          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-white/[0.1] dark:hover:bg-white/[0.06]"
           disabled
           aria-disabled="true"
         >
@@ -586,7 +586,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
       </p>
 
       {/* Info */}
-      <div className="mt-4 rounded-lg bg-blue-50 p-3 text-xs text-blue-800">
+      <div className="mt-4 rounded-lg bg-primary-50 p-3 text-xs text-primary-800">
         <p>{t('register_form.ricevi_100_crediti_di_benvenuto_alla_reg')}</p>
       </div>
     </form>

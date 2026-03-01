@@ -89,12 +89,12 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
       <div className="space-y-8">
         {[1, 2].map((i: any) => (
           <div key={i} className="space-y-4">
-            <div className="h-8 w-48 animate-pulse rounded-lg bg-neutral-100 dark:bg-neutral-800" />
+            <div className="h-8 w-48 animate-pulse rounded-lg bg-neutral-100 dark:bg-white/[0.04]" />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {[1, 2, 3].map((j: any) => (
                 <div
                   key={j}
-                  className="h-64 animate-pulse rounded-2xl bg-neutral-100 dark:bg-neutral-800"
+                  className="h-64 animate-pulse rounded-2xl bg-neutral-100 dark:bg-white/[0.04]"
                 />
               ))}
             </div>
@@ -120,7 +120,7 @@ export function SavedTripsDashboard({ userId, initialDestination }: SavedTripsDa
         <section key={group.destinationCityCode} className="space-y-6">
           <div className="flex items-end justify-between border-b border-white/10 pb-4">
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 text-blue-500 ring-1 ring-white/20 backdrop-blur-md">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500/20 to-secondary-500/20 text-primary-500 ring-1 ring-white/20 backdrop-blur-md">
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
@@ -181,10 +181,10 @@ function SavedTripCard({ trip }: { trip: SavedTrip }) {
     >
       <Card
         variant="glass-premium"
-        className="group relative h-full overflow-hidden border-white/10 bg-white/5 p-0 transition-all hover:border-blue-500/30 hover:bg-white/10 dark:border-neutral-800 dark:bg-neutral-900"
+        className="group relative h-full overflow-hidden border-white/10 bg-white/5 p-0 transition-all hover:border-primary-500/30 hover:bg-white/10 dark:border-white/[0.08] dark:bg-zinc-950"
       >
         {/* Header Image / Pattern */}
-        <div className="absolute inset-0 z-0 h-32 bg-gradient-to-b from-blue-500/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+        <div className="absolute inset-0 z-0 h-32 bg-gradient-to-b from-primary-500/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
         <div className="relative z-10 flex h-full flex-col p-6">
           {/* Top Row: Date & Actions */}
@@ -228,7 +228,7 @@ function SavedTripCard({ trip }: { trip: SavedTrip }) {
             </div>
 
             {/* Flight Segments Preview */}
-            <div className="space-y-3 rounded-xl bg-neutral-50 p-4 ring-1 ring-neutral-200 dark:bg-neutral-800/50 dark:ring-white/5">
+            <div className="space-y-3 rounded-xl bg-neutral-50 p-4 ring-1 ring-neutral-200 dark:bg-white/[0.05] dark:ring-white/5">
               <FlightSegmentPreview flight={trip.outboundFlight} />
               {trip.returnFlight && (
                 <>
@@ -257,7 +257,7 @@ function SavedTripCard({ trip }: { trip: SavedTrip }) {
 
             <Button
               size="sm"
-              className="bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100"
+              className="bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-white/[0.04]"
               onClick={() => window.open(trip.combinedDeepLink || trip.outboundDeepLink, '_blank')}
             >
               Prenota
@@ -283,7 +283,7 @@ function FlightSegmentPreview({
     <div className="flex items-center justify-between text-sm">
       <div className="flex items-center gap-3">
         <div
-          className={`flex h-8 w-8 items-center justify-center rounded-lg ${isReturn ? 'bg-orange-500/10 text-orange-500' : 'bg-blue-500/10 text-blue-500'}`}
+          className={`flex h-8 w-8 items-center justify-center rounded-lg ${isReturn ? 'bg-orange-500/10 text-orange-500' : 'bg-primary-500/10 text-primary-500'}`}
         >
           <Plane className={`h-4 w-4 ${isReturn ? 'rotate-180' : ''}`} />
         </div>

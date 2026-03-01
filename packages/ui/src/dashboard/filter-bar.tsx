@@ -29,7 +29,7 @@ export function FilterBar({
   return (
     <div
       className={cn(
-        'flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white/70 p-4 shadow-sm backdrop-blur sm:flex-row sm:items-center sm:justify-between dark:border-neutral-800 dark:bg-neutral-900/60',
+        'flex flex-col gap-4 rounded-2xl border border-neutral-200/60 bg-white/70 p-4 shadow-sm backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between dark:border-white/[0.08] dark:bg-white/[0.03]',
         className
       )}
     >

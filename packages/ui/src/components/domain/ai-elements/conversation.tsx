@@ -95,7 +95,7 @@ export function ConversationEmptyState({
       animate={{ opacity: 1, y: 0 }}
       className={cn('flex flex-col items-center justify-center py-20 text-center', className)}
     >
-      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-xl shadow-indigo-500/20">
+      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-indigo-500 to-secondary-600 shadow-xl shadow-indigo-500/20">
         {icon || <MessageSquare className="h-10 w-10 text-white" />}
       </div>
       <h2 className="mb-2 text-2xl font-bold text-neutral-900 dark:text-white">{title}</h2>
@@ -131,9 +131,9 @@ export function ConversationScrollButton({
         'absolute bottom-20 left-1/2 -translate-x-1/2',
         'flex items-center gap-2 rounded-full',
         'bg-white/90 px-4 py-2 shadow-lg backdrop-blur-sm',
-        'dark:bg-neutral-800/90',
+        'dark:bg-white/[0.08]',
         'text-sm font-medium text-neutral-700 dark:text-neutral-200',
-        'hover:bg-white dark:hover:bg-neutral-700',
+        'hover:bg-white dark:hover:bg-white/[0.08]',
         'transition-colors',
         className
       )}

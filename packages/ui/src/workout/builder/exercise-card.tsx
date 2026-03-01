@@ -150,9 +150,9 @@ export function ExerciseCard({
           'group/card relative mb-4 rounded-2xl border transition-all duration-300',
           isExpanded
             ? 'glass border-primary-500/30 shadow-primary-500/5 dark:glass-strong shadow-lg dark:border-white/10 dark:shadow-black/20'
-            : 'hover:border-primary-500/30 dark:hover:glass border-neutral-200 bg-white hover:shadow-md dark:border-white/[0.06] dark:bg-neutral-900/40 dark:hover:border-white/20',
+            : 'hover:border-primary-500/30 dark:hover:glass border-neutral-200/60 bg-white hover:shadow-md dark:border-white/[0.06] dark:bg-white/[0.03] dark:hover:border-white/20',
           isDragging &&
-            'shadow-glow ring-primary-500/50 z-50 scale-[1.02] bg-white ring-2 backdrop-blur-xl dark:bg-neutral-900/95'
+            'shadow-glow ring-primary-500/50 z-50 scale-[1.02] bg-white ring-2 backdrop-blur-xl dark:bg-white/[0.10]'
         )}
       >
         {/* Header */}
@@ -182,8 +182,8 @@ export function ExerciseCard({
               className={cn(
                 'flex h-7 w-7 items-center justify-center rounded-lg font-mono text-sm font-bold tabular-nums transition-colors',
                 isExpanded
-                  ? 'bg-primary-50 text-primary-600 ring-primary-500/20 dark:bg-primary-500/20 dark:text-primary-400 shadow-sm ring-1 dark:shadow-[0_0_10px_rgba(37,99,235,0.2)]'
-                  : 'group-hover/card:bg-primary-50 group-hover/card:text-primary-600 dark:group-hover/card:bg-primary-500/10 dark:group-hover/card:text-primary-400 bg-neutral-100 text-neutral-500 dark:bg-neutral-800/50 dark:text-neutral-500'
+                  ? 'bg-primary-50 text-primary-600 ring-primary-500/20 dark:bg-primary-500/20 dark:text-primary-400 shadow-sm ring-1 dark:shadow-[0_0_10px_rgba(79,70,229,0.2)]'
+                  : 'group-hover/card:bg-primary-50 group-hover/card:text-primary-600 dark:group-hover/card:bg-primary-500/10 dark:group-hover/card:text-primary-400 bg-neutral-100 text-neutral-500 dark:bg-white/[0.05] dark:text-neutral-500'
               )}
             >
               {index + 1}
@@ -249,18 +249,18 @@ export function ExerciseCard({
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="w-48 border-neutral-200 bg-white p-1 shadow-xl dark:border-white/10 dark:bg-neutral-950/95 dark:text-white dark:backdrop-blur-xl"
+                className="w-48 border-neutral-200/60 bg-white p-1 shadow-xl dark:border-white/10 dark:bg-[#09090b]/95 dark:text-white dark:backdrop-blur-xl"
               >
                 <DropdownMenuItem
                   onClick={() => setIsSelectorOpen(true)}
-                  className="flex cursor-pointer items-center gap-2 rounded-md text-neutral-700 focus:bg-blue-50 focus:text-blue-700 dark:text-blue-400 dark:focus:bg-blue-500/10 dark:focus:text-blue-300"
+                  className="flex cursor-pointer items-center gap-2 rounded-md text-neutral-700 focus:bg-primary-50 focus:text-primary-700 dark:text-primary-400 dark:focus:bg-primary-500/10 dark:focus:text-primary-300"
                 >
                   <RefreshCw size={16} />
                   <span>{t('swap')}</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => exerciseClipboard.copy(exercise, exercise.id)}
-                  className="flex cursor-pointer items-center gap-2 rounded-md text-neutral-700 focus:bg-neutral-100 focus:text-neutral-900 dark:text-neutral-300 dark:focus:bg-neutral-500/10 dark:focus:text-white"
+                  className="flex cursor-pointer items-center gap-2 rounded-md text-neutral-700 focus:bg-neutral-100 focus:text-neutral-900 dark:text-neutral-300 dark:focus:bg-white/[0.04] dark:focus:text-white"
                 >
                   <Copy size={16} />
                   <span>{t('copy')}</span>
@@ -292,6 +292,34 @@ export function ExerciseCard({
           )}
         >
           <div className="space-y-0 px-4 pt-2 pb-6">
+            {/* Form Cues */}
+            {exercise.formCues && exercise.formCues.length > 0 && (
+              <div className="mb-3 rounded-xl border border-amber-200/60 bg-amber-50/50 p-3 dark:border-amber-500/20 dark:bg-amber-500/5">
+                <p className="mb-1.5 text-[10px] font-bold tracking-wider text-amber-700 uppercase dark:text-amber-400">
+                  {t('formCues')}
+                </p>
+                <ul className="space-y-0.5">
+                  {exercise.formCues.map((cue, i) => (
+                    <li key={i} className="flex items-start gap-1.5 text-xs text-amber-800 dark:text-amber-300/80">
+                      <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-500" />
+                      {cue}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Exercise Notes */}
+            <div className="mb-3">
+              <textarea
+                value={exercise.notes || ''}
+                onChange={(e) => onUpdate({ ...exercise, notes: e.target.value })}
+                placeholder={t('notesPlaceholder')}
+                rows={2}
+                className="w-full resize-none rounded-xl border border-neutral-200/60 bg-neutral-50/50 px-3 py-2 text-xs text-neutral-700 placeholder:text-neutral-400 focus:border-indigo-300 focus:ring-1 focus:ring-indigo-300/50 focus:outline-none dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-neutral-300 dark:placeholder:text-neutral-600 dark:focus:border-indigo-500/30 dark:focus:ring-indigo-500/20"
+              />
+            </div>
+
             {exercise.setGroups?.map((group, groupIndex) => (
               <div key={group.id || `fallback-${exercise.id}-${groupIndex}`} className="py-2">
                 <SetGroupEditor
@@ -299,7 +327,7 @@ export function ExerciseCard({
                   exerciseId={exercise.catalogExerciseId}
                   onGroupChange={(updatedGroup) => {
                     const newGroups = [...(exercise.setGroups || [])];
-                    newGroups[groupIndex] = toDomainSetGroup(updatedGroup as any);
+                    newGroups[groupIndex] = toDomainSetGroup(updatedGroup as Partial<SetGroup> & Pick<SetGroup, 'baseSet'>);
                     handleSetGroupsChange(newGroups);
                   }}
                   onGroupDelete={() => {
@@ -342,8 +370,8 @@ export function ExerciseCard({
                 }}
                 className={cn(
                   'group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl border border-dashed py-4 transition-all',
-                  'hover:border-primary-300 hover:text-primary-600 border-neutral-200 bg-neutral-50/50 text-neutral-500',
-                  'dark:hover:border-primary-500/30 dark:hover:text-primary-400 dark:border-neutral-800 dark:bg-transparent dark:text-neutral-500'
+                  'hover:border-primary-300 hover:text-primary-600 border-neutral-200/60 bg-neutral-50/50 text-neutral-500',
+                  'dark:hover:border-primary-500/30 dark:hover:text-primary-400 dark:border-white/[0.08] dark:bg-transparent dark:text-neutral-500'
                 )}
                 type="button"
               >

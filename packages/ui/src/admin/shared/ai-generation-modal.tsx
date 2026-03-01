@@ -117,7 +117,7 @@ export function AiGenerationModal<TOutput>({
                 Prompt
               </label>
               <textarea
-                className="h-44 w-full rounded-xl border border-neutral-300 px-4 py-3 text-sm text-neutral-800 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none dark:border-neutral-600 dark:text-neutral-200"
+                className="h-44 w-full rounded-xl border border-neutral-300 px-4 py-3 text-sm text-neutral-800 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 focus:outline-none dark:border-white/[0.1] dark:text-neutral-200"
                 placeholder={placeholder}
                 value={prompt}
                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
@@ -128,7 +128,7 @@ export function AiGenerationModal<TOutput>({
               />
             </div>
             {options.length > 0 && (
-              <div className="flex flex-wrap items-center gap-4 rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-400">
+              <div className="flex flex-wrap items-center gap-4 rounded-xl bg-neutral-50 px-4 py-3 text-sm text-neutral-600 dark:bg-white/[0.05] dark:text-neutral-400">
                 {options.map((option: any) => (
                   <Checkbox
                     key={option.key}

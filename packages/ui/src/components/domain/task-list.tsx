@@ -23,7 +23,7 @@ export function TaskItem({
   className,
 }: TaskItemProps) {
   const priorityColors = {
-    LOW: 'text-slate-400 dark:text-slate-500',
+    LOW: 'text-neutral-400 dark:text-neutral-500',
     MEDIUM: 'text-amber-500',
     HIGH: 'text-red-500',
   };
@@ -31,7 +31,7 @@ export function TaskItem({
   return (
     <div
       className={cn(
-        'group flex items-center gap-3 rounded-xl border border-transparent bg-white p-3 shadow-sm transition-all hover:border-slate-200 hover:shadow-md dark:bg-slate-900 dark:hover:border-slate-700',
+        'group flex items-center gap-3 rounded-xl border border-transparent bg-white p-3 shadow-sm transition-all hover:border-neutral-200/60 hover:shadow-md dark:bg-zinc-950 dark:hover:border-white/[0.12]',
         status === 'DONE' && 'opacity-60',
         className
       )}
@@ -42,7 +42,7 @@ export function TaskItem({
           'flex h-6 w-6 items-center justify-center rounded-full transition-colors',
           status === 'DONE'
             ? 'text-green-500'
-            : 'text-slate-300 hover:text-slate-400 dark:text-slate-600 dark:hover:text-slate-500'
+            : 'text-neutral-300 hover:text-neutral-400 dark:text-neutral-600 dark:hover:text-neutral-500'
         )}
       >
         {status === 'DONE' ? <CheckCircle2 className="h-6 w-6" /> : <Circle className="h-6 w-6" />}
@@ -51,13 +51,13 @@ export function TaskItem({
       <div className="min-w-0 flex-1">
         <p
           className={cn(
-            'truncate text-sm font-medium text-slate-900 dark:text-white',
-            status === 'DONE' && 'text-slate-500 line-through dark:text-slate-500'
+            'truncate text-sm font-medium text-neutral-900 dark:text-white',
+            status === 'DONE' && 'text-neutral-500 line-through dark:text-neutral-500'
           )}
         >
           {title}
         </p>
-        <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+        <div className="flex items-center gap-3 text-xs text-neutral-500 dark:text-neutral-400">
           {dueDate && (
             <div className="flex items-center gap-1">
               <Calendar className="h-3 w-3" />

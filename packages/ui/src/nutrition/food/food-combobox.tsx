@@ -153,7 +153,7 @@ export function FoodCombobox({
           }}
           placeholder={placeholder}
           autoFocus={autoFocus}
-          className="w-full rounded-lg border border-neutral-300 px-3 py-2 pr-9 pl-9 text-sm focus:border-green-500 focus:ring-2 focus:ring-green-200 focus:outline-none dark:border-neutral-600"
+          className="w-full rounded-lg border border-neutral-300 px-3 py-2 pr-9 pl-9 text-sm focus:border-green-500 focus:ring-2 focus:ring-green-200 focus:outline-none dark:border-white/[0.1]"
           aria-label="Search foods"
           aria-autocomplete="list"
           aria-expanded={isOpen}
@@ -184,7 +184,7 @@ export function FoodCombobox({
           ref={listRef}
           id="food-listbox"
           role="listbox"
-          className="absolute z-50 mt-1 max-h-80 w-full overflow-auto rounded-lg border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-900"
+          className="absolute z-50 mt-1 max-h-80 w-full overflow-auto rounded-lg border border-neutral-200/60 bg-white shadow-lg dark:border-white/[0.08] dark:bg-zinc-950"
         >
           {results.map((food, index) => (
             <button
@@ -196,7 +196,7 @@ export function FoodCombobox({
               className={`flex w-full items-start gap-3 border-b border-neutral-100 px-4 py-3 text-left transition-colors last:border-b-0 ${
                 index === selectedIndex
                   ? 'bg-green-50 text-green-900'
-                  : 'text-neutral-900 hover:bg-neutral-50 dark:bg-neutral-800/50 dark:text-neutral-100'
+                  : 'text-neutral-900 hover:bg-neutral-50 dark:bg-white/[0.05] dark:text-neutral-100'
               }`}
             >
               <div className="flex-1">
@@ -237,7 +237,7 @@ export function FoodCombobox({
       )}
 
       {isOpen && debouncedQuery.length >= 2 && results.length === 0 && !isLoading && (
-        <div className="absolute z-50 mt-1 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-500 shadow-lg dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-500">
+        <div className="absolute z-50 mt-1 w-full rounded-lg border border-neutral-200/60 bg-white px-4 py-3 text-sm text-neutral-500 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-500">
           {noResultsMessage}
         </div>
       )}

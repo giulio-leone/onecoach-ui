@@ -104,15 +104,15 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
             'relative inline-block cursor-pointer rounded-full transition-colors duration-200',
             switchSizeStyles[size].track,
             disabled
-              ? 'cursor-not-allowed bg-neutral-200 dark:bg-neutral-700'
-              : 'bg-neutral-300 dark:bg-neutral-600',
+              ? 'cursor-not-allowed bg-neutral-200 dark:bg-white/[0.08]'
+              : 'bg-neutral-300 dark:bg-white/[0.10]',
             !disabled && switchVariantStyles[variant],
-            'peer-focus-visible:ring-primary-500 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2 dark:peer-focus-visible:ring-offset-neutral-900'
+            'peer-focus-visible:ring-primary-500 peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2 dark:peer-focus-visible:ring-offset-[#09090b]'
           )}
         >
           <span
             className={cn(
-              'absolute top-1/2 left-0.5 -translate-y-1/2 rounded-full bg-white shadow-md transition-transform duration-200 dark:bg-neutral-900',
+              'absolute top-1/2 left-0.5 -translate-y-1/2 rounded-full bg-white shadow-md transition-transform duration-200 dark:bg-zinc-950',
               switchSizeStyles[size].thumb,
               switchSizeStyles[size].translate
             )}

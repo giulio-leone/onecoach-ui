@@ -153,10 +153,10 @@ export function OperationsTab({ models }: OperationsTabProps) {
             animate={{ opacity: 1, scale: 1 }}
             className={cn(
               'group relative overflow-hidden rounded-2xl border p-5 transition-all duration-300',
-              'bg-white dark:bg-neutral-900',
+              'bg-white dark:bg-zinc-950',
               config.isActive
-                ? 'hover:border-primary-500/50 dark:hover:border-primary-500/50 border-neutral-200 dark:border-neutral-800'
-                : 'border-neutral-100 opacity-60 grayscale-[0.5] hover:opacity-100 hover:grayscale-0 dark:border-neutral-800'
+                ? 'hover:border-primary-500/50 dark:hover:border-primary-500/50 border-neutral-200/60 dark:border-white/[0.06]'
+                : 'border-neutral-100 opacity-60 grayscale-[0.5] hover:opacity-100 hover:grayscale-0 dark:border-white/[0.06]'
             )}
           >
             <div className="mb-4 flex items-start justify-between">
@@ -192,7 +192,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                   }}
                   className={cn(
                     'relative h-6 w-10 rounded-full transition-colors',
-                    config.isActive ? 'bg-primary-500' : 'bg-neutral-200 dark:bg-neutral-700'
+                    config.isActive ? 'bg-primary-500' : 'bg-neutral-200 dark:bg-white/[0.08]'
                   )}
                 >
                   <span
@@ -221,7 +221,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                       setConfigs((prev) => [...prev, { ...config, model: val }]);
                     }
                   }}
-                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-800"
+                  className="w-full rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
                 >
                   {models.map((m: any) => (
                     <option key={m.modelId} value={m.modelId}>
@@ -249,7 +249,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                         setConfigs((prev) => [...prev, { ...config, creditCost: val }]);
                       }
                     }}
-                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-800"
+                    className="w-full rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
                   />
                 </div>
 
@@ -271,7 +271,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                         setConfigs((prev) => [...prev, { ...config, maxTokens: val }]);
                       }
                     }}
-                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-800"
+                    className="w-full rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
                   />
                 </div>
               </div>
@@ -282,7 +282,7 @@ export function OperationsTab({ models }: OperationsTabProps) {
                 disabled={isSaving}
                 className={cn(
                   'flex w-full items-center justify-center gap-2 rounded-lg py-2 text-sm font-medium transition-all duration-200',
-                  'bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200',
+                  'bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-white/[0.06]',
                   isSaving && 'cursor-not-allowed opacity-70'
                 )}
               >

@@ -53,7 +53,7 @@ export function MarketplacePlanCard({ plan }: { plan: MarketplacePlanCardProps }
     <Link href={`/marketplace/plans/${plan.id}`}>
       <Card className="h-full cursor-pointer overflow-hidden transition-shadow duration-200 hover:shadow-lg">
         {/* Cover Image */}
-        <div className="relative h-48 w-full bg-neutral-100 dark:bg-neutral-800">
+        <div className="relative h-48 w-full bg-neutral-100 dark:bg-white/[0.04]">
           {plan.coverImage ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={plan.coverImage} alt={plan.title} className="h-full w-full object-cover" />
@@ -64,7 +64,7 @@ export function MarketplacePlanCard({ plan }: { plan: MarketplacePlanCardProps }
           )}
 
           {/* Plan Type Badge */}
-          <div className="absolute top-2 right-2 rounded-full bg-white px-2 py-1 text-xs font-medium dark:bg-neutral-900/90">
+          <div className="absolute top-2 right-2 rounded-full bg-white px-2 py-1 text-xs font-medium dark:bg-white/[0.08]">
             {plan.planType === 'WORKOUT' ? '🏋️ Workout' : '🥗 Nutrition'}
           </div>
         </div>
@@ -94,13 +94,13 @@ export function MarketplacePlanCard({ plan }: { plan: MarketplacePlanCardProps }
                   className="rounded-full"
                 />
               ) : (
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs dark:bg-neutral-700">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs dark:bg-white/[0.08]">
                   {plan.coach.name?.charAt(0) || 'C'}
                 </div>
               )}
               <span className="flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400">
                 {plan.coach.name || 'Coach'}
-                {isVerified && <CheckCircle2 className="h-4 w-4 text-blue-500" />}
+                {isVerified && <CheckCircle2 className="h-4 w-4 text-primary-500" />}
               </span>
             </div>
           ) : (
@@ -114,13 +114,13 @@ export function MarketplacePlanCard({ plan }: { plan: MarketplacePlanCardProps }
                   className="rounded-full"
                 />
               ) : (
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs dark:bg-neutral-700">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-neutral-200 text-xs dark:bg-white/[0.08]">
                   {plan.coach.name?.charAt(0) || 'C'}
                 </div>
               )}
               <span className="flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400">
                 {plan.coach.name || 'Coach'}
-                {isVerified && <CheckCircle2 className="h-4 w-4 text-blue-500" />}
+                {isVerified && <CheckCircle2 className="h-4 w-4 text-primary-500" />}
               </span>
             </div>
           )}

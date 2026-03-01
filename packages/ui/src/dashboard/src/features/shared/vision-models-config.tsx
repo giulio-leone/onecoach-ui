@@ -162,10 +162,10 @@ export function VisionModelsConfig() {
       )}
       <div className="grid gap-6 sm:grid-cols-2">
         {/* Label Extraction Model */}
-        <div className="rounded-lg border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-900">
+        <div className="rounded-lg border border-neutral-200/60 bg-white p-6 dark:border-white/[0.08] dark:bg-zinc-950">
           <div className="mb-4 flex items-center gap-3">
-            <div className="rounded-lg bg-blue-100 p-2">
-              <Scan className="h-5 w-5 text-blue-600" />
+            <div className="rounded-lg bg-primary-100 p-2">
+              <Scan className="h-5 w-5 text-primary-600" />
             </div>
             <div>
               <h4 className="font-semibold text-neutral-900 dark:text-neutral-100">
@@ -195,7 +195,7 @@ export function VisionModelsConfig() {
           </div>
         </div>
         {/* Dish Segmentation Model */}
-        <div className="rounded-lg border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-900">
+        <div className="rounded-lg border border-neutral-200/60 bg-white p-6 dark:border-white/[0.08] dark:bg-zinc-950">
           <div className="mb-4 flex items-center gap-3">
             <div className="rounded-lg bg-green-100 p-2">
               <Camera className="h-5 w-5 text-green-600" />

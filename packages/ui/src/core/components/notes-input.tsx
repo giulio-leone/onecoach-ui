@@ -49,7 +49,7 @@ export function NotesInput({
         onChange={handleChange}
         placeholder={placeholder}
         maxLength={maxLength}
-        className="w-full resize-none rounded-xl border border-neutral-200 bg-white/50 p-4 text-sm backdrop-blur-sm transition-all placeholder:text-neutral-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:outline-none dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-white"
+        className="w-full resize-none rounded-xl border border-neutral-200/60 bg-white/50 p-4 text-sm backdrop-blur-sm transition-all placeholder:text-neutral-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:outline-none dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-white"
         rows={3}
       />
 

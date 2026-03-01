@@ -45,7 +45,7 @@ export const Plan = ({
             'overflow-hidden transition-all duration-300',
             // Default: Solid card
             variant === 'default' &&
-              'rounded-xl border border-neutral-200 bg-white/80 shadow-sm dark:border-neutral-800 dark:bg-neutral-900/80',
+              'rounded-xl border border-neutral-200/60 bg-white/80 shadow-sm dark:border-white/[0.08] dark:bg-white/[0.06]',
             // Glass: Heavily blurred, meant to stand alone
             variant === 'glass' &&
               'rounded-xl border border-white/20 bg-white/10 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-black/20',
@@ -54,7 +54,7 @@ export const Plan = ({
 
             isStreaming &&
               variant !== 'ghost' &&
-              'border-blue-200/50 ring-1 ring-blue-500/30 dark:border-blue-500/30',
+              'border-primary-200/50 ring-1 ring-primary-500/30 dark:border-primary-500/30',
             className
           )}
         >
@@ -85,7 +85,7 @@ export const PlanTitle = ({ children, className, ...props }: PlanTitleProps) => 
       )}
       {...props}
     >
-      {isStreaming && <Sparkles className="h-4 w-4 animate-pulse text-blue-500" />}
+      {isStreaming && <Sparkles className="h-4 w-4 animate-pulse text-primary-500" />}
       {children}
     </h3>
   );
@@ -146,7 +146,7 @@ export type PlanFooterProps = ComponentProps<'div'>;
 export const PlanFooter = ({ className, ...props }: PlanFooterProps) => (
   <div
     className={cn(
-      'border-t border-neutral-100 p-4 text-xs text-neutral-500 dark:border-neutral-800 dark:text-neutral-400',
+      'border-t border-neutral-100 p-4 text-xs text-neutral-500 dark:border-white/[0.08] dark:text-neutral-400',
       className
     )}
     {...props}

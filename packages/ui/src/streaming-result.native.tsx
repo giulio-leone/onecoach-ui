@@ -47,7 +47,7 @@ function getEventIcon(type: string, message: string) {
     return <CheckCircle2 size={16} color="#10b981" />; // emerald-500
   }
   if (lowerMessage.includes('starting') || lowerType === 'start' || lowerType === 'progress') {
-    return <Loader2 size={16} color="#3b82f6" />; // blue-500
+    return <Loader2 size={16} color="#6366f1" />; // primary-500
     // Note: Manual rotation would be needed for spin, or simple ActivityIndicator
   }
   if (lowerType === 'error' || lowerType === 'warning') {
@@ -159,7 +159,7 @@ export function StreamingResult({
         {/* Gradient Progress Bar */}
         <View style={styles.progressBarBg}>
           <LinearGradient
-            colors={['#3b82f6', '#10b981', '#34d399']} // blue-500, emerald-500, emerald-400
+            colors={['#6366f1', '#10b981', '#34d399']} // primary-500, emerald-500, emerald-400
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             style={[styles.progressBarFill, { width: `${progress}%` }]}
@@ -170,7 +170,7 @@ export function StreamingResult({
       {/* Events Log */}
       <Card variant="glass" style={styles.logCard} padding="none">
         <View style={styles.logHeader}>
-          <Sparkles size={16} color="#3b82f6" />
+          <Sparkles size={16} color="#6366f1" />
           <Text style={styles.logTitle}>{title || 'AI Agent Orchestrator'}</Text>
         </View>
         <ScrollView
@@ -181,7 +181,7 @@ export function StreamingResult({
         >
           {processedEvents.length === 0 ? (
             <View style={styles.emptyState}>
-              <Loader2 size={24} color="#3b82f6" />
+              <Loader2 size={24} color="#6366f1" />
               <Text style={styles.emptyText}>In attesa di aggiornamenti...</Text>
             </View>
           ) : (

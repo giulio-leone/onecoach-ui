@@ -43,7 +43,7 @@ export function EmptyState({
         <button
           onClick={onAction}
           className={cn(
-            'mt-4 min-h-[44px] touch-manipulation rounded-xl border-2 border-dashed px-4 py-2 text-sm font-medium transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600',
+            'mt-4 min-h-[44px] touch-manipulation rounded-xl border-2 border-dashed px-4 py-2 text-sm font-medium transition-colors hover:border-primary-300 hover:bg-primary-50 hover:text-primary-600',
             darkModeClasses.border.base,
             darkModeClasses.text.secondary
           )}

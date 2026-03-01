@@ -391,8 +391,6 @@ export function useSmartFlightSearch(options: UseSmartFlightSearchOptions = {}) 
     search,
     abort,
     reset,
-    /** Alias for backward compatibility */
-    isLoading: state.isSearching,
     /** Latest event */
     latestEvent: state.events.length > 0 ? (state.events[state.events.length - 1] ?? null) : null,
   };

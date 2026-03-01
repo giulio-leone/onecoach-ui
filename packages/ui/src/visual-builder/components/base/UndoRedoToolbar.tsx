@@ -38,9 +38,9 @@ export interface UndoRedoToolbarProps {
 
 const VARIANT_STYLES = {
   primary: {
-    active: 'text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-500/10',
+    active: 'text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-primary-500/10',
     disabled: 'text-neutral-300 dark:text-neutral-600',
-    badge: 'bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400',
+    badge: 'bg-primary-100 text-primary-600 dark:bg-primary-500/20 dark:text-primary-400',
   },
   emerald: {
     active:
@@ -49,9 +49,9 @@ const VARIANT_STYLES = {
     badge: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400',
   },
   neutral: {
-    active: 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800',
+    active: 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.06]',
     disabled: 'text-neutral-300 dark:text-neutral-600',
-    badge: 'bg-neutral-200 text-neutral-600 dark:bg-neutral-700 dark:text-neutral-300',
+    badge: 'bg-neutral-200 text-neutral-600 dark:bg-white/[0.08] dark:text-neutral-300',
   },
 } as const;
 
@@ -72,7 +72,7 @@ export function UndoRedoToolbar({
     'flex items-center justify-center rounded-lg transition-all duration-200',
     'min-h-[2.5rem] min-w-[2.5rem] p-2',
     'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-    'focus-visible:ring-blue-500 dark:focus-visible:ring-offset-neutral-900'
+    'focus-visible:ring-primary-500 dark:focus-visible:ring-offset-[#09090b]'
   );
 
   return (
@@ -80,7 +80,7 @@ export function UndoRedoToolbar({
       className={cn(
         'flex items-center gap-1 rounded-xl bg-white/80 p-1',
         'border border-neutral-200/80 shadow-sm backdrop-blur-md',
-        'dark:border-white/10 dark:bg-neutral-900/60',
+        'dark:border-white/10 dark:bg-white/[0.05]',
         className
       )}
     >

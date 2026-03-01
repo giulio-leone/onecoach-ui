@@ -25,7 +25,7 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
       {actions.map((action: QuickAction) => {
         const Icon = typeof action.icon !== 'string' ? action.icon : null;
         // Default gradient if none provided
-        const colorClass = action.color || 'from-indigo-500 to-purple-500';
+        const colorClass = action.color || 'from-indigo-500 to-secondary-500';
 
         return (
           <Link key={action.id} href={action.href} className="group block h-full outline-none">
@@ -33,7 +33,7 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
               className={cn(
                 'relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border p-5 transition-all duration-300',
                 // Glassmorphism Base
-                'bg-white/40 backdrop-blur-md dark:bg-neutral-900/40',
+                'bg-white/40 backdrop-blur-md dark:bg-white/[0.03]',
                 'border-white/40 dark:border-white/5',
                 // Hover State
                 'hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-900/20',
@@ -65,7 +65,7 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
                 <div
                   className={cn(
                     'flex h-8 w-8 items-center justify-center rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100',
-                    'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400'
+                    'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400'
                   )}
                 >
                   <ArrowUpRight className="h-4 w-4" />

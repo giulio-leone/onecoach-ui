@@ -45,9 +45,9 @@ export function ProjectCard({
   onDelete,
 }: ProjectCardProps) {
   const statusColors = {
-    ACTIVE: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300',
+    ACTIVE: 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300',
     COMPLETED: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300',
-    ARCHIVED: 'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300',
+    ARCHIVED: 'bg-neutral-100 text-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300',
     ON_HOLD: 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300',
   };
 
@@ -126,7 +126,7 @@ export function ProjectCard({
           <ProgressBar value={progress} size="sm" color={`bg-[${color}]`} />
         </div>
 
-        <div className="flex items-center justify-between border-t border-neutral-100 pt-4 dark:border-neutral-800">
+        <div className="flex items-center justify-between border-t border-neutral-100 pt-4 dark:border-white/[0.06]">
           {dueDate && (
             <div className="flex items-center gap-1.5 text-xs font-medium text-neutral-500 dark:text-neutral-400">
               <Calendar className="h-3.5 w-3.5" />
@@ -136,7 +136,7 @@ export function ProjectCard({
 
           <Link
             href={`/projects/${id}`}
-            className="flex items-center gap-1 text-xs font-bold text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400"
+            className="flex items-center gap-1 text-xs font-bold text-neutral-900 transition-colors group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-400"
           >
             View Details <ArrowRight className="h-3.5 w-3.5" />
           </Link>

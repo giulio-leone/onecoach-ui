@@ -357,9 +357,9 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
           onClick={() => loadConversations()}
           className={cn(
             'flex items-center gap-2 rounded-xl px-4 py-2.5',
-            'bg-neutral-100 dark:bg-neutral-700',
+            'bg-neutral-100 dark:bg-white/[0.08]',
             'text-neutral-600 dark:text-neutral-300',
-            'hover:bg-neutral-200 dark:hover:bg-neutral-600'
+            'hover:bg-neutral-200 dark:hover:bg-white/[0.1]'
           )}
         >
           <RefreshCw className={cn('h-4 w-4', isLoading && 'animate-spin')} />
@@ -378,8 +378,8 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
             className={cn(
               'w-full rounded-xl border py-2.5 pr-4 pl-10',
-              'border-neutral-200 dark:border-neutral-700',
-              'bg-white dark:bg-neutral-800',
+              'border-neutral-200/60 dark:border-white/[0.08]',
+              'bg-white dark:bg-white/[0.04]',
               'text-neutral-900 placeholder:text-neutral-400 dark:text-white',
               'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
             )}
@@ -400,7 +400,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                 'text-sm font-medium transition-colors',
                 statusFilter === status
                   ? `${config.color} text-white`
-                  : 'bg-neutral-100 text-neutral-600 dark:bg-neutral-700 dark:text-neutral-300'
+                  : 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.08] dark:text-neutral-300'
               )}
             >
               <div
@@ -418,7 +418,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
               'flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
               selectionMode
                 ? 'bg-primary-50 text-primary-700 dark:bg-primary-500/10 dark:text-primary-200'
-                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
+                : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.08] dark:text-neutral-300 dark:hover:bg-white/[0.1]'
             )}
           >
             {selectionMode ? t('selection.cancel') : t('selection.multi')}
@@ -427,7 +427,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
       </div>
 
       {(selectionMode || hasSelection) && (
-        <div className="flex flex-wrap items-center gap-2 rounded-xl border border-neutral-200 bg-white/80 p-3 text-sm dark:border-neutral-700 dark:bg-neutral-800/80">
+        <div className="flex flex-wrap items-center gap-2 rounded-xl border border-neutral-200/60 bg-white/80 p-3 text-sm dark:border-white/[0.08] dark:bg-white/[0.06]">
           <span className="text-neutral-600 dark:text-neutral-300">
             {hasSelection ? t('selection.count', { count: selectedIds.size }) : t('selection.none')}
           </span>
@@ -437,9 +437,9 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
               disabled={!filteredConversations.length}
               className={cn(
                 'rounded-lg px-3 py-1.5',
-                'border border-neutral-200 text-neutral-700 hover:bg-neutral-100',
+                'border border-neutral-200/60 text-neutral-700 hover:bg-neutral-100',
                 'disabled:cursor-not-allowed disabled:opacity-50',
-                'dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700'
+                'dark:border-white/[0.08] dark:text-neutral-200 dark:hover:bg-white/[0.08]'
               )}
             >
               {t('selection.all', { count: filteredConversations.length })}
@@ -449,9 +449,9 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
               disabled={!hasSelection || isBatchLoading}
               className={cn(
                 'flex items-center gap-2 rounded-lg px-3 py-1.5',
-                'border border-neutral-200 text-neutral-700 hover:bg-neutral-100',
+                'border border-neutral-200/60 text-neutral-700 hover:bg-neutral-100',
                 'disabled:cursor-not-allowed disabled:opacity-50',
-                'dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-700'
+                'dark:border-white/[0.08] dark:text-neutral-200 dark:hover:bg-white/[0.08]'
               )}
             >
               <Archive className="h-4 w-4" />
@@ -488,8 +488,8 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                 onClick={clearSelection}
                 className={cn(
                   'rounded-lg px-3 py-1.5',
-                  'border border-neutral-200 text-neutral-600 hover:bg-neutral-100',
-                  'dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                  'border border-neutral-200/60 text-neutral-600 hover:bg-neutral-100',
+                  'dark:border-white/[0.08] dark:text-neutral-300 dark:hover:bg-white/[0.08]'
                 )}
               >
                 {t('selection.cancel')}
@@ -505,9 +505,9 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
         <div
           className={cn(
             'rounded-2xl lg:col-span-2',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50',
+            'border border-neutral-200/50 dark:border-white/[0.08]',
             'overflow-hidden'
           )}
         >
@@ -521,7 +521,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
               <p>{t('actions.noResults')}</p>
             </div>
           ) : (
-            <div className="max-h-[600px] divide-y divide-neutral-100 overflow-y-auto dark:divide-neutral-700">
+            <div className="max-h-[600px] divide-y divide-neutral-100 overflow-y-auto dark:divide-white/[0.08]">
               {filteredConversations.map((conversation: any) => (
                 <div
                   key={conversation.id}
@@ -531,7 +531,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                       ? 'bg-primary-50 dark:bg-primary-500/10'
                       : selectionMode && selectedIds.has(conversation.id)
                         ? 'bg-primary-50/60 dark:bg-primary-500/10'
-                        : 'hover:bg-neutral-50 dark:hover:bg-neutral-700/50'
+                        : 'hover:bg-neutral-50 dark:hover:bg-white/[0.08]/50'
                   )}
                   onClick={() => {
                     if (selectionMode) {
@@ -599,7 +599,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                         }}
                         className={cn(
                           'rounded-lg p-1.5',
-                          'hover:bg-neutral-100 dark:hover:bg-neutral-600',
+                          'hover:bg-neutral-100 dark:hover:bg-white/[0.1]',
                           'text-neutral-400 hover:text-neutral-600'
                         )}
                       >
@@ -614,8 +614,8 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                             className={cn(
                               'absolute top-full right-0 z-50 mt-1',
                               'min-w-[140px] rounded-lg p-1',
-                              'bg-white dark:bg-neutral-800',
-                              'border border-neutral-200 dark:border-neutral-700',
+                              'bg-white dark:bg-white/[0.04]',
+                              'border border-neutral-200/60 dark:border-white/[0.08]',
                               'shadow-xl'
                             )}
                             onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
@@ -625,7 +625,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                               className={cn(
                                 'flex w-full items-center gap-2 rounded-md px-3 py-2',
                                 'text-sm text-neutral-700 dark:text-neutral-300',
-                                'hover:bg-neutral-100 dark:hover:bg-neutral-700'
+                                'hover:bg-neutral-100 dark:hover:bg-white/[0.08]'
                               )}
                             >
                               <Archive className="h-4 w-4" />
@@ -668,9 +668,9 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
         <div
           className={cn(
             'rounded-2xl lg:col-span-3',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50',
+            'border border-neutral-200/50 dark:border-white/[0.08]',
             'overflow-hidden'
           )}
         >
@@ -682,7 +682,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
           ) : (
             <div className="flex h-[600px] flex-col">
               {/* Header */}
-              <div className="flex items-center justify-between border-b border-neutral-100 p-4 dark:border-neutral-700">
+              <div className="flex items-center justify-between border-b border-neutral-100 p-4 dark:border-white/[0.08]">
                 <div>
                   <h3 className="font-semibold text-neutral-900 dark:text-white">
                     {selectedConversation.title || t('messages.noTitle')}
@@ -696,7 +696,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                     setSelectedConversation(null);
                     setMessages([]);
                   }}
-                  className="rounded-lg p-2 hover:bg-neutral-100 lg:hidden dark:hover:bg-neutral-700"
+                  className="rounded-lg p-2 hover:bg-neutral-100 lg:hidden dark:hover:bg-white/[0.08]"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -727,7 +727,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                           'max-w-[80%] rounded-2xl px-4 py-3',
                           message.role === 'user'
                             ? 'bg-primary-500 text-white'
-                            : 'bg-neutral-100 text-neutral-900 dark:bg-neutral-700 dark:text-white'
+                            : 'bg-neutral-100 text-neutral-900 dark:bg-white/[0.08] dark:text-white'
                         )}
                       >
                         <p className="text-sm whitespace-pre-wrap">{message.content}</p>
@@ -760,7 +760,7 @@ export function ConversationsTab({ initialConversations = [] }: ConversationsTab
                         )}
                       </div>
                       {message.role === 'user' && (
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-600">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-200 dark:bg-white/[0.10]">
                           <User className="h-4 w-4 text-neutral-600 dark:text-neutral-300" />
                         </div>
                       )}

@@ -232,14 +232,14 @@ export function CheckoutSettingsPageClient() {
         label: t('metrics.acv'),
         value: formatEuro(metrics.averageCartValue),
         icon: BarChart3,
-        color: 'text-blue-600 dark:text-blue-400',
+        color: 'text-primary-600 dark:text-primary-400',
       },
       {
         id: 'revenue',
         label: t('metrics.revenue', { days: metrics.periodDays }),
         value: formatEuroFromCents(metrics.revenue.total),
         icon: Activity,
-        color: 'text-purple-600 dark:text-purple-400',
+        color: 'text-secondary-600 dark:text-secondary-400',
       },
     ];
   }, [metrics, t, formatEuro, formatEuroFromCents]);
@@ -441,7 +441,7 @@ export function CheckoutSettingsPageClient() {
           {offers.map((offer: any) => (
             <div
               key={offer.id}
-              className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800"
+              className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]"
             >
               <div className="flex items-start justify-between gap-2">
                 <div>
@@ -523,7 +523,7 @@ function ToggleRow({
   onChange: (checked: boolean) => void;
 }) {
   return (
-    <div className="flex items-center justify-between rounded-lg border border-neutral-200 px-3 py-2 dark:border-neutral-800">
+    <div className="flex items-center justify-between rounded-lg border border-neutral-200/60 px-3 py-2 dark:border-white/[0.06]">
       <p className="text-sm text-neutral-800 dark:text-neutral-200">{label}</p>
       <Switch checked={checked} onCheckedChange={onChange} />
     </div>

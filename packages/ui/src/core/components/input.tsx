@@ -66,7 +66,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             // Border and focus states with elegant glow effects
             error
               ? darkModeClasses.input.error
-              : cn(darkModeClasses.input.focus, 'border-neutral-200 dark:border-neutral-700/80'),
+              : cn(darkModeClasses.input.focus, 'border-neutral-200/60 dark:border-white/[0.08]'),
 
             // Placeholder with improved contrast
             darkModeClasses.input.placeholder,

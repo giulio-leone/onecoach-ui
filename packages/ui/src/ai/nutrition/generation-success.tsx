@@ -51,7 +51,7 @@ export function GenerationSuccess({ result, onReset }: GenerationSuccessProps) {
         <button
           onClick={onReset}
           className={cn(
-            'flex w-full items-center justify-center gap-2 rounded-xl border-2 border-neutral-200 bg-white px-6 py-4 font-semibold text-neutral-700 transition-all hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
+            'flex w-full items-center justify-center gap-2 rounded-xl border-2 border-neutral-200/60 bg-white px-6 py-4 font-semibold text-neutral-700 transition-all hover:border-neutral-300 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]'
           )}
         >
           <CalendarDays className="h-5 w-5" />

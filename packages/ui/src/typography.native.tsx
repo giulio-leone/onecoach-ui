@@ -175,7 +175,7 @@ const textVariantStyles = {
   tertiary: darkModeClasses.text.tertiary,
   muted: darkModeClasses.text.muted,
   inverse: darkModeClasses.text.inverse,
-  link: 'text-blue-600 dark:text-blue-400 underline', // Simplified link for native
+  link: 'text-primary-600 dark:text-primary-400 underline', // Simplified link for native
   success: darkModeClasses.semantic.success.text,
   warning: darkModeClasses.semantic.warning.text,
   error: darkModeClasses.semantic.error.text,
@@ -325,7 +325,7 @@ export interface CodeProps extends RNTextProps {
 export const Code = React.forwardRef<RNText, CodeProps>(
   ({ block = false, language, className, style, children, ...props }, ref) => {
     const classes = cn(
-      'font-mono text-sm text-neutral-900 dark:text-neutral-100 bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700',
+      'font-mono text-sm text-neutral-900 dark:text-neutral-100 bg-neutral-100 dark:bg-white/[0.04] border border-neutral-200/60 dark:border-white/[0.08]',
       block ? 'rounded-lg p-4' : 'rounded px-1.5 py-0.5',
       className
     );

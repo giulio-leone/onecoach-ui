@@ -140,7 +140,7 @@ export const Drawer = ({
           borderRadiusClasses[position],
           'relative',
           'overflow-hidden',
-          'border-l border-white/20 bg-white/95 backdrop-blur-xl dark:border-white/10 dark:bg-neutral-900/95',
+          'border-l border-white/20 bg-white/95 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.10]',
           'shadow-2xl',
           'flex flex-col',
           useBottomSheet && 'max-h-[90vh] sm:max-h-full',
@@ -190,10 +190,10 @@ export const Drawer = ({
                   'min-h-[2.75rem] min-w-[2.75rem]',
                   'rounded-lg p-2',
                   'transition-colors duration-200',
-                  'hover:bg-neutral-100 dark:hover:bg-neutral-700',
+                  'hover:bg-neutral-100 dark:hover:bg-white/[0.08]',
                   'active:bg-neutral-200 dark:active:bg-neutral-600',
                   'focus-visible:ring-2 focus-visible:outline-none',
-                  'focus-visible:ring-emerald-500 dark:focus-visible:ring-emerald-400',
+                  'focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400',
                   'focus-visible:ring-offset-2',
                   'touch-manipulation'
                 )}

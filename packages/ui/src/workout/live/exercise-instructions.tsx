@@ -111,7 +111,7 @@ export function ExerciseInstructions({ exercise, className = '' }: ExerciseInstr
             </div>
 
             {/* Decorative Gradient Glow behind video container */}
-            <div className="absolute -inset-1 -z-10 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 opacity-20 blur-2xl" />
+            <div className="absolute -inset-1 -z-10 bg-gradient-to-br from-indigo-500/20 to-secondary-500/20 opacity-20 blur-2xl" />
           </div>
         )}
       </div>

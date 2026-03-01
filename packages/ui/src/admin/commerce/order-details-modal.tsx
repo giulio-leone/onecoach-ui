@@ -38,7 +38,7 @@ export function OrderDetailsModal({ order, onClose }: OrderDetailsModalProps) {
   return (
     <Modal isOpen onClose={onClose} title={t('details.title')}>
       <div className="space-y-4">
-        <div className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+        <div className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
           <div className="flex flex-wrap items-center gap-2">
             <Badge>{order.status}</Badge>
             <span className="text-sm text-neutral-600 dark:text-neutral-300">
@@ -56,7 +56,7 @@ export function OrderDetailsModal({ order, onClose }: OrderDetailsModalProps) {
             {t('table.type')}: {order.type}
           </p>
         </div>
-        <div className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+        <div className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
           <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
             {t('table.user')}
           </p>
@@ -71,7 +71,7 @@ export function OrderDetailsModal({ order, onClose }: OrderDetailsModalProps) {
           </div>
         </div>
         {order.subscriptions && (
-          <div className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+          <div className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
             <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
               {t('details.subscription')}
             </p>
@@ -81,7 +81,7 @@ export function OrderDetailsModal({ order, onClose }: OrderDetailsModalProps) {
             </p>
           </div>
         )}
-        <div className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+        <div className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
           <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
             {t('details.stripe')}
           </p>
@@ -124,7 +124,7 @@ export function OrderDetailsModal({ order, onClose }: OrderDetailsModalProps) {
           </div>
         </div>
         {order.metadata && (
-          <div className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+          <div className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
             <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
               {t('details.metadata')}
             </p>

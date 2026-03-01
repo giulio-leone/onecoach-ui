@@ -27,9 +27,9 @@ export interface StatCardProps {
 
 const COLOR_VARIANTS = {
   blue: {
-    gradient: 'from-blue-500/10 to-blue-600/5',
-    border: 'border-blue-200/50 dark:border-blue-500/20',
-    icon: 'text-blue-600 dark:text-blue-400',
+    gradient: 'from-primary-500/10 to-primary-600/5',
+    border: 'border-primary-200/50 dark:border-primary-500/20',
+    icon: 'text-primary-600 dark:text-primary-400',
   },
   emerald: {
     gradient: 'from-emerald-500/10 to-emerald-600/5',
@@ -53,7 +53,7 @@ const COLOR_VARIANTS = {
   },
   neutral: {
     gradient: 'from-neutral-100 to-neutral-50 dark:from-neutral-800 dark:to-neutral-800/50',
-    border: 'border-neutral-200/50 dark:border-neutral-700/50',
+    border: 'border-neutral-200/50 dark:border-white/[0.08]',
     icon: 'text-neutral-600 dark:text-neutral-400',
   },
 };
@@ -157,7 +157,7 @@ export interface CompactStatProps {
 
 export function CompactStat({ icon: Icon, value, label, color = 'blue' }: CompactStatProps) {
   const iconColor = {
-    blue: 'text-blue-500',
+    blue: 'text-primary-500',
     emerald: 'text-emerald-500',
     violet: 'text-violet-500',
     amber: 'text-amber-500',
@@ -167,9 +167,9 @@ export function CompactStat({ icon: Icon, value, label, color = 'blue' }: Compac
     <div
       className={cn(
         'rounded-xl p-4',
-        'bg-white/80 dark:bg-neutral-800/80',
+        'bg-white/80 dark:bg-white/[0.06]',
         'backdrop-blur-xl',
-        'border border-neutral-200/50 dark:border-neutral-700/50'
+        'border border-neutral-200/50 dark:border-white/[0.08]'
       )}
     >
       <div className="flex items-center gap-2">

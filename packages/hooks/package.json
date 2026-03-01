@@ -217,7 +217,6 @@
     "@giulio-leone/schemas": "workspace:*",
     "@giulio-leone/translations": "workspace:*",
     "@giulio-leone/types": "workspace:*",
-    "@giulio-leone/ui": "workspace:*",
     "@supabase/auth-helpers-nextjs": "^0.8.7",
     "@giulio-leone/lib-api": "workspace:*"
   },

@@ -11,11 +11,11 @@ export interface KpiCardProps {
 }
 
 const colors: Record<NonNullable<KpiCardProps['color']>, string> = {
-  blue: 'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300',
+  blue: 'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-300',
   violet: 'bg-violet-50 text-violet-600 dark:bg-violet-500/10 dark:text-violet-300',
   emerald: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-300',
   amber: 'bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-300',
-  neutral: 'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300',
+  neutral: 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-300',
 };
 
 export function KpiCard({
@@ -27,7 +27,7 @@ export function KpiCard({
   color = 'neutral',
 }: KpiCardProps) {
   return (
-    <div className="flex h-full flex-col justify-between rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-neutral-800/50 dark:bg-neutral-900/80">
+    <div className="flex h-full flex-col justify-between rounded-xl border border-neutral-200/50 bg-white/80 p-5 shadow-sm backdrop-blur-sm dark:border-white/[0.06] dark:bg-white/[0.06]">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0 flex-1">
           <Text size="xs" weight="medium" className="truncate tracking-wide text-neutral-500 uppercase dark:text-neutral-400">

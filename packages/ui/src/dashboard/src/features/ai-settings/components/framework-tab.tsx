@@ -219,8 +219,8 @@ export function FrameworkTab({
                 'rounded-2xl transition-all duration-200',
                 'border',
                 config.isEnabled
-                  ? 'border-primary-200 dark:border-primary-800 bg-white dark:bg-neutral-800'
-                  : 'border-neutral-200/50 bg-neutral-50/50 dark:border-neutral-700/50 dark:bg-neutral-800/50'
+                  ? 'border-primary-200 dark:border-primary-800 bg-white dark:bg-white/[0.04]'
+                  : 'border-neutral-200/50 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-white/[0.05]'
               )}
             >
               {/* Header */}
@@ -231,7 +231,7 @@ export function FrameworkTab({
                       'flex h-12 w-12 shrink-0 items-center justify-center rounded-xl',
                       config.isEnabled
                         ? 'from-primary-500 shadow-primary-500/25 bg-gradient-to-br to-violet-600 text-white shadow-lg'
-                        : 'bg-neutral-100 text-neutral-400 dark:bg-neutral-700'
+                        : 'bg-neutral-100 text-neutral-400 dark:bg-white/[0.08]'
                     )}
                   >
                     <IconComponent className="h-6 w-6" />
@@ -250,7 +250,7 @@ export function FrameworkTab({
                     onClick={() => setExpandedFeature(isExpanded ? null : config.feature)}
                     className={cn(
                       'rounded-lg p-2 transition-colors',
-                      'hover:bg-neutral-100 dark:hover:bg-neutral-700'
+                      'hover:bg-neutral-100 dark:hover:bg-white/[0.08]'
                     )}
                   >
                     {isExpanded ? (
@@ -278,7 +278,7 @@ export function FrameworkTab({
                     exit={{ opacity: 0, height: 0 }}
                     className="overflow-hidden"
                   >
-                    <div className="border-t border-neutral-100 p-4 dark:border-neutral-700/50">
+                    <div className="border-t border-neutral-100 p-4 dark:border-white/[0.08]">
                       <ConfigForm
                         feature={config.feature}
                         config={config.config || {}}
@@ -359,14 +359,14 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                   'transition-colors',
                   localConfig[key]
                     ? 'bg-primary-50 dark:bg-primary-500/10'
-                    : 'bg-neutral-100 dark:bg-neutral-700',
+                    : 'bg-neutral-100 dark:bg-white/[0.08]',
                   !isEnabled && 'cursor-not-allowed opacity-50'
                 )}
               >
                 {localConfig[key] ? (
                   <Check className="text-primary-500 h-4 w-4" />
                 ) : (
-                  <div className="h-4 w-4 rounded border border-neutral-300 dark:border-neutral-600" />
+                  <div className="h-4 w-4 rounded border border-neutral-300 dark:border-white/[0.1]" />
                 )}
                 <span
                   className={cn(
@@ -395,8 +395,8 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                 disabled={!isEnabled}
                 className={cn(
                   'w-full rounded-xl border px-4 py-2.5',
-                  'border-neutral-200 dark:border-neutral-700',
-                  'bg-white dark:bg-neutral-800',
+                  'border-neutral-200/60 dark:border-white/[0.08]',
+                  'bg-white dark:bg-white/[0.04]',
                   'text-neutral-900 dark:text-white',
                   'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2',
                   'disabled:cursor-not-allowed disabled:opacity-50'
@@ -414,8 +414,8 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                 disabled={!isEnabled}
                 className={cn(
                   'w-full rounded-xl border px-4 py-2.5',
-                  'border-neutral-200 dark:border-neutral-700',
-                  'bg-white dark:bg-neutral-800',
+                  'border-neutral-200/60 dark:border-white/[0.08]',
+                  'bg-white dark:bg-white/[0.04]',
                   'text-neutral-900 dark:text-white',
                   'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2',
                   'disabled:cursor-not-allowed disabled:opacity-50'
@@ -454,7 +454,7 @@ function ConfigForm({ feature, config, schema, isEnabled, isSaving, onSave }: Co
                         'rounded-lg px-3 py-1.5 text-sm font-medium transition-all',
                         isSelected
                           ? 'bg-primary-500 text-white shadow-sm'
-                          : 'bg-neutral-100 text-neutral-600 dark:bg-neutral-700 dark:text-neutral-400',
+                          : 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.08] dark:text-neutral-400',
                         isEnabled && 'hover:opacity-80',
                         !isEnabled && 'cursor-not-allowed opacity-50'
                       )}

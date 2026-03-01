@@ -12,7 +12,6 @@ export {
   DialogOverlay,
   DialogPortal,
   SimpleDialog,
-  LegacyDialog,
   Modal,
   ModalFooter,
   getDialogInputValue,

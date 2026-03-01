@@ -500,9 +500,9 @@ const dividerSpacingStyles = {
 };
 
 const dividerVariantStyles = {
-  default: 'bg-neutral-200 dark:bg-neutral-700',
-  strong: 'bg-neutral-300 dark:bg-neutral-600',
-  subtle: 'bg-neutral-100 dark:bg-neutral-800',
+  default: 'bg-neutral-200 dark:bg-white/[0.08]',
+  strong: 'bg-neutral-300 dark:bg-white/[0.10]',
+  subtle: 'bg-neutral-100 dark:bg-white/[0.04]',
 };
 
 export const Divider = React.forwardRef<HTMLHRElement, DividerProps>(
@@ -568,15 +568,15 @@ const separatorSpacingStyles = {
 
 const separatorVariantStyles = {
   default: {
-    line: 'bg-neutral-200 dark:bg-neutral-700',
+    line: 'bg-neutral-200 dark:bg-white/[0.08]',
     text: 'text-neutral-500 dark:text-neutral-400',
   },
   strong: {
-    line: 'bg-neutral-300 dark:bg-neutral-600',
+    line: 'bg-neutral-300 dark:bg-white/[0.10]',
     text: 'text-neutral-600 dark:text-neutral-300',
   },
   subtle: {
-    line: 'bg-neutral-100 dark:bg-neutral-800',
+    line: 'bg-neutral-100 dark:bg-white/[0.04]',
     text: 'text-neutral-400 dark:text-neutral-500',
   },
   elegant: {

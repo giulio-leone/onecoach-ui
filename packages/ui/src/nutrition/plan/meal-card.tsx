@@ -65,7 +65,7 @@ export const MealCard = memo(function MealCard({
 
   // OPTIMIZATION: Memoize drag IDs to prevent recalculation on every render
   const foodDragIds = useMemo(
-    () => meal.foods.map((food: any) => createFoodDragId(dayNumber, meal.id, food.id)),
+    () => meal.foods.map((food: FoodItem) => createFoodDragId(dayNumber, meal.id, food.id)),
     [meal.foods, meal.id, dayNumber]
   );
 
@@ -121,17 +121,17 @@ export const MealCard = memo(function MealCard({
         style={dragProps?.style}
         className={cn(
           'overflow-hidden rounded-2xl border transition-all duration-300',
-          'bg-slate-900/50 backdrop-blur-xl',
-          'border-slate-800',
-          'hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-900/10',
-          isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-emerald-500/30' : ''
+          'bg-neutral-900/50 backdrop-blur-xl',
+          'border-neutral-800',
+          'hover:border-primary-500/30 hover:shadow-lg hover:shadow-emerald-900/10',
+          isDragging ? 'scale-[0.97] rotate-1 opacity-60 shadow-md ring-2 ring-primary-500/30' : ''
         )}
 
       >
         <div
           className={cn(
             'flex flex-col gap-3 border-b p-4 sm:flex-row sm:items-center sm:justify-between',
-            'border-slate-800',
+            'border-neutral-800',
             'bg-transparent'
           )}
 
@@ -143,7 +143,7 @@ export const MealCard = memo(function MealCard({
                 {...(dragProps?.listeners || {})}
                 className={cn(
                   '-ml-2 flex min-h-[44px] min-w-[44px] flex-shrink-0 cursor-grab touch-manipulation items-center justify-center rounded-lg transition-all duration-200 active:cursor-grabbing',
-                  'hover:bg-slate-800 text-slate-500 hover:text-slate-300'
+                  'hover:bg-neutral-800 text-neutral-500 hover:text-neutral-300'
                 )}
                 aria-label={t('ariaLabels.dragMeal')}
               >
@@ -153,13 +153,13 @@ export const MealCard = memo(function MealCard({
             <button
               onClick={onToggle}
               className={cn(
-                                '-mx-2 flex items-center gap-2 rounded-lg px-2 font-medium text-slate-200 transition-colors hover:text-white group'
+                                '-mx-2 flex items-center gap-2 rounded-lg px-2 font-medium text-neutral-200 transition-colors hover:text-white group'
               )}
             >
               {isExpanded ? (
-                                <ChevronDown className="h-4 w-4 flex-shrink-0 text-slate-500 transition-colors group-hover:text-slate-300" />
+                                <ChevronDown className="h-4 w-4 flex-shrink-0 text-neutral-500 transition-colors group-hover:text-neutral-300" />
               ) : (
-                <ChevronRight className="h-4 w-4 flex-shrink-0 text-slate-500 transition-colors group-hover:text-slate-300" />
+                <ChevronRight className="h-4 w-4 flex-shrink-0 text-neutral-500 transition-colors group-hover:text-neutral-300" />
               )}
               <input
                 type="text"
@@ -167,8 +167,8 @@ export const MealCard = memo(function MealCard({
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => onNameChange(e.target.value)}
                 onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
                 className={cn(
-                                    'border-0 bg-transparent transition-colors duration-200 focus:ring-0 focus:outline-none placeholder:text-slate-600',
-                  'text-lg font-semibold text-slate-100'
+                                    'border-0 bg-transparent transition-colors duration-200 focus:ring-0 focus:outline-none placeholder:text-neutral-600',
+                  'text-lg font-semibold text-neutral-100'
                 )}
                 placeholder={t('placeholders.mealName')}
               />
@@ -178,15 +178,15 @@ export const MealCard = memo(function MealCard({
             <div
               className={cn(
                                 'flex items-center gap-2 rounded-md px-2.5 py-1',
-                'bg-slate-800 border border-slate-700/50'
+                'bg-neutral-800 border border-neutral-700/50'
               )}
             >
-                            <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">
-                {Math.round(meal.totalMacros.calories)} <span className="text-slate-500">kcal</span>
+                            <span className="text-xs font-medium text-neutral-400 uppercase tracking-wider">
+                {Math.round(meal.totalMacros.calories)} <span className="text-neutral-500">kcal</span>
               </span>
             </div>
             
-                        <div className="h-4 w-px bg-slate-800 mx-1 hidden sm:block" />
+                        <div className="h-4 w-px bg-neutral-800 mx-1 hidden sm:block" />
 
             <div className="flex flex-wrap items-center gap-1">
               <button
@@ -208,7 +208,7 @@ export const MealCard = memo(function MealCard({
                   }}
                   className={cn(
                                         'flex min-h-[32px] items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-all duration-200',
-                    'text-slate-400 hover:text-white hover:bg-slate-800'
+                    'text-neutral-400 hover:text-white hover:bg-neutral-800'
                   )}
                   title={t('saveAsTemplate.meal')}
                 >
@@ -220,7 +220,7 @@ export const MealCard = memo(function MealCard({
                 onClick={onRemoveMeal}
                 className={cn(
                   'flex min-h-[32px] min-w-[32px] items-center justify-center rounded-lg transition-all duration-200',
-                                    'text-slate-500 hover:text-red-400 hover:bg-red-500/10'
+                                    'text-neutral-500 hover:text-red-400 hover:bg-red-500/10'
                 )}
                 aria-label={t('ariaLabels.removeMeal')}
               >
@@ -239,7 +239,7 @@ export const MealCard = memo(function MealCard({
             />
 
             {meal.foods.length === 0 ? (
-                            <p className="text-center text-sm text-slate-500">
+                            <p className="text-center text-sm text-neutral-500">
                 {t('emptyStates.noFoods')}
               </p>
             ) : enableDragDrop ? (

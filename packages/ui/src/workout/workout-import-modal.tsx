@@ -215,11 +215,11 @@ export function WorkoutImportModal({
    */
   const removeFile = useCallback((id: string) => {
     setFiles((prev) => {
-      const file = prev.find((f: any) => f.id === id);
+      const file = prev.find((f) => f.id === id);
       if (file?.preview) {
         URL.revokeObjectURL(file.preview);
       }
-      return prev.filter((f: any) => f.id !== id);
+      return prev.filter((f) => f.id !== id);
     });
   }, []);
   /**
@@ -231,7 +231,7 @@ export function WorkoutImportModal({
       e.stopPropagation();
       setIsDragging(false);
       const droppedFiles = Array.from(e.dataTransfer.files);
-      droppedFiles.forEach((file: any) => addFile(file));
+      droppedFiles.forEach((file) => addFile(file));
     },
     [addFile]
   );
@@ -259,7 +259,7 @@ export function WorkoutImportModal({
   const handleFileSelect = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const selectedFiles = Array.from(e.target.files || []);
-      selectedFiles.forEach((file: any) => addFile(file));
+      selectedFiles.forEach((file) => addFile(file));
       // Reset input per permettere ri-selezione dello stesso file
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
@@ -342,7 +342,7 @@ export function WorkoutImportModal({
         message: 'Import completato!',
       });
       // Cleanup preview URLs
-      files.forEach((f: any) => {
+      files.forEach((f) => {
         if (f.preview) URL.revokeObjectURL(f.preview);
       });
       // Callback di successo
@@ -369,12 +369,12 @@ export function WorkoutImportModal({
    * Calcola statistiche file
    */
   const fileStats = useMemo(() => {
-    const totalSize = files.reduce((sum: any, f: any) => sum + f.size, 0);
+    const totalSize = files.reduce((sum, f) => sum + f.size, 0);
     const count = {
-      spreadsheet: files.filter((f: any) => f.type === 'spreadsheet').length,
-      pdf: files.filter((f: any) => f.type === 'pdf').length,
-      document: files.filter((f: any) => f.type === 'document').length,
-      image: files.filter((f: any) => f.type === 'image').length,
+      spreadsheet: files.filter((f) => f.type === 'spreadsheet').length,
+      pdf: files.filter((f) => f.type === 'pdf').length,
+      document: files.filter((f) => f.type === 'document').length,
+      image: files.filter((f) => f.type === 'image').length,
     };
     return { totalSize, byType: count };
   }, [files]);
@@ -387,7 +387,7 @@ export function WorkoutImportModal({
     >
       <div className="flex flex-col gap-4">
         {/* Header con info crediti */}
-        <div className="flex items-center justify-between rounded-lg bg-neutral-50 p-3 dark:bg-neutral-800/50">
+        <div className="flex items-center justify-between rounded-lg bg-neutral-50 p-3 dark:bg-white/[0.05]">
           <div className="flex items-center gap-2 text-sm">
             <Zap className="h-4 w-4 text-amber-500" />
             <span className="text-neutral-600 dark:text-neutral-400">
@@ -411,11 +411,11 @@ export function WorkoutImportModal({
         </div>
         {/* Help panel */}
         {showHelp && (
-          <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 text-sm dark:border-blue-800 dark:bg-blue-900/30">
-            <h4 className="mb-2 font-semibold text-blue-800 dark:text-blue-200">
+          <div className="rounded-lg border border-primary-200 bg-primary-50 p-4 text-sm dark:border-primary-800 dark:bg-primary-900/30">
+            <h4 className="mb-2 font-semibold text-primary-800 dark:text-primary-200">
               {t('workouts.workout_import_modal.formati_supportati')}
             </h4>
-            <ul className="space-y-1 text-blue-700 dark:text-blue-300">
+            <ul className="space-y-1 text-primary-700 dark:text-primary-300">
               <li>
                 • <strong>{t('workouts.workout_import_modal.spreadsheet')}</strong>{' '}
                 {t('workouts.workout_import_modal.csv_xlsx_xls_ods')}
@@ -433,13 +433,13 @@ export function WorkoutImportModal({
                 {t('workouts.workout_import_modal.jpeg_png_webp_heic')}
               </li>
             </ul>
-            <p className="mt-2 text-blue-600 dark:text-blue-400">
+            <p className="mt-2 text-primary-600 dark:text-primary-400">
               {t('workouts.workout_import_modal.max_10_file_10mb_per_file_le_immagini_e_')}
             </p>
           </div>
         )}
         {/* Mode selector */}
-        <div className="flex items-center gap-3 rounded-lg border border-neutral-200 p-2 dark:border-neutral-700">
+        <div className="flex items-center gap-3 rounded-lg border border-neutral-200/60 p-2 dark:border-white/[0.08]">
           <button
             type="button"
             onClick={() => setMode('auto')}
@@ -447,7 +447,7 @@ export function WorkoutImportModal({
               'flex flex-1 items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors',
               mode === 'auto'
                 ? 'bg-emerald-500 text-white shadow-sm'
-                : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800'
+                : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-white/[0.06]'
             )}
           >
             <Zap className="h-4 w-4" />
@@ -460,7 +460,7 @@ export function WorkoutImportModal({
               'flex flex-1 items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors',
               mode === 'review'
                 ? 'bg-emerald-500 text-white shadow-sm'
-                : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800'
+                : 'text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-white/[0.06]'
             )}
           >
             <Eye className="h-4 w-4" />
@@ -482,7 +482,7 @@ export function WorkoutImportModal({
             'relative rounded-xl border-2 border-dashed p-6 transition-colors',
             isDragging
               ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20'
-              : 'border-neutral-300 bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-800/50',
+              : 'border-neutral-300 bg-neutral-50 dark:border-white/[0.1] dark:bg-white/[0.05]',
             files.length > 0 && 'pb-4'
           )}
         >
@@ -491,8 +491,8 @@ export function WorkoutImportModal({
               <div className="flex gap-2">
                 <FileSpreadsheet className="h-8 w-8 text-emerald-500" />
                 <FileType className="h-8 w-8 text-rose-500" />
-                <FileImage className="h-8 w-8 text-blue-500" />
-                <FileText className="h-8 w-8 text-purple-500" />
+                <FileImage className="h-8 w-8 text-primary-500" />
+                <FileText className="h-8 w-8 text-secondary-500" />
               </div>
               <div>
                 <p className="font-medium text-neutral-700 dark:text-neutral-300">
@@ -518,7 +518,7 @@ export function WorkoutImportModal({
           ) : (
             <div className="space-y-2">
               {/* File list */}
-              {files.map((file: any) => {
+              {files.map((file) => {
                 const Icon = getFileIcon(file.type);
                 return (
                   <div
@@ -527,7 +527,7 @@ export function WorkoutImportModal({
                       'flex items-center gap-3 rounded-lg border p-3',
                       file.error
                         ? 'border-rose-200 bg-rose-50 dark:border-rose-800 dark:bg-rose-900/20'
-                        : 'border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800'
+                        : 'border-neutral-200/60 bg-white dark:border-white/[0.08] dark:bg-white/[0.04]'
                     )}
                   >
                     {file.preview ? (
@@ -547,8 +547,8 @@ export function WorkoutImportModal({
                             'bg-emerald-50 text-emerald-500 dark:bg-emerald-900/30',
                           file.type === 'pdf' && 'bg-rose-50 text-rose-500 dark:bg-rose-900/30',
                           file.type === 'document' &&
-                            'bg-purple-50 text-purple-500 dark:bg-purple-900/30',
-                          file.type === 'image' && 'bg-blue-50 text-blue-500 dark:bg-blue-900/30'
+                            'bg-secondary-50 text-secondary-500 dark:bg-secondary-900/30',
+                          file.type === 'image' && 'bg-primary-50 text-primary-500 dark:bg-primary-900/30'
                         )}
                       />
                     )}
@@ -575,7 +575,7 @@ export function WorkoutImportModal({
               })}
               {/* Add more files */}
               {files.length < 10 && (
-                <label className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 p-3 text-sm text-neutral-500 hover:border-emerald-500 hover:text-emerald-600 dark:border-neutral-600 dark:hover:border-emerald-500">
+                <label className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 p-3 text-sm text-neutral-500 hover:border-primary-500 hover:text-emerald-600 dark:border-white/[0.1] dark:hover:border-primary-500">
                   <Upload className="h-4 w-4" />
                   {t('workouts.workout_import_modal.aggiungi_altri_file')}
                   <input
@@ -624,7 +624,7 @@ export function WorkoutImportModal({
         )}
         {/* Progress */}
         {progress && isUploading && (
-          <div className="space-y-2 rounded-lg bg-neutral-100 p-4 dark:bg-neutral-800">
+          <div className="space-y-2 rounded-lg bg-neutral-100 p-4 dark:bg-white/[0.04]">
             <div className="flex items-center justify-between text-sm">
               <span className="font-medium text-neutral-700 dark:text-neutral-300">
                 {progress.message}
@@ -633,7 +633,7 @@ export function WorkoutImportModal({
                 {progress.stepNumber}/{progress.totalSteps}
               </span>
             </div>
-            <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+            <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-200 dark:bg-white/[0.08]">
               <div
                 className="h-full rounded-full bg-emerald-500 transition-all duration-300"
                 style={{ width: `${progress.progress}%` }}

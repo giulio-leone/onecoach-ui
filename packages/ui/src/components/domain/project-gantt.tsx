@@ -44,21 +44,21 @@ export function ProjectGantt({
     <div
       className={cn(
         'flex w-full flex-col overflow-hidden rounded-2xl',
-        'bg-white/80 dark:bg-neutral-900/80',
-        'border border-neutral-200/50 dark:border-neutral-800/50',
+        'bg-white/80 dark:bg-white/[0.06]',
+        'border border-neutral-200/50 dark:border-white/[0.06]',
         'shadow-sm dark:shadow-lg dark:shadow-black/20',
         'backdrop-blur-sm',
         className
       )}
     >
-      <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-6 py-4 dark:border-neutral-800/50 dark:bg-neutral-800/30">
+      <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-6 py-4 dark:border-white/[0.06] dark:bg-white/[0.04]">
         <h3 className="font-bold text-neutral-900 dark:text-white">{project.title}</h3>
       </div>
 
       <div className="no-scrollbar relative flex-1 overflow-x-auto p-6">
         <div style={{ width: totalDays * dayWidth }}>
           {/* Header Days */}
-          <div className="mb-6 flex border-b border-neutral-200/30 pb-3 dark:border-neutral-700/30">
+          <div className="mb-6 flex border-b border-neutral-200/30 pb-3 dark:border-white/[0.06]">
             {days.map((day: any) => (
               <div
                 key={day.toISOString()}
@@ -82,7 +82,7 @@ export function ProjectGantt({
                 <div
                   key={`grid-${day.toISOString()}`}
                   style={{ width: dayWidth }}
-                  className="h-full border-r border-neutral-100/50 dark:border-neutral-800/20"
+                  className="h-full border-r border-neutral-100/50 dark:border-white/[0.04]"
                 />
               ))}
             </div>
@@ -93,13 +93,13 @@ export function ProjectGantt({
               {project.tasks.length === 0 ? (
                 <div className="group flex h-8 items-center">
                   <div
-                    className="absolute flex h-7 items-center rounded-xl border border-blue-500/20 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 backdrop-blur-sm"
+                    className="absolute flex h-7 items-center rounded-xl border border-primary-500/20 bg-gradient-to-r from-primary-500/20 to-indigo-500/20 px-4 backdrop-blur-sm"
                     style={{
                       left: 0,
                       width: '100%',
                     }}
                   >
-                    <span className="truncate text-[10px] font-bold tracking-widest text-blue-600 uppercase dark:text-blue-400">
+                    <span className="truncate text-[10px] font-bold tracking-widest text-primary-600 uppercase dark:text-primary-400">
                       {wholeProjectLabel}
                     </span>
                   </div>
@@ -118,7 +118,7 @@ export function ProjectGantt({
                   return (
                     <div key={task.id} className="group relative h-8">
                       <div
-                        className="absolute top-0.5 bottom-0.5 flex items-center overflow-hidden rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 px-4 shadow-lg shadow-blue-500/30 transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-blue-500/40"
+                        className="absolute top-0.5 bottom-0.5 flex items-center overflow-hidden rounded-xl bg-gradient-to-r from-primary-500 to-indigo-600 px-4 shadow-lg shadow-primary-500/30 transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-primary-500/40"
                         style={{
                           left,
                           width,

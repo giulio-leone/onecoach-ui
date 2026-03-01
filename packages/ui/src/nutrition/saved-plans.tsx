@@ -25,6 +25,7 @@ import { useTranslations } from 'next-intl';
 import { NutritionPlanCard } from '@giulio-leone/ui/nutrition';
 import { NutritionGeneratingCard } from './nutrition-generating-card';
 import type { NutritionPlan } from '@giulio-leone/types/nutrition';
+import type { GenerationWithStatus } from '@giulio-leone/hooks';
 
 export interface SavedNutritionPlansRef {
   refresh: () => void;
@@ -111,7 +112,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
     if (!confirmed) return;
 
     try {
-      await Promise.all(Array.from(selectedIds).map((id: any) => deletePlan.mutateAsync(id as string)));
+      await Promise.all(Array.from(selectedIds).map((id) => deletePlan.mutateAsync(id)));
       await refetch();
       setSelectedIds(new Set());
     } catch (err: unknown) {
@@ -148,7 +149,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
   if (isLoading) {
     return (
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {[1, 2, 3].map((i: any) => (
+        {[1, 2, 3].map((i) => (
           <div key={i} className="h-64 animate-pulse rounded-2xl bg-neutral-800" />
         ))}
       </div>
@@ -173,7 +174,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
         {/* Active AI Generations even with empty plans */}
         {isGenerating && (
           <div className="space-y-3">
-            {activeGenerations.map((gen: any) => (
+            {activeGenerations.map((gen: GenerationWithStatus) => (
               <NutritionGeneratingCard key={gen.run_id} generation={gen} />
             ))}
           </div>
@@ -182,7 +183,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Link
             href="/nutrition/create"
-            className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-emerald-500/50 hover:bg-emerald-900/10"
+            className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-primary-500/50 hover:bg-emerald-900/10"
           >
             <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-neutral-400 transition-colors group-hover:bg-emerald-900/30 group-hover:text-emerald-400">
               <Plus className="h-6 w-6" />
@@ -201,7 +202,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
       {/* Active AI Generations (SDK 4.0 Durable Mode) */}
       {isGenerating && (
         <div className="space-y-3">
-          {activeGenerations.map((gen: any) => (
+          {activeGenerations.map((gen: GenerationWithStatus) => (
             <NutritionGeneratingCard key={gen.run_id} generation={gen} />
           ))}
         </div>
@@ -227,7 +228,7 @@ export const SavedNutritionPlans = forwardRef<SavedNutritionPlansRef>((_props, r
         {/* Add New Card (Visual Placeholder) - matches workouts style */}
         <Link
           href="/nutrition/create"
-          className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-emerald-500/50 hover:bg-emerald-900/10"
+          className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-neutral-700 p-6 transition-all duration-300 hover:border-primary-500/50 hover:bg-emerald-900/10"
         >
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-800 text-neutral-400 transition-colors group-hover:bg-emerald-900/30 group-hover:text-emerald-400">
             <Plus className="h-6 w-6" />

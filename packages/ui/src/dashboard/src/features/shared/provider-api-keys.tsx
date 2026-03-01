@@ -66,9 +66,9 @@ const PROVIDER_INFO: Record<
   google: {
     description: 'Gemini 2.5 Flash / Pro tramite Google AI Studio',
     icon: Sparkles,
-    color: 'text-blue-400',
-    gradient: 'from-blue-500/5 via-blue-500/0 to-transparent',
-    accent: 'bg-blue-500',
+    color: 'text-primary-400',
+    gradient: 'from-primary-500/5 via-primary-500/0 to-transparent',
+    accent: 'bg-primary-500',
   },
   anthropic: {
     description: 'Modelli Claude 3.5 (Haiku, Sonnet)',
@@ -295,12 +295,12 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
   return (
     <div className="space-y-8">
       {/* Dashboard Hero */}
-      <div className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white p-8 dark:border-neutral-800 dark:bg-neutral-950">
+      <div className="relative overflow-hidden rounded-3xl border border-neutral-200/60 bg-white p-8 dark:border-white/[0.08] dark:bg-[#09090b]">
         <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <Activity className="h-5 w-5 text-blue-500 dark:text-blue-400" />
-              <span className="text-xs font-bold tracking-wider text-blue-500 uppercase dark:text-blue-400">
+              <Activity className="h-5 w-5 text-primary-500 dark:text-primary-400" />
+              <span className="text-xs font-bold tracking-wider text-primary-500 uppercase dark:text-primary-400">
                 {t('provider_api_keys.system_status')}
               </span>
             </div>
@@ -312,7 +312,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
             </p>
           </div>
           <div className="flex gap-4">
-            <div className="rounded-2xl border border-neutral-100 bg-white/50 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900">
+            <div className="rounded-2xl border border-neutral-100 bg-white/50 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-zinc-950">
               <p className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
                 {t('provider_api_keys.provider_attivi')}
               </p>
@@ -323,7 +323,7 @@ export function ProviderApiKeysSection({ configs }: ProviderApiKeysProps) {
                 </span>
               </p>
             </div>
-            <div className="rounded-2xl border border-neutral-100 bg-white/50 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900">
+            <div className="rounded-2xl border border-neutral-100 bg-white/50 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-zinc-950">
               <p className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
                 {t('provider_api_keys.stato_sistema')}
               </p>
@@ -407,8 +407,8 @@ function ProviderCard({
         'group relative flex flex-col overflow-hidden rounded-3xl border backdrop-blur-2xl transition-all duration-500',
         state.isExpanded ? 'row-span-2' : '',
         state.isEnabled
-          ? 'border-neutral-200 bg-white/80 shadow-xl dark:border-neutral-700 dark:bg-neutral-800'
-          : 'border-neutral-200 bg-neutral-50/50 dark:border-neutral-800 dark:bg-neutral-900'
+          ? 'border-neutral-200/60 bg-white/80 shadow-xl dark:border-white/[0.08] dark:bg-white/[0.04]'
+          : 'border-neutral-200/60 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-zinc-950'
       )}
     >
       {/* Active Glow Effect - Reduced opacity for elegance */}
@@ -456,7 +456,7 @@ function ProviderCard({
                     'h-2 w-2 rounded-full',
                     state.isEnabled
                       ? 'animate-pulse bg-green-500'
-                      : 'bg-neutral-300 dark:bg-neutral-600'
+                      : 'bg-neutral-300 dark:bg-white/[0.10]'
                   )}
                 ></div>
                 <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">
@@ -570,7 +570,7 @@ function ProviderCard({
                   </div>
                   <div className="group/input relative">
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                      <KeyRound className="h-4 w-4 text-neutral-400 transition-colors group-focus-within/input:text-blue-500" />
+                      <KeyRound className="h-4 w-4 text-neutral-400 transition-colors group-focus-within/input:text-primary-500" />
                     </div>
                     <Input
                       type={state.showKeyInput ? 'text' : 'password'}
@@ -580,7 +580,7 @@ function ProviderCard({
                         onApiKeyChange(state.provider, e.target.value)
                       }
                       placeholder={state.hasKey ? '••••••••••••••••' : 'Enter new API Key'}
-                      className="bg-white pr-10 pl-10 transition-all focus:ring-2 focus:ring-blue-500/20 dark:border-white/10 dark:bg-black/40 dark:text-white dark:placeholder:text-neutral-600"
+                      className="bg-white pr-10 pl-10 transition-all focus:ring-2 focus:ring-primary-500/20 dark:border-white/10 dark:bg-black/40 dark:text-white dark:placeholder:text-neutral-600"
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center gap-1 pr-2">
                       {state.hasKey && !state.newApiKey && (
@@ -613,7 +613,7 @@ function ProviderCard({
                     animate={{ opacity: 1, height: 'auto' }}
                     className="space-y-4 pt-2"
                   >
-                    <div className="rounded-lg border border-dashed border-neutral-200 p-3 text-xs text-neutral-600 dark:border-neutral-700 dark:text-neutral-400">
+                    <div className="rounded-lg border border-dashed border-neutral-200/60 p-3 text-xs text-neutral-600 dark:border-white/[0.08] dark:text-neutral-400">
                       {t('provider_api_keys.il_modello_predefinito_openrouter_si_con')}
                     </div>
                   </motion.div>
@@ -641,7 +641,7 @@ function ProviderCard({
                 </div>
                 <Button
                   variant="primary"
-                  className="bg-neutral-900 text-white shadow-lg shadow-neutral-500/20 hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+                  className="bg-neutral-900 text-white shadow-lg shadow-neutral-500/20 hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-white/[0.06]"
                   size="sm"
                   disabled={state.isSaving || state.isDeleting}
                   onClick={() => onSave(state.provider)}

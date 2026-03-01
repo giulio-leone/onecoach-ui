@@ -94,7 +94,7 @@ export function AIAgentsConfig({ configs, onToggleAgent, onUpdateRetry }: AIAgen
                   },
                 ]}
               >
-                <div className="mt-4 space-y-4 border-t border-neutral-200 pt-4 dark:border-neutral-800">
+                <div className="mt-4 space-y-4 border-t border-neutral-200/60 pt-4 dark:border-white/[0.06]">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">
                       {tAdmin('retryAttempts', { count: retryCount })}

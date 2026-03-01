@@ -92,8 +92,8 @@ export function AppShellHeader({
     <header
       className={cn(
         'sticky top-0 z-40 w-full overflow-hidden border-b',
-        'border-slate-200 bg-white/90 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90',
-        'shadow-sm shadow-neutral-900/5 dark:shadow-neutral-900/20',
+        'border-neutral-200/50 bg-white/90 backdrop-blur-xl dark:border-white/[0.06] dark:bg-[#09090b]/90',
+        'shadow-sm shadow-neutral-900/5 dark:shadow-[0_4px_30px_-4px_rgba(0,0,0,0.3)]',
         'transition-all duration-200'
       )}
     >
@@ -102,7 +102,7 @@ export function AppShellHeader({
         <div className="flex min-w-0 flex-1 items-center gap-2 lg:gap-4">
           <button
             onClick={toggleMobileMenu}
-            className="rounded-lg p-2 text-neutral-500 hover:bg-neutral-100 lg:hidden dark:text-neutral-400 dark:hover:bg-neutral-800"
+            className="rounded-lg p-2 text-neutral-500 hover:bg-neutral-100 lg:hidden dark:text-neutral-400 dark:hover:bg-white/[0.06]"
             aria-label={labels.openMenu}
           >
             <Menu className="h-6 w-6" />
@@ -116,7 +116,7 @@ export function AppShellHeader({
                 href={safeBrandHref}
                 className="group flex min-w-0 items-center gap-2 lg:hidden"
               >
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/20">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-600 to-indigo-600 text-white shadow-lg shadow-primary-500/20">
                   {isOneAgenda ? (
                     <Calendar className="h-4 w-4" />
                   ) : (
@@ -134,7 +134,7 @@ export function AppShellHeader({
         {/* Sezione destra: azioni e tema */}
         <div className="ml-auto flex flex-shrink-0 items-center gap-2 sm:gap-4">
           {headerActions && (
-            <div className="flex items-center gap-2 border-r border-neutral-200 pr-2 sm:pr-4 dark:border-neutral-800">
+            <div className="flex items-center gap-2 border-r border-neutral-200/60 pr-2 sm:pr-4 dark:border-white/[0.06]">
               {headerActions}
             </div>
           )}
@@ -142,9 +142,9 @@ export function AppShellHeader({
           <button
             onClick={toggleCopilotEnabled}
             className={cn(
-              'rounded-md p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800',
+              'rounded-md p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.06]',
               user?.copilotEnabled
-                ? 'text-blue-600 dark:text-blue-400'
+                ? 'text-primary-600 dark:text-primary-400'
                 : 'text-neutral-500 dark:text-neutral-400'
             )}
             title={user?.copilotEnabled ? labels.disableCopilot : labels.enableCopilot}

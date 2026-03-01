@@ -101,10 +101,10 @@ export function DayEditor({
         {(!day.exercises || day.exercises.length === 0) && (
           <Pressable
             onPress={() => setIsSelectorOpen(true)}
-            className="items-center justify-center rounded-2xl border-2 border-dashed border-neutral-200 bg-neutral-50/50 py-12 dark:border-neutral-700 dark:bg-neutral-800/30"
+            className="items-center justify-center rounded-2xl border-2 border-dashed border-neutral-200/60 bg-neutral-50/50 py-12 dark:border-white/[0.08] dark:bg-white/[0.04]"
           >
-            <View className="mb-3 h-12 w-12 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-              <Dumbbell size={24} className="text-blue-600 dark:text-blue-400" />
+            <View className="mb-3 h-12 w-12 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30">
+              <Dumbbell size={24} className="text-primary-600 dark:text-primary-400" />
             </View>
             <Text className="font-semibold text-neutral-900 dark:text-neutral-100">
               {t('common.empty.noExercises')}

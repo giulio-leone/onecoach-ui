@@ -28,15 +28,15 @@ export const ModelSelector = ({
   const isHaiku = model === AI_MODELS.HAIKU_4_5;
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-md dark:bg-neutral-900">
+    <div className="rounded-xl border border-neutral-200/60 bg-white p-4 shadow-md dark:bg-zinc-950">
       <div className="mb-3 flex items-center gap-2">
-        <Settings size={18} className="text-slate-600" />
-        <h3 className="font-semibold text-slate-900">Configurazione AI</h3>
+        <Settings size={18} className="text-neutral-600" />
+        <h3 className="font-semibold text-neutral-900">Configurazione AI</h3>
       </div>
 
       <div className="space-y-3">
         <div>
-          <label className="mb-2 block text-xs font-semibold tracking-wide text-slate-600 uppercase">
+          <label className="mb-2 block text-xs font-semibold tracking-wide text-neutral-600 uppercase">
             Modello
           </label>
           <div className="grid grid-cols-2 gap-2">
@@ -45,7 +45,7 @@ export const ModelSelector = ({
               className={`rounded-lg p-3 text-sm font-medium transition-all ${
                 isSonnet
                   ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md'
-                  : 'border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  : 'border border-neutral-200/60 bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
               } `}
             >
               <Sparkles size={16} className="mr-1 inline" />
@@ -55,8 +55,8 @@ export const ModelSelector = ({
               onClick={() => onChange(AI_MODELS.HAIKU_4_5)}
               className={`rounded-lg p-3 text-sm font-medium transition-all ${
                 isHaiku
-                  ? 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md'
-                  : 'border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  ? 'bg-gradient-to-r from-primary-500 to-indigo-500 text-white shadow-md'
+                  : 'border border-neutral-200/60 bg-neutral-50 text-neutral-700 hover:bg-neutral-100'
               } `}
             >
               <Zap size={16} className="mr-1 inline" />
@@ -65,7 +65,7 @@ export const ModelSelector = ({
           </div>
         </div>
 
-        <div className="border-t border-slate-200 pt-3">
+        <div className="border-t border-neutral-200/60 pt-3">
           <label className="flex cursor-pointer items-center gap-2">
             <input
               type="checkbox"
@@ -73,11 +73,11 @@ export const ModelSelector = ({
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 onThinkingChange(e.target.checked)
               }
-              className="h-4 w-4 rounded border-slate-300 bg-slate-100 text-emerald-600 focus:ring-emerald-500"
+              className="h-4 w-4 rounded border-neutral-300 bg-neutral-100 text-primary-600 focus:ring-primary-500"
             />
-            <span className="text-sm font-medium text-slate-700">
+            <span className="text-sm font-medium text-neutral-700">
               Ragionamento Esteso
-              <span className="ml-1 text-xs text-slate-500">(consigliato)</span>
+              <span className="ml-1 text-xs text-neutral-500">(consigliato)</span>
             </span>
           </label>
         </div>

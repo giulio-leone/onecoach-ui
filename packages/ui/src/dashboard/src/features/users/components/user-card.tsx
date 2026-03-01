@@ -33,15 +33,15 @@ interface UserCardProps {
 
 const roleConfig: Record<string, { color: string; icon: typeof User }> = {
   USER: {
-    color: 'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300',
+    color: 'bg-neutral-100 text-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300',
     icon: User,
   },
   COACH: {
-    color: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300',
+    color: 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300',
     icon: Dumbbell,
   },
   ADMIN: {
-    color: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300',
+    color: 'bg-secondary-100 text-secondary-700 dark:bg-secondary-900/30 dark:text-secondary-300',
     icon: Shield,
   },
   SUPER_ADMIN: {
@@ -61,7 +61,7 @@ const statusConfig: Record<string, { color: string }> = {
     color: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300',
   },
   DELETED: {
-    color: 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-500',
+    color: 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-500',
   },
 };
 
@@ -108,8 +108,8 @@ export function UserCard({
   // Avatar background based on role
   const avatarColors: Record<string, string> = {
     USER: 'bg-gradient-to-br from-neutral-400 to-neutral-600',
-    COACH: 'bg-gradient-to-br from-blue-400 to-blue-600',
-    ADMIN: 'bg-gradient-to-br from-purple-400 to-purple-600',
+    COACH: 'bg-gradient-to-br from-primary-400 to-primary-600',
+    ADMIN: 'bg-gradient-to-br from-secondary-400 to-secondary-600',
     SUPER_ADMIN: 'bg-gradient-to-br from-amber-400 to-amber-600',
   };
 
@@ -168,13 +168,13 @@ export function UserCard({
                 {showActions && (
                   <>
                     <div className="fixed inset-0 z-40" onClick={() => setShowActions(false)} />
-                    <div className="absolute top-full right-0 z-50 mt-1 w-48 rounded-lg border border-neutral-200 bg-white p-1 shadow-lg dark:border-neutral-700 dark:bg-neutral-800">
+                    <div className="absolute top-full right-0 z-50 mt-1 w-48 rounded-lg border border-neutral-200/60 bg-white p-1 shadow-lg dark:border-white/[0.08] dark:bg-white/[0.04]">
                       <button
                         onClick={() => {
                           onEdit(user);
                           setShowActions(false);
                         }}
-                        className="flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                        className="flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.08]"
                       >
                         <Edit className="h-4 w-4" />
                         {t('list.edit')}
@@ -184,13 +184,13 @@ export function UserCard({
                           onManageCredits(user);
                           setShowActions(false);
                         }}
-                        className="flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                        className="flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.08]"
                       >
                         <Coins className="h-4 w-4" />
                         {t('actions.manageCredits')}
                       </button>
 
-                      <div className="my-1 border-t border-neutral-200 dark:border-neutral-700" />
+                      <div className="my-1 border-t border-neutral-200/60 dark:border-white/[0.08]" />
 
                       {isActive ? (
                         <button
@@ -258,7 +258,7 @@ export function UserCard({
         </div>
 
         {/* Stats Grid */}
-        <div className="mt-4 grid grid-cols-3 gap-2 rounded-lg bg-neutral-50 p-2.5 sm:gap-3 sm:p-3 dark:bg-neutral-800/50">
+        <div className="mt-4 grid grid-cols-3 gap-2 rounded-lg bg-neutral-50 p-2.5 sm:gap-3 sm:p-3 dark:bg-white/[0.05]">
           <div className="text-center">
             <div className="flex items-center justify-center gap-1 text-neutral-500 dark:text-neutral-400">
               <Coins className="h-3.5 w-3.5" />
@@ -268,7 +268,7 @@ export function UserCard({
             </p>
             <p className="text-[10px] text-neutral-500 sm:text-xs">{t('list.credits')}</p>
           </div>
-          <div className="border-x border-neutral-200 text-center dark:border-neutral-700">
+          <div className="border-x border-neutral-200/60 text-center dark:border-white/[0.08]">
             <div className="flex items-center justify-center gap-1 text-neutral-500 dark:text-neutral-400">
               <Dumbbell className="h-3.5 w-3.5" />
             </div>

@@ -11,7 +11,7 @@ import { CopilotDomainProvider } from '@giulio-leone/one-agent';
 import { logger } from '@giulio-leone/lib-shared';
 import { ArrowLeft, BarChart2, Layout, TrendingUp, Dumbbell, Upload } from 'lucide-react';
 // import { WorkoutImportModal } from '@/components/workout/workout-import-modal';
-// import { WorkoutClipboardProvider } from './workout-clipboard-provider';
+import { ExerciseClipboardProvider } from './workout-clipboard-provider';
 import type { LucideIcon } from 'lucide-react';
 import { WorkoutStatus } from '@giulio-leone/types/client';
 import { Text, Button } from '@giulio-leone/ui';
@@ -197,9 +197,9 @@ export function WorkoutVisualBuilder({
     const exercises: Exercise[] = [];
     const seenIds = new Set<string>();
 
-    program.weeks?.forEach((week: any) => {
-      week.days.forEach((day: any) => {
-        day.exercises?.forEach((ex: any) => {
+    program.weeks?.forEach((week) => {
+      week.days.forEach((day) => {
+        day.exercises?.forEach((ex) => {
           if (ex.id && !seenIds.has(ex.id)) {
             seenIds.add(ex.id);
             exercises.push(ex);
@@ -304,7 +304,7 @@ export function WorkoutVisualBuilder({
 
   // Content wrapped with clipboard provider
   const builderContent = (
-    <>
+    <ExerciseClipboardProvider>
       <VisualBuilderShell
         theme="primary"
         // ... props ...
@@ -374,7 +374,7 @@ export function WorkoutVisualBuilder({
               />
             ) : (
               <div className="flex flex-col items-center justify-center space-y-4 py-32 text-center">
-                <div className="rounded-full bg-neutral-100 p-6 text-neutral-400 ring-1 ring-neutral-200 dark:bg-neutral-900/50 dark:text-neutral-600 dark:ring-white/5">
+                <div className="rounded-full bg-neutral-100 p-6 text-neutral-400 ring-1 ring-neutral-200 dark:bg-white/[0.04] dark:text-neutral-600 dark:ring-white/5">
                   <Layout className="h-10 w-10" />
                 </div>
                 <div className="space-y-1">
@@ -413,7 +413,7 @@ export function WorkoutVisualBuilder({
         onClose={() => setIsImportModalOpen(false)}
         onSuccess={handleImportSuccess}
       /> */}
-    </>
+    </ExerciseClipboardProvider>
   );
 
   // Wrap with CopilotDomainProvider only when we have a valid program

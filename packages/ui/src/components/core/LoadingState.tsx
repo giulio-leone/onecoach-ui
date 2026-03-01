@@ -37,7 +37,7 @@ export function LoadingState({ message, size = 'md', className }: LoadingStatePr
         {/* Outer Glow Ring (Slow Spin) */}
         <div
           className={cn(
-            'animate-spin-slow absolute rounded-full bg-gradient-to-tr from-indigo-500/30 to-purple-500/30 blur-2xl',
+            'animate-spin-slow absolute rounded-full bg-gradient-to-tr from-indigo-500/30 to-secondary-500/30 blur-2xl',
             sizeClasses[size]
           )}
         />
@@ -78,7 +78,7 @@ export function LoadingState({ message, size = 'md', className }: LoadingStatePr
           </span>
           {/* Progress Bar Line */}
           <div className="h-0.5 w-24 overflow-hidden rounded-full bg-neutral-800">
-            <div className="animate-progress-indeterminate h-full w-full bg-gradient-to-r from-indigo-500 to-purple-500" />
+            <div className="animate-progress-indeterminate h-full w-full bg-gradient-to-r from-indigo-500 to-secondary-500" />
           </div>
         </div>
       )}

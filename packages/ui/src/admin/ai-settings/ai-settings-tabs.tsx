@@ -99,9 +99,9 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           className={cn(
             'flex w-full items-center justify-between gap-3 rounded-2xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50',
+            'border border-neutral-200/50 dark:border-white/[0.08]',
             'shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20',
             'transition-transform active:scale-[0.98]'
           )}
@@ -145,9 +145,9 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
             className={cn(
               'absolute top-full right-0 left-0 z-50 mt-2',
               'rounded-2xl p-2',
-              'bg-white/95 dark:bg-neutral-800/95',
+              'bg-white/95 dark:bg-white/[0.08]',
               'backdrop-blur-xl',
-              'border border-neutral-200/50 dark:border-neutral-700/50',
+              'border border-neutral-200/50 dark:border-white/[0.08]',
               'shadow-2xl shadow-neutral-900/20 dark:shadow-neutral-900/40'
             )}
           >
@@ -165,7 +165,7 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
                     'transition-all duration-200',
                     isActive
                       ? 'bg-primary-50 dark:bg-primary-500/10'
-                      : 'hover:bg-neutral-100 dark:hover:bg-neutral-700/50'
+                      : 'hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50'
                   )}
                 >
                   <div
@@ -173,7 +173,7 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
                       'flex h-9 w-9 items-center justify-center rounded-lg',
                       isActive
                         ? 'from-primary-500 shadow-primary-500/25 bg-gradient-to-br to-violet-600 text-white shadow-lg'
-                        : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-700 dark:text-neutral-400'
+                        : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.08] dark:text-neutral-400'
                     )}
                   >
                     <tab.icon className="h-4 w-4" />
@@ -206,9 +206,9 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
         <div
           className={cn(
             'flex gap-1 rounded-2xl p-1.5',
-            'bg-white/60 dark:bg-neutral-800/60',
+            'bg-white/60 dark:bg-white/[0.05]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50',
+            'border border-neutral-200/50 dark:border-white/[0.08]',
             'shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20',
             'scrollbar-hide overflow-x-auto'
           )}
@@ -225,7 +225,7 @@ export function AISettingsTabs({ activeTab, onTabChange }: AISettingsTabsProps) 
                   'transition-all duration-200',
                   isActive
                     ? 'text-white'
-                    : 'text-neutral-600 hover:bg-neutral-100/50 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-700/50 dark:hover:text-white'
+                    : 'text-neutral-600 hover:bg-neutral-100/50 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-white/[0.08]/50 dark:hover:text-white'
                 )}
               >
                 {isActive && (

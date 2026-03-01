@@ -54,7 +54,7 @@ export function ItemCard({
           className={cn(
             'flex min-h-[44px] min-w-[44px] cursor-grab touch-manipulation items-center justify-center rounded-lg transition-all duration-200 active:cursor-grabbing',
             darkModeClasses.text.tertiary,
-            'hover:bg-neutral-50/50 hover:text-neutral-600 dark:hover:bg-neutral-700/30 dark:hover:text-neutral-400'
+            'hover:bg-neutral-50/50 hover:text-neutral-600 dark:hover:bg-white/[0.08]/30 dark:hover:text-neutral-400'
           )}
         >
           <GripVertical className="h-5 w-5" />

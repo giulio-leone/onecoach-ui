@@ -114,14 +114,14 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
             disabled={form.isSubmitting}
             autoComplete="new-password"
             autoFocus
-            className="pr-12 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            className="pr-12 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
             aria-invalid={!!form.errors.password}
             aria-describedby={form.errors.password ? 'password-error' : undefined}
           />
           <button
             type="button"
             onClick={() => setShowPassword((v) => !v)}
-            className="absolute inset-y-0 right-0 mr-2 flex items-center rounded-md px-3 text-xs font-medium text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400"
+            className="absolute inset-y-0 right-0 mr-2 flex items-center rounded-md px-3 text-xs font-medium text-neutral-600 hover:bg-neutral-100 dark:bg-white/[0.04] dark:text-neutral-400"
             aria-label={showPassword ? t('hidePassword') : t('showPassword')}
           >
             {showPassword ? t('hide') : t('show')}
@@ -157,7 +157,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
           required
           disabled={form.isSubmitting}
           autoComplete="new-password"
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
           aria-invalid={!!form.errors.confirmPassword}
           aria-describedby={form.errors.confirmPassword ? 'confirmPassword-error' : undefined}
         />
@@ -172,7 +172,7 @@ export function ResetPasswordForm({ token }: ResetPasswordFormProps) {
         type="submit"
         variant="primary"
         disabled={form.isSubmitting || !form.isValid}
-        className="w-full focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+        className="w-full focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
       >
         {form.isSubmitting ? t('updating') : tReset('submit')}
       </Button>

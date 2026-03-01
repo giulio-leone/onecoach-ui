@@ -6,12 +6,12 @@ import { AlertTriangle, ChevronRight, Dumbbell } from 'lucide-react';
 import { EmptyState, Heading, Text, Button } from '@giulio-leone/ui';
 import { getExerciseSets } from '@giulio-leone/one-workout';
 import type { Exercise, ExerciseSet } from '@giulio-leone/schemas';
-import type { Exercise as TypesExercise } from '@giulio-leone/types';
 import type { WorkoutSession } from '@giulio-leone/types/workout';
 import { LiveWorkoutHeader } from './live-workout-header';
 import { LiveExerciseCard } from './live-exercise-card';
 import { RestTimer } from './rest-timer';
 import { WorkoutCompleteModal } from './workout-complete-modal';
+import { toTypesExercise, sessionExercises } from './type-adapters';
 
 // ============================================================================
 // TYPES
@@ -76,7 +76,7 @@ function SegmentedProgress({
 
 /** "Coming Up Next" preview card */
 function UpNextCard({ exercise, onClick }: { exercise: Exercise; onClick?: () => void }) {
-  const sets = getExerciseSets(exercise as unknown as TypesExercise);
+  const sets = getExerciseSets(toTypesExercise(exercise));
   const setCount = sets.length;
 
   return (
@@ -121,14 +121,14 @@ export function LiveFocusView({
   const [showCompleteModal, setShowCompleteModal] = useState(false);
 
   const exercises = useMemo(
-    () => (session.exercises as unknown as Exercise[]) || [],
+    () => sessionExercises(session),
     [session.exercises]
   );
 
   // Find the first exercise with at least one incomplete set
   const findActiveExerciseIndex = useCallback(() => {
     for (let i = 0; i < exercises.length; i++) {
-      const sets = getExerciseSets(exercises[i] as unknown as TypesExercise);
+      const sets = getExerciseSets(toTypesExercise(exercises[i]));
       if (sets.some((s: ExerciseSet) => !s.done)) {
         return i;
       }
@@ -144,7 +144,7 @@ export function LiveFocusView({
   // Count completed exercises (all sets done)
   const completedExercisesCount = useMemo(() => {
     return exercises.filter((ex: Exercise) => {
-      const sets = getExerciseSets(ex as unknown as TypesExercise);
+      const sets = getExerciseSets(toTypesExercise(ex));
       return sets.length > 0 && sets.every((s: ExerciseSet) => s.done);
     }).length;
   }, [exercises]);
@@ -152,7 +152,7 @@ export function LiveFocusView({
   // Check if current exercise is fully complete
   const isCurrentExerciseComplete = useMemo(() => {
     if (!currentExercise) return false;
-    const sets = getExerciseSets(currentExercise as unknown as TypesExercise);
+    const sets = getExerciseSets(toTypesExercise(currentExercise));
     return sets.length > 0 && sets.every((s: ExerciseSet) => s.done);
   }, [currentExercise]);
 
@@ -182,8 +182,8 @@ export function LiveFocusView({
       {/* Ambient Background Glows */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute -top-[30%] left-1/2 h-[60%] w-[80%] -translate-x-1/2 rounded-full bg-indigo-600/10 blur-[150px]" />
-        <div className="absolute top-[40%] -left-[20%] h-[50%] w-[50%] rounded-full bg-purple-600/10 blur-[120px]" />
-        <div className="absolute right-[10%] -bottom-[20%] h-[40%] w-[40%] rounded-full bg-pink-600/5 blur-[100px]" />
+        <div className="absolute top-[40%] -left-[20%] h-[50%] w-[50%] rounded-full bg-secondary-600/10 blur-[120px]" />
+        <div className="absolute right-[10%] -bottom-[20%] h-[40%] w-[40%] rounded-full bg-secondary-600/5 blur-[100px]" />
       </div>
 
       {/* Header - Fixed */}

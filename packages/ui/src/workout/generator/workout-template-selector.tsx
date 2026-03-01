@@ -194,7 +194,7 @@ export function WorkoutTemplateSelector({
         onClick={(e: React.MouseEvent<HTMLElement>) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200/50 bg-white/80 px-4 py-5 backdrop-blur-md sm:px-6 dark:border-neutral-700/50 dark:bg-neutral-900/80">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-neutral-200/50 bg-white/80 px-4 py-5 backdrop-blur-md sm:px-6 dark:border-white/[0.08] dark:bg-white/[0.06]">
           <h3
             id="template-selector-title"
             className="text-xl font-bold text-neutral-900 sm:text-2xl dark:text-neutral-100"
@@ -203,7 +203,7 @@ export function WorkoutTemplateSelector({
           </h3>
           <button
             onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-neutral-500 transition-colors hover:bg-neutral-200 hover:text-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-200"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-100 text-neutral-500 transition-colors hover:bg-neutral-200 hover:text-neutral-700 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08] dark:hover:text-neutral-200"
             aria-label="Chiudi"
             type="button"
           >
@@ -212,7 +212,7 @@ export function WorkoutTemplateSelector({
         </div>
 
         {/* Search and Filters */}
-        <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-4 py-4 backdrop-blur-sm sm:px-6 dark:border-neutral-700/50 dark:bg-neutral-900/30">
+        <div className="border-b border-neutral-200/50 bg-neutral-50/50 px-4 py-4 backdrop-blur-sm sm:px-6 dark:border-white/[0.08] dark:bg-white/[0.03]">
           <div className="mb-3 flex items-center gap-2">
             <div className="relative flex-1">
               <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-400" />
@@ -224,7 +224,7 @@ export function WorkoutTemplateSelector({
                   setSearchQuery(e.target.value)
                 }
                 placeholder={placeholder}
-                className="h-11 w-full rounded-xl border border-neutral-200 bg-white py-2.5 pr-4 pl-10 text-sm text-neutral-900 shadow-sm transition-all placeholder:text-neutral-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:focus:border-blue-400 dark:focus:ring-blue-500/30"
+                className="h-11 w-full rounded-xl border border-neutral-200/60 bg-white py-2.5 pr-4 pl-10 text-sm text-neutral-900 shadow-sm transition-all placeholder:text-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-100 dark:focus:border-primary-400 dark:focus:ring-primary-500/30"
                 autoFocus
               />
             </div>
@@ -239,27 +239,27 @@ export function WorkoutTemplateSelector({
                 className={cn(
                   'h-9 flex-shrink-0 rounded-full px-4 text-xs font-semibold transition-all',
                   selectedType === 'all'
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
-                    : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                    ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
+                    : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                 )}
                 type="button"
               >
                 Tutti
               </button>
-              {(['exercise', 'day', 'week'] as const).map((t: any) => (
+              {(['exercise', 'day', 'week'] as const).map((t) => (
                 <button
                   key={t}
                   onClick={() => setSelectedType(t)}
                   className={cn(
                     'flex h-9 flex-shrink-0 items-center gap-1.5 rounded-full px-4 text-xs font-semibold transition-all',
                     selectedType === t
-                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
-                      : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                      ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
+                      : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                   )}
                   type="button"
                 >
                   {getTypeIcon(t)}
-                  {(TYPE_LABELS as any)[t]}
+                  {TYPE_LABELS[t]}
                 </button>
               ))}
             </div>
@@ -272,22 +272,22 @@ export function WorkoutTemplateSelector({
               className={cn(
                 'h-9 flex-shrink-0 rounded-full px-4 text-xs font-semibold transition-all',
                 selectedCategory === 'all'
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
-                  : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                  ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
+                  : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
               )}
               type="button"
             >
               Tutte le categorie
             </button>
-            {categories.slice(0, 8).map((cat: any) => (
+            {categories.slice(0, 8).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={cn(
                   'h-9 flex-shrink-0 rounded-full px-4 text-xs font-semibold transition-all',
                   selectedCategory === cat
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600'
-                    : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                    ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/20 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600'
+                    : 'bg-white text-neutral-600 hover:bg-neutral-100 dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                 )}
                 type="button"
               >
@@ -298,10 +298,10 @@ export function WorkoutTemplateSelector({
         </div>
 
         {/* Content */}
-        <div className="max-h-[60vh] overflow-y-auto bg-white/50 px-4 py-4 backdrop-blur-sm sm:px-6 dark:bg-neutral-900/50">
+        <div className="max-h-[60vh] overflow-y-auto bg-white/50 px-4 py-4 backdrop-blur-sm sm:px-6 dark:bg-white/[0.04]">
           {isLoading ? (
             <div className="flex flex-col items-center justify-center py-16">
-              <Loader2 className="h-8 w-8 animate-spin text-blue-600 dark:text-blue-500" />
+              <Loader2 className="h-8 w-8 animate-spin text-primary-600 dark:text-primary-500" />
               <span className="mt-4 text-sm font-medium text-neutral-500 dark:text-neutral-400">
                 {t('common.loadingTemplates')}
               </span>
@@ -312,7 +312,7 @@ export function WorkoutTemplateSelector({
             </div>
           ) : templates.length === 0 ? (
             <div className="py-16 text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-neutral-100 dark:bg-neutral-800">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-neutral-100 dark:bg-white/[0.04]">
                 <Bookmark className="h-8 w-8 text-neutral-400 dark:text-neutral-500" />
               </div>
               <p className="mt-3 text-sm font-medium text-neutral-500 dark:text-neutral-400">
@@ -353,8 +353,8 @@ export function WorkoutTemplateSelector({
                     className={cn(
                       'group cursor-pointer rounded-xl border p-4 transition-all duration-200',
                       isSelected
-                        ? 'border-blue-500 bg-blue-50/50 shadow-md dark:border-blue-500 dark:bg-blue-900/20'
-                        : 'border-neutral-200 bg-white hover:border-blue-400 hover:bg-blue-50/30 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-blue-500 dark:hover:bg-blue-900/10'
+                        ? 'border-primary-500 bg-primary-50/50 shadow-md dark:border-primary-500 dark:bg-primary-900/20'
+                        : 'border-neutral-200/60 bg-white hover:border-primary-400 hover:bg-primary-50/30 dark:border-white/[0.08] dark:bg-white/[0.04] dark:hover:border-primary-500 dark:hover:bg-primary-900/10'
                     )}
                     role="button"
                     tabIndex={0}
@@ -371,8 +371,8 @@ export function WorkoutTemplateSelector({
                         className={cn(
                           'flex-shrink-0 rounded-xl p-3 transition-all duration-200',
                           isSelected
-                            ? 'bg-blue-600 text-white dark:bg-blue-500'
-                            : 'bg-blue-100 text-blue-700 group-hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:group-hover:bg-blue-900/40'
+                            ? 'bg-primary-600 text-white dark:bg-primary-500'
+                            : 'bg-primary-100 text-primary-700 group-hover:bg-primary-200 dark:bg-primary-900/30 dark:text-primary-400 dark:group-hover:bg-primary-900/40'
                         )}
                       >
                         {TypeIcon && <TypeIcon className="h-5 w-5" />}
@@ -382,7 +382,7 @@ export function WorkoutTemplateSelector({
                           <h4 className="text-base font-bold text-neutral-900 dark:text-neutral-100">
                             {template.name}
                           </h4>
-                          <span className="flex-shrink-0 rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-semibold text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+                          <span className="flex-shrink-0 rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-semibold text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
                             {TYPE_LABELS[template.type as keyof typeof TYPE_LABELS]}
                           </span>
                         </div>
@@ -393,18 +393,18 @@ export function WorkoutTemplateSelector({
                         )}
                         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
                           {template.category && (
-                            <span className="rounded-full bg-blue-100 px-2.5 py-1 font-medium text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+                            <span className="rounded-full bg-primary-100 px-2.5 py-1 font-medium text-primary-700 dark:bg-primary-900/30 dark:text-primary-400">
                               {template.category}
                             </span>
                           )}
                           {template.usageCount > 0 && (
-                            <span className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-2.5 py-1 font-medium dark:bg-neutral-800">
+                            <span className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-2.5 py-1 font-medium dark:bg-white/[0.04]">
                               <Clock className="h-3 w-3" />
                               {template.usageCount} usi
                             </span>
                           )}
                           {template.lastUsedAt && (
-                            <span className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-2.5 py-1 font-medium dark:bg-neutral-800">
+                            <span className="flex items-center gap-1.5 rounded-full bg-neutral-100 px-2.5 py-1 font-medium dark:bg-white/[0.04]">
                               <Clock className="h-3 w-3" />
                               {new Date(template.lastUsedAt).toLocaleDateString('it-IT', {
                                 day: 'numeric',
@@ -415,10 +415,10 @@ export function WorkoutTemplateSelector({
                         </div>
                         {template.tags.length > 0 && (
                           <div className="mt-2.5 flex flex-wrap gap-1.5">
-                            {template.tags.slice(0, 3).map((tag: any) => (
+                            {template.tags.slice(0, 3).map((tag) => (
                               <span
                                 key={tag}
-                                className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+                                className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400"
                               >
                                 #{tag}
                               </span>
@@ -435,7 +435,7 @@ export function WorkoutTemplateSelector({
         </div>
 
         {/* Footer hint */}
-        <div className="border-t border-neutral-200/50 bg-neutral-50/50 px-4 py-3 text-center text-xs font-medium text-neutral-500 backdrop-blur-sm sm:px-6 dark:border-neutral-700/50 dark:bg-neutral-900/30 dark:text-neutral-400">
+        <div className="border-t border-neutral-200/50 bg-neutral-50/50 px-4 py-3 text-center text-xs font-medium text-neutral-500 backdrop-blur-sm sm:px-6 dark:border-white/[0.08] dark:bg-white/[0.03] dark:text-neutral-400">
           <span className="hidden sm:inline">Usa ↑↓ per navigare, </span>
           <span>Invio per selezionare, Esc per chiudere</span>
         </div>

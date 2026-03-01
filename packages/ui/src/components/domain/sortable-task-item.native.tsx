@@ -100,11 +100,11 @@ export function SortableTaskItem({
           {isAddingSubTask && (
             <div className={cn('mt-1 ml-10 flex flex-row items-center', level > 0 && 'ml-16')}>
               <div className="mr-3 flex h-4 w-4 items-center justify-center">
-                <div className="h-1.5 w-1.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
+                <div className="h-1.5 w-1.5 rounded-full bg-neutral-300 dark:bg-white/[0.08]" />
               </div>
               <input
                 type="text"
-                className="flex-1 rounded border border-neutral-200 bg-white px-2 py-1 text-sm dark:border-neutral-700 dark:bg-neutral-900 dark:text-white"
+                className="flex-1 rounded border border-neutral-200/60 bg-white px-2 py-1 text-sm dark:border-white/[0.08] dark:bg-zinc-950 dark:text-white"
                 placeholder="Sub-task title..."
                 value={newSubTaskTitle}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>

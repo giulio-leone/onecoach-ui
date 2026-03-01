@@ -8,7 +8,7 @@
 // Fixed component with correct imports and logic
 'use client';
 import React, { useState } from 'react';
-import { Search, Filter, Trash2, Calendar, Utensils, Sun, Moon, Coffee } from 'lucide-react';
+import { Search, Filter, Trash2, Calendar, Utensils, Sun, Moon, Coffee, type LucideIcon } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { Button } from '@giulio-leone/ui';
@@ -25,7 +25,7 @@ type NutritionTemplateSelectorProps = {
   onClose: () => void;
 };
 
-const TYPE_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+const TYPE_ICONS: Record<string, LucideIcon> = {
   meal: Utensils,
   day: Sun,
   week: Calendar,
@@ -129,7 +129,7 @@ export function NutritionTemplateSelector({
               variant="outline"
               size="icon"
               onClick={() => setShowFilters(!showFilters)}
-              className={showFilters ? 'bg-neutral-100 dark:bg-neutral-800' : ''}
+              className={showFilters ? 'bg-neutral-100 dark:bg-white/[0.04]' : ''}
               title={t('toggleFilters')}
             >
               <Filter className="h-4 w-4" />
@@ -156,7 +156,7 @@ export function NutritionTemplateSelector({
                   {t('form.category')}
                 </h5>
                 <div className="flex flex-wrap gap-2">
-                  {['colazione', 'pranzo', 'cena', 'snack'].map((cat: any) => (
+                  {['colazione', 'pranzo', 'cena', 'snack'].map((cat) => (
                     <button
                       key={cat}
                       onClick={() => setSelectedCategory(selectedCategory === cat ? null : cat)}
@@ -164,7 +164,7 @@ export function NutritionTemplateSelector({
                         'rounded-full border px-3 py-1 text-xs font-medium transition-colors',
                         selectedCategory === cat
                           ? 'border-green-200 bg-green-100 text-green-700 dark:border-green-800 dark:bg-green-900/30 dark:text-green-400'
-                          : 'border-neutral-200 bg-white text-neutral-600 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                          : 'border-neutral-200/60 bg-white text-neutral-600 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-400 dark:hover:bg-white/[0.08]'
                       )}
                     >
                       {cat}
@@ -184,7 +184,7 @@ export function NutritionTemplateSelector({
             <EmptyState
               title={t('empty.title')}
               description={t('empty.description')}
-              icon={TypeIcon as any}
+              icon={TypeIcon}
               action={<Button onClick={() => {}}>{t('empty.action')}</Button>}
             />
           ) : (
@@ -206,9 +206,9 @@ export function NutritionTemplateSelector({
                       darkModeClasses.card.base,
                       isSelected
                         ? selectionMode
-                          ? 'border-blue-500 bg-blue-50/50 shadow-md dark:border-blue-500 dark:bg-blue-900/20'
+                          ? 'border-primary-500 bg-primary-50/50 shadow-md dark:border-primary-500 dark:bg-primary-900/20'
                           : 'border-green-500 bg-green-50/50 shadow-md dark:border-green-500 dark:bg-green-900/20'
-                        : 'border-neutral-200 hover:border-green-400 hover:bg-green-50/30 dark:border-neutral-700 dark:hover:border-green-500 dark:hover:bg-green-900/10',
+                        : 'border-neutral-200/60 hover:border-green-400 hover:bg-green-50/30 dark:border-white/[0.08] dark:hover:border-green-500 dark:hover:bg-green-900/10',
                       darkModeClasses.interactive.button
                     )}
                     role="button"
@@ -255,10 +255,10 @@ export function NutritionTemplateSelector({
                           </p>
                         )}
                         <div className="mt-3 flex flex-wrap gap-2 text-xs text-neutral-500">
-                          {template.tags.map((tag: any) => (
+                          {template.tags.map((tag: string) => (
                             <span
                               key={tag}
-                              className="rounded bg-neutral-100 px-2 py-0.5 dark:bg-neutral-800"
+                              className="rounded bg-neutral-100 px-2 py-0.5 dark:bg-white/[0.04]"
                             >
                               #{tag}
                             </span>

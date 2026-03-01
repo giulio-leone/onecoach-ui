@@ -58,8 +58,8 @@ export function PublicCoachProfile({ profile }: PublicCoachProfileProps) {
               </div>
             )}
             {isVerified && (
-              <div className="absolute right-0 bottom-0 rounded-full bg-white p-1 dark:bg-neutral-900">
-                <CheckCircle2 className="h-6 w-6 text-blue-500" />
+              <div className="absolute right-0 bottom-0 rounded-full bg-white p-1 dark:bg-zinc-950">
+                <CheckCircle2 className="h-6 w-6 text-primary-500" />
               </div>
             )}
           </div>
@@ -71,7 +71,7 @@ export function PublicCoachProfile({ profile }: PublicCoachProfileProps) {
                 {profile.user.name || 'Coach'}
               </Heading>
               {isVerified && (
-                <span className="rounded-full bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800">
+                <span className="rounded-full bg-primary-100 px-2 py-1 text-xs font-medium text-primary-800">
                   Verificato
                 </span>
               )}
@@ -108,7 +108,7 @@ export function PublicCoachProfile({ profile }: PublicCoachProfileProps) {
                     href={profile.linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-800/50 dark:bg-neutral-900 dark:text-neutral-300"
+                    className="flex items-center gap-1 rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-white/[0.1] dark:bg-white/[0.05] dark:bg-zinc-950 dark:text-neutral-300"
                   >
                     <Linkedin className="h-4 w-4" />
                     LinkedIn
@@ -119,7 +119,7 @@ export function PublicCoachProfile({ profile }: PublicCoachProfileProps) {
                     href={profile.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-800/50 dark:bg-neutral-900 dark:text-neutral-300"
+                    className="flex items-center gap-1 rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-white/[0.1] dark:bg-white/[0.05] dark:bg-zinc-950 dark:text-neutral-300"
                   >
                     <Instagram className="h-4 w-4" />
                     Instagram
@@ -130,7 +130,7 @@ export function PublicCoachProfile({ profile }: PublicCoachProfileProps) {
                     href={profile.websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-800/50 dark:bg-neutral-900 dark:text-neutral-300"
+                    className="flex items-center gap-1 rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-50 dark:border-white/[0.1] dark:bg-white/[0.05] dark:bg-zinc-950 dark:text-neutral-300"
                   >
                     <Globe className="h-4 w-4" />
                     Website

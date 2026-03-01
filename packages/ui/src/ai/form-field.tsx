@@ -32,12 +32,12 @@ const colorThemes = {
     icon: 'text-green-600',
   },
   workout: {
-    focus: 'focus:border-blue-500 focus:ring-blue-200',
-    icon: 'text-blue-600',
+    focus: 'focus:border-primary-500 focus:ring-primary-200',
+    icon: 'text-primary-600',
   },
   chat: {
-    focus: 'focus:border-purple-500 focus:ring-purple-200',
-    icon: 'text-purple-600',
+    focus: 'focus:border-secondary-500 focus:ring-secondary-200',
+    icon: 'text-secondary-600',
   },
 };
 

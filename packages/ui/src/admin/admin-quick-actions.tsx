@@ -21,7 +21,7 @@ export function AdminQuickActions() {
       href: '/admin/users',
       icon: Users,
       description: 'Anagrafica e ruoli',
-      color: 'from-blue-500 to-blue-600',
+      color: 'from-primary-500 to-primary-600',
     },
     {
       id: 'exercises',
@@ -53,7 +53,7 @@ export function AdminQuickActions() {
       href: '/admin/subscriptions',
       icon: CreditCard,
       description: 'Piani e pagamenti',
-      color: 'from-purple-500 to-purple-600',
+      color: 'from-secondary-500 to-secondary-600',
     },
     {
       id: 'commerce',

@@ -1,5 +1,10 @@
 'use client';
 
+/** Webkit-prefixed AudioContext for older Safari */
+interface WebkitWindow extends Window {
+  webkitAudioContext?: typeof AudioContext;
+}
+
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, useRef } from 'react';
 import {
@@ -56,8 +61,7 @@ export function RestTimer({
     try {
       const AudioContext =
         window.AudioContext ||
-        (window as unknown as { webkitAudioContext?: typeof window.AudioContext })
-          .webkitAudioContext;
+        (window as WebkitWindow).webkitAudioContext;
       if (!AudioContext) return;
       const ctx = new AudioContext();
       const osc = ctx.createOscillator();
@@ -299,7 +303,7 @@ export function RestTimer({
         {/* Background Ambient Glow */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-600/10 blur-[100px]" />
-          <div className="absolute right-1/4 bottom-1/4 h-96 w-96 translate-x-1/2 translate-y-1/2 rounded-full bg-blue-600/10 blur-[100px]" />
+          <div className="absolute right-1/4 bottom-1/4 h-96 w-96 translate-x-1/2 translate-y-1/2 rounded-full bg-primary-600/10 blur-[100px]" />
         </div>
 
         {/* Close Absolute Button */}

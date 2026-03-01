@@ -75,7 +75,7 @@ export function MeasurementsImportModal() {
 
         <div className="space-y-4 py-4">
           <div
-            className="cursor-pointer rounded-xl border-2 border-dashed border-neutral-200 p-8 text-center transition-colors hover:bg-neutral-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
+            className="cursor-pointer rounded-xl border-2 border-dashed border-neutral-200/60 p-8 text-center transition-colors hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:bg-white/[0.06]"
             onDragOver={(e) => e.preventDefault()}
             onDrop={handleDrop}
             onClick={() => document.getElementById('file-upload')?.click()}
@@ -100,7 +100,7 @@ export function MeasurementsImportModal() {
               {selectedFiles.map((file, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-between rounded-lg bg-neutral-100 p-2 dark:bg-neutral-900"
+                  className="flex items-center justify-between rounded-lg bg-neutral-100 p-2 dark:bg-zinc-950"
                 >
                   <div className="flex items-center gap-2 overflow-hidden">
                     <FileText size={16} className="shrink-0 text-indigo-500" />

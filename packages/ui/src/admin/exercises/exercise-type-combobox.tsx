@@ -42,13 +42,13 @@ export function ExerciseTypeCombobox({
     <div className="relative">
       <button
         type="button"
-        className="w-full rounded border border-neutral-300 bg-white px-3 py-2 text-left text-sm dark:border-neutral-600 dark:bg-neutral-900"
+        className="w-full rounded border border-neutral-300 bg-white px-3 py-2 text-left text-sm dark:border-white/[0.1] dark:bg-zinc-950"
         onClick={() => setOpen((o) => !o)}
       >
         {selectedName || 'Tipo esercizio'}
       </button>
       {open && (
-        <div className="absolute z-50 mt-1 max-h-64 w-full overflow-auto rounded-md border border-neutral-200 bg-white p-2 shadow-lg dark:border-neutral-700 dark:bg-neutral-900">
+        <div className="absolute z-50 mt-1 max-h-64 w-full overflow-auto rounded-md border border-neutral-200/60 bg-white p-2 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950">
           <Input
             placeholder="Cerca..."
             value={query}
@@ -59,7 +59,7 @@ export function ExerciseTypeCombobox({
             <button
               key={opt.id}
               type="button"
-              className={`block w-full rounded px-2 py-1.5 text-left text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 ${value === opt.id ? 'bg-neutral-100 font-medium dark:bg-neutral-800' : ''}`}
+              className={`block w-full rounded px-2 py-1.5 text-left text-sm hover:bg-neutral-100 dark:hover:bg-white/[0.06] ${value === opt.id ? 'bg-neutral-100 font-medium dark:bg-white/[0.04]' : ''}`}
               onClick={() => {
                 onChange(opt.id);
                 setOpen(false);

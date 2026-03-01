@@ -249,13 +249,13 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="flex items-center gap-2">
-            <Users className="h-5 w-5 text-blue-500" />
+            <Users className="h-5 w-5 text-primary-500" />
             <span className="text-2xl font-bold text-neutral-900 dark:text-white">
               {userStats.totalUsers}
             </span>
@@ -265,9 +265,9 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="flex items-center gap-2">
@@ -281,9 +281,9 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="flex items-center gap-2">
@@ -297,9 +297,9 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="flex items-center gap-2">
@@ -316,9 +316,9 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
       <div
         className={cn(
           'rounded-2xl p-6',
-          'bg-white/80 dark:bg-neutral-800/80',
+          'bg-white/80 dark:bg-white/[0.06]',
           'backdrop-blur-xl',
-          'border border-neutral-200/50 dark:border-neutral-700/50'
+          'border border-neutral-200/50 dark:border-white/[0.08]'
         )}
       >
         <div className="flex items-center justify-between">
@@ -328,7 +328,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
                 'flex h-14 w-14 items-center justify-center rounded-2xl',
                 config.globalEnabled
                   ? 'from-primary-500 shadow-primary-500/25 bg-gradient-to-br to-violet-600 shadow-lg'
-                  : 'bg-neutral-100 dark:bg-neutral-700'
+                  : 'bg-neutral-100 dark:bg-white/[0.08]'
               )}
             >
               <Wand2
@@ -360,9 +360,9 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
       <div
         className={cn(
           'rounded-2xl p-6',
-          'bg-white/80 dark:bg-neutral-800/80',
+          'bg-white/80 dark:bg-white/[0.06]',
           'backdrop-blur-xl',
-          'border border-neutral-200/50 dark:border-neutral-700/50'
+          'border border-neutral-200/50 dark:border-white/[0.08]'
         )}
       >
         <h3 className="mb-4 font-semibold text-neutral-900 dark:text-white">
@@ -397,7 +397,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
                 'border',
                 config.defaultSuggestionMode === mode
                   ? 'border-primary-500 bg-primary-50 dark:border-primary-400 dark:bg-primary-500/10'
-                  : 'border-neutral-200 hover:border-neutral-300 dark:border-neutral-700 dark:hover:border-neutral-600'
+                  : 'border-neutral-200/60 hover:border-neutral-300 dark:border-white/[0.08] dark:hover:border-white/[0.15]'
               )}
             >
               <Icon
@@ -419,9 +419,9 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-2xl p-6',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="mb-4 flex items-center justify-between">
@@ -443,7 +443,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
                     'transition-colors',
                     isEnabled
                       ? 'bg-primary-50 dark:bg-primary-500/10'
-                      : 'bg-neutral-50 dark:bg-neutral-700/50'
+                      : 'bg-neutral-50 dark:bg-white/[0.06]'
                   )}
                 >
                   <div>
@@ -467,9 +467,9 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
         <div
           className={cn(
             'rounded-2xl p-6',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="mb-4 flex items-center justify-between">
@@ -490,7 +490,7 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
                     'text-sm font-medium transition-all',
                     isEnabled
                       ? 'bg-primary-500 text-white shadow-sm'
-                      : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-700 dark:text-neutral-400'
+                      : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.08] dark:text-neutral-400'
                   )}
                 >
                   {isEnabled ? (
@@ -510,9 +510,9 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
       <div
         className={cn(
           'rounded-2xl p-6',
-          'bg-white/80 dark:bg-neutral-800/80',
+          'bg-white/80 dark:bg-white/[0.06]',
           'backdrop-blur-xl',
-          'border border-neutral-200/50 dark:border-neutral-700/50'
+          'border border-neutral-200/50 dark:border-white/[0.08]'
         )}
       >
         <h3 className="mb-4 font-semibold text-neutral-900 dark:text-white">{t('params.title')}</h3>
@@ -535,8 +535,8 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               }
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
-                'border-neutral-200 dark:border-neutral-700',
-                'bg-white dark:bg-neutral-800',
+                'border-neutral-200/60 dark:border-white/[0.08]',
+                'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}
@@ -560,8 +560,8 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               }
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
-                'border-neutral-200 dark:border-neutral-700',
-                'bg-white dark:bg-neutral-800',
+                'border-neutral-200/60 dark:border-white/[0.08]',
+                'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}
@@ -582,8 +582,8 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               }
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
-                'border-neutral-200 dark:border-neutral-700',
-                'bg-white dark:bg-neutral-800',
+                'border-neutral-200/60 dark:border-white/[0.08]',
+                'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}
@@ -605,8 +605,8 @@ export function CopilotTab({ userStats }: CopilotTabProps) {
               }
               className={cn(
                 'w-full rounded-xl border px-4 py-2.5',
-                'border-neutral-200 dark:border-neutral-700',
-                'bg-white dark:bg-neutral-800',
+                'border-neutral-200/60 dark:border-white/[0.08]',
+                'bg-white dark:bg-white/[0.04]',
                 'text-neutral-900 dark:text-white',
                 'focus:border-primary-500 focus:ring-primary-500/20 focus:ring-2'
               )}

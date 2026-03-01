@@ -24,7 +24,7 @@ export function ThemeToggle() {
     <div className="relative">
       <button
         onClick={() => setShowMenu(!showMenu)}
-        className="rounded-lg p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
+        className="rounded-lg p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.06]"
         aria-label="Toggle theme"
         suppressHydrationWarning
       >
@@ -44,7 +44,7 @@ export function ThemeToggle() {
           <div className="fixed inset-0 z-10" onClick={() => setShowMenu(false)} />
 
           {/* Menu */}
-          <div className="animate-slide-down absolute right-0 z-20 mt-2 w-48 rounded-lg border border-neutral-200/50 bg-white/70 py-1 shadow-lg backdrop-blur-2xl dark:border-neutral-800/50 dark:bg-[#020408]/70">
+          <div className="animate-slide-down absolute right-0 z-20 mt-2 w-48 rounded-lg border border-neutral-200/50 bg-white/70 py-1 shadow-lg backdrop-blur-2xl dark:border-white/[0.06] dark:bg-[#020408]/70">
             {themes.map(({ value, label, icon: Icon }) => (
               <button
                 key={value}
@@ -55,7 +55,7 @@ export function ThemeToggle() {
                 className={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
                   theme === value
                     ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
-                    : 'text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                    : 'text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-white/[0.06]'
                 }`}
               >
                 <Icon className="h-4 w-4" />

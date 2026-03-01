@@ -27,7 +27,7 @@ export function HabitCard({
   return (
     <div
       className={cn(
-        'group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900',
+        'group relative overflow-hidden rounded-2xl border border-neutral-200/60 bg-white p-4 transition-all hover:shadow-md dark:border-white/[0.08] dark:bg-zinc-950',
         completedToday &&
           'border-green-500/50 bg-green-50/50 dark:border-green-500/30 dark:bg-green-900/10',
         className
@@ -38,27 +38,27 @@ export function HabitCard({
           <div className="flex items-center gap-2">
             <h3
               className={cn(
-                'font-bold text-slate-900 dark:text-white',
+                'font-bold text-neutral-900 dark:text-white',
                 completedToday && 'text-green-700 dark:text-green-400'
               )}
             >
               {title}
             </h3>
             {frequency === 'WEEKLY' && (
-              <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+              <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-bold text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-400">
                 WEEKLY
               </span>
             )}
           </div>
           {description && (
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{description}</p>
+            <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">{description}</p>
           )}
 
           <div className="mt-3 flex items-center gap-4">
             <div
               className={cn(
                 'flex items-center gap-1.5 text-sm font-medium',
-                streak > 0 ? 'text-orange-500' : 'text-slate-400'
+                streak > 0 ? 'text-orange-500' : 'text-neutral-400'
               )}
             >
               <Flame className={cn('h-4 w-4', streak > 0 && 'fill-orange-500')} />
@@ -73,7 +73,7 @@ export function HabitCard({
             'flex h-12 w-12 items-center justify-center rounded-xl transition-all active:scale-95',
             completedToday
               ? 'bg-green-500 text-white shadow-lg shadow-green-500/30'
-              : 'bg-slate-100 text-slate-300 hover:bg-slate-200 hover:text-slate-400 dark:bg-slate-800 dark:text-slate-600 dark:hover:bg-slate-700 dark:hover:text-slate-500'
+              : 'bg-neutral-100 text-neutral-300 hover:bg-neutral-200 hover:text-neutral-400 dark:bg-white/[0.04] dark:text-neutral-600 dark:hover:bg-white/[0.08] dark:hover:text-neutral-500'
           )}
         >
           {completedToday ? (

@@ -75,7 +75,7 @@ export function DatePicker({
         activeOpacity={0.7}
         disabled={disabled}
       >
-        <Calendar size={16} color="#3b82f6" />
+        <Calendar size={16} color="#6366f1" />
         <Text style={[styles.triggerText, !value && styles.placeholderText]}>{displayValue}</Text>
       </TouchableOpacity>
 
@@ -276,16 +276,16 @@ const styles = StyleSheet.create({
     color: '#374151',
   },
   selectedDay: {
-    backgroundColor: '#2563eb',
+    backgroundColor: '#4f46e5',
   },
   selectedDayText: {
     color: '#ffffff',
   },
   todayDay: {
-    backgroundColor: '#dbeafe',
+    backgroundColor: '#e0e7ff',
   },
   todayDayText: {
-    color: '#1d4ed8',
+    color: '#4338ca',
   },
   disabledDay: {
     opacity: 0.3,
@@ -303,6 +303,6 @@ const styles = StyleSheet.create({
   todayButtonText: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#2563eb',
+    color: '#4f46e5',
   },
 });

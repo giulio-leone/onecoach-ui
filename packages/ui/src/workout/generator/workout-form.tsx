@@ -30,11 +30,11 @@ export function WorkoutForm({
   return (
     <div className="space-y-8">
       {/* Parametri Personali */}
-      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
-        <div className="border-b border-neutral-200 bg-blue-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-blue-900/10">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
+        <div className="border-b border-neutral-200/60 bg-primary-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-primary-900/10">
           <div className="flex flex-row items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-              <User size={20} className="text-blue-600 dark:text-blue-400" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30">
+              <User size={20} className="text-primary-600 dark:text-primary-400" />
             </div>
             <div>
               <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
@@ -56,7 +56,7 @@ export function WorkoutForm({
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateField('userProfile', { age: parseInt(e.target.value) || 0 })}
                 type="number"
                 placeholder="Anni"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
             <div className="flex-1">
@@ -68,7 +68,7 @@ export function WorkoutForm({
                 }
                 type="number"
                 placeholder="kg"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
             <div className="flex-1">
@@ -80,7 +80,7 @@ export function WorkoutForm({
                 }
                 type="number"
                 placeholder="cm"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
           </div>
@@ -98,7 +98,7 @@ export function WorkoutForm({
                   <User
                     size={20}
                     className={
-                      formData.userProfile.gender === Sex.MALE ? 'text-white' : 'text-slate-500'
+                      formData.userProfile.gender === Sex.MALE ? 'text-white' : 'text-neutral-500'
                     }
                   />
                 }
@@ -112,7 +112,7 @@ export function WorkoutForm({
                   <User
                     size={20}
                     className={
-                      formData.userProfile.gender === Sex.FEMALE ? 'text-white' : 'text-slate-500'
+                      formData.userProfile.gender === Sex.FEMALE ? 'text-white' : 'text-neutral-500'
                     }
                   />
                 }
@@ -124,11 +124,11 @@ export function WorkoutForm({
       </Card>
 
       {/* Livello Esperienza */}
-      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
-        <div className="border-b border-neutral-200 bg-purple-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-purple-900/10">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
+        <div className="border-b border-neutral-200/60 bg-secondary-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-secondary-900/10">
           <div className="flex flex-row items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/30">
-              <Activity size={20} className="text-purple-600 dark:text-purple-400" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-100 dark:bg-secondary-900/30">
+              <Activity size={20} className="text-secondary-600 dark:text-secondary-400" />
             </div>
             <div>
               <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-100">
@@ -155,7 +155,7 @@ export function WorkoutForm({
                 className={
                   formData.userProfile.experienceLevel === DifficultyLevel.BEGINNER
                     ? 'text-white'
-                    : 'text-slate-500'
+                    : 'text-neutral-500'
                 }
               />
             }
@@ -175,7 +175,7 @@ export function WorkoutForm({
                 className={
                   formData.userProfile.experienceLevel === DifficultyLevel.INTERMEDIATE
                     ? 'text-white'
-                    : 'text-slate-500'
+                    : 'text-neutral-500'
                 }
               />
             }
@@ -195,7 +195,7 @@ export function WorkoutForm({
                 className={
                   formData.userProfile.experienceLevel === DifficultyLevel.ADVANCED
                     ? 'text-white'
-                    : 'text-slate-500'
+                    : 'text-neutral-500'
                 }
               />
             }
@@ -206,8 +206,8 @@ export function WorkoutForm({
       </Card>
 
       {/* Obiettivi */}
-      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
-        <div className="border-b border-neutral-200 bg-red-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-red-900/10">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
+        <div className="border-b border-neutral-200/60 bg-red-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-red-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30">
               <Target size={20} className="text-red-600 dark:text-red-400" />
@@ -235,7 +235,7 @@ export function WorkoutForm({
                   className={
                     formData.goals.primaryGoal === WorkoutGoal.HYPERTROPHY
                       ? 'text-white'
-                      : 'text-slate-500'
+                      : 'text-neutral-500'
                   }
                 />
               }
@@ -252,7 +252,7 @@ export function WorkoutForm({
                   className={
                     formData.goals.primaryGoal === WorkoutGoal.STRENGTH
                       ? 'text-white'
-                      : 'text-slate-500'
+                      : 'text-neutral-500'
                   }
                 />
               }
@@ -269,7 +269,7 @@ export function WorkoutForm({
                   className={
                     formData.goals.primaryGoal === WorkoutGoal.GENERAL_FITNESS
                       ? 'text-white'
-                      : 'text-slate-500'
+                      : 'text-neutral-500'
                   }
                 />
               }
@@ -287,7 +287,7 @@ export function WorkoutForm({
                   updateField('goals', { daysPerWeek: parseInt(e.target.value) || 0 })
                 }
                 type="number"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
             <div className="flex-1">
@@ -298,7 +298,7 @@ export function WorkoutForm({
                   updateField('goals', { sessionDurationMinutes: parseInt(e.target.value) || 0 })
                 }
                 type="number"
-                className="bg-neutral-50 dark:bg-neutral-800/50"
+                className="bg-neutral-50 dark:bg-white/[0.05]"
               />
             </div>
           </div>
@@ -308,7 +308,7 @@ export function WorkoutForm({
               Split Preferita
             </p>
             <div className="flex flex-row flex-wrap gap-3">
-              {SPLIT_OPTIONS.map((option: any) => (
+              {SPLIT_OPTIONS.map((option) => (
                 <SelectionCard
                   key={option.value}
                   title={option.label}
@@ -320,7 +320,7 @@ export function WorkoutForm({
                     <Zap
                       size={20}
                       className={
-                        formData.goals.splitType === option.value ? 'text-white' : 'text-slate-500'
+                        formData.goals.splitType === option.value ? 'text-white' : 'text-neutral-500'
                       }
                     />
                   }
@@ -332,8 +332,8 @@ export function WorkoutForm({
       </Card>
 
       {/* Preferenze & Limitazioni */}
-      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
-        <div className="border-b border-neutral-200 bg-orange-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-orange-900/10">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
+        <div className="border-b border-neutral-200/60 bg-orange-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-orange-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
               <AlertCircle size={20} className="text-orange-600 dark:text-orange-400" />
@@ -357,7 +357,7 @@ export function WorkoutForm({
               updateField('constraints', { injuriesLimitations: arrayFromCsv(e.target.value) })
             }
             placeholder="es. spalla dx, schiena..."
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
           <Input
             label="Attrezzatura Disponibile"
@@ -366,7 +366,7 @@ export function WorkoutForm({
               updateField('constraints', { availableEquipment: arrayFromCsv(e.target.value) })
             }
             placeholder="es. manubri, bilanciere, panca..."
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
           <Input
             label="Esercizi Preferiti"
@@ -375,21 +375,21 @@ export function WorkoutForm({
               updateField('constraints', { preferredExercises: arrayFromCsv(e.target.value) })
             }
             placeholder="es. panca piana, squat..."
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
           <Input
             label="Note Aggiuntive"
             value={formData.additionalNotes}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateAdditionalNotes(e.target.value)}
             placeholder="Dettagli extra per il coach..."
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
         </div>
       </Card>
 
       {/* AI Settings */}
-      <Card className="overflow-hidden border-slate-200 bg-white/50 p-0 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/50">
-        <div className="border-b border-neutral-200 bg-gray-50/50 px-5 py-4 dark:border-neutral-700 dark:bg-gray-900/10">
+      <Card className="overflow-hidden border-neutral-200/60 bg-white/50 p-0 backdrop-blur-md dark:border-white/[0.08] dark:bg-white/[0.04]">
+        <div className="border-b border-neutral-200/60 bg-gray-50/50 px-5 py-4 dark:border-white/[0.08] dark:bg-gray-900/10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
               <Settings size={20} className="text-gray-600 dark:text-gray-400" />
@@ -406,7 +406,7 @@ export function WorkoutForm({
         </div>
 
         <div className="flex flex-row flex-wrap gap-3 p-5">
-          {TIER_OPTIONS.map((option: any) => (
+          {TIER_OPTIONS.map((option) => (
             <SelectionCard
               key={option.value}
               title={option.label}
@@ -417,7 +417,7 @@ export function WorkoutForm({
               icon={
                 <Zap
                   size={20}
-                  className={formData.tierAI === option.value ? 'text-white' : 'text-slate-500'}
+                  className={formData.tierAI === option.value ? 'text-white' : 'text-neutral-500'}
                 />
               }
             />
@@ -430,7 +430,7 @@ export function WorkoutForm({
           variant="default"
           onClick={generate}
           disabled={isGenerating}
-          className="h-12 w-full bg-blue-600 text-lg text-white shadow-xl shadow-blue-500/20 hover:bg-blue-700"
+          className="h-12 w-full bg-primary-600 text-lg text-white shadow-xl shadow-primary-500/20 hover:bg-primary-700"
         >
           {isGenerating ? 'Generazione in corso...' : 'Genera Programma'}
         </Button>

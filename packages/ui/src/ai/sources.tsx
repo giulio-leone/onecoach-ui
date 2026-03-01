@@ -24,8 +24,8 @@ export const Sources = ({ className, ref, ...props }: SourcesProps) => (
       // Base
       'not-prose mb-4 overflow-hidden rounded-xl',
       // Glassmorphism
-      'bg-gradient-to-br from-sky-500/5 to-blue-500/5',
-      'dark:from-sky-500/10 dark:to-blue-500/10',
+      'bg-gradient-to-br from-sky-500/5 to-primary-500/5',
+      'dark:from-sky-500/10 dark:to-primary-500/10',
       'backdrop-blur-sm',
       'border border-sky-200/30 dark:border-sky-500/20',
       className

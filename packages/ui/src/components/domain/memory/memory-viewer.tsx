@@ -114,7 +114,7 @@ export function MemoryViewer({ userId, initialDomain = 'workout', className }: M
     return (
       <Card variant="glass" padding="md" className={className}>
         <div className="flex items-center justify-center py-8">
-          <div className="border-t-primary-500 h-6 w-6 animate-spin rounded-full border-2 border-neutral-200 dark:border-neutral-700" />
+          <div className="border-t-primary-500 h-6 w-6 animate-spin rounded-full border-2 border-neutral-200/60 dark:border-white/[0.08]" />
         </div>
       </Card>
     );
@@ -175,7 +175,7 @@ export function MemoryViewer({ userId, initialDomain = 'workout', className }: M
                           {Object.entries(domainData.preferences).map(([key, value]) => (
                             <div
                               key={key}
-                              className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50/50 p-3 dark:border-neutral-700 dark:bg-neutral-800/50"
+                              className="flex items-center justify-between rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-white/[0.05]"
                             >
                               <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                                 {key}

@@ -29,7 +29,7 @@ export function StatCard({
 }: StatCardProps) {
   const gradients = {
     green: ['#22c55e', '#16a34a'],
-    blue: ['#3b82f6', '#2563eb'],
+    blue: ['#6366f1', '#4f46e5'],
     purple: ['#a855f7', '#9333ea'],
     orange: ['#f97316', '#ea580c'],
     red: ['#ef4444', '#dc2626'],

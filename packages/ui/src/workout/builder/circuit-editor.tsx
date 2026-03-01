@@ -39,7 +39,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
   const emitChange = useCallback(
     (updates?: Partial<Circuit>) => {
       onChange({
-        id: circuit?.id ?? `circuit_${Math.random().toString(36).substr(2, 9)}`,
+        id: circuit?.id ?? `circuit_${Math.random().toString(36).substring(2, 11)}`,
         type: 'circuit',
         name,
         exercises,
@@ -55,7 +55,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
   const handleAddExercise = useCallback(() => {
     const updated = [
       ...exercises,
-      { exerciseId: `ex_${Math.random().toString(36).substr(2, 9)}`, name: '', reps: 10 },
+      { exerciseId: `ex_${Math.random().toString(36).substring(2, 11)}`, name: '', reps: 10 },
     ];
     setExercises(updated);
     emitChange({ exercises: updated });
@@ -93,7 +93,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
   };
 
   const estimatedDuration =
-    exercises.reduce((sum: any, ex: any) => {
+    exercises.reduce((sum: number, ex: CircuitExerciseItem) => {
       return sum + (ex.duration ?? (ex.reps ?? 10) * 3);
     }, 0) *
       rounds +
@@ -217,7 +217,7 @@ export function CircuitEditor({ circuit, onChange, onRemove, className }: Circui
                   'rounded px-2 py-1 text-xs transition-colors',
                   exercise.duration !== undefined
                     ? 'bg-cyan-500/20 text-cyan-600'
-                    : 'bg-purple-500/20 text-purple-600'
+                    : 'bg-secondary-500/20 text-secondary-600'
                 )}
               >
                 {exercise.duration !== undefined ? '⏱️ Tempo' : '🔢 Reps'}

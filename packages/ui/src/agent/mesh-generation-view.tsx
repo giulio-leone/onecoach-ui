@@ -128,7 +128,7 @@ export function MeshGenerationView({
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="6"
-                className="text-blue-500/20 dark:text-blue-400/20"
+                className="text-primary-500/20 dark:text-primary-400/20"
               />
               {/* Progress circle */}
               <circle
@@ -141,19 +141,19 @@ export function MeshGenerationView({
                 strokeLinecap="round"
                 strokeDasharray={264}
                 strokeDashoffset={264 - (264 * progress) / 100}
-                className="text-blue-500 transition-all duration-300 ease-out dark:text-blue-400"
+                className="text-primary-500 transition-all duration-300 ease-out dark:text-primary-400"
               />
             </svg>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               {progressIcon || (
-                <Sparkles className="h-10 w-10 animate-pulse text-blue-500 dark:text-blue-400" />
+                <Sparkles className="h-10 w-10 animate-pulse text-primary-500 dark:text-primary-400" />
               )}
             </div>
           </div>
 
           {/* Progress percentage */}
           <div className="text-center">
-            <span className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+            <span className="text-3xl font-bold text-primary-600 dark:text-primary-400">
               {Math.round(progress)}%
             </span>
           </div>
@@ -216,14 +216,14 @@ export function MeshGenerationView({
                 {currentMessage || 'Pronto'}
               </span>
             </div>
-            <span className="font-mono text-xs font-bold text-blue-600 dark:text-blue-400">
+            <span className="font-mono text-xs font-bold text-primary-600 dark:text-primary-400">
               {Math.round(progress)}%
             </span>
           </div>
 
-          <div className="h-1.5 w-full overflow-hidden rounded-full bg-neutral-100/50 dark:bg-neutral-800/50">
+          <div className="h-1.5 w-full overflow-hidden rounded-full bg-neutral-100/50 dark:bg-white/[0.05]">
             <motion.div
-              className="h-full bg-gradient-to-r from-blue-500 to-indigo-500"
+              className="h-full bg-gradient-to-r from-primary-500 to-indigo-500"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.5, ease: 'easeOut' }}

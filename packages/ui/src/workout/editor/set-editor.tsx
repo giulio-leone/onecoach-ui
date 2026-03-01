@@ -8,10 +8,34 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
-import { Clock, Calculator } from 'lucide-react';
+import { Clock, Calculator, Minus, Plus } from 'lucide-react';
 import { kgToLbs, lbsToKg, getWeightValue } from '@giulio-leone/lib-shared';
+import { useTranslations } from 'next-intl';
 import { useBidirectionalWeightCalc } from '../hooks/use-bidirectional-weight-calc';
+import { SetTypeSelector } from './set-type-selector';
+import { TempoInput } from './tempo-input';
 import type { BuilderExerciseSet as ExerciseSet } from './builder-types';
+
+function StepButton({
+  onClick,
+  icon: Icon,
+  disabled,
+}: {
+  onClick: () => void;
+  icon: typeof Plus;
+  disabled?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md border border-neutral-200/60 bg-neutral-100 text-neutral-600 transition-colors hover:bg-neutral-200 active:bg-neutral-300 disabled:cursor-not-allowed disabled:opacity-40 dark:border-white/[0.08] dark:bg-white/[0.06] dark:text-neutral-400 dark:hover:bg-white/[0.1]"
+    >
+      <Icon className="h-3 w-3" />
+    </button>
+  );
+}
 
 interface SetEditorProps {
   setIndex: number;
@@ -38,6 +62,7 @@ export function SetEditor({
   oneRepMax = null,
   weightUnit = 'KG',
 }: SetEditorProps) {
+  const t = useTranslations('workouts.builder.setEditor');
   const [intensityPercentInputFocused, setIntensityInputFocused] = useState(false);
   const [weightInputFocused, setWeightInputFocused] = useState(false);
   const rpeString = (set.rpe ?? '').toString();
@@ -144,9 +169,21 @@ export function SetEditor({
 
   const handleRpeChange = (value: string) => {
     const numValue = value === '' ? undefined : parseInt(value, 10);
+    const rpe = numValue && !isNaN(numValue) && numValue >= 1 && numValue <= 10 ? numValue : null;
     onSetChange({
       ...set,
-      rpe: numValue && !isNaN(numValue) && numValue >= 1 && numValue <= 10 ? numValue : null,
+      rpe,
+      rir: rpe !== null ? 10 - rpe : null,
+    });
+  };
+
+  const handleRirChange = (value: string) => {
+    const numValue = value === '' ? undefined : parseInt(value, 10);
+    const rir = numValue !== undefined && !isNaN(numValue) && numValue >= 0 && numValue <= 5 ? numValue : null;
+    onSetChange({
+      ...set,
+      rir,
+      rpe: rir !== null ? 10 - rir : null,
     });
   };
 
@@ -156,8 +193,8 @@ export function SetEditor({
     <div
       className={`rounded-lg border p-4 shadow-sm transition-all ${
         groupId
-          ? 'border-blue-300 bg-blue-50'
-          : 'border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/50'
+          ? 'border-primary-300 bg-primary-50'
+          : 'border-neutral-200/60 bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.05]'
       } ${isDisabled ? 'opacity-60' : ''} ${className || ''}`}
     >
       <div className="mb-2 flex items-center justify-between">
@@ -165,10 +202,19 @@ export function SetEditor({
           Serie {setIndex + 1}
         </div>
         {groupId && (
-          <span className="rounded bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700">
+          <span className="rounded bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-700">
             Gruppo
           </span>
         )}
+      </div>
+
+      {/* Set Type Selector */}
+      <div className="mb-3">
+        <SetTypeSelector
+          value={set.setType ?? 'straight'}
+          onChange={(type) => onSetChange({ ...set, setType: type })}
+          disabled={isDisabled}
+        />
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -177,7 +223,12 @@ export function SetEditor({
           <label className="mb-1 text-xs font-medium text-neutral-600 dark:text-neutral-400">
             Ripetizioni (Min - Max)
           </label>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
+            <StepButton
+              icon={Minus}
+              disabled={isDisabled || !set.reps || set.reps <= 0}
+              onClick={() => onSetChange({ ...set, reps: Math.max(0, (set.reps ?? 0) - 1) })}
+            />
             <input
               type="number"
               value={set.reps || ''}
@@ -189,15 +240,25 @@ export function SetEditor({
                 onSetChange(newSet);
               }}
               disabled={isDisabled}
-              className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
+              className={`w-full min-w-0 rounded border px-2 py-2 text-center text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
-                  ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
               }`}
               placeholder="Min"
               min="0"
             />
+            <StepButton
+              icon={Plus}
+              disabled={isDisabled}
+              onClick={() => onSetChange({ ...set, reps: (set.reps ?? 0) + 1 })}
+            />
             <span className="text-neutral-400">-</span>
+            <StepButton
+              icon={Minus}
+              disabled={isDisabled || !set.repsMax || set.repsMax <= 0}
+              onClick={() => onSetChange({ ...set, repsMax: Math.max(0, (set.repsMax ?? 0) - 1) })}
+            />
             <input
               type="number"
               value={set.repsMax || ''}
@@ -209,13 +270,18 @@ export function SetEditor({
                 onSetChange(newSet);
               }}
               disabled={isDisabled}
-              className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
+              className={`w-full min-w-0 rounded border px-2 py-2 text-center text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
-                  ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
               }`}
               placeholder="Max"
               min="0"
+            />
+            <StepButton
+              icon={Plus}
+              disabled={isDisabled}
+              onClick={() => onSetChange({ ...set, repsMax: (set.repsMax ?? 0) + 1 })}
             />
           </div>
         </div>
@@ -230,10 +296,19 @@ export function SetEditor({
               </span>
             )}
             {!weightInputFocused && set.intensityPercent && hasOneRM && (
-              <Calculator className="h-3 w-3 text-blue-600" aria-label="Calcolato da intensità" />
+              <Calculator className="h-3 w-3 text-primary-600" aria-label="Calcolato da intensità" />
             )}
           </label>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
+            <StepButton
+              icon={Minus}
+              disabled={isDisabled}
+              onClick={() => {
+                const step = weightUnit === 'LBS' ? 5 : 2.5;
+                const current = getWeightValue(set.weight, set.weightLbs, weightUnit) ?? 0;
+                handleWeightChangeInput(String(Math.max(0, current - step)));
+              }}
+            />
             <input
               type="number"
               step="0.1"
@@ -244,15 +319,24 @@ export function SetEditor({
               onFocus={() => setWeightInputFocused(true)}
               onBlur={() => setWeightInputFocused(false)}
               disabled={isDisabled}
-              className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
+              className={`w-full min-w-0 rounded border px-2 py-2 text-center text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
-                  ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
+                  ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
                   : !weightInputFocused && set.intensityPercent && hasOneRM
-                    ? 'border-blue-300 bg-blue-50 text-blue-900'
-                    : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                    ? 'border-primary-300 bg-primary-50 text-primary-900'
+                    : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
               }`}
               placeholder="Min"
               min="0"
+            />
+            <StepButton
+              icon={Plus}
+              disabled={isDisabled}
+              onClick={() => {
+                const step = weightUnit === 'LBS' ? 5 : 2.5;
+                const current = getWeightValue(set.weight, set.weightLbs, weightUnit) ?? 0;
+                handleWeightChangeInput(String(current + step));
+              }}
             />
             <span className="text-neutral-400">-</span>
             <input
@@ -261,14 +345,13 @@ export function SetEditor({
               value={getWeightValue(set.weightMax, null, weightUnit)?.toString() || ''}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 const val = e.target.value === '' ? undefined : parseFloat(e.target.value);
-                // Simple update for max weight, no complex logic for now
                 onSetChange({ ...set, weightMax: val ?? null });
               }}
               disabled={isDisabled}
-              className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
+              className={`w-full min-w-0 rounded border px-2 py-2 text-center text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
-                  ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
               }`}
               placeholder="Max"
               min="0"
@@ -286,7 +369,7 @@ export function SetEditor({
               </span>
             )}
             {!intensityPercentInputFocused && set.weight && hasOneRM && (
-              <Calculator className="h-3 w-3 text-blue-600" aria-label="Calcolato da peso" />
+              <Calculator className="h-3 w-3 text-primary-600" aria-label="Calcolato da peso" />
             )}
           </label>
           <div className="flex items-center gap-2">
@@ -304,10 +387,10 @@ export function SetEditor({
               disabled={isDisabled}
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
-                  ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
+                  ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
                   : !intensityPercentInputFocused && set.weight && hasOneRM
-                    ? 'border-blue-300 bg-blue-50 text-blue-900'
-                    : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                    ? 'border-primary-300 bg-primary-50 text-primary-900'
+                    : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
               }`}
               placeholder="Min"
             />
@@ -325,8 +408,8 @@ export function SetEditor({
               disabled={isDisabled}
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
-                  ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
               }`}
               placeholder="Max"
             />
@@ -348,8 +431,8 @@ export function SetEditor({
               disabled={isDisabled}
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
-                  ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
               }`}
               placeholder="Min"
             />
@@ -366,8 +449,8 @@ export function SetEditor({
               disabled={isDisabled}
               className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
                 isDisabled
-                  ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                  : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                  ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
+                  : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
               }`}
               placeholder="Max"
             />
@@ -393,18 +476,48 @@ export function SetEditor({
             disabled={isDisabled}
             className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
               isDisabled
-                ? 'cursor-not-allowed border-neutral-200 bg-neutral-100 text-neutral-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-600'
-                : 'border-neutral-300 focus:border-blue-500 focus:ring-blue-200 dark:border-neutral-600'
+                ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
+                : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
             }`}
             placeholder="60"
             min="0"
           />
         </div>
+
+        {/* RIR (Reps In Reserve) */}
+        <div className="flex flex-col">
+          <label className="mb-1 text-xs font-medium text-neutral-600 dark:text-neutral-400">
+            RIR
+          </label>
+          <input
+            type="number"
+            min="0"
+            max="5"
+            value={set.rir?.toString() ?? ''}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleRirChange(e.target.value)}
+            disabled={isDisabled}
+            className={`w-full rounded border px-2 py-2 text-sm focus:ring-2 focus:outline-none ${
+              isDisabled
+                ? 'cursor-not-allowed border-neutral-200/60 bg-neutral-100 text-neutral-400 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-600'
+                : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-200 dark:border-white/[0.1]'
+            }`}
+            placeholder="0-5"
+          />
+        </div>
+      </div>
+
+      {/* Tempo */}
+      <div className="mt-3">
+        <TempoInput
+          value={set.tempo}
+          onChange={(tempo) => onSetChange({ ...set, tempo })}
+          disabled={isDisabled}
+        />
       </div>
 
       {/* 1RM Info */}
       {hasOneRM && oneRepMax && (
-        <div className="mt-3 rounded bg-blue-50 p-2 text-xs text-blue-700">
+        <div className="mt-3 rounded bg-primary-50 p-2 text-xs text-primary-700">
           💡 1RM: {oneRepMax.toFixed(1)} {weightUnit === 'LBS' ? 'lbs' : 'kg'}
           {set.intensityPercent && !isNaN(parseFloat(set.intensityPercent.toString())) && (
             <span>

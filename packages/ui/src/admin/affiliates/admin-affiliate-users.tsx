@@ -83,7 +83,7 @@ export function AdminAffiliateUsers({ affiliates }: AdminAffiliateUsersProps) {
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
             setSortBy(e.target.value as 'referrals' | 'earnings' | 'joined')
           }
-          className="rounded-lg border-none bg-neutral-100 py-1.5 text-sm font-medium text-neutral-600 focus:ring-0 dark:bg-neutral-800 dark:text-neutral-300"
+          className="rounded-lg border-none bg-neutral-100 py-1.5 text-sm font-medium text-neutral-600 focus:ring-0 dark:bg-white/[0.04] dark:text-neutral-300"
         >
           <option value="referrals">{t('admin.admin_affiliate_users.per_referral')}</option>
           <option value="earnings">{t('admin.admin_affiliate_users.per_guadagni')}</option>

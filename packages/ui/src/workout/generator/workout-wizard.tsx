@@ -29,19 +29,19 @@ const GOALS: SelectionOption[] = [
     id: 'strength',
     title: 'Forza',
     description: 'Aumenta la forza massimale',
-    icon: <Dumbbell size={24} className="text-blue-600" />,
+    icon: <Dumbbell size={24} className="text-primary-600" />,
   },
   {
     id: 'hypertrophy',
     title: 'Ipertrofia',
     description: 'Aumenta la massa muscolare',
-    icon: <User size={24} className="text-blue-600" />,
+    icon: <User size={24} className="text-primary-600" />,
   },
   {
     id: 'endurance',
     title: 'Resistenza',
     description: 'Migliora la resistenza cardiovascolare',
-    icon: <Clock size={24} className="text-blue-600" />,
+    icon: <Clock size={24} className="text-primary-600" />,
   },
 ];
 
@@ -91,7 +91,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
       isValid: !!formData.goal,
       component: (
         <div className="flex flex-wrap gap-3">
-          {GOALS.map((goal: any) => (
+          {GOALS.map((goal) => (
             <SelectionCard
               key={goal.id}
               title={goal.title}
@@ -113,7 +113,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
       isValid: !!formData.experience,
       component: (
         <div className="flex flex-wrap gap-3">
-          {EXPERIENCE_LEVELS.map((level: any) => (
+          {EXPERIENCE_LEVELS.map((level) => (
             <SelectionCard
               key={level.id}
               title={level.title}
@@ -140,7 +140,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
               Giorni a settimana: {formData.daysPerWeek}
             </p>
             <div className="flex gap-2">
-              {[2, 3, 4, 5, 6].map((days: any) => (
+              {[2, 3, 4, 5, 6].map((days) => (
                 <Button
                   key={days}
                   variant={formData.daysPerWeek === days ? 'primary' : 'outline'}
@@ -158,7 +158,7 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
             value={formData.durationMinutes.toString()}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateData('durationMinutes', parseInt(e.target.value) || 0)}
             type="number"
-            className="bg-neutral-50 dark:bg-neutral-800/50"
+            className="bg-neutral-50 dark:bg-white/[0.05]"
           />
         </div>
       ),
@@ -175,21 +175,21 @@ export function WorkoutWizard({ onGenerate }: { onGenerate: (data: WizardFormDat
               id: 'gym',
               title: 'Palestra',
               description: 'Accesso completo a macchinari e pesi',
-              icon: <MapPin size={24} className="text-purple-500" />,
+              icon: <MapPin size={24} className="text-secondary-500" />,
             },
             {
               id: 'home_dumbbells',
               title: 'Casa (Manubri)',
               description: 'Allenamento con manubri e panca',
-              icon: <MapPin size={24} className="text-purple-500" />,
+              icon: <MapPin size={24} className="text-secondary-500" />,
             },
             {
               id: 'bodyweight',
               title: 'Corpo Libero',
               description: t('common.ui.noEquipment'),
-              icon: <MapPin size={24} className="text-purple-500" />,
+              icon: <MapPin size={24} className="text-secondary-500" />,
             },
-          ].map((loc: any) => (
+          ].map((loc) => (
             <SelectionCard
               key={loc.id}
               title={loc.title}

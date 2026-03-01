@@ -154,7 +154,7 @@ export function DeployToClientsModal({
 
         <div className="space-y-4">
           {/* Template info */}
-          <div className="rounded-lg bg-neutral-100 p-3 dark:bg-neutral-800">
+          <div className="rounded-lg bg-neutral-100 p-3 dark:bg-white/[0.04]">
             <div className="text-xs text-neutral-500 uppercase">
               {type === 'workout' ? 'Programma' : 'Piano Nutrizionale'}
             </div>
@@ -201,7 +201,7 @@ export function DeployToClientsModal({
               </div>
 
               {/* Clients list */}
-              <div className="max-h-48 space-y-1 overflow-y-auto rounded-lg border border-neutral-200 p-2 dark:border-neutral-700">
+              <div className="max-h-48 space-y-1 overflow-y-auto rounded-lg border border-neutral-200/60 p-2 dark:border-white/[0.08]">
                 {clientsLoading ? (
                   <LoadingState message={t('common.loadingClients')} size="sm" />
                 ) : filteredClients.length === 0 ? (
@@ -216,7 +216,7 @@ export function DeployToClientsModal({
                       className={`flex cursor-pointer items-center gap-3 rounded-md p-2 transition-colors ${
                         selectedUsers.includes(client.id)
                           ? 'bg-primary-50 dark:bg-primary-900/30'
-                          : 'hover:bg-neutral-50 dark:hover:bg-neutral-800'
+                          : 'hover:bg-neutral-50 dark:hover:bg-white/[0.06]'
                       }`}
                     >
                       <Checkbox
@@ -266,7 +266,7 @@ export function DeployToClientsModal({
               </div>
 
               {/* Actions */}
-              <div className="flex justify-end gap-2 border-t border-neutral-200 pt-4 dark:border-neutral-700">
+              <div className="flex justify-end gap-2 border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
                 <Button variant="secondary" onClick={onClose}>
                   Annulla
                 </Button>
@@ -312,7 +312,7 @@ export function DeployToClientsModal({
                 })}
               </div>
 
-              <div className="flex justify-end border-t border-neutral-200 pt-4 dark:border-neutral-700">
+              <div className="flex justify-end border-t border-neutral-200/60 pt-4 dark:border-white/[0.08]">
                 <Button onClick={onClose}>Chiudi</Button>
               </div>
             </>

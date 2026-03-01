@@ -74,18 +74,18 @@ function TripTypeCard({ selected, onSelect, icon, title, description }: TripType
       whileTap={{ scale: 0.98 }}
       className={cn(
         'group relative overflow-hidden rounded-3xl border-2 p-6 text-left transition-all duration-300',
-        'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2',
+        'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
         selected
           ? [
-              'border-blue-500/80 shadow-2xl',
+              'border-primary-500/80 shadow-2xl',
               // Light mode selected
-              'bg-gradient-to-br from-blue-50 via-indigo-50 to-violet-50',
+              'bg-gradient-to-br from-primary-50 via-indigo-50 to-violet-50',
               // Dark mode selected
-              'dark:border-blue-500/50 dark:bg-blue-600/20',
-              'dark:shadow-blue-500/20',
+              'dark:border-primary-500/50 dark:bg-primary-600/20',
+              'dark:shadow-primary-500/20',
             ]
           : [
-              'border-neutral-200 hover:border-neutral-300',
+              'border-neutral-200/60 hover:border-neutral-300',
               // Light mode
               'bg-white hover:bg-neutral-50 hover:shadow-xl',
               // Dark mode
@@ -98,7 +98,7 @@ function TripTypeCard({ selected, onSelect, icon, title, description }: TripType
       <div
         className={cn(
           'pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500',
-          'bg-gradient-to-br from-blue-500/10 via-transparent to-indigo-500/10',
+          'bg-gradient-to-br from-primary-500/10 via-transparent to-indigo-500/10',
           'group-hover:opacity-100',
           selected && 'opacity-100'
         )}
@@ -127,14 +127,14 @@ function TripTypeCard({ selected, onSelect, icon, title, description }: TripType
           'relative mb-5 flex h-16 w-16 items-center justify-center rounded-2xl transition-all duration-300',
           selected
             ? [
-                'bg-gradient-to-br from-blue-500 to-indigo-600',
-                'text-white shadow-xl shadow-blue-500/40',
-                'dark:shadow-blue-500/30',
+                'bg-gradient-to-br from-primary-500 to-indigo-600',
+                'text-white shadow-xl shadow-primary-500/40',
+                'dark:shadow-primary-500/30',
               ]
             : [
                 'bg-neutral-100 text-neutral-500',
                 'group-hover:bg-neutral-200 group-hover:text-neutral-700',
-                'dark:bg-neutral-800 dark:text-neutral-400',
+                'dark:bg-white/[0.04] dark:text-neutral-400',
                 'dark:group-hover:bg-neutral-700 dark:group-hover:text-neutral-300',
               ]
         )}
@@ -146,7 +146,7 @@ function TripTypeCard({ selected, onSelect, icon, title, description }: TripType
       <h3
         className={cn(
           'text-xl font-bold tracking-tight transition-colors',
-          selected ? 'text-blue-900 dark:text-blue-100' : 'text-neutral-900 dark:text-white'
+          selected ? 'text-primary-900 dark:text-primary-100' : 'text-neutral-900 dark:text-white'
         )}
       >
         {title}
@@ -155,7 +155,7 @@ function TripTypeCard({ selected, onSelect, icon, title, description }: TripType
         className={cn(
           'mt-2 text-sm leading-relaxed transition-colors',
           selected
-            ? 'text-blue-700/80 dark:text-blue-100/70'
+            ? 'text-primary-700/80 dark:text-primary-100/70'
             : 'text-neutral-500 dark:text-neutral-400'
         )}
       >
@@ -172,8 +172,8 @@ function TripTypeCard({ selected, onSelect, icon, title, description }: TripType
             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
             className={cn(
               'absolute right-5 bottom-5 flex h-7 w-7 items-center justify-center rounded-full',
-              'bg-gradient-to-br from-blue-500 to-indigo-600 text-white',
-              'shadow-lg shadow-blue-500/40'
+              'bg-gradient-to-br from-primary-500 to-indigo-600 text-white',
+              'shadow-lg shadow-primary-500/40'
             )}
           >
             <Check className="h-4 w-4" weight="bold" />
@@ -231,8 +231,8 @@ const StepRoute = ({ data, update, initialAirports, searchAirports, t }: StepRou
       <div
         className={cn(
           'pointer-events-none absolute top-[3.25rem] right-12 left-12 hidden h-0.5 md:block',
-          'bg-gradient-to-r from-blue-500/0 via-blue-500/30 to-indigo-500/0',
-          'dark:via-blue-400/20'
+          'bg-gradient-to-r from-primary-500/0 via-primary-500/30 to-indigo-500/0',
+          'dark:via-primary-400/20'
         )}
       />
 
@@ -243,8 +243,8 @@ const StepRoute = ({ data, update, initialAirports, searchAirports, t }: StepRou
             <div
               className={cn(
                 'flex h-12 w-12 items-center justify-center rounded-2xl',
-                'bg-gradient-to-br from-blue-500 to-blue-600 text-white',
-                'shadow-xl shadow-blue-500/30 dark:shadow-blue-500/20'
+                'bg-gradient-to-br from-primary-500 to-primary-600 text-white',
+                'shadow-xl shadow-primary-500/30 dark:shadow-primary-500/20'
               )}
             >
               <AirplaneTakeoff className="h-6 w-6" weight="fill" />
@@ -287,7 +287,7 @@ const StepRoute = ({ data, update, initialAirports, searchAirports, t }: StepRou
             <div
               className={cn(
                 'flex h-12 w-12 items-center justify-center rounded-2xl',
-                'bg-gradient-to-br from-indigo-500 to-purple-600 text-white',
+                'bg-gradient-to-br from-indigo-500 to-secondary-600 text-white',
                 'shadow-xl shadow-indigo-500/30 dark:shadow-indigo-500/20'
               )}
             >
@@ -426,7 +426,7 @@ const StepDates = ({ data, update, t }: StepDatesProps) => {
       <div
         className={cn(
           'rounded-2xl border p-6',
-          'border-neutral-200 bg-neutral-50',
+          'border-neutral-200/60 bg-neutral-50',
           'dark:border-white/10 dark:bg-white/5'
         )}
       >
@@ -466,7 +466,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
       <div
         className={cn(
           'rounded-2xl border p-6',
-          'border-neutral-200 bg-white',
+          'border-neutral-200/60 bg-white',
           'dark:border-white/10 dark:bg-white/5'
         )}
       >
@@ -497,10 +497,10 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
             }
             className={cn(
               'flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-bold transition-colors',
-              'border-2 border-neutral-200 bg-white text-neutral-700',
+              'border-2 border-neutral-200/60 bg-white text-neutral-700',
               'hover:border-neutral-300 hover:bg-neutral-50',
-              'dark:border-neutral-600 dark:bg-neutral-700 dark:text-white',
-              'dark:hover:border-neutral-500 dark:hover:bg-neutral-600'
+              'dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-white',
+              'dark:hover:border-white/[0.2] dark:hover:bg-white/[0.1]'
             )}
           >
             -
@@ -529,10 +529,10 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
             }
             className={cn(
               'flex h-14 w-14 items-center justify-center rounded-2xl text-2xl font-bold transition-colors',
-              'border-2 border-neutral-200 bg-white text-neutral-700',
+              'border-2 border-neutral-200/60 bg-white text-neutral-700',
               'hover:border-neutral-300 hover:bg-neutral-50',
-              'dark:border-neutral-600 dark:bg-neutral-700 dark:text-white',
-              'dark:hover:border-neutral-500 dark:hover:bg-neutral-600'
+              'dark:border-white/[0.1] dark:bg-white/[0.08] dark:text-white',
+              'dark:hover:border-white/[0.2] dark:hover:bg-white/[0.1]'
             )}
           >
             +
@@ -544,7 +544,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
       <div
         className={cn(
           'rounded-2xl border p-6',
-          'border-neutral-200 bg-white',
+          'border-neutral-200/60 bg-white',
           'dark:border-white/10 dark:bg-white/5'
         )}
       >
@@ -552,7 +552,7 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
           <div
             className={cn(
               'flex h-12 w-12 items-center justify-center rounded-2xl',
-              'bg-gradient-to-br from-violet-500 to-purple-600 text-white',
+              'bg-gradient-to-br from-violet-500 to-secondary-600 text-white',
               'shadow-xl shadow-violet-500/30 dark:shadow-violet-500/20'
             )}
           >
@@ -580,11 +580,11 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
                 'flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all',
                 data.cabinClass === cabin.id
                   ? [
-                      'bg-gradient-to-r from-blue-500 to-indigo-600 text-white',
-                      'shadow-lg shadow-blue-500/30',
+                      'bg-gradient-to-r from-primary-500 to-indigo-600 text-white',
+                      'shadow-lg shadow-primary-500/30',
                     ]
                   : [
-                      'border border-neutral-200 bg-neutral-50 text-neutral-700',
+                      'border border-neutral-200/60 bg-neutral-50 text-neutral-700',
                       'hover:border-neutral-300 hover:bg-neutral-100',
                       'dark:border-white/10 dark:bg-white/5 dark:text-neutral-200',
                       'dark:hover:bg-white/10',
@@ -603,12 +603,12 @@ const StepOptions = ({ data, update, t }: StepOptionsProps) => (
     <div
       className={cn(
         'rounded-2xl border p-6',
-        'border-neutral-200 bg-neutral-50',
+        'border-neutral-200/60 bg-neutral-50',
         'dark:border-white/10 dark:bg-white/5'
       )}
     >
       <div className="mb-5 flex items-center gap-3">
-        <MagnifyingGlass className="h-5 w-5 text-blue-500" weight="duotone" />
+        <MagnifyingGlass className="h-5 w-5 text-primary-500" weight="duotone" />
         <label className="text-sm font-bold text-neutral-700 dark:text-neutral-200">
           {t('wizard.labels.sortBy')}
         </label>
@@ -781,14 +781,14 @@ export function FlightWizard({
   }
 
   return (
-    <div className="relative flex h-full w-full flex-1 flex-col overflow-hidden bg-neutral-50 px-4 py-6 dark:bg-neutral-950">
+    <div className="relative flex h-full w-full flex-1 flex-col overflow-hidden bg-neutral-50 px-4 py-6 dark:bg-[#09090b]">
       {/* Premium Background Effects */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         {/* Gradient orbs - enhanced for dark mode */}
         <div
           className={cn(
             'absolute -top-[20%] -left-[10%] h-[50%] w-[50%] rounded-full blur-[120px]',
-            'bg-blue-500/15 dark:bg-blue-500/10'
+            'bg-primary-500/15 dark:bg-primary-500/10'
           )}
         />
         <div
@@ -800,7 +800,7 @@ export function FlightWizard({
         <div
           className={cn(
             'absolute -bottom-[10%] left-[20%] h-[40%] w-[40%] rounded-full blur-[100px]',
-            'bg-purple-500/10 dark:bg-purple-500/8'
+            'bg-secondary-500/10 dark:bg-secondary-500/8'
           )}
         />
 
@@ -837,14 +837,14 @@ export function FlightWizard({
                 }}
                 className={cn(
                   'relative flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-300',
-                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2',
+                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
                   isActive && [
-                    'bg-gradient-to-br from-blue-500 to-indigo-600 text-white',
-                    'shadow-xl shadow-blue-500/40 dark:shadow-blue-500/30',
+                    'bg-gradient-to-br from-primary-500 to-indigo-600 text-white',
+                    'shadow-xl shadow-primary-500/40 dark:shadow-primary-500/30',
                   ],
                   isCompleted && [
-                    'bg-blue-100 text-blue-600',
-                    'dark:bg-blue-500/20 dark:text-blue-300',
+                    'bg-primary-100 text-primary-600',
+                    'dark:bg-primary-500/20 dark:text-primary-300',
                   ],
                   !isActive &&
                     !isCompleted && [
@@ -866,8 +866,8 @@ export function FlightWizard({
                   className={cn(
                     'h-0.5 w-8 rounded-full transition-colors',
                     index < currentStep
-                      ? 'bg-blue-400 dark:bg-blue-500/60'
-                      : 'bg-neutral-200 dark:bg-neutral-700'
+                      ? 'bg-primary-400 dark:bg-primary-500/60'
+                      : 'bg-neutral-200 dark:bg-white/[0.08]'
                   )}
                 />
               )}
@@ -883,7 +883,7 @@ export function FlightWizard({
           className={cn(
             'rounded-3xl border p-8 backdrop-blur-xl',
             'border-neutral-200/80 bg-white/90 shadow-2xl shadow-neutral-500/5',
-            'dark:border-neutral-700/60 dark:bg-neutral-900/95 dark:shadow-black/20'
+            'dark:border-white/[0.08]/60 dark:bg-white/[0.10] dark:shadow-black/20'
           )}
         >
           {/* Step Header */}
@@ -958,9 +958,9 @@ export function FlightWizard({
               disabled={!canNext}
               className={cn(
                 'flex items-center gap-2 rounded-2xl px-8 py-3 text-sm font-bold transition-all',
-                'bg-gradient-to-r from-blue-500 to-indigo-600 text-white',
-                'shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40',
-                'dark:shadow-blue-500/20 dark:hover:shadow-blue-500/30',
+                'bg-gradient-to-r from-primary-500 to-indigo-600 text-white',
+                'shadow-xl shadow-primary-500/30 hover:shadow-2xl hover:shadow-primary-500/40',
+                'dark:shadow-primary-500/20 dark:hover:shadow-primary-500/30',
                 'disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none'
               )}
             >

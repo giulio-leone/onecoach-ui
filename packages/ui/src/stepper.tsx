@@ -21,10 +21,10 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
                   className={cn(
                     'flex h-8 w-8 items-center justify-center rounded-full border-2 transition-all duration-300',
                     isCompleted
-                      ? 'border-blue-600 bg-blue-600 dark:border-blue-500 dark:bg-blue-500'
+                      ? 'border-primary-600 bg-primary-600 dark:border-primary-500 dark:bg-primary-500'
                       : isCurrent
-                        ? 'border-blue-600 bg-white dark:border-blue-500 dark:bg-neutral-900'
-                        : 'border-neutral-300 bg-transparent dark:border-neutral-700'
+                        ? 'border-primary-600 bg-white dark:border-primary-500 dark:bg-zinc-950'
+                        : 'border-neutral-300 bg-transparent dark:border-white/[0.08]'
                   )}
                 >
                   {isCompleted ? (
@@ -34,7 +34,7 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
                       className={cn(
                         'text-xs font-bold',
                         isCurrent
-                          ? 'text-blue-600 dark:text-blue-500'
+                          ? 'text-primary-600 dark:text-primary-500'
                           : 'text-neutral-400 dark:text-neutral-600'
                       )}
                     >
@@ -46,7 +46,7 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
                   className={cn(
                     'text-[10px] font-medium tracking-wider uppercase',
                     isCurrent || isCompleted
-                      ? 'text-blue-600 dark:text-blue-400'
+                      ? 'text-primary-600 dark:text-primary-400'
                       : 'text-neutral-400 dark:text-neutral-600'
                   )}
                 >
@@ -55,10 +55,10 @@ export function Stepper({ steps, currentStep, className }: StepperProps) {
               </div>
 
               {index < steps.length - 1 && (
-                <div className="h-[2px] flex-1 bg-neutral-200 dark:bg-neutral-800">
+                <div className="h-[2px] flex-1 bg-neutral-200 dark:bg-white/[0.04]">
                   <div
                     className={cn(
-                      'h-full bg-blue-600 transition-all duration-500 dark:bg-blue-500',
+                      'h-full bg-primary-600 transition-all duration-500 dark:bg-primary-500',
                       index < currentStep ? 'w-full' : 'w-0'
                     )}
                   />

@@ -78,7 +78,7 @@ const fromBuilder = (b: SupersetBuilderExercise): Exercise => {
       : [
           {
             // Fallback: create new setGroup if none exist
-            id: `sg_${Math.random().toString(36).substr(2, 9)}`,
+            id: `sg_${Math.random().toString(36).substring(2, 11)}`,
             count: b.sets,
             baseSet: {
               reps: b.reps,
@@ -140,7 +140,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
       const currentExercises = updates?.exercises ?? exercises;
 
       onChange({
-        id: superset?.id ?? `superset_${Math.random().toString(36).substr(2, 9)}`,
+        id: superset?.id ?? `superset_${Math.random().toString(36).substring(2, 11)}`,
         type: 'superset',
         name: currentName,
         exercises: currentExercises.map(fromBuilder),
@@ -162,7 +162,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
     const updated = [
       ...exercises,
       {
-        exerciseId: `ex_${Math.random().toString(36).substr(2, 9)}`,
+        exerciseId: `ex_${Math.random().toString(36).substring(2, 11)}`,
         name: '',
         sets: 3,
         reps: 10,
@@ -193,16 +193,16 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
   return (
     <Card
       className={cn(
-        'bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-4 md:p-6',
-        'border-purple-500/30 transition-all hover:border-purple-500/50',
+        'bg-gradient-to-br from-secondary-500/10 to-secondary-500/10 p-4 md:p-6',
+        'border-secondary-500/30 transition-all hover:border-secondary-500/50',
         className
       )}
     >
       {/* Header */}
       <div className="mb-4 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <div className="rounded-lg bg-purple-500/20 p-2">
-            <Link2 className="h-5 w-5 text-purple-500" />
+          <div className="rounded-lg bg-secondary-500/20 p-2">
+            <Link2 className="h-5 w-5 text-secondary-500" />
           </div>
           <div className="min-w-0 flex-1">
             <Input
@@ -216,14 +216,14 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
             />
           </div>
         </div>
-        <Badge variant="outline" className="bg-purple-500/20 text-purple-600">
+        <Badge variant="outline" className="bg-secondary-500/20 text-secondary-600">
           {exercises.length} esercizi
         </Badge>
       </div>
 
       {/* Exercises with Visual Linking */}
       <div className="relative space-y-0">
-        <div className="absolute top-8 bottom-8 left-6 hidden w-0.5 bg-gradient-to-b from-purple-500 to-pink-500 opacity-50 md:block" />
+        <div className="absolute top-8 bottom-8 left-6 hidden w-0.5 bg-gradient-to-b from-secondary-500 to-secondary-500 opacity-50 md:block" />
 
         <AnimatePresence mode="popLayout">
           {exercises.map((exercise, index) => (
@@ -238,14 +238,14 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
               <div
                 className={cn(
                   'bg-background/50 flex items-start gap-2 rounded-lg p-3',
-                  'border-border/50 border transition-colors hover:border-purple-500/30',
+                  'border-border/50 border transition-colors hover:border-secondary-500/30',
                   'relative ml-0 md:ml-8',
                   index > 0 && 'mt-2'
                 )}
               >
                 <div className="absolute top-1/2 -left-10 hidden -translate-y-1/2 items-center md:flex">
-                  <div className="h-0.5 w-4 bg-purple-500/50" />
-                  <div className="h-2 w-2 rounded-full bg-purple-500" />
+                  <div className="h-0.5 w-4 bg-secondary-500/50" />
+                  <div className="h-2 w-2 rounded-full bg-secondary-500" />
                 </div>
 
                 <GripVertical className="text-muted-foreground/50 mt-2 h-4 w-4 flex-shrink-0 cursor-grab" />
@@ -313,7 +313,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
             variant="outline"
             size="sm"
             onClick={handleAddExercise}
-            className="mt-3 ml-0 w-full border-dashed border-purple-500/30 text-purple-600 hover:border-purple-500/50 hover:bg-purple-500/10 md:ml-8"
+            className="mt-3 ml-0 w-full border-dashed border-secondary-500/30 text-secondary-600 hover:border-secondary-500/50 hover:bg-secondary-500/10 md:ml-8"
           >
             <Plus className="mr-1 h-4 w-4" />
             Aggiungi Esercizio ({4 - exercises.length} rimanenti)
@@ -336,7 +336,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
                 setRestBetween(val);
                 emitChange({ restBetweenExercises: val });
               }}
-              className="h-1.5 flex-1 cursor-pointer appearance-none rounded bg-purple-200 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-purple-500"
+              className="h-1.5 flex-1 cursor-pointer appearance-none rounded bg-secondary-200 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-secondary-500"
             />
             <span className="w-8 text-xs">{restBetween}s</span>
           </div>
@@ -356,7 +356,7 @@ export function SupersetEditor({ superset, onChange, onRemove, className }: Supe
                 setRestAfter(val);
                 emitChange({ restAfterSuperset: val });
               }}
-              className="h-1.5 flex-1 cursor-pointer appearance-none rounded bg-purple-200 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-purple-500"
+              className="h-1.5 flex-1 cursor-pointer appearance-none rounded bg-secondary-200 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-secondary-500"
             />
             <span className="w-8 text-xs">{restAfter}s</span>
           </div>

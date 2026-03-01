@@ -28,7 +28,7 @@ export function GenerationSuccess({
       transition={{ duration: 0.4, type: 'spring' }}
       className="mx-auto max-w-lg"
     >
-      <Card className="border-emerald-100 bg-white p-8 shadow-xl shadow-emerald-500/5 dark:border-emerald-900/30 dark:bg-neutral-900">
+      <Card className="border-emerald-100 bg-white p-8 shadow-xl shadow-emerald-500/5 dark:border-emerald-900/30 dark:bg-zinc-950">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ scale: 0 }}
@@ -45,7 +45,7 @@ export function GenerationSuccess({
           {stats && stats.length > 0 && (
             <div className="mb-8 grid w-full grid-cols-2 gap-4 sm:grid-cols-3">
               {stats.map((stat, i) => (
-                <div key={i} className="rounded-lg bg-neutral-50 p-3 dark:bg-neutral-800/50">
+                <div key={i} className="rounded-lg bg-neutral-50 p-3 dark:bg-white/[0.05]">
                   <div className="text-xs font-medium tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
                     {stat.label}
                   </div>

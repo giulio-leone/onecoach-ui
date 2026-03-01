@@ -75,7 +75,7 @@ export function VersionHistoryModal<T>({
   const accentClass =
     variant === 'emerald'
       ? 'text-emerald-600 dark:text-emerald-400'
-      : 'text-blue-600 dark:text-blue-400';
+      : 'text-primary-600 dark:text-primary-400';
 
   const diff = useMemo(() => {
     if (!showDiff || selectedForCompare.length !== 2 || !getDiff) return null;
@@ -134,13 +134,13 @@ export function VersionHistoryModal<T>({
       <div
         className={cn(
           'relative z-10 w-full max-w-lg overflow-hidden rounded-2xl',
-          'border border-neutral-200 bg-white shadow-2xl',
-          'dark:border-white/10 dark:bg-neutral-900',
+          'border border-neutral-200/60 bg-white shadow-2xl',
+          'dark:border-white/10 dark:bg-zinc-950',
           'animate-in zoom-in-95 fade-in duration-200'
         )}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4 dark:border-white/10">
+        <div className="flex items-center justify-between border-b border-neutral-200/60 px-6 py-4 dark:border-white/10">
           <h2 className="flex items-center gap-2 text-lg font-semibold text-neutral-900 dark:text-white">
             <Clock size={20} className={accentClass} />
             {labels.title ?? 'Version History'}
@@ -193,7 +193,7 @@ export function VersionHistoryModal<T>({
                 </button>
               </div>
 
-              <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-white/10 dark:bg-neutral-800/50">
+              <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/10 dark:bg-white/[0.05]">
                 {!semanticDiff || semanticDiff.length === 0 ? (
                   <p className="text-center text-neutral-500">No differences found</p>
                 ) : (
@@ -201,7 +201,7 @@ export function VersionHistoryModal<T>({
                     {semanticDiff.map((change: any) => (
                       <div
                         key={change.id}
-                        className="relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-neutral-800"
+                        className="relative overflow-hidden rounded-lg border border-neutral-200/60 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-white/[0.04]"
                       >
                         {/* Status Bar */}
                         <div
@@ -333,18 +333,18 @@ export function VersionHistoryModal<T>({
                     className={cn(
                       'group relative flex cursor-pointer items-start gap-3 rounded-xl border p-3 transition-all',
                       isSelected
-                        ? 'border-blue-500 bg-blue-50 dark:border-blue-500 dark:bg-blue-900/20'
+                        ? 'border-primary-500 bg-primary-50 dark:border-primary-500 dark:bg-primary-900/20'
                         : 'border-transparent hover:bg-neutral-50 dark:hover:bg-white/5'
                     )}
                     onClick={() => toggleCompareSelection(index)}
                   >
                     <div className="relative mt-1">
                       {isSelected ? (
-                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-white">
+                        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary-500 text-white">
                           <Check size={12} />
                         </div>
                       ) : (
-                        <div className="h-5 w-5 rounded-full border-2 border-neutral-300 group-hover:border-neutral-400 dark:border-neutral-600" />
+                        <div className="h-5 w-5 rounded-full border-2 border-neutral-300 group-hover:border-neutral-400 dark:border-white/[0.1]" />
                       )}
                     </div>
 
@@ -385,7 +385,7 @@ export function VersionHistoryModal<T>({
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between border-t border-neutral-200 bg-neutral-50 px-6 py-4 dark:border-white/10 dark:bg-neutral-900/50">
+        <div className="flex items-center justify-between border-t border-neutral-200/60 bg-neutral-50 px-6 py-4 dark:border-white/10 dark:bg-white/[0.04]">
           <div className="text-sm text-neutral-500 dark:text-neutral-400">
             {selectedForCompare.length === 2
               ? '2 versions selected'
@@ -398,7 +398,7 @@ export function VersionHistoryModal<T>({
                 'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-colors',
                 variant === 'emerald'
                   ? 'bg-emerald-600 hover:bg-emerald-700'
-                  : 'bg-blue-600 hover:bg-blue-700'
+                  : 'bg-primary-600 hover:bg-primary-700'
               )}
             >
               <GitCompare size={16} />

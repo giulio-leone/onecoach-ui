@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Search, Trash2, MessageSquare, Calendar, X, Pencil, Check } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
+import { useIsMobile } from '@giulio-leone/hooks';
 import { Modal } from '../../../dialog';
 import { Input } from '../../../input';
 import { Button } from '../../../button';
@@ -47,16 +48,9 @@ export function ChatHistoryModal({
   const [renameId, setRenameId] = useState<string | null>(null);
   const [renameValue, setRenameValue] = useState('');
   const [isSaving, setIsSaving] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [selectionMode, setSelectionMode] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const toggleSelect = (id: string) => {
     setSelectedIds((prev) => (prev.includes(id) ? prev.filter((x: any) => x !== id) : [...prev, id]));
@@ -147,7 +141,7 @@ export function ChatHistoryModal({
       title="Cronologia Chat"
       size="lg" // Wide modal
       mobileFullScreen={true}
-      className="flex h-[80vh] w-[calc(100vw-20px)] max-w-[560px] flex-col overflow-hidden bg-white/90 p-0 backdrop-blur-xl sm:h-[620px] sm:max-w-[680px] dark:bg-neutral-900/90"
+      className="flex h-[80vh] w-[calc(100vw-20px)] max-w-[560px] flex-col overflow-hidden bg-white/90 p-0 backdrop-blur-xl sm:h-[620px] sm:max-w-[680px] dark:bg-white/[0.08]"
     >
       <div className="flex h-full flex-col">
         {/* Search Header */}
@@ -159,7 +153,7 @@ export function ChatHistoryModal({
                 placeholder="Cerca nelle conversazioni..."
                 value={search}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
-                className="border-neutral-200 bg-white pl-10 focus:ring-indigo-500 dark:border-white/10 dark:bg-neutral-900"
+                className="border-neutral-200/60 bg-white pl-10 focus:ring-indigo-500 dark:border-white/10 dark:bg-zinc-950"
                 autoFocus
               />
             </div>
@@ -259,7 +253,7 @@ export function ChatHistoryModal({
                         'group relative flex cursor-pointer items-start gap-3 rounded-2xl border p-3 transition-all duration-200 sm:p-3.5',
                         activeId === conv.id
                           ? 'border-indigo-200 bg-indigo-50/70 shadow-md shadow-indigo-500/10 dark:border-indigo-500/30 dark:bg-indigo-500/10'
-                          : 'border-white/40 bg-white/70 hover:border-neutral-200 hover:bg-white/90 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10'
+                          : 'border-white/40 bg-white/70 hover:border-neutral-200/60 hover:bg-white/90 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10'
                       )}
                     >
                       {/* Checkbox: only show in selection mode on mobile, always on desktop */}
@@ -347,7 +341,7 @@ export function ChatHistoryModal({
                       {/* Actions: sempre visibili su mobile, on-hover su desktop */}
                       <div
                         className={cn(
-                          'absolute top-1/2 right-2 flex -translate-y-1/2 items-center gap-1 rounded-lg bg-white/90 p-1 shadow-sm backdrop-blur-sm dark:bg-neutral-900/90',
+                          'absolute top-1/2 right-2 flex -translate-y-1/2 items-center gap-1 rounded-lg bg-white/90 p-1 shadow-sm backdrop-blur-sm dark:bg-white/[0.08]',
                           isMobile
                             ? 'opacity-100'
                             : 'opacity-0 transition-opacity group-hover:opacity-100'

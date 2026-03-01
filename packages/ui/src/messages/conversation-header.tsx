@@ -76,7 +76,7 @@ export function ConversationHeader({ conversation, currentUserId }: Conversation
   };
 
   return (
-    <div className="flex items-center justify-between border-b border-neutral-200 p-4 dark:border-neutral-800">
+    <div className="flex items-center justify-between border-b border-neutral-200/60 p-4 dark:border-white/[0.06]">
       <div className="flex items-center gap-3">
         <Avatar src={otherUser.image} fallback={otherUser.name?.[0] || 'U'} size="md" />
         <div>

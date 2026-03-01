@@ -28,7 +28,7 @@ export function VersionHistory({
   variant = 'blue',
 }: VersionHistoryProps) {
   const gradientClass =
-    variant === 'green' ? 'bg-green-600 dark:bg-green-700' : 'bg-blue-600 dark:bg-blue-700';
+    variant === 'green' ? 'bg-green-600 dark:bg-green-700' : 'bg-primary-600 dark:bg-primary-700';
 
   return (
     <View

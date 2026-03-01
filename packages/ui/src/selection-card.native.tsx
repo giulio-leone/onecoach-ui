@@ -46,7 +46,7 @@ export function SelectionCard({
                 !isWeb && 'shadow-md', // Only use Native shadow classes on Native
                 compact && 'shadow-none' // Disable large shadow if compact (web handles it via style or lighter class)
               )
-            : 'hover:bg-white/50 dark:hover:bg-neutral-800/50',
+            : 'hover:bg-white/50 dark:hover:bg-white/[0.06]/50',
           className
         )}
         style={webShadowStyle}
@@ -73,8 +73,8 @@ export function SelectionCard({
                       'items-center justify-center transition-colors',
                       compact ? 'mr-2 rounded-lg p-1.5' : 'mb-3 self-start rounded-xl p-2.5',
                       selected
-                        ? 'bg-blue-500 text-white'
-                        : 'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400'
+                        ? 'bg-primary-500 text-white'
+                        : 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400'
                     )}
                   >
                     {/* Render icon children if possible, adjusting size if needed for compact */}
@@ -90,15 +90,15 @@ export function SelectionCard({
                         'font-bold',
                         compact ? 'text-sm' : 'text-lg',
                         selected
-                          ? 'text-blue-700 dark:text-blue-200'
+                          ? 'text-primary-700 dark:text-primary-200'
                           : 'text-neutral-900 dark:text-white'
                       )}
                     >
                       {title}
                     </Text>
                     {badge && (
-                      <View className="rounded-full bg-blue-100 px-2 py-0.5 dark:bg-blue-900/40">
-                        <Text className="text-[10px] font-bold text-blue-700 uppercase dark:text-blue-200">
+                      <View className="rounded-full bg-primary-100 px-2 py-0.5 dark:bg-primary-900/40">
+                        <Text className="text-[10px] font-bold text-primary-700 uppercase dark:text-primary-200">
                           {badge}
                         </Text>
                       </View>
@@ -112,7 +112,7 @@ export function SelectionCard({
                         'leading-relaxed',
                         compact ? 'mt-0.5 text-xs' : 'mt-1.5 text-sm',
                         selected
-                          ? 'text-blue-600/90 dark:text-blue-200/90'
+                          ? 'text-primary-600/90 dark:text-primary-200/90'
                           : 'text-neutral-500 dark:text-neutral-300'
                       )}
                     >
@@ -128,8 +128,8 @@ export function SelectionCard({
                 'items-center justify-center rounded-full border transition-all',
                 compact ? 'h-4 w-4' : 'h-6 w-6',
                 selected
-                  ? 'border-blue-500 bg-blue-500'
-                  : 'border-neutral-300 bg-transparent dark:border-neutral-600'
+                  ? 'border-primary-500 bg-primary-500'
+                  : 'border-neutral-300 bg-transparent dark:border-white/[0.1]'
               )}
             >
               {selected && (

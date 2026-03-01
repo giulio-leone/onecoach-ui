@@ -160,15 +160,15 @@ export function MeshWizard<T>({
       {/* Mobile-only compact header */}
       <div className="flex items-center justify-between sm:hidden">
         <div>
-          <p className="mb-0.5 text-[9px] font-bold tracking-[0.15em] text-blue-500 uppercase">
+          <p className="mb-0.5 text-[9px] font-bold tracking-[0.15em] text-primary-500 uppercase">
             Step {currentStep + 1}/{steps.length}
           </p>
           <h2 className="text-lg font-bold text-neutral-900 dark:text-white">
             {currentStepDef.title}
           </h2>
         </div>
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10">
-          <span className="text-xs font-bold text-blue-500">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500/10">
+          <span className="text-xs font-bold text-primary-500">
             {Math.round(((currentStep + 1) / steps.length) * 100)}%
           </span>
         </div>
@@ -193,8 +193,8 @@ export function MeshWizard<T>({
       {/* Ambient Background Glows */}
       {variant === 'page' && (
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute -top-[20%] -left-[10%] h-[70%] w-[70%] rounded-full bg-blue-500/10 blur-[120px] dark:bg-blue-500/10" />
-          <div className="absolute -right-[10%] -bottom-[20%] h-[70%] w-[70%] rounded-full bg-purple-500/10 blur-[120px] dark:bg-purple-500/10" />
+          <div className="absolute -top-[20%] -left-[10%] h-[70%] w-[70%] rounded-full bg-primary-500/10 blur-[120px] dark:bg-primary-500/10" />
+          <div className="absolute -right-[10%] -bottom-[20%] h-[70%] w-[70%] rounded-full bg-secondary-500/10 blur-[120px] dark:bg-secondary-500/10" />
         </div>
       )}
 

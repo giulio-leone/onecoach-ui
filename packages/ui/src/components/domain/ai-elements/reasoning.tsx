@@ -25,8 +25,8 @@ export const Reasoning = forwardRef<HTMLDivElement, ReasoningProps>(
     <div
       ref={ref}
       className={cn(
-        'w-full rounded-lg border border-neutral-200 bg-neutral-50',
-        'dark:border-neutral-700 dark:bg-neutral-800/30',
+        'w-full rounded-lg border border-neutral-200/60 bg-neutral-50',
+        'dark:border-white/[0.08] dark:bg-white/[0.04]',
         className
       )}
       data-streaming={isStreaming}
@@ -58,14 +58,14 @@ export const ReasoningTrigger = forwardRef<HTMLButtonElement, ReasoningTriggerPr
         className={cn(
           'flex w-full items-center justify-between px-3 py-2',
           'text-left transition-colors',
-          'hover:bg-neutral-100 dark:hover:bg-neutral-700/50',
+          'hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50',
           className
         )}
         data-state={isOpen ? 'open' : 'closed'}
         {...props}
       >
         <div className="flex items-center gap-2">
-          <Brain className="h-4 w-4 text-purple-500" />
+          <Brain className="h-4 w-4 text-secondary-500" />
           <span className="text-xs font-medium text-neutral-600 dark:text-neutral-300">
             💭 Ragionamento AI
           </span>
@@ -103,7 +103,7 @@ export const ReasoningContent = forwardRef<HTMLDivElement, ReasoningContentProps
       {...props}
     >
       <div className="overflow-hidden">
-        <div className="border-t border-neutral-200 px-3 py-2 dark:border-neutral-700">
+        <div className="border-t border-neutral-200/60 px-3 py-2 dark:border-white/[0.08]">
           <p className="text-xs leading-relaxed text-neutral-600 italic dark:text-neutral-300">
             {children}
           </p>
@@ -127,18 +127,18 @@ export function ReasoningBubble({ text, isStreaming }: ReasoningBubbleProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="mb-3 rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/30">
+    <div className="mb-3 rounded-lg border border-neutral-200/60 bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04]">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700/50"
+        className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50"
       >
         <div className="flex items-center gap-2">
-          <Brain className={cn('h-4 w-4 text-purple-500', isStreaming && 'animate-pulse')} />
+          <Brain className={cn('h-4 w-4 text-secondary-500', isStreaming && 'animate-pulse')} />
           <span className="text-xs font-medium text-neutral-600 dark:text-neutral-300">
             💭 Ragionamento AI
           </span>
           {isStreaming && (
-            <span className="animate-pulse text-xs text-purple-500">in corso...</span>
+            <span className="animate-pulse text-xs text-secondary-500">in corso...</span>
           )}
         </div>
         <ChevronDown
@@ -153,7 +153,7 @@ export function ReasoningBubble({ text, isStreaming }: ReasoningBubbleProps) {
         )}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-neutral-200 dark:border-neutral-700">
+          <div className="border-t border-neutral-200/60 dark:border-white/[0.08]">
             <p className="px-3 py-2 text-xs leading-relaxed text-neutral-600 italic dark:text-neutral-300">
               {text}
             </p>

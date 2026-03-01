@@ -93,7 +93,7 @@ export const MessageLoader = forwardRef<HTMLDivElement, MessageLoaderProps>(
         <div
           key={i}
           className={cn(
-            'h-4 rounded bg-neutral-200 dark:bg-neutral-700',
+            'h-4 rounded bg-neutral-200 dark:bg-white/[0.08]',
             i === lines - 1 && 'w-3/4'
           )}
         />
@@ -166,7 +166,7 @@ export function AIThinking({
     <div
       className={cn(
         'flex items-center gap-3 rounded-xl px-4 py-3',
-        'bg-neutral-100 dark:bg-neutral-800',
+        'bg-neutral-100 dark:bg-white/[0.04]',
         'text-neutral-600 dark:text-neutral-300',
         className
       )}
@@ -196,15 +196,15 @@ export function ToolExecuting({ toolName, className, ...props }: ToolExecutingPr
     <div
       className={cn(
         'flex items-center gap-2 rounded-lg px-3 py-2',
-        'border border-blue-200 bg-blue-50',
-        'dark:border-blue-800 dark:bg-blue-900/30',
+        'border border-primary-200 bg-primary-50',
+        'dark:border-primary-800 dark:bg-primary-900/30',
         className
       )}
       role="status"
       {...props}
     >
-      <AIElementSpinner size="sm" className="text-blue-500" />
-      <span className="text-xs text-blue-700 dark:text-blue-300">
+      <AIElementSpinner size="sm" className="text-primary-500" />
+      <span className="text-xs text-primary-700 dark:text-primary-300">
         {toolName ? `Eseguendo ${toolName}...` : 'Eseguendo strumento...'}
       </span>
     </div>

@@ -92,11 +92,11 @@ function computeDataToShow(event: StreamEvent) {
 function getEventIconColor(type: string): string {
   switch (type) {
     case 'agent_start':
-      return 'text-blue-600 dark:text-blue-400';
+      return 'text-primary-600 dark:text-primary-400';
     case 'agent_complete':
       return 'text-green-600 dark:text-green-400';
     case 'delegation':
-      return 'text-purple-600 dark:text-purple-400';
+      return 'text-secondary-600 dark:text-secondary-400';
     case 'agent_error':
       return 'text-red-600 dark:text-red-400';
     case 'retry':
@@ -213,7 +213,7 @@ export function StreamEventCard({ event, isAdmin = false, index = 0 }: StreamEve
         onClick={toggle}
         className={cn(
           'flex w-full items-start gap-4 p-4 text-left transition-colors',
-          shouldShowData && 'cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800/50',
+          shouldShowData && 'cursor-pointer hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50',
           !shouldShowData && 'cursor-default'
         )}
         disabled={!shouldShowData}
@@ -223,7 +223,7 @@ export function StreamEventCard({ event, isAdmin = false, index = 0 }: StreamEve
           <div
             className={cn(
               'flex h-10 w-10 items-center justify-center rounded-lg',
-              'bg-neutral-100 dark:bg-neutral-800',
+              'bg-neutral-100 dark:bg-white/[0.04]',
               'transition-colors group-hover:bg-neutral-200 dark:group-hover:bg-neutral-700'
             )}
           >
@@ -253,7 +253,7 @@ export function StreamEventCard({ event, isAdmin = false, index = 0 }: StreamEve
               const data = event.data as Record<string, unknown>;
               if ('role' in data && data.role) {
                 return (
-                  <span className="rounded-full bg-neutral-200 px-2 py-0.5 font-mono text-[10px] text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
+                  <span className="rounded-full bg-neutral-200 px-2 py-0.5 font-mono text-[10px] text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-300">
                     {String(data.role)}
                   </span>
                 );
@@ -320,7 +320,7 @@ export function StreamEventCard({ event, isAdmin = false, index = 0 }: StreamEve
       {isExpanded && shouldShowData && isAdmin && (
         <div
           className={cn(
-            'border-t border-neutral-200 bg-neutral-50 px-4 py-3 dark:border-neutral-700 dark:bg-neutral-900/70',
+            'border-t border-neutral-200/60 bg-neutral-50 px-4 py-3 dark:border-white/[0.08] dark:bg-white/[0.06]',
             animations.slideDown
           )}
         >

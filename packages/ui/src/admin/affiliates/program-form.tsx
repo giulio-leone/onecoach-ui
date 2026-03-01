@@ -21,7 +21,7 @@ const darkModeClasses = {
     tertiary: 'text-neutral-500 dark:text-neutral-400',
   },
   border: {
-    base: 'border-neutral-200 dark:border-neutral-700',
+    base: 'border-neutral-200/60 dark:border-white/[0.08]',
   },
   card: {
     elevated: 'shadow-lg dark:shadow-none',
@@ -331,8 +331,8 @@ export function AffiliateProgramForm({ program }: ProgramFormProps) {
               >
                 <div className="mb-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className={cn('rounded-lg p-2', 'bg-blue-100 dark:bg-blue-900/30')}>
-                      <Layers className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                    <div className={cn('rounded-lg p-2', 'bg-primary-100 dark:bg-primary-900/30')}>
+                      <Layers className="h-4 w-4 text-primary-600 dark:text-primary-400" />
                     </div>
                     <p className={cn('text-sm font-semibold', darkModeClasses.text.primary)}>
                       Livello {level.level}
@@ -393,14 +393,14 @@ export function AffiliateProgramForm({ program }: ProgramFormProps) {
       <AdminCard
         variant="default"
         padding="md"
-        className={cn('border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-900/20')}
+        className={cn('border-primary-200 bg-primary-50 dark:border-primary-800 dark:bg-primary-900/20')}
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className={cn('text-sm font-medium', 'text-blue-900 dark:text-blue-100')}>
+            <p className={cn('text-sm font-medium', 'text-primary-900 dark:text-primary-100')}>
               {t('admin.program_form.ricordati_di_salvare_le_modifiche')}
             </p>
-            <p className={cn('mt-0.5 text-xs', 'text-blue-800 dark:text-blue-200')}>
+            <p className={cn('mt-0.5 text-xs', 'text-primary-800 dark:text-primary-200')}>
               {t('admin.program_form.le_modifiche_verranno_applicate_immediat')}
             </p>
           </div>

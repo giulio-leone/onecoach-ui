@@ -69,7 +69,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const variantStyles: Record<ButtonVariant | 'gradient-primary' | 'gradient-secondary', string> =
       {
         primary:
-          'relative overflow-hidden border border-white/20 bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-[0_0_20px_rgba(37,99,235,0.5)] hover:shadow-[0_0_30px_rgba(37,99,235,0.7)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur-sm',
+          'relative overflow-hidden border border-white/20 bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.7)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 backdrop-blur-sm',
         secondary:
           'relative overflow-hidden border border-neutral-200/80 bg-white/80 text-neutral-900 shadow-sm hover:bg-neutral-50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:border-white/10 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10 backdrop-blur-md',
         danger:
@@ -79,16 +79,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         default:
           'relative overflow-hidden border border-white/10 bg-neutral-900 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:bg-white dark:text-neutral-900',
         outline:
-          'border border-neutral-200 bg-transparent text-neutral-900 hover:bg-neutral-50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800',
+          'border border-neutral-200/60 bg-transparent text-neutral-900 hover:bg-neutral-50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 dark:border-white/[0.08] dark:text-neutral-100 dark:hover:bg-white/[0.06]',
         success:
           'bg-gradient-to-r from-success-dark to-success text-white shadow-lg hover:shadow-success-DEFAULT/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
         info: 'bg-gradient-to-r from-info-dark to-info text-white shadow-lg hover:shadow-info-DEFAULT/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
         glass:
           'border border-white/10 bg-white/5 text-white shadow-lg backdrop-blur-md hover:bg-white/10 hover:border-white/20 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
         'gradient-primary':
-          'relative overflow-hidden shadow-md shadow-violet-500/20 bg-gradient-to-br from-violet-600 to-indigo-600 text-white hover:from-violet-500 hover:to-indigo-500 hover:shadow-lg hover:shadow-violet-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
+          'relative overflow-hidden shadow-md shadow-primary-500/20 bg-gradient-to-br from-secondary-600 to-primary-600 text-white hover:from-secondary-500 hover:to-primary-500 hover:shadow-lg hover:shadow-primary-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
         'gradient-secondary':
-          'relative overflow-hidden shadow-md shadow-fuchsia-500/20 bg-gradient-to-br from-fuchsia-500 to-pink-600 text-white hover:from-fuchsia-400 hover:to-pink-500 hover:shadow-lg hover:shadow-fuchsia-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
+          'relative overflow-hidden shadow-md shadow-accent-500/20 bg-gradient-to-br from-primary-500 to-accent-500 text-white hover:from-primary-400 hover:to-accent-400 hover:shadow-lg hover:shadow-accent-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200',
       };
 
     // Size styles - Touch-friendly (minimum 44x44px)
@@ -107,7 +107,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'inline-flex items-center justify-center gap-2.5',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
       'focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400',
-      'focus-visible:ring-offset-white dark:focus-visible:ring-offset-neutral-900',
+      'focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#09090b]',
       'disabled:cursor-not-allowed disabled:opacity-50',
       'disabled:hover:scale-100 disabled:active:scale-100 disabled:shadow-none disabled:hover:shadow-none',
       'touch-manipulation', // Optimize for touch

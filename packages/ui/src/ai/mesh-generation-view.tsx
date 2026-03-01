@@ -113,20 +113,20 @@ export function MeshGenerationView({
           <div className="flex items-end justify-between">
             <div className="flex items-center gap-2">
               {status === 'generating' && (
-                <Loader2 className="h-4 w-4 animate-spin text-blue-500" />
+                <Loader2 className="h-4 w-4 animate-spin text-primary-500" />
               )}
               <span className="text-sm font-medium text-neutral-700 dark:text-neutral-200">
                 {currentMessage || (status === 'idle' ? 'Pronto' : 'Elaborazione...')}
               </span>
             </div>
-            <span className="font-mono text-xs font-bold text-blue-600 dark:text-blue-400">
+            <span className="font-mono text-xs font-bold text-primary-600 dark:text-primary-400">
               {Math.round(progress)}%
             </span>
           </div>
 
-          <div className="h-1.5 w-full overflow-hidden rounded-full bg-neutral-100/50 dark:bg-neutral-800/50">
+          <div className="h-1.5 w-full overflow-hidden rounded-full bg-neutral-100/50 dark:bg-white/[0.05]">
             <motion.div
-              className="h-full bg-gradient-to-r from-blue-500 to-indigo-500"
+              className="h-full bg-gradient-to-r from-primary-500 to-indigo-500"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.5, ease: 'easeOut' }}

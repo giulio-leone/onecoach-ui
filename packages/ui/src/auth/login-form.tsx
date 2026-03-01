@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
  *
  * Form per il login utente
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';
@@ -75,8 +75,8 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
     },
     validateOnBlur: true,
   });
-  // Prefill email dal localStorage
-  useEffect(() => {
+  // Prefill email dal localStorage (useLayoutEffect runs before paint → no flash)
+  useLayoutEffect(() => {
     try {
       const last = window.localStorage.getItem('last_login_email');
       if (last) form.setValue('email', last);
@@ -117,7 +117,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
           required
           disabled={form.isSubmitting}
           autoComplete="email"
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
           aria-invalid={!!form.errors.email}
           aria-describedby={form.errors.email ? 'email-error' : undefined}
         />
@@ -148,7 +148,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
             required
             disabled={form.isSubmitting}
             autoComplete="current-password"
-            className="pr-11 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+            className="pr-11 focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
             aria-invalid={!!form.errors.password}
             aria-describedby={form.errors.password ? 'password-error' : undefined}
           />
@@ -160,7 +160,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
               'absolute inset-y-0 right-0 flex items-center justify-center',
               'w-10 rounded-r-md transition-all duration-200',
               'text-neutral-500 hover:bg-neutral-50 hover:text-neutral-700',
-              'dark:text-neutral-400 dark:hover:bg-neutral-800/50 dark:hover:text-neutral-200',
+              'dark:text-neutral-400 dark:hover:bg-white/[0.06]/50 dark:hover:text-neutral-200',
               'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
               'disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent',
               'touch-manipulation'
@@ -181,7 +181,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
         )}
       </div>
       {/* Extra options */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <Checkbox
           id="remember"
           label="Ricordami"
@@ -193,7 +193,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
         />
         <Link
           href="/forgot-password"
-          className="text-sm font-medium text-blue-600 hover:text-blue-700"
+          className="text-sm font-medium text-primary-600 hover:text-primary-700"
           prefetch={false}
         >
           {t('login_form.hai_dimenticato_la_password')}
@@ -204,17 +204,17 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
         type="submit"
         variant="primary"
         disabled={form.isSubmitting || !form.isValid}
-        className="w-full focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+        className="w-full focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
       >
         {form.isSubmitting ? 'Accesso in corso…' : 'Accedi'}
       </Button>
       {/* Separator */}
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t border-neutral-300 dark:border-neutral-700" />
+          <span className="w-full border-t border-neutral-300 dark:border-white/[0.08]" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-white px-2 text-neutral-500 dark:bg-neutral-900">oppure</span>
+          <span className="bg-white px-2 text-neutral-500 dark:bg-zinc-950">oppure</span>
         </div>
       </div>
       {/* Social login */}
@@ -225,7 +225,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
             type="button"
             variant="outline"
             size="md"
-            className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+            className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-white/[0.1] dark:hover:bg-white/[0.06]"
             disabled={form.isSubmitting}
             onClick={() => signIn('google', { callbackUrl: from })}
             aria-label="Continua con Google"
@@ -261,7 +261,7 @@ function LoginFormContent({ from = '/dashboard', googleLoginEnabled = true }: Lo
           type="button"
           variant="outline"
           size="md"
-          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="w-full border-neutral-300 hover:bg-neutral-50 dark:border-white/[0.1] dark:hover:bg-white/[0.06]"
           disabled={form.isSubmitting}
           onClick={() => signIn('apple', { callbackUrl: from })}
           aria-label="Continua con Apple"

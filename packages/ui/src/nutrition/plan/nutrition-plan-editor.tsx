@@ -523,7 +523,7 @@ export function NutritionPlanEditor({
       {/* Version History */}
       {showVersions && (
         <VersionHistory
-          versions={(versions as unknown[]).map((v: any) => ({
+          versions={(versions as { id: string; version: number; createdAt: string }[]).map((v) => ({
             id: v.id,
             version: v.version,
             createdAt: v.createdAt,
@@ -610,7 +610,7 @@ export function NutritionPlanEditor({
       <div
         className={cn(
           'rounded-2xl border-2 border-dashed p-6 text-center shadow-sm transition-all duration-200 hover:border-green-400 dark:hover:border-green-500',
-          'bg-neutral-50 dark:bg-neutral-800/50',
+          'bg-neutral-50 dark:bg-white/[0.05]',
           darkModeClasses.border.base
         )}
       >

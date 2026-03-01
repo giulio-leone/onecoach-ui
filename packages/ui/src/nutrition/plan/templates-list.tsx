@@ -205,20 +205,20 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
             className={`min-h-[32px] flex-shrink-0 touch-manipulation rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
               selectedType === 'all'
                 ? 'bg-green-600 text-white'
-                : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+                : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-white/[0.04] dark:bg-zinc-950 dark:text-neutral-300'
             }`}
             type="button"
           >
             {t('type.all')}
           </button>
-          {(['meal', 'day', 'week'] as const).map((type: any) => (
+          {(['meal', 'day', 'week'] as const).map((type) => (
             <button
               key={type}
               onClick={() => setSelectedType(type)}
               className={`flex min-h-[32px] flex-shrink-0 touch-manipulation items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
                 selectedType === type
                   ? 'bg-green-600 text-white'
-                  : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+                  : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-white/[0.04] dark:bg-zinc-950 dark:text-neutral-300'
               }`}
               type="button"
             >
@@ -234,21 +234,21 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
             onClick={() => setSelectedCategory('all')}
             className={`min-h-[32px] flex-shrink-0 touch-manipulation rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
               selectedCategory === 'all'
-                ? 'bg-blue-600 text-white'
-                : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+                ? 'bg-primary-600 text-white'
+                : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-white/[0.04] dark:bg-zinc-950 dark:text-neutral-300'
             }`}
             type="button"
           >
             {t('category.all')}
           </button>
-          {categories.map((cat: any) => (
+          {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className={`min-h-[32px] flex-shrink-0 touch-manipulation rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
                 selectedCategory === cat
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-white text-neutral-700 hover:bg-neutral-100 dark:bg-white/[0.04] dark:bg-zinc-950 dark:text-neutral-300'
               }`}
               type="button"
             >
@@ -304,8 +304,8 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
             </p>
           </div>
         ) : (
-          templates.map((template: any) => {
-            const TypeIcon = (TYPE_ICONS as any)[template.type];
+          templates.map((template: NutritionTemplate) => {
+            const TypeIcon = TYPE_ICONS[template.type as keyof typeof TYPE_ICONS];
 
             return (
               <div
@@ -327,11 +327,11 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
                           {template.name}
                         </h3>
                         <div className="mt-1 flex items-center gap-2">
-                          <span className="flex-shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+                          <span className="flex-shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
                             {t(`type.${template.type}`)}
                           </span>
                           {template.category && (
-                            <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs text-blue-700">
+                            <span className="rounded-full bg-primary-100 px-2 py-0.5 text-xs text-primary-700">
                               {template.category}
                             </span>
                           )}
@@ -351,7 +351,7 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
                         {onEdit && (
                           <button
                             onClick={() => onEdit(template)}
-                            className="flex min-h-[44px] min-w-[44px] touch-manipulation items-center justify-center rounded-lg p-2 text-blue-600 hover:bg-blue-50"
+                            className="flex min-h-[44px] min-w-[44px] touch-manipulation items-center justify-center rounded-lg p-2 text-primary-600 hover:bg-primary-50"
                             title={tCommon('actions.edit')}
                             type="button"
                           >
@@ -404,10 +404,10 @@ export function TemplatesList({ onSelect, onEdit, onDelete, onClose }: Templates
                     </div>
                     {template.tags.length > 0 && (
                       <div className="mt-2 flex flex-wrap gap-1">
-                        {template.tags.map((tag: any) => (
+                        {template.tags.map((tag: string) => (
                           <span
                             key={tag}
-                            className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+                            className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400"
                           >
                             #{tag}
                           </span>

@@ -30,7 +30,7 @@ export function NutritionDashboard() {
   }, [activePlan]);
 
   return (
-    <div className="min-h-screen w-full bg-neutral-50/50 dark:bg-neutral-950">
+    <div className="min-h-screen w-full bg-neutral-50/50 dark:bg-[#09090b]">
       {/* Ambient Background Glows */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute -top-[20%] -left-[10%] h-[60%] w-[60%] rounded-full bg-emerald-500/5 blur-[120px]" />
@@ -46,8 +46,8 @@ export function NutritionDashboard() {
               href="/nutrition/create"
               className={cn(
                 'group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold shadow-sm transition-all duration-200',
-                'border border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50',
-                'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:bg-neutral-800'
+                'border border-neutral-200/60 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50',
+                'dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-200 dark:hover:bg-white/[0.06]'
               )}
             >
               <Plus className="h-4 w-4 text-neutral-500 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200" />

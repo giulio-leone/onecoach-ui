@@ -217,7 +217,7 @@
     "next": "16.1.1",
     "react-markdown": "^10.1.0",
     "react-native-web": "~0.21.2",
-    "react-syntax-highlighter": "^16.1.0",
+    "react-syntax-highlighter": "^16.1.1",
     "recharts": "^3.6.0",
     "tailwind-merge": "^3.4.0"
   },

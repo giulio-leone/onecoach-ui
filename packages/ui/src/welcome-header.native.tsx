@@ -19,7 +19,7 @@ export function WelcomeHeader({ userName, className, title, subtitle }: WelcomeH
       intensity="light"
       className={cn(
         'flex flex-row items-center gap-4 p-6',
-        'bg-gradient-to-r from-indigo-500/10 to-purple-500/10',
+        'bg-gradient-to-r from-indigo-500/10 to-secondary-500/10',
         'border-white/20 dark:border-white/10',
         className
       )}
@@ -27,7 +27,7 @@ export function WelcomeHeader({ userName, className, title, subtitle }: WelcomeH
       <Avatar
         fallback={userName?.[0] || 'U'}
         size="xl"
-        className="border-2 border-white shadow-lg dark:border-neutral-800"
+        className="border-2 border-white shadow-lg dark:border-white/[0.06]"
         bordered
       />
       <View className="flex-1 gap-1">

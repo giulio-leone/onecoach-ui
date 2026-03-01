@@ -82,7 +82,7 @@ export function GoalsStep({ formData, onGoalChange, onActivityChange }: GoalsSte
                   'relative flex items-start gap-4 rounded-xl border-2 p-4 text-left transition-all',
                   isSelected
                     ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
-                    : 'border-neutral-200 hover:border-green-200 hover:bg-neutral-50 dark:border-neutral-700 dark:hover:border-green-800 dark:hover:bg-neutral-800'
+                    : 'border-neutral-200/60 hover:border-green-200 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:border-green-800 dark:hover:bg-white/[0.06]'
                 )}
               >
                 <div
@@ -90,7 +90,7 @@ export function GoalsStep({ formData, onGoalChange, onActivityChange }: GoalsSte
                     'flex h-10 w-10 items-center justify-center rounded-lg',
                     isSelected
                       ? 'bg-green-100 text-green-600 dark:bg-green-800 dark:text-green-300'
-                      : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
+                      : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-400'
                   )}
                 >
                   <Icon className="h-5 w-5" />
@@ -131,7 +131,7 @@ export function GoalsStep({ formData, onGoalChange, onActivityChange }: GoalsSte
                 'flex items-center justify-between rounded-lg border px-4 py-3 text-left transition-all',
                 formData.userProfile?.activityLevel === level.id
                   ? 'border-green-500 bg-green-50 ring-1 ring-green-500 dark:bg-green-900/20'
-                  : 'border-neutral-200 hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-800'
+                  : 'border-neutral-200/60 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:bg-white/[0.06]'
               )}
             >
               <span className="font-medium text-neutral-900 dark:text-neutral-100">

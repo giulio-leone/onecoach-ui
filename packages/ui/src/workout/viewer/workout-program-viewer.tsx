@@ -146,7 +146,7 @@ export function WorkoutProgramViewer({
   const handleTrack = () => {
     if (onTrack) {
       const today = new Date();
-      const weekDay = getWeekAndDayFromDate(program as any, today);
+      const weekDay = getWeekAndDayFromDate(program as Parameters<typeof getWeekAndDayFromDate>[0], today);
       if (weekDay) {
         onTrack(weekDay.weekNumber, weekDay.dayNumber);
       } else {
@@ -154,7 +154,7 @@ export function WorkoutProgramViewer({
       }
     } else {
       const today = new Date();
-      const weekDay = getWeekAndDayFromDate(program as any, today);
+      const weekDay = getWeekAndDayFromDate(program as Parameters<typeof getWeekAndDayFromDate>[0], today);
       if (weekDay) {
         router.push(
           `/workouts/${programId}/start?week=${weekDay.weekNumber}&day=${weekDay.dayNumber}`
@@ -195,7 +195,7 @@ export function WorkoutProgramViewer({
       {/* Ambient Background Glows */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute -top-[20%] -left-[10%] h-[60%] w-[60%] rounded-full bg-indigo-500/5 blur-[120px]" />
-        <div className="absolute top-[20%] -right-[10%] h-[50%] w-[50%] rounded-full bg-purple-500/5 blur-[100px]" />
+        <div className="absolute top-[20%] -right-[10%] h-[50%] w-[50%] rounded-full bg-secondary-500/5 blur-[100px]" />
       </div>
 
       <div className="relative z-10 px-4 py-8 sm:px-6 lg:px-8">
@@ -397,7 +397,7 @@ export function WorkoutProgramViewer({
 
                       {/* Cooldown */}
                       {day.cooldown && (
-                        <div className="mt-4 rounded-xl border border-blue-500/20 bg-blue-900/20 p-3 text-sm text-blue-300 backdrop-blur-sm">
+                        <div className="mt-4 rounded-xl border border-primary-500/20 bg-primary-900/20 p-3 text-sm text-primary-300 backdrop-blur-sm">
                           <span className="font-semibold">Cooldown:</span> {day.cooldown}
                         </div>
                       )}

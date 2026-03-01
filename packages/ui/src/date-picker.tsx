@@ -42,21 +42,21 @@ const triggerVariants = cva(
     variants: {
       variant: {
         default: [
-          'border-neutral-200 bg-white text-neutral-700 shadow-sm',
+          'border-neutral-200/60 bg-white text-neutral-700 shadow-sm',
           'hover:border-neutral-300 hover:bg-neutral-50',
-          'focus-visible:ring-blue-500',
-          'dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200',
-          'dark:hover:border-neutral-600 dark:hover:bg-neutral-800',
+          'focus-visible:ring-primary-500',
+          'dark:border-white/[0.08] dark:bg-zinc-950 dark:text-neutral-200',
+          'dark:hover:border-white/[0.15] dark:hover:bg-white/[0.06]',
         ],
         outline: [
           'border-neutral-300 bg-transparent text-neutral-700',
           'hover:bg-neutral-100',
-          'dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-800',
+          'dark:border-white/[0.1] dark:text-neutral-300 dark:hover:bg-white/[0.06]',
         ],
         ghost: [
           'border-transparent bg-transparent text-neutral-700',
           'hover:bg-neutral-100',
-          'dark:text-neutral-300 dark:hover:bg-neutral-800',
+          'dark:text-neutral-300 dark:hover:bg-white/[0.06]',
         ],
       },
     },
@@ -210,7 +210,7 @@ export function DatePicker({
           className
         )}
       >
-        <Calendar className="h-4 w-4 text-blue-500" />
+        <Calendar className="h-4 w-4 text-primary-500" />
         <span className={cn(!value && 'text-neutral-400 dark:text-neutral-500')}>
           {displayValue}
         </span>
@@ -221,14 +221,14 @@ export function DatePicker({
           align="start"
           sideOffset={8}
           className={cn(
-            'z-50 w-[300px] max-w-[94vw] rounded-xl border border-neutral-200 bg-white p-3 shadow-xl',
+            'z-50 w-[300px] max-w-[94vw] rounded-xl border border-neutral-200/60 bg-white p-3 shadow-xl',
             'animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
-            'dark:border-neutral-700 dark:bg-neutral-900'
+            'dark:border-white/[0.08] dark:bg-zinc-950'
           )}
         >
           {/* Quick Select Buttons */}
           {showQuickSelect && quickSelectOptions.length > 0 && (
-            <div className="mb-3 border-b border-neutral-100 pb-3 dark:border-neutral-800">
+            <div className="mb-3 border-b border-neutral-100 pb-3 dark:border-white/[0.06]">
               <div className="mb-2 flex items-center gap-1.5 text-xs font-medium text-neutral-500">
                 <Zap className="h-3 w-3" />
                 Quick Select
@@ -241,8 +241,8 @@ export function DatePicker({
                     onClick={() => handleQuickSelect(option.id)}
                     className={cn(
                       'rounded-lg px-2.5 py-1 text-xs font-medium transition-colors',
-                      'bg-neutral-100 text-neutral-700 hover:bg-blue-100 hover:text-blue-700',
-                      'dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-blue-900/40 dark:hover:text-blue-300'
+                      'bg-neutral-100 text-neutral-700 hover:bg-primary-100 hover:text-primary-700',
+                      'dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-primary-900/40 dark:hover:text-primary-300'
                     )}
                   >
                     {option.label}
@@ -260,7 +260,7 @@ export function DatePicker({
               disabled={!canGoPrevious}
               aria-label={t.previousMonth}
               className={cn(
-                'rounded-lg p-1.5 text-neutral-600 transition hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800',
+                'rounded-lg p-1.5 text-neutral-600 transition hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-white/[0.06]',
                 !canGoPrevious && 'cursor-not-allowed opacity-30 hover:bg-transparent'
               )}
             >
@@ -275,7 +275,7 @@ export function DatePicker({
               type="button"
               onClick={handleNextMonth}
               aria-label={t.nextMonth}
-              className="rounded-lg p-1.5 text-neutral-600 transition hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+              className="rounded-lg p-1.5 text-neutral-600 transition hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-white/[0.06]"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
@@ -315,12 +315,12 @@ export function DatePicker({
                       disabled={isDisabled}
                       className={cn(
                         'flex h-8 w-8 items-center justify-center rounded-lg text-sm font-medium transition-all duration-150',
-                        'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
+                        'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500',
                         isSelected
-                          ? 'bg-blue-600 text-white shadow-sm'
+                          ? 'bg-primary-600 text-white shadow-sm'
                           : isTodayDate
-                            ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300'
-                            : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800',
+                            ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300'
+                            : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.06]',
                         isDisabled && 'cursor-not-allowed opacity-30 hover:bg-transparent'
                       )}
                     >
@@ -334,11 +334,11 @@ export function DatePicker({
 
           {/* Today button (only if today is in range) */}
           {isDateInRange(new Date(), minDate, maxDate) && (
-            <div className="mt-3 border-t border-neutral-100 pt-3 dark:border-neutral-800">
+            <div className="mt-3 border-t border-neutral-100 pt-3 dark:border-white/[0.06]">
               <button
                 type="button"
                 onClick={handleToday}
-                className="w-full rounded-lg py-1.5 text-sm font-medium text-blue-600 transition hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/20"
+                className="w-full rounded-lg py-1.5 text-sm font-medium text-primary-600 transition hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-primary-900/20"
               >
                 {t.today}
               </button>

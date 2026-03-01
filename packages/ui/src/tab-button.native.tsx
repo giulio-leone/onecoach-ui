@@ -24,7 +24,7 @@ export const TabButton = ({ active, onClick, icon: Icon, label, count }: TabButt
       className={`min-h-[44px] flex-row items-center justify-start rounded-2xl px-4 py-3 ${
         active
           ? 'elevation-3 bg-primary-600 shadow-sm'
-          : 'elevation-2 bg-white shadow-xs dark:bg-neutral-800'
+          : 'elevation-2 bg-white shadow-xs dark:bg-white/[0.04]'
       }`}
     >
       <Icon size={20} color={active ? '#ffffff' : '#374151'} />

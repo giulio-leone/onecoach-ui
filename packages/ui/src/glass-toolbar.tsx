@@ -28,7 +28,7 @@ export const GlassToolbar = ({
   return (
     <div
       className={cn(
-        'sticky top-0 z-10 mb-8 flex flex-col gap-4 rounded-2xl bg-white/80 p-2 backdrop-blur-xl sm:flex-row sm:items-center dark:bg-neutral-900/80',
+        'sticky top-0 z-10 mb-8 flex flex-col gap-4 rounded-2xl bg-white/80 p-2 backdrop-blur-xl sm:flex-row sm:items-center dark:bg-white/[0.06]',
         className
       )}
     >
@@ -56,15 +56,15 @@ export const GlassToolbar = ({
       {/* View Toggle */}
       {viewMode && onViewModeChange && (
         <>
-          <div className="hidden h-8 w-px bg-neutral-200 sm:block dark:bg-neutral-800" />
-          <div className="flex rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800">
+          <div className="hidden h-8 w-px bg-neutral-200 sm:block dark:bg-white/[0.04]" />
+          <div className="flex rounded-lg bg-neutral-100 p-1 dark:bg-white/[0.04]">
             <button
               type="button"
               onClick={() => onViewModeChange('grid')}
               className={cn(
                 'rounded-md p-2 transition-all',
                 viewMode === 'grid'
-                  ? 'bg-white text-neutral-900 shadow-sm dark:bg-neutral-700 dark:text-white'
+                  ? 'bg-white text-neutral-900 shadow-sm dark:bg-white/[0.08] dark:text-white'
                   : 'text-neutral-400 hover:text-neutral-600 dark:text-neutral-500'
               )}
             >
@@ -76,7 +76,7 @@ export const GlassToolbar = ({
               className={cn(
                 'rounded-md p-2 transition-all',
                 viewMode === 'list'
-                  ? 'bg-white text-neutral-900 shadow-sm dark:bg-neutral-700 dark:text-white'
+                  ? 'bg-white text-neutral-900 shadow-sm dark:bg-white/[0.08] dark:text-white'
                   : 'text-neutral-400 hover:text-neutral-600 dark:text-neutral-500'
               )}
             >

@@ -17,7 +17,7 @@ interface SkeletonProps {
 export function Skeleton({ className }: SkeletonProps) {
   return (
     <div
-      className={cn('animate-pulse rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60', className)}
+      className={cn('animate-pulse rounded-xl bg-neutral-200/50 dark:bg-white/[0.06]', className)}
     />
   );
 }
@@ -27,7 +27,7 @@ export function Skeleton({ className }: SkeletonProps) {
  */
 export function StatCardSkeleton() {
   return (
-    <div className="rounded-2xl border border-neutral-200/50 bg-white/60 p-4 dark:border-neutral-700/50 dark:bg-neutral-800/60">
+    <div className="rounded-2xl border border-neutral-200/50 bg-white/60 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
       <div className="flex items-center gap-2">
         <Skeleton className="h-5 w-5 rounded-lg" />
         <Skeleton className="h-4 w-20" />
@@ -74,7 +74,7 @@ export function TabSkeleton() {
       </div>
 
       {/* Content area */}
-      <div className="rounded-2xl border border-neutral-200/50 bg-white/60 p-6 dark:border-neutral-700/50 dark:bg-neutral-800/60">
+      <div className="rounded-2xl border border-neutral-200/50 bg-white/60 p-6 dark:border-white/[0.08] dark:bg-white/[0.05]">
         <SectionSkeleton rows={5} />
       </div>
     </div>
@@ -86,7 +86,7 @@ export function TabSkeleton() {
  */
 export function CardSkeleton() {
   return (
-    <div className="rounded-xl border border-neutral-200/50 bg-white/60 p-4 dark:border-neutral-700/50 dark:bg-neutral-800/60">
+    <div className="rounded-xl border border-neutral-200/50 bg-white/60 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1">
           <div className="flex items-center gap-2">
@@ -107,9 +107,9 @@ export function CardSkeleton() {
  */
 export function TableSkeleton({ rows = 5, cols = 4 }: { rows?: number; cols?: number }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-neutral-200/50 dark:border-neutral-700/50">
+    <div className="overflow-hidden rounded-xl border border-neutral-200/50 dark:border-white/[0.08]">
       {/* Header */}
-      <div className="flex gap-4 border-b border-neutral-200/50 bg-neutral-50/60 p-4 dark:border-neutral-700/50 dark:bg-neutral-800/60">
+      <div className="flex gap-4 border-b border-neutral-200/50 bg-neutral-50/60 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
         {Array.from({ length: cols }).map((_, i) => (
           <Skeleton key={i} className="h-4 flex-1" />
         ))}
@@ -118,7 +118,7 @@ export function TableSkeleton({ rows = 5, cols = 4 }: { rows?: number; cols?: nu
       {Array.from({ length: rows }).map((_, i) => (
         <div
           key={i}
-          className="flex gap-4 border-b border-neutral-100 p-4 last:border-b-0 dark:border-neutral-700/50"
+          className="flex gap-4 border-b border-neutral-100 p-4 last:border-b-0 dark:border-white/[0.08]"
         >
           {Array.from({ length: cols }).map((_, j) => (
             <Skeleton key={j} className="h-4 flex-1" />

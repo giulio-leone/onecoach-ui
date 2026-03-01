@@ -13,14 +13,14 @@ export interface ResponsiveActionPillProps {
 }
 
 const variantClasses = {
-  blue: 'bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/20 dark:text-blue-400 dark:hover:bg-blue-900/30',
+  blue: 'bg-primary-50 text-primary-700 hover:bg-primary-100 dark:bg-primary-900/20 dark:text-primary-400 dark:hover:bg-primary-900/30',
   emerald:
     'bg-emerald-50 text-emerald-700 hover:bg-emerald-100 dark:bg-emerald-900/20 dark:text-emerald-400 dark:hover:bg-emerald-900/30',
   purple:
-    'bg-purple-50 text-purple-700 hover:bg-purple-100 dark:bg-purple-900/20 dark:text-purple-400 dark:hover:bg-purple-900/30',
+    'bg-secondary-50 text-secondary-700 hover:bg-secondary-100 dark:bg-secondary-900/20 dark:text-secondary-400 dark:hover:bg-secondary-900/30',
   red: 'text-red-500 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20', // Red is usually ghost/icon-only in this context
   neutral:
-    'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700',
+    'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]',
 };
 
 export function ResponsiveActionPill({

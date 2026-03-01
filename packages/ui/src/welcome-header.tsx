@@ -18,7 +18,7 @@ export function WelcomeHeader({ userName, className, title, subtitle }: WelcomeH
       glassIntensity="light"
       className={cn(
         'flex items-center gap-6 p-8',
-        'bg-gradient-to-r from-indigo-500/10 to-purple-500/10',
+        'bg-gradient-to-r from-indigo-500/10 to-secondary-500/10',
         'border-white/20 dark:border-white/10',
         className
       )}
@@ -26,7 +26,7 @@ export function WelcomeHeader({ userName, className, title, subtitle }: WelcomeH
       <Avatar
         fallback={userName?.[0] || 'U'}
         size="xl"
-        className="h-20 w-20 border-4 border-white shadow-xl dark:border-neutral-800"
+        className="h-20 w-20 border-4 border-white shadow-xl dark:border-white/[0.06]"
         bordered
       />
       <div className="flex flex-col gap-1">

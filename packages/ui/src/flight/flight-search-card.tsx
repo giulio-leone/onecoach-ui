@@ -95,7 +95,7 @@ export function FlightSearchCard({
             'flex h-8 w-8 items-center justify-center rounded-full transition-all',
             search.isFavorite
               ? 'bg-red-500/10 text-red-500 hover:bg-red-500/20'
-              : 'bg-white/50 text-neutral-400 hover:bg-white/80 hover:text-red-500 dark:bg-neutral-800/50 dark:hover:bg-neutral-700',
+              : 'bg-white/50 text-neutral-400 hover:bg-white/80 hover:text-red-500 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]',
             isTogglingFavorite && 'animate-pulse'
           )}
           aria-label={search.isFavorite ? 'Remove from favorites' : 'Add to favorites'}
@@ -106,7 +106,7 @@ export function FlightSearchCard({
           onClick={handleDelete}
           disabled={isDeleting}
           className={cn(
-            'flex h-8 w-8 items-center justify-center rounded-full bg-white/50 text-neutral-400 transition-all hover:bg-red-500/10 hover:text-red-500 dark:bg-neutral-800/50 dark:hover:bg-neutral-700',
+            'flex h-8 w-8 items-center justify-center rounded-full bg-white/50 text-neutral-400 transition-all hover:bg-red-500/10 hover:text-red-500 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]',
             isDeleting && 'animate-pulse'
           )}
           aria-label="Delete search"
@@ -117,12 +117,12 @@ export function FlightSearchCard({
 
       {/* Route */}
       <div className="flex items-center gap-3 pr-20">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/10">
-          <Plane className="h-5 w-5 text-blue-500" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/10">
+          <Plane className="h-5 w-5 text-primary-500" />
         </div>
         <div className="flex flex-col">
           <span className="flex items-center gap-2 font-bold text-neutral-900 dark:text-white">
-            <MapPin className="h-3 w-3 text-blue-500" />
+            <MapPin className="h-3 w-3 text-primary-500" />
             {search.flyFrom.join(', ')}
           </span>
           <span className="flex items-center gap-2 text-sm text-neutral-500">
@@ -157,7 +157,7 @@ export function FlightSearchCard({
         <div className="flex flex-col">
           <span className="text-xs text-neutral-400">{search.resultsCount} results</span>
           {search.lowestPrice && (
-            <span className="text-lg font-bold text-blue-600 dark:text-blue-400">
+            <span className="text-lg font-bold text-primary-600 dark:text-primary-400">
               €{search.lowestPrice}
             </span>
           )}
@@ -171,7 +171,7 @@ export function FlightSearchCard({
           {href && (
             <Link
               href={href}
-              className="flex items-center gap-1 rounded-full bg-blue-500 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-blue-600"
+              className="flex items-center gap-1 rounded-full bg-primary-500 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary-600"
             >
               View
               <ArrowRight className="h-3 w-3" />

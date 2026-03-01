@@ -73,7 +73,7 @@ export function FoodBulkActions({
 
   return (
     <>
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-blue-900 dark:border-blue-800 dark:bg-blue-900/20 dark:text-blue-100">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-primary-200 bg-primary-50 p-4 text-sm text-primary-900 dark:border-primary-800 dark:bg-primary-900/20 dark:text-primary-100">
         {/* Selezione */}
         <div className="flex items-center gap-3">
           <Checkbox checked={isAllSelected} onChange={onSelectAll} />
@@ -135,7 +135,7 @@ function FoodBulkUpdateModal({ selectedCount, onUpdate, onClose }: FoodBulkUpdat
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-xl dark:bg-neutral-900">
+      <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-xl dark:bg-zinc-950">
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-lg font-semibold">
             Aggiorna {selectedCount} elemento{selectedCount > 1 ? 'i' : ''}
@@ -143,7 +143,7 @@ function FoodBulkUpdateModal({ selectedCount, onUpdate, onClose }: FoodBulkUpdat
           <button
             type="button"
             onClick={onClose}
-            className="rounded p-1 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            className="rounded p-1 hover:bg-neutral-100 dark:hover:bg-white/[0.06]"
           >
             <X size={20} />
           </button>
@@ -156,7 +156,7 @@ function FoodBulkUpdateModal({ selectedCount, onUpdate, onClose }: FoodBulkUpdat
             </label>
             <input
               type="text"
-              className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-neutral-700 dark:bg-neutral-800"
+              className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-white/[0.08] dark:bg-white/[0.04]"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setFormData((prev) => ({ ...prev, brand: e.target.value || undefined }))
               }
@@ -169,7 +169,7 @@ function FoodBulkUpdateModal({ selectedCount, onUpdate, onClose }: FoodBulkUpdat
             </label>
             <input
               type="text"
-              className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-neutral-700 dark:bg-neutral-800"
+              className="mt-1 w-full rounded-md border border-neutral-300 px-3 py-2 dark:border-white/[0.08] dark:bg-white/[0.04]"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setFormData((prev) => ({
                   ...prev,

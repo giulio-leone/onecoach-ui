@@ -47,7 +47,7 @@ export function MusclesMultiselect({ primary, secondary, onChange }: MusclesMult
     <div className="relative">
       <button
         type="button"
-        className="w-full rounded border border-neutral-300 px-3 py-2 text-left text-sm dark:border-neutral-600"
+        className="w-full rounded border border-neutral-300 px-3 py-2 text-left text-sm dark:border-white/[0.1]"
         onClick={() => setOpen((o) => !o)}
       >
         {primary.length + secondary.length > 0
@@ -55,9 +55,9 @@ export function MusclesMultiselect({ primary, secondary, onChange }: MusclesMult
           : 'Seleziona muscoli'}
       </button>
       {open && (
-        <div className="absolute z-50 mt-1 max-h-96 w-full overflow-auto rounded-md border border-neutral-200 bg-white p-2 shadow-lg dark:border-neutral-700 dark:bg-neutral-900">
+        <div className="absolute z-50 mt-1 max-h-96 w-full overflow-auto rounded-md border border-neutral-200/60 bg-white p-2 shadow-lg dark:border-white/[0.08] dark:bg-zinc-950">
           <input
-            className="mb-2 w-full rounded border border-neutral-300 px-2 py-1 text-sm dark:border-neutral-600"
+            className="mb-2 w-full rounded border border-neutral-300 px-2 py-1 text-sm dark:border-white/[0.1]"
             placeholder="Cerca..."
             value={q}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQ(e.target.value)}
@@ -73,7 +73,7 @@ export function MusclesMultiselect({ primary, secondary, onChange }: MusclesMult
                   label={o.name}
                   checked={primary.includes(o.id)}
                   onChange={() => toggle('primary', o.id)}
-                  className="px-2 py-1 hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
+                  className="px-2 py-1 hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50"
                 />
               ))}
             </div>
@@ -87,7 +87,7 @@ export function MusclesMultiselect({ primary, secondary, onChange }: MusclesMult
                   label={o.name}
                   checked={secondary.includes(o.id)}
                   onChange={() => toggle('secondary', o.id)}
-                  className="px-2 py-1 hover:bg-neutral-50 dark:hover:bg-neutral-800/50"
+                  className="px-2 py-1 hover:bg-neutral-50 dark:hover:bg-white/[0.06]/50"
                 />
               ))}
             </div>

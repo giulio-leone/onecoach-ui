@@ -82,7 +82,7 @@ export const Card = ({
           {/* Gradient Background placeholder for web parity if processed by RNWeb */}
           <View
             pointerEvents="none"
-            className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-10"
+            className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-500 via-secondary-500 to-secondary-500 opacity-10"
           />
         </>
       )}

@@ -184,10 +184,10 @@ const styles = StyleSheet.create({
     borderRadius: 2,
   },
   progressBarCompleted: {
-    backgroundColor: '#2563eb', // bg-blue-600
+    backgroundColor: '#4f46e5', // bg-primary-600
   },
   progressBarActive: {
-    backgroundColor: '#bfdbfe', // bg-blue-200
+    backgroundColor: '#c7d2fe', // bg-primary-200
   },
   progressBarInactive: {
     backgroundColor: '#e2e8f0', // bg-neutral-200
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
     top: 12,
     fontSize: 12,
     fontWeight: '700',
-    color: '#2563eb', // text-blue-600
+    color: '#4f46e5', // text-primary-600
   },
   content: {
     flex: 1,
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
     borderTopWidth: 1,
-    borderColor: '#e2e8f0', // border-neutral-200
+    borderColor: '#e2e8f0', // border-neutral-200/60
     padding: 16,
     // Shadow for iOS and Web
     boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.05)',

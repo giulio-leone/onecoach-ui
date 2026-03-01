@@ -43,16 +43,16 @@ export function StreamingOutputPanel({
       accent: 'text-green-700',
     },
     workout: {
-      border: 'border-blue-200',
-      bg: 'bg-blue-50',
-      icon: 'text-blue-600',
-      accent: 'text-blue-700',
+      border: 'border-primary-200',
+      bg: 'bg-primary-50',
+      icon: 'text-primary-600',
+      accent: 'text-primary-700',
     },
     chat: {
-      border: 'border-purple-200',
-      bg: 'bg-purple-50',
-      icon: 'text-purple-600',
-      accent: 'text-purple-700',
+      border: 'border-secondary-200',
+      bg: 'bg-secondary-50',
+      icon: 'text-secondary-600',
+      accent: 'text-secondary-700',
     },
   };
 
@@ -69,9 +69,9 @@ export function StreamingOutputPanel({
   };
 
   return (
-    <div className="flex h-full min-h-[400px] flex-col overflow-x-hidden rounded-2xl border-2 border-neutral-200 bg-white shadow-lg sm:min-h-[500px] dark:border-neutral-700 dark:bg-neutral-900">
+    <div className="flex h-full min-h-[400px] flex-col overflow-x-hidden rounded-2xl border-2 border-neutral-200/60 bg-white shadow-lg sm:min-h-[500px] dark:border-white/[0.08] dark:bg-zinc-950">
       {/* Header */}
-      <div className="flex items-center justify-between border-b-2 border-neutral-200 p-3 sm:p-4 dark:border-neutral-700">
+      <div className="flex items-center justify-between border-b-2 border-neutral-200/60 p-3 sm:p-4 dark:border-white/[0.08]">
         <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
           <div className={`rounded-lg ${theme.bg} flex-shrink-0 p-2`}>
             <Code className={`h-4 w-4 ${theme.icon} sm:h-5 sm:w-5`} />
@@ -93,7 +93,7 @@ export function StreamingOutputPanel({
           {content && (
             <button
               onClick={handleCopy}
-              className="rounded-lg border border-neutral-300 p-2 text-neutral-600 transition-colors active:bg-neutral-100 sm:hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+              className="rounded-lg border border-neutral-300 p-2 text-neutral-600 transition-colors active:bg-neutral-100 sm:hover:bg-neutral-100 dark:border-white/[0.1] dark:bg-white/[0.04] dark:text-neutral-400"
               title="Copia"
               aria-label="Copia contenuto"
             >
@@ -106,7 +106,7 @@ export function StreamingOutputPanel({
           )}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="rounded-lg border border-neutral-300 p-2 text-neutral-600 transition-colors active:bg-neutral-100 sm:hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+            className="rounded-lg border border-neutral-300 p-2 text-neutral-600 transition-colors active:bg-neutral-100 sm:hover:bg-neutral-100 dark:border-white/[0.1] dark:bg-white/[0.04] dark:text-neutral-400"
             aria-label={isExpanded ? 'Comprimi' : 'Espandi'}
           >
             {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
@@ -134,7 +134,7 @@ export function StreamingOutputPanel({
                 )}
               </div>
               {isExpanded && (
-                <pre className="overflow-x-auto rounded-xl border-2 border-neutral-200 bg-neutral-50 p-3 font-mono text-xs break-words whitespace-pre-wrap text-neutral-700 sm:p-4 dark:border-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-300">
+                <pre className="overflow-x-auto rounded-xl border-2 border-neutral-200/60 bg-neutral-50 p-3 font-mono text-xs break-words whitespace-pre-wrap text-neutral-700 sm:p-4 dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-neutral-300">
                   {JSON.stringify(parsedData, null, 2)}
                 </pre>
               )}
@@ -157,15 +157,15 @@ export function StreamingOutputPanel({
 
       {/* Actions */}
       {parsedData && onSave && !savedId && (
-        <div className="border-t-2 border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-neutral-700 dark:bg-neutral-800/50">
+        <div className="border-t-2 border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
           <button
             onClick={onSave}
             className={`min-h-[48px] w-full rounded-xl bg-gradient-to-r px-6 py-3 text-base font-bold text-white shadow-lg transition-all active:scale-95 sm:hover:scale-105 ${
               colorTheme === 'nutrition'
                 ? 'from-green-500 to-emerald-600'
                 : colorTheme === 'workout'
-                  ? 'from-blue-500 to-indigo-600'
-                  : 'from-purple-500 to-violet-600'
+                  ? 'from-primary-500 to-indigo-600'
+                  : 'from-secondary-500 to-violet-600'
             }`}
           >
             {t('common.output_panel.salva_piano')}

@@ -167,7 +167,7 @@ export function FrameworkConfigPanel() {
         <button
           onClick={fetchConfigs}
           disabled={loading}
-          className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50"
+          className="flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-white hover:bg-primary-700 disabled:opacity-50"
         >
           <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
           Refresh
@@ -245,7 +245,7 @@ export function FrameworkConfigPanel() {
                         }
                       }
                     }}
-                    className="mt-3 flex items-center gap-2 rounded-lg bg-blue-600 px-3 py-1.5 text-sm text-white hover:bg-blue-700"
+                    className="mt-3 flex items-center gap-2 rounded-lg bg-primary-600 px-3 py-1.5 text-sm text-white hover:bg-primary-700"
                   >
                     <Save size={14} />
                     {t('admin.framework_config_panel.edit_configuration')}
@@ -267,11 +267,11 @@ export function FrameworkConfigPanel() {
       </div>
 
       {/* Info Box */}
-      <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
-        <h3 className="mb-2 font-semibold text-blue-900">
+      <div className="rounded-lg border border-primary-200 bg-primary-50 p-4">
+        <h3 className="mb-2 font-semibold text-primary-900">
           {t('admin.framework_config_panel.how_it_works')}
         </h3>
-        <ul className="list-inside list-disc space-y-1 text-sm text-blue-800">
+        <ul className="list-inside list-disc space-y-1 text-sm text-primary-800">
           <li>{t('admin.framework_config_panel.toggle_features_on_off_to_enable_disable')}</li>
           <li>{t('admin.framework_config_panel.each_feature_has_its_own_configuration_t')}</li>
           <li>{t('admin.framework_config_panel.changes_are_tracked_with_timestamps_and_')}</li>

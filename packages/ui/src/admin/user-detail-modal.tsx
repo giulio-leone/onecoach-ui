@@ -15,7 +15,7 @@ import { handleApiError } from '@giulio-leone/lib-shared';
 const AdminSelect = ({ children, ...props }: React.SelectHTMLAttributes<HTMLSelectElement>) => (
   <select
     {...props}
-    className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+    className="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm focus:border-primary-500 focus:ring-1 focus:ring-primary-500 focus:outline-none dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-100"
   >
     {children}
   </select>
@@ -213,7 +213,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
           )}
           {/* Admin/Super Admin Edge Config Notice */}
           {(user.role === 'ADMIN' || user.role === 'SUPER_ADMIN') && (
-            <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 text-sm text-blue-800 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+            <div className="rounded-lg border border-primary-200 bg-primary-50 p-3 text-sm text-primary-800 dark:border-primary-800 dark:bg-primary-900/30 dark:text-primary-300">
               <p className="font-medium">
                 {user.role === 'SUPER_ADMIN' ? 'Super Admin' : 'Admin'}{' '}
                 {t('admin.user_detail_modal.sincronizzazione_edge_config')}
@@ -325,7 +325,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
             </AdminSelect>
           </div>
           {/* Credits */}
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800/50">
+          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
             <h4 className="mb-4 font-semibold text-neutral-900 dark:text-neutral-100">
               {t('admin.user_detail_modal.gestione_crediti')}
             </h4>
@@ -339,7 +339,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
                   {currentCredits}
                 </p>
                 {currentCredits !== user.credits && (
-                  <p className="mt-1 text-xs text-blue-600 dark:text-blue-400">
+                  <p className="mt-1 text-xs text-primary-600 dark:text-primary-400">
                     {t('admin.user_detail_modal.aggiornato_in_tempo_reale')}
                   </p>
                 )}
@@ -455,7 +455,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
             </div>
           </div>
           {/* Activity stats */}
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800/50">
+          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
             <h4 className="mb-3 font-semibold text-neutral-900 dark:text-neutral-100">
               {t('admin.user_detail_modal.statistiche_attivita')}
             </h4>
@@ -479,7 +479,7 @@ export function UserDetailModal({ isOpen, user, onClose, onSuccess }: UserDetail
             </div>
           </div>
           {/* API Keys */}
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800/50">
+          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
             <UserApiKeys userId={user.id} />
           </div>
         </div>

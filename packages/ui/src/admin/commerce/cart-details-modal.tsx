@@ -119,7 +119,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
         {loading && <p className="text-sm text-neutral-500">{tCommon('loading')}</p>}
         {!loading && cart && (
           <>
-            <div className="rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+            <div className="rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
               <div className="flex flex-wrap items-center gap-3">
                 <Badge>{cart.status}</Badge>
                 <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
@@ -148,20 +148,20 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 </p>
                 <div className="mt-2 flex flex-wrap gap-2 text-xs text-neutral-500">
                   {cart.promoCode && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-1 dark:bg-neutral-800">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-1 dark:bg-white/[0.04]">
                       <TicketPercent className="h-3 w-3" />
                       Promo {cart.promoCode}
                     </span>
                   )}
                   {cart.referralCode && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-1 dark:bg-neutral-800">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-1 dark:bg-white/[0.04]">
                       Referral {cart.referralCode}
                     </span>
                   )}
                 </div>
               </div>
             </div>
-            <div className="space-y-2 rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+            <div className="space-y-2 rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
                   {t('details.items')}
@@ -174,7 +174,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 {cart.cart_items.map((item: CartItem) => (
                   <div
                     key={item.id}
-                    className="rounded-lg border border-neutral-100 p-2 text-sm dark:border-neutral-800"
+                    className="rounded-lg border border-neutral-100 p-2 text-sm dark:border-white/[0.06]"
                   >
                     <div className="flex items-center justify-between">
                       <div>
@@ -222,7 +222,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 ))}
               </Select>
             </div>
-            <div className="space-y-2 rounded-lg border border-neutral-200 p-3 dark:border-neutral-800">
+            <div className="space-y-2 rounded-lg border border-neutral-200/60 p-3 dark:border-white/[0.06]">
               <p className="text-sm font-semibold text-neutral-800 dark:text-neutral-100">
                 {t('details.recentEvents')}
               </p>
@@ -230,7 +230,7 @@ export function CartDetailsModal({ cartId, open, onClose, onUpdated }: CartDetai
                 {events.map((event: any) => (
                   <div
                     key={event.id}
-                    className="rounded-md border border-neutral-100 p-2 text-xs dark:border-neutral-800"
+                    className="rounded-md border border-neutral-100 p-2 text-xs dark:border-white/[0.06]"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-semibold">{event.type}</span>

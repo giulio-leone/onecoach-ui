@@ -201,10 +201,10 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
               onClick={() => setShowPeriodDropdown(!showPeriodDropdown)}
               className={cn(
                 'flex items-center gap-2 rounded-xl px-4 py-2.5',
-                'bg-white dark:bg-neutral-800',
-                'border border-neutral-200 dark:border-neutral-700',
+                'bg-white dark:bg-white/[0.04]',
+                'border border-neutral-200/60 dark:border-white/[0.08]',
                 'text-sm font-medium text-neutral-700 dark:text-neutral-300',
-                'hover:bg-neutral-50 dark:hover:bg-neutral-700'
+                'hover:bg-neutral-50 dark:hover:bg-white/[0.08]'
               )}
             >
               <Calendar className="h-4 w-4" />
@@ -220,8 +220,8 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                   className={cn(
                     'absolute top-full right-0 z-50 mt-2',
                     'min-w-[180px] rounded-xl p-1',
-                    'bg-white dark:bg-neutral-800',
-                    'border border-neutral-200 dark:border-neutral-700',
+                    'bg-white dark:bg-white/[0.04]',
+                    'border border-neutral-200/60 dark:border-white/[0.08]',
                     'shadow-xl'
                   )}
                 >
@@ -237,7 +237,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                         'transition-colors',
                         period === option.value
                           ? 'bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400'
-                          : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                          : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.08]'
                       )}
                     >
                       {option.label}
@@ -254,9 +254,9 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
             disabled={isRefreshing}
             className={cn(
               'flex items-center gap-2 rounded-xl px-3 py-2.5',
-              'bg-neutral-100 dark:bg-neutral-700',
+              'bg-neutral-100 dark:bg-white/[0.08]',
               'text-neutral-600 dark:text-neutral-300',
-              'hover:bg-neutral-200 dark:hover:bg-neutral-600',
+              'hover:bg-neutral-200 dark:hover:bg-white/[0.1]',
               'disabled:opacity-50'
             )}
           >
@@ -270,11 +270,11 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
         <div
           className={cn(
             'rounded-2xl p-4',
-            'bg-gradient-to-br from-blue-500/10 to-blue-600/5',
-            'border border-blue-200/50 dark:border-blue-500/20'
+            'bg-gradient-to-br from-primary-500/10 to-primary-600/5',
+            'border border-primary-200/50 dark:border-primary-500/20'
           )}
         >
-          <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+          <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400">
             <MessageSquare className="h-5 w-5" />
             <span className="text-xs font-medium">{t('metrics.messages')}</span>
           </div>
@@ -353,13 +353,13 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="flex items-center gap-2">
-            <Users className="h-5 w-5 text-blue-500" />
+            <Users className="h-5 w-5 text-primary-500" />
             <span className="text-2xl font-bold text-neutral-900 dark:text-white">
               {stats?.uniqueUsers}
             </span>
@@ -369,9 +369,9 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="flex items-center gap-2">
@@ -385,9 +385,9 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="flex items-center gap-2">
@@ -401,9 +401,9 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
         <div
           className={cn(
             'rounded-xl p-4',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <div className="flex items-center gap-2">
@@ -422,9 +422,9 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
         <div
           className={cn(
             'rounded-2xl p-6',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <h3 className="mb-4 font-semibold text-neutral-900 dark:text-white">
@@ -462,9 +462,9 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
         <div
           className={cn(
             'rounded-2xl p-6',
-            'bg-white/80 dark:bg-neutral-800/80',
+            'bg-white/80 dark:bg-white/[0.06]',
             'backdrop-blur-xl',
-            'border border-neutral-200/50 dark:border-neutral-700/50'
+            'border border-neutral-200/50 dark:border-white/[0.08]'
           )}
         >
           <h3 className="mb-4 font-semibold text-neutral-900 dark:text-white">
@@ -487,7 +487,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                       {provider.cost.toFixed(2)}
                     </span>
                   </div>
-                  <div className="h-3 overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-700">
+                  <div className="h-3 overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.08]">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${percentage}%` }}
@@ -506,9 +506,9 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
       <div
         className={cn(
           'rounded-2xl p-6',
-          'bg-white/80 dark:bg-neutral-800/80',
+          'bg-white/80 dark:bg-white/[0.06]',
           'backdrop-blur-xl',
-          'border border-neutral-200/50 dark:border-neutral-700/50'
+          'border border-neutral-200/50 dark:border-white/[0.08]'
         )}
       >
         <h3 className="mb-4 font-semibold text-neutral-900 dark:text-white">
@@ -525,7 +525,7 @@ export function AnalyticsTab({ projectId }: AnalyticsTabProps) {
                 <th className="pb-3 text-right font-medium">{t('table.latency')}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-100 dark:divide-neutral-700">
+            <tbody className="divide-y divide-neutral-100 dark:divide-white/[0.08]">
               {modelStats.map((model: any) => (
                 <tr key={model.modelId} className="group">
                   <td className="py-3">

@@ -80,7 +80,7 @@ export function FlightCard({
             'absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full transition-all',
             isFavorite
               ? 'bg-red-500/10 text-red-500 hover:bg-red-500/20'
-              : 'bg-white/50 text-neutral-400 hover:bg-white/80 hover:text-red-500 dark:bg-neutral-800/50 dark:hover:bg-neutral-700',
+              : 'bg-white/50 text-neutral-400 hover:bg-white/80 hover:text-red-500 dark:bg-white/[0.05] dark:hover:bg-white/[0.08]',
             isTogglingFavorite && 'animate-pulse'
           )}
           aria-label={
@@ -99,8 +99,8 @@ export function FlightCard({
               className={cn(
                 'flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-black tracking-widest uppercase shadow-sm',
                 flightDirection === 'outbound'
-                  ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
-                  : 'bg-purple-500/10 text-purple-600 dark:text-purple-400'
+                  ? 'bg-primary-500/10 text-primary-600 dark:text-primary-400'
+                  : 'bg-secondary-500/10 text-secondary-600 dark:text-secondary-400'
               )}
             >
               {flightDirection === 'outbound' ? (
@@ -142,7 +142,7 @@ export function FlightCard({
               <span className="text-2xl font-black tracking-tight text-neutral-900 dark:text-white">
                 {formatTime(departureDate)}
               </span>
-              <span className="text-xs font-bold tracking-widest text-blue-600 uppercase dark:text-blue-400">
+              <span className="text-xs font-bold tracking-widest text-primary-600 uppercase dark:text-primary-400">
                 {flight.cityFrom}
               </span>
               <span className="text-xs font-bold text-neutral-400">{flight.flyFrom}</span>
@@ -169,7 +169,7 @@ export function FlightCard({
               <span className="text-2xl font-black tracking-tight text-neutral-900 dark:text-white">
                 {formatTime(arrivalDate)}
               </span>
-              <span className="text-xs font-bold tracking-widest text-blue-600 uppercase dark:text-blue-400">
+              <span className="text-xs font-bold tracking-widest text-primary-600 uppercase dark:text-primary-400">
                 {flight.cityTo}
               </span>
               <span className="text-xs font-bold text-neutral-400">{flight.flyTo}</span>
@@ -187,7 +187,7 @@ export function FlightCard({
             <span className="text-[10px] font-bold tracking-widest text-neutral-400 uppercase">
               {tFlight('results.price')}
             </span>
-            <span className="text-3xl font-black tracking-tight text-blue-600 dark:text-blue-400">
+            <span className="text-3xl font-black tracking-tight text-primary-600 dark:text-primary-400">
               €{flight.price}
             </span>
           </div>
@@ -197,7 +197,7 @@ export function FlightCard({
             rel="noopener noreferrer"
             className={cn(
               'rounded-xl px-6 py-2.5 text-xs font-black tracking-widest uppercase transition-all duration-200',
-              'bg-blue-600 text-white shadow-lg hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-xl'
+              'bg-primary-600 text-white shadow-lg hover:-translate-y-0.5 hover:bg-primary-500 hover:shadow-xl'
             )}
           >
             {tFlight('results.bookNow')}

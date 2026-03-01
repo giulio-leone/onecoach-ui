@@ -56,7 +56,7 @@ function deepCloneSetGroup(setGroup: SetGroup): SetGroup {
   return {
     ...setGroup,
     baseSet: { ...setGroup.baseSet },
-    sets: setGroup.sets?.map((s: any) => ({ ...s })) || [],
+    sets: setGroup.sets?.map((s) => ({ ...s })) || [],
   } as SetGroup;
 }
 
@@ -526,10 +526,10 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
       {/* Sidebar: Exercise List */}
       <div
         className={cn(
-          'flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 lg:h-full lg:w-80 lg:shrink-0 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-neutral-900/60'
+          'flex h-auto w-full flex-col overflow-hidden rounded-2xl border border-neutral-200/60 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 lg:h-full lg:w-80 lg:shrink-0 dark:border-white/5 dark:bg-white/[0.03] dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
         )}
       >
-        <div className="border-b border-neutral-200 bg-neutral-100/50 px-4 py-3 dark:border-white/5 dark:bg-white/5">
+        <div className="border-b border-neutral-200/60 bg-neutral-100/50 px-4 py-3 dark:border-white/5 dark:bg-white/5">
           <div className="flex items-center gap-2">
             <LayoutList size={18} className="text-neutral-500 dark:text-neutral-400" />
             <h3 className="font-semibold text-neutral-900 dark:text-white">{t('exercises')}</h3>
@@ -537,7 +537,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
         </div>
         <div className="flex gap-2 overflow-x-auto p-2 lg:flex-1 lg:flex-col lg:overflow-y-auto">
           <LayoutGroup>
-            {groupedExercises.map((group: any) => (
+            {groupedExercises.map((group) => (
               <motion.button
                 layout
                 key={group.exerciseId}
@@ -552,7 +552,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                 {selectedGroup.exerciseId === group.exerciseId && (
                   <motion.div
                     layoutId="activeExercise"
-                    className="absolute inset-0 rounded-xl bg-blue-500/10 ring-1 ring-blue-500/50 dark:bg-blue-500/20"
+                    className="absolute inset-0 rounded-xl bg-primary-500/10 ring-1 ring-primary-500/50 dark:bg-primary-500/20"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -563,7 +563,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                   className={cn(
                     'relative z-10 text-xs',
                     selectedGroup.exerciseId === group.exerciseId
-                      ? 'text-blue-600 dark:text-blue-200'
+                      ? 'text-primary-600 dark:text-primary-200'
                       : 'text-neutral-400 dark:text-neutral-500'
                   )}
                 >
@@ -581,14 +581,14 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
         <motion.div variants={containerVariants} initial="hidden" animate="visible">
           <div
             className={cn(
-              'rounded-2xl border border-neutral-200 bg-neutral-50 p-4 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 sm:p-6 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-neutral-900/60'
+              'rounded-2xl border border-neutral-200/60 bg-neutral-50 p-4 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 sm:p-6 dark:border-white/5 dark:bg-white/[0.03] dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60'
             )}
           >
             <div className="mb-4 flex flex-col gap-4 sm:gap-3">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="rounded-md bg-blue-500/10 p-1.5 ring-1 ring-blue-500/20">
-                    <TrendingUp size={20} className="text-blue-600 dark:text-blue-400" />
+                  <div className="rounded-md bg-primary-500/10 p-1.5 ring-1 ring-primary-500/20">
+                    <TrendingUp size={20} className="text-primary-600 dark:text-primary-400" />
                   </div>
                   <h2 className="text-xl font-bold text-neutral-900 dark:text-white">
                     {t('configure')}
@@ -598,12 +598,12 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <button
                     onClick={() => setShowTemplates(!showTemplates)}
-                    className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/5 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10"
+                    className="flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/5 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10"
                   >
                     <Download size={14} />
                     <span className="hidden sm:inline">{t('load')}</span>
                   </button>
-                  <button className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/5 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10">
+                  <button className="flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition-colors hover:bg-neutral-50 dark:border-white/5 dark:bg-white/5 dark:text-neutral-300 dark:hover:bg-white/10">
                     <Save size={14} />
                     <span className="hidden sm:inline">{t('save')}</span>
                   </button>
@@ -611,7 +611,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
               </div>
 
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                <div className="flex flex-col gap-2 rounded-lg border border-neutral-200 bg-white p-3 dark:border-white/5 dark:bg-neutral-900/50">
+                <div className="flex flex-col gap-2 rounded-lg border border-neutral-200/60 bg-white p-3 dark:border-white/5 dark:bg-white/[0.04]">
                   <div className="flex items-center gap-2">
                     <Scale size={16} className="text-neutral-500" />
                     <div className="leading-tight">
@@ -633,7 +633,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                     )}
                   </div>
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-                    <div className="flex flex-1 items-center gap-2 rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 ring-1 ring-transparent focus-within:ring-blue-500/50 dark:border-white/10 dark:bg-black/20">
+                    <div className="flex flex-1 items-center gap-2 rounded-md border border-neutral-200/60 bg-neutral-50 px-3 py-2 ring-1 ring-transparent focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
                       <input
                         type="number"
                         inputMode="decimal"
@@ -655,8 +655,8 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                       disabled={oneRepStatus === 'saving' || oneRepStatus === 'loading'}
                       className={`inline-flex items-center justify-center rounded-md px-3 py-2 text-xs font-semibold transition-colors ${
                         oneRepStatus === 'saving' || oneRepStatus === 'loading'
-                          ? 'cursor-not-allowed bg-neutral-100 text-neutral-400 dark:bg-neutral-800 dark:text-neutral-500'
-                          : 'bg-blue-500/10 text-blue-600 ring-1 ring-blue-500/50 hover:bg-blue-500/20 dark:bg-blue-500/20 dark:text-blue-400 dark:hover:bg-blue-500/30'
+                          ? 'cursor-not-allowed bg-neutral-100 text-neutral-400 dark:bg-white/[0.04] dark:text-neutral-500'
+                          : 'bg-primary-500/10 text-primary-600 ring-1 ring-primary-500/50 hover:bg-primary-500/20 dark:bg-primary-500/20 dark:text-primary-400 dark:hover:bg-primary-500/30'
                       }`}
                       type="button"
                     >
@@ -679,7 +679,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                       </span>
                     )}
                     {oneRepStatus === 'loading' && (
-                      <span className="text-[11px] text-blue-400">{t('labels.loading')}</span>
+                      <span className="text-[11px] text-primary-400">{t('labels.loading')}</span>
                     )}
                     {oneRepError && (
                       <span className="text-[11px] font-semibold text-red-400">{oneRepError}</span>
@@ -700,7 +700,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                   exit={{ height: 0, opacity: 0 }}
                   className="overflow-hidden"
                 >
-                  <div className="mb-6 rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-white/5 dark:bg-white/5">
+                  <div className="mb-6 rounded-xl border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/5 dark:bg-white/5">
                     <h4 className="mb-3 text-xs font-semibold tracking-wider text-neutral-500 uppercase dark:text-neutral-400">
                       {t('savedTemplates')}
                     </h4>
@@ -709,12 +709,12 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                         { id: 'linear', label: t('templates.linear') },
                         { id: 'volume', label: t('templates.volume') },
                         { id: 'undulating', label: t('templates.undulating') },
-                      ].map((item: any) => (
+                      ].map((item) => (
                         <button
                           key={item.id}
-                          className="group rounded-lg border border-neutral-200 bg-white p-3 text-left transition-all hover:border-blue-500/50 hover:bg-neutral-50 dark:border-white/5 dark:bg-neutral-900/50 dark:hover:bg-neutral-800"
+                          className="group rounded-lg border border-neutral-200/60 bg-white p-3 text-left transition-all hover:border-primary-500/50 hover:bg-neutral-50 dark:border-white/5 dark:bg-white/[0.04] dark:hover:bg-white/[0.06]"
                         >
-                          <div className="font-medium text-neutral-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
+                          <div className="font-medium text-neutral-900 group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-400">
                             {item.label}
                           </div>
                           <div className="text-xs text-neutral-500">{t('labels.clickToApply')}</div>
@@ -732,7 +732,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                   {t('labels.type')}
                 </label>
                 <div className="grid grid-cols-2 gap-2">
-                  {progressionTypes.map((typeOption: any) => (
+                  {progressionTypes.map((typeOption) => (
                     <button
                       key={typeOption.id}
                       onClick={() =>
@@ -741,8 +741,8 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                       className={cn(
                         'flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium transition-all',
                         params.type === typeOption.id
-                          ? 'border-blue-500/50 bg-blue-500/10 text-blue-600 dark:text-blue-400'
-                          : 'border-neutral-200 bg-white text-neutral-500 hover:bg-neutral-50 dark:border-white/5 dark:bg-transparent dark:text-neutral-400 dark:hover:bg-white/5'
+                          ? 'border-primary-500/50 bg-primary-500/10 text-primary-600 dark:text-primary-400'
+                          : 'border-neutral-200/60 bg-white text-neutral-500 hover:bg-neutral-50 dark:border-white/5 dark:bg-transparent dark:text-neutral-400 dark:hover:bg-white/5'
                       )}
                     >
                       <typeOption.icon size={16} /> {typeOption.label}
@@ -755,7 +755,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                 <label className="text-xs font-medium text-neutral-500 uppercase">
                   {t('labels.start')}
                 </label>
-                <div className="flex items-center rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 focus-within:border-blue-500/50 focus-within:ring-1 focus-within:ring-blue-500/50 dark:border-white/10 dark:bg-black/20">
+                <div className="flex items-center rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
                   <input
                     type="number"
                     value={params.startValue}
@@ -774,7 +774,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                 <label className="text-xs font-medium text-neutral-500 uppercase">
                   {t('labels.step')}
                 </label>
-                <div className="relative flex items-center rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 focus-within:border-blue-500/50 focus-within:ring-1 focus-within:ring-blue-500/50 dark:border-white/10 dark:bg-black/20">
+                <div className="relative flex items-center rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
                   <div className="pointer-events-none absolute inset-y-0 left-3 flex items-center">
                     <span className="text-sm font-bold text-neutral-500">+</span>
                   </div>
@@ -796,7 +796,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                 <label className="text-xs font-medium text-neutral-500 uppercase">
                   {t('labels.freq')}
                 </label>
-                <div className="flex items-center rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 focus-within:border-blue-500/50 focus-within:ring-1 focus-within:ring-blue-500/50 dark:border-white/10 dark:bg-black/20">
+                <div className="flex items-center rounded-lg border border-neutral-200/60 bg-neutral-50 px-3 py-2 focus-within:border-primary-500/50 focus-within:ring-1 focus-within:ring-primary-500/50 dark:border-white/10 dark:bg-black/20">
                   <select
                     value={params.frequency}
                     onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
@@ -823,13 +823,13 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-neutral-900/40 dark:hover:border-white/10 dark:hover:bg-neutral-900/60"
+          className="flex flex-1 flex-col overflow-hidden rounded-2xl border border-neutral-200/60 bg-neutral-50 backdrop-blur-md transition-all duration-300 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/5 dark:bg-white/[0.03] dark:hover:border-white/10 dark:hover:bg-white/[0.06]/60"
         >
-          <div className="flex items-center justify-between border-b border-neutral-200 bg-neutral-100/50 px-6 py-4 dark:border-white/5 dark:bg-white/5">
+          <div className="flex items-center justify-between border-b border-neutral-200/60 bg-neutral-100/50 px-6 py-4 dark:border-white/5 dark:bg-white/5">
             <div className="flex items-center gap-2">
               <h3 className="font-semibold text-neutral-900 dark:text-white">{t('timeline')}</h3>
               {oneRepMax && (
-                <span className="inline-flex items-center gap-1 rounded-full bg-blue-500/10 px-2 py-0.5 text-xs font-semibold text-blue-600 ring-1 ring-blue-500/20 dark:text-blue-400">
+                <span className="inline-flex items-center gap-1 rounded-full bg-primary-500/10 px-2 py-0.5 text-xs font-semibold text-primary-600 ring-1 ring-primary-500/20 dark:text-primary-400">
                   1RM {oneRepMax} kg
                 </span>
               )}
@@ -840,7 +840,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                   'ml-4 flex items-center gap-1.5 rounded-md border px-2 py-1 text-xs font-medium transition-colors',
                   editingIndex !== null
                     ? 'border-emerald-500/20 bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20 dark:text-emerald-400'
-                    : 'cursor-not-allowed border-neutral-200 bg-transparent text-neutral-400 dark:border-white/5 dark:text-neutral-600'
+                    : 'cursor-not-allowed border-neutral-200/60 bg-transparent text-neutral-400 dark:border-white/5 dark:text-neutral-600'
                 )}
               >
                 <Plus size={12} />
@@ -885,7 +885,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                     return (
                       <div
                         key={`edit-${idx}`}
-                        className="rounded-xl border border-blue-500 bg-white p-4 shadow-lg dark:border-blue-500 dark:bg-neutral-800"
+                        className="rounded-xl border border-primary-500 bg-white p-4 shadow-lg dark:border-primary-500 dark:bg-white/[0.04]"
                       >
                         {/* Header with Navigation */}
                         <div className="mb-4 flex items-center justify-between">
@@ -901,7 +901,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                                     setEditingSetGroupIndex(Math.max(0, editingSetGroupIndex - 1));
                                   }}
                                   disabled={editingSetGroupIndex === 0}
-                                  className="p-1 text-neutral-400 transition-colors hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:text-blue-400"
+                                  className="p-1 text-neutral-400 transition-colors hover:text-primary-600 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:text-primary-400"
                                   title="SetGroup precedente"
                                 >
                                   <ChevronLeft size={16} />
@@ -917,7 +917,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                                     );
                                   }}
                                   disabled={editingSetGroupIndex >= totalSetGroups - 1}
-                                  className="p-1 text-neutral-400 transition-colors hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:text-blue-400"
+                                  className="p-1 text-neutral-400 transition-colors hover:text-primary-600 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:text-primary-400"
                                   title="SetGroup successivo"
                                 >
                                   <ChevronRight size={16} />
@@ -937,7 +937,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                         <SetGroupEditor
                           group={currentSetGroup}
                           onGroupChange={(updated) =>
-                            handleGroupUpdate(idx, toDomainSetGroup(updated as any))
+                            handleGroupUpdate(idx, toDomainSetGroup(updated as Partial<SetGroup> & Pick<SetGroup, 'baseSet'>))
                           }
                           onGroupDelete={() => handleRemoveSetGroup(idx, editingSetGroupIndex)}
                           onGroupDuplicate={() =>
@@ -959,9 +959,9 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                       className={`group relative flex cursor-pointer items-center gap-4 rounded-xl border p-4 transition-all ${
                         isSelected
                           ? isOverridden
-                            ? 'border-purple-200 bg-purple-50/50 dark:border-purple-900/50 dark:bg-purple-900/10'
-                            : 'border-blue-200 bg-blue-50/50 dark:border-blue-900/50 dark:bg-blue-900/10'
-                          : 'border-neutral-200 bg-white opacity-60 hover:opacity-100 dark:border-neutral-800 dark:bg-neutral-900'
+                            ? 'border-secondary-200 bg-secondary-50/50 dark:border-secondary-900/50 dark:bg-secondary-900/10'
+                            : 'border-primary-200 bg-primary-50/50 dark:border-primary-900/50 dark:bg-primary-900/10'
+                          : 'border-neutral-200/60 bg-white opacity-60 hover:opacity-100 dark:border-white/[0.08] dark:bg-zinc-950'
                       }`}
                       onClick={() => toggleSelection(idx)}
                     >
@@ -971,7 +971,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                           e.stopPropagation();
                           setEditingIndex(idx);
                         }}
-                        className="absolute top-2 right-2 p-2 text-neutral-400 opacity-0 transition-all group-hover:opacity-100 hover:text-blue-600"
+                        className="absolute top-2 right-2 p-2 text-neutral-400 opacity-0 transition-all group-hover:opacity-100 hover:text-primary-600"
                       >
                         <Edit2 size={16} />
                       </button>
@@ -979,14 +979,14 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                       <div
                         className={`flex h-6 w-6 items-center justify-center rounded-full border transition-colors ${
                           isSelected
-                            ? 'border-blue-500 bg-blue-500 text-white'
-                            : 'border-neutral-300 bg-transparent text-transparent dark:border-neutral-600'
+                            ? 'border-primary-500 bg-primary-500 text-white'
+                            : 'border-neutral-300 bg-transparent text-transparent dark:border-white/[0.1]'
                         }`}
                       >
                         <CheckCircle2 size={14} />
                       </div>
 
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 font-mono text-xs font-bold text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 font-mono text-xs font-bold text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400">
                         W{occ.weekNumber}
                       </div>
 
@@ -999,12 +999,12 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                             {t('day', { number: occ.dayNumber })}
                           </span>
                           {totalSetGroups > 1 && (
-                            <span className="ml-1 rounded bg-blue-100 px-1.5 py-0.5 text-[10px] font-bold text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+                            <span className="ml-1 rounded bg-primary-100 px-1.5 py-0.5 text-[10px] font-bold text-primary-600 dark:bg-primary-900/30 dark:text-primary-400">
                               {totalSetGroups} {t('groups')}
                             </span>
                           )}
                           {isOverridden && (
-                            <span className="ml-2 rounded bg-purple-100 px-1.5 py-0.5 text-[10px] font-bold text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+                            <span className="ml-2 rounded bg-secondary-100 px-1.5 py-0.5 text-[10px] font-bold text-secondary-600 dark:bg-secondary-900/30 dark:text-secondary-400">
                               {t('modified')}
                             </span>
                           )}
@@ -1021,7 +1021,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                             </span>
                           </div>
 
-                          <div className="h-3 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+                          <div className="h-3 w-px bg-neutral-300 dark:bg-white/[0.08]"></div>
 
                           {(setGroup?.baseSet.weight || setGroup?.baseSet.intensityPercent) && (
                             <div className="font-medium">
@@ -1037,7 +1037,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
 
                           {setGroup?.baseSet.rpe && (
                             <>
-                              <div className="h-3 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+                              <div className="h-3 w-px bg-neutral-300 dark:bg-white/[0.08]"></div>
                               <div className="text-xs">
                                 <span className="font-medium text-neutral-500 dark:text-neutral-400">
                                   RPE
@@ -1049,7 +1049,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
 
                           {setGroup?.baseSet.rest && (
                             <>
-                              <div className="h-3 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+                              <div className="h-3 w-px bg-neutral-300 dark:bg-white/[0.08]"></div>
                               <div className="text-xs text-neutral-400">
                                 {setGroup.baseSet.rest}s
                               </div>
@@ -1067,8 +1067,8 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
                           className={cn(
                             'hidden min-w-[80px] rounded-lg px-3 py-1.5 text-center font-mono font-bold transition-colors sm:block',
                             isSelected
-                              ? 'bg-white text-blue-600 shadow-sm dark:bg-neutral-800 dark:text-blue-400'
-                              : 'bg-neutral-100 text-neutral-400 dark:bg-neutral-800 dark:text-neutral-600'
+                              ? 'bg-white text-primary-600 shadow-sm dark:bg-white/[0.04] dark:text-primary-400'
+                              : 'bg-neutral-100 text-neutral-400 dark:bg-white/[0.04] dark:text-neutral-600'
                           )}
                         >
                           {/* Simplified display for quick glance, detailed view on left */}
@@ -1088,7 +1088,7 @@ export function ProgressionManager({ program, onUpdate }: ProgressionManagerProp
             </div>
           </div>
 
-          <div className="border-t border-neutral-200 bg-white/80 p-4 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/80">
+          <div className="border-t border-neutral-200/60 bg-white/80 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-white/[0.06]">
             <Button
               variant="gradient-primary"
               icon={<Play size={18} className="fill-white text-white" />}

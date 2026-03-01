@@ -34,7 +34,7 @@ export function Avatar({
         'relative inline-flex shrink-0 overflow-hidden rounded-full',
         sizeClasses[size],
         bordered &&
-          'ring-2 ring-indigo-500 ring-offset-2 dark:ring-indigo-400 dark:ring-offset-neutral-900',
+          'ring-2 ring-indigo-500 ring-offset-2 dark:ring-indigo-400 dark:ring-offset-[#09090b]',
         className
       )}
       {...props}
@@ -47,7 +47,7 @@ export function Avatar({
           onError={() => setImageError(true)}
         />
       ) : (
-        <div className="flex h-full w-full items-center justify-center bg-neutral-100 font-medium text-neutral-600 uppercase dark:bg-neutral-800 dark:text-neutral-300">
+        <div className="flex h-full w-full items-center justify-center bg-neutral-100 font-medium text-neutral-600 uppercase dark:bg-white/[0.04] dark:text-neutral-300">
           {fallback.slice(0, 2)}
         </div>
       )}

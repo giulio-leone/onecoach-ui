@@ -51,7 +51,7 @@ export function AnalyticsHeader({
       </View>
 
       <Card variant="glass" className="flex-row items-center justify-between p-2">
-        <View className="flex-row items-center space-x-1 rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800">
+        <View className="flex-row items-center space-x-1 rounded-lg bg-neutral-100 p-1 dark:bg-white/[0.04]">
           {periods.map((p: any) => (
             <TouchableOpacity
               key={p.value}
@@ -59,8 +59,8 @@ export function AnalyticsHeader({
               className={cn(
                 'rounded-md px-3 py-1.5 transition-all',
                 period === p.value
-                  ? 'bg-white shadow-sm dark:bg-neutral-700'
-                  : 'hover:bg-neutral-200 dark:hover:bg-neutral-700'
+                  ? 'bg-white shadow-sm dark:bg-white/[0.08]'
+                  : 'hover:bg-neutral-200 dark:hover:bg-white/[0.08]'
               )}
             >
               <Text

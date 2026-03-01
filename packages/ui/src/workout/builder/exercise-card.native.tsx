@@ -60,13 +60,13 @@ export function ExerciseCard({
   return (
     <Card variant="glass" className="overflow-hidden p-0">
       {/* Header */}
-      <View className="flex-row items-center justify-between border-b border-neutral-200 bg-white/50 p-4 dark:border-neutral-700 dark:bg-neutral-900/30">
+      <View className="flex-row items-center justify-between border-b border-neutral-200/60 bg-white/50 p-4 dark:border-white/[0.08] dark:bg-white/[0.03]">
         <Pressable
           onPress={() => setIsExpanded(!isExpanded)}
           className="flex-1 flex-row items-center gap-3"
         >
-          <View className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-            <Text className="font-bold text-blue-600 dark:text-blue-400">{index + 1}</Text>
+          <View className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30">
+            <Text className="font-bold text-primary-600 dark:text-primary-400">{index + 1}</Text>
           </View>
           <View>
             <Text className="font-bold text-neutral-900 dark:text-neutral-100">
@@ -95,7 +95,7 @@ export function ExerciseCard({
               className={cn(
                 index === 0
                   ? 'text-neutral-400 dark:text-neutral-600'
-                  : 'text-blue-700 dark:text-blue-300'
+                  : 'text-primary-700 dark:text-primary-300'
               )}
             />
           </Pressable>
@@ -115,7 +115,7 @@ export function ExerciseCard({
               className={cn(
                 index === totalExercises - 1
                   ? 'text-neutral-400 dark:text-neutral-600'
-                  : 'text-blue-700 dark:text-blue-300'
+                  : 'text-primary-700 dark:text-primary-300'
               )}
             />
           </Pressable>
@@ -174,7 +174,7 @@ export function ExerciseCard({
               };
               handleSetGroupsChange([...(exercise.setGroups || []), newGroup]);
             }}
-            className="flex-row items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 py-3 dark:border-neutral-600"
+            className="flex-row items-center justify-center gap-2 rounded-lg border border-dashed border-neutral-300 py-3 dark:border-white/[0.1]"
           >
             <Text className="font-medium text-neutral-600 dark:text-neutral-400">
               + Aggiungi Gruppo Serie

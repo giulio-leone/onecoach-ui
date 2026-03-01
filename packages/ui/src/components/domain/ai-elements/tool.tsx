@@ -44,8 +44,8 @@ export const Tool = forwardRef<HTMLDivElement, ToolProps>(
       <div
         ref={ref}
         className={cn(
-          'rounded-lg border border-neutral-200 bg-neutral-50',
-          'dark:border-neutral-700 dark:bg-neutral-800/50',
+          'rounded-lg border border-neutral-200/60 bg-neutral-50',
+          'dark:border-white/[0.08] dark:bg-white/[0.05]',
           'overflow-hidden',
           className
         )}
@@ -88,7 +88,7 @@ const stateConfig: Record<ToolState, { label: string; icon: ReactNode; color: st
   'approval-responded': {
     label: 'Risposto',
     icon: <CheckCircle className="h-4 w-4" />,
-    color: 'text-blue-600',
+    color: 'text-primary-600',
   },
   'output-available': {
     label: 'Completato',
@@ -128,7 +128,7 @@ export const ToolHeader = forwardRef<HTMLButtonElement, ToolHeaderProps>(
         className={cn(
           'flex w-full items-center justify-between px-3 py-2',
           'text-left transition-colors',
-          'hover:bg-neutral-100 dark:hover:bg-neutral-700/50',
+          'hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50',
           className
         )}
         {...props}
@@ -173,7 +173,7 @@ export const ToolContent = forwardRef<HTMLDivElement, ToolContentProps>(
       {...props}
     >
       <div className="overflow-hidden">
-        <div className="border-t border-neutral-200 px-3 py-2 dark:border-neutral-700">
+        <div className="border-t border-neutral-200/60 px-3 py-2 dark:border-white/[0.08]">
           {children}
         </div>
       </div>
@@ -194,7 +194,7 @@ export const ToolInputDisplay = forwardRef<HTMLDivElement, ToolInputDisplayProps
   ({ input, className, ...props }, ref) => (
     <div ref={ref} className={cn('mb-2', className)} {...props}>
       <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400">Input:</span>
-      <pre className="mt-1 overflow-x-auto rounded bg-neutral-100 p-2 text-xs text-neutral-700 dark:bg-neutral-900 dark:text-neutral-300">
+      <pre className="mt-1 overflow-x-auto rounded bg-neutral-100 p-2 text-xs text-neutral-700 dark:bg-zinc-950 dark:text-neutral-300">
         {JSON.stringify(input, null, 2)}
       </pre>
     </div>
@@ -282,10 +282,10 @@ export function ToolBubble({ toolName, state, args, result }: ToolBubbleProps) {
     .replace(/^oneagenda /, '📅 ');
 
   return (
-    <div className="rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800/50">
+    <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.05]">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-700/50"
+        className="flex w-full items-center justify-between px-3 py-2 text-left transition-colors hover:bg-neutral-100 dark:hover:bg-white/[0.08]/50"
       >
         <div className="flex items-center gap-2">
           <Wrench className="h-4 w-4 text-indigo-500" />
@@ -315,7 +315,7 @@ export function ToolBubble({ toolName, state, args, result }: ToolBubbleProps) {
         )}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-neutral-200 px-3 py-2 dark:border-neutral-700">
+          <div className="border-t border-neutral-200/60 px-3 py-2 dark:border-white/[0.08]">
             {args && Object.keys(args).length > 0 && <ToolInputDisplay input={args} />}
             {(mappedState === 'output-available' || mappedState === 'output-error') && (
               <ToolOutputDisplay

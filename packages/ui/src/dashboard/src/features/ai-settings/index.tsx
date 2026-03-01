@@ -207,9 +207,9 @@ function SectionCard({
         animate={{ opacity: 1, y: 0 }}
         className={cn(
           'rounded-2xl',
-          'bg-white/60 dark:bg-neutral-800/60',
+          'bg-white/60 dark:bg-white/[0.05]',
           'backdrop-blur-xl',
-          'border border-neutral-200/50 dark:border-neutral-700/50',
+          'border border-neutral-200/50 dark:border-white/[0.08]',
           'shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20',
           'overflow-hidden'
         )}
@@ -513,7 +513,7 @@ export function AISettingsPageClient({
   return (
     <div className="space-y-10 py-6">
       <div className="flex flex-col gap-3">
-        <div className="hidden items-center gap-2 overflow-x-auto rounded-2xl border border-neutral-200/60 bg-white/70 p-2 shadow-sm ring-1 ring-neutral-200/60 backdrop-blur lg:flex dark:border-neutral-800/60 dark:bg-neutral-900/60 dark:ring-neutral-800/60">
+        <div className="hidden items-center gap-2 overflow-x-auto rounded-2xl border border-neutral-200/60 bg-white/70 p-2 shadow-sm ring-1 ring-neutral-200/60 backdrop-blur lg:flex dark:border-white/[0.06] dark:bg-white/[0.05] dark:ring-neutral-800/60">
           {sections.map((section: any) => {
             const Icon = section.icon;
             const isActive = activeSection === section.id;
@@ -525,7 +525,7 @@ export function AISettingsPageClient({
                   'flex min-w-[180px] items-center gap-3 rounded-xl px-3 py-2 text-left text-sm transition-all',
                   isActive
                     ? 'from-primary-500 bg-gradient-to-r to-violet-600 text-white shadow-lg shadow-violet-500/20'
-                    : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-800'
+                    : 'text-neutral-700 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-white/[0.06]'
                 )}
               >
                 <Icon className="h-4 w-4" />
@@ -543,7 +543,7 @@ export function AISettingsPageClient({
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
               handleSectionChange(e.target.value as SectionId)
             }
-            className="w-full rounded-xl border border-neutral-200 bg-white px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-800"
+            className="w-full rounded-xl border border-neutral-200/60 bg-white px-3 py-2 text-sm dark:border-white/[0.08] dark:bg-white/[0.04]"
           >
             {sections.map((section: any) => (
               <option key={section.id} value={section.id}>
@@ -568,11 +568,11 @@ export function AISettingsPageClient({
               <div
                 key={stat.label}
                 className={cn(
-                  'rounded-2xl border border-neutral-200/60 bg-white/80 p-4 shadow-sm backdrop-blur-xl dark:border-neutral-800/60 dark:bg-neutral-900/70',
+                  'rounded-2xl border border-neutral-200/60 bg-white/80 p-4 shadow-sm backdrop-blur-xl dark:border-white/[0.06] dark:bg-white/[0.06]',
                   'flex items-center gap-3'
                 )}
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-100 dark:bg-neutral-800">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-neutral-100 dark:bg-white/[0.04]">
                   <Icon className="text-primary-500 h-5 w-5" />
                 </div>
                 <div>
@@ -613,9 +613,9 @@ export function AISettingsPageClient({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-neutral-800/60 dark:bg-neutral-800/60"
+                      className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-white/[0.06] dark:bg-white/[0.05]"
                     >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-neutral-700/70">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-white/[0.08]">
                         <Icon className="text-primary-500 h-5 w-5" />
                       </div>
                       <div>
@@ -654,9 +654,9 @@ export function AISettingsPageClient({
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-neutral-800/60 dark:bg-neutral-800/60"
+                      className="flex items-center gap-3 rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-white/[0.06] dark:bg-white/[0.05]"
                     >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-neutral-700/70">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-white/[0.08]">
                         <Icon className="text-primary-500 h-5 w-5" />
                       </div>
                       <div>
@@ -685,7 +685,7 @@ export function AISettingsPageClient({
             >
               <Suspense
                 fallback={
-                  <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60" />
+                  <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-white/[0.05]" />
                 }
               >
                 <ProviderApiKeysSection configs={providerConfigs} />
@@ -728,7 +728,7 @@ export function AISettingsPageClient({
             <Link
               href="/admin/prompts"
               aria-label="System Prompts"
-              className="group relative flex items-center gap-3 overflow-visible rounded-xl py-2.5 pr-3 text-slate-600 transition-all duration-200 hover:bg-slate-100/50 dark:text-slate-400 dark:hover:bg-slate-800/50"
+              className="group relative flex items-center gap-3 overflow-visible rounded-xl py-2.5 pr-3 text-neutral-600 transition-all duration-200 hover:bg-neutral-100/50 dark:text-neutral-400 dark:hover:bg-white/[0.06]/50"
               style={{ paddingLeft: 24 }}
             >
               <div className="bg-primary-50 text-primary-700 ring-primary-100 dark:bg-primary-900/40 dark:text-primary-200 dark:ring-primary-900/60 flex h-9 w-9 items-center justify-center rounded-lg ring-1">
@@ -767,7 +767,7 @@ export function AISettingsPageClient({
             >
               <Suspense
                 fallback={
-                  <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60" />
+                  <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-white/[0.05]" />
                 }
               >
                 <AIAgentsConfig
@@ -786,7 +786,7 @@ export function AISettingsPageClient({
               <div className="space-y-8">
                 <Suspense
                   fallback={
-                    <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60" />
+                    <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-white/[0.05]" />
                   }
                 >
                   <VisionModelsConfig />
@@ -794,7 +794,7 @@ export function AISettingsPageClient({
 
                 <Suspense
                   fallback={
-                    <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60" />
+                    <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-white/[0.05]" />
                   }
                 >
                   <ImportModelsConfig models={models} />
@@ -853,10 +853,10 @@ export function AISettingsPageClient({
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-neutral-800/60 dark:bg-neutral-800/60"
+                      className="rounded-xl border border-neutral-200/60 bg-neutral-50/60 p-4 dark:border-white/[0.06] dark:bg-white/[0.05]"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-neutral-700/70">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 dark:bg-white/[0.08]">
                           <Icon className="text-primary-500 h-5 w-5" />
                         </div>
                         <div>
@@ -883,7 +883,7 @@ export function AISettingsPageClient({
             >
               <Suspense
                 fallback={
-                  <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60" />
+                  <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-white/[0.05]" />
                 }
               >
                 <PlansConfigForm plans={STRIPE_PLANS} creditPacks={creditPacks} />
@@ -910,7 +910,7 @@ export function AISettingsPageClient({
                     'border',
                     flag.enabled
                       ? 'border-emerald-200 bg-emerald-50/50 dark:border-emerald-800 dark:bg-emerald-900/20'
-                      : 'border-neutral-200/50 bg-neutral-50/50 dark:border-neutral-700/50 dark:bg-neutral-800/50'
+                      : 'border-neutral-200/50 bg-neutral-50/50 dark:border-white/[0.08] dark:bg-white/[0.05]'
                   )}
                 >
                   <div className="flex items-start justify-between gap-3">
@@ -929,7 +929,7 @@ export function AISettingsPageClient({
                         'shrink-0 rounded-full px-2 py-0.5 text-xs font-medium',
                         flag.enabled
                           ? 'bg-emerald-500 text-white'
-                          : 'bg-neutral-300 text-neutral-600 dark:bg-neutral-600 dark:text-neutral-300'
+                          : 'bg-neutral-300 text-neutral-600 dark:bg-white/[0.10] dark:text-neutral-300'
                       )}
                     >
                       {flag.enabled ? t('flags.status.on') : t('flags.status.off')}
@@ -945,7 +945,7 @@ export function AISettingsPageClient({
           <SectionCard title={t('edge.title')} description={t('edge.description')} icon={Zap}>
             <Suspense
               fallback={
-                <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60" />
+                <div className="h-24 animate-pulse rounded-xl bg-neutral-200/60 dark:bg-white/[0.05]" />
               }
             >
               <EdgeConfigPanel />

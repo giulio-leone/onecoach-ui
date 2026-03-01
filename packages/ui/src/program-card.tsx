@@ -73,26 +73,26 @@ export interface ProgramCardProps {
 
 const themeConfig = {
   blue: {
-    iconBg: 'border-blue-500/20 bg-blue-500/10 text-blue-400',
-    glowPrimary: 'bg-blue-500/10 group-hover:bg-blue-500/20',
+    iconBg: 'border-primary-500/20 bg-primary-500/10 text-primary-400',
+    glowPrimary: 'bg-primary-500/10 group-hover:bg-primary-500/20',
     glowSecondary: 'bg-indigo-500/10 group-hover:bg-indigo-500/20',
-    hoverRing: 'hover:ring-blue-500/50',
-    selectionRing: 'ring-blue-400/80',
-    selectionCheckbox: 'border-blue-400 bg-blue-500',
+    hoverRing: 'hover:ring-primary-500/50',
+    selectionRing: 'ring-primary-400/80',
+    selectionCheckbox: 'border-primary-400 bg-primary-500',
   },
   emerald: {
     iconBg: 'border-emerald-500/20 bg-emerald-500/10 text-emerald-400',
     glowPrimary: 'bg-emerald-500/10 group-hover:bg-emerald-500/20',
     glowSecondary: 'bg-teal-500/10 group-hover:bg-teal-500/20',
-    hoverRing: 'hover:ring-emerald-500/50',
-    selectionRing: 'ring-emerald-400/80',
+    hoverRing: 'hover:ring-primary-500/50',
+    selectionRing: 'ring-primary-400/80',
     selectionCheckbox: 'border-emerald-400 bg-emerald-500',
   },
 } as const;
 
 const actionHoverColors = {
-  blue: 'hover:border-blue-500/30 hover:bg-blue-500/20 hover:text-blue-400',
-  emerald: 'hover:border-emerald-500/30 hover:bg-emerald-500/20 hover:text-emerald-400',
+  blue: 'hover:border-primary-500/30 hover:bg-primary-500/20 hover:text-primary-400',
+  emerald: 'hover:border-primary-500/30 hover:bg-emerald-500/20 hover:text-emerald-400',
   rose: 'hover:border-rose-500/30 hover:bg-rose-500/20 hover:text-rose-400',
 } as const;
 

@@ -51,9 +51,9 @@ export function SectionCard({
         animate={{ opacity: 1, y: 0 }}
         className={cn(
           'rounded-2xl',
-          'bg-white/60 dark:bg-neutral-800/60',
+          'bg-white/60 dark:bg-white/[0.05]',
           'backdrop-blur-xl',
-          'border border-neutral-200/50 dark:border-neutral-700/50',
+          'border border-neutral-200/50 dark:border-white/[0.08]',
           'shadow-lg shadow-neutral-900/5 dark:shadow-neutral-900/20',
           'overflow-hidden'
         )}

@@ -52,7 +52,7 @@ export function PreferencesStep({ formData, onChange, onNotesChange }: Preferenc
                 'flex flex-col items-start rounded-xl border px-4 py-3 text-left transition-all',
                 formData.restrictions?.dietType === type.id
                   ? 'border-green-500 bg-green-50 ring-1 ring-green-500 dark:bg-green-900/20'
-                  : 'border-neutral-200 hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-800'
+                  : 'border-neutral-200/60 hover:bg-neutral-50 dark:border-white/[0.08] dark:hover:bg-white/[0.06]'
               )}
             >
               <span className="font-medium text-neutral-900 dark:text-neutral-100">
@@ -91,7 +91,7 @@ export function PreferencesStep({ formData, onChange, onNotesChange }: Preferenc
 
         <div className="space-y-2">
           <label className="flex items-center gap-2 text-sm font-medium text-neutral-700 dark:text-neutral-300">
-            <Info className="h-4 w-4 text-blue-500" />
+            <Info className="h-4 w-4 text-primary-500" />
             {t('nutrition.preferences_step.cibi_preferiti')}
           </label>
           <textarea

@@ -55,11 +55,11 @@ export function PlansConfigForm({ plans, creditPacks }: PlansConfigFormProps) {
       <AdminCard
         variant="default"
         padding="md"
-        className={cn('border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-900/20')}
+        className={cn('border-primary-200 bg-primary-50 dark:border-primary-800 dark:bg-primary-900/20')}
       >
         <div className="flex items-start gap-3">
-          <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-600 dark:text-blue-400" />
-          <div className="text-sm text-blue-800 dark:text-blue-200">
+          <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-600 dark:text-primary-400" />
+          <div className="text-sm text-primary-800 dark:text-primary-200">
             <p className="mb-1 font-medium">{t('info.title')}</p>
             <p>{t('info.description')}</p>
           </div>

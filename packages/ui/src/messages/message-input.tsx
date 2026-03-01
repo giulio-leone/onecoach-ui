@@ -48,7 +48,7 @@ export function MessageInput({ conversationId, disabled }: MessageInputProps) {
   };
 
   return (
-    <div className="border-t border-neutral-200 p-4 dark:border-neutral-800">
+    <div className="border-t border-neutral-200/60 p-4 dark:border-white/[0.06]">
       <div className="flex items-end gap-2">
         <div className="flex-1">
           <Textarea

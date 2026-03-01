@@ -79,7 +79,7 @@ export const Button = React.forwardRef<View, ButtonProps>(
     const gradientColors = React.useMemo(() => {
       if (isDisabled) return ['#9CA3AF', '#6B7280'] as const;
       if (variant === 'gradient-primary') return ['#7c3aed', '#4f46e5'] as const;
-      if (variant === 'gradient-secondary') return ['#d946ef', '#db2777'] as const;
+      if (variant === 'gradient-secondary') return ['#8b5cf6', '#db2777'] as const;
       return undefined;
     }, [variant, isDisabled]);
 
@@ -220,7 +220,7 @@ function getVariantStyles(variant: ButtonVariant) {
     },
     default: {
       container: {
-        backgroundColor: '#3b82f6',
+        backgroundColor: '#6366f1',
         boxShadow: '0 2px 3px rgba(59, 130, 246, 0.15)',
         elevation: 2,
       },
@@ -247,7 +247,7 @@ function getVariantStyles(variant: ButtonVariant) {
     },
     info: {
       container: {
-        backgroundColor: '#3b82f6',
+        backgroundColor: '#6366f1',
         boxShadow: '0 2px 4px rgba(59, 130, 246, 0.2)',
         elevation: 3,
       },

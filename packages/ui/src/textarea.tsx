@@ -45,7 +45,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             // Border and focus states with elegant glow effects
             error
               ? darkModeClasses.input.error
-              : cn(darkModeClasses.input.focus, 'border-neutral-200 dark:border-neutral-700/80'),
+              : cn(darkModeClasses.input.focus, 'border-neutral-200/60 dark:border-white/[0.08]/80'),
 
             // Placeholder with improved contrast
             darkModeClasses.input.placeholder,

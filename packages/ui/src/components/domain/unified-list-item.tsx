@@ -46,11 +46,11 @@ export function UnifiedListItem({
       onKeyDown={(e) => e.key === 'Enter' && onPress?.()}
       className={cn(
         'group relative mb-3 flex cursor-pointer flex-row items-center overflow-hidden rounded-2xl border p-4',
-        'bg-white/90 dark:bg-neutral-900/95',
-        'border-neutral-200/40 dark:border-neutral-700/40',
+        'bg-white/90 dark:bg-white/[0.10]',
+        'border-neutral-200/40 dark:border-white/[0.08]',
         'shadow-sm dark:shadow-lg dark:shadow-black/20',
         'transition-all duration-200',
-        'hover:border-neutral-300/50 hover:shadow-lg dark:hover:border-neutral-600/50 dark:hover:shadow-xl dark:hover:shadow-black/30',
+        'hover:border-neutral-300/50 hover:shadow-lg dark:hover:border-white/[0.1] dark:hover:shadow-xl dark:hover:shadow-black/30',
         isCompleted && 'opacity-60',
         className
       )}
@@ -66,7 +66,7 @@ export function UnifiedListItem({
           'mr-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-xl border-2 transition-all duration-200',
           isCompleted
             ? 'border-emerald-500 bg-emerald-500 shadow-lg shadow-emerald-500/30 dark:border-emerald-400 dark:bg-emerald-500'
-            : 'border-neutral-300 hover:border-sky-400 hover:shadow-md dark:border-neutral-600 dark:hover:border-sky-400'
+            : 'border-neutral-300 hover:border-sky-400 hover:shadow-md dark:border-white/[0.1] dark:hover:border-sky-400'
         )}
       >
         {isCompleted ? (

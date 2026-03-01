@@ -87,7 +87,7 @@ export function ManageCreditsModal({ user, isOpen, onClose, onSuccess }: ManageC
     <Modal isOpen={isOpen} onClose={handleClose} title={t('manageCredits.title')} size="md">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* User Info */}
-        <div className="rounded-lg bg-neutral-50 p-4 dark:bg-neutral-800/50">
+        <div className="rounded-lg bg-neutral-50 p-4 dark:bg-white/[0.05]">
           <div className="flex items-center justify-between">
             <div>
               <p className="font-medium text-neutral-900 dark:text-white">
@@ -168,7 +168,7 @@ export function ManageCreditsModal({ user, isOpen, onClose, onSuccess }: ManageC
 
         {/* Preview */}
         {amount && parseInt(amount) > 0 && (
-          <div className="rounded-lg border border-neutral-200 p-4 dark:border-neutral-700">
+          <div className="rounded-lg border border-neutral-200/60 p-4 dark:border-white/[0.08]">
             <div className="flex items-center justify-between">
               <span className="text-sm text-neutral-600 dark:text-neutral-400">
                 {t('manageCredits.newBalance')}

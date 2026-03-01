@@ -127,26 +127,26 @@ export function VisualBuilderShell({
   const themeConfig = {
     primary: {
       header:
-        'bg-white/80 border-b border-neutral-200/50 dark:bg-slate-900/90 dark:border-blue-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(59,130,246,0.1)]',
-      glow1: 'from-blue-500/20 via-indigo-500/20',
-      glow2: 'from-indigo-500/20 via-blue-500/20',
-      glow3: 'from-blue-500/10 via-indigo-500/10',
-      selection: 'selection:bg-blue-500/30',
+        'bg-white/80 border-b border-neutral-200/50 dark:bg-white/[0.08] dark:border-primary-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(99,102,241,0.1)]',
+      glow1: 'from-primary-500/20 via-indigo-500/20',
+      glow2: 'from-indigo-500/20 via-primary-500/20',
+      glow3: 'from-primary-500/10 via-indigo-500/10',
+      selection: 'selection:bg-primary-500/30',
       accentColor: 'primary',
       activeTab:
-        'bg-white shadow-sm ring-1 ring-neutral-200 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 dark:ring-blue-800',
+        'bg-white shadow-sm ring-1 ring-neutral-200 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 dark:ring-primary-800',
       activeDay:
-        'border-blue-500 bg-blue-50/50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-200',
-      activeDayGlow: 'from-blue-500/10',
-      addBtnText: 'text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/20',
+        'border-primary-500 bg-primary-50/50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-200',
+      activeDayGlow: 'from-primary-500/10',
+      addBtnText: 'text-primary-600 hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-primary-900/20',
       viewModeActive:
-        'bg-neutral-50 shadow-sm ring-1 ring-neutral-200 dark:bg-blue-600 dark:ring-0',
-      viewModeActiveText: 'text-blue-700 dark:text-white',
-      pulseDot: 'bg-blue-500',
+        'bg-neutral-50 shadow-sm ring-1 ring-neutral-200 dark:bg-primary-600 dark:ring-0',
+      viewModeActiveText: 'text-primary-700 dark:text-white',
+      pulseDot: 'bg-primary-500',
     },
     emerald: {
       header:
-        'bg-white/80 border-b border-neutral-200/50 dark:bg-slate-900/90 dark:border-emerald-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(16,185,129,0.1)]',
+        'bg-white/80 border-b border-neutral-200/50 dark:bg-white/[0.08] dark:border-emerald-500/10 backdrop-blur-md dark:shadow-[0_4px_30px_-4px_rgba(16,185,129,0.1)]',
       glow1: 'from-emerald-500/20 via-teal-500/20',
       glow2: 'from-teal-500/20 via-emerald-500/20',
       glow3: 'from-emerald-500/10 via-teal-500/10',
@@ -169,7 +169,7 @@ export function VisualBuilderShell({
   return (
     <div
       className={cn(
-        'relative min-h-[100dvh] w-full bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50',
+        'relative min-h-[100dvh] w-full bg-neutral-50 text-neutral-900 dark:bg-[#09090b] dark:text-neutral-50',
         themeConfig.selection
       )}
     >
@@ -211,7 +211,7 @@ export function VisualBuilderShell({
               )}
 
               {/* View Mode Switcher */}
-              <div className="flex items-center rounded-full bg-neutral-100/50 p-1 ring-1 ring-neutral-200 dark:bg-neutral-900/50 dark:ring-white/10">
+              <div className="flex items-center rounded-full bg-neutral-100/50 p-1 ring-1 ring-neutral-200 dark:bg-white/[0.04] dark:ring-white/10">
                 {viewModes.map((mode: any) => (
                   <button
                     key={mode.id}
@@ -250,7 +250,7 @@ export function VisualBuilderShell({
               <div className="sm:hidden">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <button className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
+                    <button className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200/60 bg-neutral-50 text-neutral-600 transition-colors hover:bg-neutral-100 dark:border-white/10 dark:bg-white/5 dark:text-neutral-400">
                       <MoreVertical size={16} />
                     </button>
                   </DropdownMenuTrigger>
@@ -268,7 +268,7 @@ export function VisualBuilderShell({
               </div>
 
               {/* Centralized Save Button Section */}
-              <div className="ml-2 flex items-center gap-2 border-l border-neutral-200 pl-4 dark:border-white/10">
+              <div className="ml-2 flex items-center gap-2 border-l border-neutral-200/60 pl-4 dark:border-white/10">
                 {isEditMode && (
                   <AutosaveIndicator
                     isSaving={isSaving}
@@ -283,7 +283,7 @@ export function VisualBuilderShell({
                   onPress={onSave}
                   className={cn(
                     'h-9 px-3 text-sm font-medium transition-all duration-300 sm:px-5',
-                    'border border-neutral-200 bg-neutral-50 text-neutral-900 shadow-sm hover:bg-neutral-100',
+                    'border border-neutral-200/60 bg-neutral-50 text-neutral-900 shadow-sm hover:bg-neutral-100',
                     'dark:border-white/20 dark:bg-transparent dark:text-white dark:hover:bg-white/10'
                   )}
                 >

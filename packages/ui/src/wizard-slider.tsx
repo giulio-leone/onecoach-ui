@@ -41,9 +41,9 @@ export function WizardSlider({
 
   const colorClasses = {
     blue: {
-      track: 'from-blue-500 to-blue-600',
-      text: 'text-blue-600 dark:text-blue-400',
-      thumb: 'accent-blue-600',
+      track: 'from-primary-500 to-primary-600',
+      text: 'text-primary-600 dark:text-primary-400',
+      thumb: 'accent-primary-600',
     },
     green: {
       track: 'from-emerald-500 to-green-500',
@@ -51,9 +51,9 @@ export function WizardSlider({
       thumb: 'accent-emerald-600',
     },
     purple: {
-      track: 'from-purple-500 to-indigo-500',
-      text: 'text-purple-600 dark:text-purple-400',
-      thumb: 'accent-purple-600',
+      track: 'from-secondary-500 to-indigo-500',
+      text: 'text-secondary-600 dark:text-secondary-400',
+      thumb: 'accent-secondary-600',
     },
   };
 
@@ -77,7 +77,7 @@ export function WizardSlider({
         {/* Track background */}
         <div className="pointer-events-none absolute inset-y-0 right-0 left-0 flex items-center">
           {/* Track Background */}
-          <div className="absolute top-1/2 h-1.5 w-full -translate-y-1/2 rounded-full bg-neutral-200 dark:bg-neutral-800/80" />
+          <div className="absolute top-1/2 h-1.5 w-full -translate-y-1/2 rounded-full bg-neutral-200 dark:bg-white/[0.06]" />
 
           {/* Filled Track - Gradient */}
           <div
@@ -104,15 +104,15 @@ export function WizardSlider({
             '[&::-webkit-slider-thumb]:rounded-full',
             '[&::-webkit-slider-thumb]:bg-white',
             '[&::-webkit-slider-thumb]:shadow-[0_2px_8px_rgba(0,0,0,0.15)]',
-            '[&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-neutral-200',
-            '[&::-webkit-slider-thumb]:dark:border-neutral-600',
+            '[&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-neutral-200/60',
+            '[&::-webkit-slider-thumb]:dark:border-white/[0.1]',
             '[&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:hover:scale-110',
             '[&::-webkit-slider-thumb]:active:scale-95',
             '[&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4',
             '[&::-moz-range-thumb]:rounded-full',
             '[&::-moz-range-thumb]:bg-white',
-            '[&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-neutral-200',
-            '[&::-moz-range-thumb]:dark:border-neutral-600',
+            '[&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-neutral-200/60',
+            '[&::-moz-range-thumb]:dark:border-white/[0.1]',
             '[&::-moz-range-thumb]:shadow-[0_2px_8px_rgba(0,0,0,0.15)]',
             '[&::-webkit-slider-runnable-track]:bg-transparent',
             '[&::-moz-range-track]:bg-transparent'

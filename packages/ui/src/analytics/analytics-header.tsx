@@ -57,7 +57,7 @@ export function AnalyticsHeader({
       </div>
 
       <Card variant="glass" className="flex items-center justify-between p-2">
-        <div className="flex items-center space-x-1 rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800">
+        <div className="flex items-center space-x-1 rounded-lg bg-neutral-100 p-1 dark:bg-white/[0.04]">
           {periods.map((p: any) => (
             <Button
               key={p.value}
@@ -66,8 +66,8 @@ export function AnalyticsHeader({
               className={cn(
                 'rounded-md px-3 py-1.5 text-sm font-medium transition-all h-auto',
                 period === p.value
-                  ? 'bg-white text-neutral-900 shadow-sm dark:bg-neutral-700 dark:text-white'
-                  : 'text-neutral-500 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700'
+                  ? 'bg-white text-neutral-900 shadow-sm dark:bg-white/[0.08] dark:text-white'
+                  : 'text-neutral-500 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-white/[0.08]'
               )}
             >
               {p.label}

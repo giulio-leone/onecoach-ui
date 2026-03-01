@@ -24,7 +24,7 @@ export const Spinner = ({ size = 'md', variant = 'primary', className = '' }: Sp
     secondary:
       'border-secondary-200 dark:border-secondary-900 border-t-secondary-600 dark:border-t-secondary-400',
     neutral:
-      'border-neutral-200 dark:border-neutral-700 border-t-neutral-600 dark:border-t-neutral-300',
+      'border-neutral-200/60 dark:border-white/[0.08] border-t-neutral-600 dark:border-t-neutral-300',
     white: 'border-white/20 border-t-white',
   };
 
@@ -42,7 +42,7 @@ export const Spinner = ({ size = 'md', variant = 'primary', className = '' }: Sp
 // Full page loader
 export const PageLoader = () => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white backdrop-blur-sm dark:bg-neutral-900/80">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white backdrop-blur-sm dark:bg-white/[0.06]">
       <div className="text-center">
         <Spinner size="xl" variant="primary" />
         <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-400">Loading...</p>

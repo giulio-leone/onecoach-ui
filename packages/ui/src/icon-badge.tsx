@@ -36,11 +36,11 @@ const variantClasses = {
     'bg-red-100 dark:bg-red-900/40 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400',
   warning:
     'bg-amber-100 dark:bg-amber-900/40 border border-amber-200 dark:border-amber-800 text-amber-600 dark:text-amber-400',
-  info: 'bg-blue-100 dark:bg-blue-900/40 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400',
+  info: 'bg-primary-100 dark:bg-primary-900/40 border border-primary-200 dark:border-primary-800 text-primary-600 dark:text-primary-400',
   neutral:
-    'bg-neutral-100 dark:bg-neutral-700/50 border border-neutral-200 dark:border-neutral-600 text-neutral-600 dark:text-neutral-400',
+    'bg-neutral-100 dark:bg-white/[0.06] border border-neutral-200/60 dark:border-white/[0.1] text-neutral-600 dark:text-neutral-400',
   purple:
-    'bg-purple-100 dark:bg-purple-900/40 border border-purple-200 dark:border-purple-800 text-purple-600 dark:text-purple-400',
+    'bg-secondary-100 dark:bg-secondary-900/40 border border-secondary-200 dark:border-secondary-800 text-secondary-600 dark:text-secondary-400',
 };
 
 export function IconBadge({

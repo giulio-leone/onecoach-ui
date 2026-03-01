@@ -26,7 +26,7 @@ const intensityLabels: Record<string, { label: string; color: string }> = {
   low: { label: 'Bassa', color: 'text-emerald-500' },
   moderate: { label: 'Moderata', color: 'text-amber-500' },
   high: { label: 'Alta', color: 'text-red-500' },
-  interval: { label: 'Intervalli', color: 'text-purple-500' },
+  interval: { label: 'Intervalli', color: 'text-secondary-500' },
 };
 
 /**
@@ -86,15 +86,15 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
   return (
     <Card variant="glass" className={`overflow-hidden ${className}`} gradient={isCompleted}>
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 px-5 py-4 dark:from-blue-500/20 dark:to-cyan-500/20">
+      <div className="bg-gradient-to-r from-primary-500/10 to-cyan-500/10 px-5 py-4 dark:from-primary-500/20 dark:to-cyan-500/20">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/20 dark:bg-blue-500/30">
-              <Gauge className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 dark:bg-primary-500/30">
+              <Gauge className="h-5 w-5 text-primary-600 dark:text-primary-400" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-bold text-blue-700 uppercase dark:bg-blue-500/20 dark:text-blue-400">
+                <span className="rounded-full bg-primary-100 px-2 py-0.5 text-[10px] font-bold text-primary-700 uppercase dark:bg-primary-500/20 dark:text-primary-400">
                   CARDIO
                 </span>
                 {isCompleted && (
@@ -122,25 +122,25 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
             <span>Progresso</span>
             <span>{Math.round(progressPercent)}%</span>
           </div>
-          <div className="h-2 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+          <div className="h-2 overflow-hidden rounded-full bg-neutral-200 dark:bg-white/[0.08]">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-500"
+              className="h-full rounded-full bg-gradient-to-r from-primary-500 to-cyan-500 transition-all duration-500"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
         </div>
 
         {/* Timer Display */}
-        <div className="flex items-center justify-center gap-4 rounded-xl bg-neutral-100 px-6 py-4 dark:bg-neutral-800">
+        <div className="flex items-center justify-center gap-4 rounded-xl bg-neutral-100 px-6 py-4 dark:bg-white/[0.04]">
           <button
             onClick={() => setIsActive(!isActive)}
             disabled={isCompleted}
             className={`flex h-14 w-14 items-center justify-center rounded-full transition-all ${
               isCompleted
-                ? 'cursor-not-allowed bg-neutral-300 text-neutral-500 dark:bg-neutral-600'
+                ? 'cursor-not-allowed bg-neutral-300 text-neutral-500 dark:bg-white/[0.10]'
                 : isActive
-                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/30 hover:bg-blue-600'
-                  : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-200'
+                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30 hover:bg-primary-600'
+                  : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300 dark:bg-white/[0.08] dark:text-neutral-200'
             }`}
           >
             {isActive ? <Pause className="h-6 w-6" /> : <Play className="ml-0.5 h-6 w-6" />}
@@ -148,7 +148,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
 
           <div className="text-center">
             <div className="flex items-center gap-2">
-              <Timer className="h-5 w-5 text-blue-500" />
+              <Timer className="h-5 w-5 text-primary-500" />
               <span className="font-mono text-3xl font-bold text-neutral-900 dark:text-white">
                 {formatTime(elapsedTime)}
               </span>
@@ -160,7 +160,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
         {/* Metrics Inputs */}
         <div className="mt-4 grid grid-cols-2 gap-3">
           {/* Distance */}
-          <div className="rounded-xl bg-neutral-50 p-3 dark:bg-neutral-800/50">
+          <div className="rounded-xl bg-neutral-50 p-3 dark:bg-white/[0.05]">
             <div className="mb-2 flex items-center gap-2">
               <MapPin className="h-4 w-4 text-neutral-500" />
               <span className="text-xs font-medium text-neutral-500 uppercase">Distanza</span>
@@ -184,7 +184,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
           </div>
 
           {/* Heart Rate */}
-          <div className="rounded-xl bg-neutral-50 p-3 dark:bg-neutral-800/50">
+          <div className="rounded-xl bg-neutral-50 p-3 dark:bg-white/[0.05]">
             <div className="mb-2 flex items-center gap-2">
               <Heart className="h-4 w-4 text-red-500" />
               <span className="text-xs font-medium text-neutral-500 uppercase">FC Media</span>
@@ -209,10 +209,10 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
 
       {/* Complete Button */}
       {!isCompleted && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200/60 px-5 py-3 dark:border-white/[0.08]">
           <button
             onClick={handleComplete}
-            className="w-full rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 py-3 text-sm font-bold text-white transition-all hover:shadow-lg hover:shadow-blue-500/30"
+            className="w-full rounded-xl bg-gradient-to-r from-primary-500 to-cyan-500 py-3 text-sm font-bold text-white transition-all hover:shadow-lg hover:shadow-primary-500/30"
           >
             Completa Cardio
           </button>
@@ -221,7 +221,7 @@ export function LiveCardioCard({ cardio, onComplete, className = '' }: LiveCardi
 
       {/* Notes */}
       {cardio.notes && (
-        <div className="border-t border-neutral-200 px-5 py-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200/60 px-5 py-3 dark:border-white/[0.08]">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">{cardio.notes}</p>
         </div>
       )}

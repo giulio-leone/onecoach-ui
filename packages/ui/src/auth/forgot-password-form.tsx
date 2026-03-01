@@ -98,7 +98,7 @@ export function ForgotPasswordForm() {
           disabled={form.isSubmitting}
           autoComplete="email"
           autoFocus
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
           aria-invalid={!!form.errors.email}
           aria-describedby={form.errors.email ? 'email-error' : undefined}
         />
@@ -113,7 +113,7 @@ export function ForgotPasswordForm() {
         type="submit"
         variant="primary"
         disabled={form.isSubmitting || !form.isValid}
-        className="w-full focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+        className="w-full focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
       >
         {form.isSubmitting ? t('sending') : tForgot('submit')}
       </Button>

@@ -41,7 +41,7 @@ export function Avatar({
   return (
     <View
       className={cn(
-        'relative overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800',
+        'relative overflow-hidden rounded-full bg-neutral-100 dark:bg-white/[0.04]',
         sizeClasses[size],
         bordered && 'border-2 border-indigo-500 dark:border-indigo-400',
         className

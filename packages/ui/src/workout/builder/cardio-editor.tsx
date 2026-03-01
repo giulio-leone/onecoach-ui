@@ -77,7 +77,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
   return (
     <Card
       className={cn(
-        'bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-4 md:p-6',
+        'bg-gradient-to-br from-cyan-500/10 to-primary-500/10 p-4 md:p-6',
         'border-cyan-500/30 transition-all hover:border-cyan-500/50',
         className
       )}
@@ -110,7 +110,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
       <div className="mb-4">
         <label className="text-muted-foreground mb-2 block text-sm">Macchina</label>
         <div className="grid grid-cols-4 gap-2 sm:grid-cols-7">
-          {MACHINE_OPTIONS.map((option: any) => (
+          {MACHINE_OPTIONS.map((option) => (
             <motion.button
               key={option.value}
               whileHover={{ scale: 1.05 }}
@@ -162,7 +162,7 @@ export function CardioEditor({ cardio, onChange, onRemove, className }: CardioEd
       <div className="mb-4">
         <label className="text-muted-foreground mb-2 block text-sm">Intensità</label>
         <div className="grid grid-cols-4 gap-2">
-          {INTENSITY_OPTIONS.map((option: any) => (
+          {INTENSITY_OPTIONS.map((option) => (
             <motion.button
               key={option.value}
               whileHover={{ scale: 1.02 }}

@@ -52,7 +52,7 @@ export function InsightsTab({ projectId }: InsightsTabProps) {
                 'text-sm font-medium transition-all duration-200',
                 isActive
                   ? 'bg-primary-500 shadow-primary-500/20 text-white shadow-lg'
-                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-white/[0.04] dark:text-neutral-300 dark:hover:bg-white/[0.08]'
               )}
             >
               <Icon className="h-4 w-4" />

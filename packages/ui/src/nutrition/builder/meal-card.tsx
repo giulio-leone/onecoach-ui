@@ -123,7 +123,7 @@ export function SimpleMealCard({
   return (
     <Card variant="glass" className="overflow-hidden p-0">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-neutral-200 bg-white/50 p-4 dark:border-neutral-700 dark:bg-neutral-900/30">
+      <div className="flex items-center justify-between border-b border-neutral-200/60 bg-white/50 p-4 dark:border-white/[0.08] dark:bg-white/[0.03]">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="flex flex-1 items-center gap-3 text-left focus:outline-none"
@@ -207,7 +207,7 @@ export function SimpleMealCard({
             {meal.foods?.map((food: Food, foodIndex: number) => (
               <div
                 key={food.id || foodIndex}
-                className="flex items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50/50 p-3 dark:border-neutral-700 dark:bg-neutral-800/30"
+                className="flex items-center justify-between rounded-lg border border-neutral-200/60 bg-neutral-50/50 p-3 dark:border-white/[0.08] dark:bg-white/[0.04]"
               >
                 <div className="flex-1">
                   <div className="font-medium text-neutral-900 dark:text-neutral-100">
@@ -229,7 +229,7 @@ export function SimpleMealCard({
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       handleUpdateFoodQuantity(foodIndex, parseFloat(e.target.value) || 0)
                     }
-                    className="h-8 w-20 px-2 py-1 text-sm bg-white dark:bg-neutral-800"
+                    className="h-8 w-20 px-2 py-1 text-sm bg-white dark:bg-white/[0.04]"
                     min={0}
                     step={1}
                   />
@@ -255,7 +255,7 @@ export function SimpleMealCard({
           <Button
             variant="outline"
             onClick={onAddFood}
-            className="flex w-full items-center justify-center gap-2 border-dashed border-neutral-300 py-3 transition-colors hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-800"
+            className="flex w-full items-center justify-center gap-2 border-dashed border-neutral-300 py-3 transition-colors hover:bg-neutral-50 dark:border-white/[0.1] dark:hover:bg-white/[0.06]"
           >
             <Plus size={16} className="text-neutral-500 dark:text-neutral-400" />
             <span className="font-medium text-neutral-600 dark:text-neutral-400">
@@ -265,7 +265,7 @@ export function SimpleMealCard({
 
           {/* Notes */}
           {meal.notes && (
-            <div className="rounded-lg bg-neutral-100 p-3 dark:bg-neutral-800/50">
+            <div className="rounded-lg bg-neutral-100 p-3 dark:bg-white/[0.05]">
               <p className="text-sm text-neutral-600 dark:text-neutral-400">{meal.notes}</p>
             </div>
           )}

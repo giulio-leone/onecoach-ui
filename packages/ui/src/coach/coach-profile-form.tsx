@@ -185,7 +185,7 @@ const VerificationBadge = ({ status }: { status: string }) => {
     icon: Shield,
     label: 'Sconosciuto',
     className:
-      'bg-neutral-50 text-neutral-600 border-neutral-200 dark:bg-neutral-950 dark:text-neutral-400 dark:border-neutral-800',
+      'bg-neutral-50 text-neutral-600 border-neutral-200/60 dark:bg-[#09090b] dark:text-neutral-400 dark:border-white/[0.06]',
   };
 
   const Icon = config.icon;
@@ -508,11 +508,11 @@ export function CoachProfileForm({ initialProfile, isLoading }: CoachProfileForm
         <div className="flex items-center gap-4">
           {/* Avatar */}
           <div className="group relative">
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-50 blur-md transition duration-500 group-hover:opacity-100" />
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-indigo-500 via-secondary-500 to-secondary-500 opacity-50 blur-md transition duration-500 group-hover:opacity-100" />
             <Avatar
               src={user?.profileImage || undefined}
               fallback={user?.name?.slice(0, 2).toUpperCase() || 'C'}
-              className="relative h-16 w-16 border-2 border-white shadow-lg sm:h-20 sm:w-20 dark:border-neutral-900"
+              className="relative h-16 w-16 border-2 border-white shadow-lg sm:h-20 sm:w-20 dark:border-white/[0.04]"
             />
           </div>
 
@@ -766,7 +766,7 @@ export function CoachProfileForm({ initialProfile, isLoading }: CoachProfileForm
                           'rounded-xl p-3 transition-colors',
                           formData.isPubliclyVisible
                             ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400'
-                            : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
+                            : 'bg-neutral-100 text-neutral-500 dark:bg-white/[0.04] dark:text-neutral-400'
                         )}
                       >
                         {formData.isPubliclyVisible ? <Eye size={24} /> : <EyeOff size={24} />}

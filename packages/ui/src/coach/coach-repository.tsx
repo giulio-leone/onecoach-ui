@@ -114,7 +114,7 @@ export function CoachRepository({
   return (
     <div className="space-y-4">
       {/* Filters */}
-      <div className="flex flex-wrap items-center gap-4 rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-700 dark:bg-neutral-900">
+      <div className="flex flex-wrap items-center gap-4 rounded-lg border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-zinc-950">
         <div className="flex items-center gap-2">
           <Filter className="h-5 w-5 text-neutral-500 dark:text-neutral-500" />
           <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
@@ -130,7 +130,7 @@ export function CoachRepository({
               planType: e.target.value ? (e.target.value as MarketplacePlanType) : undefined,
             }))
           }
-          className="rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm dark:border-neutral-600 dark:bg-neutral-900"
+          className="rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm dark:border-white/[0.1] dark:bg-zinc-950"
         >
           <option value="">{tCoach('repository.allTypes')}</option>
           <option value="WORKOUT">{tCoach('repository.workout')}</option>
@@ -145,7 +145,7 @@ export function CoachRepository({
               isPublished: e.target.value === '' ? undefined : e.target.value === 'true',
             }))
           }
-          className="rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm dark:border-neutral-600 dark:bg-neutral-900"
+          className="rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm dark:border-white/[0.1] dark:bg-zinc-950"
         >
           <option value="">{tCoach('repository.allStatuses')}</option>
           <option value="true">{tCoach('repository.published')}</option>

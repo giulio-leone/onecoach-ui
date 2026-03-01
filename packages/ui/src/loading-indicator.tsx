@@ -29,7 +29,7 @@ export interface LoadingIndicatorProps {
 const stages = [
   { icon: Sparkles, color: 'text-amber-400', glow: 'shadow-amber-500/20' },
   { icon: Brain, color: 'text-indigo-400', glow: 'shadow-indigo-500/20' },
-  { icon: Zap, color: 'text-blue-400', glow: 'shadow-blue-500/20' },
+  { icon: Zap, color: 'text-primary-400', glow: 'shadow-primary-500/20' },
   { icon: CheckCircle2, color: 'text-emerald-400', glow: 'shadow-emerald-500/20' },
 ];
 

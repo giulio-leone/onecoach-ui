@@ -67,10 +67,10 @@ const STRATEGY_CONFIG: Record<
   cheapest: {
     icon: TrendDown,
     label: 'Cheapest',
-    colorClass: 'text-blue-600 dark:text-blue-400',
-    bgClass: 'bg-blue-500',
-    borderClass: 'border-blue-500/30',
-    gradientFrom: 'from-blue-500',
+    colorClass: 'text-primary-600 dark:text-primary-400',
+    bgClass: 'bg-primary-500',
+    borderClass: 'border-primary-500/30',
+    gradientFrom: 'from-primary-500',
     gradientTo: 'to-cyan-500',
   },
   fastest: {
@@ -85,11 +85,11 @@ const STRATEGY_CONFIG: Record<
   most_convenient: {
     icon: Target,
     label: 'Most Convenient',
-    colorClass: 'text-purple-600 dark:text-purple-400',
-    bgClass: 'bg-purple-500',
-    borderClass: 'border-purple-500/30',
-    gradientFrom: 'from-purple-500',
-    gradientTo: 'to-pink-500',
+    colorClass: 'text-secondary-600 dark:text-secondary-400',
+    bgClass: 'bg-secondary-500',
+    borderClass: 'border-secondary-500/30',
+    gradientFrom: 'from-secondary-500',
+    gradientTo: 'to-secondary-500',
   },
   flexible_combo: {
     icon: Sparkle,
@@ -125,16 +125,16 @@ export function SmartAnalysisPanel({
       className={cn(
         'relative overflow-hidden rounded-3xl',
         'border-2 border-indigo-500/20 dark:border-indigo-400/20',
-        'bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/30',
-        'dark:from-neutral-900 dark:via-indigo-950/20 dark:to-purple-950/20',
+        'bg-gradient-to-br from-white via-indigo-50/30 to-secondary-50/30',
+        'dark:from-neutral-900 dark:via-indigo-950/20 dark:to-secondary-950/20',
         'shadow-xl shadow-indigo-500/5',
         className
       )}
     >
       {/* Decorative Background Pattern */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-gradient-to-br from-indigo-500/10 to-pink-500/10 blur-3xl" />
+        <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-to-br from-primary-500/10 to-secondary-500/10 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-gradient-to-br from-indigo-500/10 to-secondary-500/10 blur-3xl" />
       </div>
 
       {/* Header */}
@@ -146,8 +146,8 @@ export function SmartAnalysisPanel({
         <div className="flex items-center gap-4">
           {/* AI Icon with Glow */}
           <div className="relative">
-            <div className="absolute inset-0 animate-pulse rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 opacity-30 blur-md" />
-            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 shadow-xl shadow-purple-500/30">
+            <div className="absolute inset-0 animate-pulse rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-500 opacity-30 blur-md" />
+            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-600 shadow-xl shadow-secondary-500/30">
               <Brain className="h-7 w-7 text-white" weight="duotone" />
             </div>
           </div>
@@ -159,7 +159,7 @@ export function SmartAnalysisPanel({
               </h3>
               <Badge
                 variant="outline"
-                className="border-purple-500/30 bg-purple-500/10 text-purple-600 dark:text-purple-400"
+                className="border-secondary-500/30 bg-secondary-500/10 text-secondary-600 dark:text-secondary-400"
               >
                 <Sparkle className="mr-1 h-3 w-3" weight="fill" />
                 OneAgent
@@ -174,7 +174,7 @@ export function SmartAnalysisPanel({
         <motion.div
           animate={{ rotate: isExpanded ? 180 : 0 }}
           transition={{ duration: 0.2 }}
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-500 dark:bg-neutral-800"
+          className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-500 dark:bg-white/[0.04]"
         >
           <CaretDown className="h-5 w-5" weight="bold" />
         </motion.div>
@@ -226,7 +226,7 @@ export function SmartAnalysisPanel({
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="h-1.5 w-20 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-700">
+                          <div className="h-1.5 w-20 overflow-hidden rounded-full bg-neutral-200 dark:bg-white/[0.08]">
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: `${recommendation.confidence * 100}%` }}
@@ -275,7 +275,7 @@ export function SmartAnalysisPanel({
                               'hover:-translate-y-0.5 hover:shadow-lg',
                               strategyConfig.borderClass,
                               strategyConfig.colorClass,
-                              'bg-white dark:bg-neutral-800'
+                              'bg-white dark:bg-white/[0.04]'
                             )}
                           >
                             <AirplaneTilt className="h-4 w-4 rotate-180" weight="duotone" />
@@ -307,7 +307,7 @@ export function SmartAnalysisPanel({
                         <Button
                           variant="outline"
                           size="sm"
-                          className="rounded-xl border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700"
+                          className="rounded-xl border-neutral-200/60 bg-white text-neutral-700 hover:bg-neutral-50 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-neutral-200 dark:hover:bg-white/[0.08]"
                           onClick={() => onSelectRecommendation(recommendation)}
                         >
                           <CheckCircle className="mr-1.5 h-4 w-4" weight="bold" />
@@ -319,7 +319,7 @@ export function SmartAnalysisPanel({
                           variant="ghost"
                           size="sm"
                           className={cn(
-                            'rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800',
+                            'rounded-xl hover:bg-neutral-100 dark:hover:bg-white/[0.06]',
                             isSaved && 'text-red-500 dark:text-red-400'
                           )}
                           onClick={() => onSave(recommendation)}
@@ -384,8 +384,8 @@ export function SmartAnalysisPanel({
                               transition={{ delay: idx * 0.05 }}
                               className={cn(
                                 'flex items-center justify-between rounded-xl border p-3 transition-colors',
-                                'border-neutral-200 bg-white hover:border-neutral-300',
-                                'dark:border-neutral-700 dark:bg-neutral-800/50 dark:hover:border-neutral-600'
+                                'border-neutral-200/60 bg-white hover:border-neutral-300',
+                                'dark:border-white/[0.08] dark:bg-white/[0.05] dark:hover:border-white/[0.15]'
                               )}
                             >
                               <div className="flex items-center gap-3">
@@ -414,7 +414,7 @@ export function SmartAnalysisPanel({
                                   <button
                                     type="button"
                                     onClick={() => onSelectRecommendation(alt)}
-                                    className="rounded-lg p-2 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-700 dark:hover:bg-neutral-700 dark:hover:text-white"
+                                    className="rounded-lg p-2 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-700 dark:hover:bg-white/[0.08] dark:hover:text-white"
                                   >
                                     <ArrowRight className="h-4 w-4" weight="bold" />
                                   </button>
@@ -430,7 +430,7 @@ export function SmartAnalysisPanel({
               )}
 
               {/* Market Summary */}
-              <div className="rounded-2xl bg-neutral-100/80 p-4 dark:bg-neutral-800/50">
+              <div className="rounded-2xl bg-neutral-100/80 p-4 dark:bg-white/[0.05]">
                 <p className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
                   {analysis.marketSummary}
                 </p>
@@ -476,10 +476,10 @@ export function SmartAnalysisPanel({
                   {analysis.keyInsights.map((insight, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-2 rounded-xl bg-white/60 p-3 dark:bg-neutral-800"
+                      className="flex items-start gap-2 rounded-xl bg-white/60 p-3 dark:bg-white/[0.04]"
                     >
                       <CheckCircle
-                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-500"
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-500"
                         weight="fill"
                       />
                       <span className="text-sm text-neutral-600 dark:text-neutral-300">
@@ -538,7 +538,7 @@ function QuickStat({ icon: Icon, label, value, isPositive }: QuickStatProps) {
     <div
       className={cn(
         'rounded-xl p-3 text-center transition-colors',
-        'bg-white/60 dark:bg-neutral-800'
+        'bg-white/60 dark:bg-white/[0.04]'
       )}
     >
       <div
@@ -546,7 +546,7 @@ function QuickStat({ icon: Icon, label, value, isPositive }: QuickStatProps) {
           'mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-lg',
           isPositive
             ? 'bg-emerald-500/10 text-emerald-500'
-            : 'bg-neutral-200/50 text-neutral-500 dark:bg-neutral-700/50 dark:text-neutral-400'
+            : 'bg-neutral-200/50 text-neutral-500 dark:bg-white/[0.06] dark:text-neutral-400'
         )}
       >
         <Icon className="h-4 w-4" weight="duotone" />

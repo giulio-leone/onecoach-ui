@@ -35,13 +35,13 @@ export function QuickActionsGrid({ actions, className }: QuickActionsGridProps) 
               className={cn(
                 'group relative flex h-full flex-row items-center gap-4 p-4 transition-all duration-300',
                 'hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/10',
-                'border-neutral-200/50 dark:border-neutral-800/50'
+                'border-neutral-200/50 dark:border-white/[0.06]'
               )}
             >
               <View
                 className={cn(
                   'flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300',
-                  'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400',
+                  'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400',
                   'group-hover:bg-indigo-500 group-hover:text-white'
                 )}
               >

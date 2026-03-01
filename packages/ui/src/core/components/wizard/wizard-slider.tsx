@@ -30,14 +30,14 @@ export function WizardSlider({
   return (
     <div
       className={cn(
-        'space-y-4 rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-900/50',
+        'space-y-4 rounded-xl border border-neutral-200/60 bg-white p-5 dark:border-white/[0.08] dark:bg-white/[0.04]',
         className
       )}
     >
       <div className="flex flex-row items-center justify-between">
         <label className="text-sm font-medium text-neutral-900 dark:text-white">{label}</label>
-        <div className="rounded-lg bg-blue-100 px-3 py-1 dark:bg-blue-900/30">
-          <span className="text-xs font-bold text-blue-700 dark:text-blue-300">
+        <div className="rounded-lg bg-primary-100 px-3 py-1 dark:bg-primary-900/30">
+          <span className="text-xs font-bold text-primary-700 dark:text-primary-300">
             {value} {valueLabel}
           </span>
         </div>
@@ -51,7 +51,7 @@ export function WizardSlider({
           step={step}
           value={value}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(Number(e.target.value))}
-          className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-200 accent-blue-600 dark:bg-neutral-700 dark:accent-blue-500"
+          className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-200 accent-primary-600 dark:bg-white/[0.08] dark:accent-primary-500"
         />
       </div>
 
@@ -61,7 +61,7 @@ export function WizardSlider({
       </div>
 
       {description && (
-        <p className="mt-1 border-t border-neutral-100 pt-3 text-xs leading-relaxed text-neutral-500 dark:border-neutral-800 dark:text-neutral-400">
+        <p className="mt-1 border-t border-neutral-100 pt-3 text-xs leading-relaxed text-neutral-500 dark:border-white/[0.08] dark:text-neutral-400">
           {description}
         </p>
       )}

@@ -27,8 +27,8 @@ function StatCardComponent({
 }: StatCardProps) {
   const gradients = {
     green: 'from-green-500 to-green-600',
-    blue: 'from-blue-500 to-blue-600',
-    purple: 'from-purple-500 to-purple-600',
+    blue: 'from-primary-500 to-primary-600',
+    purple: 'from-secondary-500 to-secondary-600',
     orange: 'from-orange-500 to-orange-600',
     red: 'from-red-500 to-red-600',
   };
@@ -43,7 +43,7 @@ function StatCardComponent({
         'group relative overflow-hidden transition-all duration-300 hover:-translate-y-1',
         'bg-gradient-to-br from-white/50 to-white/20 backdrop-blur-xl dark:from-neutral-900/50 dark:to-neutral-900/20',
         'ring-1 ring-white/20 dark:ring-white/10',
-        'border-neutral-200 dark:border-neutral-800',
+        'border-neutral-200/60 dark:border-white/[0.06]',
         'hover:shadow-lg hover:shadow-neutral-200/50 dark:hover:shadow-neutral-900/50',
         className
       )}
@@ -52,7 +52,7 @@ function StatCardComponent({
       <div
         className={cn(
           'absolute -top-10 -right-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-20',
-          gradientClass ? `bg-gradient-to-br ${gradientClass}` : 'bg-blue-500'
+          gradientClass ? `bg-gradient-to-br ${gradientClass}` : 'bg-primary-500'
         )}
       />
 
@@ -71,7 +71,7 @@ function StatCardComponent({
               'flex h-12 w-12 items-center justify-center rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-110',
               gradientClass
                 ? `bg-gradient-to-br ${gradientClass} text-white shadow-lg shadow-${gradientClass.split('-')[1]}-500/20`
-                : 'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300'
+                : 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-300'
             )}
           >
             <Icon className="h-6 w-6" />

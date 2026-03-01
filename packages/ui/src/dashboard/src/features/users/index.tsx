@@ -312,7 +312,7 @@ export function UsersPageClient({
       <AdminTabPanel activeTab={activeTab} tabId="users">
         <div className="space-y-4 sm:space-y-6">
           {/* Filters Bar */}
-          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-800 dark:bg-neutral-900/50">
+          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-white/[0.04]">
             {/* Search + View Toggle (Mobile: full width) */}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <div className="relative flex-1">
@@ -328,14 +328,14 @@ export function UsersPageClient({
                 />
               </div>
               {/* View Toggle - Hidden on mobile */}
-              <div className="hidden items-center gap-1 rounded-lg border border-neutral-200 p-1 sm:flex dark:border-neutral-700">
+              <div className="hidden items-center gap-1 rounded-lg border border-neutral-200/60 p-1 sm:flex dark:border-white/[0.08]">
                 <button
                   onClick={() => setViewMode('grid')}
                   className={cn(
                     'rounded-md p-2 transition-colors',
                     viewMode === 'grid'
-                      ? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-700 dark:text-white'
-                      : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-neutral-800'
+                      ? 'bg-neutral-100 text-neutral-900 dark:bg-white/[0.08] dark:text-white'
+                      : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-white/[0.06]'
                   )}
                 >
                   <Grid3X3 className="h-4 w-4" />
@@ -345,8 +345,8 @@ export function UsersPageClient({
                   className={cn(
                     'rounded-md p-2 transition-colors',
                     viewMode === 'list'
-                      ? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-700 dark:text-white'
-                      : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-neutral-800'
+                      ? 'bg-neutral-100 text-neutral-900 dark:bg-white/[0.08] dark:text-white'
+                      : 'text-neutral-500 hover:bg-neutral-50 dark:hover:bg-white/[0.06]'
                   )}
                 >
                   <List className="h-4 w-4" />
@@ -409,7 +409,7 @@ export function UsersPageClient({
               <Loader2 className="h-8 w-8 animate-spin text-neutral-500" />
             </div>
           ) : filteredUsers.length === 0 ? (
-            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-neutral-200 text-center dark:border-neutral-800">
+            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-neutral-200/60 text-center dark:border-white/[0.06]">
               <Users className="mb-4 h-12 w-12 text-neutral-300 dark:text-neutral-600" />
               <h3 className="text-lg font-medium text-neutral-900 dark:text-white">
                 {t('list.empty')}
@@ -439,7 +439,7 @@ export function UsersPageClient({
               {filteredUsers.map((user: any) => (
                 <div
                   key={user.id}
-                  className="flex items-center gap-4 rounded-lg border border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900/50"
+                  className="flex items-center gap-4 rounded-lg border border-neutral-200/60 bg-white p-4 dark:border-white/[0.08] dark:bg-white/[0.04]"
                 >
                   {/* Avatar */}
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-neutral-400 to-neutral-600 text-sm font-bold text-white">
@@ -453,7 +453,7 @@ export function UsersPageClient({
                     <p className="truncate text-sm text-neutral-500">{user.email}</p>
                   </div>
                   {/* Role Badge */}
-                  <span className="hidden rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-700 sm:inline-flex dark:bg-neutral-800 dark:text-neutral-300">
+                  <span className="hidden rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-700 sm:inline-flex dark:bg-white/[0.04] dark:text-neutral-300">
                     {user.role}
                   </span>
                   {/* Credits */}
@@ -474,7 +474,7 @@ export function UsersPageClient({
             </div>
           )}
           {/* Pagination */}
-          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between dark:border-neutral-800 dark:bg-neutral-900/50">
+          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between dark:border-white/[0.08] dark:bg-white/[0.04]">
             <div className="text-sm text-neutral-600 dark:text-neutral-400">
               {t('pagination.total')}: {usersTotal} •{' '}
               {t('pagination.page', {
@@ -570,7 +570,7 @@ export function UsersPageClient({
             <CreateInvitationModal onSuccess={fetchInvitations} />
           </div>
           {/* Filters & Search */}
-          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-800 dark:bg-neutral-900/50">
+          <div className="flex flex-col gap-3 rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-white/[0.04]">
             <div className="relative flex-1">
               <Search className="absolute top-3 left-3 h-5 w-5 text-neutral-400" />
               <Input
@@ -620,11 +620,11 @@ export function UsersPageClient({
           </div>
           {/* Content */}
           {isLoadingInvitations && invitations.length === 0 ? (
-            <div className="flex h-64 items-center justify-center rounded-xl border border-dashed border-neutral-200 dark:border-neutral-800">
+            <div className="flex h-64 items-center justify-center rounded-xl border border-dashed border-neutral-200/60 dark:border-white/[0.06]">
               <Loader2 className="text-primary-500 h-8 w-8 animate-spin" />
             </div>
           ) : invitations.length === 0 ? (
-            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-neutral-200 text-center dark:border-neutral-800">
+            <div className="flex h-64 flex-col items-center justify-center rounded-xl border border-dashed border-neutral-200/60 text-center dark:border-white/[0.06]">
               <Filter className="mb-4 h-10 w-10 text-neutral-300 dark:text-neutral-600" />
               <h3 className="text-lg font-medium text-neutral-900 dark:text-white">
                 {t('invitations.empty')}

@@ -21,10 +21,10 @@ interface MacroDisplayProps {
 }
 
 const MACRO_COLORS = {
-  protein: 'purple-600',
+  protein: 'secondary-600',
   carbs: 'green-600',
   fats: 'orange-600',
-  calories: 'blue-600',
+  calories: 'primary-600',
 } as const;
 
 export function MacroDisplay({
@@ -68,7 +68,7 @@ export function MacroDisplay({
             <div className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
               Protein
             </div>
-            <div className={`font-bold ${sizeMap[size].text} text-purple-700`}>
+            <div className={`font-bold ${sizeMap[size].text} text-secondary-700`}>
               Consumed {Math.round(macros.protein)}/{Math.round(targetMacros.protein)}g
             </div>
             <div className="text-xs font-medium text-neutral-500 dark:text-neutral-500">
@@ -130,7 +130,7 @@ export function MacroDisplay({
               <div className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
                 Calories
               </div>
-              <div className={`font-bold ${sizeMap[size].text} text-blue-700`}>
+              <div className={`font-bold ${sizeMap[size].text} text-primary-700`}>
                 {Math.round(macros.calories)} / {Math.round(targetMacros.calories)}
               </div>
               <div className="text-xs font-medium text-neutral-500 dark:text-neutral-500">
@@ -146,13 +146,13 @@ export function MacroDisplay({
   if (variant === 'compact') {
     return (
       <div className={`flex flex-wrap items-center gap-2 ${className}`}>
-        <div className="flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1">
-          <span className="text-xs font-medium text-blue-700">
+        <div className="flex items-center gap-1 rounded-full bg-primary-50 px-2 py-1">
+          <span className="text-xs font-medium text-primary-700">
             {Math.round(macros.calories)} kcal
           </span>
         </div>
-        <div className="flex items-center gap-1 rounded-full bg-purple-50 px-2 py-1">
-          <span className="text-xs font-medium text-purple-700">
+        <div className="flex items-center gap-1 rounded-full bg-secondary-50 px-2 py-1">
+          <span className="text-xs font-medium text-secondary-700">
             {t('nutrition.macro_display.p')}
             {Math.round(macros.protein)}g
           </span>
@@ -177,11 +177,11 @@ export function MacroDisplay({
   return (
     <div className={`flex flex-wrap items-center gap-2 text-sm ${className}`}>
       <span className="text-neutral-600 dark:text-neutral-400">
-        <span className="font-medium text-blue-600">{Math.round(macros.calories)}</span> kcal
+        <span className="font-medium text-primary-600">{Math.round(macros.calories)}</span> kcal
       </span>
       <span className="text-neutral-400 dark:text-neutral-600">|</span>
       <span className="text-neutral-600 dark:text-neutral-400">
-        <span className="font-medium text-purple-600">{t('nutrition.macro_display.p')}</span>{' '}
+        <span className="font-medium text-secondary-600">{t('nutrition.macro_display.p')}</span>{' '}
         {Math.round(macros.protein)}g
       </span>
       <span className="text-neutral-600 dark:text-neutral-400">

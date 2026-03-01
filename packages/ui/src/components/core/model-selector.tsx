@@ -5,6 +5,7 @@ import { Input } from '../../input';
 import { Select } from '../../select';
 import { Search, Check, ChevronsUpDown, Sparkles, Box, Cpu, Zap } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
+import { useIsMobile } from '@giulio-leone/hooks';
 import type { ModelOption } from './model-selector-modal';
 import { Drawer } from '../../drawer';
 
@@ -39,18 +40,8 @@ export function ModelSelector({
   const [search, setSearch] = useState('');
   const [providerFilter, setProviderFilter] = useState<string>('all');
   const [isLoading, setIsLoading] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLDivElement>(null);
-
-  // Detect mobile
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640); // sm breakpoint
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   useEffect(() => {
     const fetchModels = async () => {
@@ -114,7 +105,7 @@ export function ModelSelector({
             placeholder="Search model..."
             value={search}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
-            className="h-9 border-neutral-200 bg-neutral-50 pl-8 dark:border-white/10 dark:bg-white/5"
+            className="h-9 border-neutral-200/60 bg-neutral-50 pl-8 dark:border-white/10 dark:bg-white/5"
             autoFocus={!isMobile}
           />
         </div>
@@ -124,7 +115,7 @@ export function ModelSelector({
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
               setProviderFilter(e.target.value)
             }
-            className="h-9 border-neutral-200 bg-neutral-50 text-xs dark:border-white/10 dark:bg-white/5"
+            className="h-9 border-neutral-200/60 bg-neutral-50 text-xs dark:border-white/10 dark:bg-white/5"
           >
             <option value="all">All</option>
             {providers.map((p: any) => (
@@ -241,7 +232,7 @@ export function ModelSelector({
       ) : (
         /* Desktop Dropdown */
         isOpen && (
-          <div className="animate-in fade-in zoom-in-95 absolute top-full left-0 z-50 mt-2 w-[320px] origin-top-left rounded-2xl border border-white/20 bg-white/80 p-3 shadow-xl backdrop-blur-xl duration-200 dark:border-white/10 dark:bg-neutral-900/80">
+          <div className="animate-in fade-in zoom-in-95 absolute top-full left-0 z-50 mt-2 w-[320px] origin-top-left rounded-2xl border border-white/20 bg-white/80 p-3 shadow-xl backdrop-blur-xl duration-200 dark:border-white/10 dark:bg-white/[0.06]">
             <ModelListContent />
           </div>
         )

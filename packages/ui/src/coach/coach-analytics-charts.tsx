@@ -99,7 +99,7 @@ export function CoachAnalyticsCharts({ userId, period = '30d' }: CoachAnalyticsC
         {[1, 2, 3, 4].map((i: any) => (
           <div
             key={i}
-            className="flex h-80 items-center justify-center rounded-lg border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900"
+            className="flex h-80 items-center justify-center rounded-lg border border-neutral-200/60 bg-white dark:border-white/[0.08] dark:bg-zinc-950"
           >
             <LoadingIndicator />
           </div>
@@ -117,7 +117,7 @@ export function CoachAnalyticsCharts({ userId, period = '30d' }: CoachAnalyticsC
         title={t('coach.coach_analytics_charts.vendite_nel_tempo')}
         xLabel="Data"
         yLabel="Vendite"
-        datasets={[{ label: 'Vendite', dataKey: 'vendite', color: '#3b82f6' }]}
+        datasets={[{ label: 'Vendite', dataKey: 'vendite', color: '#6366f1' }]}
       />
 
       {/* Revenue Chart */}

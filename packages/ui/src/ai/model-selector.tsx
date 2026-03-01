@@ -49,13 +49,13 @@ export const ModelSelectorTrigger = ({
       // Base
       'group flex items-center gap-2 rounded-lg px-3 py-2 text-sm',
       // Glassmorphism
-      'bg-white/60 dark:bg-neutral-800/60',
+      'bg-white/60 dark:bg-white/[0.05]',
       'backdrop-blur-sm',
-      'border border-neutral-200/50 dark:border-neutral-700/50',
+      'border border-neutral-200/50 dark:border-white/[0.08]',
       // Text
       'text-neutral-700 dark:text-neutral-300',
       // Hover
-      'hover:bg-white/80 hover:dark:bg-neutral-800/80',
+      'hover:bg-white/80 hover:dark:bg-white/[0.06]',
       'hover:border-primary-300 hover:dark:border-primary-700',
       // Focus
       'focus-visible:ring-primary-500/50 focus-visible:ring-2 focus-visible:outline-none',
@@ -98,9 +98,9 @@ export const ModelSelectorContent = ({
     className={cn(
       'overflow-hidden p-0',
       // Glassmorphism
-      'bg-white/95 dark:bg-neutral-900/95',
+      'bg-white/95 dark:bg-white/[0.10]',
       'backdrop-blur-xl',
-      'border border-neutral-200/50 dark:border-neutral-700/50',
+      'border border-neutral-200/50 dark:border-white/[0.08]',
       'shadow-2xl',
       className
     )}
@@ -281,7 +281,7 @@ export const ModelSelectorLogo = ({ provider, className, ...props }: ModelSelect
     alt={`${provider} logo`}
     className={cn(
       'size-5 rounded-md p-0.5',
-      'bg-white dark:bg-neutral-800',
+      'bg-white dark:bg-white/[0.04]',
       'ring-1 ring-neutral-200/50 dark:ring-neutral-700/50',
       className
     )}

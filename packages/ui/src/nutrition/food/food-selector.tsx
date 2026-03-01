@@ -144,7 +144,7 @@ export function FoodSelector({
             setTimeout(() => setIsOpen(false), 200);
           }}
           placeholder={placeholder || t('food.searchPlaceholder')}
-          className="w-full rounded-xl border border-neutral-300 bg-white py-3 pr-10 pl-10 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus:outline-none dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-100 dark:text-neutral-600"
+          className="w-full rounded-xl border border-neutral-300 bg-white py-3 pr-10 pl-10 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 focus:outline-none dark:border-white/[0.1] dark:bg-zinc-950 dark:text-neutral-100 dark:text-neutral-600"
         />
         {query && (
           <button
@@ -163,7 +163,7 @@ export function FoodSelector({
       {isOpen && (
         <div
           ref={resultsRef}
-          className="absolute z-50 mt-2 max-h-64 w-full overflow-y-auto rounded-xl border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-900"
+          className="absolute z-50 mt-2 max-h-64 w-full overflow-y-auto rounded-xl border border-neutral-200/60 bg-white shadow-lg dark:border-white/[0.08] dark:bg-zinc-950"
         >
           {isLoading ? (
             <div className="flex items-center justify-center py-8">
@@ -181,8 +181,8 @@ export function FoodSelector({
                   onClick={() => handleSelect(food)}
                   className={`w-full px-4 py-3 text-left transition-colors ${
                     index === selectedIndex
-                      ? 'bg-blue-50'
-                      : 'hover:bg-neutral-50 dark:bg-neutral-800/50'
+                      ? 'bg-primary-50'
+                      : 'hover:bg-neutral-50 dark:bg-white/[0.05]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -199,7 +199,7 @@ export function FoodSelector({
                         {food.macrosPer100g.fats}g
                       </div>
                     </div>
-                    {index === selectedIndex && <Check className="h-5 w-5 text-blue-600" />}
+                    {index === selectedIndex && <Check className="h-5 w-5 text-primary-600" />}
                   </div>
                 </button>
               ))}

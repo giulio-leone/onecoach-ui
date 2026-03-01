@@ -23,7 +23,7 @@ export function CoachDashboardStats({ stats, isLoading }: CoachDashboardStatsPro
         {[1, 2, 3, 4].map((i: any) => (
           <div
             key={i}
-            className="flex h-32 items-center justify-center rounded-xl border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900"
+            className="flex h-32 items-center justify-center rounded-xl border border-neutral-200/60 bg-white dark:border-white/[0.08] dark:bg-zinc-950"
           >
             <LoadingIndicator />
           </div>
@@ -40,7 +40,7 @@ export function CoachDashboardStats({ stats, isLoading }: CoachDashboardStatsPro
         label={t('coach_dashboard_stats.vendite_totali')}
         value={stats.totalSales}
         icon={TrendingUp}
-        color="from-blue-500 to-blue-600"
+        color="from-primary-500 to-primary-600"
         subtitle={`${stats.publishedPlans} piani pubblicati`}
       />
       <StatCard
@@ -61,7 +61,7 @@ export function CoachDashboardStats({ stats, isLoading }: CoachDashboardStatsPro
         label={t('coach_dashboard_stats.piani_totali')}
         value={stats.totalPlans}
         icon={Package}
-        color="from-purple-500 to-purple-600"
+        color="from-secondary-500 to-secondary-600"
         subtitle={`${stats.draftPlans} in bozza`}
       />
     </div>

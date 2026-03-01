@@ -98,7 +98,7 @@ export function ExerciseDetailDrawer({
             </div>
             {/* Overview */}
             {exercise.overview && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   <Sparkles className="h-3.5 w-3.5 text-emerald-500 sm:h-4 sm:w-4" />
                   Overview
@@ -112,32 +112,32 @@ export function ExerciseDetailDrawer({
             {(exercise.videoUrl || exercise.imageUrl) && (
               <section className="grid gap-3 sm:grid-cols-2">
                 {exercise.videoUrl && (
-                  <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-neutral-700 dark:bg-neutral-800/50">
+                  <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
                     <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
-                      <PlayCircle className="h-3.5 w-3.5 text-blue-500 sm:h-4 sm:w-4" />
+                      <PlayCircle className="h-3.5 w-3.5 text-primary-500 sm:h-4 sm:w-4" />
                       Video
                     </div>
                     <a
                       href={exercise.videoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-flex min-h-[44px] touch-manipulation items-center justify-center gap-2 rounded-lg bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-600 transition-colors hover:bg-blue-100 active:bg-blue-200 sm:text-sm"
+                      className="mt-2 inline-flex min-h-[44px] touch-manipulation items-center justify-center gap-2 rounded-lg bg-primary-50 px-3 py-2 text-xs font-semibold text-primary-600 transition-colors hover:bg-primary-100 active:bg-primary-200 sm:text-sm"
                     >
                       {t('admin.exercise_detail_drawer.guarda_il_video')}
                     </a>
                   </div>
                 )}
                 {exercise.imageUrl && (
-                  <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-3 sm:p-4 dark:border-neutral-700 dark:bg-neutral-800/50">
+                  <div className="rounded-xl border border-neutral-200/60 bg-neutral-50 p-3 sm:p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
                     <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
-                      <Camera className="h-3.5 w-3.5 text-purple-500 sm:h-4 sm:w-4" />
+                      <Camera className="h-3.5 w-3.5 text-secondary-500 sm:h-4 sm:w-4" />
                       Immagine
                     </div>
                     <a
                       href={exercise.imageUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-flex min-h-[44px] touch-manipulation items-center justify-center gap-2 rounded-lg bg-purple-50 px-3 py-2 text-xs font-semibold text-purple-600 transition-colors hover:bg-purple-100 active:bg-purple-200 sm:text-sm"
+                      className="mt-2 inline-flex min-h-[44px] touch-manipulation items-center justify-center gap-2 rounded-lg bg-secondary-50 px-3 py-2 text-xs font-semibold text-secondary-600 transition-colors hover:bg-secondary-100 active:bg-secondary-200 sm:text-sm"
                     >
                       {t('admin.exercise_detail_drawer.apri_immagine')}
                     </a>
@@ -147,7 +147,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Muscoli e body parts */}
             <section className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
+              <div className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Muscoli
                 </h4>
@@ -169,7 +169,7 @@ export function ExerciseDetailDrawer({
                     ))}
                 </div>
               </div>
-              <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
+              <div className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   {t('admin.exercise_detail_drawer.parti_del_corpo')}
                 </h4>
@@ -180,7 +180,7 @@ export function ExerciseDetailDrawer({
                     return (
                       <span
                         key={`${exercise.id}-${slug}`}
-                        className="rounded-full bg-blue-50 px-2 py-1 text-blue-600"
+                        className="rounded-full bg-primary-50 px-2 py-1 text-primary-600"
                       >
                         {name}
                       </span>
@@ -190,7 +190,7 @@ export function ExerciseDetailDrawer({
               </div>
             </section>
             {/* Equipments */}
-            <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
+            <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
               <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                 Attrezzature
               </h4>
@@ -204,7 +204,7 @@ export function ExerciseDetailDrawer({
                   return (
                     <span
                       key={`${exercise.id}-${slug}`}
-                      className="rounded-full bg-neutral-100 px-2 py-1 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+                      className="rounded-full bg-neutral-100 px-2 py-1 text-neutral-700 dark:bg-white/[0.04] dark:text-neutral-300"
                     >
                       {name}
                     </span>
@@ -214,7 +214,7 @@ export function ExerciseDetailDrawer({
             </section>
             {/* Keywords */}
             {exercise.keywords!.length > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Keywords
                 </h4>
@@ -222,7 +222,7 @@ export function ExerciseDetailDrawer({
                   {(exercise.keywords! as string[]).map((keyword: string) => (
                     <span
                       key={`${exercise.id}-${keyword}`}
-                      className="rounded-full bg-neutral-100 px-2 py-1 dark:bg-neutral-800"
+                      className="rounded-full bg-neutral-100 px-2 py-1 dark:bg-white/[0.04]"
                     >
                       #{keyword}
                     </span>
@@ -232,7 +232,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Instructions */}
             {(exercise.instructions?.length ?? 0) > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-3 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   <ClipboardList className="h-3.5 w-3.5 text-indigo-500 sm:h-4 sm:w-4" />
                   Istruzioni
@@ -246,7 +246,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Tips */}
             {(exercise.exerciseTips?.length ?? 0) > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   <Sparkles className="h-3.5 w-3.5 text-amber-500 sm:h-4 sm:w-4" />
                   {t('admin.exercise_detail_drawer.cue_consigli')}
@@ -263,7 +263,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Variations */}
             {(exercise.variations?.length ?? 0) > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Varianti
                 </h4>
@@ -271,7 +271,7 @@ export function ExerciseDetailDrawer({
                   {(exercise.variations as unknown as string[])!.map((variation: string, index: number) => (
                     <span
                       key={`${exercise.id}-variation-${index}`}
-                      className="rounded-lg bg-purple-50 px-2 py-1 text-purple-600"
+                      className="rounded-lg bg-secondary-50 px-2 py-1 text-secondary-600"
                     >
                       {variation}
                     </span>
@@ -281,7 +281,7 @@ export function ExerciseDetailDrawer({
             )}
             {/* Relazioni */}
             {(exercise.related?.length ?? 0) > 0 && (
-              <section className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm sm:p-4 dark:border-neutral-700 dark:bg-neutral-900">
+              <section className="rounded-xl border border-neutral-200/60 bg-white p-3 shadow-sm sm:p-4 dark:border-white/[0.08] dark:bg-zinc-950">
                 <h4 className="mb-2 text-xs font-semibold text-neutral-500 uppercase sm:text-sm dark:text-neutral-500">
                   Relazioni
                 </h4>
@@ -293,7 +293,7 @@ export function ExerciseDetailDrawer({
                     return (
                       <span
                         key={`${exercise.id}-${relationId}-${relationType}`}
-                        className="rounded-lg bg-neutral-100 px-2 py-1 dark:bg-neutral-800"
+                        className="rounded-lg bg-neutral-100 px-2 py-1 dark:bg-white/[0.04]"
                       >
                         {relationType.toLowerCase()} {relationSlug ? `· ${relationSlug}` : ''}
                       </span>

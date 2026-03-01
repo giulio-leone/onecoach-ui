@@ -30,9 +30,9 @@ export const Tool = ({ className, ...props }: ToolProps) => (
       // Base
       'not-prose mb-4 w-full overflow-hidden rounded-xl',
       // Glassmorphism
-      'bg-white/60 dark:bg-neutral-800/60',
+      'bg-white/60 dark:bg-white/[0.05]',
       'backdrop-blur-sm',
-      'border border-neutral-200/50 dark:border-neutral-700/50',
+      'border border-neutral-200/50 dark:border-white/[0.08]',
       // Shadow
       'shadow-sm',
       // Transition
@@ -52,11 +52,11 @@ export type ToolHeaderProps = {
 const statusConfigs: Record<ToolUIPart['state'], { icon: ReactNode; variant: string }> = {
   'input-streaming': {
     icon: <CircleIcon className="size-3" />,
-    variant: 'bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400',
+    variant: 'bg-neutral-100 text-neutral-600 dark:bg-white/[0.04] dark:text-neutral-400',
   },
   'input-available': {
     icon: <ClockIcon className="size-3 animate-spin" />,
-    variant: 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400',
+    variant: 'bg-primary-50 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400',
   },
   'approval-requested': {
     icon: <ShieldAlertIcon className="size-3" />,
@@ -114,7 +114,7 @@ export const ToolHeader = ({ className, title, type, state, ...props }: ToolHead
         // Layout
         'group flex w-full items-center justify-between gap-4 px-4 py-3',
         // Hover
-        'hover:bg-neutral-50/50 dark:hover:bg-neutral-700/30',
+        'hover:bg-neutral-50/50 dark:hover:bg-white/[0.08]/30',
         // Focus
         'focus-visible:ring-primary-500/50 focus-visible:ring-2 focus-visible:outline-none',
         // Transition
@@ -151,7 +151,7 @@ export const ToolContent = ({ className, ...props }: ToolContentProps) => (
       'data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2',
       'outline-none',
       // Border top
-      'border-t border-neutral-200/50 dark:border-neutral-700/50',
+      'border-t border-neutral-200/50 dark:border-white/[0.08]',
       className
     )}
     {...props}
@@ -167,7 +167,7 @@ export const ToolInput = ({ className, input, ...props }: ToolInputProps) => {
       <h4 className="text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
         {t('common.ui.parameters')}
       </h4>
-      <div className="overflow-hidden rounded-lg bg-neutral-50 dark:bg-neutral-900/50">
+      <div className="overflow-hidden rounded-lg bg-neutral-50 dark:bg-white/[0.04]">
         <CodeBlock code={JSON.stringify(input, null, 2)} language="json" />
       </div>
     </div>
@@ -193,7 +193,7 @@ export const ToolOutput = ({ className, output, errorText, ...props }: ToolOutpu
     <div
       className={cn(
         'space-y-3 p-4',
-        'border-t border-neutral-200/50 dark:border-neutral-700/50',
+        'border-t border-neutral-200/50 dark:border-white/[0.08]',
         className
       )}
       {...props}
@@ -211,7 +211,7 @@ export const ToolOutput = ({ className, output, errorText, ...props }: ToolOutpu
           'overflow-x-auto rounded-lg text-xs [&_table]:w-full',
           errorText
             ? 'bg-red-50 p-3 text-red-600 dark:bg-red-900/20 dark:text-red-400'
-            : 'bg-neutral-50 dark:bg-neutral-900/50'
+            : 'bg-neutral-50 dark:bg-white/[0.04]'
         )}
       >
         {errorText && <div className="font-mono">{errorText}</div>}

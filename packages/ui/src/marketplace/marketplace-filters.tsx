@@ -30,7 +30,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
   const t = useTranslations('common');
 
   return (
-    <div className="space-y-4 rounded-lg border bg-white p-4 dark:bg-neutral-900">
+    <div className="space-y-4 rounded-lg border bg-white p-4 dark:bg-zinc-950">
       {/* Search */}
       <div className="relative">
         <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-neutral-400 dark:text-neutral-600" />
@@ -59,7 +59,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
               !filters.planType
                 ? 'bg-orange-600 text-white'
-                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-neutral-800'
+                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]'
             }`}
           >
             All
@@ -74,7 +74,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
               filters.planType === 'WORKOUT'
                 ? 'bg-orange-600 text-white'
-                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-neutral-800'
+                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]'
             }`}
           >
             {t('common.marketplace_filters.workout')}
@@ -89,7 +89,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
               filters.planType === 'NUTRITION'
                 ? 'bg-orange-600 text-white'
-                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-neutral-800'
+                : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]'
             }`}
           >
             {t('common.marketplace_filters.nutrition')}
@@ -146,7 +146,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
               className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                 filters.minRating === rating
                   ? 'bg-yellow-400 text-white'
-                  : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-neutral-800'
+                  : 'bg-neutral-100 hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]'
               }`}
             >
               {rating}★
@@ -189,7 +189,7 @@ export function MarketplaceFiltersComponent({ filters, onChange }: MarketplaceFi
             sortOrder: undefined,
           })
         }
-        className="w-full rounded-lg bg-neutral-100 px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-200 dark:bg-neutral-700 dark:bg-neutral-800"
+        className="w-full rounded-lg bg-neutral-100 px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-200 dark:bg-white/[0.08] dark:bg-white/[0.04]"
       >
         {t('common.marketplace_filters.clear_filters')}
       </button>

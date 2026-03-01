@@ -38,8 +38,8 @@ export function MealGroupModern({
     <div className={cn(
       "group rounded-3xl border transition-all duration-300 overflow-hidden relative",
       isFullyCompleted 
-        ? "bg-slate-900/40 border-slate-700/50 shadow-lg shadow-black/20" 
-        : "bg-slate-900/60 backdrop-blur-xl border-slate-800 hover:border-slate-700 hover:shadow-2xl hover:shadow-black/50"
+        ? "bg-neutral-900/40 border-neutral-700/50 shadow-lg shadow-black/20" 
+        : "bg-neutral-900/60 backdrop-blur-xl border-neutral-800 hover:border-neutral-700 hover:shadow-2xl hover:shadow-black/50"
     )}>
        {/* Header */}
        <button 
@@ -52,14 +52,14 @@ export function MealGroupModern({
                "h-12 w-12 rounded-2xl flex items-center justify-center transition-all",
                isFullyCompleted 
                  ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30" 
-                 : "bg-slate-800 border border-slate-700 text-emerald-400 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/30"
+                 : "bg-neutral-800 border border-neutral-700 text-emerald-400 group-hover:bg-emerald-500/10 group-hover:border-primary-500/30"
              )}>
                 <Utensils className="w-5 h-5" />
              </div>
 
              <div>
                 <div className="flex items-center gap-2 mb-1">
-                   <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
+                   <span className="text-[10px] font-bold tracking-widest text-neutral-400 uppercase">
                      {meal.time || `Meal ${index + 1}`}
                    </span>
                    {isFullyCompleted && (
@@ -76,11 +76,11 @@ export function MealGroupModern({
                 </h3>
 
                 <div className="flex flex-wrap items-center gap-2 text-xs font-bold">
-                   <span className="text-slate-400 font-medium">
+                   <span className="text-neutral-400 font-medium">
                      {Math.round(macros.calories)} kcal
                    </span>
                    <div className="flex items-center gap-2">
-                      <span className="px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/20">
+                      <span className="px-1.5 py-0.5 rounded bg-primary-500/20 text-primary-400 border border-primary-500/20">
                         {Math.round(macros.protein)}P
                       </span>
                       <span className="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/20">
@@ -110,7 +110,7 @@ export function MealGroupModern({
 
              {/* Chevron */}
              <div className={cn(
-                "h-8 w-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 transition-all duration-300 group-hover:border-emerald-500/20 group-hover:text-emerald-400",
+                "h-8 w-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 transition-all duration-300 group-hover:border-primary-500/20 group-hover:text-emerald-400",
                 isExpanded && "rotate-180 bg-white/10"
              )}>
                 <ChevronDown className="w-4 h-4" />

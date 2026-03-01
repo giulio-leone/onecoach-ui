@@ -59,7 +59,7 @@ export function CheckoutSummary({
   }
 
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+    <div className="rounded-xl border border-neutral-200/60 bg-white p-6 dark:border-white/[0.08] dark:bg-white/[0.04]">
       <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-neutral-100">
         Riepilogo Ordine
       </h3>
@@ -73,7 +73,7 @@ export function CheckoutSummary({
         </div>
 
         {items && items.length > 0 && (
-          <div className="space-y-2 rounded-md border border-neutral-200 bg-neutral-50 p-3 dark:border-neutral-700 dark:bg-neutral-800/60">
+          <div className="space-y-2 rounded-md border border-neutral-200/60 bg-neutral-50 p-3 dark:border-white/[0.08] dark:bg-white/[0.05]">
             {items.map((item, idx) => (
               <div key={`${item.title}-${idx}`} className="flex items-center justify-between">
                 <div className="text-xs text-neutral-600 dark:text-neutral-300">
@@ -110,15 +110,15 @@ export function CheckoutSummary({
         )}
 
         {referralCode && (
-          <div className="flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 dark:border-blue-800 dark:bg-blue-900/20">
-            <Check className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-            <p className="text-xs font-medium text-blue-800 dark:text-blue-300">
+          <div className="flex items-center gap-2 rounded-lg border border-primary-200 bg-primary-50 px-3 py-2 dark:border-primary-800 dark:bg-primary-900/20">
+            <Check className="h-4 w-4 text-primary-600 dark:text-primary-400" />
+            <p className="text-xs font-medium text-primary-800 dark:text-primary-300">
               Codice referral attivo: {referralCode}
             </p>
           </div>
         )}
 
-        <div className="border-t border-neutral-200 pt-3 dark:border-neutral-700">
+        <div className="border-t border-neutral-200/60 pt-3 dark:border-white/[0.08]">
           <div className="flex items-center justify-between">
             <span className="text-sm text-neutral-600 dark:text-neutral-400">Subtotale</span>
             <span className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
@@ -144,7 +144,7 @@ export function CheckoutSummary({
             </div>
           )}
 
-          <div className="mt-3 flex items-center justify-between border-t border-neutral-200 pt-3 dark:border-neutral-700">
+          <div className="mt-3 flex items-center justify-between border-t border-neutral-200/60 pt-3 dark:border-white/[0.08]">
             <span className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
               Totale
             </span>

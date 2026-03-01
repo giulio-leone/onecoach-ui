@@ -75,7 +75,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
   return (
     <form onSubmit={form.handleSubmit} className="mt-8 space-y-6" noValidate>
       {disabled && (
-        <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3 text-sm text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-400">
+        <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-3 text-sm text-neutral-600 dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-neutral-400">
           <p className="font-semibold">{t('setup_form.form_disabilitato')}</p>
           <p className="mt-1">{t('setup_form.il_form_e_disabilitato_perche_le_credenz')}</p>
         </div>
@@ -111,7 +111,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
           disabled={disabled || form.isSubmitting}
           autoComplete="name"
           autoFocus
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
           aria-invalid={!!form.errors.name}
           aria-describedby={form.errors.name ? 'name-error' : undefined}
         />
@@ -141,7 +141,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
           required
           disabled={disabled || form.isSubmitting}
           autoComplete="email"
-          className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+          className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
           aria-invalid={!!form.errors.email}
           aria-describedby={form.errors.email ? 'email-error' : undefined}
         />
@@ -172,7 +172,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
             required
             disabled={disabled || form.isSubmitting}
             autoComplete="new-password"
-            className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
             aria-invalid={!!form.errors.password}
             aria-describedby={form.errors.password ? 'password-error' : undefined}
           />
@@ -213,7 +213,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
             required
             disabled={disabled || form.isSubmitting}
             autoComplete="new-password"
-            className="focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            className="focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
             aria-invalid={!!form.errors.confirmPassword}
             aria-describedby={form.errors.confirmPassword ? 'confirmPassword-error' : undefined}
           />
@@ -234,7 +234,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
         )}
       </div>
       {/* Info */}
-      <div className="rounded-lg bg-blue-50 p-3 text-xs text-blue-800 dark:bg-blue-900/20 dark:text-blue-400">
+      <div className="rounded-lg bg-primary-50 p-3 text-xs text-primary-800 dark:bg-primary-900/20 dark:text-primary-400">
         <p className="font-semibold">{t('setup_form.informazioni')}</p>
         <p className="mt-1">{t('setup_form.questo_account_avra_privilegi_amministra')}</p>
       </div>
@@ -243,7 +243,7 @@ export function SetupForm({ disabled = false }: SetupFormProps) {
         type="submit"
         variant="primary"
         disabled={disabled || form.isSubmitting || !form.isValid}
-        className="w-full focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+        className="w-full focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
       >
         {form.isSubmitting ? 'Creazione in corso...' : 'Crea Account Admin'}
       </Button>

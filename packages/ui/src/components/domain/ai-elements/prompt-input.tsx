@@ -52,7 +52,7 @@ export const PromptInput = forwardRef<HTMLDivElement, PromptInputProps>(
         'relative flex flex-col overflow-hidden',
         // Glassmorphism
         'rounded-2xl border bg-white/90 backdrop-blur-xl',
-        'border-neutral-200/80 dark:border-white/10 dark:bg-neutral-900/90',
+        'border-neutral-200/80 dark:border-white/10 dark:bg-white/[0.08]',
         // Shadow & glow
         'shadow-[0_8px_32px_rgba(0,0,0,0.08)]',
         'dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]',
@@ -70,7 +70,7 @@ export const PromptInput = forwardRef<HTMLDivElement, PromptInputProps>(
       <div
         className={cn(
           'absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300',
-          'bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20',
+          'bg-gradient-to-r from-indigo-500/20 via-secondary-500/20 to-secondary-500/20',
           'pointer-events-none group-focus-within:opacity-100',
           '-z-10 blur-xl'
         )}
@@ -220,8 +220,8 @@ export const PromptInputButton = forwardRef<HTMLButtonElement, PromptInputButton
         variant === 'ghost' &&
           'text-neutral-500 hover:bg-neutral-100/80 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-white/10 dark:hover:text-white',
         variant === 'accent' && [
-          'bg-gradient-to-r from-indigo-500 to-purple-500 text-white',
-          'hover:from-indigo-600 hover:to-purple-600',
+          'bg-gradient-to-r from-indigo-500 to-secondary-500 text-white',
+          'hover:from-indigo-600 hover:to-secondary-600',
           'shadow-sm shadow-indigo-500/25',
         ],
         className
@@ -270,11 +270,11 @@ export const PromptInputSubmit = forwardRef<HTMLButtonElement, PromptInputSubmit
           // Ready state - Gradient with glow
           !isBusy &&
             !isDisabled &&
-            'bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/30 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/40 dark:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30',
+            'bg-gradient-to-br from-indigo-500 via-indigo-600 to-secondary-600 text-white shadow-lg shadow-indigo-500/30 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/40 dark:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30',
           // Disabled state
           isDisabled && [
             'cursor-not-allowed bg-neutral-100 text-neutral-400',
-            'dark:bg-neutral-800 dark:text-neutral-600',
+            'dark:bg-white/[0.04] dark:text-neutral-600',
           ],
           // Streaming/Stop state
           isBusy && [
@@ -288,7 +288,7 @@ export const PromptInputSubmit = forwardRef<HTMLButtonElement, PromptInputSubmit
       >
         {/* Animated background gradient */}
         {!isBusy && !isDisabled && (
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-indigo-400 via-secondary-500 to-secondary-500 opacity-0 transition-opacity duration-300 hover:opacity-100" />
         )}
 
         {/* Icon */}
@@ -392,7 +392,7 @@ export const PromptInputAIMode = forwardRef<HTMLDivElement, PromptInputAIModePro
       ref={ref}
       className={cn(
         'flex items-center gap-1.5 rounded-md px-2 py-1',
-        'bg-gradient-to-r from-indigo-500/10 to-purple-500/10',
+        'bg-gradient-to-r from-indigo-500/10 to-secondary-500/10',
         'text-xs font-medium text-indigo-600 dark:text-indigo-400',
         className
       )}
@@ -570,7 +570,7 @@ export const PromptInputAttachments = ({
 export const PromptInputAttachment = ({ data }: { data: PromptAttachment }) => {
   const { removeAttachment } = usePromptInput();
   return (
-    <div className="group relative flex items-center gap-2 rounded-lg border border-neutral-200 bg-white/80 px-3 py-2 text-sm shadow-sm backdrop-blur dark:border-neutral-800 dark:bg-neutral-900/80">
+    <div className="group relative flex items-center gap-2 rounded-lg border border-neutral-200/60 bg-white/80 px-3 py-2 text-sm shadow-sm backdrop-blur dark:border-white/[0.08] dark:bg-white/[0.06]">
       <span className="truncate">{data.filename}</span>
       <button
         type="button"
@@ -595,6 +595,3 @@ export const PromptInputSpeechButton = ({ className }: { className?: string }) =
     <span className="sr-only">Speech</span>
   </Button>
 );
-
-// Aliases for backwards compatibility
-export const PromptInputProviderRoot = PromptInputProvider;

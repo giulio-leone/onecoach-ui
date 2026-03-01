@@ -115,7 +115,7 @@ export function TemplateSaveDialog({
             }
             placeholder={t('form.placeholders.description')}
             rows={3}
-            className="mt-1 w-full touch-manipulation resize-none rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none dark:border-neutral-600 dark:bg-neutral-900"
+            className="mt-1 w-full touch-manipulation resize-none rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm shadow-sm transition-all duration-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none dark:border-white/[0.1] dark:bg-zinc-950"
           />
         </div>
 
@@ -133,7 +133,7 @@ export function TemplateSaveDialog({
             )}
           >
             <option value="">{tCommon('empty.noCategory')}</option>
-            {CATEGORIES.map((cat: any) => (
+            {CATEGORIES.map((cat) => (
               <option key={cat} value={cat}>
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}
               </option>

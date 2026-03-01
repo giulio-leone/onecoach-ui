@@ -110,8 +110,8 @@ export const Reasoning = memo(
             // Base
             'not-prose mb-4 overflow-hidden rounded-xl',
             // Glassmorphism
-            'bg-gradient-to-br from-violet-500/5 to-purple-500/5',
-            'dark:from-violet-500/10 dark:to-purple-500/10',
+            'bg-gradient-to-br from-violet-500/5 to-secondary-500/5',
+            'dark:from-violet-500/10 dark:to-secondary-500/10',
             'backdrop-blur-sm',
             'border border-violet-200/30 dark:border-violet-500/20',
             // Animation

@@ -71,7 +71,7 @@ const DialogContent = React.forwardRef<
         <DialogPrimitive.Content
           ref={ref}
           className={cn(
-            'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] fixed z-[1050] gap-4 border bg-white shadow-xl duration-200 dark:border-neutral-800 dark:bg-neutral-900',
+            'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] fixed z-[1050] gap-4 border bg-white/90 dark:bg-white/[0.08] backdrop-blur-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] dark:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] dark:border-white/[0.08] duration-300',
             size !== 'full' && 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl p-6',
             size === 'full' && 'p-4 sm:p-6',
             mobileFullScreen &&
@@ -358,7 +358,7 @@ const SimpleDialog = ({
           // Glassmorphism Container
           'rounded-3xl',
           'overflow-hidden',
-          'bg-white/80 dark:bg-neutral-900/80',
+          'bg-white/80 dark:bg-white/[0.06]',
           'backdrop-blur-2xl',
           'border border-white/20 dark:border-white/10',
           // Premium Shadow
@@ -443,16 +443,16 @@ const SimpleDialog = ({
                 'rounded-xl',
                 'text-base font-medium',
                 // Glass Input Styling
-                'bg-white/60 dark:bg-neutral-800/60',
+                'bg-white/60 dark:bg-white/[0.05]',
                 'backdrop-blur-sm',
-                'border border-neutral-200/50 dark:border-neutral-700/50',
+                'border border-neutral-200/50 dark:border-white/[0.08]',
                 'text-neutral-900 dark:text-white',
                 'placeholder:text-neutral-400 dark:placeholder:text-neutral-500',
                 // Focus States
                 'focus:outline-none',
-                'focus:ring-2 focus:ring-emerald-500/50 dark:focus:ring-emerald-400/50',
-                'focus:border-emerald-500/50 dark:focus:border-emerald-400/50',
-                'focus:bg-white/80 dark:focus:bg-neutral-800/80',
+                'focus:ring-2 focus:ring-primary-500/30 dark:focus:ring-primary-400/30',
+                'focus:border-primary-500/50 dark:focus:border-primary-400/50',
+                'focus:bg-white/80 dark:focus:bg-white/[0.06]',
                 'transition-all duration-200'
               )}
             />
@@ -466,8 +466,8 @@ const SimpleDialog = ({
             'items-stretch sm:items-center',
             'justify-end gap-3',
             'px-6 py-5',
-            'border-t border-neutral-200/30 dark:border-neutral-700/30',
-            'bg-neutral-50/50 dark:bg-neutral-900/50',
+            'border-t border-neutral-200/30 dark:border-white/[0.06]',
+            'bg-neutral-50/50 dark:bg-white/[0.04]',
             'flex-shrink-0'
           )}
         >
@@ -509,8 +509,6 @@ export {
   DialogOverlay,
   DialogPortal,
   SimpleDialog,
-  // Deprecated alias for backward compatibility
-  SimpleDialog as LegacyDialog,
 };
 
 export type { ModalProps };

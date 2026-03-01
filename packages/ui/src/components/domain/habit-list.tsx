@@ -21,7 +21,7 @@ export function HabitList({ habits, onToggleHabit, className }: HabitListProps) 
           className={cn(
             'group relative rounded-2xl border p-4 transition-all',
             'bg-white/50 shadow-sm backdrop-blur-sm',
-            'dark:border-neutral-800 dark:bg-neutral-900/50',
+            'dark:border-white/[0.08] dark:bg-white/[0.04]',
             'hover:border-indigo-200 hover:shadow-md dark:hover:border-indigo-800'
           )}
         >
@@ -34,7 +34,7 @@ export function HabitList({ habits, onToggleHabit, className }: HabitListProps) 
                 'flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 transition-colors',
                 habit.completedToday
                   ? 'border-emerald-500 bg-emerald-500 text-white'
-                  : 'border-neutral-300 hover:border-indigo-500 dark:border-neutral-600'
+                  : 'border-neutral-300 hover:border-indigo-500 dark:border-white/[0.1]'
               )}
             >
               {habit.completedToday && (

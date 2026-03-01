@@ -84,7 +84,7 @@ export function CoachVettingStatus({ vettingRequest }: CoachVettingStatusProps) 
           <Badge className={config.color}>{config.label}</Badge>
         </div>
         {/* Dates */}
-        <div className="space-y-2 border-t border-neutral-100 pt-4 dark:border-neutral-700">
+        <div className="space-y-2 border-t border-neutral-100 pt-4 dark:border-white/[0.08]">
           {submittedDate && (
             <div className="flex justify-between text-sm">
               <span className="text-neutral-600 dark:text-neutral-400">
@@ -104,7 +104,7 @@ export function CoachVettingStatus({ vettingRequest }: CoachVettingStatusProps) 
         </div>
         {/* Review Notes */}
         {vettingRequest.reviewNotes && (
-          <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800/50">
+          <div className="rounded-lg border border-neutral-200/60 bg-neutral-50 p-4 dark:border-white/[0.08] dark:bg-white/[0.05]">
             <Heading level={4} size="sm" weight="medium" className="mb-2">
               {t('coach_vetting_status.note_di_revisione')}
             </Heading>
