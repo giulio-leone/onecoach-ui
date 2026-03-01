@@ -509,8 +509,6 @@ export {
   DialogOverlay,
   DialogPortal,
   SimpleDialog,
-  // Deprecated alias for backward compatibility
-  SimpleDialog as LegacyDialog,
 };
 
 export type { ModalProps };

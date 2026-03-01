@@ -595,6 +595,3 @@ export const PromptInputSpeechButton = ({ className }: { className?: string }) =
     <span className="sr-only">Speech</span>
   </Button>
 );
-
-// Aliases for backwards compatibility
-export const PromptInputProviderRoot = PromptInputProvider;
