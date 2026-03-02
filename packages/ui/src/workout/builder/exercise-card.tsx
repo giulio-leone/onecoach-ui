@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import type { DraggableAttributes, DraggableSyntheticListeners } from '@dnd-kit/core';
 import { cn } from '@giulio-leone/lib-design-system';
-import { useCopilotContextReporter } from '@giulio-leone/one-agent';
+import { useCopilotContextReporter } from '../../compat/one-agent-compat';
 import { SetGroupEditor } from '../editor/set-group-editor';
 import { ExerciseSelector } from './exercise-selector';
 import { useExerciseClipboard } from './workout-clipboard-provider';

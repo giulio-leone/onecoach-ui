@@ -170,6 +170,17 @@ export function CopilotDomainProvider({ children }: CopilotDomainProviderProps) 
 }
 
 // ============================================================================
+// Hooks from @giulio-leone/one-agent (context reporter)
+// ============================================================================
+
+export function useCopilotContextReporter(_domain: string) {
+  return {
+    reportSelection: (_data: unknown) => {},
+    reportContext: (_ctx: Record<string, unknown>) => {},
+  };
+}
+
+// ============================================================================
 // Chat client from @giulio-leone/one-agent/chat/client
 // ============================================================================
 
