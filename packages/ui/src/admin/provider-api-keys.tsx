@@ -28,7 +28,7 @@ import {
 } from 'lucide-react';
 import { Button, Input, Switch } from '@giulio-leone/ui';
 import { cn } from '@giulio-leone/lib-design-system';
-import type { ProviderName } from '@giulio-leone/lib-ai';
+import type { ProviderName } from '@giulio-leone/types/ai';
 
 interface ProviderConfigClient {
   provider: ProviderName;

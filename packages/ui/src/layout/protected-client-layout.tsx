@@ -16,7 +16,7 @@ import { QueryClientContext } from '@tanstack/react-query';
 import { QueryProvider } from '@giulio-leone/lib-api/react-query';
 import { RealtimeProvider, SupabaseProvider } from '../core';
 
-import { useGlobalCopilotContext } from '@giulio-leone/one-agent';
+import { useGlobalCopilotContext } from '../compat/one-agent-compat';
 
 interface ProtectedClientLayoutProps {
   children: React.ReactNode;

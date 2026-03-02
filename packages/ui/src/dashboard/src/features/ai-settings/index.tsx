@@ -36,7 +36,7 @@ import {
 import { cn } from '@giulio-leone/lib-design-system';
 import { toast } from 'sonner';
 import { STRIPE_PLANS } from '@giulio-leone/lib-core/stripe/config';
-import type { ProviderName } from '@giulio-leone/lib-ai';
+import type { ProviderName } from '@giulio-leone/types/ai';
 import {
   ModelsTab,
   FeaturesTab,
