@@ -204,11 +204,9 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@giulio-leone/lib-ai": "workspace:*",
     "@giulio-leone/lib-core": "workspace:*",
     "@giulio-leone/lib-shared": "workspace:*",
     "@giulio-leone/lib-stores": "workspace:*",
-    "@giulio-leone/one-agent": "workspace:*",
     "@giulio-leone/schemas": "workspace:*",
     "@giulio-leone/translations": "workspace:*",
     "@giulio-leone/types": "workspace:*",
