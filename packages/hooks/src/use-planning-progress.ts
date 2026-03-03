@@ -7,7 +7,7 @@
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-import type { PlanningProgress, PlanningTask } from '@giulio-leone/types/domain';
+import type { PlanningProgress, PlanningTask, PlanningSubTask } from '@giulio-leone/types/domain';
 
 interface UsePlanningProgressOptions {
   planId: string | null;
@@ -153,7 +153,7 @@ export function usePlanningProgress({
                 dayNumber: data.currentSubTask.dayNumber,
                 dayName: data.currentSubTask.dayName,
                 status: (data.currentSubTask as Record<string, unknown>).status as string,
-              } as unknown as PlanningTask
+              } as unknown as PlanningSubTask
             : undefined,
         });
         setError(null);

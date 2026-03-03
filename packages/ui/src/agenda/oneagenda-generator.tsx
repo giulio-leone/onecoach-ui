@@ -22,6 +22,7 @@ import {
   type MeshWizardStepProps,
 } from '@giulio-leone/ui/agent';
 import { useOneAgendaGeneration } from '@giulio-leone/hooks';
+import type { GenerationLogEvent } from '@giulio-leone/ui/ai';
 
 // ----------------------------------------------------------------------------
 // Types

@@ -120,47 +120,47 @@ export function WorkoutStatistics({ program, customProgram }: WorkoutStatisticsP
   const t = useTranslations('workouts.builder.statistics');
   const { actualTheme } = useTheme();
   const isDark = actualTheme === 'dark';
-  const themeColors = designTokens.colors as Record<string, Record<string, string>>;
+  const tc = designTokens.colors;
+  const c = (group: string, shade: string, fallback = '#6366f1'): string => {
+    const g = (tc as unknown as Record<string, Record<string, string>>)[group];
+    return g?.[shade] ?? fallback;
+  };
 
   // Dynamic Chart Colors based on Design System Tokens
   const chartColors = useMemo<ChartColors>(
     () => ({
-      primary: themeColors.primary[500],
-      primaryDark: themeColors.primary[600],
-      secondary: themeColors.secondary[500],
-      secondaryDark: themeColors.secondary[600],
-      accent: themeColors.primary[400],
-      emerald: isDark
-        ? designTokens.colors.semantic.success.dark.border
-        : designTokens.colors.semantic.success.light.text,
-      emeraldDark: isDark
-        ? designTokens.colors.semantic.success.dark.bg
-        : designTokens.colors.semantic.success.light.bg,
+      primary: c('primary', '500'),
+      primaryDark: c('primary', '600'),
+      secondary: c('secondary', '500'),
+      secondaryDark: c('secondary', '600'),
+      accent: c('primary', '400'),
+      emerald: isDark ? tc.semantic.success.dark.border : tc.semantic.success.light.text,
+      emeraldDark: isDark ? tc.semantic.success.dark.bg : tc.semantic.success.light.bg,
 
-      blue: themeColors.primary[500],
-      blueDark: themeColors.primary[600],
-      purple: themeColors.primary[400],
+      blue: c('primary', '500'),
+      blueDark: c('primary', '600'),
+      purple: c('primary', '400'),
 
-      grid: isDark ? themeColors.neutral[800] : themeColors.neutral[200],
-      text: isDark ? themeColors.text.secondary : themeColors.text.secondary,
-      background: isDark ? themeColors.background.elevated : 'rgba(255, 255, 255, 0.9)',
-      tooltipBg: isDark ? themeColors.neutral[900] : '#ffffff',
-      tooltipBorder: isDark ? themeColors.neutral[800] : themeColors.border.light,
-      tooltipText: isDark ? themeColors.text.primary : themeColors.text.primary,
+      grid: isDark ? c('neutral', '800') : c('neutral', '200'),
+      text: isDark ? c('text', 'secondary') : c('text', 'secondary'),
+      background: isDark ? c('background', 'elevated') : 'rgba(255, 255, 255, 0.9)',
+      tooltipBg: isDark ? c('neutral', '900') : '#ffffff',
+      tooltipBorder: isDark ? c('neutral', '800') : c('border', 'light'),
+      tooltipText: isDark ? c('text', 'primary') : c('text', 'primary'),
     }),
-    [isDark, themeColors]
+    [isDark, tc]
   );
 
   // Refined Chart Colors for simple usage
   const colors = {
-    primary: themeColors.primary[500],
-    primaryDark: themeColors.primary[600],
-    secondary: themeColors.secondary[500],
-    secondaryDark: themeColors.secondary[600],
-    accent: themeColors.primary[400],
-    grid: themeColors.border.base,
-    text: themeColors.text.secondary,
-    background: themeColors.background.elevated,
+    primary: c('primary', '500'),
+    primaryDark: c('primary', '600'),
+    secondary: c('secondary', '500'),
+    secondaryDark: c('secondary', '600'),
+    accent: c('primary', '400'),
+    grid: c('border', 'base'),
+    text: c('text', 'secondary'),
+    background: c('background', 'elevated'),
   };
 
   const stats = useMemo(() => {

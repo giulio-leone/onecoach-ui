@@ -103,7 +103,7 @@ export function NutritionTemplateSelector({
     setSelectedIds(new Set());
   };
 
-  const TypeIcon = TYPE_ICONS[type] || TYPE_ICONS.meal;
+  const TypeIcon = TYPE_ICONS[type] ?? TYPE_ICONS.meal ?? Utensils;
 
   return (
     <div className={cn('flex h-full flex-col', darkModeClasses.bg.base)}>

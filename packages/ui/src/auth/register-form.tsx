@@ -183,7 +183,7 @@ function RegisterFormContent({ from = '/dashboard' }: RegisterFormProps) {
       },
       privacyConsent: (value: boolean) => (!value ? t('validation.privacyRequired') : null),
       termsConsent: (value: boolean) => (!value ? t('validation.termsRequired') : null),
-    } as Record<string, (value: never, allValues: RegisterFormValues | undefined) => string | null>,
+    } as any, // eslint-disable-line @typescript-eslint/no-explicit-any -- index signature in RegisterFormValues breaks mapped type constraint
     validateOnBlur: true,
   });
 

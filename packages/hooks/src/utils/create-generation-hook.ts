@@ -54,11 +54,14 @@ const DEFAULT_MESSAGE = (event: MeshEvent<unknown>): string => {
     case 'agent_start':
       return `🚀 Starting ${event.data.description || event.data.role}`;
     case 'agent_complete':
-      return `✅ ${event.data.role} completed (${event.data.duration || 0}ms)`;
+      return `✅ ${event.data.role} completed (${event.data.duration ?? event.data.durationMs ?? 0}ms)`;
     case 'delegation':
       return `📤 Delegating to ${event.data.to}: ${event.data.task}`;
-    case 'agent_error':
-      return `❌ Error in ${event.data.role}: ${event.data.error?.message || 'Unknown error'}`;
+    case 'agent_error': {
+      const err = event.data.error;
+      const msg = typeof err === 'object' && err !== null ? err.message : err;
+      return `❌ Error in ${event.data.role}: ${msg || 'Unknown error'}`;
+    }
     case 'retry':
       return `🔄 Retrying ${event.data.role} (attempt ${event.data.attempt}/${event.data.maxAttempts})`;
     case 'validation':
@@ -482,20 +485,20 @@ export function createGenerationHook<TInput, TOutput>(
                       {
                         role: event.data.role,
                         message: event.data.message,
-                        timestamp: new Date(event.data.timestamp),
+                        timestamp: event.data.timestamp ? new Date(event.data.timestamp) : new Date(),
                         metadata: event.data.metadata,
                       },
                     ],
                   }));
                   break;
                 case 'complete':
-                  finalResult = event.data.output;
+                  finalResult = event.data.output ?? null;
                   setState((prev) => ({
                     ...prev,
                     streamEvents: [...prev.streamEvents, createStreamEvent(event, getMessage)],
                     isGenerating: false,
                     isStreaming: false,
-                    result: event.data.output,
+                    result: event.data.output ?? null,
                     progress: 100,
                     currentMessage: 'Complete!',
                   }));

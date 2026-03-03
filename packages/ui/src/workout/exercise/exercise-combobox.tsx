@@ -234,7 +234,7 @@ export function ExerciseCombobox({
     if (mode === 'search') {
       // In modalità search, usa sempre lo slug per garantire ricerca affidabile
       // Lo slug è univoco e indipendente dalla lingua
-      const searchQuery = exercise.slug;
+      const searchQuery = exercise.slug ?? exercise.name;
       if (onSearch) {
         onSearch(searchQuery);
       }
@@ -386,17 +386,17 @@ export function ExerciseCombobox({
                     </span>
                   )}
                 </div>
-                {exercise.muscles.length > 0 && (
+                {(exercise.muscles?.length ?? 0) > 0 && (
                   <div className="mt-1 text-xs text-neutral-600 dark:text-neutral-400">
-                    {exercise.muscles
+                    {exercise.muscles!
                       .slice(0, 3)
                       .map((m: { name: string }) => m.name)
                       .join(' · ')}
                   </div>
                 )}
-                {exercise.equipments.length > 0 && (
+                {(exercise.equipments?.length ?? 0) > 0 && (
                   <div className="mt-1 text-xs text-neutral-500 dark:text-neutral-500">
-                    {exercise.equipments.map((e: { name: string }) => e.name).join(', ')}
+                    {exercise.equipments!.map((e: { name: string }) => e.name).join(', ')}
                   </div>
                 )}
               </div>

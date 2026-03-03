@@ -32,11 +32,12 @@ export function FoodAiModal({ isOpen, onClose, onSuccess }: FoodAiGenerationModa
     onProgress: () => {
       // Progress handled by UI components
     },
-    onComplete: async (output: FoodGenerationOutput) => {
-      if (output) {
-        const created = output.createResult?.created ?? 0;
-        const updated = output.createResult?.updated ?? 0;
-        const skipped = output.createResult?.skipped ?? 0;
+    onComplete: async (output: unknown) => {
+      const typedOutput = output as FoodGenerationOutput;
+      if (typedOutput) {
+        const created = typedOutput.createResult?.created ?? 0;
+        const updated = typedOutput.createResult?.updated ?? 0;
+        const skipped = typedOutput.createResult?.skipped ?? 0;
         const message = `AI completata: ${created} creati, ${updated} aggiornati, ${skipped} saltati`;
         await onSuccess(message);
       }
@@ -63,7 +64,7 @@ export function FoodAiModal({ isOpen, onClose, onSuccess }: FoodAiGenerationModa
       title={t('food_ai_modal.ai_food_generator')}
       description={t('food_ai_modal.scrivi_cosa_vuoi_ottenere_es_genera_5_al')}
       placeholder={t('food_ai_modal.esempio_genera_10_alimenti_ricchi_di_pro')}
-      useGenerationHook={() => generation}
+      useGenerationHook={() => generation as any} // eslint-disable-line @typescript-eslint/no-explicit-any
       options={options}
       buildSuccessMessage={(result: FoodGenerationOutput) => {
         const created = result.createResult?.created ?? 0;

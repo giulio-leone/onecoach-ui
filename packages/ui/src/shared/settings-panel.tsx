@@ -17,6 +17,7 @@ import { Checkbox } from '@giulio-leone/ui';
 
 import { logger } from '@giulio-leone/lib-shared';
 type NonRouterProvider = Exclude<ProviderName, 'openrouter'>;
+export type { NonRouterProvider };
 
 export const PROVIDER_OPTIONS: { value: ProviderName; label: string }[] = [
   { value: 'anthropic', label: 'Anthropic (Claude)' },

@@ -44,7 +44,7 @@ export function MeasurementsImportModal() {
 
     importFiles(formData, {
       onSuccess: (data) => {
-        const count = (data as Record<string, unknown>)?.imported?.length ?? 0;
+        const count = (data as { imported?: unknown[] })?.imported?.length ?? 0;
         toast.success(`Importazione completata: ${count} misurazioni aggiunte`);
         setOpen(false);
         setSelectedFiles([]);

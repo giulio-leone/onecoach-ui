@@ -29,4 +29,5 @@ export { HydrationTracker } from './hydration-tracker';
 export type { HydrationTrackerProps, HydrationEntry } from './hydration-tracker';
 
 // Diary (M21)
-export * from './diary';
+export { NutritionDiary, DailyMacroSummary, WeeklySummary, MealCard as DiaryMealCard } from './diary';
+export type { NutritionDiaryProps, DailyMacroSummaryProps, MacroTarget, WeeklySummaryProps, DayData, MealCardProps as DiaryMealCardProps, DiaryMeal, DiaryFood } from './diary';

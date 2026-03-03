@@ -58,7 +58,7 @@ export function SelectionActionBarWeb({
             }
             size="sm"
             onClick={action.onPress}
-            icon={action.icon}
+            icon={action.icon as any} // eslint-disable-line @typescript-eslint/no-explicit-any
           >
             {action.label}
           </Button>

@@ -12,6 +12,7 @@ import { X, RotateCcw, GitCompare, Clock, Check } from 'lucide-react';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { VersionSnapshot, StateDiff } from '@giulio-leone/hooks';
 import { computeSemanticDiff } from '../../utils';
+import type { SemanticChangeDetail } from '../../utils';
 
 export interface VersionHistoryModalProps<T = unknown> {
   /** Whether the modal is open */

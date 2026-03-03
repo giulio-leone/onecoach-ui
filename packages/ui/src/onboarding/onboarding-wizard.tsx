@@ -259,7 +259,7 @@ function AllergyTagInput({
       setInput('');
     }
     if (e.key === 'Backspace' && !input && tags.length > 0) {
-      onRemove(tags[tags.length - 1]);
+      onRemove(tags[tags.length - 1]!);
     }
   };
 
@@ -960,7 +960,7 @@ export function OnboardingWizard({ onComplete, onSkip, initialStep = 0 }: Onboar
       {/* Step title */}
       <div>
         <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-          {isSummary ? 'Review & Confirm' : STEPS[step].title}
+          {isSummary ? 'Review & Confirm' : STEPS[step]?.title}
         </h2>
         {!isSummary && (
           <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">

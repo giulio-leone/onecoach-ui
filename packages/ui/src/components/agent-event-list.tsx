@@ -15,6 +15,8 @@ export interface AgentEventListProps {
   events: ProgressField[];
   isAdmin?: boolean;
   onToggleAdmin?: () => void;
+  maxVisible?: number;
+  compact?: boolean;
 }
 
 const ICON_MAP: Record<string, string> = {

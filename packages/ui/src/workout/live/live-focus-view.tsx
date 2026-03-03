@@ -130,7 +130,9 @@ export function LiveFocusView({
   // Find the first exercise with at least one incomplete set
   const findActiveExerciseIndex = useCallback(() => {
     for (let i = 0; i < exercises.length; i++) {
-      const sets = getExerciseSets(toTypesExercise(exercises[i]));
+      const ex = exercises[i];
+      if (!ex) continue;
+      const sets = getExerciseSets(toTypesExercise(ex));
       if (sets.some((s: ExerciseSet) => !s.done)) {
         return i;
       }

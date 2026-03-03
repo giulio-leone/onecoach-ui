@@ -84,17 +84,17 @@ export function DailyMacroSummary({ consumed, target, className }: DailyMacroSum
       <div className="mb-4 flex items-center justify-center">
         <div className="relative">
           <ProgressRing
-            value={macros[0].consumed}
-            max={macros[0].target}
+            value={macros[0]?.consumed ?? 0}
+            max={macros[0]?.target ?? 0}
             size={120}
             strokeWidth={8}
-            color={macros[0].ring}
-            bgColor={macros[0].ringBg}
+            color={macros[0]?.ring ?? '#f97316'}
+            bgColor={macros[0]?.ringBg ?? 'rgba(249,115,22,0.1)'}
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold text-white">{macros[0].remaining}</span>
+            <span className="text-2xl font-bold text-white">{macros[0]?.remaining ?? 0}</span>
             <span className="text-[10px] text-neutral-400">
-              {macros[0].over > 0 ? 'over' : 'remaining'}
+              {(macros[0]?.over ?? 0) > 0 ? 'over' : 'remaining'}
             </span>
           </div>
         </div>
