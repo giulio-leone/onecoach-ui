@@ -29,6 +29,9 @@ import {
   Wand2,
   Activity,
   Plane,
+  Droplets,
+  Camera,
+  ClipboardList,
 } from 'lucide-react';
 import { defaultLocale, locales, messages, type Locale } from '@giulio-leone/translations';
 import type { SidebarNavigationItem } from '@giulio-leone/ui';
@@ -87,6 +90,7 @@ export function useAppNavigation(userRole?: string | null) {
     children: [
       { name: t('dashboard'), href: '/dashboard', icon: LayoutDashboard },
       { name: t('agenda'), href: '/oneagenda', icon: Calendar },
+      { name: t('onboarding'), href: '/onboarding', icon: ClipboardList },
       { name: t('flights'), href: '/flight', icon: Plane, badge: 'AI' },
       { name: t('messages'), href: '/messages', icon: MessageSquare },
       { name: t('aiChat'), href: '/chat', icon: MessageSquare, badge: 'AI' },
@@ -100,6 +104,8 @@ export function useAppNavigation(userRole?: string | null) {
     children: [
       { name: t('programs'), href: '/workouts', icon: Dumbbell },
       { name: t('nutrition'), href: '/nutrition', icon: Apple },
+      { name: t('waterTracking'), href: '/water-tracking', icon: Droplets },
+      { name: t('progressPhotos'), href: '/progress-photos', icon: Camera },
     ],
   };
 
@@ -126,6 +132,8 @@ export function useAppNavigation(userRole?: string | null) {
     children: [
       { name: t('coachDashboard'), href: '/coach/dashboard', icon: GraduationCap },
       { name: t('myClients'), href: '/coach/clients', icon: Users },
+      { name: t('compliance'), href: '/coach/compliance', icon: Shield },
+      { name: t('groups'), href: '/coach/groups', icon: Users },
       { name: t('coachAnalytics'), href: '/coach/analytics', icon: TrendingUp },
       { name: t('myProfile'), href: '/coach/profile', icon: UserCircle },
       { name: t('vetting'), href: '/coach/vetting', icon: CheckCircle2 },
