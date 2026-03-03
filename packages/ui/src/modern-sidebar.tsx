@@ -325,15 +325,15 @@ export function ModernSidebar({
         ))}
 
       {/* Footer / User Profile - Sticky at bottom */}
-      <div className="mt-auto border-t border-neutral-200/50 bg-neutral-50/30 p-4 backdrop-blur-sm dark:border-white/[0.06] dark:bg-white/[0.03]">
+      <div className="mt-auto shrink-0 border-t border-neutral-200/50 bg-neutral-50/30 p-4 backdrop-blur-sm dark:border-white/[0.06] dark:bg-white/[0.03]">
         {!isCollapsed ? (
-          <div className="space-y-4">
+          <div className="space-y-3">
             {/* Credits Card */}
             {user?.credits !== undefined && (
               <div
                 className={cn(
                   'relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-900 to-neutral-800 text-white shadow-xl dark:from-primary-600 dark:to-indigo-600',
-                  isMobile ? 'p-3' : 'p-5'
+                  isMobile ? 'p-3' : 'p-4'
                 )}
               >
                 <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-white/5 blur-2xl" />
@@ -359,7 +359,7 @@ export function ModernSidebar({
                 {!isMobile && (
                   <Link
                     href="/pricing"
-                    className="mt-4 block w-full rounded-lg bg-white/10 py-2 text-center text-xs font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
+                    className="mt-3 block w-full rounded-lg bg-white/10 py-1.5 text-center text-xs font-bold text-white backdrop-blur-md transition-all hover:bg-white/20"
                   >
                     Recharge Now
                   </Link>
@@ -380,28 +380,29 @@ export function ModernSidebar({
                   <span className="truncate text-sm font-semibold text-neutral-900 dark:text-white">
                     {user?.name || 'User'}
                   </span>
-                  <span className="truncate text-xs text-neutral-500 dark:text-neutral-400">
-                    {user?.email}
-                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="truncate text-xs text-neutral-500 dark:text-neutral-400">
+                      {user?.email}
+                    </span>
+                  </div>
+                  {/* Badges - inline below email */}
+                  {(isAdmin || isCoach) && (
+                    <div className="mt-1 flex flex-wrap gap-1">
+                      {isAdmin && (
+                        <span className="inline-flex items-center gap-0.5 rounded-full bg-secondary-100 px-1.5 py-0.5 text-[9px] font-bold text-secondary-700 dark:bg-secondary-900/30 dark:text-secondary-300">
+                          <Shield className="h-2.5 w-2.5" /> ADMIN
+                        </span>
+                      )}
+                      {isCoach && (
+                        <span className="inline-flex items-center gap-0.5 rounded-full bg-orange-100 px-1.5 py-0.5 text-[9px] font-bold text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">
+                          <GraduationCap className="h-2.5 w-2.5" /> COACH
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
-                <MoreVertical className="h-4 w-4 text-neutral-400" />
+                <MoreVertical className="h-4 w-4 shrink-0 text-neutral-400" />
               </button>
-
-              {/* Badges */}
-              {(isAdmin || isCoach) && (
-                <div className="flex flex-wrap gap-2 px-2 pb-2">
-                  {isAdmin && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-secondary-100 px-2 py-0.5 text-[10px] font-bold text-secondary-700 dark:bg-secondary-900/30 dark:text-secondary-300">
-                      <Shield className="h-3 w-3" /> ADMIN
-                    </span>
-                  )}
-                  {isCoach && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-orange-100 px-2 py-0.5 text-[10px] font-bold text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">
-                      <GraduationCap className="h-3 w-3" /> COACH
-                    </span>
-                  )}
-                </div>
-              )}
 
               {/* Dropdown Menu */}
               <AnimatePresence>
