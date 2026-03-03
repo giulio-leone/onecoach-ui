@@ -16,18 +16,11 @@ import { QueryClientContext } from '@tanstack/react-query';
 import { QueryProvider } from '@giulio-leone/lib-api/react-query';
 import { RealtimeProvider, SupabaseProvider } from '../core';
 
-import { useGlobalCopilotContext } from '../compat/one-agent-compat';
-
 interface ProtectedClientLayoutProps {
   children: React.ReactNode;
 }
 
 export function ProtectedClientLayout({ children }: ProtectedClientLayoutProps) {
-  // Enable global Copilot context sync based on current route
-  // This makes Copilot aware of which domain/page the user is on
-  // DEBUG: Enable logging to trace context sync
-  useGlobalCopilotContext({ debug: true });
-
   const queryClient = useContext(QueryClientContext);
   const content = (
     <SupabaseProvider>

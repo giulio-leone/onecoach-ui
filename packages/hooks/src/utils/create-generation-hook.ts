@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import type { MeshEvent, AgentRole } from '../compat/one-agent-types';
+import type { MeshEvent, AgentRole } from '../types/generation';
 import { apiClient } from '@giulio-leone/lib-api';
 
 export interface GenerationStreamEvent<TOutput = unknown> {

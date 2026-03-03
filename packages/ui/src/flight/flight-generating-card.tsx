@@ -6,7 +6,8 @@ import { Plane, Loader2, CheckCircle2, XCircle, Clock, Search } from 'lucide-rea
 import { Card, CardContent, CardHeader, CardTitle, Progress } from '@giulio-leone/ui';
 import { cn } from '@giulio-leone/lib-design-system';
 import type { GenerationWithStatus } from '@giulio-leone/hooks';
-import { AgentEventList, useAdminMode, type ProgressField } from '../compat/one-agent-compat';
+import { AgentEventList, type ProgressField } from '../components/agent-event-list';
+import { useAdminMode } from '../hooks/use-admin-mode';
 
 /**
  * Props for FlightGeneratingCard component

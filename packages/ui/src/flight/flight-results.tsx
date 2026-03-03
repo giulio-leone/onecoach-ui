@@ -19,7 +19,8 @@ import {
   type FlightAnalysis,
   type FlightRecommendation,
 } from './smart-analysis-panel';
-import { AgentEventList, useAdminMode, type ProgressField } from '../compat/one-agent-compat';
+import { AgentEventList, type ProgressField } from '../components/agent-event-list';
+import { useAdminMode } from '../hooks/use-admin-mode';
 
 interface SaveTripPayload {
   name?: string;

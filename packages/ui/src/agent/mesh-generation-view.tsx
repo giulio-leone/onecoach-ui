@@ -7,7 +7,8 @@ import { AlertCircle, Sparkles } from 'lucide-react';
 import { Button, Card } from '@giulio-leone/ui';
 import { GenerationLog, type GenerationLogEvent } from '@giulio-leone/ui/ai';
 import { GenerationSuccess } from '@giulio-leone/ui/ai';
-import { AgentEventList, useAdminMode, type ProgressField } from '../compat/one-agent-compat';
+import { AgentEventList, type ProgressField } from '../components/agent-event-list';
+import { useAdminMode } from '../hooks/use-admin-mode';
 
 // ----------------------------------------------------------------------------
 // Types

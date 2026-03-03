@@ -13,7 +13,6 @@ import {
 } from 'lucide-react';
 import type { DraggableAttributes, DraggableSyntheticListeners } from '@dnd-kit/core';
 import { cn } from '@giulio-leone/lib-design-system';
-import { useCopilotContextReporter } from '../../compat/one-agent-compat';
 import { SetGroupEditor } from '../editor/set-group-editor';
 import { ExerciseSelector } from './exercise-selector';
 import { useExerciseClipboard } from './workout-clipboard-provider';
@@ -71,28 +70,8 @@ export function ExerciseCard({
   const [isSelectorOpen, setIsSelectorOpen] = useState(false);
   const exerciseClipboard = useExerciseClipboard();
 
-  // Report exercise selection to Copilot context
-  const { reportSelection } = useCopilotContextReporter('workout');
-
-  // Handle expand with context reporting
   const handleToggleExpand = () => {
-    const newExpanded = !isExpanded;
-    setIsExpanded(newExpanded);
-
-    // Report selection when expanding, clear when collapsing
-    if (newExpanded) {
-      reportSelection({
-        type: 'exercise',
-        data: {
-          index,
-          id: exercise.id,
-          name: exercise.name,
-          catalogExerciseId: exercise.catalogExerciseId,
-        },
-      });
-    } else {
-      reportSelection(null);
-    }
+    setIsExpanded(prev => !prev);
   };
 
   const primaryGroup = exercise.setGroups?.[0];

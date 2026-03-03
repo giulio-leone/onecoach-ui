@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WizardStepper, WizardContainer, WizardActions } from '@giulio-leone/ui';
 import type { GenerationLogEvent } from '@giulio-leone/ui/ai';
-import type { ProgressField } from '../compat/one-agent-compat';
+import type { ProgressField } from '../components/agent-event-list';
 import { MeshGenerationView } from './mesh-generation-view';
 import { cn } from '@giulio-leone/lib-design-system';
 

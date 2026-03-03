@@ -1,7 +1,3 @@
-/**
- * Compatibility types for @giulio-leone/one-agent imports in hooks package.
- */
-
 export interface ProgressField {
   step: string;
   userMessage: string;

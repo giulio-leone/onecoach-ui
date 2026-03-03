@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 import { VisualBuilderShell } from '@giulio-leone/ui/visual-builder';
 import { useAutoSave, useVisualBuilderState } from '@giulio-leone/hooks';
 import { useHeaderActions, useCopilotActiveContextStore } from '@giulio-leone/lib-stores';
-import { CopilotDomainProvider } from '../../compat/one-agent-compat';
 import { logger } from '@giulio-leone/lib-shared';
 import { ArrowLeft, BarChart2, Layout, TrendingUp, Dumbbell, Upload } from 'lucide-react';
 // import { WorkoutImportModal } from '@/components/workout/workout-import-modal';
@@ -418,14 +417,7 @@ export function WorkoutVisualBuilder({
 
   // Wrap with CopilotDomainProvider only when we have a valid program
   if (hasProgramId && initialProgram) {
-    return (
-      <CopilotDomainProvider
-        domain="workout"
-        workoutData={{ programId: initialProgram.id, program }}
-      >
-        {builderContent}
-      </CopilotDomainProvider>
-    );
+    return builderContent;
   }
 
   // New program mode - no context provider needed yet
