@@ -1,13 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
-import {
-  withTiming,
-  withSpring,
-  withDelay,
-  useSharedValue,
-  useAnimatedStyle,
-} from 'react-native-reanimated';
+/**
+ * Web version of animation hooks using CSS transitions
+ */
+
+import { useEffect, useState, useCallback } from 'react';
 
 export interface AnimationConfig {
   duration?: number;
@@ -17,195 +14,208 @@ export interface AnimationConfig {
 }
 
 /**
- * Fade in animation hook
- * @param config Animation configuration
- * @returns Animated style for opacity
+ * Fade in animation hook for web
  */
 export function useFadeIn(config: AnimationConfig = {}) {
   const { duration = 300, delay = 0 } = config;
-  const opacity = useSharedValue(0);
+  const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    opacity.value = withDelay(delay, withTiming(1, { duration }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
-  }, []);
+    const timer = setTimeout(() => {
+      setOpacity(1);
+    }, delay);
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    opacity: opacity.value,
-  }));
+    return () => clearTimeout(timer);
+  }, [delay]);
 
-  return { animatedStyle, opacity };
+  const animatedStyle = {
+    opacity,
+    transition: `opacity ${duration}ms ease-in-out`,
+  };
+
+  return { animatedStyle, opacity: { value: opacity } };
 }
 
 /**
- * Slide in animation hook
- * @param direction Direction of slide ('left' | 'right' | 'up' | 'down')
- * @param config Animation configuration
- * @returns Animated style for transform
+ * Slide in animation hook for web
  */
 export function useSlideIn(
   direction: 'left' | 'right' | 'up' | 'down' = 'left',
   config: AnimationConfig = {}
 ) {
   const { duration = 300, delay = 0 } = config;
-  const translateX = useSharedValue(direction === 'left' ? -50 : direction === 'right' ? 50 : 0);
-  const translateY = useSharedValue(direction === 'up' ? -50 : direction === 'down' ? 50 : 0);
-  const opacity = useSharedValue(0);
+  const [translateX, setTranslateX] = useState(
+    direction === 'left' ? -50 : direction === 'right' ? 50 : 0
+  );
+  const [translateY, setTranslateY] = useState(
+    direction === 'up' ? -50 : direction === 'down' ? 50 : 0
+  );
+  const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    translateX.value = withDelay(delay, withTiming(0, { duration }));
-    translateY.value = withDelay(delay, withTiming(0, { duration }));
-    opacity.value = withDelay(delay, withTiming(1, { duration }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
-  }, []);
+    const timer = setTimeout(() => {
+      setTranslateX(0);
+      setTranslateY(0);
+      setOpacity(1);
+    }, delay);
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ translateX: translateX.value }, { translateY: translateY.value }],
-    opacity: opacity.value,
-  }));
+    return () => clearTimeout(timer);
+  }, [delay]);
 
-  return { animatedStyle, translateX, translateY, opacity };
+  const animatedStyle = {
+    transform: `translate(${translateX}px, ${translateY}px)`,
+    opacity,
+    transition: `transform ${duration}ms ease-out, opacity ${duration}ms ease-out`,
+  };
+
+  return {
+    animatedStyle,
+    translateX: { value: translateX },
+    translateY: { value: translateY },
+    opacity: { value: opacity },
+  };
 }
 
 /**
- * Scale in animation hook with spring physics
- * @param config Animation configuration
- * @returns Animated style for scale transform
+ * Scale in animation hook for web
  */
 export function useScaleIn(config: AnimationConfig = {}) {
   const { delay = 0, damping = 15, stiffness = 150 } = config;
-  const scale = useSharedValue(0.8);
-  const opacity = useSharedValue(0);
+  const [scale, setScale] = useState(0.8);
+  const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    scale.value = withDelay(delay, withSpring(1, { damping, stiffness }));
-    opacity.value = withDelay(delay, withTiming(1, { duration: 200 }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
-  }, []);
+    const timer = setTimeout(() => {
+      setScale(1);
+      setOpacity(1);
+    }, delay);
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }],
-    opacity: opacity.value,
-  }));
+    return () => clearTimeout(timer);
+  }, [delay]);
 
-  return { animatedStyle, scale, opacity };
+  const duration = Math.max(200, Math.sqrt(stiffness / damping) * 100);
+
+  const animatedStyle = {
+    transform: `scale(${scale})`,
+    opacity,
+    transition: `transform ${duration}ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 200ms ease-out`,
+  };
+
+  return { animatedStyle, scale: { value: scale }, opacity: { value: opacity } };
 }
 
 /**
- * Bounce animation hook for interactive elements
- * @returns Methods to trigger bounce animation
+ * Bounce animation hook for web
  */
 export function useBounce() {
-  const scale = useSharedValue(1);
+  const [scale, setScale] = useState(1);
 
-  const bounce = () => {
-    scale.value = withSpring(0.95, { damping: 10, stiffness: 400 });
-    scale.value = withDelay(100, withSpring(1, { damping: 10, stiffness: 400 }));
+  const bounce = useCallback(() => {
+    setScale(0.95);
+    setTimeout(() => setScale(1), 100);
+  }, []);
+
+  const animatedStyle = {
+    transform: `scale(${scale})`,
+    transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1)',
   };
-
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }],
-  }));
 
   return { animatedStyle, bounce };
 }
 
 /**
- * Progressive list item animation with stagger effect
- * @param index Item index in list
- * @param config Animation configuration
- * @returns Animated style for list items
+ * Staggered fade in animation hook for web
  */
 export function useStaggeredFadeIn(index: number, config: AnimationConfig = {}) {
   const { duration = 300, delay = 50 } = config;
-  const opacity = useSharedValue(0);
-  const translateY = useSharedValue(20);
+  const [opacity, setOpacity] = useState(0);
+  const [translateY, setTranslateY] = useState(20);
 
   useEffect(() => {
     const itemDelay = index * delay;
-    opacity.value = withDelay(itemDelay, withTiming(1, { duration }));
-    translateY.value = withDelay(itemDelay, withTiming(0, { duration }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
-  }, []);
+    const timer = setTimeout(() => {
+      setOpacity(1);
+      setTranslateY(0);
+    }, itemDelay);
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    opacity: opacity.value,
-    transform: [{ translateY: translateY.value }],
-  }));
+    return () => clearTimeout(timer);
+  }, [index, delay]);
 
-  return { animatedStyle, opacity, translateY };
+  const animatedStyle = {
+    opacity,
+    transform: `translateY(${translateY}px)`,
+    transition: `opacity ${duration}ms ease-out, transform ${duration}ms ease-out`,
+  };
+
+  return {
+    animatedStyle,
+    opacity: { value: opacity },
+    translateY: { value: translateY },
+  };
 }
 
 /**
- * Shimmer loading animation
- * @param duration Duration of one shimmer cycle
- * @returns Animated style for shimmer effect
+ * Shimmer loading animation hook for web
  */
 export function useShimmer(duration: number = 1500) {
-  const translateX = useSharedValue(-1);
+  const [translateX, setTranslateX] = useState(-1);
 
   useEffect(() => {
-    translateX.value = withTiming(1, { duration }, (finished) => {
-      if (finished) {
-        translateX.value = -1;
-        translateX.value = withTiming(1, { duration });
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
-  }, []);
+    const interval = setInterval(() => {
+      setTranslateX((prev) => (prev === 1 ? -1 : 1));
+    }, duration);
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ translateX: translateX.value }],
-  }));
+    return () => clearInterval(interval);
+  }, [duration]);
 
-  return { animatedStyle, translateX };
+  const animatedStyle = {
+    transform: `translateX(${translateX * 100}%)`,
+    transition: `transform ${duration}ms linear`,
+  };
+
+  return { animatedStyle, translateX: { value: translateX } };
 }
 
 /**
- * Rotation animation hook
- * @param config Animation configuration
- * @returns Animated style for rotation
+ * Rotation animation hook for web
  */
 export function useRotate(config: AnimationConfig = {}) {
   const { duration = 1000 } = config;
-  const rotation = useSharedValue(0);
+  const [rotation, setRotation] = useState(0);
 
-  const rotate = () => {
-    rotation.value = withTiming(360, { duration }, (finished) => {
-      if (finished) {
-        rotation.value = 0;
-      }
-    });
+  const rotate = useCallback(() => {
+    setRotation(360);
+    setTimeout(() => setRotation(0), duration);
+  }, [duration]);
+
+  const animatedStyle = {
+    transform: `rotate(${rotation}deg)`,
+    transition: `transform ${duration}ms ease-in-out`,
   };
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ rotate: `${rotation.value}deg` }],
-  }));
-
-  return { animatedStyle, rotate, rotation };
+  return { animatedStyle, rotate, rotation: { value: rotation } };
 }
 
 /**
- * Pulse animation for attention-grabbing elements
- * @param config Animation configuration
- * @returns Animated style for pulse effect
+ * Pulse animation hook for web
  */
 export function usePulse(config: AnimationConfig = {}) {
   const { duration = 1000 } = config;
-  const scale = useSharedValue(1);
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
-    scale.value = withTiming(1.05, { duration: duration / 2 }, (finished) => {
-      if (finished) {
-        scale.value = withTiming(1, { duration: duration / 2 });
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
-  }, []);
+    const interval = setInterval(() => {
+      setScale(1.05);
+      setTimeout(() => setScale(1), duration / 2);
+    }, duration);
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }],
-  }));
+    return () => clearInterval(interval);
+  }, [duration]);
 
-  return { animatedStyle, scale };
+  const animatedStyle = {
+    transform: `scale(${scale})`,
+    transition: `transform ${duration / 2}ms ease-in-out`,
+  };
+
+  return { animatedStyle, scale: { value: scale } };
 }

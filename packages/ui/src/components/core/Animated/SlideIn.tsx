@@ -1,26 +1,62 @@
-import React from 'react';
-import Animated from 'react-native-reanimated';
-import type { ViewStyle, StyleProp } from 'react-native';
-import { useSlideIn } from '../../../hooks/useAnimations';
-import type { AnimationConfig } from '../../../hooks/useAnimations';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { View } from 'react-native-web';
+import type { ViewStyle } from 'react-native';
 
 interface SlideInProps {
   children: React.ReactNode;
   direction?: 'left' | 'right' | 'up' | 'down';
   duration?: number;
   delay?: number;
-  style?: StyleProp<ViewStyle>;
+  style?: ViewStyle | ViewStyle[];
 }
 
 /**
- * Animated SlideIn component
- * Slides content in from specified direction
+ * Web version of SlideIn using CSS animations
  */
-export function SlideIn({ children, direction = 'left', duration, delay, style }: SlideInProps) {
-  const config: AnimationConfig = { duration, delay };
-  const { animatedStyle } = useSlideIn(direction, config);
-  const composedStyle = [animatedStyle, style].filter(Boolean) as unknown as StyleProp<ViewStyle>;
+export function SlideIn({
+  children,
+  direction = 'left',
+  duration = 300,
+  delay = 0,
+  style,
+}: SlideInProps) {
+  const getInitialTransform = () => {
+    switch (direction) {
+      case 'left':
+        return 'translate(-50px, 0)';
+      case 'right':
+        return 'translate(50px, 0)';
+      case 'up':
+        return 'translate(0, -50px)';
+      case 'down':
+        return 'translate(0, 50px)';
+      default:
+        return 'translate(0, 0)';
+    }
+  };
+
+  const [transform, setTransform] = useState<string>(
+    delay === 0 ? 'translate(0, 0)' : getInitialTransform()
+  );
+  const [opacity, setOpacity] = useState(delay === 0 ? 1 : 0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTransform('translate(0, 0)');
+      setOpacity(1);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  const animatedStyle: React.CSSProperties = {
+    transform,
+    opacity,
+    transition: `transform ${duration}ms ease-out, opacity ${duration}ms ease-out`,
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <Animated.View style={composedStyle as any}>{children}</Animated.View>;
+  return <View style={[animatedStyle, style] as any}>{children}</View>;
 }

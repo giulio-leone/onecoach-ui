@@ -1,32 +1,46 @@
-import React from 'react';
-import Animated from 'react-native-reanimated';
-import type { ViewStyle, StyleProp } from 'react-native';
-import { useStaggeredFadeIn } from '../../../hooks/useAnimations';
-import type { AnimationConfig } from '../../../hooks/useAnimations';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { View } from 'react-native-web';
+import type { ViewStyle } from 'react-native';
 
 interface StaggeredListItemProps {
   children: React.ReactNode;
   index: number;
   duration?: number;
   delay?: number;
-  style?: StyleProp<ViewStyle>;
+  style?: ViewStyle | ViewStyle[];
 }
 
 /**
- * Animated list item with staggered fade-in effect
- * Each item appears with a progressive delay based on its index
+ * Web version of StaggeredListItem using CSS animations
  */
 export function StaggeredListItem({
   children,
   index,
-  duration,
-  delay,
+  duration = 300,
+  delay = 50,
   style,
 }: StaggeredListItemProps) {
-  const config: AnimationConfig = { duration, delay };
-  const { animatedStyle } = useStaggeredFadeIn(index, config);
-  const composedStyle = [animatedStyle, style].filter(Boolean) as unknown as StyleProp<ViewStyle>;
+  const [opacity, setOpacity] = useState(0);
+  const [translateY, setTranslateY] = useState(20);
+
+  useEffect(() => {
+    const itemDelay = index * delay;
+    const timer = setTimeout(() => {
+      setOpacity(1);
+      setTranslateY(0);
+    }, itemDelay);
+
+    return () => clearTimeout(timer);
+  }, [index, delay]);
+
+  const animatedStyle: React.CSSProperties = {
+    opacity,
+    transform: `translateY(${translateY}px)`,
+    transition: `opacity ${duration}ms ease-out, transform ${duration}ms ease-out`,
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <Animated.View style={composedStyle as any}>{children}</Animated.View>;
+  return <View style={[animatedStyle, style] as any}>{children}</View>;
 }

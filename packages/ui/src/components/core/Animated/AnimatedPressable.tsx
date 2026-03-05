@@ -1,9 +1,7 @@
-import React from 'react';
-import { Pressable, type PressableProps, type GestureResponderEvent } from 'react-native';
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
-import * as Haptics from 'expo-haptics';
+'use client';
 
-const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+import React from 'react';
+import { Pressable, type PressableProps } from 'react-native-web';
 
 interface AnimatedPressableButtonProps extends Omit<PressableProps, 'style'> {
   children: React.ReactNode;
@@ -13,57 +11,31 @@ interface AnimatedPressableButtonProps extends Omit<PressableProps, 'style'> {
 }
 
 /**
- * Pressable with scale animation and haptic feedback
- * Provides visual and tactile feedback on press
+ * Web version of AnimatedPressable using CSS transitions
  */
 export function AnimatedPressableButton({
   children,
-  hapticFeedback = true,
+  hapticFeedback: _hapticFeedback = false, // No haptics on web
   scaleValue = 0.95,
-  onPressIn,
-  onPressOut,
-  onPress,
   style,
   ...props
 }: AnimatedPressableButtonProps) {
-  const scale = useSharedValue(1);
+  const [isPressed, setIsPressed] = React.useState(false);
 
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: scale.value }],
-  }));
-
-  const handlePressIn = (event: GestureResponderEvent) => {
-    // Reanimated shared values sono mutabili per animazioni; safe su UI thread
-    // eslint-disable-next-line react-hooks/immutability
-    scale.value = withSpring(scaleValue, { damping: 15, stiffness: 400 });
-    if (hapticFeedback) {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    }
-    onPressIn?.(event);
-  };
-
-  const handlePressOut = (event: GestureResponderEvent) => {
-    // eslint-disable-next-line react-hooks/immutability
-    scale.value = withSpring(1, { damping: 15, stiffness: 400 });
-    onPressOut?.(event);
-  };
-
-  const handlePress = (event: GestureResponderEvent) => {
-    if (hapticFeedback) {
-      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    }
-    onPress?.(event);
+  const animatedStyle: React.CSSProperties = {
+    transform: `scale(${isPressed ? scaleValue : 1})`,
+    transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1)',
   };
 
   return (
-    <AnimatedPressable
-      onPressIn={handlePressIn}
-      onPressOut={handlePressOut}
-      onPress={handlePress}
-      style={[animatedStyle, style]}
+    <Pressable
+      onPressIn={() => setIsPressed(true)}
+      onPressOut={() => setIsPressed(false)}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      style={[animatedStyle, style] as any}
       {...props}
     >
       {children}
-    </AnimatedPressable>
+    </Pressable>
   );
 }

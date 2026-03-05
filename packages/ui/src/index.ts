@@ -1,86 +1,166 @@
-import './types/nativewind';
+/**
+ * UI Components - Web Barrel Export
+ * Web-specific exports that exclude native-only components
+ */
 
-export * from './amount-display';
-export * from './animated-number';
-export * from './avatar';
-export * from './badge';
+// Core Components
 export * from './button';
+export * from './button-link';
+export * from './input';
+export * from './label';
+export * from './select';
+export * from './textarea';
 export * from './card';
+export * from './avatar';
+export * from './streaming-result';
+
+// Feedback Components
+export * from './badge';
+export * from './alert';
+export * from './tooltip';
+export * from './spinner';
+export * from './loading-indicator';
+export * from './error-state';
+export * from './empty-state';
+export * from './button-group';
 export * from './carousel';
-export * from './checkbox';
-export * from './checkbox-group';
 export * from './collapsible';
-export * from './combobox';
+export * from './scroll-area';
+export * from './progress';
+export * from './separator';
+export { Separator } from './separator';
+export * from './dropdown-menu';
+export * from './hover-card';
 export * from './command';
+export * from './input-group';
+
+// Navigation Components
+export * from './tab-button';
+export * from './tabs';
+
+// Overlay Components
+export * from './dialog';
+export * from './drawer';
+
+// Feature Components
+export * from './components/core/model-selector';
+export { ModelSelector as LegacyModelSelector } from './legacy-model-selector';
+export * from './theme-toggle';
 export * from './date-picker-with-presets';
 export * from './date-picker';
 export * from './date-range-picker';
-export * from './dialog';
-export * from './drawer';
-export * from './dropdown-menu';
-export * from './empty-state';
-export * from './error-state';
-export * from './generating-card';
-export * from './glass-table';
-export * from './glass-toolbar';
-export * from './hover-card';
-export * from './icon-badge';
-export * from './image';
-export * from './input';
-export * from './input-group';
-export * from './label';
+
+// Design System - Typography
+export * from './typography';
+
+// Design System - Layout
 export * from './layout-primitives';
-export * from './loading-indicator';
-export * from './modern-sidebar';
-export * from './progress';
-export * from './quick-actions-grid';
+
+// Design System - Form Controls
+// Design System - Form Controls
+export * from './checkbox';
+export * from './checkbox-group';
 export * from './radio';
 export * from './radio-group';
-export * from './scroll-area';
-export * from './select';
-export * from './selection-card';
-export * from './separator';
-export * from './sidebar-item';
-export * from './skeleton';
-export * from './slider';
-export * from './spinner';
-export * from './stat-card';
-export * from './stepper';
-export * from './streaming-result';
 export * from './switch';
-export * from './tab-button';
-export * from './tabs';
-export * from './textarea';
-export * from './theme-toggle';
-export * from './tooltip';
+
+// Design System - Dark Mode Optimized Components
+export * from './icon-badge';
+export * from './amount-display';
 export * from './transaction-item';
-export * from './typography';
-export * from './welcome-header';
-export * from './wizard';
-export * from './wizard-layout';
-export * from './wizard-slider';
-export * from './alert';
-export * from './admin';
+
+// Cross-platform Image
+export * from './image';
+
+// Animation Components
+export * from './components/core/Animated';
+
+// Skeleton Loaders
+export * from './components/core/SkeletonLoader';
+export * from './skeleton';
+export { Skeleton } from './skeleton';
+
+// Animation Hooks
+export * from './hooks/useAnimations';
+
+// App Shell
 export * from './app-shell';
+
+// Admin primitives
+export * from './admin';
+
+// Dashboard primitives
 export * from './dashboard';
+
+// Checkout kit
+export * from './checkout';
+
+// Visual Builder Components
+export * from './modern-sidebar';
+export * from './sidebar-item';
+export * from './visual-builder';
+
+// New Generation Components
+
+export * from './stat-card';
+export { StatCard } from './stat-card';
+
+export * from './selection-card';
+export * from './stepper';
+
+export * from './wizard-layout';
+export * from './welcome-header';
+export * from './quick-actions-grid';
+export * from './wizard';
+export * from './wizard-slider';
+
+// Program Viewer Components
+export * from './program-viewer';
+
+// Project Management Components
+export * from './components/core/progress-bar';
+export * from './components/domain/project-card';
+export * from './components/domain/project-gantt';
+export * from './components/domain/task-list';
+export * from './components/domain/milestone-list';
+export * from './components/domain/habit-card';
+// Native-only - excluded from web
+// export * from './components/domain/habit-list';
+// export * from './components/domain/unified-list-item';
+
+// Chat Components
+export * from './components/domain/chat/conversation-list';
+export * from './components/domain/chat/chat-history-modal'; // Added
+
+// AI Elements Components (AI SDK v6 native)
+export * from './components/domain/ai-elements';
+
+// AI Generation Components
+export * from './components/domain/ai-generation-view';
+
+// Catalog Components
+export * from './components/domain/catalog/resource-card';
 export * from './components/domain/catalog/catalog-grid';
 export * from './components/domain/catalog/catalog-layout';
-export * from './components/domain/catalog/resource-card';
-export * from './button-group';
-export * from './checkout';
-export * from './components';
+export * from './tabs/hash-tabs';
+
+// Slider Component
+export * from './slider';
+
+// Premium Glass Components
+export * from './combobox';
+export * from './glass-table';
+export * from './glass-toolbar';
+
+// New Chat UI (Nano Banana Pro)
+export * from './chat/chat-layout-wrapper';
+export * from './chat/chat-header';
+export * from './chat/chat-messages-list';
+export * from './chat/chat-input-area';
+
+// Program Cards
 export * from './program-card';
 export * from './programs-page-layout';
-// Program Viewer
-export * from './program-viewer/program-action-bar';
-export * from './program-viewer/program-day-card';
-export * from './program-viewer/program-goals-section';
-export * from './program-viewer/program-info-card';
-export * from './program-viewer/program-week-card';
-// Visual Builder Base Components
-export * from './visual-builder/components/base/EditorHeader';
-export * from './visual-builder/components/base/VersionHistory';
-export * from './visual-builder/contexts/clipboard-context';
 
 // Core (merged from @onecoach/ui-core) — selective re-exports to avoid conflicts
 export {
@@ -108,4 +188,5 @@ export * from './agenda';
 export * from './marketplace';
 export * from './layout';
 export * from './auth';
+export * from './onboarding';
 export * from './pricing';

@@ -1,25 +1,35 @@
-import React from 'react';
-import Animated from 'react-native-reanimated';
-import type { ViewStyle, StyleProp } from 'react-native';
-import { useFadeIn } from '../../../hooks/useAnimations';
-import type { AnimationConfig } from '../../../hooks/useAnimations';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { View } from 'react-native-web';
+import type { ViewStyle } from 'react-native';
 
 interface FadeInProps {
   children: React.ReactNode;
   duration?: number;
   delay?: number;
-  style?: StyleProp<ViewStyle>;
+  style?: ViewStyle | ViewStyle[];
 }
 
 /**
- * Animated FadeIn component
- * Wraps children with a fade-in animation
+ * Web version of FadeIn using CSS animations
  */
-export function FadeIn({ children, duration, delay, style }: FadeInProps) {
-  const config: AnimationConfig = { duration, delay };
-  const { animatedStyle } = useFadeIn(config);
-  const composedStyle = [animatedStyle, style].filter(Boolean) as unknown as StyleProp<ViewStyle>;
+export function FadeIn({ children, duration = 300, delay = 0, style }: FadeInProps) {
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpacity(1);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  const animatedStyle: React.CSSProperties = {
+    opacity,
+    transition: `opacity ${duration}ms ease-in-out`,
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <Animated.View style={composedStyle as any}>{children}</Animated.View>;
+  return <View style={[animatedStyle, style] as any}>{children}</View>;
 }
