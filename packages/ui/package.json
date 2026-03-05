@@ -223,7 +223,6 @@
     "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/one-workout": "workspace:*",
     "@phosphor-icons/react": "*",
-    "expo-linear-gradient": "*",
     "react": ">=19.1.0 <20",
     "react-native": ">=0.81 <0.83"
   },

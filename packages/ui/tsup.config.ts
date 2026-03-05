@@ -24,7 +24,7 @@ export default defineConfig({
     'cmdk', 'embla-carousel-react', /^react-resizable/,
     /^@hello-pangea\//, 'input-otp', 'react-dropzone',
     'react-markdown', 'react-syntax-highlighter',
-    'react-native', 'react-native-web', 'expo-image', 'expo-linear-gradient',
+    'react-native', 'react-native-web', 'expo-image',
     /^expo-/,
     'tailwindcss',
     /^app\//, /^hooks\//, /^@\//,
