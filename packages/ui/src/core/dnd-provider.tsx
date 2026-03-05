@@ -29,7 +29,7 @@ import {
   closestCenter,
 } from '@dnd-kit/core';
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
-import type { DragResult } from '@giulio-leone/types/dnd.types';
+import type { DragResult } from '@giulio-leone/types/ui.types';
 
 interface DndProviderProps {
   children: ReactNode;
