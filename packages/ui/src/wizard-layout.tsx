@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { Card } from './card';
 import { Button } from './button';
-import { ChevronLeft, ChevronRight, Check } from 'lucide-react-native';
+import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 
 export interface WizardStep {
   id: string;
