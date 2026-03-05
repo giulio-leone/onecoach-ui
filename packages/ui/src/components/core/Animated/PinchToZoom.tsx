@@ -1,104 +1,58 @@
-import React from 'react';
-import { StyleSheet, View, type ViewStyle } from 'react-native';
-import { GestureDetector, Gesture } from 'react-native-gesture-handler';
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
+'use client';
+
+import React, { useRef, useState, useCallback } from 'react';
 
 interface PinchToZoomProps {
   children: React.ReactNode;
   minScale?: number;
   maxScale?: number;
-  style?: ViewStyle | ViewStyle[];
+  style?: React.CSSProperties;
+  className?: string;
 }
 
-/**
- * Pinch to zoom gesture handler
- * Supports pinch zoom and pan gestures
- */
-export function PinchToZoom({ children, minScale = 1, maxScale = 4, style }: PinchToZoomProps) {
-  const scale = useSharedValue(1);
-  const savedScale = useSharedValue(1);
-  const translateX = useSharedValue(0);
-  const translateY = useSharedValue(0);
-  const savedTranslateX = useSharedValue(0);
-  const savedTranslateY = useSharedValue(0);
+export function PinchToZoom({
+  children,
+  minScale = 1,
+  maxScale = 4,
+  style,
+  className,
+}: PinchToZoomProps) {
+  const [scale, setScale] = useState(1);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const pinchGesture = Gesture.Pinch()
-    .onUpdate((event) => {
-      const newScale = savedScale.value * event.scale;
-      scale.value = Math.min(Math.max(newScale, minScale), maxScale);
-    })
-    .onEnd(() => {
-      savedScale.value = scale.value;
+  const handleDoubleClick = useCallback(() => {
+    setScale((prev) => (prev > 1 ? minScale : Math.min(2, maxScale)));
+  }, [minScale, maxScale]);
 
-      // Reset if below min scale
-      if (scale.value < minScale + 0.1) {
-        scale.value = withSpring(minScale);
-        savedScale.value = minScale;
-        translateX.value = withSpring(0);
-        translateY.value = withSpring(0);
-        savedTranslateX.value = 0;
-        savedTranslateY.value = 0;
-      }
-    });
-
-  const panGesture = Gesture.Pan()
-    .onUpdate((event) => {
-      // Only allow pan if zoomed in
-      if (scale.value > 1) {
-        translateX.value = savedTranslateX.value + event.translationX;
-        translateY.value = savedTranslateY.value + event.translationY;
-      }
-    })
-    .onEnd(() => {
-      savedTranslateX.value = translateX.value;
-      savedTranslateY.value = translateY.value;
-    });
-
-  const doubleTapGesture = Gesture.Tap()
-    .numberOfTaps(2)
-    .onEnd(() => {
-      if (scale.value > 1) {
-        // Reset zoom
-        scale.value = withSpring(1);
-        savedScale.value = 1;
-        translateX.value = withSpring(0);
-        translateY.value = withSpring(0);
-        savedTranslateX.value = 0;
-        savedTranslateY.value = 0;
-      } else {
-        // Zoom in to 2x
-        scale.value = withSpring(2);
-        savedScale.value = 2;
-      }
-    });
-
-  const composedGesture = Gesture.Simultaneous(
-    doubleTapGesture,
-    Gesture.Simultaneous(pinchGesture, panGesture)
+  const handleWheel = useCallback(
+    (e: React.WheelEvent) => {
+      e.preventDefault();
+      setScale((prev) => {
+        const delta = e.deltaY > 0 ? 0.9 : 1.1;
+        return Math.min(Math.max(prev * delta, minScale), maxScale);
+      });
+    },
+    [minScale, maxScale]
   );
-
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [
-      { translateX: translateX.value },
-      { translateY: translateY.value },
-      { scale: scale.value },
-    ],
-  }));
 
   return (
-    <View style={[styles.container, style]}>
-      <GestureDetector gesture={composedGesture}>
-        <Animated.View style={[styles.content, animatedStyle]}>{children}</Animated.View>
-      </GestureDetector>
-    </View>
+    <div
+      ref={containerRef}
+      className={className}
+      style={{ overflow: 'hidden', ...style }}
+      onDoubleClick={handleDoubleClick}
+      onWheel={handleWheel}
+    >
+      <div
+        style={{
+          transform: `scale(${scale})`,
+          transition: 'transform 200ms ease-out',
+          transformOrigin: 'center center',
+        }}
+      >
+        {children}
+      </div>
+    </div>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    overflow: 'hidden',
-  },
-  content: {
-    flex: 1,
-  },
-});

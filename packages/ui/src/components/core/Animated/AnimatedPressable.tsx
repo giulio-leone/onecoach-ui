@@ -1,41 +1,46 @@
 'use client';
 
 import React from 'react';
-import { Pressable, type PressableProps } from 'react-native-web';
 
-interface AnimatedPressableButtonProps extends Omit<PressableProps, 'style'> {
+interface AnimatedPressableButtonProps {
   children: React.ReactNode;
   hapticFeedback?: boolean;
   scaleValue?: number;
-  style?: PressableProps['style'];
+  style?: React.CSSProperties;
+  className?: string;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
-/**
- * Web version of AnimatedPressable using CSS transitions
- */
 export function AnimatedPressableButton({
   children,
-  hapticFeedback: _hapticFeedback = false, // No haptics on web
   scaleValue = 0.95,
   style,
-  ...props
+  className,
+  onClick,
+  disabled,
 }: AnimatedPressableButtonProps) {
   const [isPressed, setIsPressed] = React.useState(false);
 
   const animatedStyle: React.CSSProperties = {
     transform: `scale(${isPressed ? scaleValue : 1})`,
     transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+    ...style,
   };
 
   return (
-    <Pressable
-      onPressIn={() => setIsPressed(true)}
-      onPressOut={() => setIsPressed(false)}
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      style={[animatedStyle, style] as any}
-      {...props}
+    <button
+      type="button"
+      className={className}
+      style={animatedStyle}
+      onPointerDown={() => setIsPressed(true)}
+      onPointerUp={() => setIsPressed(false)}
+      onPointerLeave={() => setIsPressed(false)}
+      onClick={onClick}
+      disabled={disabled}
     >
       {children}
-    </Pressable>
+    </button>
   );
 }
+

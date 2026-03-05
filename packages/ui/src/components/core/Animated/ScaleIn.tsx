@@ -1,15 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { View } from 'react-native-web';
-import type { ViewStyle } from 'react-native';
 
 interface ScaleInProps {
   children: React.ReactNode;
   delay?: number;
   damping?: number;
   stiffness?: number;
-  style?: ViewStyle | ViewStyle[];
+  style?: React.CSSProperties;
 }
 
 /**
@@ -43,6 +41,6 @@ export function ScaleIn({
     transition: `transform ${duration}ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 200ms ease-out`,
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <View style={[animatedStyle, style] as any}>{children}</View>;
+  
+  return <div style={{...animatedStyle, ...style}}>{children}</div>;
 }

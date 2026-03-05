@@ -1,13 +1,3 @@
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-  KeyboardAvoidingView,
-  Platform,
-  type ViewStyle,
-} from 'react-native';
 import { Card } from './card';
 import { Button } from './button';
 import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
@@ -28,7 +18,7 @@ interface WizardLayoutProps {
   isCompleting?: boolean;
   title?: string;
   subtitle?: string;
-  style?: ViewStyle;
+  className?: string;
 }
 
 export function WizardLayout({
@@ -39,7 +29,7 @@ export function WizardLayout({
   isCompleting = false,
   title,
   subtitle,
-  style,
+  className,
 }: WizardLayoutProps) {
   const currentStep = steps[currentStepIndex];
   const isFirstStep = currentStepIndex === 0;
@@ -62,213 +52,88 @@ export function WizardLayout({
   };
 
   return (
-    <View style={[styles.container, style]}>
+    <div className={`flex flex-1 flex-col ${className ?? ''}`}>
       {/* Header */}
-      <View style={styles.header}>
-        {title && <Text style={styles.headerTitle}>{title}</Text>}
-        {subtitle && <Text style={styles.headerSubtitle}>{subtitle}</Text>}
+      <div className="mb-6">
+        {title && <h2 className="text-2xl font-bold text-neutral-900 dark:text-white">{title}</h2>}
+        {subtitle && <p className="mt-1 text-base text-neutral-500 dark:text-neutral-400">{subtitle}</p>}
 
         {/* Progress Bar */}
-        <View style={styles.progressArea}>
-          <View style={styles.progressContainer}>
+        <div className="mt-6">
+          <div className="flex flex-row justify-between px-1">
             {steps.map((step, index) => {
               const isActive = index === currentStepIndex;
               const isCompleted = index < currentStepIndex;
 
               return (
-                <View key={step.id} style={styles.progressStep}>
-                  <View
-                    style={[
-                      styles.progressBar,
+                <div key={step.id} className="relative flex flex-1 flex-col items-center">
+                  <div
+                    className={`h-1 w-full rounded-sm ${
                       isCompleted
-                        ? styles.progressBarCompleted
+                        ? 'bg-primary-600'
                         : isActive
-                          ? styles.progressBarActive
-                          : styles.progressBarInactive,
-                    ]}
+                          ? 'bg-primary-200'
+                          : 'bg-neutral-200 dark:bg-neutral-700'
+                    }`}
                   />
-                  {isActive && <Text style={styles.stepLabel}>Step {index + 1}</Text>}
-                </View>
+                  {isActive && (
+                    <span className="text-primary-600 absolute top-3 text-xs font-bold">
+                      Step {index + 1}
+                    </span>
+                  )}
+                </div>
               );
             })}
-          </View>
-        </View>
-      </View>
+          </div>
+        </div>
+      </div>
 
       {/* Content */}
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={styles.keyboardView}
-      >
-        <ScrollView
-          style={styles.content}
-          contentContainerStyle={styles.scrollContent}
-          showsVerticalScrollIndicator={false}
-          keyboardShouldPersistTaps="handled"
-        >
-          <View style={styles.contentHeader}>
-            <Text style={styles.currentStepTitle}>{currentStep.title}</Text>
-            {currentStep.description && (
-              <Text style={styles.currentStepDescription}>{currentStep.description}</Text>
-            )}
-          </View>
+      <div className="flex-1 overflow-y-auto px-1 pb-24">
+        <div className="mb-4">
+          <h3 className="mb-0.5 text-xl font-bold text-neutral-900 dark:text-white">
+            {currentStep.title}
+          </h3>
+          {currentStep.description && (
+            <p className="text-sm leading-5 text-neutral-500 dark:text-neutral-400">
+              {currentStep.description}
+            </p>
+          )}
+        </div>
 
-          <View style={styles.componentContainer}>{currentStep.component}</View>
-        </ScrollView>
-      </KeyboardAvoidingView>
+        <div className="min-h-[200px]">{currentStep.component}</div>
+      </div>
 
       {/* Footer Actions */}
-      <Card variant="glass" style={styles.footer}>
-        <TouchableOpacity
-          onPress={handleBack}
+      <Card
+        variant="glass"
+        className="absolute inset-x-0 bottom-0 flex flex-row items-center justify-between rounded-b-none rounded-t-3xl border-t border-neutral-200/60 p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] dark:border-white/10"
+      >
+        <button
+          type="button"
+          onClick={handleBack}
           disabled={isFirstStep}
-          style={[styles.backButton, isFirstStep && { opacity: 0 }]}
+          className={`flex flex-row items-center gap-2 rounded-xl bg-neutral-100 px-4 py-3 font-semibold text-neutral-600 dark:bg-white/5 dark:text-neutral-400 ${isFirstStep ? 'opacity-0' : ''}`}
         >
-          {/* @ts-expect-error — ChevronLeft style prop type mismatch with RN StyleProp */}
-          <ChevronLeft size={20} style={{ color: isFirstStep ? '#cbd5e1' : '#475569' }} />
-          <Text style={styles.backButtonText}>Indietro</Text>
-        </TouchableOpacity>
+          <ChevronLeft size={20} className="text-neutral-600 dark:text-neutral-400" />
+          Indietro
+        </button>
 
         <Button
           variant="gradient-primary"
           onPress={handleNext}
           disabled={!currentStep.isValid || isCompleting}
           loading={isCompleting}
-          style={styles.nextButton}
+          className="min-w-[140px]"
         >
-          <View style={styles.nextButtonContent}>
-            <Text style={styles.nextButtonText}>{isLastStep ? 'Genera' : 'Avanti'}</Text>
-            {/* @ts-expect-error — ChevronRight style prop type mismatch with RN StyleProp */}
-            {!isLastStep && <ChevronRight size={20} style={{ color: 'white' }} />}
-            {/* @ts-expect-error — Check style prop type mismatch with RN StyleProp */}
-            {isLastStep && <Check size={20} style={{ color: 'white' }} />}
-          </View>
+          <span className="flex flex-row items-center gap-2 font-bold text-white">
+            {isLastStep ? 'Genera' : 'Avanti'}
+            {!isLastStep && <ChevronRight size={20} className="text-white" />}
+            {isLastStep && <Check size={20} className="text-white" />}
+          </span>
         </Button>
       </Card>
-    </View>
+    </div>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  header: {
-    marginBottom: 24,
-  },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: '#0f172a', // text-neutral-900
-  },
-  headerSubtitle: {
-    marginTop: 4,
-    fontSize: 16,
-    color: '#64748b', // text-neutral-500
-  },
-  progressArea: {
-    marginTop: 24,
-  },
-  progressContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 4,
-  },
-  progressStep: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  progressBar: {
-    height: 4,
-    width: '100%',
-    borderRadius: 2,
-  },
-  progressBarCompleted: {
-    backgroundColor: '#4f46e5', // bg-primary-600
-  },
-  progressBarActive: {
-    backgroundColor: '#c7d2fe', // bg-primary-200
-  },
-  progressBarInactive: {
-    backgroundColor: '#e2e8f0', // bg-neutral-200
-  },
-  stepLabel: {
-    position: 'absolute',
-    top: 12,
-    fontSize: 12,
-    fontWeight: '700',
-    color: '#4f46e5', // text-primary-600
-  },
-  content: {
-    flex: 1,
-  },
-  keyboardView: {
-    flex: 1,
-  },
-  contentHeader: {
-    marginBottom: 16,
-  },
-  currentStepTitle: {
-    fontSize: 20,
-    fontWeight: '700',
-    color: '#0f172a', // text-neutral-900
-    marginBottom: 2,
-  },
-  currentStepDescription: {
-    fontSize: 14,
-    color: '#64748b', // text-neutral-500
-    lineHeight: 20,
-  },
-  componentContainer: {
-    minHeight: 200,
-  },
-  scrollContent: {
-    paddingBottom: 100, // Reduced from 120
-    paddingHorizontal: 4, // Added small horizontal padding for safety
-  },
-  footer: {
-    position: 'absolute',
-    right: 0,
-    bottom: 0,
-    left: 0,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderTopLeftRadius: 24,
-    borderTopRightRadius: 24,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
-    borderTopWidth: 1,
-    borderColor: '#e2e8f0', // border-neutral-200/60
-    padding: 16,
-    // Shadow for iOS and Web
-    boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.05)',
-    // Elevation for Android
-    elevation: 5,
-  },
-  backButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-    borderRadius: 12,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    backgroundColor: '#f1f5f9', // bg-neutral-100
-  },
-  backButtonText: {
-    fontWeight: '600',
-    color: '#475569', // text-neutral-600
-  },
-  nextButton: {
-    minWidth: 140,
-  },
-  nextButtonContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  nextButtonText: {
-    fontWeight: '700',
-    color: 'white',
-  },
-});

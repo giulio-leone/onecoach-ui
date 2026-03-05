@@ -214,7 +214,6 @@
     "lucide-react": "^0.575.0",
     "next": "16.1.1",
     "react-markdown": "^10.1.0",
-    "react-native-web": "~0.21.2",
     "react-syntax-highlighter": "^16.1.1",
     "recharts": "^3.6.0",
     "tailwind-merge": "^3.5.0"
@@ -223,12 +222,6 @@
     "@giulio-leone/hooks": "workspace:*",
     "@giulio-leone/one-workout": "workspace:*",
     "@phosphor-icons/react": "*",
-    "react": ">=19.1.0 <20",
-    "react-native": ">=0.81 <0.83"
-  },
-  "peerDependenciesMeta": {
-    "react-native": {
-      "optional": true
-    }
+    "react": ">=19.1.0 <20"
   }
 }

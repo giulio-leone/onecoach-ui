@@ -1,14 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { View } from 'react-native-web';
-import type { ViewStyle } from 'react-native';
 
 interface FadeInProps {
   children: React.ReactNode;
   duration?: number;
   delay?: number;
-  style?: ViewStyle | ViewStyle[];
+  style?: React.CSSProperties;
 }
 
 /**
@@ -30,6 +28,6 @@ export function FadeIn({ children, duration = 300, delay = 0, style }: FadeInPro
     transition: `opacity ${duration}ms ease-in-out`,
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <View style={[animatedStyle, style] as any}>{children}</View>;
+  
+  return <div style={{...animatedStyle, ...style}}>{children}</div>;
 }
